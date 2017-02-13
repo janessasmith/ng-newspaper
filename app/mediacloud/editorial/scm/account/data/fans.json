@@ -1,0 +1,24 @@
+{
+    "result": {
+        "allowAllActMsg": false,
+        "allowAllComment": true,
+        "cityCode": 8,
+        "currPage": -1,
+        "description": "",
+        "extraAttributes": {},
+        "favoritesCount": 0,
+        "followMe": false,
+        "followersCount": 1,
+        "following": false,
+        "friendsCount": 0,
+        "head": "http://tp1.sinaimg.cn/5726282228/180/0/1",
+        "id": "5726282228",
+        "isVip": false,
+        "location": "重庆 南岸区",
+        "male": true,
+        "microContentCount": 13,
+        "name": "流浪的Tinu",
+        "pageSize": 10,
+        "provinceCode": 50
+    }
+}

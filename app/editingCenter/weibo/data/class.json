@@ -1,0 +1,27 @@
+{
+    "result": [{
+        "ClassId": 1,
+        "ClassName": "官微",
+        "ClassPic": ""
+    }, {
+        "ClassId": 2,
+        "ClassName": "政务",
+        "ClassPic": ""
+    }, {
+        "ClassId": 3,
+        "ClassName": "娱乐",
+        "ClassPic": ""
+    }, {
+        "ClassId": 4,
+        "ClassName": "媒体",
+        "ClassPic": ""
+    }, {
+        "ClassId": 5,
+        "ClassName": "体育",
+        "ClassPic": ""
+    }, {
+        "ClassId": 6,
+        "ClassName": "其他",
+        "ClassPic": ""
+    }]
+}

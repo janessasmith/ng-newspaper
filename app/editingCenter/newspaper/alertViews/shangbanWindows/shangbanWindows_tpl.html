@@ -1,0 +1,90 @@
+<form name="shangbanForm" novalidate>
+    <div class="shangban-container" ng-class="{'active':isManusCorrShow}">
+        <div class="shangban-head">
+            <p ng-bind="title"></p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+        </div>
+        <div class="shangban-body" ng-class="{'active':isManusCorrShow}">
+            <div class="shangban-body-left">
+                <p class="choosed-manu">已选稿件(<span ng-bind="choosedManuCount"></span>)</p>
+                <div class="list-wrap">
+                    <div class="list-header">
+                        <span>序号</span>
+                        <span>新闻标题</span>
+                        <span>关联</span>
+                        <span>操作</span>
+                    </div>
+                    <div class="list-body">
+                        <p ng-repeat="item in items" ng-class="{'cur':selectedItem==item}">
+                            <span ng-bind="$index+1"></span>
+                            <span>
+                                <a ng-bind="item.TITLE |trsLimitTo:18" title="{{item.TITLE}}"></a>
+                            </span>
+                            <span>
+                              <img src="./editingCenter/newspaper/images/u108.png" class="edit_newspaperView_relation_icon" ng-click="ManusCorrToggle(item.METADATAID,item)" ng-show="item.RELATEDOCS >1">
+                            </span>
+                            <span ng-click="singleDel($index)">
+                                <img src="./editingCenter/newspaper/images/i1.png">
+                                删除
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="date" ng-show="isShowDate">
+                    <p>见报日期</p>
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="status.date" placeholder="" data-autoclose="1" bs-datepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+                    </div>
+                </div>
+                <div class="lists">
+                    <div>
+                        <p>叠次列表</p>
+                        <ul>
+                            <li ng-repeat="dieciItem in dieciItems">
+                                <span ng-bind="dieciItem.CHNLDESC" ng-click="dieciClick($index)" ng-class="{'cur':dieciSelected===$index||dieciItem.CHNLDESC==manuInfos.dieci.DIECIDESC}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>采编版面列表</p>
+                        <ul>
+                            <li ng-repeat="cbItem in cbItems">
+                                <span ng-bind="cbItem.CHNLDESC" ng-click="caibianClick(cbItem,$index)" ng-class="{'cur selectedItem':caibianSelected===cbItem||cbItem.CHNLDESC==manuInfos.caibian.CHNLDESC}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="invalidate-input-box {{shangbanForm.option.$invalid?'has-error':''}}">
+                    <p class="opinion" ng-bind="opinionTit"></p>
+                    <textarea ng-model="option" name="option" maxlength-error-message="长度不能超过300个字符！" validator="maxlength=300" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA"></textarea>
+                </div>
+            </div>
+            <div class="shangban-body-right" ng-if="isManusCorrShow">
+                <div class="shangban-body-right-head">
+                    <p>与所选稿件相关联的稿件</p>
+                </div>
+                <div class="shangban-body-right-content h539" ng-class="{'h585':isShowDate === true}">
+                    <ul ng-show="!hasNoManusCorr">
+                        <li ng-repeat="item in relationDraft">
+                            <span ng-click="chooseRelatedDraft(item)" ng-class="{'cur':selectedRelatedDraft === item}" title="{{item.TITLE}}" ng-if="status.draftFrom[item.DOCSTATUS]!='已签稿'">{{item.TITLE|trsLimitTo:20}}({{status.draftFrom[item.DOCSTATUS]}})</span>
+                            <span class="notcur" title="{{item.TITLE}}" ng-if="status.draftFrom[item.DOCSTATUS]=='已签稿'">{{item.TITLE|trsLimitTo:20}}({{status.draftFrom[item.DOCSTATUS]}})</span>
+                            <img ng-src="{{item.METALOGOURL.PICSLOGO}}" alt="" ng-if="item.PICSLOGO == '1' && item.METALOGOURL.PICSLOGO !== ''">
+                        </li>
+                    </ul>
+                    <div class="has_no_draft" ng-show="hasNoManusCorr">
+                        无关联稿件
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shangban-foot">
+            <div class="btns-wrap">
+                <button ng-click="cancel()" class="btn_cancel">取消</button>
+                <button ng-click="confirm()" ng-disabled="items.length<1" ng-class="{'disabledCursor':items.length<1}" class="btn btn-primary btn_confirm">确定</button>
+                <!-- <input type="button" ng-click="cancel()" value="取消">
+                <input type="button" ng-click="confirm()" ng-disabled="items.length<1" ng-class="{'disabledCursor':items.length<1}" value="确定" /> -->
+            </div>
+        </div>
+    </div>
+</form>

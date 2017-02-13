@@ -1,0 +1,113 @@
+/* 登录页 */
+
+.page-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(./login/img/loadingPage-bg.jpg) no-repeat 60%;
+}
+
+.page-form {
+    margin-left: 35%;
+    width: 410px;
+    height: 440px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0.95;
+    -moz-opacity: 0.95;
+    border-radius: 5px;
+    background: #fff url(./login/img/dl-bg.png) no-repeat 80% 78%;
+}
+
+.page-container label {
+    color: #8d8f8e;
+}
+
+.page-container .checkbox label {
+    padding-left: 0px;
+}
+.page-container .checkbox label.font-color-blue{
+    color: #84b9de;
+}
+.loadingPageForm {
+    width: 100%;
+    height: 100%;
+    background-color: #EBEFF2
+}
+
+.loadingPageForm-bar {
+    height: 70px;
+    padding: 20px;
+    border-bottom: 1px solid #CCC;
+}
+
+.loadingPageForm-bar img {
+    max-width: 100%;
+}
+
+.loadingpage-form-Password {
+    position: relative;
+}
+
+.loadingpage-form-Password-tip {
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    color: #908549;
+    font-size: 12px;
+    text-align: center;
+    line-height: 25px;
+    background-color: #F6EDB3;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.loadingPageFrom {
+    margin-top: 20px;
+    padding: 0px 35px;
+}
+
+.loadingPage-font {
+    font-size: 12px;
+    color: #919192;
+}
+
+.font-color-blue {
+    color: #81B7E0;
+}
+
+.login .btn-primary {
+    width: 100%;
+    background-color: #1ABA9E;
+    border: 0px;
+    border-bottom: 2px solid #199984;
+}
+
+.login .regular-checkbox + label {
+    padding: 8px;
+    vertical-align: -4px;
+    border: 0px;
+    background-color: #0095CE;
+}
+
+.login .regular-checkbox:checked + label {
+    background-color: #0095CE;
+
+}
+
+.login .pull-right {
+    margin-top: 2px;
+}
+
+
+.login .regular-checkbox:checked + label:after {
+    background: url("./editingCenter/iWo/images/check_marks2.png") no-repeat;
+}

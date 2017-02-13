@@ -1,0 +1,132 @@
+.arrowBtn {
+    cursor: pointer;
+    position: absolute;
+    right: -13px;
+    top: 0;
+    /* padding: 10px; */
+    width: 45px;
+    height: 40px;
+    display: block !important;
+    background: url(./editingCenter/app/images/ej5.png);
+    background-repeat: no-repeat;
+    background-position: 5px 16px;
+}
+
+.arrowBtnActive {
+    background-image: url(./editingCenter/app/images/ej1.png);
+    background-repeat: no-repeat;
+    background-position: 32px 0px;
+    background-size: 8px;
+    z-index: 300;
+}
+
+.subLevelMenu {
+    height: 500px;
+    left: 100%!important;
+    top: -119px!important;
+    width: 100%;
+    position: absolute!important;
+    z-index: 200;
+    display: none !important;
+}
+
+.panel-body-editcenter .subLevelMenu {
+    top: -34px!important;
+}
+.subLevelMenu .menuContent,
+.subLevelMenu .menuContent1,
+.subLevelMenu .menuContent2,
+.subLevelMenu .menuContent3 {
+    width: 196px;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 496px;
+    border: 2px solid #e4e3e2;
+    background: #fff;
+}
+
+.subLevelMenu .menuContent2 {
+    left: 194px;
+}
+
+.subLevelMenu .menuContent3 {
+    left: 388px;
+}
+
+.subLevelMenu .children {
+    height: 35px;
+    cursor: pointer;
+    position: relative;
+}
+
+.subLevelMenu .children a {
+    font-size: 12px;
+    text-indent: 10px;
+    float: left;
+    line-height: 35px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: block;
+    height: 35px;
+    text-indent: 50px;
+    color: #337ab7 !important;
+    text-decoration: none;
+    background: url("./editingCenter/app/images/ej2.png") 10px 10px no-repeat;
+}
+
+.subLevelMenu a.panel-body-hasChild {
+    background: url("./editingCenter/app/images/ej3.png") 10px 10px no-repeat;
+}
+
+.subLevelMenu .children a.selectedchnlHasChl {
+    background: #337ab7 url("./editingCenter/app/images/ej3-1.png") 10px 10px no-repeat;
+    color: #fff !important;
+}
+
+.subLevelMenu a.selectedchnlHasnoChl {
+    background: #337ab7 url("./editingCenter/app/images/ej2-1.png") 10px 10px no-repeat;
+    color: #fff !important;
+}
+
+.subLevelMenu .children i.selectedchnlHasChl {
+    background-image: url(./editingCenter/app/images/ej5.png);
+    background-repeat: no-repeat;
+    background-position: 9px 13px;
+}
+
+.subLevelMenu .children a:hover {
+    background: url("./editingCenter/app/images/ej2.png") 10px 10px no-repeat #dcdcdc;
+}
+
+.subLevelMenu .children a.panel-body-hasChild:hover {
+    background: url("./editingCenter/app/images/ej3.png") 10px 10px no-repeat #dcdcdc;
+}
+
+.subLevelMenu .children i {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    /* padding: 10px; */
+    height: 38px;
+    width: 35px;
+    background-image: url(./editingCenter/app/images/ej4.png);
+    background-repeat: no-repeat;
+    background-position: 9px 13px;
+}
+
+.subLevelMenu .children i.activeIco {
+    background-image: url(./editingCenter/app/images/ej5.png);
+}
+
+.subLevelMenu .children .active {
+    background: url("./editingCenter/app/images/ej3-1.png") 10px 10px no-repeat #4595d2;
+    color: #fff;
+}
+
+.subLevelMenu .children .selectedchnlHasNoChl {
+    background: url("./editingCenter/app/images/ej2-1.png") 10px 10px no-repeat #4595d2;
+    color: #fff;
+}

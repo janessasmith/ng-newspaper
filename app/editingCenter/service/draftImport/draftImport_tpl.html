@@ -1,0 +1,15 @@
+<div class="editctr-draftImport">
+    <div class="head">
+        <span class="title">导入稿件</span><img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="cancelImg" ng-click="cancel()">
+    </div>
+    <div class="body">
+        <span class="info">文件位置：</span>
+        <input readonly="readonly" type="text" placeholder="请上传.doc、.docx、.txt格式的文件" ng-model="file.name" class="form-control text">
+        <button class="btn_confirm uploadbtn" ngf-select="chooseFile()" ng-model="file" ngf-validate="{pattern: '.docx,.doc,.txt'}">上传</button>
+    </div>
+    <div class="foot">
+        <button ng-click="confirm()" class="btn_confirm importConfirm">导入</button>
+        <button ng-click="cancel()" class="btn_cancel cancel">取消</button>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

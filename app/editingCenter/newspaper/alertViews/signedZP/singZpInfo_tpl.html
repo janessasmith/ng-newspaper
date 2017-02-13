@@ -1,0 +1,36 @@
+<div class="signedZP-container">
+    <div class="signedZP-header">
+        <p>排重信息</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()" />
+    </div>
+    <div class="signedZP-body">
+        <div ng-repeat="item in items" class="info">
+            <div class="head">
+                <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)" ng-if="items.length>1"></trs-checkbox>
+                <span>稿件标题：</span>
+                <p ng-bind="item.RESULT.DOC.TITLE"></p>
+            </div>
+            <table class="table table-striped data-table black-box">
+                <tr>
+                    <th>重稿标题</th>
+                    <th class="xcol-type">ID</th>
+                    <th class="xcol-lastDate">版面</th>
+                    <th class="xcol-lastDate">操作人</th>
+                    <th class="xcol-lastDate">排重率</th>
+                </tr>
+                <tr ng-repeat="result in item.RESULT.XILAN" style="background:#fff">
+                    <td ng-bind="result.TITLE | truncate:16:'...'" title="{{result.TITLE}}" class="pointer" ng-click="newspaperPreview(result)"></td>
+                    <td ng-bind="result.METADATAID"></td>
+                    <td ng-bind="result.CHNLDESC"></td>
+                    <td ng-bind="result.TRUENAME"></td>
+                    <td ng-bind="result.SIMV"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="signed-footer">
+        <button ng-click="confirm()" class="btn_confirm btn btn-default" ng-disabled="data.selectedArray.length<1&&items.length>1">强制</button>
+        <button ng-click="cancel()" class="btn_cancel">取消</button>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

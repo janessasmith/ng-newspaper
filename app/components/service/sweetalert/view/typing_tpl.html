@@ -1,0 +1,16 @@
+<form name="typingForm" novalidate>
+    <div class="man_produ_modify_head">
+        <p ng-bind="title"></p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()"/>
+    </div>
+    <div class="man_produ_column_delete">
+        <p>{{title}}：</p>
+        <div class="invalidate-input-box">
+            <input type="text" class="form-control" ng-model="content" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,required"  ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" name="typingMain" is-show-tips="isShowTipsA"/>
+        </div>
+    </div>
+    <div class="man_produ_delete_footer">
+        <button class="news-role-btn confirm-btn btn_confirm" ng-click="confirm()">确定</button>
+        <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</form>

@@ -1,0 +1,200 @@
+.customMonitor_con_addMonitor .addMonitor_title {
+    padding: 5px 0 0 10px;
+    height: 40px;
+}
+
+.customMonitor_con_addMonitor .addMonitor_title b {
+    font-size: 15px;
+}
+
+.customPreview_con .cm-left .title {
+    height: 20px;
+    overflow: hidden;
+}
+
+.customMonitor_con_addMonitor .addMonitor_heatCon {
+    min-height: 387px;
+    padding-bottom: 20px;
+}
+
+.customMonitor_con_addMonitor .addMonitor_heatCon_head {
+    padding: 10px;
+    overflow: hidden;
+}
+
+.customMonitor_con_addMonitor .addMonitor_heatCon_head ul li {
+    float: left;
+    width: 100px;
+    height: 60px;
+    line-height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #dbdbdb;
+}
+
+.customMonitor_con_addMonitor .addMonitor_heatCon_head ul li:nth-last-child(1) {
+    line-height: 60px;
+}
+
+.customMonitor_con_addMonitor .addMonitor_heatCon_head ul li div {
+    vertical-align: middle;
+    display: inline;
+}
+
+.customMonitor_con_addMonitor .addMonitor_heatCon_head .heatCon_pct img {
+    padding: 0px 10px;
+}
+
+.customMonitor_con_addMonitor .addMonitor_heatCon_line {
+    width: 1050px;
+    height: 300px
+}
+
+
+/**/
+
+.customPreview_con {
+    border: 4px solid #dddddd;
+    border-radius: 5px;
+    min-height: 643px;
+}
+
+.customPreview_con .nav-tabs.nav-justified {
+    padding-top: 5px;
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #F1F2F6;
+}
+
+.customPreview_con table {
+    margin-top: 10px;
+}
+
+.customPreview_con table thead {
+    background-color: #EDEDED;
+}
+
+.customPreview_con .table > thead > tr > th {
+    border-bottom: none;
+}
+
+.cm-number {
+    width: 60px;
+}
+
+.cm-hot {
+    width: 60px;
+}
+
+.cm-source {
+    width: 100px;
+}
+
+.cm-datetime {
+    width: 90px;
+}
+
+.customPreview_con .cm-left {
+    text-align: left;
+}
+
+.customPreview_con .nav-tabs.nav-justified > li {
+    width: 100px;
+    height: 36px;
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    background-color: #2f98d2;
+}
+
+.customPreview_con .nav-tabs > li.active {
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    background-color: #fff;
+}
+
+.customPreview_con .nav-tabs.nav-justified > li.active > a {
+    color: #333;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    border-radius: 5px 5px 0 0;
+}
+
+.customPreview_con .nav-tabs.nav-justified > li > a {
+    padding: 0px;
+    line-height: 36px;
+    color: #fff;
+}
+
+.customPreview_con .nav-tabs.nav-justified > li > a:hover {
+    background-color: #2f98d2;
+    border-radius: 6px;
+}
+
+.customPreview_con .nav-tabs.nav-justified > .active > a:hover {
+    background-color: #fff;
+    line-height: 36px;
+}
+
+.customPreview_con .page {
+    position: relative;
+    padding-top: 0px;
+    bottom: 0px;
+}
+
+.customPreview_con .table tbody tr td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+.customPreview_con .customPreview_con_select {
+    padding: 10px 10px 0 10px;
+}
+
+.customPreview_con .customPreview_con_select button {
+    float: right;
+}
+
+.addMonitor_heatCon_timeGroup {
+    padding-top: 10px;
+}
+
+.addMonitor_heatCon_timeGroup>span {
+    position: relative;
+    top: -27px;
+}
+
+.addMonitor_heatCon_timeGroup>button {
+    background-color: #2f98d2;
+    border-radius: 3px;
+    color: #fff;
+    width: 80px;
+    height: 30px;
+    border: none;
+    outline: none;
+    position: relative;
+    top: -26px;
+    left: 10px;
+}
+
+.addMonitor_heatCon_timeGroup .timeGroup {
+    display: inline-block;
+}
+
+.addMonitor_heatCon_timeGroup .timeGroup .form-control[readonly] {
+    background-color: #fff;
+}
+
+.addMonitor_heatCon_timeGroup .timeGroup input {
+    width: 128px;
+}
+
+.addMonitor_heatCon_timeGroup .timeGroup img.imgOne {
+    width: 15px;
+    height: 15px;
+    border: 0;
+    position: relative;
+    top: -28px;
+    left: 106px;
+}

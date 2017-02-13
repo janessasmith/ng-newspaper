@@ -1,0 +1,67 @@
+<form name="emailConfigForm" class="man-sys-emailConfig" novalidate>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">发送方式：</p>
+        <div class="emailConfig-main">
+            <p ng-repeat="item in status.singleSelect.sendWay">
+                <br>
+                <trs-single-radio ischecked="item.value==list.MEDIATYPES" label="{{item.desc}}" group="'sendWay'" callback="toggleRadio(item)"></trs-single-radio>
+            </p>
+        </div>
+    </div>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">SMTP服务器：</p>
+        <div class="emailConfig-main">
+            <input type="text" class="form-control">
+        </div>
+    </div>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">SMTP端口：</p>
+        <div class="emailConfig-main">
+            <input type="text" class="form-control">
+        </div>
+    </div>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">SMTP身份验证：</p>
+        <div class="emailConfig-main">
+            <span ng-repeat="item in status.singleSelect.authentication" class="ml10">
+            	<trs-single-radio ischecked="item.value==list.MEDIATYPES" label="{{item.desc}}" group="'sendWay'" callback="toggleRadio(item)"></trs-single-radio>
+            </span>
+        </div>
+    </div>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">SMTP用户名：</p>
+        <div class="emailConfig-main">
+            <input type="text" class="form-control">
+        </div>
+    </div>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">SMTP密码：</p>
+        <div class="emailConfig-main">
+            <input type="text" class="form-control">
+        </div>
+    </div>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">发件人：</p>
+        <div class="emailConfig-main">
+            <input type="text" class="form-control">
+        </div>
+    </div>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">邮件头分隔符：</p>
+        <div class="emailConfig-main">
+            <p ng-repeat="item in status.singleSelect.separator">
+                <br>
+                <trs-single-radio ischecked="item.value==list.MEDIATYPES" label="{{item.desc}}" group="'sendWay'" callback="toggleRadio(item)"></trs-single-radio>
+            </p>
+        </div>
+    </div>
+    <div class="emailConfig-row">
+        <p class="emailConfig-title">邮件签名：</p>
+        <div class="emailConfig-main">
+            <textarea class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="emailConfig-footer">
+    	<button>保存</button>
+    </div>
+</form>

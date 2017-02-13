@@ -1,0 +1,111 @@
+<div class="myZone_pro_info_modify">
+    <form name="modifyProInfo" novalidate>
+        <div class="myZone_modify_info_title">
+            修改个人信息
+        </div>
+        <div class="myZone_headPortrait" title="点击上传头像，建议上传正方形图片">
+            <img ng-src="{{headPic}}" ngf-select ng-model="status.headPortrait" ngf-change="changeHeadPortrait($files, $file, $newFiles)" ngf-pattern="'image/*'" ngf-accept="'image/*'">
+        </div>
+        <div class="myZone_modify_info_main">
+            <div class="modify_pro_info_main_row">
+                <p>用户名：</p>
+                <div>
+                    <input type="text" class="form-control" readonly name="truename" ng-model="info.TRUENAME" />
+                </div>
+                <p>用户ID：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" readonly name="username" ng-model="info.USERNAME" />
+                </div>
+            </div>
+            <div class="modify_pro_info_main_row">
+                <p>员工号：</p>
+                <div>
+                    <input type="text" class="form-control" readonly name="usernum" ng-model="info.USERNUM" />
+                </div>
+                <p>办公室电话：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.TEL" maxlength-error-message="长度不能超过12个字符！" validator="hasletter,haschinese,maxlength=12" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" name="telephone" is-show-tips="isShowTipsB" />
+                </div>
+            </div>
+            <div class="modify_pro_info_main_row">
+                <p>办公传真：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.FAX" maxlength-error-message="长度不能超过12个字符！" validator="hasletter,haschinese,maxlength=12" ng-mouseenter="isShowTipsC=true" ng-mouseleave="isShowTipsC=false" name="fax" is-show-tips="isShowTipsC" />
+                </div>
+                <p>手机号码：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.MOBILE" validator="mobilephone,required" ng-mouseenter="isShowTipsD=true" ng-mouseleave="isShowTipsD=false" name="mobile" is-show-tips="isShowTipsD" />
+                </div>
+            </div>
+            <div class="modify_pro_info_main_row">
+                <p>虚拟网号：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.MOBILESUB" maxlength-error-message="长度必须为6个字符！" minlength-error-message="长度必须为6个字符" validator="number,maxlength=6,minlength=6" ng-mouseenter="isShowTipsE=true" ng-mouseleave="isShowTipsE=false" name="mobilesub" is-show-tips="isShowTipsE" />
+                </div>
+                <p>宅电：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.HOMETEL" maxlength-error-message="长度不能超过12个字符！" validator="hasletter,haschinese,maxlength=12" ng-mouseenter="isShowTipsF=true" ng-mouseleave="isShowTipsF=false" name="hometel" is-show-tips="isShowTipsF" />
+                </div>
+            </div>
+            <div class="modify_pro_info_main_row modify_pro_info_place_row">
+                <p>办公地点：</p>
+                <div>
+                    <div class="invalidate-input-box">
+                        <input type="text" class="form-control" ng-model="info.OFFICE" maxlength-error-message="长度不能超过100个字符！" validator="required,maxlength=100" ng-mouseenter="isShowTipsG=true" ng-mouseleave="isShowTipsG=false" name="office" is-show-tips="isShowTipsG" />
+                    </div>
+                    <!--<trs-single-select selected-option="office" callback="chooseOffice()" options="officeJsons"></trs-single-select>-->
+                   <!--  <span class="text_red modify_pro_info_remarks">
+                        注：浙报传媒大厦指浙报大院内的新大楼，浙报文化产业大厦指浙报大院内的老大楼
+                    </span> -->
+                </div>
+                <p>性别：</p>
+                <div>
+                    <trs-single-select selected-option="sex" callback="chooseSex()" options="sexJsons"></trs-single-select>
+                </div>
+            </div>
+            <div class="modify_pro_info_main_row">
+                <p>邮箱地址：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.EMAIL" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200,required,email" ng-mouseenter="isShowTipsH=true" ng-mouseleave="isShowTipsH=false" name="email" is-show-tips="isShowTipsH" />
+                </div>
+                <p>通信地址：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.ADDRESS" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-mouseenter="isShowTipsI=true" ng-mouseleave="isShowTipsI=false" name="address" is-show-tips="isShowTipsI" />
+                </div>
+            </div>
+            <div class="modify_pro_info_main_row">
+                <p>开户银行：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.BANKACCOUNT" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50" ng-mouseenter="isShowTipsK=true" ng-mouseleave="isShowTipsK=false" name="bankaccount" is-show-tips="isShowTipsK" />
+                </div>
+                <p>银行卡号：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.BANKCARDNUMBER" maxlength-error-message="长度不能超过12个字符！" validator="number" ng-mouseenter="isShowTipsL=true" ng-mouseleave="isShowTipsL=false" name="bankcardnumber" is-show-tips="isShowTipsL" />
+                </div>
+            </div>
+            <div class="modify_pro_info_main_row">
+                <p>所属组织：</p>
+                <div>
+                    <input type="text" class="form-control" name="dept" ng-model="info.DEPT" readonly/>
+                </div>
+                <p>最后确认时间：</p>
+                <div ng-bind="info.OPERTIME" class="modify_pro_info_operTime"></div>
+            </div>
+            <div class="modify_pro_info_main_row modify_pro_info_remarks_row">
+                <p>身份证号码：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="info.FGDSFZ" validator="idcard" ng-mouseenter="isShowTipsM=true" ng-mouseleave="isShowTipsM=false" name="useridcard" is-show-tips="isShowTipsM" />
+                </div>
+                <p>备注：</p>
+                <div class="modify_pro_info_remark invalidate-input-box">
+                    <textarea class="form-control" ng-model="info.REMARK" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-mouseenter="isShowTipsJ=true" ng-mouseleave="isShowTipsJ=false" name="remark" is-show-tips="isShowTipsJ"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="proInfoModify_footer_btn_group">
+            <button class="proInfoModify_save_btn" ng-click="saveInfo()">保&nbsp;&nbsp;存</button>
+            <!--<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
+            <!--<button class="proInfoModify_save_btn" ng-click="close()">关&nbsp;&nbsp;闭</button>-->
+        </div>
+    </form>
+</div>

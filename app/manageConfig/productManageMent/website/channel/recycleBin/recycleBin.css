@@ -1,0 +1,90 @@
+.manage-pmm-recycle-container{
+    width: 98%;
+    min-height: inherit;
+    padding: 15px 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+.pmm-recycle-item-out{
+    margin: 0px 10px;
+    height: 80px;
+}
+.pmm-recycle-item-out,
+.pmm-recycle-item-default{
+    min-width: 115px;
+}
+.pmm-recycle-item-icon-group{
+    width: 0;
+    height: 25px;
+    overflow: hidden;
+    white-space:nowrap;
+}
+.pmm-recycle-item-icon-group > a,
+.pmm-recycle-item-icon-group > a:hover{
+    text-decoration: none;
+}
+.pmm-recycle-btn-show{
+    width: 100%;
+}
+.pmm-recycle-item-icon-group img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 2px;
+}
+.pmm-recycle-item-default,
+.pmm-recycle-item-active,
+.pmm-recycle-add-item{
+    min-width: 120px;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.pmm-recycle-item-default,
+.pmm-recycle-add-item {
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f9f9f9));
+}
+.pmm-recycle-item-active{
+    color: #fff;
+    font-weight: bold;
+    background: #2f98d2;
+    border: none;
+    /*25,25*/
+}
+
+.pmm-recycle-add-item img{
+    margin-top: -3px;
+}
+@keyframes PMMWebsiteSlideLeftOut {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes PMMWebsiteSlideLeftIn {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+.pmm-recycle-item-icon-group.pmm-recycle-btn-show-add{
+    animation:PMMWebsiteSlideLeftOut 0.3s  both ease-in;
+}
+.pmm-recycle-item-icon-group.pmm-recycle-btn-show-remove{
+    animation:PMMWebsiteSlideLeftIn 0.2s  both ease-in;
+}
+.manage-pmm-recycle span{
+    position: absolute;
+    bottom: 10px;
+    left: 2px;
+    text-align: center;
+    width: 57px;
+}

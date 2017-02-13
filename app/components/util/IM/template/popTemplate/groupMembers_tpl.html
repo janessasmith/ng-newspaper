@@ -1,0 +1,16 @@
+<div class="Group">
+    <div class="Group_Information">
+        <ul>
+            <li ng-repeat="member in data.groupMembers"><img src="./components/util/IM/images/2015.jpg" ng-click="createTalkGroup()"> <b ng-bind="member.nickName||member.member"></b></li>
+            <li class="cursorPoiner">
+                <img src="./components/util/IM/images/tx23.png" alt="" ng-click="inviteJoinGroup()">
+            </li>
+            <li class="cursorPoiner">
+                <img src="./components/util/IM/images/tx30.png" alt="" ng-show="!!status.currTalkTo.groupId" ng-click="deleteGroupMember()">
+                <!-- status.currTalkTo.owner==data.IMInfo.USER.USERID -->
+            </li>
+        </ul>
+        <!-- <div class="Group_Information_img" ng-click="inviteJoinGroup()"><img src="./components/util/IM/images/tx23.png" alt=""></div>
+        <div class="Group_Information_img" ng-click=""><img src="./components/util/IM/images/tx30.png" alt="" ng-show="!!status.currTalkTo.groupId"></div> -->
+    </div>
+</div>

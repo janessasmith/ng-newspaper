@@ -1,0 +1,48 @@
+.edit-outSending-add-window .modal-dialog{
+    width: 370px;
+    height: 30%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.edit-outSending-add-window .man_produ_modify {
+    overflow: hidden;
+}
+.edit-outSending-add-window .edit_outSending_main {
+    background: #f0f2f5;
+    padding: 10px 0;
+}
+.edit-outSending-add-window .man_produ_modify_footer {
+    background: #fff;
+    width: 100%;
+}
+.edit-outSending-add-window .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+    margin: 0 10px 0 0;
+}
+.edit-outSending-add-window .man_produ_modify_footer {
+    height: 50px;
+    padding: 10px 0 0 0;
+    float: right;
+}
+.edit-outSending-add-window .edit_outSending_add_row {
+    height: 50px;
+    line-height: 50px;
+}
+.edit-outSending-add-window .edit_outSending_add_row > div,
+.edit-outSending-add-window .edit_outSending_add_row > p{
+    display: inline-block;
+}
+.edit-outSending-add-window .edit_outSending_add_row > p {
+    font-size: 12px;
+    text-align: right;
+    width: 20%;
+}
+.edit-outSending-add-window .edit_outSending_add_row > div {
+    width: 78%;
+    padding-right: 10px;
+}

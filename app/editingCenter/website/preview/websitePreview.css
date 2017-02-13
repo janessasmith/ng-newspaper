@@ -1,0 +1,263 @@
+.websiteCabletPreview {
+    padding-top: 60px;
+    min-height: 600px;
+    font-family: "Microsoft YaHei";
+    background-color: #F5F5F5;
+    overflow: hidden;
+}
+
+.websiteCabletPreview_nav {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    z-index: 98;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.websiteCabletPreview_head,
+.websiteCabletPreview_content,
+.websiteCabletPreview_audioVideo_con,
+.websiteCabletPreview_readPictures_con,
+.websiteCabletPreview_extendedRead_con {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.websiteCabletPreview_nav .box-fix-bt {
+    right: 9%;
+}
+
+
+/*websiteCabletPreview_context s*/
+
+.websiteCabletPreview_context {
+    background-color: #fff;
+    position: relative;
+}
+
+.websiteCabletPreview_ismark {
+    position: absolute;
+    top: 0px
+}
+
+.websiteCabletPreview_ismark .ismark {
+    width: 89px
+}
+
+.websiteCabletPreview_head {
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.websiteCabletPreview_head .websiteCabletPreview_head_rank {
+    clear: both;
+    min-height: 32px;
+}
+
+.websiteCabletPreview_head .websiteCabletPreview_head_rank p {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 16px;
+}
+
+.websiteCabletPreview_head_rank img.pos {
+    position: relative;
+    left: 49%;
+    top: 10px;
+}
+
+.websiteCabletPreview_head .websiteCabletPreview_head_rank p b {
+    float: left;
+    display: inline-block;
+    width: 112px;
+    text-align: right;
+    color: #333;
+}
+
+.websiteCabletPreview_head .websiteCabletPreview_head_rank p b.w42 {
+    width: 42px;
+}
+
+.websiteCabletPreview_head .websiteCabletPreview_head_rank p span {
+    float: left;
+    width: 65%;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.websiteCabletPreview_head .websiteCabletPreview_head_rank img {
+    position: relative;
+    left: 50%;
+}
+
+
+/*websiteCabletPreview_context e*/
+
+
+/*.websiteCabletPreview_content s*/
+
+.websiteCabletPreview_content {}
+
+.websiteCabletPreview_content h1,
+.websiteCabletPreview_content h2,
+.websiteCabletPreview_content h3,
+.websiteCabletPreview_content h4,
+.websiteCabletPreview_content h5,
+.websiteCabletPreview_content h6 {
+    /* font-weight: bold;*/
+    text-align: center;
+    color: #444;
+}
+
+.websiteCabletPreview_content h1 {
+    font-weight: normal;
+    line-height: 40px;
+    margin: 10px 0px 13px;
+    font-size: 33px;
+}
+
+.websiteCabletPreview_content .content_img {
+    display: block;
+    padding: 0 5%;
+    text-align: center;
+}
+
+.websiteCabletPreview_content p {
+    word-break: break-word;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.websiteCabletPreview_audioVideo,
+.websiteCabletPreview_readPictures,
+.websiteCabletPreview_extendedRead {
+    min-height: 160px;
+    padding: 10px 5%;
+    overflow: hidden;
+    border-top: 1px solid #999999;
+    margin-top: 20px;
+}
+
+.websiteCabletPreview_audioVideo .websiteCabletPreview_audioVideo_con ul li {
+    float: left;
+    margin-right: 8px;
+    width: 125px;
+    list-style-type: none;
+}
+
+.websiteCabletPreview_readPictures .websiteCabletPreview_readPictures_con .websiteCabletPreview_newsAnnex ul li {
+    float: left;
+    margin-right: 8px;
+    width: 150px;
+    list-style-type: none;
+    text-align: center;
+    height: 170px;
+}
+
+.websiteCabletPreview_readPictures .websiteCabletPreview_readPictures_con .websiteCabletPreview_newsAnnex ul li img {
+    width: 100px;
+    height: 114px;
+}
+
+.websiteCabletPreview_readPictures .websiteCabletPreview_readPictures_con .websiteCabletPreview_newsAnnex ul li span {
+    width: 150px;
+    display: block;
+    line-height: 24px;
+    word-wrap: break-word;
+    height: 72px;
+    overflow: hidden;
+}
+
+.websiteCabletPreview_audioVideo .websiteCabletPreview_audioVideo_con ul li a {
+    color: #333;
+}
+
+.websiteCabletPreview_audioVideo .websiteCabletPreview_audioVideo_con ul li a img {
+    width: 100px;
+    height: 60px;
+}
+
+.websiteCabletPreview_audioVideo .websiteCabletPreview_audioVideo_con ul li a span {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+.websiteCabletPreview_readPictures .websiteCabletPreview_readPictures_con .websiteCabletPreview_newsAnnex ul li img {
+    width: 85px;
+    height: 92px;
+}
+
+.websiteCabletPreview_readPictures .websiteCabletPreview_readPictures_con a.website_preview_read_pictures {
+    margin-right: 10px;
+}
+
+.websiteCabletPreview_extendedRead .websiteCabletPreview_extendedRead_con {}
+
+.websiteCabletPreview_extendedRead .websiteCabletPreview_extendedRead_con ul li {
+    list-style: none;
+}
+
+.websiteCabletPreview_extendedRead .websiteCabletPreview_extendedRead_con ul li a {
+    display: block;
+    padding: 3px 0;
+    color: #333;
+}
+
+.websiteCabletPreview_extendedRead .websiteCabletPreview_extendedRead_con ul li a:hover {
+    text-decoration: none;
+}
+
+.websiteCabletPreview_bottomborder {
+    height: 40px;
+    border-top: 1px solid #999999;
+}
+
+.websiteCabletPreview_bottomborder a img,
+.websiteCabletPreview_botborder a img {
+    position: relative;
+    width: 50px;
+    left: 90%;
+    margin-top: -100px;
+}
+
+.websiteCabletPreview .iwo-preview-tl,
+.websiteCabletPreview .copy-darft-a {
+    padding-left: 9%;
+}
+
+.websiteCabletPreview_nav_atlas_shows,
+.websiteCabletPreview_nav_item_CONTENT {
+    float: left;
+}
+
+.websiteCabletPreview_nav_item_CONTENT {
+    padding-left: 90px;
+    margin-left: 15px;
+    word-break: break-word;
+    width: 100%;
+    overflow: hidden;
+}
+
+.websiteCabletPreview_nav_content {
+    min-height: 60px;
+    overflow: hidden;
+}
+
+.websiteCabletPreview_content p img {
+    padding-bottom: 10px;
+}
+
+.websiteCabletPreview .newsImgStyle [align] img {
+    max-width: 600px;
+}
+
+.websiteAtlasPreview_content{
+    clear: both;
+}
+.websiteAtlasPreview_content .bigFaceUser{
+    top: -12px;
+}

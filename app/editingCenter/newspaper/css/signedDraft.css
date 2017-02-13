@@ -1,0 +1,40 @@
+h4.panel-title.edit_news_today>a {
+    width: 100%;
+}
+
+h4.panel-title.edit_news_today>a,
+h4.panel-title.edit_news_today>a:hover,
+.edit_news_today_pull_right {
+    color: #656565;
+    font-family: serif;
+    font-weight: bold;
+    text-decoration: none!important;
+}
+
+.checkbox-position-style {
+    height: 0px;
+    position: relative;
+    top: 11px;
+    left: 90%;
+    float: left;
+}
+
+.edit_news_signed_draft .edit_news_today_table .panel-default > .panel-heading {
+    margin-bottom: 3px;
+}
+
+.edit_news_signed_draft .signedDraft_dropMenu_group .signedDraft_queryByPageType {
+    display: inline-block;
+}
+
+.edit_news_signed_draft .signedDraft_dropMenu_group .signedDraft_queryByPageType .dropdown .dropdown-menu {
+    max-height: 147px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 140px;
+}
+
+table tbody tr td.today-draft-td-img {
+    min-width: 100px;
+    padding: 4px 0 0 0!important;
+}

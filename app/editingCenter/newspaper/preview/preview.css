@@ -1,0 +1,163 @@
+.newspaper-class .modal-dialog {
+    width: 960px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    font-family: "微软雅黑";
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1681px) {
+    .newspaper-class .modal-dialog {
+        height: 800px;
+    }
+}
+
+.bdt {
+    border-top: 1px solid #ccc;
+    height:1px;
+}
+
+.newspaper-class .modal-content,
+.newspaper-class-row {
+    background-color: #f5f5f5;
+    position: relative;
+    font-size: 14px;
+}
+
+.newspaper-type {
+    min-height: 60px;
+    padding-top: 20px;
+    background: #fff;
+    margin-top: 40px;
+    padding-left: 70px;
+    overflow: hidden;
+}
+
+
+.newspaper-news .newspaper-type p,
+.newspaper-atlas .newspaper-type p {
+    color: #666666;
+    float: left;
+    font-size: 16px;
+    margin-right: 100px
+}
+
+.newspaper-news .newspaper-type p span,
+.newspaper-atlas .newspaper-type p span {
+    color: #9B9A9A;
+}
+
+.newspaper-news .newspaper-detail .newspaper-detail-tl,
+.newspaper-atlas .newspaper-detail .newspaper-detail-tl {
+    text-align: center;
+    /*    height: 60px;*/
+    line-height: 34px;
+    padding-top: 20px;
+}
+
+.newspaper-news .newspaper-detail .newspaper-detail-tl p,
+.newspaper-atlas .newspaper-detail .newspaper-detail-tl p {}
+
+.newspaper-news .newspaper-detail .newspaper-detail-tl p.newspaper-title,
+.newspaper-atlas .newspaper-detail .newspaper-detail-tl p.newspaper-title {
+    font-size: 26px;
+}
+
+.newspaper-news .newspaper-detail .newspaper-detail-tl p.newspaper-abstract,
+.newspaper-atlas .newspaper-detail .newspaper-detail-tl p.newspaper-abstract {
+    font-size: 22px;
+}
+
+.newspaper-news .newspaper-detail .newspaper-detail-tl p.reporter,
+.newspaper-atlas .newspaper-detail .newspaper-detail-tl p.reporter {
+    font-size: 17px;
+}
+
+.newspaper-news .newspaper-content,
+.newspaper-atlas .newspaper-content {
+    /*text-align: center;*/
+    vertical-align: middle;
+    position: relative;
+    min-height: 300px;
+    margin: 0 30px;
+}
+
+.newspaper-news .newspaper-content p,
+.newspaper-atlas .newspaper-content p {
+    word-break: break-word;
+}
+
+.newspaper-author,
+.newspaper-remark {
+/*    padding: 15px 0px 15px 60px;*/
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.newspaper-author h4,
+.newspaper-remark h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.newspaper-author p {
+    margin: 15px 0px;
+}
+
+.newspaper-author p span {
+    font-size: 15px
+}
+
+.newspaper-content .wt960 {
+    width: 860px!important
+}
+
+.newspaper-content .edit .carousel-row {
+    margin-top: 0px
+}
+
+.newspaper-ischoose {
+    position: absolute;
+    width: 98px;
+    top: 0px;
+    left: -1px;
+}
+
+.newspaper_jump,
+.newspaper_jump {
+    position: fixed;
+    top: 274px;
+    left: 0px;
+        width: 100%;
+}
+
+
+.newspaper_jump a {
+    text-decoration: none;
+       display: block;
+    width: 40px;
+    float: left;
+    height: 100px;
+}
+.newspaper_jump a:first-child,
+.newspaper_jump a:first-child {
+    position: absolute;
+    width: 40px;
+    height: 100px;
+    left: 30px;
+    background: url(./editingCenter/newspaper/images/11_03.gif) no-repeat;
+    background-size:40px;}
+
+.newspaper_jump a:last-child,
+.newspaper_jump a:last-child {
+    position: absolute;
+    width: 40px;
+    height: 100px;
+    right: 30px;
+background: url(./editingCenter/newspaper/images/11_05.png) no-repeat;
+background-size:36px;}
+
+.newspaper-remark img.go_top {
+    position: absolute;
+    bottom: 0px;
+     right: 0px;
+}

@@ -1,0 +1,146 @@
+<div class="lh-bd-xl" ng-controller="reportViewMainCtrl">
+    <div class="box-shadow-bk bd-hd-sel">
+        <span>{{BDtitle}}</span><span class="nx-sel-btn"></span>
+    </div>
+    <div class="bd-xq-main">
+        <!--右边-->
+        <div class="bd-main-rt rt">
+            <div class="box-shadow-bk">
+                <div class="bd-rt-tit">参与的人员</div>
+                <div class="bd-user-ls">
+                    <a ng-repeat="user in users">
+                        <img ng-src="{{user.userHead}}"/><span>{{user.userName}}</span>
+                        <input type="hidden" class="userId" value="{{user.userName.userId}}">
+                    </a>
+                </div>
+                <div class="bd-rt-btn">
+                    <a href="javascript:;" class="add-member-btn" ng-click="open_cp('700',$event);">
+                        <span></span>邀请人员
+                    </a>
+                    <a href="javascript:;" class="in-chat-btn" ng-click="corpsChat();">
+                        <span></span>发起群聊
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--end 右边-->
+        <!--左边-->
+        <div class="bd-main-lf">
+            <!--发布-->
+            <form class="w5c-form" method="post" id="iconForm" name="iconForm" 
+          enctype="multipart/form-data" w5c-form-validate="vm.validateOptions" 
+          novalidate>
+            <div class="box-shadow-bk bd-fb-area">
+                <div class="fb-area-bd"><textarea name="" id="" ng-model="params.content"></textarea></div>
+                <div class="bd-xq-main">
+                    <div class="fb-area-add lf">
+                         <a href="javascript:void(0);" class="add-pic" uplodepic> <span></span>图片</a>
+                        <input  name="wxHeadImg-browser-btn" name="upload" 
+                        type="file" id="pic_file" style="display:none"/>
+                        <a href="javascript:void(0);" class="add-video" uplodevideo > <span></span>视频</a>
+                        <input  name="video" name="upload" 
+                        type="file" id="video_file" style="display:none"/>
+                        <div id="pcfileList" class="pcfileList mynr-deal-pc " style="padding: 24px 0px 0px 0px;" deletefile>
+                        </div> 
+                        <div id="videofileList" class="videofileList " style="padding: 0px 0px 0px 0px;" deletefile> 
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="fb-submit-btn rt" ng-click="send()">发布</a>
+                </div>
+            </div>
+            </form>
+            <!--内容-->
+            <div class="bd-xq-main">
+                <div class="box-shadow-bk bd-main-con">
+                    <ul>
+                        <li checked="bd-con-cur" class="bd-con-cur" ng-click="getReportViewMainList();" >
+                            <a href="javascript:;" class="nr-all">全部</a>
+                        </li>
+                        <li checked="bd-con-cur" ng-click="getReportViewImgList();">
+                            <a href="javascript:;" class="nr-pic">图片</a>
+                        </li>
+                        <li checked="bd-con-cur" ng-click="getReportViewVideoList();">
+                            <a href="javascript:;" class="nr-video">音视频</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bd-nr-deal">
+                    <!--全部-->
+                    <div class="bd-xq-main">
+                        <!--图片块-->
+                        <div class="box-shadow-bk nr-deal-bk" ng-repeat="viewMainContent in viewMainContents" 
+                        ng-show="type=='all'">
+                            <div class="nr-user-pc lf">
+                                <img ng-src="{{viewMainContent.USERHEAD}}"/>
+                            </div>
+                            <div class="con-nr-deal">
+                                <div class="con-nr-top">
+                                    <a>{{viewMainContent.CRUSER}}</a>
+                                    <span>{{viewMainContent.CRTIME}}</span>
+                                </div>
+                                <div class="nr-deal-div">
+                                    <a class="nr-deal-sp">{{viewMainContent.CONTENT}}</a>
+                                    <!--图片-->
+                                    <div class="nr-deal-pc lf" ng-repeat="file in viewMainContent.files"
+                                     ng-show="file.fileType==1">
+                                        <a ><img ng-src="{{file.filePath}}"></a>
+                                    </div>
+                                    <!--视频-->
+                                    <div class="video-bf-bk" ng-repeat="file in viewMainContent.files"
+                                    ng-show="file.fileType==2">
+                                        <video ng-src="{{trustSrc(file.filePath)}}" controls preload style="width:300px;height: 150px;background: black;">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-shadow-bk mb5 lf" style="width: 49.15%;" 
+                        ng-repeat="imgContent in imgContents" ng-show="type=='img'">
+                            <div class="bd-pc-pd">
+                                <a class="bd-ls-pc">
+                                    <img ng-src="{{imgContent.filePath}}"/>
+                                    <div class="ls-pc-name">
+                                        <div class="ls-pc-opa"></div>
+                                        <span>{{imgContent.fileName}}</span>
+                                    </div>
+                                </a>
+                                <div class="bd-pc-opt clearfix">
+                                    <div class="bd-pc-auth lf">作者：<span>{{imgContent.userName}}</span></div>
+                                    <div class="pc-opt-deal rt">
+                                        <a href="{{imgContent.previewFilePath}}" 
+                                        class="pc-opt-pre no-mr rt" target="_blank"><span></span>预览</a>
+                                        <!-- <a href="javascript:;" class="pc-opt-del rt" ng-click="expression"><span></span>删除</a> -->
+                                        <a href="/wcm/file/read_file.jsp?FileName={{imgContent.filePath}}" class="pc-opt-dl rt"><span></span>下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-shadow-bk mb5 lf" style="width: 49.15%;" 
+                        ng-repeat="videoContent in videoContents" ng-show="type=='video'">
+                            <div class="bd-pc-pd">
+                                <a href="#" class="bd-ls-pc">
+                                    <!-- <span class="sp-bf-btn ad-btn"></span> -->
+                                    <!-- <img ng-src="{{videoContent.filePath}}"/> -->
+                                    <video ng-src="{{trustSrc(videoContent.filePath)}}" controls preload style="width:327px;height: 150px;background: black;"></video>
+                                    <div class="ls-pc-name">
+                                        <div class="ls-pc-opa"></div>
+                                        <span>{{videoContent.fileName}}</span>
+                                    </div>
+                                </a>
+                                <div class="bd-pc-opt clearfix">
+                                    <div class="bd-pc-auth lf">作者：<span>{{videoContent.UserName}}</span></div>
+                                    <div class="pc-opt-deal rt">
+                                        <!-- <a href="javascript:;" class="pc-opt-pre no-mr rt"><span></span>预览</a> -->
+                                        <!-- <a href="javascript:;" class="pc-opt-del rt"><span></span>删除</a> -->
+                                        <a href="javascript:;" class="pc-opt-dl rt"><span></span>下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end 左边-->
+    </div>
+</div>

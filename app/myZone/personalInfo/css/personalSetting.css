@@ -1,0 +1,50 @@
+.myzone-personalInfo-perSetting .perSetting_container{
+    width: 100%;
+    margin-top: 20px;
+}
+.myzone-personalInfo-perSetting .perSetting_form_container {
+    border: 1px solid #d3d3d3;
+    border-bottom: none;
+}
+.myzone-personalInfo-perSetting .perSetting_form_row {
+    height: 55px;
+    border-bottom: 1px solid #d3d3d3;
+}
+.myzone-personalInfo-perSetting .perSetting_form_row > p,
+.myzone-personalInfo-perSetting .perSetting_form_row > div {
+    display: inline-block;
+    height: 100%;
+    line-height: 55px;
+}
+.myzone-personalInfo-perSetting .perSetting_form_row > p {
+    background: #f1f2f6;
+    width: 79%;
+    margin: 0;
+    border-right: 1px solid #d3d3d3;
+    padding: 0 30px;
+}
+.myzone-personalInfo-perSetting .perSetting_form_row > div {
+    width: 20%;
+    padding: 0 30px;
+}
+.myzone-personalInfo-perSetting .perSetting_form_row > div >input.form-control {
+    height: 30px;
+    width: 30%;
+    display: inline-block;
+}
+.myzone-personalInfo-perSetting .perSetting_footer_btn_group {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+.myzone-personalInfo-perSetting .perSetting_save_btn {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    background: #4496d2;
+    font-size: 16px;
+    border-radius: 4px;
+}

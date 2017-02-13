@@ -1,0 +1,9 @@
+{
+    "waitcompiled": "待编平台",
+    "pending": "待审平台",
+    "signed": "已签发平台",
+    "focus":"已签发平台",
+    "usermanage": "组织用户管理",
+    "batchgeneratingnews":"已签发平台",
+    "batchmovenews":"已签发平台"
+}

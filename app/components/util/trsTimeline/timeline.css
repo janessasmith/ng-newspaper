@@ -1,0 +1,150 @@
+/*--- timeline ---*/
+
+.m_timeline {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.m_timeline:before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 27px;
+    bottom: 0;
+    left: 10%;
+    border-right: 1px solid #1aba9f;
+}
+
+.content_timeline.m_timeline .time_tick {
+    width: 60px;
+}
+
+.content_timeline.m_timeline:before {
+    left: 60px;
+    top: 5px;
+}
+
+.content_timeline.m_timeline .time_item_cnt {
+    margin-left: 77px;
+}
+
+.content_timeline.m_timeline .time_tick span.circle2 {
+    display: inline-block;
+    width: 67px;
+    margin-right: 0;
+}
+
+.content_timeline.m_timeline .time_item {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.content_timeline.m_timeline .time_item_cnt {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-right: 10px;
+    border-bottom: 1px solid #efefef;
+       word-break: break-all;
+    width: 72%;
+}
+
+.m_timeline .time_tick {
+    width: 10%;
+    text-align: right;
+}
+
+.m_timeline .time_tick h5.clock {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 38px;
+    margin-right: -14px;
+    background: url(./editingCenter/app/images/clock.png) no-repeat right center;
+    margin-top: 20px;
+}
+
+.m_timeline .time_tick h5.circle {
+    padding-right: 24px;
+    margin-right: -7px;
+    background: url(./editingCenter/app/images/bigcircle.png) no-repeat right center;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.m_timeline .time_tick span.circle2 {
+    padding-right: 24px;
+    margin-right: -8px;
+    background: url(./editingCenter/app/images/smallcircle.png) no-repeat right center;
+}
+
+.m_timeline .time_item {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.m_timeline .time_item>.time_tick {
+    position: absolute;
+    margin-top: -10px;
+    top: 50%;
+}
+
+.m_timeline .time_item_cnt {
+    display: inline-block;
+    padding-right: 10px;
+    margin-left: 11%;
+}
+
+.m_timeline .time_item_cnt a {
+    float: left;
+    display: block;
+    margin-top: 5px;
+    margin-left: 8px;
+    color: #666;
+}
+
+.m_timeline .time_item_cnt a.exttype {
+    cursor: pointer;
+    color: #0097ce;
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+
+/*其他*/
+
+.flow_ver {
+    list-style: none;
+    background-color: #fff;
+}
+
+.flow_ver li {
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+
+.flow_ver li a {
+    color: #3098d5;
+}
+
+.editCompiledobjTime .copyDraftTitle {
+    overflow: hidden;
+}
+
+.editCompiledobjTime .copyDraftTitle h5 {
+    float: left;
+    margin-left: 82px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.editCompiledobjTime .copyDraftTitle .copyDraftCon {
+    float: left;
+    margin-top: 17px;
+    overflow: hidden;
+}

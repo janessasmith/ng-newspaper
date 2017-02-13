@@ -1,0 +1,25 @@
+.table tbody tr td span.span-orange {
+    background: url("./editingCenter/iWo/images/i35.png") no-repeat left 46%;
+    color: #ff8a38;
+    padding-left: 14px;
+}
+
+.table tbody tr td span.span-red {
+    background: url("./editingCenter/iWo/images/i36.png") no-repeat left 46%;
+    color: #ef4f43;
+    padding-left: 14px;
+}
+
+.img-margin-right-5 {
+    margin-right: 5px;
+}
+
+.edit_mid_received_left {
+    float: left;
+    padding-left: 15px;
+}
+
+.edit_mid_received_right {
+    float: right;
+    padding-right: 15px;
+}

@@ -1,0 +1,20 @@
+<div class="create_move modal-dialog">
+    <div class="modal-content">
+        <div class="toBeCompiled-review-head">
+            <p class="ng-binding">移动</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+        </div>
+        <div class="check_move">
+            <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" on-node-toggle="showToggle(node)" class="tree-light" tree-model="treedata" options="treeOptions" on-selection="showSelected(node)">
+                <input type="radio" ng-disabled=" selectedChnlId ==node.CHANNELID" name="radio" ng-click="chooseChannel(node)" />
+                <a title="{{node.CHNLDESC}}" href="javascript:void(0)">
+                {{node.CHNLDESC}}
+                </a>
+            </treecontrol>
+        </div>
+        <div class="button_move">
+            <button ng-click="confirm()" class="mr10 btn_confirm">确定</button>
+            <button ng-click="cancel()" data-dismiss="modal" class="btn_cancel">取消</button>
+        </div> 
+    </div>
+</div>

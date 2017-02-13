@@ -1,0 +1,193 @@
+<div class="customMonitor">
+    <div class="customMonitor_nav row">
+        <div class="col-md-8 col-lg-9"></div>
+        <div class="col-md-4 col-lg-3">
+            <ol class="pull-right edit_breadcrumb">
+                <li>
+                    <span>自定义监控</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="customMonitor_con">
+        <div class="customMonitor_con_addMonitor">
+            <div class="addMonitor_head">
+                <span>监控管理</span>
+            </div>
+            <div class="addMonitor_content">
+                <a ui-sref="plan.custommonitor.add">
+                    <button class="btn btn-default btn-commen opacity100" ng-mouseenter="status.hoverStatus='add'" ng-mouseleave="status.hoverStatus=''">
+                        <span class="s_icon">
+                        <img ng-src="./planningCenter/cueSelectedTopic/customMonitor/img/{{status.hoverStatus=='add'?'cm.png':'cm-1.png'}}" alt="">
+                    </span> 添加监控
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="customMonitor_con_myMonitor">
+            <div class="myMonitor_head">
+                <span>我的监控</span>
+                <div class="myMonitor_head_right">
+                    每页显示：
+                    <b class="{{page.pagesize==10?'selected':''}}" ng-click="setPageSize(10)">10条</b><i>|</i>
+                    <b class="{{page.pagesize==20?'selected':''}}" ng-click="setPageSize(20)">20条</b><i>|</i>
+                    <b class="{{page.pagesize==50?'selected':''}}" ng-click="setPageSize(50)">50条</b>
+                </div>
+            </div>
+            <div class="myMonitor_con">
+                <div class="myMonitor_con_left" ng-repeat="monitor in data.monitors">
+                    <div class="myMonitor_con_left_top">
+                        <div class="myMonitor_con_left_top_left" title="{{monitor.title}}" ng-bind="monitor.title | trsLimitTo:60"></div>
+                        <div class="myMonitor_con_left_top_right">
+                            <a ui-sref="plan.custommonitor.add({id:monitor.ID})"><img src="./planningCenter/cueSelectedTopic/customMonitor/img/cm-2.png">编辑</a>
+                            <a href="javascript:void(0)" ng-click="deleteMonitor(monitor)"><img src="./planningCenter/cueSelectedTopic/customMonitor/img/cm-3.png">删除</a>
+                            <a ui-sref="plan.custommonitor.preview({id:monitor.ID})"><img src="./planningCenter/cueSelectedTopic/customMonitor/img/cm-4.png">更多详情</a>
+                        </div>
+                    </div>
+                    <div class="myMonitor_con_left_bottom">
+                        <div class="">
+                            <tabset justified="true">
+                                <tab heading="最新文章" ng-click="getLatestArticles(monitor)">
+                                    <table class="table table-striped data-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="cm-number">序号</th>
+                                                <th width="30%">标题</th>
+                                                <!-- <th class="cm-hot">热度</th> -->
+                                                <th class="cm-source">来源</th>
+                                                <th class="cm-datetime">发布时间</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in monitor.latestArticle.items">
+                                                <td ng-bind="$index+1"></td>
+                                                <td class="cm-left" ng-init="trustTitle(item)">
+                                                    <div ng-mouseenter="showTitle(item,$event,300)" ng-mouseleave="item.isShowTitle=false" class="title">
+                                                        <a target="_blank" ui-sref="resourcedetail({guid:item.ZB_GUID_CHAR,indexname:item.TABLENAME})" ng-bind-html="item.DOCTITLE"></a>
+                                                        <div class="custom-wrap" ng-show="!!item.isShowTitle" ng-style="item.panelpostion">
+                                                            <h6 ng-bind-html="item.DOCTITLE"></h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <!-- <td>2</td> -->
+                                                <td ng-bind="item.SOURCESITE"></td>
+                                                <td ng-bind="item.DOCPUBTIME"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="page">
+                                        <pagination total-items="monitor.latestArticle.ITEMCOUNT" ng-change="pageChanged(monitor)" ng-model="monitor.latestArticle.startpage" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.pagesize" rotate="false" num-pages="monitor.latestArticle.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                                        <!-- <trs-pagenation-right callback="jumpToPage(monitor)" page="monitor.latestArticle" currpage="monitor.latestArticle.willgo"></trs-pagenation-right> -->
+                                    </div>
+                                </tab>
+                                <tab heading="最热文章" ng-click="getHottestArticle(monitor)">
+                                    <table class="table table-striped data-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="cm-number">序号</th>
+                                                <th width="30%">标题</th>
+                                                <th class="cm-hot">热度</th>
+                                                <th class="cm-source">来源</th>
+                                                <th class="cm-datetime">发布时间</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="item in monitor.hottestArticle.items">
+                                                <td ng-bind="$index+1"></td>
+                                                <td class="cm-left" ng-init="trustTitle(item)">
+                                                    <div ng-mouseenter="showTitle(item,$event,300)" ng-mouseleave="item.isShowTitle=false" class="title">
+                                                        <a target="_blank" ui-sref="resourcedetail({guid:item.GUID,indexname:item.TABLENAME})" ng-bind-html="item.DOCTITLE"></a>
+                                                        <div class="custom-wrap" ng-show="!!item.isShowTitle" ng-style="item.panelpostion">
+                                                            <h6 ng-bind-html="item.DOCTITLE"></h6>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td ng-bind="item.HOTPOINTNUM"></td>
+                                                <td ng-bind="item.SOURCESITE"></td>
+                                                <td ng-bind="item.DOCPUBTIME">今天11:52:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="page">
+                                        <pagination total-items="monitor.hottestArticle.ITEMCOUNT" ng-change="pageChanged(monitor)" ng-model="monitor.hottestArticle.startpage" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.pagesize" rotate="false" num-pages="monitor.hottestArticle.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                                        <!-- <trs-pagenation-right callback="jumpToPage(monitor)" page="monitor.hottestArticle" currpage="monitor.hottestArticle.willgo"></trs-pagenation-right> -->
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="myMonitor_con_right" ng-repeat="monitor in data.monitors" ng-if="$index%2==1">
+                    {{$index%2}}
+                    <div class="myMonitor_con_right_top">
+                        <div class="myMonitor_con_right_top_left"><b>习近平</b>访问捷克</div>
+                        <div class="myMonitor_con_right_top_right">
+                            <a href="#"><img src="./editingCenter/app/images/b1.png">编辑</a>
+                            <a href="#"><img src="./editingCenter/app/images/b1.png">删除</a>
+                            <a ui-sref="plan.custommonitor.preview"><img src="./editingCenter/app/images/b1.png">更多详情</a>
+                        </div>
+                    </div>
+                    <div class="myMonitor_con_right_bottom">
+                        <div class="">
+                            <tabset justified="true">
+                                <tab heading="最新文章">
+                                    <table class="table table-striped data-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="cm-number">序号</th>
+                                                <th>标题</th>
+                                                <th class="cm-hot">热度</th>
+                                                <th class="cm-source">来源</th>
+                                                <th class="cm-datetime">发布时间</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="cm-left">习近平访捷克:深化经贸合作，助理双方发展</td>
+                                                <td>2</td>
+                                                <td>人民网</td>
+                                                <td>今天11:52:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="page">
+                                        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                                        <trs-pagenation-right callback="jumpToPage()" page="page" currpage="status.copyCurrPage"></trs-pagenation-right>
+                                    </div>
+                                </tab>
+                                <tab heading="最热文章">
+                                    <table class="table table-striped data-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="cm-number">序号</th>
+                                                <th>标题</th>
+                                                <th class="cm-hot">热度</th>
+                                                <th class="cm-source">来源</th>
+                                                <th class="cm-datetime">发布时间</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="cm-left">习近平访捷克:深化经贸合作，助理双方发展</td>
+                                                <td>2</td>
+                                                <td>人民网</td>
+                                                <td>今天11:52:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="page">
+                                        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                                        <trs-pagenation-right callback="jumpToPage()" page="page" currpage="status.copyCurrPage"></trs-pagenation-right>
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+                </div> -->
+                <div cg-busy="loadingPromise"></div>
+            </div>
+        </div>
+    </div>
+</div>

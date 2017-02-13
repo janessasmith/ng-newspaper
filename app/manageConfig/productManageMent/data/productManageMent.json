@@ -1,0 +1,280 @@
+{
+    "DATA": {
+        "NEWSPAPER": [{
+            "SITEID": 0,
+            "SITENAME": "报纸管理",
+            "SITEDESC": "报纸管理"
+        }],
+        "APP": [{
+            "DOCNAME": "浙江新闻",
+            "DOCTYPE": [
+                "频道",
+                "栏目",
+                "地市"
+            ]
+        }, {
+            "DOCNAME": "钱江晚报",
+            "DOCTYPE": [
+                "你好",
+                "再见"
+            ]
+        }, {
+            "DOCNAME": "爱海宁",
+            "DOCTYPE": [
+
+            ]
+        }, {
+            "DOCNAME": "环球时报",
+            "DOCTYPE": [
+
+            ]
+        }],
+        "WEBSITE": [{
+            "DOCNAME": "浙江在线",
+            "DOCTYPE": [{
+                "CHANNELNAME": "花千骨",
+                "CHANNELITEM": ["人事", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "红高粱",
+                "CHANNELITEM": ["人事", "谣言"]
+            }, {
+                "CHANNELNAME": "北上广不相信眼泪",
+                "CHANNELITEM": ["人事", "路飞", "谣言"]
+            }, {
+                "CHANNELNAME": "大明宫词",
+                "CHANNELITEM": ["人事", "江姐", "谣言"]
+            }, {
+                "CHANNELNAME": "哈喽",
+                "CHANNELITEM": ["人事", "啊咯", "谣言"]
+            }, {
+                "CHANNELNAME": "你刷呀",
+                "CHANNELITEM": ["花花"]
+            }, {
+                "CHANNELNAME": "假数据可以了",
+                "CHANNELITEM": ["便宜", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "对啊",
+                "CHANNELITEM": ["人事", "嗯啊", "谣言"]
+            }, {
+                "CHANNELNAME": "我提交一下",
+                "CHANNELITEM": ["不能动", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "你调的方法",
+                "CHANNELITEM": ["人事", "吃肉", "谣言"]
+            }, {
+                "CHANNELNAME": "不是页面吗",
+                "CHANNELITEM": ["划算", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "那你再提交以下",
+                "CHANNELITEM": ["人事", "辟谣", "吃不动"]
+            }, {
+                "CHANNELNAME": "今天平安夜",
+                "CHANNELITEM": ["人事", "串串", "谣言"]
+            }, {
+                "CHANNELNAME": "送苹果",
+                "CHANNELITEM": ["四百", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "我有苹果核",
+                "CHANNELITEM": ["人事", "高跟", "谣言"]
+            }, {
+                "CHANNELNAME": "续航",
+                "CHANNELITEM": ["人事", "辟谣", "好贵"]
+            }, {
+                "CHANNELNAME": "玩上再续航",
+                "CHANNELITEM": ["礼物", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "先坐一会儿",
+                "CHANNELITEM": ["人事", "即时", "谣言"]
+            }, {
+                "CHANNELNAME": "甄嬛传",
+                "CHANNELITEM": ["人事", "辟谣", "因素"]
+            }, {
+                "CHANNELNAME": "你们先去",
+                "CHANNELITEM": ["人事", "毒死", "谣言"]
+            }, {
+                "CHANNELNAME": "找拍子啊",
+                "CHANNELITEM": ["有毒", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "我拒绝带拍子",
+                "CHANNELITEM": ["可怕", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "马钢",
+                "CHANNELITEM": ["呵呵", "有毒", "污"]
+            }, {
+                "CHANNELNAME": "没多少钱",
+                "CHANNELITEM": ["收钱", "辟谣", "谣言"]
+            }, {
+                "CHANNELNAME": "我们连调",
+                "CHANNELITEM": ["人事"]
+            }, {
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }]
+        }, {
+            "DOCNAME": "永康生活网",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "浙商网",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "凤凰新闻",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "大众点评",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "糯米团购",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "百合网",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "音悦台",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "游明星空",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "电影巴士",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "百度贴吧",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }, {
+            "DOCNAME": "斗鱼",
+            "DOCTYPE": [{
+                "CHANNELNAME": "涛涛他们走了",
+                "CHANNELITEM": ["吃饭", "走了"]
+            }, {
+                "CHANNELNAME": "高尔夫球",
+                "CHANNELITEM": ["关之琳"]
+            }, {
+                "CHANNELNAME": "春卷",
+                "CHANNELITEM": ["容祖儿"]
+            }, {
+                "CHANNELNAME": "林妙可",
+                "CHANNELITEM": ["妙可下面可妙了"]
+            }]
+        }]
+    }
+}

@@ -1,0 +1,141 @@
+.productManageMent_main {
+    width: 100%;
+    min-height: 670px;
+    padding-left: 0px!important;
+}
+
+.productManageMent-website-modify .modal-content {
+    width: 490px;
+    height: 398px;
+    background: #DDD;
+    top: 100px;
+    margin: 0px auto;
+}
+
+.product-manage-left {
+    border: 1px solid #797979;
+    min-height: 780px;
+    font-family: "微软雅黑";
+    padding-left: 0px;
+    padding-right: 0px;
+    background: #374760;
+}
+
+.product-manage-left .product-manage-left-content a {
+    padding-left: 20px;
+}
+
+.product-manage-left .product-manage-left-content a.addSite {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+}
+
+.product-manage-ment-nav-newspaper {
+    background: url("./editingCenter/app/images/t-b1.png") #222933 22% center no-repeat;
+}
+
+.product-manage-ment-nav-website {
+    background: url("./editingCenter/app/images/l3.png") #222933 14% center no-repeat;
+}
+
+.product-manage-ment-nav-app {
+    background: url("./editingCenter/app/images/l2.png") #222933 18% center no-repeat;
+    position: relative;
+}
+
+.product-manage-ment-nav-newspaper {
+    background-size: 18px 16px;
+}
+
+.product-manage-ment-nav-website {
+    background-size: 18px 16px;
+}
+
+.product-manage-ment-nav-app {
+    background-size: 16px 16px;
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1681px) {
+    .product-manage-ment-nav-newspaper a,
+    .product-manage-ment-nav-app,
+    .editing-nav-website a {
+        display: block;
+        padding: 9px 3px 6px 20px!important;
+        overflow: hidden;
+        font-size: 16px !important;
+    }
+    .productManageMent_main .icon-compiled a,
+    .productManageMent_main .icon-pending a,
+    .productManageMent_main .icon-signed a {
+        font-size: 16px !important;
+        background: transparent none repeat scroll 0% 0%;
+        padding: 7px 3px 6px 20px !important
+    }
+}
+
+.product-manage-nav-paper {
+    background: url("./editingCenter/app/images/l1.png") #222933 22% center no-repeat;
+}
+
+.pmm-left-accordion-active {
+    background: url("./editingCenter/app/images/l12.png") no-repeat scroll 101% center;
+}
+
+.pmm-left-accordion,
+.pmm-left-accordion-add {
+    margin-left: -22px;
+    border-top: 1px solid #25395a;
+}
+
+.pmm-left-accordion-add {
+    font-size: 1.5em;
+}
+
+.pmm-left-accordion {
+    background: #0b2242;
+}
+
+.iwo_accordion .panel-default > .panel-heading .panel-title a.pmm-left-item {
+    padding-left: 25px;
+}
+
+.editing-nav ul li.product-manage-nav-paper a {
+    font-family: "Microsoft Yahei";
+    font-size: 16px;
+    color: #eee;
+}
+
+.manage-main-left .edit_right_head.proManMent_pmm_head {
+    height: 45px;
+    padding-top: 4px;
+}
+
+
+/*newpaper table operate*/
+
+.iwo_operate_div_all {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.iwo_operate_div_all .iwo_operate_div_2 {
+    display: inline-block;
+    float: left;
+    text-align: left;
+}
+
+.iwo_operate_div_all .mr5 {
+    margin-right: 5px;
+}
+
+.product_main_pd .table tbody tr td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.system_main_pd .edit_table .page {
+    bottom: 0px!important;
+}

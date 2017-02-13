@@ -1,0 +1,188 @@
+.cue-monitor-config-body button,
+.cue-monitor-config-footer .new-role-btn {
+    text-align: center;
+    font-size: 12px;
+    font-family: "micsoftYahei"
+}
+
+.cue-monitor-config-window .modal-dialog {
+    width: 473px;
+    /*overflow: hidden;*/
+    /*background: #ddd;*/
+    border-radius: 6px;
+    margin-top: 200px
+}
+
+.cue-monitor-config-window .modal-dialog .modal-content {
+    background: #ddd
+}
+
+.cue-monitor-config-container {
+    width: 462px;
+    background: #f0f2f5;
+    margin: 5px auto
+}
+
+.cue-monitor-config-head {
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    background: #fff
+}
+
+.cue-monitor-config-head p {
+    color: #333;
+    font-weight: 700;
+    float: left;
+    margin-left: 18px
+}
+
+.cue-monitor-config-head img {
+    float: right;
+    margin: 12px 10px 0 0;
+    cursor: pointer
+}
+
+.cue-monitor-config-body {
+    width: 444px;
+    background: #fff;
+    /*overflow: hidden;*/
+    margin: 8px auto 0;
+    border: 1px solid #ccc
+}
+
+.cue-monitor-config-body input[type=text] {
+    width: 308px;
+    float: left;
+    margin: 16px 0 0 14px;
+    font-size: 12px;
+}
+
+.cue-monitor-config-body button {
+    width: 96px;
+    height: 34px;
+    line-height: 32px;
+    background: #fff;
+    margin: 16px 0 0 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: #333
+}
+
+.cue-monitor-config-body ul.list {
+    clear: both;
+    margin-left: 14px;
+    padding: 12px 0;
+    overflow: hidden
+}
+
+.cue-monitor-config-body ul.list li {
+    float: left;
+    width: 142px;
+    list-style: none
+}
+
+.cue-monitor-config-body ul.list li img {
+    float: left;
+    margin-top: 12px;
+    cursor: pointer
+}
+
+.cue-monitor-config-body ul.list li span {
+    font-size: 12px;
+    line-height: 40px;
+    color: #666;
+    float: left;
+    margin-left: 10px;
+    width: 116px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.cue-monitor-config-body ul.similar-site {
+    position: absolute;
+    width: 308px;
+    max-height: 112px;
+    top: 48px;
+    border: 1px solid #ccc;
+    left: 14px;
+    z-index: 222;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.cue-monitor-config-body ul.similar-site li {
+    list-style: none;
+    line-height: 28px;
+    cursor: pointer;
+    color: #555;
+}
+
+.cue-monitor-config-body ul.similar-site li:hover {
+    background: #4496d2;
+    color: #fff;
+}
+
+.cue-monitor-config-body ul.similar-site li span {
+    font-size: 12px;
+    display: block;
+    margin-left: 10px;
+}
+
+.cue-monitor-config-footer {
+    overflow: hidden;
+    padding: 14px 10px 14px 0
+}
+
+.cue-monitor-config-footer .new-role-btn {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    border: none;
+    background: #4496d2;
+    color: #fff;
+    float: right;
+    margin-left: 14px;
+    border-radius: 4px
+}
+
+.cue-monitor-config-footer .unable-save,
+.cue-monitor-config-body .notAllowedCursor {
+    background: #C1C1C1;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.calendar_content_left .fc-toolbar {
+    height: 0px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.calendar .recent-policy-page {
+    height: 40px;
+    overflow: hidden;
+    width: 100%;
+    margin: 5px auto 5px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.calendar .recent-policy-page .page_left {
+    float: left;
+    margin: 8px 0px 0px 0px;
+}
+
+.calendar .recent-policy-page p {
+    margin: 10px 10px 0px 0px;
+    float: left;
+    min-width: 30%;
+}
+
+.calendar .tab-content .recent-policy-page a.more {
+    float: right;
+    margin-right: 26px;
+    margin-top: 15px;
+    font-size: 12px;
+}

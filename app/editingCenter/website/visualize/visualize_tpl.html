@@ -1,0 +1,60 @@
+<div trs-scroll-fix class="row edit_right_head edit_website_visualize">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen opacity100" ng-click="visualizeNew()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='visualizeNew'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/{{status.batchOperateBtn['hoverStatus']=='visualizeNew'?'b104.png':'q41.png'}}"/>
+            </span> 可视化新建
+        </button>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li class="active" ng-bind="status.channelName"></li>>
+            <li class="active">可视化专题</li>
+        </ol>
+    </div>
+</div>
+</div>
+<div class="row edit_right_mid">
+</div>
+<div class="edit_table border_radius_5 edit_website_visualize_main website_timeSign_pd">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <!-- <th class="td-check xcol-icon"></th> -->
+                <th class="td-number">序号</th>
+                <th>模板名称</th>
+                <th>最后修改人</th>
+                <th>最后修改时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr ng-repeat="item in data.items" ng-class="{'selected-row':item.TEMPID==data.selectDoc.TEMPID}">
+                <!-- <td class="td-check">
+                    <trs-single-radio ischecked="item.TEMPID==data.selectDoc.TEMPID" label="{{item.desc}}" callback="selectDoc(item)" imgurl="{{item.imgurl}}"></trs-single-radio>
+                </td> -->
+                <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td>
+                <td class="ta-l pointer" ng-bind="item.TEMPNAME" ng-click="visualizeEdit(item)"></td>
+                <!--标题-->
+                <td ng-bind="item.TRUENAME" ng-click=""></td>
+                <!--最后修改人-->
+                <td ng-bind="item.LASTMODIFIEDTIME"></td>
+                <!--最后修改时间-->
+                <td>
+                    <span ng-click="configBinding(item)" class="pointer">{{item.TEMPID!=data.selectDoc.TEMPID?'绑定模板':'解除绑定'}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" new-pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        </span>
+        <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+        <!-- <div class="edit_website_visualize_buttonGroup">
+            <button ng-click="confirmBinding()">确定</button>
+            <button ng-click="cancelBinding()">取消</button>
+        </div> -->
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

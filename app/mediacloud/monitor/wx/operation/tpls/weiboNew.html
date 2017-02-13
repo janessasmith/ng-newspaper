@@ -1,0 +1,29 @@
+<div ng-controller="newWeixinCtr">
+    <div class="new-wb-tit">
+        <div>
+             <span class="new-wb-sp">最新微博</span>
+        </div>
+        <div style="position: relative;width: 355px;overflow: hidden;float: left;height: 29px;">
+            <div style="position: absolute;" change  num="2" ele="zxChange" width="355">
+                <a href="" checked="lg-sel-cur" seniority class="lg-sel-btn lg-sel-cur">官方账号</a>
+                <a href="" checked="lg-sel-cur" seniority class="lg-sel-btn">全部</a>
+                <a href="" ng-repeat="class in classs" class="lg-sel-btn" 
+                       checked="lg-sel-cur" ng-click="getContent(class.ClassId);">{{class.ClassName}}</a>
+            </div>
+        </div>
+        <div>
+            <a href class="wb-go-btn" id="zxChange"></a>
+        </div>  
+    </div>
+    <div class="league-deal-list" style="padding-top: 4px;">
+         <a  ui-sref="weixinnewList.list({accountType:newAccountType,orderType:1})" href class="wb-add-btn"></a>
+        <div class="wb-ls-bk" ng-repeat="content in contents">
+            <div class="wb-gf-img wb-ls-img"><img ng-src="app/monitor/common/images/fix_img1_03.png" alt=""></div>
+            <div class="new-wb-deal">
+                <div class="wb-deal-name"><a href="javascript:void(0);">{{content.name}}</a><img ng-src="app/monitor/common/images/new-wb-icon01.jpg" alt=""/></div>
+                <a href class="new-wb-p">{{content.content}}</a>
+                <p><span>{{content.crtime}}</span><span>来自</span>{{content.source}}</span></p>
+            </div>
+        </div>
+    </div>
+</div>

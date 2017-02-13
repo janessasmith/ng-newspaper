@@ -1,0 +1,113 @@
+.edit-weixin-attribute-text {
+    width: 552px
+}
+
+.weixin_outerBorder {
+    padding: 10px;
+    border: 1px solid #d4d4d6
+}
+
+.weixin_vx {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.weixin_headline {
+    width: 97%
+}
+
+.weixin_headline .weixin_islist {
+    min-height: 74px;
+    border-right: 1px solid #d4d4d6;
+    border-top: 1px solid #d4d4d6;
+    border-bottom: 1px solid #d4d4d6;
+    background-color: #F1F2F6
+}
+
+.weixin_headline .weixin_islist li {
+    float: left;
+    min-width: 67px;
+    padding: 10px;
+    text-align: center;
+    border-left: 1px solid #d4d4d6;
+    cursor: pointer;
+}
+
+.weixin_headline .weixin_islist li .islist_icon,
+.weixin_headline .weixin_islist li .islist_txt {
+    display: block
+}
+
+.weixin_headline .weixin_islist li.islist_Select {
+    background-color: #fff
+}
+
+.weixin_headline .weixin_islist li .islist_txt {
+    padding-top: 10px
+}
+
+.weixin_headline .weixin_news_detail {
+    min-height: 722px;
+    border: 1px solid #d4d4d6;
+    border-top: none
+}
+
+.weixin_headline .weixin_news_detail .weixin_news_detail_first {
+    background: #FAFAFA;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d4d4d6;
+    text-align: right;
+    padding-right: 5px!important
+}
+
+.weixin_headline .weixin_news_detail .weixin_news_detail_first .detail_first_time {
+    font-size: 10px!important
+}
+
+.weixin_news .m_box_item .weixin_news_keywords,
+.weixin_news .m_box_item .weixin_news_plus {
+    margin-top: 8px;
+    text-indent: 20px
+}
+
+.weixin_news .m_box_item .weixin_news_abstract {
+    padding-top: 60px
+}
+
+.weixin_news .m_box_item .suggestion {
+    float: left
+}
+
+.weixin_news .m_box_item .weixin_news_pics {
+    padding-bottom: 15px
+}
+
+.weixin_news .m_box_item .weixin_news_delete,
+.weixin_news .m_box_item .weixin_news_upload {
+    float: left;
+    cursor: pointer
+}
+
+.weixin_news .m_box_item .weixin_news_upload img {
+    margin-top: -5px
+}
+
+.weixin_news .m_box_item .weixin_news_delete img,
+.weixin_news .m_box_item .weixin_news_upload img {
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+.weixin_news .m_box_item .weixin_news_titlePage {
+    clear: both;
+    padding-top: 15px
+}
+
+.weixin-box-fix {
+    position: relative;
+    border: 1px solid #DADADA;
+    background-color: #FBFBFB;
+    padding: 10px 0;
+    height: 50px
+}

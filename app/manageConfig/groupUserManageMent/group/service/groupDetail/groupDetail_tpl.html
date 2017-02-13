@@ -1,0 +1,37 @@
+<div class="groupDetail">
+    <div class="submit">
+        <div class="head">
+            <span ng-bind="data.modalTitle"></span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="body">
+                <div class="main">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>组织名称</th>
+                                <td ng-bind="data.groupDetail.GNAME"></td>
+                            </tr>
+                            <tr>
+                                <th>组织简称</th>
+                                <td ng-bind="data.groupDetail.GDESC"></td>
+                            </tr>
+                            <tr>
+                                <th>组织邮箱</th>
+                                <td ng-bind="data.groupDetail.EMAIL"></td>
+                            </tr>
+                            <tr>
+                                <th>组织路径</th>
+                                <td ng-bind="data.groupDetail.GROUPPATH"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <div class="foot">
+                <div>
+                    <button class="cancel" ng-click="cancel()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

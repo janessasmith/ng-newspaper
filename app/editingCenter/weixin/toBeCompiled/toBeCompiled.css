@@ -1,0 +1,19 @@
+.edit_right_head .noline {
+	text-decoration: none;
+}
+
+.edit_table table thead tr th.w50 {
+	width: 50px;
+}
+
+.edit_table table thead tr th.th-num {
+	width: 70px;
+}
+
+.edit_table table tbody tr td.tx-l {
+	text-align: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+	

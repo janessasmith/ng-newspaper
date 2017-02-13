@@ -1,0 +1,113 @@
+.man_produ_importTemplate .modal-dialog{
+    width:430px;
+}
+.man_produ_importTemplate .modal-content {
+    margin: 0px auto;
+}
+
+.man_produ_modify {
+    width: 100%;
+    height: auto;
+    background-color: #F0F2F5;
+}
+
+.man_produ_modify_head {
+    background-color: #fff;
+}
+
+.man_produ_website_importTemplate {
+    width: 395px;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 0px auto;
+    margin-top: 10px;
+    padding: 15px 20px;
+}
+
+.man_produ_website_importTemplate>span,
+.importTemplate_button>span {
+    font-size: 12px;
+}
+.man_produ_website_importTemplate p.p_fix{margin: 7px 0px 0px 45px;float: left;}
+
+.man_produ_website_importTemplate>b {
+    font-size: 14px;
+}
+
+.importTemplate_button {
+    width: 100px;
+    height: 35px;
+    color: #fff;
+    line-height: 35px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #4496D2;
+}
+
+.importTemplate_icon {
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-right: 8px;
+    float: left;
+    border-right: 1px solid #fff;
+    background: url("./editingCenter/app/images/b7-1.png") no-repeat 50%;
+}
+
+.importTemplate_radio {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+}
+
+.importTemplate_radio>input {
+    margin-right: 10px;
+}
+
+.importTemplate_radio>span {
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.importTemplate-select {
+    width: 200px;
+    height: 28px;
+    padding-left: 10px;
+    color: #666;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-right: 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.margin-add {
+    margin-top: 10px;
+}
+
+.man_produ_sensitive_add .man_produ_sensitive_text {
+    width: 240px;
+    display: inline-block;
+}
+
+.productManageMent-website-sensitive-import .man_produ_modify_footer {
+    padding-left: 120px;
+}
+
+.productManageMent-website-sensitive-import .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.importTemplate_color {
+    float: left;
+    margin: -35px 0 0 100px;
+    width: 100%;
+    color: #000;
+    text-align: left;
+    border-top: none!important;
+}

@@ -1,0 +1,21 @@
+<div class="toBeCompiled-list-container">
+	<div class="toBeCompiled-review-head">
+        <p >自定义稿库</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="toBeCompiled-darft-list">
+        <div>
+            <span>名称:</span>
+            <input type="text" ng-model="data.name">
+        </div>
+        <!-- <div>
+            <span>描述:</span>
+            <input type="text" ng-model="data.desc">
+        </div> -->
+    </div>
+    <div class="toBeCompiled-directSign-footer">
+        <button class="new-role-btn btn_cancel btn-delete ml400" ng-click="delete()" ng-if="data.modalid">删除</button>
+    	<button class="new-role-btn btn_confirm" ng-class="{'ml460':!data.modalid,'cursor-disabled':data.name==''}" ng-disabled="data.name==''" ng-click="confirm()">确定</button>
+        <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>      
+    </div>
+</div>

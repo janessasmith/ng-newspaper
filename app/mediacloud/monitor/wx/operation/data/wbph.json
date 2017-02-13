@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "name": "重庆日报官方微信",
+            "accountUnit": "重庆日报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "95",
+            "weixinId": "dj-love-ysl"
+        },
+        {
+            "name": "重庆晨报官方微信",
+            "accountUnit": "重庆晨报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "87",
+            "weixinId": "dj"
+        },
+        {
+            "name": "重庆晚报官方微信",
+            "accountUnit": "重庆晚报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "85",
+            "weixinId": "love"
+        },
+         {
+            "name": "华龙网官方微信",
+            "accountUnit": "重庆日报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "95",
+            "weixinId": "dj-love-ysl"
+        },
+        {
+            "name": "重庆晚报官方微信",
+            "accountUnit": "重庆晨报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "87",
+            "weixinId": "dj"
+        },
+        {
+            "name": "都市报官方微信",
+            "accountUnit": "重庆晚报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "85",
+            "weixinId": "love"
+        }
+    ]
+}

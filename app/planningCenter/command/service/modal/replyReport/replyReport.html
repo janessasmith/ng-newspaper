@@ -1,0 +1,22 @@
+<!--勾选精选确认页-->
+<div class="modal-header">
+    <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+    <h4 class="modal-title"><i class="fa fa-map-marker text-primary"></i> 填报补充</h4>
+</div>
+<div class="modal-body mc-padding-xs">
+    <div class="row">
+        <label class="col-md-1 nowrap">报题:</label>
+        <div class="col-sm-11" ng-bind-html="report.CONTENT"></div>
+    </div>
+    <div class="row">
+        <label class="col-md-1 nowrap">补充:</label>
+        <div class="col-md-11 resonableEditer">
+            <script id="replyEditer" name="content" type="text/plain"> </script>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary btn_confirm" ng-click="submit()">确定</button>
+    <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+</div>
+</div>

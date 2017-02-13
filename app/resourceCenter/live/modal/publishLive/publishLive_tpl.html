@@ -1,0 +1,86 @@
+<form name="liveForm" novalidate>
+    <div class='live'>
+        <div class="header">
+            <p>发布直播</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        </div>
+        <div class="main">
+             <div class="children">
+                <p class="w90">推送频道</p>
+                <div class="con">
+                    <trs-single-select selected-option="status.selectedChannel" callback="queryByDropdown()" options="status.channels"></trs-single-select>
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">直播分类</p>
+                <div class="con">
+                    <trs-single-radio label="大事件" group="'classify'" ischecked="true" callback=""></trs-single-radio>
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">直播标题</p>
+                <div class="con">
+                    <div class="invalidate-input-box {{liveForm.name.$invalid?'has-error':''}}">
+                        <input class="form-control" type="text" name="name" ng-model="live.TITLE" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                    </div>
+                </div>
+            </div>
+            <div class="children" style="height:66px;">
+                <p class="w90">描述</p>
+                <div class="con">
+                    <div class="invalidate-input-box {{liveForm.name.$invalid?'has-error':''}}">
+                        <textarea class="form-control" name="description" ng-model="live.CONTENT" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200" ng-mouseenter="isShowTips_REMARKS=true" ng-mouseleave="isShowTips_REMARKS=false" is-show-tips="isShowTips_REMARKS" style=""> </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">属性</p>
+                <div class="con">
+                    <trs-checkbox ischecked="live.ISSHOW==1" callback="live.ISSHOW=live.ISSHOW==0?1:0"></trs-checkbox>是否显示
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">开始时间</p>
+                <div class="con">
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="live.STARTTIME" placeholder="Date" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgDate">
+                    </div>
+                    <div class="timeGroup ml20">
+                        <input type="text" size="8" class="form-control" ng-model="live.STARTTIME" data-time-format="HH:mm:ss" data-autoclose="1" data-minute-step="1" placeholder="Time" bs-timepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t1.png" class="imgTime">
+                    </div>
+                </div>
+            </div>
+            <div class="children" ng-if="!data.isCreate">
+                <p class="w90">结束时间</p>
+                <div class="con">
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="live.CLOSETIME" placeholder="Date" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgDate">
+                    </div>
+                    <div class="timeGroup ml20">
+                        <input type="text" size="8" class="form-control" ng-model="live.CLOSETIME" data-time-format="HH:mm:ss" data-autoclose="1" data-minute-step="1" placeholder="Time" bs-timepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t1.png" class="imgTime">
+                    </div>
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">发布时间</p>
+                <div class="con">
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="live.INSERTTIME" placeholder="Date" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgDate">
+                    </div>
+                    <div class="timeGroup ml20">
+                        <input type="text" size="8" class="form-control" ng-model="live.INSERTTIME" data-time-format="HH:mm:ss" data-autoclose="1" data-minute-step="1" placeholder="Time" bs-timepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t1.png" class="imgTime">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="submit" ng-click="confirm()">提交保存</button>
+        </div>
+    </div>
+</form>

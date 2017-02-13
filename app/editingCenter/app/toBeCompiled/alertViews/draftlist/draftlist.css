@@ -1,0 +1,50 @@
+.toBeCompiled-draftlist-window .modal-content {
+    width: 730px;
+    background: #DDD;
+    padding-right: 3px;
+    top: -60px;
+    margin: 0px auto;
+}
+
+.toBeCompiled-draftlist-window .toBeCompiled-draftlist-container .m_form .suggestion ul {
+    height: 220px;
+    overflow-y: auto;
+}
+
+.toBeCompiled-draftlist-container {
+    width: 724px;
+    background: #FFF;
+    margin: 2px 2px;
+    border-radius: 6px;
+    padding: 5px 5px;
+}
+
+.toBeCompiled-draftlist-container .m_form {
+    margin-right: 30px;
+}
+
+.toBeCompiled-draftlist-container .m_form tr td {
+    padding: 10px 0;
+}
+
+.toBeCompiled-draftlist-footer {
+    height: 52px;
+    padding: 12px 0px;
+    overflow: hidden;
+    margin-right: 30px;
+    margin-top: -60px;
+}
+
+.toBeCompiled-draftlist-footer .draftlist-btn {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    background: #4496d2;
+    float: right;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+}

@@ -1,0 +1,95 @@
+<tabset class="m_nav">
+    <tab heading="操作日志">
+        <img class="closeModal" src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        <div class="m_box_2">
+            <!-- <trs-timeline title="'操作日志'"> -->
+            <trs-timeline>
+                <p ng-bind="data.copyOperationLog[0].TITLE" class="logTitle"></p>
+                <div ng-repeat="(key, value) in data.Channel.copyOperationLog">
+                    <h3 ng-class="{'operateLog':$index%2==0}" ng-show="key |endsWith: 'App'">App</h3>
+                    <h3 ng-class="{'operateLog':$index%2==0}" ng-hide="key |endsWith: 'App'">{{key}}</h3>
+                    <timegroup tick="item.day" ng-repeat="item in data.operationLog[key]">
+                        <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                            <a class="minw45">{{n.value.OPERATION}}</a>
+                            <a class="minw80 pointer" ng-bind="n.value.USERNAME" title="{{n.value.OPERUSERNAME}}"></a>
+                            <a class="minw88" title="{{n.value.ATTRIBUTE}}" ng-bind="n.value.DESUSERNAME||n.value.ATTRIBUTE"></a>
+                            <!-- <a title="{{n.value.OPINION}}" class="exttype" ng-if="n.value.OPINION!==''">{{n.value.OPERATION}}意见</a> -->
+                            <a tooltip-placement="top" tooltip="{{n.value.OPINION}}" class="exttype" ng-if="n.value.OPINION!==''">{{n.value.OPERATION}}意见</a>
+                        </timeitem>
+                    </timegroup>
+                </div>
+            </trs-timeline>
+        </div>
+        <!--   <div class="websist_normal" data-ng-if="page.operationLog.CURRPAGE>=page.operationLog.PAGECOUNT">没有更多了...</div> -->
+        <div data-ng-if="page.operationLog.CURRPAGE<page.operationLog.PAGECOUNT" cg-busy="loadingPromise" class="website_timeline_load_more_2 text-center" ng-click="getLoadMore('copyOperationLog','operationLog','operationLog')">
+            <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+        </div>
+    </tab>
+    <tab heading="流程版本">
+        <img class="closeModal" src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        <div class="m_box_2">
+            <trs-timeline title="'流程版本'">
+                <timegroup tick="item.day" ng-repeat="item in data.versionTime">
+                    <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                        <a class="minw45">{{n.value.OPERATION}}</a>
+                        <a class="minw80" title="{{n.value.OPERSTATEDESC|trsLimitTo:12}}">{{n.value.OPERSTATEDESC}}</a>
+                        <a class="minw88">{{n.value.CRUSER}}</a>
+                        <a class="exttype" target="_blank" ui-sref="editingCenterPersonalVersionTime({objectversionid:n.value.OBJECTVERSIONID})">{{n.value.EXTTYPE}}</a>
+                    </timeitem>
+                </timegroup>
+            </trs-timeline>
+        </div>
+    </tab>
+    <tab heading="评审意见">
+        <img class="closeModal" src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        <div class="m_box_2 versionTime_comment">
+            <trs-timeline title="'评审意见'">
+                <timegroup tick="item.day" ng-repeat="item in data.comment">
+                    <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                        <a class="minw80 comment_name" ng-bind="n.value.TRUENAME"></a>
+                        <a ng-bind="n.value.COMMENT" ng-if="n.value.COMMTYPE==1" class="comment_content"></a>
+                        <audio preload controls ng-src="{{trustUrl(data.voiceObj[n.value.COMMENT])}}" ng-if="n.value.COMMTYPE==2"></audio>
+                        <!-- <span ng-bind="n.value.DURATION+' 秒'" class="comment_duration" ng-if="n.value.COMMTYPE==2"></span> -->
+                    </timeitem>
+                </timegroup>
+            </trs-timeline>
+        </div>
+        <div data-ng-if="page.comment.CURRPAGE<page.comment.PAGECOUNT" cg-busy="loadingPromise" class="website_timeline_load_more_2 text-center" ng-click="getLoadMoreComment()">
+            <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+        </div>
+    </tab>
+    <tab heading="复制稿日志" ng-show="status.hasCopyDraft">
+        <img class="closeModal" src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        <div class="m_box_2">
+            <div class="copyDraftTitle">
+                <h5>复制稿</h5>
+                <div class="copyDraftCon">
+                    <p ng-repeat="copyDraftTitle in data.copyDraft">
+                        <span>[{{copyDraftTitle.MEDIATYPENAME}}]</span>
+                        <span class="pointer" ng-click="getCopyDraftLog(copyDraftTitle.METADATAID)">{{copyDraftTitle.TITLE}}</span>
+                    </p>
+                </div>
+            </div>
+            <trs-timeline title="'操作日志'">
+                <p ng-bind="copyDraftTitle" class="logTitle"></p>
+                <div ng-repeat="(key, value) in data.Channel.anthorOperationLog">
+                    <h3 ng-class="{'operateLog':$index%2==0}" ng-show="key |endsWith: 'App'">App</h3>
+                    <h3 ng-class="{'operateLog':$index%2==0}" ng-hide="key |endsWith: 'App'">{{key}}</h3>
+                    <!--  <h3 ng-class="{'operateLog':$index%2==0}">{{key}}</h3> -->
+                    <timegroup tick="item.day" ng-repeat="item in data.copyDraftLog[key]">
+                        <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                            <a class="minw45">{{n.value.OPERATION}}</a>
+                            <a class="minw80 pointer" ng-bind="n.value.USERNAME" title="{{n.value.OPERUSERNAME}}"></a>
+                            <a class="minw88" title="{{n.value.ATTRIBUTE}}" ng-bind="n.value.DESUSERNAME||n.value.ATTRIBUTE"></a>
+                            <a title="{{n.value.OPINION}}" class="exttype" ng-if="n.value.OPINION!==''">{{n.value.OPERATION}}意见</a>
+                        </timeitem>
+                    </timegroup>
+                </div>
+            </trs-timeline>
+        </div>
+        <!--   <div class="websist_normal" data-ng-if="page.copyLog.CURRPAGE>=page.copyLog.PAGECOUNT">没有更多了...</div> -->
+        <div data-ng-if="page.copyLog.CURRPAGE<page.copyLog.PAGECOUNT" cg-busy="loadingPromise" class="website_timeline_load_more_2 text-center" ng-click="getLoadMore('anthorOperationLog','copyDraftLog','copyLog')">
+            <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+        </div>
+    </tab>
+</tabset>

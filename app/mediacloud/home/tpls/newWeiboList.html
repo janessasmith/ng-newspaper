@@ -1,0 +1,20 @@
+<div class="sy-bk-opa"></div>
+<div class="sy-bk-deal">
+    <div class="zx-wb-icon">
+        <div class="wb-icon-opa"></div>
+        <div class="wb-bk-img">
+            <img src="common/images/xt-sy-icon04.png" alt=""/>
+        </div>
+    </div>
+    <h3 class="sy-wx-tit">最新微博</h3>
+    <div class="zx-wx-div">
+        <a href class="zx-wx-ls" ng-repeat="content in contents">
+            <div class="wx-user-pc">
+                <img ng-src="{{content.headPicUrl}}" alt=""/>
+            </div>
+            <div class="zx-wx-sp">
+                <p>{{content.content}}</p>
+            </div>
+        </a>
+    </div>
+</div>

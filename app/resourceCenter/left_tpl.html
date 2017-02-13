@@ -1,0 +1,83 @@
+<!-- left_tpl -->
+<div class="container-fluid resource_list" ng-switch="curTpl">
+    <div ng-switch-when="tpl1" class="resource_list_tpl1" style="border-bottom: 1px solid #466385">
+        <accordion close-others="true" class="resource_nav iwo">
+            <div class="editing_center_channel" ng-if="!isdataLoaded">
+                <accordion-group>
+                    <accordion-heading><i class="fa fa-spinner fa-spin"></i> 载入中</accordion-heading>
+                </accordion-group>
+            </div>
+            <div class="editing_center_channel" ng-if="isdataLoaded">
+                <accordion-group heading="{{group.title}}" ng-repeat="group in groups track by group.orderNum" ng-click="toggleStatus(group)" is-open="group.isOpen" ng-class="{'left-li-active':group.id == curdictNum}">
+                    <div ng-click="getDraft(item,$event,false,false)" class="panel-body-editcenter editCenter_left_panel_body" ng-class="{'selected':item.id == curdictNum}" ng-repeat="item in group.resourceGroup">
+                        <a ng-init="checkCustom(item)">
+                            {{item.title}}
+                             <span class="btn set" ng-class="{'active':item.custom}" ng-click="setUsualItem(item,item.custom,$event)">常用</span>
+                        </a>
+                    </div>
+                </accordion-group>
+            </div>
+        </accordion>
+    </div>
+    <div ng-switch-when="tpl2" class="resource_list_tpl2" ng-class="{'resource-nav-panel':isdigitaltpl}">
+        <div ng-if="isdigitaltpl&&isSzb" class="resouCenleft-digitalHead">
+            <div ng-class="{'active':!isShowPreview}" ng-click="changeIsShowPreview(0)">
+                <i class="glyphicon glyphicon-list"></i> 列表显示
+            </div>
+            <div ng-class="{'active':isShowPreview}" ng-click="changeIsShowPreview(1)">
+                <i class="glyphicon glyphicon-eye-open"></i> 预览显示
+            </div>
+        </div>
+        <accordion close-others="true" class="resource_nav">
+            <div class="editing_center_channel" ng-if="!isdataLoaded">
+                <accordion-group>
+                    <accordion-heading><i class="fa fa-spinner fa-spin"></i> 载入中</accordion-heading>
+                </accordion-group>
+            </div>
+            <div class="editing_center_channel" ng-if="isdataLoaded&&!isCbLeft">
+                <accordion-group heading="{{item.CATEGORYNAME}}" ng-repeat="item in leftList| orderBy:orderNum" ng-click="loadSubItem(item,$event)" is-open="item.isOpen" ng-class="{'left-li-active':item.id == curdictNum||item.METACATEGORYID == curdictNum}" class="{{item.all_font_color}}" ng-dblclick="editClass(item,'0','',$event)">
+                    <div ng-click="getDraft(subitem,$event,true,false)" class="panel-body-editcenter editCenter_left_panel_body" ng-class="{'checked':subitem.id == curdictNum||subitem.METACATEGORYID == curdictNum,'special':subitem.ISSPECIAL == 1}" ng-repeat="subitem in item.CHILDREN | orderBy:orderNum" ng-dblclick="editClass(item,'1',subitem,$event)">
+                        <a ng-init="checkCustom(subitem)">
+                            {{subitem.CATEGORYNAME||subitem.dictName}}
+                            <span class="btn set" ng-if="setUsual" ng-class="{'active':subitem.custom}" ng-click="setUsualItem(subitem,subitem.custom,$event)">常用</span>
+                            <span class="arrowBtn {{subitem.arrowBtn}}" ng-if="isArea" ng-click="loadLeafArea(subitem,$event,'first')"  ></span>
+                        </a>
+                        <div class="subLevelMenu {{subitem.show}}" ng-show="subitem==curSubitem">
+                            <div class="menuContent">
+                                <div class="children" ng-repeat="item in area.first | orderBy:orderNum">
+                                    <a ng-click="getDraft(item,$event,false,subitem)" ng-bind="item.dictName" ng-class="{'selectedchnlHasnoChl':item.id==leftList.chnlid}" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p ng-click="addClass(item,'1','')" style="height: 40px;line-height: 40px;color: #fff;font-size: 14px;padding-left:74px;font-family: 'Microsoft Yahei';margin-bottom: 0px;border-bottom: 1px solid rgb(35, 58, 90);cursor:pointer; background: url('./editingCenter/app/images/l11.png') 54px center #3f5974 no-repeat;">新增分类</p>
+                </accordion-group>
+            </div>
+            <!-- 川报修改 -->
+            <!-- <div ng-if="isCbLeft">
+                <accordion-group heading="{{source.LINECLASSFYNAME}}" ng-repeat="source in cbLeft" ng-click="changeMainLists(source)" class="left-li-active">
+                </accordion-group>
+            </div> -->
+            <div ng-if="isCbLeft">
+                <div ng-repeat="source in cbLeft" ng-click="changeMainLists(source)" class="cb-left-div" ng-class="{'cb-left-div-active':cbLeftCur == source.LINECLASSFYID}">
+                    <span>{{source.LINECLASSFYNAME}}</span>
+                </div>
+            </div>
+        </accordion>
+        <p ng-click="addClass('','0')" ng-if="!isCbLeft" style="height: 40px;line-height: 40px;color: #fff;font-size: 15px;padding-left: 30px;font-family: 'Microsoft Yahei';margin-bottom: 0px;border-bottom: 1px solid rgb(35, 58, 90);cursor:pointer;">新增分类</p>
+    </div>
+    <div ng-switch-when="tpl3" class="resource_list_tpl3">
+        <accordion close-others="true">
+            <div class="resouce-nav-panel">
+                <accordion-group ng-if="!isdataLoaded">
+                    <accordion-heading><i class="fa fa-spinner fa-spin"></i> 载入中</accordion-heading>
+                </accordion-group>
+                <accordion-group heading="{{source.dictName}}" ng-repeat="source in leftList | orderBy:orderNum" ng-click="loadSubItem(source,$event)" is-open="source.isOpen" ng-if="!isCbLeft">
+                    <div class="halfwitdh" ng-repeat="child in source.CHILDREN">
+                        <div class="tagbtn" ng-class="{'active':child.id==curdictNum}" ng-click="getDraft(child,$event,false)">{{child.dictName}}</div>
+                    </div>
+                </accordion-group>
+            </div>
+        </accordion>
+    </div>
+</div>

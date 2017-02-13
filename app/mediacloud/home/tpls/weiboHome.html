@@ -1,0 +1,25 @@
+<div class="sy-bk-opa"></div>
+<div class="sy-bk-deal">
+    <div class="zx-wb-icon">
+        <div class="wb-icon-opa"></div>
+        <div class="wb-bk-img">
+            <img src="common/images/xt-sy-icon03.png" alt=""/>                    
+        </div>
+    </div>
+    <h3 class="sy-wx-tit">微博</h3>
+    <div class="rw-wx-div">
+        <div class="yy-gl-btn wb-yy-gl">
+            <a href class="wb-yf-cur" ui-sref="scmoperation">运营分析</a>
+            <a ui-sref="wbaccount.list">账号管理</a>
+            
+        </div>
+        <div class="wx-ft-pc">
+            <div class="wx-ft-bk" ng-repeat="content in contents">
+                <span class="{{content.ISSIGN=='true'?'identifier':''}}"></span>
+                <a href="/wcm/app/scm/index.jsp?AccountId={{content.ACCOUNTID}}">
+                    <img ng-src="{{content.HEADPIC}}" alt="{{content.ACCOUNTNAME}}"/>                  
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

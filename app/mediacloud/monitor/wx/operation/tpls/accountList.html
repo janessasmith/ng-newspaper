@@ -1,0 +1,11 @@
+ <div class="wb-rk-top">
+    <div class="wb-rk-tit">子报子刊微信综合监控入口</div>
+</div>
+<div class="wb-rk-deal" ng-controller="wxjtUnitViewCtr">
+    <div class="wb-rk-ls" ng-repeat="unit in units">
+        <a ui-sref="childWeixin({unitName:unit.unitName})" >
+            <img ng-src="{{unit.unitPic}}" alt="{{unit.unitName}}"/>
+        </a>
+    </div>
+</div>
+<a href="javascript:;" class="wb-rk-arrow" account-num ></a>

@@ -1,0 +1,94 @@
+.toBeCompiled-review-window .modal-content {
+    width: 506px;
+    background: #DDD;
+    top: 205px;
+    margin: 0px auto;
+}
+
+.toBeCompiled-review-container {
+    width: 500px;
+    background: #FFF;
+    margin: 2px 2px;
+    border-radius: 6px;
+}
+
+.toBeCompiled-review-head {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+}
+.toBeCompiled-title-head {
+      height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+}
+.toBeCompiled-title-head p{
+      font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+}
+
+.toBeCompiled-review-head p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+    float: left;
+}
+.toBeCompiled-review-head img,img.editng-left{cursor: pointer;  float: right;
+  margin-right: 11px;
+  margin-top: 7px;}
+
+.toBeCompiled-review-body {
+    overflow: hidden;
+    background: #f1f2f4;
+    padding-left: 23px;
+}
+.toBeCompiled-review-body span{top: 0px!important}
+
+.toBeCompiled-review-body textarea {
+    width: 454px;
+    height: 96px;
+    border: 1px solid #e0dedc;
+    color: #a9a19e;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 4px 8px;
+    margin: 24px auto 18px;
+    resize: none;
+}
+
+.toBeCompiled-review-footer {
+    background: #f1f2f4;
+    padding-bottom: 14px;
+}
+
+.toBeCompiled-review-footer .new-role-btn {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 0px;
+}
+
+.toBeCompiled-review-footer .ml324 {
+    margin-left: 324px;
+}
+
+.toBeCompiled-review-footer .ml343 {
+    margin-left: 343px;
+}
+
+.toBeCompiled-review-body textarea.textarea_width_472{
+    width: 472px;
+}
+.toBeCompiled-review-container .pl0{
+    padding-left: 0;
+}

@@ -1,0 +1,473 @@
+.newspaper-shangban-windows .modal-dialog {
+    /*height: 858px;*/
+    width: 585px;
+    background: #ddd;
+    border-radius: 4px;
+}
+
+.newspaper-shangban-windows .modal-dialog .modal-content {
+    background: #f0f2f5;
+    margin: 4px auto;
+    border-radius: 4px;
+}
+
+.newspaper-shangban-windows .shangban-container {
+    background: #f0f2f5;
+}
+
+.newspaper-shangban-windows .shangban-container.active {
+    width: 930px;
+    margin-left: -175px;
+}
+
+.shangban-head {
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+}
+
+.shangban-head p {
+    color: #333;
+    font-weight: bold;
+    float: left;
+    margin-left: 18px;
+}
+
+.shangban-head img {
+    float: right;
+    margin: 12px 10px 0 0;
+    cursor: pointer;
+}
+
+.shangban-body {
+    width: 580px;
+    margin: 10px;
+    white-space: nowrap;
+    height: 480px;
+    /*overflow-y: scroll;
+    overflow-x: hidden;*/
+}
+
+.newspaper-shangban-windows .shangban-body.active {
+    width: 910px;
+}
+
+.w910 {
+    /*width: 910px;*/
+}
+
+.shangban-body p.choosed-manu {
+    height: 42px;
+    line-height: 42px;
+    color: #444;
+    font-weight: bold;
+    margin-left: 14px;
+    margin-bottom: 0px;
+}
+
+.shangban-body .list-wrap {
+    width: 540px;
+    height: 153px;
+    margin: 0 auto;
+    border: 1px solid #d3d7da;
+    margin-left: 10px;
+}
+
+.shangban-body .list-wrap .list-header {
+    background: #f0f2f5;
+    border-bottom: none;
+    height: 41px;
+    line-height: 41px;
+    background: #f0f2f5;
+    border-bottom: 1px solid #d3d7da;
+}
+
+.shangban-body .list-wrap .list-header span {
+    display: inline-block;
+    float: left;
+    border-right: 1px solid #d3d7da;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.shangban-body .list-wrap .list-header span:nth-child(1) {
+    width: 60px;
+}
+
+.shangban-body .list-wrap .list-header span:nth-child(2) {
+    width: 286px;
+}
+
+.shangban-body .list-wrap .list-header span:nth-child(3) {
+    width: 71px;
+}
+
+.shangban-body .list-wrap .list-header span:nth-child(4) {
+    width: 120px;
+    border-right: none;
+}
+
+.shangban-body .list-wrap .list-body {
+    height: 112px;
+    overflow-y: auto;
+}
+
+.shangban-body .list-wrap .list-body p {
+    height: 37px;
+    line-height: 37px;
+    overflow: hidden;
+    border-bottom: 1px solid #d3d7da;
+    margin-bottom: 0px;
+}
+
+.shangban-body .list-wrap .list-body p.cur {
+    background: #eee;
+}
+
+.shangban-body .list-wrap .list-body p span {
+    float: left;
+    text-align: center;
+    border-right: 1px solid #d3d7da;
+    color: #666;
+}
+
+.shangban-body .list-wrap .list-body p span img {
+    cursor: pointer;
+}
+
+.shangban-body .list-wrap .list-body p span:nth-child(1) {
+    width: 60px;
+}
+
+.shangban-body .list-wrap .list-body p span:nth-child(2) {
+    width: 286px;
+}
+
+.shangban-body .list-wrap .list-body p span:nth-child(3) {
+    height: 37px;
+    width: 71px;
+}
+
+.shangban-body .list-wrap .list-body p span:nth-child(4) {
+    width: 102px;
+    border-right: none;
+    cursor: pointer;
+}
+
+
+/*.shangban-body .table-bordered > thead > tr > th{
+    border-bottom: 1px solid #ddd;
+}*/
+
+
+/*实现table的tbody纵向滚动条的方法开始*/
+
+
+/*.shangban-body .table tbody {
+    display: block;
+    height: 183px;
+    overflow-y: auto;
+}
+
+.shangban-body .table thead,
+.shangban-body .table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.shangban-body .table thead {
+    width: calc( 100% - 1em )
+}*/
+
+
+/*实现table的tbody纵向滚动条的方法结束*/
+
+.shangban-body .date {
+    margin-top: 16px;
+}
+
+.shangban-body .date .timeGroup {
+    position: relative;
+    float: left;
+}
+
+.shangban-body .date .timeGroup img {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.shangban-body .date p {
+    font-size: 12px;
+    color: #444;
+    margin-left: 12px;
+    float: left;
+    margin-bottom: 0px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.shangban-body .date input {
+    float: left;
+    margin-left: 10px;
+    width: 250px;
+    height: 30px;
+    line-height: 14px;
+    font-size: 12px;
+    background: #fff;
+}
+
+.shangban-body .lists {
+    clear: both;
+    overflow: hidden;
+    padding-top: 14px;
+}
+
+.shangban-body .lists div {
+    float: left;
+    height: 228px;
+    border: 1px solid #d0cfcf;
+    margin-left: 10px;
+}
+
+.shangban-body .lists div:nth-child(1) {
+    width: 180px;
+}
+
+.shangban-body .lists div:nth-child(2) {
+    width: 349px;
+}
+
+.shangban-body .lists div p {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #f0f2f5;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 0px;
+}
+
+.shangban-body .lists div ul {
+    height: 196px;
+    overflow-y: auto;
+}
+
+.shangban-body .lists div ul li {
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.shangban-body .lists div ul li span {
+    display: block;
+    width: 100%;
+    height: 28px;
+    padding-left: 10px;
+}
+
+.shangban-body .lists div ul li span.cur {
+    background: #4496d2;
+    color: #fff;
+}
+
+.shangban-body .opinion {
+    height: 44px;
+    line-height: 44px;
+    color: #444;
+    font-weight: bold;
+    margin-left: 13px;
+    margin-bottom: 0px;
+}
+
+.shangban-body textarea {
+    width: 539px;
+    height: 80px;
+    resize: none;
+    margin-left: 10px;
+    font-family: "mircosoftYahei";
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6px;
+    font-size: 13px;
+}
+
+.shangban-foot .btns-wrap {
+    overflow: hidden;
+    padding-top: 14px;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.shangban-foot .btns-wrap.btns-wrap-active {
+    margin-left: 430px;
+}
+
+.shangban-foot .btns-wrap input[type="button"],
+.shangban-foot .btns-wrap button {
+    float: right;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    padding: 0px;
+}
+
+.shangban-body .table_sm_img {
+    width: 20px;
+    height: 20px;
+}
+
+.shangban-body .manuscript_correlation_container {
+    width: 420px;
+    height: 727px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+}
+
+.shangban-body .manuscript_correlation_container > p {
+    background: #ddd;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.shangban-body .manuscript_correlation_container .has_no_draft {
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+    font-size: 20px;
+    font-family: "幼圆";
+    color: #aaa;
+}
+
+.shangban-body a,
+.shangban-body a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.shangban-body-left {
+    float: left;
+    padding-right: 10px;
+    width: 562px;
+    padding-bottom: 6px;
+    background: #fff;
+    border: 1px solid #d3d7da;
+}
+
+.shangban-body-right {
+    display: inline-block;
+    width: 330px;
+    border: 1px solid #d3d7da;
+    background: #fff;
+    border-left: none;
+}
+
+.shangban-body-right .shangban-body-right-head {
+    height: 41px;
+    background: #f0f2f5;
+    border-bottom: 1px solid #d3d7da;
+}
+
+.shangban-body-right .shangban-body-right-head p {
+    line-height: 41px;
+    margin-left: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0px;
+}
+
+.shangban-body-right .shangban-body-right-content {
+    overflow-y: auto;
+    height: 648px;
+}
+
+.shangban-body-right .h694 {
+    height: 694px;
+}
+
+.shangban-body-right .h539 {
+    height: 539px;
+}
+
+.shangban-body-right .h585 {
+    height: 585px;
+}
+
+.shangban-body-right .shangban-body-right-content p {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.shangban-body-right .shangban-body-right-content ul {
+    margin-top: 14px;
+}
+
+.shangban-body-right .shangban-body-right-content ul li {
+    list-style: none;
+    line-height: 24px;
+    white-space: normal;
+    width: 310px;
+}
+
+.shangban-body-right .shangban-body-right-content ul li span {
+    display: block;
+    padding-left: 16px;
+    cursor: pointer;
+    font-family: "Microsoft Yahei";
+}
+
+.shangban-body-right .shangban-body-right-content ul li span.notcur {
+    cursor: not-allowed;
+}
+
+.shangban-body-right .shangban-body-right-content ul li img {
+    margin: 4px 0 20px 20px;
+    max-width: 80px;
+}
+
+.shangban-body-right .shangban-body-right-content ul li span.cur,
+.shangban-body-right .shangban-body-right-content ul li span:hover {
+    background: #4496d2;
+    color: #fff;
+}
+
+.shangban-body-left .invalidate-input-box span {
+    left: 10px;
+    top: 10px;
+}
+
+.disabledCursor {
+    cursor: not-allowed;
+}
+
+.newspaper-shangban-windows .has_no_draft {
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+    font-size: 20px;
+    font-family: "幼圆";
+    color: #aaa;
+}

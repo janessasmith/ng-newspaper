@@ -1,0 +1,17 @@
+<div class="weibo-tit jt-wb-tit">集团微信运营综合状况</div>
+<div class="wb-league-deal">
+    <div class="rw-jt-top">
+        <div class="sel-yx-show rw-sel-show lf">
+            <a href="javascript:;" checked="sel-show-cur" class="sel-show-cur" ng-click="getData(0);">微信数</a>
+            <a href="javascript:;" checked="sel-show-cur" ng-click="getreadData();">阅读数</a>
+            <a href="javascript:;" checked="sel-show-cur" ng-click="getcommentData();">评论数</a>
+            <a href="javascript:;" checked="sel-show-cur" ng-click="getlikesData();">点赞数</a>
+            
+        </div>
+    </div>
+    <div class="jt-data-chart">
+         <echarts-line id="line2"  width="1198" height="313" type="stacked" 
+            legend="legend"  xaxis="xaxis" series="series" grid="grid" symbol="symbol"  color="color">
+        </echarts-line>
+    </div>
+</div>

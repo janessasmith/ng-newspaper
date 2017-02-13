@@ -1,0 +1,38 @@
+{
+    "data": [{
+        "accountName": "重庆日报账号",
+        "accountPic": "http://img3.imgtn.bdimg.com/it/u=728129930,738595488&fm=21&gp=0.jpg",
+        "id": 1,
+        "type": 2,
+        "unitId": 3,
+        "unitName": "重庆日报"
+    }, {
+        "accountName": "重庆晚报",
+        "accountPic": "http://img3.imgtn.bdimg.com/it/u=728129930,738595488&fm=21&gp=0.jpg",
+        "id": 2,
+        "type": 2,
+        "unitId": 3,
+        "unitName": "重庆日报"
+    }, {
+        "accountName": "重庆日报账号",
+        "accountPic": "http://img3.imgtn.bdimg.com/it/u=728129930,738595488&fm=21&gp=0.jpg",
+        "id": 3,
+        "type": 2,
+        "unitId": 3,
+        "unitName": "重庆日报"
+    }, {
+        "accountName": "重庆日报账号",
+        "accountPic": "http://img3.imgtn.bdimg.com/it/u=728129930,738595488&fm=21&gp=0.jpg",
+        "id": 4,
+        "type": 2,
+        "unitId": 3,
+        "unitName": "重庆日报"
+    }, {
+        "accountName": "重庆日报账号",
+        "accountPic": "http://img3.imgtn.bdimg.com/it/u=728129930,738595488&fm=21&gp=0.jpg",
+        "id": 5,
+        "type": 2,
+        "unitId": 3,
+        "unitName": "重庆日报"
+    }]
+}

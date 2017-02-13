@@ -1,0 +1,24 @@
+<div class="manage-pmm-container">
+    <div class="manage-pmm-recycle-container">
+        <div class="pmm-recycle-item-out left" ng-repeat="item in items">
+            <div class="pmm-recycle-item-default text-center"
+                 ng-class="{'pmm-recycle-item-active':selectChannel===item}" ng-click="selectItem(item)">
+                <span ng-bind="item.CHNLDESC"></span>
+            </div>
+            <div class="pmm-recycle-item-icon-group pmm-recycle-btn-show" ng-show="selectChannel===item">
+                <a ng-if="status.right.channel.restore" ng-click="deleteViews(item.CHNLDESC,item.CHANNELID)">
+                    <img src="./manageConfig/productManageMent/images/gl58.png"/>
+                </a>
+                <a ng-if="status.right.channel.restore" ng-click="reductionViews(item.CHNLDESC,item.CHANNELID)">
+                    <img src="./manageConfig/productManageMent/images/gl63.png"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="manage-pmm-recycle">
+    <a ui-sref="manageconfig.productmanage.website.channel">
+        <img src="./manageConfig/productManageMent/images/i8.png"/>
+        <span>返回列表</span>
+    </a>
+</div>

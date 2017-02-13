@@ -1,0 +1,47 @@
+<form name="useSignedZPForm" novalidate>
+    <div class="useSignedZP-container">
+        <div class="useSignedZP-head">
+            <p>签发照排</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+        </div>
+        <div class="useSignedZP-body">
+            <p class="choosed-manu">您已经选择了【<span ng-bind="data.items.length"></span>】篇稿件</p>
+            <div class="date" ng-show="data.paperMsg.ISDUOJISHEN=='0'">
+                <p>见报日期</p>
+                <div class="timeGroup">
+                    <input type="text" size="10" class="form-control" ng-model="data.createDate" placeholder="见报日期" data-autoclose="1" bs-datepicker readonly="readonly">
+                    <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+                </div>
+            </div>
+            <div class="lists">
+                <div>
+                    <p>叠次列表</p>
+                    <ul>
+                        <li ng-repeat="dieciItem in data.dieciItems">
+                            <span ng-bind="dieciItem.CHNLDESC" ng-click="dieciClick(dieciItem,$index)" ng-class="{'cur':status.selectedDieci===dieciItem}"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p>照排版面列表</p>
+                    <ul>
+                        <li ng-repeat="zpItem in data.zpItems">
+                            <span ng-bind="zpItem.CHNLDESC" ng-click="zhaopaiClick(zpItem,$index)" ng-class="{'cur':status.selectedZhaopai===zpItem}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="invalidate-input-box {{useSignedZPForm.option.$invalid?'has-error':''}}">
+                <p class="opinion">签发意见</p>
+                <textarea ng-model="status.option" name="option" maxlength-error-message="长度不能超过300个字符！" validator="maxlength=300" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA"></textarea>
+            </div>
+        </div>
+        <div class="useSignedZP-foot">
+            <div class="btns-wrap">
+                <button ng-click="confirm()" class="btn_confirm">确定</button>
+                <button ng-click="cancel()" class="btn_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

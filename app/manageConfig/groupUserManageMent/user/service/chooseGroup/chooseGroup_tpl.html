@@ -1,0 +1,36 @@
+<div class="userManageMentChooseGroup">
+    <div class="head">
+        <span ng-bind="modalTitle"></span>
+        <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+    </div>
+    <!--<div class="search">
+        <span>组织</span>
+        <input ng-model="searchChannel" watch-options='true' bs-options="sChannel as sChannel.SUGGESTION for sChannel in getSuggestionsSc($viewValue)" bs-typeahead type="text" class="form-control" placeholder="请输入关键词搜索" limit="30">
+    </div>-->
+    <div class="body">
+        <div class="main">
+            <div class="right">
+                <div class="head">
+                    <img ng-click="status.ifExpand = !status.ifExpand" ng-src="./editingCenter/app/images/{{status.ifExpand?'m2-2-0.png':'m1-1-0.png'}}"><span ng-click="status.ifExpand = !status.ifExpand" ng-bind="status.userGroup"></span>
+                </div>
+                <div class="tree" ng-show="status.ifExpand">
+                    <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="data.treeData" options="status.treeOptions" on-selection="showSelected(node)">
+                        <trs-checkbox class="checkbox" ischecked="ifSelected(node)" ng-show="node.GNAME!=undefined" callback="chooseGroup(node)"></trs-checkbox><span ng-bind='node.GNAME' class="{{node.selected==true?'selected':''}}" ng-click="chooseGroup(node)"></span>
+                    </treecontrol>
+                </div>
+            </div>
+            <div class="left">
+                <span ng-repeat="group in selectedGroups" class="myLabel">
+                <span title="{{group.GNAME}}" ng-bind="group.GNAME | limitTo:10"></span>
+                <span ng-click="cancelGroup(group)" class="myClose">X</span>
+                </span>
+            </div>
+        </div>
+        <div class="foot">
+            <div>
+                <button class="confirm" ng-click="confirm()">确定</button>
+                <button class="cancel" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+.batchDelClass .modal-dialog{
+    position: absolute;
+    width:480px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 50%;
+    margin:auto;
+}
+
+.batchDel-container{
+    width: 474px;
+    height: 340px;
+    background: #FFF;
+    margin: 2px 2px;
+    border-radius: 6px;
+}
+
+.batchDel-head{
+    height: 50px;
+    overflow: hidden;
+    padding-top: 6px;
+}
+.batchDel-head p{
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+    float: left;
+    line-height: 20px;
+    margin-bottom: 0px;
+    clear:both;
+}
+.batchDel-head img{
+    cursor: pointer;
+    float: right;
+    margin-right: 11px;
+    margin-top: -12px;
+
+}
+
+.batchDel-body{
+    overflow-y: auto;
+    background: #fff;
+    height: 226px;
+    border:4px solid #f1f2f4;
+}
+
+.batchDel-body ul{
+    padding-left: 0px;
+    margin-top: 4px;
+}
+
+.batchDel-body ul li{
+    list-style: none;
+    line-height: 26px;
+    margin-left: 12px;
+}
+
+.batchDel-footer{
+    background: #f1f2f4;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 310px;
+}
+
+.batchDel-footer .new-role-btn{
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}

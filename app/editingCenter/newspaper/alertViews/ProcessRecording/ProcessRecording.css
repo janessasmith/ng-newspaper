@@ -1,0 +1,88 @@
+.edit-newspaper-processRecording .modal-dialog {
+    width: 710px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /*height: 520px;*/
+    height: 50%;
+}
+
+.edit-newspaper-processRecording .modal-content {
+    background-color: #F0F2F5;
+}
+
+.edit-newspaper-processRecording .man_produ_modify_inner {
+    margin: 10px;
+}
+
+.edit-newspaper-processRecording .man_produ_column_modify {
+    background: #fff;
+    margin: 10px auto;
+}
+
+.edit-newspaper-processRecording .man_produ_modify_footer {
+    padding-left: 0;
+    background: transparent;
+    height: 30px;
+}
+
+.edit-newspaper-processRecording .man_produ_modify_footer_cancel {
+    margin-right: 0;
+}
+
+.edit-newspaper-processRecording .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.edit-newspaper-processRecording .edit_table {
+    height: 39px;
+}
+
+.edit-newspaper-processRecording .edit_table table {
+    margin-bottom: 0;
+}
+
+.edit-newspaper-processRecording .cancel_signed_table_container {
+    width: 100%;
+    min-height: 410px;
+    height: 410px;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.edit-newspaper-processRecording .processRecording-main-table {
+    width: 100%;
+    height: 370px;
+    overflow-y: scroll;
+}
+
+.edit-newspaper-processRecording table {
+    font-size: 12px;
+}
+
+.edit-newspaper-processRecording .cancel_signed_table_container>table th:nth-child(1),
+.edit-newspaper-processRecording .processRecording-main-table>table td:nth-child(1) {
+    width: 215px;
+}
+
+.edit-newspaper-processRecording .cancel_signed_table_container>table th:nth-child(2),
+.edit-newspaper-processRecording .processRecording-main-table>table td:nth-child(2) {
+    width: 171px;
+}
+
+.edit-newspaper-processRecording .cancel_signed_table_container>table th:nth-child(3),
+.edit-newspaper-processRecording .processRecording-main-table>table td:nth-child(3) {
+    width: 130px;
+}
+
+.edit-newspaper-processRecording .cancel_signed_table_container>table th:nth-child(4) {
+    width: 169px;
+}
+
+.edit-newspaper-processRecording .processRecording-main-table>table td:nth-child(4) {
+    width: 150px;
+}

@@ -1,0 +1,73 @@
+<div class="manage-roleManage-addUserDiv">
+    <div class="manage-roleManage-addUser-head">
+        <span>角色名称-</span><span ng-bind="roleData.ROLEDESC | trsLimitTo:12"></span>
+    </div>
+    <div class="container-fluid manage-roleManage-addUserBody">
+        <div class="row">
+            <div class="col-xs-5 manage-roleManage-addUser-group">
+                <div class="manage-roleManage-addUser-groupDiv">
+                    <div class="manage-roleManage-addUser-group-head">
+                        <span>请选择用户组织</span>
+                    </div>
+                    <div class="manage-roleManage-addUser-group-tree">
+                        <treecontrol on-node-toggle="showToggle(node)" class="tree-light" tree-model="dataForTheTree" options="aDtreeOptions" expanded-nodes="expandedAddUser" on-selection="aDshowSelected(node)" selected-node="node1">
+                            <span ng-bind="node.GNAME"></span>
+                        </treecontrol>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-7 manage-roleManage-addUser-chooseRole">
+                <div class="container-fluid manage-roleManage-addUser-chooseRoleDiv">
+                    <div class="row">
+                        <div class="col-xs-5 manage-roleManage-addUser-group">
+                            <div class="manage-roleManage-addUser-group-head">
+                                <span>未分配用户</span>
+                            </div>
+                            <div class="manage-roleManage-addUser-group-user">
+                                <ul class="manage-roleManage-addUser-group-userUl">
+                                    <li ng-repeat="item in itemsWselect">
+                                        <span ng-click="adSelectUser($event,item,'wSelect')" ng-bind="item.TRUENAME"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="manage-roleManage-addUser-group-button group-button-left">
+                                <button ng-click="confirm()" ng-disabled="itemsSelected<1" class='btn'>确定</button>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 manage-roleManage-addUser-group">
+                            <div class="manage-roleManage-addUser-choose-buttons">
+                                <div class="manage-roleManage-addUser-choose-button" ng-click="itemMove('toRight')">
+                                    <img src="./manageConfig/roleManageMent/images/js4.png" />
+                                </div>
+                                <div class="manage-roleManage-addUser-choose-button" ng-click="itemMove('toLeft')">
+                                    <img src="./manageConfig/roleManageMent/images/js5.png" />
+                                </div>
+                                <div class="manage-roleManage-addUser-choose-button" ng-click="itemMoveAll('toRight')">
+                                    <img src="./manageConfig/roleManageMent/images/js6.png" />
+                                </div>
+                                <div class="manage-roleManage-addUser-choose-button" ng-click="itemMoveAll('toLeft')">
+                                    <img src="./manageConfig/roleManageMent/images/js7.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 manage-roleManage-addUser-group">
+                            <div class="manage-roleManage-addUser-group-head">
+                                <span>已分配用户</span>
+                            </div>
+                            <div class="manage-roleManage-addUser-group-user">
+                                <ul class="manage-roleManage-addUser-group-userUl">
+                                    <li ng-repeat="item in itemsSelected">
+                                        <span ng-click="adSelectUser($event,item,'selected')" ng-bind="item.TRUENAME"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="manage-roleManage-addUser-group-button group-button-right btn_cancel">
+                                <button ng-click="cancel()">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

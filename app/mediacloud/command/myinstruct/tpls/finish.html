@@ -1,0 +1,18 @@
+<div class="dp-rt-main no-pd">
+    <ul class="dp-rt-tit rw-fl-rt js-ls-tit">
+        <li ui-sref="command.myinstructFinish.list({type:0})" ui-sref-active="tit-cur">
+            <a href="javascript:;" class="cg-all" >全部</a>
+        </li>
+        <li ui-sref="command.myinstructFinish.list({type:1})" ui-sref-active="tit-cur">
+            <a href="javascript:;" class="cg-cf" >采访任务</a>
+        </li>
+        <li ui-sref="command.myinstructFinish.list({type:2})" ui-sref-active="tit-cur">
+            <a href="javascript:;" class="cg-tz" >通知</a>
+        </li>
+    </ul>
+    <div class="cg-search-box" style="left: 0;">
+        <input enter="command.myinstructFinish.list" type="text" class="text lf" placeholder="信息检索" ng-model="title"/>
+        <a href="javascript:;" class="search-btn rt" ui-sref="command.myinstructFinish.list({'title':title})"></a>
+    </div>
+    <div class="cg-main-ls" ui-view> </div>
+</div>

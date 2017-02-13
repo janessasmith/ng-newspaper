@@ -1,0 +1,43 @@
+<div class="man_produ_insert">
+    <div class="man_produ_modify_head">
+        <p>选择碎片</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+    </div>
+    <div class="man_produ_website_insertTemplate">
+        <div class="insertTemplate">
+            <div class="insertTemplate_input">
+                <input type="text">
+                <button class="btn btn-default btn_insert_search">
+                    搜索
+                </button>
+            </div>
+            <div class="insertTemplate_table">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="2">文本标签</th>
+                        </tr>
+                </table>
+                    <div class="border_fix">
+                        <div class="border_fix_line" ng-repeat="item in items">
+                            <div class="border_fix_l">
+                                <trs-single-radio group="'items'" ischecked="selectedTEMP==item" callback="selectImportmode(item)"></trs-single-radio>
+                            </div>
+                            <div clss="border_fix_r">
+                                <p ng-bind="item.TEMPDESC"></p>
+                            </div>
+                        </div>
+                    </div>
+         
+                <div class="page">
+                    <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                </div>
+                <div class="man_produ_templateCheck_foot">
+                    <button class="templateCheck_btn btn_cancel" ng-click="cancel()">取消</button>
+                    <button class="templateCheck_btn btn_confirm" ng-click="confirm()">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

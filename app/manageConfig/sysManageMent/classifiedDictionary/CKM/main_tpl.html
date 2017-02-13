@@ -1,0 +1,82 @@
+<div class="col-md-6 sys_ckm_middle sys_ckm_border">
+    <div class="fotm_legend">
+        <legend class="legend_servriceList">CKM服务器列表</legend>
+        <button class="btn ckm_btn" ng-click="createServer()">
+            新建
+        </button>
+    </div>
+    <div class="sys_class_ckm_table">
+      <table class="table table-bordered">
+        <thead>
+            <tr class="sys_ckm_active">
+                <td class="text-center col-md-8">
+                    IP
+                </td>
+                <td class="text-center col-md-4">
+                    端口
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center sys_cl_cl_ckm_cursor" ng-repeat="item in datas" ng-click="setSelctedIp(item)" ng-class="{'selectedIp':selectedIp==item}">
+                <td ng-bind="item.host">
+                   
+                </td>
+                <td ng-bind="item.port">
+                    
+                </td>
+                
+            </tr>
+          
+        </tbody>
+    </table>
+   </div>
+</div>
+<div class="col-md-6 sys_ckm_right sys_class_ckm_tipbox">
+    <form class="form-horizontal" name="createckmDataForm">
+        <fieldset>
+            <div class="fotm_legend">
+                <legend class="sys_ckm_new_servrice" ng-bind="selectedIp.id?'修改服务器':'新建服务器'"></legend>
+            </div>
+            <div class="control-group invalidate-input-box sys_cl_ckm_label">
+                <label class="control-label col-md-2" >端口：</label>
+                <div class="controls {{createckmDataForm.port.$invalid&&createckmDataForm.port.$dirty?'has-error':''}}">
+                    <input type="text" class="form-control" ng-model="selectedIp.port" name="port" maxlength-error-message="长度不能超过5个字符" validator="maxlength=5,required" ng-mouseenter="portIsShowTips=true" ng-mouseleave="portIsShowTips=false" is-show-tips="portIsShowTips">
+                </div>
+            </div>
+            <div class="control-group invalidate-input-box sys_cl_ckm_label">
+                <label class="control-label col-md-2">IP地址：</label>
+                <div class="controls {{createckmDataForm.address.$invalid&&createckmDataForm.address.$dirty?'has-error':''}}">
+                    <input type="text" class="form-control" ng-model="selectedIp.host" name="address" validator="maxlength=200,required,ip" ng-mouseenter="addressIsShowTips=true" ng-mouseleave="addressIsShowTips=false" is-show-tips="addressIsShowTips">
+                </div>
+            </div>
+            <div class="control-group invalidate-input-box sys_cl_ckm_label">
+                <label class="control-label col-md-2">用户名：</label>
+                <div class="controls {{createckmDataForm.username.$invalid&&createckmDataForm.username.$dirty?'has-error':''}}">
+                    <input type="text" class="form-control" ng-model="selectedIp.username" name="username" validator="maxlength=200,required" ng-mouseenter="nameIsShowTips=true" ng-mouseleave="nameIsShowTips=false" is-show-tips="nameIsShowTips">
+                </div>
+            </div>
+            <div class="control-group invalidate-input-box sys_cl_ckm_label">
+                <label class="control-label col-md-2" >密码：</label>
+                <div class="controls {{createckmDataForm.pass.$invalid&&createckmDataForm.pass.$dirty?'has-error':''}}">
+                    <input type="text" class="form-control" ng-model="selectedIp.password" name="pass" validator="maxlength=200,required" ng-mouseenter="passIsShowTips=true" ng-mouseleave="passIsShowTips=false" is-show-tips="passIsShowTips">
+                </div>
+            </div>
+            <!-- <div class="control-group">
+                <label class="control-label col-md-2">说明：</label>
+                <div class="controls">
+                    <div class="textarea">
+                        <textarea type="" class="" ng-model="Description"> </textarea>
+                    </div>
+                </div>
+            </div> -->
+            <div class="control-group">
+                <div class="controls text-center ckm_buttons">
+                    <button class="btn btn-primary ckm_sava btn_confirm" ng-click="save()">保存</button>
+                    <button class="btn btn-primary ckm_cancel btn_cancel" ng-bind="selectedIp.id?'删除':'取消'" ng-click="cancelorDelete()"></button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+

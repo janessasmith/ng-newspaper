@@ -1,0 +1,73 @@
+<div>
+    <div>
+        <div ng-init="item_a_isOpen=true" class="{{rightClassify!=undefined?'manage-main-rightDiv-leftDiv-title-right':manage-main-rightDiv-leftDiv-default-none}}">
+            <img ng-show="classify=='paper'" ng-click="item_a_isOpen=!item_a_isOpen" style="cursor:pointer" src="./editingCenter/iWo/images/i46.png" class="authorityAssignment-open" ng-class="{'authorityAssignment-open-rotate':!item_a_isOpen}">
+            <span class="manage-main-rightDiv-leftDiv-titleSpan" ng-bind="moduleName"></span>
+        </div>
+        <div ng-show="item_a_isOpen" class="manage-main-rightDiv-rightDiv-ch slide-down">
+            <ul class="manage-main-rightDiv-leftDiv-authority">
+                <li>
+                    <div ng-if="rightClassify!=undefined" style="float:left">
+                        <!-- <input ng-model="rightClassify.selectAll" ng-click="channelSelectAll($event)" type="checkbox" /> -->
+                        <trs-checkbox ischecked="rightClassify.selectAll" callback="channelSelectAll()"></trs-checkbox>
+                    </div>
+                    <span ng-bind="rightClassify.MEDIANAME" class="{{rightClassify.selectAll?'selected':''}}" ng-click="channelSelectAll()"></span>
+                    <ul>
+                        <li ng-repeat="status in rightClassify.CHILDREN">
+                            <div>
+                                <!-- <input type="checkbox" ng-model="status.selectAll" ng-click="statuSelectAll($event,status,$index)" /><span ng-bind="status.STATUS"></span> -->
+                                <trs-checkbox ischecked="status.selectAll" callback="statuSelectAll(status,$index)"></trs-checkbox><span class="{{status.selectAll?'selected':''}}" ng-click="statuSelectAll(status,$index)" ng-bind="status.STATUS"></span>
+                                <ul>
+                                    <li class="manage-main-rightDiv-leftDiv-authorityChildrenLi" ng-repeat="right in status.CHILDREN">
+                                        <!-- <input type="checkbox" ng-click="changeSelectAll()" ng-model="authorSelectedNode.RIGHTVALUE[right.RIGHTINDEX-1]" ng-true-value="'1'" ng-false-value="'0'" /> -->
+                                        <trs-checkbox ischecked="authorSelectedNode.RIGHTVALUE[right.RIGHTINDEX-1]==='1'" callback="chooseRight(right.RIGHTINDEX-1)"></trs-checkbox>
+                                        <span ng-click="spanSelectRight(right.RIGHTINDEX-1)" class="{{authorSelectedNode.RIGHTVALUE[right.RIGHTINDEX-1]==='1'?'selected':''}}" ng-bind="right.RIGHTNAME"></span>
+                                    </li>
+                                </ul>
+                                <div class="clear"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div cg-busy="loadingPromise"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--报纸版面-->
+    <div ng-repeat="(pageKey,pageValue) in pages" ng-if="rightClassify!=undefined&&classify=='paper'">
+        <div ng-init="item_a_isOpen=true" class="manage-main-rightDiv-leftDiv-title-right" style="margin-top:10px">
+            <span ng-bind="pageKey=='CBBM'?'采编版面列表':'照排版面列表'" class="manage-main-rightDiv-leftDiv-titleSpan"></span>
+            <img ng-show="classify=='paper'" ng-click="item_a_isOpen=!item_a_isOpen" style="cursor:pointer" src="./editingCenter/iWo/images/i46.png" class="authorityAssignment-open-BM" ng-class="{'authorityAssignment-open-rotate-BM':!item_a_isOpen}">
+        </div>
+        <div ng-show="item_a_isOpen" class="manage-main-rightDiv-rightDiv-ch slide-down">
+            <ul class="manage-main-rightDiv-leftDiv-authority">
+                <li>
+                    <div ng-if="rightClassify!=undefined" style="float:left">
+                       <!--  <input ng-click="pageSelectAll(pageValue)" ng-checked="checkPageSelectAll(pageValue)" type="checkbox" /> -->
+                       <trs-checkbox ischecked="checkPageSelectAll(pageValue)" callback="pageSelectAll(pageValue)"></trs-checkbox>
+                    </div>
+                    <span class="{{checkPageSelectAll(pageValue)?'selected':''}}" ng-click="pageSelectAll(pageValue)" ng-bind="pageKey=='CBBM'?'采编版面':'照排版面'"></span>
+                    <ul>
+                        <li ng-repeat="stackTime in pageValue">
+                            <div>
+                                <!-- <input ng-click="stackTimeSelectAll(stackTime)" ng-checked="checkStackTimeSelectAll(stackTime).flag" ng-if="stackTime.BM.length>0" type="checkbox" /><span ng-if="stackTime.BM.length>0" ng-bind="stackTime.CHANNELDESC"></span> -->
+                                <trs-checkbox ng-if="stackTime.BM.length>0" ischecked="checkStackTimeSelectAll(stackTime).flag" callback="stackTimeSelectAll(stackTime)"></trs-checkbox>
+                                <span ng-click="stackTimeSelectAll(stackTime)" class="{{checkStackTimeSelectAll(stackTime).flag?'selected':''}}" ng-if="stackTime.BM.length>0" ng-bind="stackTime.CHANNELDESC"></span>
+                                <ul>
+                                    <li class="manage-main-rightDiv-leftDiv-authorityChildrenLi" ng-repeat="right in stackTime.BM">
+                                        <trs-checkbox ischecked="checkPageSelected(right).flag" callback="choosePage(right)"></trs-checkbox>
+                                        <!-- <input ng-checked="checkPageSelected(right).flag" type="checkbox" ng-click="choosePage(right)" /> -->
+                                        <span class="{{checkPageSelected(right).flag?'selected':''}}" ng-click="choosePage(right)" ng-bind="right.CHANNELDESC"></span>
+                                    </li>
+                                </ul>
+                                <div class="clear"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div cg-busy="loadingPromise"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--报纸板面-->
+</div>

@@ -1,0 +1,12 @@
+{
+    "DICTATEID": "2",
+    "TITLE": "asides",
+    "CONTENT":"坐落于中国重庆市主城区南山风景区内入选国家“中西部高校基础能力建设工程”",
+    "TYPE":"1",
+    "OVERTIME":"2016-01-01 12:12:12",
+    "ISSECRET": "1",
+    "files":[
+        {"fileId":1,"fileName":"xxxx.jpg","filePath":"http://XXXXXX/w1213313313131313.jpg"},
+        {"fileId":2,"fileName":"xxxx.jpg","filePath":"http://XXXXXX/w1213313313131313.jpg"}
+    ]
+}

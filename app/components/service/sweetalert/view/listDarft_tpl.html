@@ -1,0 +1,16 @@
+<div class="toBeCompiled-list-container">
+	<div class="toBeCompiled-review-head">
+        <p >取刚传稿</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="toBeCompiled-darft-list">
+        <p >稿件列表</p>
+        <ul>
+            <li ng-repeat="list in lists" ng-bind="list.TITLE" ng-click="listChoose(list)" ng-class="{'active':list==listSelect}"></li>
+        </ul>
+    </div>
+    <div class="toBeCompiled-directSign-footer">
+    	<button class="new-role-btn ml460 btn_confirm" ng-click="isConfirm()">确定</button>
+        <button class="button-cancel new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

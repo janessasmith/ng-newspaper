@@ -1,0 +1,14 @@
+<div class="smallIcon">
+    <div class="smallIcon-body">
+        <img class="sel_tit" ng-src="{{firstIcon}}" ng-click="showIcon()">
+        <icons ng-class="show">
+            <div class="container-fluid smallIcon-iconList">
+                <div class="row">
+                    <div class="sm-col-12">
+                        <img ng-repeat="y in smallIcons track by $index" ng-click="getMainIcon(smallIcons[$index])" ng-src="{{smallIcons[$index]}}">
+                    </div>
+                </div>
+            </div>
+        </icons>
+    </div>
+</div>

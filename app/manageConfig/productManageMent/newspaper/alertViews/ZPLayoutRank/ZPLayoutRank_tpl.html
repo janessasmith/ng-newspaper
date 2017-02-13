@@ -1,0 +1,23 @@
+<div class="layout-rank-container">
+    <div class="layout-rank-head">
+        <p class="tit" ng-bind="title"></p>
+        <trs-single-select selected-option="DroplistSelected" callback="getDieciData()" options="DroplistJson"></trs-single-select>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="layout-rank-body">
+        <div class="rank-operate">
+            <img src="./manageConfig/images/zm46.png" ng-click="moveToTop()" />
+            <img src="./manageConfig/images/zm47.png" ng-click="moveToBottom()" />
+            <img src="./manageConfig/images/zm48.png" ng-click="moveUp()" />
+            <img src="./manageConfig/images/zm49.png" ng-click="moveDown()" />
+        </div>
+        <ul>
+            <li ng-repeat="rankItem in rankItems" ng-click="selectItem(rankItem)" ng-class="{'active':selectedItem===rankItem}">{{rankItem.CHNLDESC}}</li>
+        </ul>
+    </div>
+    <div class="layout-rank-footer">
+        <button class="new-role-btn btn_confirm" ng-click="confirm()">确定</button>
+        <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

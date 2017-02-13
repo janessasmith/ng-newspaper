@@ -1,0 +1,85 @@
+<div class="multiimages_popup_title">
+    {{$index+1}}、{{item.title}}
+    <span class="i_toggle pull-right" ng-class="{close:showMe}" ng-click="toggle()"></span>
+    <button type="button" class="close" aria-label="Close" ng-click="deleteItem($index)">
+        <span aria-hidden="true" class="i_close"></span>
+    </button>
+</div>
+<div ng-show="item.showMe" class="clearfix createdocitem-date">
+    <trs-upload dirupload-src="item.imgsrc"></trs-upload>
+    <table class="col-md-8 multiimages_tb pull-left" style="margin-top:29px">
+        <tbody>
+            <tr ng-if="requiredObj.title!=undefined" class="multiImages_invalidate">
+                <td class="txt_r txt_t multtd">标题:</td>
+                <td class="multtd" colspan="5">
+                    <div class="multiImages_ipt invalidate-input-box {{docListForm.title.$invalid?'has-error':''}}" id="oneImageFsd">
+                        <!-- <small-icon-dir></small-icon-dir> -->
+                        <input validator="maxlength=50,required" maxlength-error-message="长度不能超过50个字符" name="title_{{$index}}" placeholder="请输入标题" type="text" ng-style="{color:item.titlecolor}" class="form-control oneImageInput" ng-model="item.title" ng-mouseenter="isShowTips_title=true" ng-mouseleave="isShowTips_title=false" is-show-tips="isShowTips_title">
+                        <i ng-click="cleanInput($index)">
+              <img src="./editingCenter/website/fragmentManagement/images/d-1.jpg" alt="">
+            </i>
+                        <i style="display:none" ng-init="item.reltime=item.reltime?item.reltime:nowTime">
+                        </i>
+                        <trs-color-picker col-obj="item.titlecolor"></trs-color-picker>
+                        <div class="fsd-iconlist multiImages_iconlist">
+                            <showsmalliconlist></showsmalliconlist>
+                        </div>
+                        <trs-word-num num-obj="item.title" class="multiImages_wordnum"></trs-word-num>
+                    </div>
+                </td>
+            </tr>
+            <tr ng-if="requiredObj.subtitle!=undefined">
+                <td class="txt_r multtd">副标题:</td>
+                <td colspan="5" class="multtd invalidate-input-box {{docListForm.subtitle.$invalid?'has-error':''}}">
+                    <input class="form-control" name="subtitle_{{$index}}" placeholder="请输入副标题" maxlength-error-message="长度不能超过50个字符" validator="maxlength=50" type="text" ng-model="item.subtitle" ng-mouseenter="isShowTips_sub=true" ng-mouseleave="isShowTips_sub=false" is-show-tips="isShowTips_sub">
+                </td>
+            </tr>
+            <tr ng-if="requiredObj.url!=undefined">
+                <td class="txt_r multtd">链接:</td>
+                <td colspan="5" class="multtd invalidate-input-box {{docListForm.url.$invalid?'has-error':''}}">
+                    <input type="text" ng-model="item.url" validator="maxlength=1000,url" class="form-control" name="url_{{$index}}" maxlength-error-message="长度不能超过1000个字符" validator="maxlength=200" type="text" ng-mouseenter="isShowTips_url=true" ng-mouseleave="isShowTips_url=false" is-show-tips="isShowTips_url">
+                </td>
+            </tr>
+            <tr>
+                <td ng-if="requiredObj.editor!=undefined" class="txt_r multtd">编辑:</td>
+                <td ng-if="requiredObj.editor!=undefined" class="multtd invalidate-input-box {{docListForm.editor.$invalid?'has-error':''}}">
+                    <input class="form-control" name="editor_{{$index}}" placeholder="" maxlength-error-message="长度不能超过50个字符" validator="maxlength=50" type="text" ng-model="item.editor" ng-mouseenter="isShowTips_editor=true" ng-mouseleave="isShowTips_editor=false" is-show-tips="isShowTips_editor">
+                </td>
+                <td ng-if="requiredObj.author!=undefined" class="txt_r multtd">作者:</td>
+                <td ng-if="requiredObj.author!=undefined" class="multtd invalidate-input-box {{docListForm.author.$invalid?'has-error':''}}">
+                    <input class="form-control" name="author_{{$index}}" placeholder="" maxlength-error-message="长度不能超过50个字符" validator="maxlength=50" type="text" ng-model="item.author" ng-mouseenter="isShowTips_author=true" ng-mouseleave="isShowTips_author=false" is-show-tips="isShowTips_author">
+                </td>
+                <td ng-if="requiredObj.source!=undefined" class="txt_r multtd">来源:</td>
+                <td ng-if="requiredObj.source!=undefined" class="multtd invalidate-input-box {{docListForm.source.$invalid?'has-error':''}}">
+                    <input class="form-control" name="source_{{$index}}" placeholder="" maxlength-error-message="长度不能超过50个字符" validator="maxlength=50" type="text" ng-model="item.source" ng-mouseenter="isShowTips_source=true" ng-mouseleave="isShowTips_source=false" is-show-tips="isShowTips_source">
+                </td>
+            </tr>
+            <tr ng-if="requiredObj.abstract!=undefined">
+                <td class="txt_r multtd">摘要:</td>
+                <td colspan="5" class="multtd invalidate-input-box {{docListForm.abstract.$invalid?'has-error':''}}">
+                    <textarea ng-model="item.abstract" cols='20' rows='20' class='form-control filed_text' maxlength-error-message="长度不能超过1000个字符" validator="maxlength=1000" name="abstract_{{$index}}" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips_abs=false" is-show-tips="isShowTips_abs"></textarea>
+                </td>
+            </tr>
+            <tr ng-if="requiredObj.remark!=undefined">
+                <td class="txt_r multtd">备注:</td>
+                <td colspan="5" class="multtd invalidate-input-box {{docListForm.remark.$invalid?'has-error':''}}">
+                    <textarea ng-model="item.remark" cols='20' rows='20' class='form-control filed_text' maxlength-error-message="长度不能超过1000个字符" validator="maxlength=1000" name="remark_{{$index}}" ng-mouseenter="isShowTips_remark=true" ng-mouseleave="isShowTips_remark=false" is-show-tips="isShowTips_remark"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="txt_r multtd">时间:</td>
+                <td class="multtd" colspan="5">
+                    <div class="date">
+                        <trs-date-time-picker time-obj="item.reltime" position="top-right" language="zh-CN"></trs-date-time-picker>
+                        <!--  <input type="text" size="10" placement="top" ng-change="item.reltime=changeTime(item.reltime)" class="form-control" ng-model="item.reltime" date-date-format="yyyy-MM-dd" data-autoclose="1" bs-datepicker readonly="readonly" data-container=".createdocitem-date"  data-placement="auto">
+                        <img class="date" src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne"> -->
+                    </div>
+                    <!--  <div class="time">
+                        <input type="text" placement="top" ng-change="item.reltime=changeTime(item.reltime)" size="8" class="form-control" ng-model="item.reltime" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" bs-timepicker readonly="readonly" data-container=".createdocitem-date"  data-placement="auto">
+                        <img class="time" src="./editingCenter/app/toBeCompiled/images/t1.png">
+                    </div> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

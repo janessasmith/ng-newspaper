@@ -1,0 +1,59 @@
+<div class="editor_window">
+    <div class="main">
+        <div class="head">
+            <span>编辑选择</span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <!-- <div class="search">
+            <span>用户名：</span>
+            <div>
+                <input placeholder="请输入用户名" type="text" watch-options='true' ng-model="searchUser" bs-options="state as state.SUGGESTION for state in getStatus($viewValue)" limit='15' bs-typeahead class="form-control">
+            </div>
+        </div> -->
+        <div class="body">
+            <div class="left">
+                <div class="head">请选择用户组织</div>
+                <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node)"><span ng-bind='node.GNAME'></span>
+                </treecontrol>
+            </div>
+            <div class="middle">
+                <div class="head">未选择用户</div>
+                <input type="text" class="form-control" placeholder="输入关键词" ng-model="searchWordLeft" />
+                <ul>
+                    <li ng-click="user.selected!=true?user.selected=true:user.selected=false" class="{{user.selected?'selected':''}}" ng-repeat="user in userDatas | filter:myFilter" ng-dblclick="dbckChoose(user)" ng-bind="user.USERNAME"></li>
+                </ul>
+            </div>
+            <div class="middle_right">
+                <div>
+                    <img ng-click="singleSelect()" src="./manageConfig/roleManageMent/images/js4.png">
+                </div>
+                <div>
+                    <img ng-click="singleRemove()" src="./manageConfig/roleManageMent/images/js5.png">
+                </div>
+                <div>
+                    <img ng-click="selectedAll()" src="./manageConfig/roleManageMent/images/js6.png">
+                </div>
+                <div>
+                    <img ng-click="removeAll()" src="./manageConfig/roleManageMent/images/js7.png">
+                </div>
+            </div>
+            <div class="right">
+                <div class="head">已选择用户</div>
+                <div class="suggestion">
+                    <input type="text" class="form-control" placeholder="输入关键词" watch-options='true' ng-model="searchUser" bs-options="state as state.SUGGESTION for state in getStatus($viewValue)" limit='30' bs-typeahead>
+                </div>
+                <ul>
+                    <li ng-click="user.selected!=true?user.selected=true:user.selected=false" class="{{user.selected?'selected':''}}" ng-repeat="user in userSelectedList" ng-dblclick="dbckRemove(user)" ng-bind="user.USERNAME"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="buttom other">
+            <button class="btn_confirm" ng-click="confirm()">
+                确定
+            </button>
+            <button class="btn_cancel" ng-click="cancel()">
+                取消
+            </button>
+        </div>
+    </div>
+</div>

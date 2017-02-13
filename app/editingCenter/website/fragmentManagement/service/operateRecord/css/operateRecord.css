@@ -1,0 +1,127 @@
+.operateRecord-window .modal-dialog {
+    width: 640px;
+    top: 158px;
+}
+
+.operateRecord {
+    width: 640px;
+    height: 500px;
+    border: 4px solid #DDDDDD;
+    border-radius: 4px;
+    background-color: white
+}
+
+.operateRecord .head {
+    height: 41px;
+    border-bottom: 1px solid #DDDDDD;
+    line-height: 41px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.operateRecord .head img {
+    margin-left: 400px;
+    cursor: pointer;
+}
+
+.operateRecord .search {
+    height: 30px;
+    width: 100%;
+    background-color: #EDEDED;
+    line-height: 30px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.operateRecord .search input {
+    margin-right: 5px;
+}
+
+.operateRecord .search span {
+    float: left;
+}
+.operateRecord .search span.to{
+	margin-right:5px;
+}
+
+.operateRecord .search .username {
+    width: 100px;
+    height: 25px;
+    float: left;
+}
+
+.operateRecord .search .date {
+    position: relative;
+    float: left;
+}
+
+.operateRecord .search .date input {
+    width: 100px;
+    height: 25px;
+    background-color: white;
+}
+
+.operateRecord .search .date img {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.operateRecord .search .time {
+    position: relative;
+    float: left;
+}
+
+.operateRecord .search .time input {
+    width: 70px;
+    height: 25px;
+    background-color: white;
+}
+
+.operateRecord .search .time img {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.operateRecord .search .searchbutton {
+    height: 25px;
+    line-height: 20px;
+    border-radius: 4px;
+    border: 0px;
+    background-color: #0095CE;
+    color: white;
+}
+
+.operateRecord .main {
+    height: 385px;
+    width: 100%;
+    padding: 5px;
+}
+
+.operateRecord .main table {
+    font-size: 12px
+}
+
+.operateRecord .main table .record{
+    text-align: left !important;
+}
+.operateRecord .main table .record span{
+    color:#218DD7;
+}
+
+.operateRecord .main thead {
+    background: #EDEDED;
+}
+
+.operateRecord .bottom {
+    font-size: 12px;
+}
+
+.operateRecord .bottom ul {
+    margin-top: 0px !important;
+}
+.operateRecord .bottom ul {
+    margin-left:100px !important;
+}

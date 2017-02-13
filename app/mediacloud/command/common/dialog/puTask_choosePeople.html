@@ -1,0 +1,70 @@
+
+<div class="popup-box sel-con-box">
+    <div class="popup-top">
+        <span>选择联系人</span>
+        <a href="javascript:;" class="popup-close-btn rt" ng-click="cancel();"></a>
+    </div>
+    <div class="">
+        <div class="con-sel-bk">
+            <div class="con-sel-bk">
+                <!--组织机构-->
+                <div class="con-sel-deal">
+                    <!--联系人列表-->
+                    <div class="con-sel-lf lf">
+                    	<div class="sel-lf-search">
+                            <span class="sel-per-tit">人员列表</span>
+                        </div>
+                        <!-- 人员查询 -->
+                        <div class="con-ls-bk four">
+                            <div class="ls-se-deal">
+                                <div class="se-deal-div">
+                                    <div class="ls-th-deal ls-over">
+                                        <a href="javascript:;" class="con-ls-deal" selected="selected" 
+                                        ng-repeat="user in users">
+                                            <div class="con-ls-pc lf conlspc">
+                                                <input type="hidden" class="userId" value="{{user.userId}}">
+                                                <input type="hidden" class="headImg" value="{{user.userHead}}">
+                                                <img ng-src="{{user.userHead}}"/>
+                                            </div>
+                                            <span class="con-ls-name roleName">{{user.userName}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--添加删除-->
+                    <div class="con-sel-opt lf">
+                        <a href="javascript:;" class="sel-add-btn" add-people>添加</a>
+                        <a href="javascript:;" class="sel-del-btn" remove-people>删除</a>
+                    </div>
+                    <!--选中人员-->
+                    <div class="con-sel-lf rt">
+                        <div class="sel-lf-search">
+                            <span class="sel-per-tit">选中人员</span>
+                        </div>
+                        <div class="con-ls-bk sel-per-deal">
+                            <div class="ls-th-deal add-peo-list ls-over">
+                                <a class="con-ls-deal" selected="bg-white" ng-repeat="fhUser in fhUsers">
+                                    <div class="con-ls-pc lf">
+                                        <img ng-src="{{fhUser.headImg}}"/>
+                                    </div>
+                                    <span class="con-ls-name">{{fhUser.userName}}</span>
+                                    <input class="roleName" type="hidden" value="{{fhUser.userName}}">
+                                    <input class="headImg" type="hidden" value="{{fhUser.headImg}}">
+                                    <input class="roleId" type="hidden" value="{{fhUser.userId}}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-btn-bk">
+            <div class="bnt-bk-deal">
+                <a href="javascript:;" class="popup-btn-confirm" ng-click="determine('400',$event);">确定</a>
+                <a href="javascript:;" class="popup-btn-cancel" ng-click="cancel();">取消</a>
+            </div>
+        </div>
+    </div>
+</div>

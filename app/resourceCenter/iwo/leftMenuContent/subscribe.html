@@ -1,0 +1,128 @@
+<style>
+	.btn.gray_btn{
+		border-color: #aaa;
+		background-color: #eceef0;
+		color:#333;
+	}
+	.btn.btn-default.btn_active{
+		color: #fff;
+    	background: #4496d2;
+	}
+</style>
+<div class="row" style="position: relative;margin-top:-2px;min-height: 700px;">
+	<div class="col-md-2 editing-left-fixed" style="top:0;bottom: 0;position: absolute;background-color: #466385;">
+		<div class="container-fluid resource_list">
+		    <div class="resource_list_tpl1" style="border-bottom: 1px solid #466385">
+		        <accordion close-others="true" class="resource_nav">
+		            <div class="editing_center_channel">
+		                <accordion-group heading="来源订阅" is-open="true">
+		                    <div ng-click="setCurChannel(item)" class="panel-body-editcenter editCenter_left_panel_body" ng-class="{'selected':item.ename == curChannel.ename}" ng-repeat="item in data.channelList">
+		                    {{item.name}}
+		                    </div>
+		                </accordion-group>
+		            </div>
+		        </accordion>
+		    </div>
+		</div>
+	</div>
+<div class="col-md-10 mt10 plr0 col-md-push-2">
+	<div class="col-md-12">
+		<ul class="nav nav-tabs subscribe_tab">
+            <li ng-class="{active: item==status.curEditTRype}" ng-repeat="item in data.editType" ng-click="changeEditType(item)">
+              <a href="javascript:;">{{item.name}}</a>
+            </li>
+       	</ul>
+		<div class="m_search bg_size" ng-if="status.curEditTRype.type == 0">
+            <div class="pos_relative">
+            	<input type="text" class="form-control" ng-model="params.keyword" ng-keypress="searchWithKeyword($event)" ng-change="getSuggest()" style="width: 60%" ng-focus="showSuggest()">
+            	<button class="btn btn-default btn-commen" type="button" ng-click="searchWithKeyword()">检索</button>
+            	<ul class="m_list_6" ng-show="status.showSuggest&&data.suggestList.length" ng-mouseleave="hideSuggest()">
+            		<li ng-repeat="item in data.suggestList track by $index" ng-click="refreshList(item)">{{item}}</li>
+            	</ul>
+            </div>
+            <p class="f_color_999 mt10">请输入新华社线路、站点名或栏目名进行搜索，多个关键词用空格分隔。如：订阅人民网财经栏目，搜索：“人民网 财经” </p>
+        </div>
+	</div>
+	<div class="col-md-6 mt10 mc-padding-right-0">
+		<div class="fixed_bar">
+			<!-- <span class="btn" ng-click="selectAll()">全选</span>
+			<span class="btn" ng-click="deleteAll()">取消</span> -->
+			<div class="text-right">
+				<span class="btn btn-default btn-commen" ng-click="changeEditType(data.editType[1])" ng-class="{'btn_active':data.selectedArray.length!=0}" ng-if="status.curEditTRype.type == 0">已选订阅({{data.selectedArray.length}})</span>
+				<span class="btn btn-default btn-commen" ng-click="changeEditType(data.editType[0])" ng-if="status.curEditTRype.type == 1">继续添加</span>
+				<span class="btn btn-default btn-commen" ng-click="selectSubscribe()">保存订阅</span>
+			</div>
+		</div>
+		<div>
+			<ul class="subscribe_list">
+				<li class="clearfix" ng-repeat="item in data.items track by $index" ng-class="{'active':status.curSubscribe == item}">
+					<div class="col-xs-8">
+						<!-- <trs-checkbox ischecked="isContain(data.selectedArray,item)" callback="selectDoc(item)"></trs-checkbox> -->
+						<span class="lb" ng-bind="item.SECTION_NAME"></span>
+						<strong ng-bind="item.SOURCENAME"></strong>
+						<strong ng-if="item.SECTION=='website'||item.SECTION=='app'">| {{item.CHANNEL}}</strong>
+						<span class="is_subscribe" ng-if="item.isSubscribe">已订阅</span>
+					</div>
+					<div class="col-xs-4 text-right">
+						<span class="btn btn_view" ng-click="changeBtnTitle(item)" ng-bind="item.btnTitle" ng-if="status.curEditTRype.type == 0" ng-class="{'gray_btn':item.btnTitle==status.curEditTRype.active}"></span>
+						<span class="btn btn_view" ng-click="changeBtnTitle2(item)" ng-bind="item.btnTitle" ng-if="status.curEditTRype.type == 1" ng-class="{'gray_btn':item.btnTitle==status.curEditTRype.default}"></span>
+						<span class="btn btn_view" ng-click="requestList(item)">预览</span>
+					</div>
+					<div class="col-xs-8 f_color_999" style="padding-left: 20px;">
+						标签：{{item.BELONGING}} {{item.RELIABILITY}}可靠性
+					</div>
+					<div class="col-xs-4 text-right f_color_999" ng-if="status.curEditTRype.type == 0">
+						{{item.CHOSENNUMBER}}人已订阅
+					</div>
+				</li>
+			</ul>
+			<div class="page cls-paging mc-margin-bottom-sm" style="position: inherit;" ng-if="status.curEditTRype.type == 0">
+		        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="3" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+		    </div>
+		</div>
+	</div>
+	<!-- 预览 -->
+	<div class="col-md-6 mt10" ng-hide="data.selectedArray.length == 0 && status.curEditTRype.type == 1">
+		<div class="edit_table border_radius_5">
+		    <div class="min_height">
+		        <table class="table table-striped resouce_center_share_table data-table">
+		            <thead>
+		                <tr>
+		                    <th class="td-number col-index" style="text-align: center;">序号</th>
+		                    <th>标题</th>
+		                    <th class="w140">发布时间</th>
+		                </tr>
+		            </thead>
+		            <tbody trs-thumb-container>
+		                <tr ng-repeat="item in data.list">
+		                    <td ng-bind="$index+1+(page.PAGESIZE)*(page.CURRAPGE-0)"></td>
+		                    <td class="resouce_center_share_title_td gaiOpe">
+		                        <preview-title class="pull-left" summary-text="item.IR_ABSTRACT" title-text="item.DOCTITLE" target-url="#/resourcedetail?guid={{item.ZB_GUID}}&indexname={{basicParams.indexName}}"></preview-title>
+		                        <a href="">
+		                            <span class="text-warning gai" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,0)">取</span>
+		                        </a>
+		                        <a href="">
+		                            <span class="text-success gai" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,1)">签</span>
+		                        </a>
+		                        <a href="">
+		                            <span class="text-primary gai" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,2)">见</span>
+		                        </a>
+		                        <a href="">
+		                            <span class="text-danger gai" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,3)">撤</span>
+		                        </a>
+		                        <a href="">
+		                            <span class="text-info gai" ng-click="viewBigDataInfo(item.ZB_GUID,true)" ng-show="showOperFlag(item.ZB_GUID,4)">重</span>
+		                        </a>
+		                    </td>
+		                    <td>{{item.DOCPUBTIME.substr(0,16)}}</td>
+		                </tr>
+		                <tr ng-show="data.list.length == 0">
+		                	<td colspan="3" class="text-center">暂无数据</td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    </div>
+		</div>
+	</div>
+</div>
+</div>

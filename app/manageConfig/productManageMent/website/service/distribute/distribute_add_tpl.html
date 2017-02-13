@@ -1,0 +1,24 @@
+<div class="distribute-add">
+    <div class="distribute-add_tl">
+        <p>分发配置</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="distribute-add_row">
+        <div class="distribute-detail">
+            <p>类型:</p>
+            <trs-single-select selected-option="newspaperManageStateSelected" callback="queryByDocStatus()" options="productWebsite" ng-model="TARGETTYPE"></trs-single-select>
+        </div>
+        <div class="clear"></div>
+        <div class="distribute-detail">
+            <p>存放路径:</p>
+            <div class="input_url">
+                <input type="text" class="" ng-model="DATAPATH">
+            </div>
+        </div>
+
+    </div>
+    <div class="man_produ_modify_footer">
+        <button class="news-role-btn btn_confirm" ng-click="isConfirm()">确定</button>
+        <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

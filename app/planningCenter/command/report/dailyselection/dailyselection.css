@@ -1,0 +1,60 @@
+.dailyselection{
+    margin-right: 0px;
+}
+.dailyselection .input_group_dailyselection {
+    float: left;
+    width: 55%;
+}
+
+.dailyselection .form_group_dailyselection {
+    float: left;
+    height: 30px;
+    padding-left: 10px;
+    margin-bottom: 13px;
+}
+
+.dailyselection .form_group_dailyselection .form_control_dailyselection {
+    height: 30px;
+}
+
+.edit_table .dailyselection_with10 {
+    width: 10%;
+}
+
+.edit_table .dailyselection_with15 {
+    width: 15%;
+}
+
+.edit_table .dailyselection_with20 {
+    width: 20%;
+}
+
+.edit_table .dailyselection_with35 {
+    width: 35%;
+}
+
+.edit_table table tbody tr td .dailyselection_button {
+    height: 26px;
+    line-height: 10px;
+    border-radius: 0;
+}
+.row .shortlabel{ 
+    width: 100px;
+    text-align: right;
+}
+.row .longtext,
+.row .shortlabel{
+    float: left;
+    padding: 8px;
+}
+.row .longtext{
+    max-width: calc(100% - 100px);
+}
+.dailyselection .nav-tabs > li.active > a{
+
+    border-color: #f1f2f6; 
+    color: #555; 
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}

@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+    <p class="modal-title">任务查看页</p>
+</div>
+<div class="modal-body mc-padding-0">
+    <div class="reportdetail">
+        <div class="row">
+            <div class="col-sm-2 txt_r">
+                <label>标题:</label>
+            </div>
+            <div class="col-sm-10">{{task.TITLE}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 txt_r">
+                <label>创建时间:</label>
+            </div>
+            <div class="col-sm-10">{{task.CRTIME}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 txt_r">
+                <label>内容:</label>
+            </div>
+            <div class="col-sm-10">{{task.CONTENT}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 txt_r">
+                <label> 任务时间:</label>
+            </div>
+            <div class="col-sm-10">{{task.TASKTIME}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 txt_r">
+                <label>任务地点:</label>
+            </div>
+            <div class="col-sm-10">{{task.TASKADDRESS}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 txt_r">
+                <label> 人员:</label>
+            </div>
+            <div class="col-sm-10">{{task.TASKADDRESS}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 txt_r">
+                <label> 任务日志:</label>
+            </div>
+            <div class="col-sm-10">{{task.CONTENT}}</div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer"> 
+    <button class="btn btn-primary" ng-click="close()">确认</button>
+</div>

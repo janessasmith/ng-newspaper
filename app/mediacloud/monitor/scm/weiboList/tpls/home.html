@@ -1,0 +1,84 @@
+<div class="jk-main-container">
+    <div class="jk-main-con" >
+        <div class="zh-pf-bk">
+            <!--左边-->
+            <div class="zh-pf-lf lf">
+                <div class="zh-info-deal" ng-controller="wbAccountCtrl">
+                    <div class="zh-info-pic">
+                        <img ng-src="{{account.headPicUrl}}" class="zh-info-tx"/>
+                        <img ng-src="common/images/wb-ls-icon04.png" class="zh-info-wb"/>
+                    </div>
+
+                    <div class="zh-info-name" style="width: 185px;">
+                        <p class="zh-name" style="margin-right:10px;">{{account.accountName}}</p>
+                        <a href class="gz-opt">关注</a>
+                    </div>
+                    <div class="zh-info-name" style="width: 300px;">
+                        <img ng-src="common/images/wb-ls-icon03.png" class="zh-sex"/>
+                        <p class="zh-wb-link"><span></span></p>
+                    </div>
+                    <div class="zh-gz-num" style="width: 387px;">
+                        <div class="gz-num-ls lf">
+                            <p class="num-deal">{{account.followNum}}</p>
+                            <p class="num-name">关注</p>
+                        </div>
+                        <div class="gz-num-ls lf">
+                            <p class="num-deal">{{account.fansNum}}</p>
+                            <p class="num-name">粉丝</p>
+                        </div>
+                        <div class="gz-num-ls no-br lf">
+                            <p class="num-deal">{{account.weiboNum}}</p>
+                            <p class="num-name">微博</p>
+                        </div>
+                    </div>
+               
+                </div>
+            </div>
+            <!--右边-->
+            <div class="zh-pf-rt rt">
+                <div class="pf-rt-top" ng-controller="wbradarMapCtrl">
+                    <div class="pf-fb-tit">评分分布</div>
+                    <div class="pf-fb-pc">
+                        <echarts-radar id="radar1"  width="662" height="412"  indicator="indicator" series="series" color="color">
+                        </echarts-radar> 
+                    </div>
+                </div>
+                <div class="zh-pf-res" ng-controller="scoreCtrl">
+                    <div class="pf-res-deal" style="width: 368px;">
+                        <div class="pf-res-dt lf">
+                            <p>{{countscore.countdate}}</p>
+                            <p>综合评分</p>
+                        </div>
+                        <p class="pf-res lf">{{countscore.score}}</p>
+                        <span class="res-pm lf">第{{countscore.orderNum}}名</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zh-bh-qs">
+            <!--账号微博转发评论趋势-->
+            <div class="bh-qs-bk lf">
+                <div class="weibo-tit news-list-tit">账号微博转发评论趋势</div>
+                <div class="bh-qs-deal" ng-controller="wbfowordlineCtrl">
+                    <echarts-line id="line2"  width="593" height="311" type="stacked" 
+                    legend="legend"  symbol="symbol" grid="grid" xaxis="xaxis" series="series" color="color">
+                    </echarts-line>
+                </div>
+            </div>
+            <!--账号粉丝变化趋势图-->
+            <div class="bh-qs-bk rt">
+                <div class="weibo-tit fs-bh-tit">账号粉丝变化趋势图</div>
+                 <div class="bh-qs-deal" ng-controller="wbfanslineCtrl">
+                    <echarts-line id="line1"  width="593" height="311" type="logarithmic" 
+                      symbol="symbol" grid="grid" xaxis="xaxis" series="series"  color="color">
+                    </echarts-line>
+                </div>
+            </div>
+        </div>   
+            <!--条件查询微博列表-->
+            <div ui-view></div>
+    </div>
+</div>
+<!--end main-->
+</body>
+</html>

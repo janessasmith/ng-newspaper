@@ -1,0 +1,24 @@
+<!--main-->
+<div class="jk-main-container">
+    <div class="jk-main-con">
+        <!--重庆晨报子账号-->
+        <div ui-view="subAccount"></div>
+        <!--end 重庆晨报子账号-->
+        <!--运营排行-->
+        <div class="weibo-center-top mt10">
+            <!-- 账号运营情况图 -->
+            <div ui-view="situationMap"></div>
+            <!-- 账号影响力榜单 -->
+            <div ui-view="influenceList"></div>
+
+        </div>
+        <!--end 运营排行-->
+        <div class="wb-rd-div">
+            <!--最新文章-->
+            <div ui-view="latestArticles" ></div>
+            <!--热点微博-->
+            <div ui-view="hotWeiBo" ></div>
+        </div>
+    </div>
+</div>
+<!--end main-->

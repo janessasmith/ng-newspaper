@@ -1,0 +1,41 @@
+<div class="myManuSubmit">
+    <div class="submit">
+        <div class="header">
+            <p>保存订阅</p>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="content">
+            <div class="take-draft-top take-draft-top-span">
+                <div class="title-container">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            订阅名称：
+                        </div>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" ng-model="groupName"/>
+                        </div>
+                    </div>
+                    订阅存放位置：
+                    <div class="group_wrap">
+                        <div class="group_list" ng-repeat="group in groups track by group.orderNum" ng-init="group.open=(group.id==editValues.parentId)">
+                            <div class="tit" ng-class="{'active':group.open,'selected':group.id==curGroup.id}" ng-click="setCurGroup(group)">{{group.title}}</div>
+                            <ul ng-show="group.open">
+                                <li ng-repeat="item in group.resourceGroup" ng-class="{'active':item.id==curGroup.id,'not-allowed':editValues.sourceId}" ng-click="selectCurItem(item,group,editValues.sourceId)">{{item.title}}</li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 m-create-group" ng-show="status.showCreateGroup">
+                            <input type="text" placeholder="新建分组" class="form-control line-height-26" ng-model="newGroupName"/>
+                            <button class="btn xs btn-default" ng-click="addNewItem()">保存</button>
+                            <button class="btn xs btn-default" ng-click="status.showCreateGroup=false">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <button class="btn btn-primary btn_confirm pull-left mc-margin-left-xs" ng-click="status.showCreateGroup=true">新建分组</button>
+                <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+                <button class="btn btn-primary btn_confirm" ng-click="save()">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+    "CORPSId": "2",
+    "TITLE": "天津红日药业股份有限公司",
+    "CONTENT":"红日药业集团创建于1996年，是一家横跨现代中药制剂、中药配方颗粒、化学合成药、生物技术药、医疗器械、互联网医疗等诸多领域，融投资、研发、生产、资本于一体的高科技医药健康产业集团。",
+    "NOTIFICATIONS":"1,null,3",
+    "files":[
+        {"fileId":1,"fileName":"xxxx.jpg","filePath":"http://XXXXXX/w1213313313131313.jpg"},
+        {"fileId":1,"fileName":"xxxx.jpg","filePath":"http://XXXXXX/w1213313313131313.jpg"}
+    ],
+    "users":[
+        {"userId":"11","userName":"张三"},
+        {"userId":"12","userName":"李四"}
+    ]
+}

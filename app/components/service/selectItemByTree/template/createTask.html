@@ -1,0 +1,110 @@
+<div class="toBeCompiled-share-container createTaskModal">
+    <div class="toBeCompiled-share-head">
+        <p>新建任务</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+    </div>
+    <div ng-show="status=='task'">
+        <form name="taskform">
+            <div class="form-group mc-padding-top-xs row mc-padding-horizontal-xs">
+                <label class="col-md-1 nowrap txt_r"><em class="font_red">*</em>标题:</label>
+                <div class=" col-md-11 invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="task.Title" style="" validator="required" ng-focus="titleTip=true" ng-blur="titleTip=false" is-show-tips="titleTip">
+                </div>
+            </div>
+            <div class="form-group mc-padding-top-xs row mc-padding-horizontal-xs">
+                <label class="col-md-1 nowrap txt_r"><em class="font_red">*</em>时间:</label>
+                <div class=" col-md-5">
+                    <input type="text" size="12" class="form-control" ng-model="task.TaskTime" validator="required" data-autoclose="1" placeholder="日期" date-format="yyyy-MM-dd" bs-datepicker>
+                </div>
+                <label class="col-md-1 nowrap txt_r"><em class="font_red">*</em>地点:</label>
+                <div class=" col-md-5">
+                    <input type="text" class="form-control" ng-model="task.TaskAddress" style="" validator="required">
+                </div>
+            </div>
+            <div class="form-group mc-padding-top-xs row mc-padding-horizontal-xs">
+                <label class="col-md-1 nowrap txt_r"><em class="font_red">*</em>任务内容:</label>
+                <div class=" col-md-11">
+                    <textarea class="form-control " rows="8" ng-model="task.Content" validator="required"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="topicpanel" ng-show="status=='selectuser'">
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label>标题:</label>
+            </div>
+            <div class="col-sm-6">{{task.Title}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label>内容:</label>
+            </div>
+            <div class="col-sm-6">{{task.Content}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label> 任务时间:</label>
+            </div>
+            <div class="col-sm-6">{{task.TaskTime | date:'yyyy-MM-dd'}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label>任务地点:</label>
+            </div>
+            <div class="col-sm-6">{{task.TaskAddress}}</div>
+        </div>
+        <div class="toBeCompiled-share-content">
+            <!--     <h2 class="topicbar txt_c fa-primary" ng-click="toggleExpand()">
+                    <i class="fa " ng-class="{true:'fa-angle-double-up',false:'fa-angle-double-down'}[isexpanded]" ></i>
+                </h2> -->
+            <div class="con">
+                <div class="conL left">
+                    <div class="header">
+                        <p>组织列表</p>
+                    </div>
+                    <div class="cont cont_">
+                        <treecontrol selected-node="selectedNodePA" expanded-nodes="expandedPA" on-node-toggle="showToggle(node)" class="tree-light" tree-model="treedataPA" options="treePAOptions" on-selection="showSelected(node)"><span title="{{node.GNAME}}" ng-bind="node.GNAME"></span></treecontrol>
+                    </div>
+                </div>
+                <div class="middle">
+                    <img src="./editingCenter/app/images/jt-l.png">
+                </div>
+                <div class="conR right">
+                    <div class="body">
+                        <div class="main">
+                            <div class="left">
+                                <div class="left-div">
+                                    <div class="head">
+                                        <p>选择列表</p>
+                                    </div>
+                                    <div class="body">
+                                        <input type="text" ng-model="searchWordLeft" class="form-control" placeholder="输入关键词以过滤名单" />
+                                        <div class="list">
+                                            <div class="head">
+                                                <p>人员列表</p>
+                                            </div>
+                                            <ul>
+                                                <li ng-dblclick="directlyToRight(user)" ng-class="user.selected" ng-click="chooseUserName('toChoose',user)" ng-repeat="user in userDatas | filter:myFilter"><span title="{{user.TRUENAME}}" ng-bind="user.TRUENAME"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pb20">
+        <div class="row button txt_r mc-padding-sm">
+            <button ng-click="modifystatus('selectuser')" ng-show="status=='task'" class="share-btn ml10  " ng-disabled="checkform(taskform)" >选择接受人</button>
+            <button ng-click="modifystatus('task')" ng-show="status=='selectuser'" class="share-btn  ml10 ">修改任务</button>
+            <button ng-click="submit()" ng-show="status=='selectuser'" class="share-btn  ml10 " ng-disabled="checkUser()" >确定派遣</button>
+            <button ng-click="close()" class="share-btn ml10  btn_cancel" >取消</button>
+        </div>
+    </div>
+</div>

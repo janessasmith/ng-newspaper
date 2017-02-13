@@ -1,0 +1,264 @@
+.resource-reserve-modal .modal-dialog {
+    width: 650px;
+}
+
+.resource-reserve-modal .modal-content {
+    position: relative;
+    background-color: #fff;
+}
+
+.resource-reserve-modal .myManuSubmit .submit .footer button,
+.resource-reserve-modal .myManuSubmit .submit .footer button:hover {
+    border: none;
+}
+
+.resource-reserve-modal .take-draft-top {
+    line-height: 30px;
+    padding: 10px 0 0 10px;
+    background: #f1f2f6;
+}
+
+.resource-reserve-modal .take-draft-top span,
+.resource-reserve-modal .take-draft-top p,
+.resource-reserve-modal .take-draft-top input.form-control {
+    display: inline-block;
+}
+
+.resource-reserve-modal .take-draft-top span,
+.resource-reserve-modal .take-draft-top input.form-control {
+    color: #666;
+}
+
+.resource-reserve-modal .take-draft-top p {
+    width: 40%;
+    margin: 0;
+}
+
+.resource-reserve-modal .take-draft-top input.form-control {
+    width: 245px;
+    height: 26px;
+    line-height: 13px;
+    margin-right: 10px;
+}
+
+.resource-reserve-modal .content ul.nav li {
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+.resource-reserve-modal ul.nav {
+    padding-top: 15px;
+}
+
+.resource-reserve-modal .main_container {
+    height: 310px;
+    padding: 10px;
+}
+
+.resource-reserve-modal .main_container.main_container_iwo {
+    padding: 30px;
+}
+
+.resource-reserve-modal .main_container.main_container_iwo trs-single-radio span {
+    padding-top: 0;
+}
+
+.resource-reserve-modal .m_edit_labels li {
+    float: left;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 5px 30px 5px 8px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    color: #333;
+}
+
+.resource-reserve-modal .m_edit_labels li img {
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    right: 3px;
+}
+
+.resource-reserve-modal .m_white_panel {
+    padding-left: 0;
+    padding-bottom: 0;
+    min-height: 67px;
+    overflow: hidden;
+}
+
+.resource-reserve-modal .take_draft_top_date {
+    height: 40px;
+    padding-top: 5px;
+}
+
+.resource-reserve-modal .take_draft_channel_tree div.h33 {
+    height: 33px;
+    line-height: 33px;
+    display: block;
+    border: none;
+    padding: 0px;
+}
+
+.resource-reserve-modal .take_draft_channel_tree div.h33 input {
+    width: 80%;
+    height: 28px;
+    float: right;
+}
+
+.resource-reserve-modal .take_draft_top_date input.form-control {
+    display: inline-block;
+    width: 240px;
+    height: 30px;
+}
+
+.resource-reserve-modal .take_draft_list_group {
+    padding-top: 10px;
+    height: 252px;
+}
+
+.resource-reserve-modal .take_draft_list_group > div {
+    border: 1px solid #ddd;
+    display: inline-block;
+    height: 100%;
+}
+
+.resource-reserve-modal .take_draft_list_group > div > p {
+    background: #f1f2f6;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.resource-reserve-modal .take_draft_list_group > div > ul {
+    height: 210px;
+    overflow-x: auto;
+}
+
+.resource-reserve-modal .take_draft_website_list > div ul li,
+.resource-reserve-modal .take_draft_list_group > div > ul li {
+    padding-left: 15px;
+    min-height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.resource-reserve-modal .take_draft_website_list > div ul li.active,
+.resource-reserve-modal .take_draft_website_list > div ul li:hover,
+.resource-reserve-modal .take_draft_list_group > div > ul li.active,
+.resource-reserve-modal .take_draft_list_group > div > ul li:hover {
+    background: #4496d2;
+    color: #fff;
+}
+
+.resource-reserve-modal .take_draft_media_list,
+.resource-reserve-modal .take_draft_dieCi_list {
+    width: 170px;
+    margin-right: 10px;
+}
+
+.resource-reserve-modal .take_draft_media_list {}
+
+.resource-reserve-modal .take_draft_dieCi_list {}
+
+.resource-reserve-modal .take_draft_caiBian_list {
+    width: 252px;
+}
+
+.resource-reserve-modal .take_draft_website_list,
+.resource-reserve-modal .take_draft_channel_tree {
+    display: inline-block;
+}
+
+.resource-reserve-modal .take_draft_website_list {
+    width: 220px;
+    margin-right: 10px;
+}
+
+.resource-reserve-modal .take_draft_channel_tree {
+    width: 390px;
+    float: right;
+}
+
+.resource-reserve-modal .take_draft_website_list > div,
+.resource-reserve-modal .take_draft_channel_tree > div {
+    border: 1px solid #ddd;
+    height: 270px;
+}
+
+.resource-reserve-modal .take_draft_channel_tree > div {
+    overflow: auto;
+    padding-top: 10px;
+}
+
+.resource-reserve-modal .take_draft_website_list p,
+.resource-reserve-modal .take_draft_channel_tree p {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+
+.resource-reserve-modal .take_draft_website_list > div ul {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+}
+
+.resource-reserve-modal .take-draft-top .title-container {
+    position: relative;
+}
+
+.resource-reserve-modal .take-draft-top .title-container > img {
+    cursor: pointer;
+}
+
+.resource-reserve-modal .take-draft-top .title-container > img.active {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.resource-reserve-modal .take-draft-top .title-container .title-absolute-container {
+    min-width: 315px;
+    position: absolute;
+    left: 250px;
+    top: 40px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.resource-reserve-modal .take-draft-top .title-container .title-absolute-container ul {
+    list-style: none;
+}
+
+.resource-reserve-modal .take-draft-top .title-absolute-container ul > li {
+    background: url("./resourceCenter/images/i2.png") 0 10px no-repeat;
+    padding-left: 10px;
+}
+
+.resource-reserve-modal .take-draft-top .title-absolute-container ul > li > a {
+    color: #666;
+    font-size: 12px;
+}
+
+.resource-reserve-modal .take-draft-top .title-absolute-container ul > li > a:hover {
+    text-decoration: none;
+}
+
+.resource-reserve-modal .reserve_date_group {
+    float: left;
+    margin: 12px 0 0 15px;
+}
+
+.resource-reserve-modal .reserve_date_group > div {
+    display: inline-block;
+    width: 70px;
+}

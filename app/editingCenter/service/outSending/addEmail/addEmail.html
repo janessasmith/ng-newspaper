@@ -1,0 +1,26 @@
+<form name="outSendingAddForm" novalidate>
+    <div class="man_produ_modify">
+        <div class="man_produ_modify_head">
+            <p>邮件外发</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="edit_outSending_main">
+            <div class="edit_outSending_add_row">
+                <p>邮箱地址：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="email" validator="email,required"  ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" name="email" is-show-tips="isShowTipsA"/>
+                </div>
+            </div>
+            <div class="edit_outSending_add_row">
+                <p>描述：</p>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="desc" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200"  ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" name="desc" is-show-tips="isShowTipsB"/>
+                </div>
+            </div>
+        </div>
+        <div class="man_produ_modify_footer">
+            <button class="news-role-btn right btn_cancel" ng-click="cancel()">取消</button>
+            <button class="news-role-btn man_produ_modify_footer_cancel right btn_confirm" ng-click="confirm()">确定</button>
+        </div>
+    </div>
+</form>

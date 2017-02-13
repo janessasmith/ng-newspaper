@@ -1,0 +1,85 @@
+.man_produ_modify .modal-content {
+    margin: 0 auto;
+    top: 215px;
+    width: 479px;
+    border: 4px solid #dddddd;
+}
+
+.man_produ_modify_head {
+    height: 41px;
+    line-height: 41px;
+    padding-left: 20px;
+}
+
+.man_produ_modify_head p {
+    width: 70%;
+    height: 100%;
+    font-weight: bold;
+    color: #333333;
+    display: inline-block;
+}
+
+.man_produ_modify_content,
+.man_produ_modify_footer {
+    background: #E8E9ED;
+    color: #666666;
+}
+
+.man_produ_modify_content span {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+}
+
+.man_produ_modify_content input {
+    padding: 2px;
+    width: 244px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.man_produ_modify_con_form {
+    padding: 8px 0;
+}
+
+.man_produ_modify_footer {
+    padding-left: 150px;
+    height: 76px;
+    line-height: 76px;
+}
+
+.man_produ_modify_footer_cancel {
+    margin-right: 40px;
+}
+
+.man_produ_modify_footer .news-role-btn {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.man_produ_modify_footer .news-role-btn-success {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #1aba9f;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.man_produ_modify_con_form select {
+    font-size: 14px;
+    width: 120px;
+    font-family: "微软雅黑";
+}

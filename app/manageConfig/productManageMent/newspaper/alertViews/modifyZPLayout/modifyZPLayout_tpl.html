@@ -1,0 +1,35 @@
+<form name="ZPLayoutForm" novalidate>
+    <div class="man_produ_newpress">
+        <div class="man_produ_newpress_head">
+            <p>照排版面管理-编辑</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_newpress_content pt16">
+            <div class="man_produ_newpress_con_form">
+                <p class="ZPLayout-title">报纸名称：</p>
+                <span class="newOrder-content-title" ng-bind="paper.SITEDESC"></span>
+            </div>
+            <div class="man_produ_newpress_con_form">
+                <p class="ZPLayout-title">版面类型：</p>
+                <span class="newOrder-content-title">照排版面</span>
+            </div>
+            <div class="man_produ_newpress_con_form invalidate-input-box {{ZPLayoutForm.layoutName.$invalid?'has-error':''}}">
+                <p class="ZPLayout-title">版面名称：</p>
+                <input class="form-control zpLayput-form-control" type="text" name="layoutName" ng-model="selectedItem.CHNLDESC" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-style="{color:list.TITLECOLOR}" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA">
+            </div>
+            <div class="man_produ_newpress_con_form invalidate-input-box {{ZPLayoutForm.shortTitle.$invalid?'has-error':''}}">
+                <p class="ZPLayout-title">简称：</p>
+                <input class="form-control zpLayput-form-control" type="text" name="shortTitle" ng-model="selectedItem.SIMPLENAME" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-style="{color:list.TITLECOLOR}" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" is-show-tips="isShowTipsB">
+            </div>
+            <div class="man_produ_newpress_con_form_dieci">
+                <p class="ZPLayout-title">叠次：</p>
+                <p class="ZPLayout-DieciName ng-binding" ng-bind="selectedItem.DIECINAME"></p>
+            </div>
+        </div>
+        <div class="man_produ_newpress_footer">
+            <button class="news-role-btn-success man_produ_newpress_footer_cancel btn_confirm" ng-click="save()">保存</button>
+            <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

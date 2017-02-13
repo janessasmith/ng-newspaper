@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+    <h4 class="modal-title">填报页面</h4>
+</div>
+<div class="modal-body mc-padding-xs">
+    <div class="row">
+        <label class="col-md-1 nowrap">话题：</label>
+        <div class="col-md-11"><span>{{title}}</span> </div>
+    </div>
+    <div class="row">
+        <label class="col-md-1 nowrap">报题:</label>
+        <div class="col-md-11 resonableEditer">
+            <script id="reportEditer" name="content" type="text/plain"> </script>
+        </div>
+    </div>
+</div>
+<div class="modal-footer mc-padding-right-12">
+    <button class="btn btn-primary btn_confirm share-btn pt0" ng-click="submit()">提交</button>
+    <button class="btn btn-primary btn_cancel share-btn pt0" ng-click="close()">取消</button>
+</div>
+</div>

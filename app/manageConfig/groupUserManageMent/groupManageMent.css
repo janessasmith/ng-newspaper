@@ -1,0 +1,215 @@
+.groupUserManagement .manage-left .search {
+    height: 45px;
+    background-color: #4E657A;
+}
+
+.groupUserManagement .manage-left .search ul {
+    width: 236px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.groupUserManagement .manage-left .search .usertext {
+    height: 30px;
+    width: 176px;
+    top: 7px;
+    position: relative;
+    left: 18px;
+    background-color: #465969;
+    border: 1px solid #8B9EAB;
+    color: white;
+}
+
+.groupUserManagement .manage-left .search .dropdown {
+    position: relative;
+    top: -23px;
+    left: 148px;
+    border-radius: 4px;
+}
+
+.groupUserManagement .manage-left .search .dropdown .dropdown-menu {
+    min-width: 65px;
+    background-color: #6C7A86;
+    color: white;
+}
+
+.groupUserManagement .manage-left .search .dropdown .dropdown-menu li a {
+    color: white !important;
+}
+
+.groupUserManagement .manage-left .search button.searchbutton {
+    background-color: #0095CE;
+    position: relative;
+    top: -22px;
+    float: right;
+    height: 30px;
+    /* width: 54px; */
+    border: 0px;
+    border-radius: 4px;
+    color: white;
+    right: 5px;
+}
+
+.groupUserManagement .manage-left .search .dropdown .bth-fix {
+    width: 65px;
+    border: 1px solid #8DA1AB;
+    background-color: #6C7A86 !important;
+}
+
+.groupUserManagement .manage-left .search .dropdown .bth-fix span {
+    color: white !important;
+}
+
+.groupUserManagement .manage-left {
+    width: 20%;
+}
+
+.groupUserManagement .manage-main {
+    width: 80%;
+}
+
+.system_main_pd .table tbody tr td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+
+/*page*/
+
+.groupUserManagement .manage-main .edit_table .page,
+.groupManageMent .manage-main .edit_table .page {
+    position: relative;
+    padding-top: 10px;
+    bottom: 0px;
+}
+
+
+/*select list*/
+
+.groupUserManagement .manage-main .s_onlyme_div .dropdown {
+    float: left;
+}
+
+.groupUserManagement .manage-main .edit_table {
+    margin: 0 15px;
+}
+
+
+/*调整到：无效*/
+
+.groupUserManagement .manage-main .edit_table tbody tr td.user-td-img button.a-adjust_disabled {
+    color: #BDBDBF;
+    text-decoration: none;
+    border: 0;
+    background: none;
+    padding: 0!important;
+}
+
+
+/*头部按钮*/
+
+.groupUserManagement .manage-main .edit_right_head .s_icon1 {
+    margin: 0px 2px 0px 0px;
+    padding-right: 5px;
+    border-right: 1px solid #e9e9e9;
+}
+
+.groupUserManagement .cursorPointer {
+    cursor: pointer;
+}
+
+
+/*列表td宽度限制*/
+
+.groupUserManagement .xcol-usergroup-cruser {
+    width: 86px;
+}
+
+.groupUserManagement .xcol-usergroup-crtime {
+    width: 130px;
+}
+
+.groupUserManagement .xcol-usergroup-jump {
+    width: 47px;
+}
+
+.groupUserManagement .xcol-usergroup-group-operation {
+    width: 90px;
+}
+
+.groupUserManagement .xcol-usergroup-user-operation {
+    width: 200px;
+}
+
+.groupUserManagement .xcol-usergroup-adjustOrder {
+    width: 90px;
+}
+
+.groupUserManagement .xcol-usergroup-state {
+    width: 100px;
+}
+
+.groupUserManagement .edit_table table tbody tr td.user-td-img img {
+    margin-right: 6px;
+    cursor: pointer;
+    margin-left: 6px;
+    width: 15px;
+    /*float:left;先隐藏fanglijuan*/
+    height: 15px;
+}
+.groupUserManagement .edit_table table tbody tr td.user-td-img_fl
+ img {
+    float:left;
+}
+
+.groupUserManagement .edit_table table tbody tr td span.group_yin {
+    padding-left: 25px;
+    color: #ff8b34;
+}
+
+.groupUserManagement .manage-left .iwo_accordion li.active,
+.groupUserManagement .manage-left .iwo_accordion li:hover {
+    background: #1C83D2;
+}
+
+.groupUserManagement .manage-left .iwo_accordion li a {
+    color: #fff;
+}
+
+.groupUserManagement .manage-left .manageConfig_list_headImg {
+    position: relative;
+    left: 10px;
+    top: -1px;
+}
+
+@media screen and (max-width: 1280px) {
+    .groupUserManagement .manage-left .search .usertext {
+        width: 155px!important;
+    }
+    .groupUserManagement .manage-left .search button.searchbutton {
+        top: -23px!important;
+    }
+}
+
+.groupUserManagement .manage-main .drag_place_list {
+    background: #1C83D2;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.groupUserManagement .manage-main .drag_place_list td {
+    color: #fff;
+}
+
+.createGroupSubmit .unitMedia trs-checkbox {
+    float: left;
+    width: 28px;
+    margin-left: 10px;
+}
+
+.createGroupSubmit .unitMedia p {
+    float: left;
+    margin: 0px;
+    line-height: 26px;
+}

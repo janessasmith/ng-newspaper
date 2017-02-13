@@ -1,0 +1,499 @@
+.newspaper_rejection .modal-dialog {
+    width: 620px;
+}
+
+.newspaper_rejection .modal-content {
+    width: 620px;
+    background: #E8E9ED;
+    border-radius: 6px;
+    border: 3px solid #E8E9ED;
+}
+
+.newspaper_rejection_container {
+    /* width: 620px;
+    background: #E8E9ED;
+    border-radius: 6px;
+    border: 3px solid #E8E9ED;*/
+}
+
+.newspaper_rejection_container.active {
+    width: 990px;
+    margin-left: -190px;
+}
+
+.newspaper_rejection .newspaper_rejection_tl {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    background: white;
+    font-size: 14px
+}
+
+.newspaper_rejection .newspaper_rejection_tl p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+    float: left;
+}
+
+.newspaper_rejection .newspaper_rejection_tl img {
+    cursor: pointer;
+    float: right;
+    margin-right: 11px;
+    margin-top: 7px;
+}
+
+.newspaper_rejection .newspaper_rejection_row {
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    background: white;
+    padding: 0 9px;
+    height: 522px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.newspaper_rejection .newspaper_rejection_left {
+    float: left;
+}
+
+.newspaper_rejection .newspaper_rejection_right {
+    display: inline-block;
+    width: 350px;
+    height: 102%;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+}
+
+.newspaper_rejection .newspaper_rejection_right > div {
+    width: 100%;
+    height: 100%;
+}
+
+.newspaper_rejection .newspaper_rejection_right > div > p {
+    height: 37px;
+    line-height: 37px;
+    background: #ededed;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.newspaper_rejection .newspaper_rejection_tl_num {
+    height: 42px;
+    line-height: 42px;
+    font-weight: 700;
+    overflow: hidden;
+    background: white;
+}
+
+.newspaper_rejection .newspaper_rejection_detail {
+    border: 1px solid #ccc;
+    height: 220px;
+    width: 540px
+}
+
+.newspaper_rejection_detail .newspaper_rejection_detail_tl {
+    height: 40px;
+    line-height: 40px;
+    background: #F0F2F5;
+    font-weight: 700;
+    color: #333333;
+    overflow: hidden;
+}
+
+.newspaper_rejection_detail .newspaper_rejection_detail_tl p {
+    float: left;
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+
+.newspaper_rejection_detail_tl p:last-child {
+    border-right: none
+}
+
+.newspaper_rejection_detail p.tl-num {
+    width: 61px;
+}
+
+.newspaper_rejection_detail p.tl-title {
+    width: 286px;
+}
+
+.newspaper_rejection_detail p.tl-relevance {
+    width: 71px;
+}
+
+.newspaper_rejection_detail p.tl-operation {
+    width: 119px;
+}
+
+.newspaper_rejection_detail .newspaper_rejection_detail_dt {
+    height: 180px;
+    overflow-y: auto;
+}
+
+.newspaper_rejection_detail_dt .newspaper_rejection_detail_dd p {
+    font-size: 14px;
+    color: #333;
+    float: left;
+}
+
+.newspaper_rejection_detail_dt .newspaper_rejection_detail_dd {
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.newspaper_rejection_detail_dt .newspaper_rejection_detail_dd:last-child {
+    border-bottom: 0px
+}
+
+.newspaper_rejection_detail_checkbox {
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+}
+
+.newspaper_rejection_detail_checkbox p {
+    float: left;
+    width: 110px;
+    font-size: 12px
+}
+
+.newspaper_rejection_detail_checkbox p input {
+    margin-right: 5px;
+    position: relative;
+    top: 2px
+}
+
+.newspaper_rejection_detail_is_person_handle {
+    border: 1px solid #ccc
+}
+
+.newspaper_rejection_detail_is_person_handle ul {
+    margin: 0px;
+    padding: 0px
+}
+
+.newspaper_rejection_detail_is_person_handle ul li {
+    line-height: 35px;
+    list-style: none;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.newspaper_rejection_detail_is_person_handle ul li span {
+    font-size: 12px;
+}
+
+.newspaper_rejection_detail_reject-darft textarea {
+    width: 580px;
+    height: 116px;
+    border: 1px solid #e0dedc;
+    /* color: #a9a19e; */
+    font-size: 14px;
+    line-height: 20px;
+    padding: 4px 8px;
+    margin: 15px auto 0px;
+    resize: none;
+}
+
+.newspaper_rejection_detail_reject-darft textarea.mt0 {
+    margin-top: 0;
+}
+
+.newspaper_rejection .toBeCompiled-review-footer {
+    background: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* padding: 12px 0px 12px 73px;*/
+    text-align: right;
+    padding-right: 25px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.newspaper_rejection_detail_checkbox .regular-radio + label {
+    top: 4px;
+}
+
+.newspaper_rejection_row {
+    width: 634px;
+    /*height: 680px;*/
+    border: 1px solid #d3d7da;
+    background: #fff;
+    /* margin: 9px auto;*/
+    white-space: nowrap;
+    overflow-y: auto;
+}
+
+.newspaper_rejection_row p.choosed-manu {
+    height: 42px;
+    line-height: 42px;
+    color: #444;
+    font-weight: bold;
+    margin-left: 14px;
+    margin-bottom: 0px;
+}
+
+.newspaper_rejection_row .list-wrap {
+    width: 584px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #d3d7da;
+    overflow-y: auto;
+}
+
+.newspaper_rejection_row .list-wrap .list-header {
+    background: #f0f2f5;
+    border-bottom: none;
+    height: 41px;
+    line-height: 41px;
+    background: #f0f2f5;
+    border-bottom: 1px solid #d3d7da;
+}
+
+.newspaper_rejection_row .list-wrap .list-header span {
+    display: inline-block;
+    float: left;
+    border-right: 1px solid #d3d7da;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.newspaper_rejection_row .list-wrap .list-header span:nth-child(1) {
+    width: 61px;
+}
+
+.newspaper_rejection_row .list-wrap .list-header span:nth-child(2) {
+    width: 286px;
+}
+
+.newspaper_rejection_row .list-wrap .list-header span:nth-child(3) {
+    width: 71px;
+}
+
+.newspaper_rejection_row .list-wrap .list-header span:nth-child(4) {
+    width: 120px;
+    border-right: none;
+}
+
+.newspaper_rejection_row .list-wrap .list-body {}
+
+.newspaper_rejection_row .list-wrap .list-body p {
+    height: 37px;
+    line-height: 37px;
+    overflow: hidden;
+    border-bottom: 1px solid #d3d7da;
+    margin-bottom: 0px;
+}
+
+.newspaper_rejection_row .list-wrap .list-body p span {
+    float: left;
+    text-align: center;
+    border-right: 1px solid #d3d7da;
+    color: #666;
+}
+
+.newspaper_rejection_row .list-wrap .list-body p span img {
+    cursor: pointer;
+}
+
+.newspaper_rejection_row .list-wrap .list-body p span:nth-child(1) {
+    width: 61px;
+}
+
+.newspaper_rejection_row .list-wrap .list-body p span:nth-child(2) {
+    width: 286px;
+}
+
+.newspaper_rejection_row .list-wrap .list-body p span:nth-child(3) {
+    width: 71px;
+    height: 37px
+}
+
+.newspaper_rejection_row .list-wrap .list-body p span:nth-child(4) {
+    width: 102px;
+    border-right: none;
+    cursor: pointer;
+}
+
+.newspaper_rejection_row .is-original_detail textarea {
+    width: 545px;
+    height: 216px;
+    resize: none;
+    border: 1px solid #d3d7da;
+}
+
+.newspaper_rejection_row .is-other-people_user p {
+    font-size: 12px;
+    color: #444;
+    float: left;
+    margin-bottom: 0px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.newspaper_rejection_row .is-other-people_user {
+    overflow: hidden;
+}
+
+.newspaper_rejection_row .is-other-people_user input {
+    float: left;
+    margin-left: 10px;
+    padding-left: 10px;
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid #d3d7da;
+    border-radius: 4px;
+}
+
+.newspaper_rejection_row .is-other-people_user .treeCon {
+    width: 584px;
+    height: 212px;
+    border: 1px solid #d3d7da;
+}
+
+.newspaper_rejection_row .is-other-people_user .userName {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.newspaper_rejection_row .is-other-people_user .userName ul {
+    height: 220px;
+    overflow-y: auto;
+}
+
+div.visible {
+    overflow: visible;
+}
+
+.newspaper_rejection_row .list-body p a {
+    float: left;
+    width: 286px;
+    border-right: 1px solid #d3d7da;
+    text-align: center;
+    color: #000;
+    display: block;
+    height: 37px;
+    white-space: normal;
+}
+
+.newspaper_rejection_row .list-body p a:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.newspaper_rejection_row .treeDept {
+    width: 372px;
+    height: 192px;
+    border: 1px solid #d3d7da;
+    float: left;
+    overflow-y: auto;
+    margin: 8px;
+}
+
+.newspaper_rejection_row .treePersonnel {
+    width: 188px;
+    height: 192px;
+    border: 1px solid #d3d7da;
+    overflow-y: auto;
+    margin: 8px 8px 0px 0px;
+}
+
+.newspaper_rejection_row .treeDept treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    padding: 1px 10px;
+    background: url("./manageConfig/roleManageMent/images/j-r.png") no-repeat 0 center !important;
+}
+
+.newspaper_rejection_row .treeDept treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    padding: 1px 10px;
+    background: url("./manageConfig/roleManageMent/images/j-x.png") no-repeat 0 center;
+}
+
+.newspaper_rejection_row .treeDept treecontrol a {
+    color: #000;
+    text-decoration: none;
+}
+
+.newspaper_rejection_row .treeDept treecontrol a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.newspaper_rejection_row .treePersonnel p {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #000;
+    margin: 0px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.newspaper_rejection_row .treePersonnel p.active {
+    background-color: #0097D0;
+    color: white;
+}
+
+.newspaper_rejection .treeCon .treeDeptTitle {
+    height: 30px;
+    background: #0095ce;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    line-height: 30px;
+}
+
+.newspaper_rejection .treeCon .treePersonnelTitle {
+    height: 30px;
+    background: #0095ce;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    line-height: 30px;
+}
+
+.newspaper_rejection_detail_is_person_handle ul li.active {
+    background: #0095ce;
+    color: #fff;
+}
+
+.newspaper_rejection .has_no_draft {
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+    font-size: 20px;
+    font-family: "幼圆";
+    color: #aaa;
+}
+
+.newspaper_rejection .newspaper_rejection_right > div > ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.newspaper_rejection .newspaper_rejection_right > div > ul li.cur {
+    background: #0097D0;
+    color: #fff;
+}
+
+.newspaper_rejection .newspaper_rejection_right > div > ul li.notcur {
+    cursor: not-allowed;
+    /* background: #f0f2f5;*/
+}
+
+.newspaper_rejection .newspaper_rejection_right ul li:hover {
+    background: #0097D0;
+    color: #fff;
+}

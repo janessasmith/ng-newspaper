@@ -1,0 +1,112 @@
+.userManageMent-importUser-window .modal-dialog{
+    width: 480px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    margin: auto;
+}
+.userManageMent-imptUser .head {
+    height: 41px;
+    line-height: 41px;
+    padding-left: 20px;
+    background-color:#fff;
+}
+
+.userManageMent-imptUser .head p {
+    width: 70%;
+    height: 100%;
+    font-weight: bold;
+    color: #333333;
+    display: inline-block;
+}
+.userManageMent-importUser{
+    background: #e8e9ed;
+    padding-top: 20px;
+    line-height: 45px;
+    color: #777;
+    font-size: 12px;
+    overflow: hidden;
+}
+.userManageMent-importUser>span{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    line-height: 100%;
+    text-align: right;
+    margin-right: 15px;
+    vertical-align: 120px;
+    float: left;
+    margin-top: 15px;
+}
+.userManageMent-importUser .userManageMent-importUser_main{
+    width: 60%;
+    display: inline-block;
+}
+.userManageMent-importUser .userManageMent-importUser_main input[type='text']{
+    display: inline-block;
+    width: 200px;
+}
+.userManageMent-importUser .userManageMent-importUser_main button{
+    height: 32px;
+    width: 70px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    vertical-align: 1px;
+}
+.userManageMent-importUser .userManageMent-importUser_main span{
+    display: block;
+    line-height: 30px;
+    font-weight: bold;
+}
+/*.userManageMent-importUser .userManageMent-importUser_main ol{
+    line-height: 25px;
+    padding-left:20px;
+}*/
+.userManageMent-imptUser .userManageMent-importUser_footer button {
+    width: 80px;
+    height: 30px;
+}
+.userManageMent-imptUser .userManageMent-importUser_footer {
+    padding-left: 130px;
+    height: 76px;
+    line-height: 76px;
+    background: #E8E9ED;
+    color: #666666;
+}
+
+.userManageMent-imptUser .userManageMent-importUser_footer .news-role-btn {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 40px;
+}
+
+.userManageMent-imptUser .userManageMent-importUser_footer .news-role-btn-success {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #1aba9f;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right:60px;
+}

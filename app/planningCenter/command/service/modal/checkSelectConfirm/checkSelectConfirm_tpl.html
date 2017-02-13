@@ -1,0 +1,132 @@
+<!--勾选精选确认页-->
+<div ng-show="showcheckpage">
+    <div class="modal-header">
+        <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+        <p class="modal-title"><i class="fa fa-map-marker text-primary"></i> 勾选精选确认页</p>
+    </div>
+    <div class="modal-body mc-padding-0">
+    <form name="reportsForm">
+        <div class="reportdetail">
+            <div class="row">
+                <div class="col-sm-2 txt_r">
+                    <label>标题:</label>
+                </div>
+                <div class="col-sm-6">{{topic.CONTENT}}</div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+        </div>
+        <div class="reportdetail" ng-repeat="report in reports track by $index">
+            <div class="row mc-padding-top-xs">
+                <div class="col-sm-2 txt_r">
+                    <label>填报人:</label>
+                </div>
+                <div class="col-sm-2">{{report.CRUSER}}</div>
+                <div class="col-sm-1 txt_r">
+                    <label>时间:</label>
+                </div>
+                <div class="col-sm-3">{{report.CRTIME}}</div>
+                <div class="col-sm-4 txt_r" ng-hide="report.editing">
+                    <button class="btn btn-default btn-trs" ng-click="editReport(report)">
+                        <i class="fa fa-edit"></i> 修订内容
+                    </button>
+                    <button class="btn btn-default btn-trs" ng-click="viewReport(report)">
+                        <i class="fa fa-eye"></i> 资料查看
+                    </button>
+                    <button class="btn btn-default btn-trs" ng-click="deleteReport(report)">
+                        <i class="fa fa-trash"></i> 删除
+                    </button>
+                </div>
+                <div class="col-sm-4 txt_r" ng-show="report.editing">
+                    <button class="btn btn-default btn-trs" ng-click="saveReport(report)">
+                        <i class="fa fa-edit"></i> 保存修改
+                    </button>
+                </div>
+            </div>
+            <div class="row  mc-padding-top-xs">
+                <div class="col-sm-2 txt_r">
+                    <label><em class="font_red">*</em>关键词:</label>
+                </div>
+                <div class="col-sm-6"> 
+                    <tags-input ng-model="report.keywords" text="KEYWORDTEXT" add-on-space="true" add-on-enter="false" add-on-blur="true" paste-split-pattern="[,]" replace-spaces-with-dashes="true" enable-editing-last-tag="true" spellcheck="false" display-property="name" min-length="1" max-length="20" on-tag-added="hidetip(report.keywordsTip)" placeholder="请输入关键词，单击空格以完成输入 ">
+                    </tags-input>
+                </div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+            <div class="row mc-padding-top-xs">
+                <div class="col-sm-2 txt_r">
+                    <label><em class="font_red">*</em>标题:</label>
+                </div>
+                <div class="col-sm-6 invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="report.statement" validator="required"  ng-mouseenter="report.statementTip=true" ng-mouseleave="report.statementTip=false" is-show-tips="report.statementTip">
+                </div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+            <div class="row mc-padding-top-xs">
+                <div class="col-sm-2 txt_r">
+                    <label>报题{{$index+1}} :</label>
+                </div>
+                <div class="col-sm-6" ng-hide="report.editing" ng-bind-html="report.SelectedContent ||report.CONTENT"></div>
+                <div class="col-sm-6" ng-show="report.editing">
+                    <textarea class="basic-textarea" ng-model="report.SelectedContent"></textarea>
+                </div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary btn_confirm" ng-click="submit(reportsForm)">确定</button>
+        <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+    </div>
+</div>
+</div>
+<div ng-hide="showcheckpage">
+    <!--勾选精选确认页-->
+    <div class="modal-header">
+        <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+        <p class="modal-title"><i class="fa fa-map-marker text-primary"></i> 报题细览页</p>
+    </div>
+    <div class="modal-body mc-padding-0">
+        <div class="reportdetail">
+            <div class="row">
+                <div class="col-sm-2 txt_r">
+                    <label>报题内容:</label>
+                </div>
+                <div class="col-sm-6" ng-bind-html="report.CONTENT"></div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+        </div>
+        <div class="reportdetail" ng-repeat="reply in replies track by $index">
+            <div class="row">
+                <div class="col-sm-2 txt_r">
+                    <label>填报人:</label>
+                </div>
+                <div class="col-sm-2">{{reply.CRUSER}}</div>
+                <div class="col-sm-1 txt_r">
+                    <label>时间:</label>
+                </div>
+                <div class="col-sm-3">{{reply.CRTIME}}</div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2 txt_r">
+                    <label>报题{{$index+1}} :</label>
+                </div>
+                <div class="col-sm-6" ng-bind-html="reply.ADDCONTENT"></div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary btn_confirm" ng-click="cancelview()" ng-disabled="checkcomfirm()">确定</button>
+    </div>
+</div>
+</div>

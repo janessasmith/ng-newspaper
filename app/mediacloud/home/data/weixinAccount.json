@@ -1,0 +1,49 @@
+{
+    "result": [
+    {
+        "appId": "gdg32dssfh23f2",
+        "appSecret": "whveg23v4hbd32vevdg23",
+        "channelId": 69,
+        "classId": "2",   
+        "description": "undefined",
+        "id": 281,
+        "loginUserName": "",      
+        "name": "22",
+        "unitId": "3",   
+        "wxHeadImg": "monitor/common/images/my-done-img01.png",
+        "wxType": 1,
+        "wxid": "gh_2d00469bec40",
+        "ISSIGN":"true"
+      },
+       {
+        "appId": "gdg32dssfh23f2",
+        "appSecret": "whveg23v4hbd32vevdg23",
+        "channelId": 69,
+        "classId": "2",   
+        "description": "undefined",
+        "id": 281,
+        "loginUserName": "",      
+        "name": "22",
+        "unitId": "3",   
+        "wxHeadImg": "monitor/common/images/my-done-img01.png",
+        "wxType": 1,
+        "wxid": "gh_2d00469bec40",
+        "ISSIGN":"true"
+      },
+       {
+        "appId": "gdg32dssfh23f2",
+        "appSecret": "whveg23v4hbd32vevdg23",
+        "channelId": 69,
+        "classId": "2",   
+        "description": "undefined",
+        "id": 281,
+        "loginUserName": "",      
+        "name": "22",
+        "unitId": "3",   
+        "wxHeadImg": "monitor/common/images/my-done-img01.png",
+        "wxType": 1,
+        "wxid": "gh_2d00469bec40",
+        "ISSIGN":"flase"
+      }
+    ]
+}

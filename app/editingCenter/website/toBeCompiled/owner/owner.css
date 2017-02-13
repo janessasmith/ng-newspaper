@@ -1,0 +1,102 @@
+div.editWebsite_owner.row {
+    margin: 0;
+}
+
+.editWebsite_owner .editWebsite_owner_left {
+    background: #466385;
+    padding-right: 0;
+    padding-left: 0;
+    position: relative;
+    height: 100%;
+    min-height: 768px;
+    font-family: '微软雅黑';
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    overflow: hidden;
+}
+
+.editWebsite_owner .editWebsite_owner_left .editWebsite_owner_search {
+    height: 54px;
+    border-bottom: 1px solid #304558;
+    padding-top: 10px;
+    padding-left: 5%;
+    background: #3F5974;
+}
+
+.editWebsite_owner .xcol-newspaper-id {
+    width: 110px;
+}
+
+.editWebsite_owner .editWebsite_owner_left ul {
+    overflow-y: auto;
+}
+
+.editWebsite_owner .editWebsite_owner_left ul li {
+    height: 39px;
+    color: #fff;
+    line-height: 39px;
+    padding-left: 10%;
+    border-bottom: 1px solid #304558;
+    cursor: pointer;
+}
+
+.editWebsite_owner .editWebsite_owner_left ul li.active {
+    background-color: #2676BD;
+}
+
+
+/*.editWebsite_owner .editWebsite_owner_left ul li:first-child {
+    border-top: 1px solid #304558;
+}
+*/
+
+.editWebsite_owner .editWebsite_owner_left input {
+    width: 90%;
+}
+
+@media (max-width: 1920px) {
+    .editWebsite_owner .editWebsite_owner_left ul {
+        height: 900px;
+    }
+}
+
+@media (max-width: 1700px) {
+    .editWebsite_owner .editWebsite_owner_left ul {
+        height: 870px;
+    }
+}
+
+@media (max-width: 1370px) {
+    .editWebsite_owner .editWebsite_owner_left ul {
+        height: 580px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .editWebsite_owner .editWebsite_owner_left ul {
+        height: 580px;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .editWebsite_owner .page {
+        bottom: 0;
+    }
+}
+
+.editWebsite_owner .editWebsite_owner_right {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.editWebsite_owner .editWebsite_owner_right_head {
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    background: #eff0f2;
+    font-size: 16px;
+}
+
+.editWebsite_owner .editWebsite_owner_right_content {
+    margin: 10px 15px 0 15px;
+}

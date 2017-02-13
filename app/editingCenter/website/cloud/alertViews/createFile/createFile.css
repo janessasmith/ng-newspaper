@@ -1,0 +1,57 @@
+.eidt-website-cloud-create .modal-dialog {
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    margin: auto;
+}
+
+.eidt-website-cloud-create .man_produ_column_delete {
+    background: #fff;
+    text-align: center;
+    font-size: 12px;
+    padding: 40px 15px;
+    border-top: 1px solid #ccc;
+}
+
+.eidt-website-cloud-create .man_produ_delete_footer {
+    padding: 10px 10px 10px 200px;
+}
+
+.eidt-website-cloud-create .man_produ_delete_footer button {
+    width: 80px;
+    height: 30px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.eidt-website-cloud-create .man_produ_delete_footer button.confirm-btn {
+    background: #1aba9f;
+}
+
+.eidt-website-cloud-create .man_produ_column_delete > p,
+.eidt-website-cloud-create .man_produ_column_delete > div {
+    display: inline-block;
+}
+
+.eidt-website-cloud-create .man_produ_column_delete > p {
+    font-size: 14px;
+    text-align: right;
+    max-width: 39%;
+}
+
+.eidt-website-cloud-create .man_produ_column_delete > div {
+    width: 200px;
+}
+
+.eidt-website-cloud-create .man_produ_column_delete > div>input {
+    height: 30px;
+}

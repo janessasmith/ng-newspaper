@@ -1,0 +1,60 @@
+.ueditor-insertVideo-window .modal-dialog {
+    width: 1080px;
+    height: 410px
+}
+
+.trs_ueditor_selectionNum {
+    position: fixed;
+    z-index: 9999;
+    display: none;
+    background: blue;
+    color: white;
+    padding: 5px;
+    opacity: 0.8;
+    border-radius: 4px;
+    top: 50%;
+    left: 40%;
+}
+
+.insertVideo {
+    background-color: white;
+    border: 4px solid #DDDDDD;
+    border-radius: 4px;
+    width: 1080px;
+    height: 410px
+}
+
+.insertVideo .head {
+    height: 40px;
+    border-bottom: 4px solid #DDDDDD;
+}
+
+.insertVideo .head span {
+    line-height: 40px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.insertVideo .head img {
+    position: relative;
+    right: -940px;
+    cursor: pointer;
+}
+
+.insertVideo .body {
+    border-top: 4px solid #DDDDDD;
+}
+
+.ueditorMyWordContent {
+    color: red;
+    margin-left: 50px;
+    margin-top: 5px;
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.edui-for-contentformat .edui-icon {
+    background-image: url(./components/util/ueditor/service/images/content_format.png) !important;
+}

@@ -1,0 +1,46 @@
+<div ng-controller="weixinRankListCtrl">
+<div class="news-list-top1">
+    <div class="sel-log-dt1">
+        <span class="sel-dt-sp1">统计时间：</span>
+        <div class="sel-dt-box1">
+           <input   type="text" uib-datepicker-popup="{{format}}" ng-model="startTime" 
+                    max-date="maxStartTime" min-date="minStartTime" is-open="status.opened" show-weeks="false" 
+                   show-button-bar="false" on-open-focus="false"/>                                    
+            <p class="sel-dt-icon" ng-click="open($event)"></p>
+        </div>
+        <a href ng-click="getcontent();" class="news-search-btn1">搜索</a>
+    </div>
+</div>
+<div class="wb-league-deal1">
+    <div class="rw-rk-list1">
+        <span class="rk-wth1 rk-ct">排名</span>
+        <span class="rk-wth2">账号名称</span>
+        <span class="rk-wth3 rk-ct">综合评分</span>
+        <span class="rk-wth4 rk-ct">集团排名</span>
+    </div>
+    <ul class="rk-deal-ul">
+        <li ng-repeat="content in contents">
+            <span class="rk-wth1 lf">
+                <span class="rk-num {{($index+1)>3?'':'rk-num-red'}}">{{$index+1}}</span>
+            </span>
+            <span class="rk-wth2 lf">{{content.accountName}}</span>
+            <span class="rk-wth3 rk-ct lf">{{content.score}}</span>
+            <span class="rk-wth4 rk-ct lf">{{content.ordernum}}</span>
+        </li>
+    </ul>
+    <div class="ph-ft-page">
+        <div class="hd-page-bk1">
+            <a href class="hd-pg-pre" ng-click="up();"></a>
+            <div class="hd-pg-num">
+                <span>{{paginationConf.pageIndex}}</span>
+                -{{pageInfo.pageCount}}
+            </div>
+            <a href class="hd-pg-next" ng-click="next(pageInfo.pageCount);"></a>
+        </div>
+<!--         <div class="hd-jump-bk">
+            <input type="text" ng-model="num">                    
+            <a href class="hd-jump-btn" ng-click="skip(pageInfo.pageCount);">跳转</a>
+        </div> -->
+    </div>
+</div>
+</div>

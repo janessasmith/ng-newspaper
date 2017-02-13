@@ -1,0 +1,26 @@
+<div class="multilevelMenu">
+    <div class="thirdMenu">
+        <div class="children" ng-repeat="thirdchnl in thirdchnls">
+            <a ui-sref="editctr.website.signed({channelid:thirdchnl.CHANNELID,siteid:thirdchnl.SITEID})" href="javascript:void(0)" ng-bind="thirdchnl.CHNLDESC" ng-click="selectWebsitethirdthMenu(thirdchnl,$event,$hide())" ng-class="{'panel-body-hasChild':thirdchnl.HASCHILDREN=='true','selectedchnlHasChl':thirdchnlSelected===thirdchnl&&thirdchnl.HASCHILDREN=='true','selectedchnlHasNoChl':thirdchnlSelected===thirdchnl&&thirdchnl.HASCHILDREN=='false'}" ng-mouseenter="getMultistage.selectThirdchnl='true'" ng-mouseleave="getMultistage.selectThirdchnl='false'"></a>
+            <img class="nextMenu" ng-click="getFourthMenu(thirdchnl)" ng-show="thirdchnl.HASCHILDREN=='true'" ng-src="./editingCenter/app/images/{{getMultistage.selectThirdchnl=='false'&&thirdchnlSelected==thirdchnl?'ej5.png':'ej4.png'}}" data-placement="right-bottom" data-auto-close="1">
+        </div>
+    </div>
+    <div class="thoroughMenu" ng-show="fourthchlSelected!=''&&webSiteRoute.indexOf(fourthchlSelected)>-1">
+        <div class="children" ng-repeat="fourthchl in fourthchls">
+            <a ui-sref="editctr.website.signed({channelid:fourthchl.CHANNELID,siteid:fourthchl.SITEID})" href="javascript:void(0)" ng-bind="fourthchl.CHNLDESC" ng-click="selectWebsitefourthMenu(fourthchl,$event,$hide())" ng-class="{'panel-body-hasChild':fourthchl.HASCHILDREN=='true','selectedchnlHasChl':fourthchlSelected===fourthchl&&fourthchl.HASCHILDREN=='true','selectedchnlHasNoChl':fourthchlSelected===fourthchl&&fourthchl.HASCHILDREN=='false'}" ng-mouseenter="getMultistage.selectFourthchl='true'" ng-mouseleave="getMultistage.selectFourthchl='false'"></a>
+            <img class="nextMenu" ng-click="getFifthMenu(fourthchl)" ng-show="fourthchl.HASCHILDREN=='true'" ng-src="./editingCenter/app/images/{{getMultistage.selectFourthchl=='false'&&fourthchlSelected==fourthchl?'ej5.png':'ej4.png'}}" data-placement="right-bottom" data-auto-close="1">
+        </div>
+    </div>
+    <div class="thoroughMenu" ng-show="webSiteRoute.indexOf(fifthchlSelected)>-1">
+        <div class="children" ng-repeat="fifthchl in fifthchls">
+            <a ui-sref="editctr.website.signed({channelid:fifthchl.CHANNELID,siteid:fifthchl.SITEID})" href="javascript:void(0)" ng-bind="fifthchl.CHNLDESC" ng-click="selectWebsiteFifthMenu(fifthchl,$event,$hide())" ng-class="{'panel-body-hasChild':fifthchl.HASCHILDREN=='true','selectedchnlHasChl':fifthchlSelected===fifthchl&&fifthchl.HASCHILDREN=='true','selectedchnlHasNoChl':fifthchlSelected===fifthchl&&fifthchl.HASCHILDREN=='false'}" ng-mouseenter="getMultistage.selectFifthchl='true'" ng-mouseleave="getMultistage.selectFifthchl='false'"></a>
+            <img class="nextMenu" ng-click="getSixthMenu(fifthchl)" ng-show="fifthchl.HASCHILDREN=='true'" ng-src="./editingCenter/app/images/{{getMultistage.selectFifthchl=='false'&&fifthchlSelected==fifthchl?'ej5.png':'ej4.png'}}" data-placement="right-bottom" data-auto-close="1">
+        </div>
+    </div>
+    <div class="thoroughMenu" ng-show="webSiteRoute.indexOf(sixthchlSelected)>-1">
+        <div class="children" ng-repeat="sixthchl in sixthchls" ng-click="selectWebsiteSixthMenu(sixthchl)">
+            <a ui-sref="editctr.website.signed({channelid:sixthchl.CHANNELID,siteid:sixthchl.SITEID})" href="javascript:void(0)" ng-bind="sixthchl.CHNLDESC" ng-mouseenter="selectSixthchl='true'" ng-mouseleave="selectSixthchl='false'" href="javascript:void(0)" ng-click="selectWebsiteSixthMenu(sixthchl,$event,$hide())" ng-class="{'panel-body-hasChild':sixthchl.HASCHILDREN=='true','selectedchnlHasChl':sixthchlSelected===sixthchl&&sixthchl.HASCHILDREN=='true','selectedchnlHasNoChl':sixthchlSelected===sixthchl&&sixthchl.HASCHILDREN=='false'}"></a>
+            <img class="nextMenu" ng-click="getSixthMenu(sixthchl)" ng-show="sixthchl.HASCHILDREN=='true'" ng-src="./editingCenter/app/images/{{getMultistage.selectSixthchl=='false'&&sixthchlSelected==sixthchl?'ej5.png':'ej4.png'}}" data-placement="right-bottom" data-auto-close="1">
+        </div>
+    </div>
+</div>

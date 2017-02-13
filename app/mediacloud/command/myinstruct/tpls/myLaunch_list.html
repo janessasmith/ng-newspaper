@@ -1,0 +1,78 @@
+<div class="cg-ls-top">
+    <ul class="i-started-top">
+        <li checked="i-start-cur" ng-click="getmyLaunchList(type,0,1);">
+            <a href="javascript:;">审核中</a>
+        </li>
+        <li class="i-start-cur" checked="i-start-cur" ng-click="getmyLaunchList(type,2,1);">
+            <a href="javascript:;">未完成</a>
+        </li>
+        <li checked="i-start-cur" ng-click="getmyLaunchList(type,1,1);"><a href="javascript:;">已完成</a></li>
+    </ul>
+</div>
+<div class="cg-main-ls" style="overflow:inherit" ng-controller="myLaunchViewCtrl">
+    <!--均未完成列表-->
+    <ul>
+        <li ng-repeat="myLaunchContent in myLaunchContents" ng-class="{'blue-bac':($index+1)%2==0}">
+            <a href="#" class="cg-ls-tit lf sp-blue" ui-sref="command.myinstructLaunchCommandShow({DICTATEID:myLaunchContent.DICTATEID,issecret:myLaunchContent.ISSECRET})"  >{{myLaunchContent.TITLE}}</a>
+            <b ng-show="{{myLaunchContent.ISSECRET}}==1"></b>
+            <div class="my-rz-ts rt" ng-show="overType!=0">
+                <!--已读-->
+                <!-- <div class="read-sta-bk lf" >
+                    <a href="javascript:;" showbox="{{myLaunchContent.READNUM}}" class="read-sta read-already"
+                     ng-click="getMyLaunchViewCtrl(myLaunchContent.DICTATEID,'read');">
+                     已读<span>{{myLaunchContent.READNUM}}</span></a>
+             
+                    <div class="read-sta-box">
+                        <div class="read-box-bk" ng-repeat="commandShowContent in commandShowContents"
+                             ng-click="openMessage(commandShowContent.userId);">
+                            <div class="read-box-per">
+                                <img ng-src="{{commandShowContent.userHead}}">
+                                <span>{{commandShowContent.userName}}</span>
+                            </div>
+                            <a href="javascript:void(0);" class="read-box-lt rt"></a>
+                        </div>
+                    </div>
+                </div> -->
+                <!--未读-->
+                <div class="read-sta-bk lf">
+                    <a href="javascript:;" showbox="{{myLaunchContent.NOREADNUM}}" class="read-sta read-not lf"
+                     ng-click="getMyLaunchViewCtrl(myLaunchContent.DICTATEID,'noRead');">
+                     未读<span>{{myLaunchContent.NOREADNUM}}</span></a>
+                    <div class="read-sta-box" >
+                        <div class="read-box-bk" ng-repeat="commandShowContent in commandShowContents" 
+                             ng-click="openMessage(commandShowContent.userId);">
+                            <div class="read-box-per">
+                                <img ng-src="{{commandShowContent.userHead}}">
+                                <span>{{commandShowContent.userName}}</span>
+                            </div>
+                            <a href="javascript:void(0);" class="read-box-lt rt"></a>
+                        </div>
+                    </div>
+                </div>
+                <!--完成-->
+                <div class="read-sta-bk lf">
+                    <a href="javascript:;" showbox="{{myLaunchContent.OVERNUM}}" class="read-sta read-complete lf" 
+                    ng-click="getMyLaunchViewCtrl(myLaunchContent.DICTATEID,'over');">
+                    完成<span>{{myLaunchContent.OVERNUM}}</span></a>
+                    <div class="read-sta-box" >
+                        <div class="read-box-bk" ng-repeat="commandShowContent in commandShowContents"
+                        	ng-click="openMessage(commandShowContent.userId);">
+                            <div class="read-box-per">
+                                <img ng-src="{{commandShowContent.userHead}}">
+                                <span>{{commandShowContent.userName}}</span>
+                            </div>
+                            <a href="javascript:void(0);" class="read-box-lt rt"></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="my-cz-rz lf" ng-controller="mylaunchjournalReadlCtrl" 
+             ng-click="open('400',$event,myLaunchContent.DICTATEID);"><i></i><span>操作日志</span></a>
+            </div>
+        </li>
+    </ul>
+    <div class="hd-page-bk">
+        <a href ng-click="reduce();" class="log-page hd-pg-pre"></a>
+        <div class="hd-pg-num"><span>{{pageInfo.pageIndex}}</span>-<span>{{pageInfo.pageCount}}</span></div>
+        <a href ng-click="add();" class="log-page hd-pg-next"></a>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+<div class="toBeCompiled-share-container select-item-by-tree">
+    <div class="toBeCompiled-share-head">
+        <p>设置话题</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+    </div>
+    <div>
+        <div class="mc-padding-top-xs row mc-padding-horizontal-xs">
+            <label class="col-md-1 nowrap">标题：</label>
+            <div class=" col-md-11 ">
+                {{topic.CONTENT}}
+            </div>
+        </div>
+       <!--  <div class="mc-padding-top-xs row mc-padding-horizontal-xs">
+            <label class="col-md-1 nowrap">备注：</label>
+            <div class=" col-md-11 " ng-bind-html="topic.REMARK  | trsTrustHtml">
+            </div>
+        </div> -->
+        <div class="form-group mc-padding-top-xs row mc-padding-horizontal-xs">
+            <label class="col-md-1 nowrap">持续时间：</label>
+            <div class=" col-md-4">
+                <input type="text" size="12" class="form-control searchInput" ng-model="startTime" data-autoclose="1" placeholder="日期" date-format="yyyy-MM-dd" bs-datepicker>
+            </div>
+            <div class="formtext">至</div>
+            <div class=" col-md-4">
+                <input type="text" size="12" class="form-control searchInput" ng-model="endTime" data-autoclose="1" placeholder="日期" date-format="yyyy-MM-dd" bs-datepicker>
+            </div>
+        </div>
+    </div>
+    <div class="toBeCompiled-share-content">
+        <div class="con">
+            <div class="conL left">
+                <div class="header">
+                    <p>组织列表</p>
+                </div>
+                <div class="cont cont_">
+                    <treecontrol selected-node="selectedNodePA" expanded-nodes="expandedPA" on-node-toggle="showToggle(node)" class="tree-light" tree-model="treedataPA" options="treePAOptions" on-selection="showSelected(node)"><span title="{{node.GNAME}}" ng-bind="node.GNAME"></span></treecontrol>
+                </div>
+            </div>
+            <div class="middle">
+                <img src="./editingCenter/app/images/jt-l.png">
+            </div>
+            <div class="conR right">
+                <div class="body">
+                    <div class="main">
+                        <div class="left">
+                            <div class="left-div">
+                                <div class="head">
+                                    <p>选择列表</p>
+                                </div>
+                                <div class="body">
+                                    <input type="text" ng-model="searchWordLeft" class="form-control" placeholder="输入关键词以过滤名单" />
+                                    <div class="list">
+                                        <div class="head">
+                                            <p>人员列表</p>
+                                        </div>
+                                        <ul>
+                                            <li ng-dblclick="directlyToRight(user)" ng-class="user.selected" ng-click="chooseUserName('toChoose',user)" ng-repeat="user in userDatas | filter:myFilter"><span title="{{user.TRUENAME}}" ng-bind="user.TRUENAME"></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="middle mc-padding-vertical-lg">
+                            <span class="shareIcon" ng-click="toRight()">
+                            <i class="fa fa-angle-right"></i>
+                            </span>
+                            <span class="shareIcon" ng-click="toLeft()">
+                            <i class="fa fa-angle-left"></i>
+                            </span>
+                            <span class="shareIcon" ng-click="selectedAll()">
+                            <i class="fa fa-angle-double-right"></i>
+                            </span>
+                            <span class="shareIcon" ng-click="itemsSd=[]">
+                            <i class="fa fa-angle-double-left"></i>
+                            </span>
+                        </div>
+                        <!-- 
+                            <div  class="share-to-right-btn">
+                                <img ng-click="toRight()" src="./manageConfig/roleManageMent/images/js4.png" />
+                            </div>
+                            <div  class="share-to-left-btn">
+                                <img  ng-click="toLeft()"src="./manageConfig/roleManageMent/images/js5.png" />
+                            </div>
+                            <div>
+                                <img ng-click="selectedAll()" src="./manageConfig/roleManageMent/images/js6.png">
+                            </div>
+                            <div>
+                                <img ng-click="itemsSd=[]" src="./manageConfig/roleManageMent/images/js7.png">
+                            </div> -->
+                        <div class="left">
+                            <div class="left-div">
+                                <div class="head">
+                                    <p>选择列表</p>
+                                </div>
+                                <div class="body">
+                                    <div class="suggestion">
+                                        <input type="text" ng-model="searchWord" class="form-control" placeholder="搜索部门或人员" bs-options="user as user.SUGGESTION||user.GNAME for user in getSuggestions($viewValue)" bs-typeahead limit: '30'>
+                                    </div>
+                                    <div class="list">
+                                        <div class="head">
+                                            <p>已选</p>
+                                        </div>
+                                        <ul>
+                                            <li ng-dblclick="directlyToLeft(item)" ng-class="item.selected" ng-click="chooseUserName('cancelChoose',item)" ng-repeat="item in itemsSd"><span title="{{item.USERNAME || item.TRUENAME}}({{item.COMPANY}},{{item.DEPT|| item.DEPARTNAME}})">{{item.USERNAME|| item.TRUENAME}}({{item.COMPANY}},{{item.DEPT|| item.DEPARTNAME}})</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div> 
+       
+    </div>
+    <div class="pb20">
+        <div class="row mt20 button">
+            <button ng-click="submit()" class="share-btn ml136 btn_confirm" ng-disabled="!checkValid()">确定</button>
+            <button ng-click="close()" class="share-btn ml20 btn_cancel">取消</button>
+        </div>
+    </div>
+</div>
+</div>

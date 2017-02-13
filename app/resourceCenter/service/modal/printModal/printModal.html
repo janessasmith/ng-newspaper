@@ -1,0 +1,17 @@
+<div class="resource_printModal">
+    <div class="resource_printModal_head">
+        <span>选择打印日期</span>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" alt="" ng-click="close()">
+    </div>
+    <div class="resource_printModal_con">
+        <div class="resource_printModal_con_con">
+            <span>请选择打印日期：</span>
+            <input type="text" size="10" class="form-control" ng-model="status.date" data-date-format="yyyy-MM-dd" data-autoclose="1" placeholder="Date" data-max-date="{{status.today}}" bs-datepicker>
+        </div>
+        <div class="resource_printModal_con_btn">
+            <button class="print_btn btn_confirm" ng-click="printConfirm()" ng-disabled="status.date==''" style="opacity:{{status.date==''?.5:1}};">确定</button>
+            <button class="print_btn btn_cancel" ng-click="close()">取消</button>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

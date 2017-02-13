@@ -1,0 +1,103 @@
+.standby-draft-btn-four,
+.standby-draft-btn-four:hover,
+.standby-draft-btn-four:focus{
+    width:80px;
+}
+.standby-draft-btn-commen,
+.standby-draft-btn-commen:hover,
+.standby-draft-btn-commen:focus{
+    width: 60px;
+}
+.standby-draft-accordion-head{
+    position: relative;
+    margin-left: -56px;
+    padding-left: 18px;
+    text-decoration: none;
+    color: #0b2242;
+}
+.standby-draft-unread-head{
+    background: transparent;
+}
+.standby-draft-accordion-head a{
+    text-decoration: none;
+}
+.standby-draft-click{
+    display:inline-block;
+    width: 100%;
+}
+.standby-draft-select-all{
+    position: absolute;
+    right: 10px;
+    top: 1px;
+}
+.standby-draft-table table {
+    margin-bottom: 0;
+}
+table thead tr th.newspaper-th-check{
+    width: 60px;
+    text-align: left;
+    padding-left: 18px;
+}
+table tbody tr td.newspaper-td-check{
+    width: 60px;
+    white-space: nowrap;
+}
+
+.standby-draft-unread-icon{
+    position: relative;
+    top: -2px;
+    left: 5px;
+    height: 17px;
+}
+.standby-draft-table .panel-title{
+    padding-left: 0;
+    /*position: relative;*/
+}
+.standby-draft-table .panel-default > .panel-heading{
+    background: #edeef0;
+    border-bottom: none;
+}
+.standby-draft-panel-title a,
+.standby-draft-panel-title a:hover{
+    padding-left: 20px;
+    width: 100%;
+    color: #666;
+    font-weight: bold;
+    font-family: serif;
+    text-decoration: none!important;
+}
+.standby-draft-title-checkbox{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #0b2242;
+}
+.standby-draft-panel-title-rotate{
+    transform:rotate(0deg) !important;
+    -webkit-transform:rotate(0deg) !important;
+    position: relative;
+    top: -3px;
+}
+.standby-draft-panel-close{
+    /*display: none;*/
+}
+.standby-draft-panel-body .panel-default > .panel-heading + .panel-collapse > .panel-body{
+    border: none;
+}
+.input-group .form-control.newspaper_standby_search_form_control{
+    width: 325px;
+}
+.td-check.checkbox-position-style .editCen-newspaper-type-refresh {
+    position: relative;
+    top: -2px;
+    left: 10%;
+}
+.editCen-standbyDraft .standby-draft-panel-body .panel-group .panel {
+    border-bottom: 2px solid #fff;
+}
+.editCen-standbyDraft .standby-draft-table.standby-draft-panel-body .panel-title {
+    padding-left: 0;
+}
+.editCen-standbyDraft .panel-group .panel{
+    margin-bottom: 5px;
+}

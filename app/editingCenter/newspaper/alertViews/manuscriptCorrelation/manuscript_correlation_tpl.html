@@ -1,0 +1,29 @@
+<div class="man_produ_modify">
+    <div class="man_produ_modify_head">
+        <p>稿件关联</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+    </div>
+    <div class="man_produ_modify_inner">
+        <div class="man_produ_column_modify">
+            <p>
+                <b>该稿件的关联稿件：</b>
+            </p>
+            <ul>
+                <li ng-repeat="item in items">
+                    <!-- <a>
+                        <img src="./editingCenter/newspaper/images/i1.png"/>
+                    </a> -->
+                    <span title="{{item.TITLE}}">{{item.TITLE | trsLimitTo:14}}</span>
+                    <b ng-bind="position(item.DOCSTATUS)"></b>
+                    <div ng-if="item.PICSLOGO==status.hasPic">
+                        <img ng-src="{{item.METALOGOURL.PICSLOGO2}}" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--<div class="man_produ_modify_footer">-->
+        <!--<button class="news-role-btn man_produ_modify_footer_cancel" ng-click="confirm()">确定</button>-->
+        <!--<button class="news-role-btn" ng-click="cancel()">取消</button>-->
+        <!--</div>-->
+    </div>
+</div>

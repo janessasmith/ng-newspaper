@@ -1,0 +1,50 @@
+<div class="userMappingSubmit">
+    <div class="submit">
+        <div class="head">
+            <span ng-bind=""></span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="headline">
+            <ul class="nav">
+                <li>用户映射</li>
+            </ul>
+        </div>
+        <div class="body">
+            <form class="userMappingSubmit-form" name="userMappingSubmitForm" novalidate>
+                <div class="main">
+                    <p>媒立方系统用户名：Ixyxh</p>
+                    <div class="form-group">
+                        <span class="textWidth">用户绑定：</span>
+                        <div class="btn-group dropdown open" stype dropdown>
+                            <button type="button" class="btn btn-default bth-fix dropdown-toggle" dropdown-toggle keyboard-nav aria-haspopup="true" aria-expanded="true">
+                                <span class="btn-fix-title ng-binding">第三方系统</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="simple-btn-keyboard-nav">
+                                <li class="ng-scope">
+                                    <a href title="" class="dropdown-menu-item ng-binding">第三方系统</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <input class="inputName" type="text" placeholder="&nbsp;请输入用户名">
+                        <button class="btn save">保存</button>
+                    </div>
+                    <div class="form-group">
+                        <span class="textWidth textFloat">已绑定用户：</span>
+                        <div class="binded">
+                            <ul>
+                                <li tabindex="-1"><span class="title">数采中心</span><span class="author">Ixy</span><span class="others">X</span></li>
+                                <li tabindex="-1"><span class="title">浙江在线</span><span class="author">Ixy</span><span class="others">X</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="foot">
+                <div>
+                    <button class="cancel" ng-click="cancel()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

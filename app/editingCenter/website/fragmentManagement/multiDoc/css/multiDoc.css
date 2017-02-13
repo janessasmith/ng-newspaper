@@ -1,0 +1,267 @@
+/*多行多列碎片化管理模态框开始*/
+
+.multidoc-modal {
+    width: 96%;
+    /*width:637px;*/
+    /*height:515px;*/
+    /*background-color: #F0F2F4;*/
+    /*border: 4px solid #dddddd;*/
+    /*border-radius: 4px;*/
+}
+
+.multidoc-modal-dialog {
+    width: 100%;
+    margin: 0px;
+}
+
+.multidoc-modal-header {
+    background-color: white;
+    color: black;
+    width: 631px;
+    height: 43px;
+    line-height: 43px;
+}
+
+.multidoc-modal-title {
+    margin-left: 20px;
+}
+
+.multidoc-modal-close {
+    margin-right: 10px;
+    float: right;
+    background-image: url("website/fragmentManagement/images/cls.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.multidoc-modal-body {
+    min-height: 100px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+}
+
+.multidoc-modal-inner-body {
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /*height: 450px;*/
+    padding-bottom: 10px;
+}
+
+.multidoc-modal-table {
+    width: 100%;
+}
+
+.multidoc-modal-table-td {
+    position: relative;
+    cursor: pointer;
+}
+
+.multidoc-modal-table-toolBar {
+    background-image: url("editingCenter/website/fragmentManagement/images/t-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 140px;
+    height: 35px;
+    bottom: 30px;
+    display: none;
+    z-index: 9999
+}
+
+.multidoc-modal-tableborder th {
+    border: 1px solid #DBDDDC;
+    text-align: center;
+    height: 30px;
+    background-color: #F0F2F4;
+}
+
+.multidoc-modal-table-inner tr td {
+    border: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.multidoc-modal-newValue {
+    display: none;
+}
+
+.multidoc-modal-timepub {
+    margin-top: 0px;
+    position: relative;
+}
+
+.multidoc-modal-btns {
+    margin-top: 20px;
+    float: right
+}
+
+.multidoc-modal-calendar {
+    position: absolute;
+    top: 2px;
+    left: 228px
+}
+
+.multidoc-modal-btn {
+    background-color: #0095CE;
+    color: white;
+    width: 90px
+}
+
+.multidoc-modal-btn:hover {
+    color: white;
+}
+
+.multidoc-modal-add {
+    cursor: pointer;
+}
+
+.multidoc-modal-table-title {
+    /*white-space: nowrap;*/
+}
+
+.multidoc-modal-table-rowdrop {
+    cursor: pointer;
+}
+
+.defaultClass .modal-dialog {
+    margin: 0px auto;
+    width: 844px;
+}
+
+.editDocWin .modal-dialog {
+	margin-top:20px;
+}
+
+.mutildocsDlg .modal-dialog {
+    margin: 0px auto;
+    width: 858px;
+}
+
+.mutildocsDlg .modal-dialog .conSel-modal {
+    width: 858px;
+}
+
+.mutildocsDlg .modal-dialog .conSel-modal .conSel-modal-body {
+    overflow: hidden;
+}
+
+.multidoc-modal-dialog ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.multidoc-modal-dialog ul[dnd-list],
+.multidoc-modal-dialog ul[dnd-list] > li {
+    position: relative;
+}
+
+.multidoc-modal-dialog ul[dnd-list] {
+    min-height: 30px;
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.multidoc-tablebody-titleul .dndDragging {
+    opacity: 0.1;
+    background: black;
+}
+
+.multidoc-tablebody-titleul .dndDraggingSource {
+    display: none;
+}
+
+.multidoc-tablebody-titleul .dndPlaceholder {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #ddd !important;
+}
+
+.multidoc-modal-ul .dndPlaceholder {
+    line-height: 30px;
+}
+
+.multidoc-modal-ul-nobottom {
+    margin-bottom: 0px;
+}
+
+.multidoc-modal-ul .dndDragging {
+    opacity: white;
+    background: grey;
+}
+
+.multidoc-modal-ul .dndDraggingSource {
+    display: none;
+}
+
+.multidoc-tableheadul {
+    border: 1px solid #87CEC9;
+    padding-left: 0px;
+    border-bottom: 0px;
+}
+
+.multidoc-tableheadul li {
+    line-height: 30px;
+    text-align: center;
+}
+
+.multidoc-tableheadlifirst {
+    border-right: 1px solid #87CEC9;
+    float: left;
+    width: 10%;
+}
+
+.multidoc-tableheadlisecond {}
+
+.multidoc-tablebody {
+    border: 1px solid #87CEC9;
+    line-height: 30px;
+    border-bottom: 0px;
+}
+.multidoc-tablebody-bottom{
+    border: 1px solid #87CEC9;
+    line-height: 30px;
+}
+.multidoc-tablebody-index {
+    border-right: 1px solid #87CEC9;
+    border-top: 0px;
+    text-align: center;
+    float: left;
+    width: 10%;
+}
+
+.multidoc-tablebody-title {
+    position: relative;
+    float: left;
+    width: 85%;
+}
+
+.multidoc-tablebody-titleli {
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.multidoc-modal-add-take {
+    width: 100%;
+    opacity: 0.1;
+    background: black;
+}
+
+
+/*多行多列碎片化管理模态框结束*/
+
+
+form[name='fragementForm'] .modal-dialog {
+    top:0px!important;
+}

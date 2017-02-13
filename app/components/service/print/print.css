@@ -1,0 +1,409 @@
+.winPrint {
+    /*display: none;*/
+}
+
+.print_Date_seconed {
+    display: none;
+}
+
+.photoCropCtrl .modal-dialog {
+    width: 1211px;
+    margin: 30px auto;
+}
+
+@page {
+    size: A4;
+    margin-top: 2cm;
+}
+
+.winPrint {
+    display: block;
+    height: auto;
+    width: 100%;
+    padding-top: 25px;
+}
+
+
+/* .edit-header,
+    .edit_right_head,
+    .edit_right_mid,
+    .edit_table,
+    .standby-draft-panel-body,
+    .editing_foot,
+    .editing-left-fixed {
+        display: none;
+    }*/
+
+.printTit,
+.printDesc {
+    width: 100%;
+}
+
+.printTit {
+    text-align: center;
+    border-top: 2px solid #000;
+    font-weight: bolder;
+    font-size: 32px;
+    background: none;
+    /*margin-top: 30px;*/
+    margin-bottom: 10px;
+    font-family: "黑体";
+    word-break: break-all;
+}
+
+.printDesc {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    overflow: hidden;
+}
+
+
+/*.printDesc ul li>p {
+        float: left;
+    }*/
+
+.printCtrl {
+    visibility: hidden;
+}
+
+.printDesc ul {
+    width: 100%;
+}
+
+.printDesc ul li:nth-child(5) p span {
+    word-break: break-all;
+}
+
+.printDesc ul li:nth-child(1)>p:nth-child(2)>span {
+    text-decoration: underline;
+}
+
+.printDesc ul li:nth-child(1)>p,
+.printDesc ul li:nth-child(2)>p {
+    float: left;
+}
+
+.printDesc ul li:nth-child(1)>p {
+    width: 25%;
+}
+
+.printDesc ul li:nth-child(2)>p:nth-child(1) {
+    width: 75%;
+}
+
+.printDesc ul li:nth-child(2)>p:nth-child(2),
+.printDesc ul li:nth-child(2)>p:nth-child(3) {
+    width: 12%;
+}
+
+.printDesc ul li {
+    list-style: none;
+}
+
+.printDesc li p.print_wordCount,
+.printDesc li p.print_rowCount {
+    width: 12%;
+}
+
+.printDesc li p.print_xiaoyangFile {
+    width: 75%;
+}
+
+.printDesc li p.print_banmianNumber span {
+    text-decoration: underline;
+}
+
+.printDesc li p.print_remarks {
+    word-break: break-all;
+}
+
+.printDesc li p.print_InNewspaper,
+.printDesc li p.print_banmianNumber,
+.printDesc li p.print_banmian,
+.printDesc li p.print_orderNum {
+    width: 25%;
+}
+
+.printDesc li p.print_xiaoyangFile,
+.printDesc li p.print_wordCount,
+.printDesc li p.print_rowCount,
+.printDesc li p.print_InNewspaper,
+.printDesc li p.print_banmianNumber,
+.printDesc li p.print_banmian,
+.printDesc li p.print_orderNum {
+    float: left;
+}
+
+.printContent {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.printContent span.print_pic_desc {
+    font-size: 26px;
+}
+
+.printContent p {
+    font-size: 26px;
+}
+
+.winPrint .force-next-page {
+    page-break-before: always;
+    /*margin: 100px 0 100px 0;*/
+}
+
+.winPrint .print_seize_seat {
+    height: 100px;
+}
+
+.printContent .printTit {
+    border-top: none;
+    font-weight: bold;
+}
+
+.printContent span {
+    text-align: center;
+    display: block;
+}
+
+.printContent span.win_print_shoulder,
+.printContent span.win_print_yinti,
+.printContent span.printAuthor {
+    font-size: 30px;
+    text-align: center;
+}
+
+.print-date-window .modal-dialog {
+    width: 925px;
+}
+
+.print-date-window .modal-dialog .trsPrintDateOuter {
+    /*width: 2479px;*/
+    overflow: auto;
+}
+
+.print-date-window,
+.print-date-window .trsPrintDate_container {
+    /*display: none;*/
+    visibility: hidden;
+}
+
+.trsPrintDate_container .trsPrintDate_main .table > thead > tr > th {
+    border: none;
+}
+
+.trsPrintDate_container .trsPrintDate_main .table > thead > tr > td {
+    text-align: left;
+}
+
+.trsPrintDate_container .trsPrintDate_main .table .trsPrintDate-table-num {
+    width: 5%;
+}
+
+.trsPrintDate_container .trsPrintDate_main .table .trsPrintDate-table-title {
+    width: 50%;
+}
+
+.trsPrintDate_container .trsPrintDate_main .table .trsPrintDate-table-count {
+    width: 5%;
+}
+
+.trsPrintDate_container .trsPrintDate_main .table .trsPrintDate-table-time {
+    width: 20%;
+}
+
+.trsPrintDate_container .trsPrintDate_main .table .trsPrintDate-table-info {
+    width: 20%;
+}
+
+@page {
+    size: A4;
+}
+
+.trsPrintDateOuter {
+    width: 100%;
+}
+
+.trsPrintDate_container {
+    display: block;
+    width: 100%;
+}
+
+.trsPrintDate_container .trsPrintDate_header {
+    height: 40px;
+}
+
+.trsPrintDate_container .trsPrintDate_header>div:nth-child(1) {
+    float: left;
+    margin-left: 10%;
+}
+
+.trsPrintDate_container .trsPrintDate_header>div:nth-child(2) {
+    float: right;
+    margin-right: 10%;
+}
+
+.trsPrintDate_container .trsPrintDate_main {
+    /*border: 1px solid #000;*/
+}
+
+.trsPrintDate_container .trsPrintDate_main .table td.trsPrintDate-table-title,
+.trsPrintDate_container .trsPrintDate_main .table td.trsPrintDate-table-info {
+    text-align: left;
+}
+
+.trsPrintDate_container .trsPrintDate_main .table {
+    border: 1px solid #000;
+}
+
+.trsPrintDate_container .trsPrintDate_main hr {
+    border-color: #000;
+    margin-top: -15px;
+}
+
+.trs-print-big-data {
+    display: none;
+    height: 0;
+}
+
+@page {
+    size: A4;
+}
+
+.trs-print-big-data .force-next-page {
+    page-break-before: always;
+    /*margin: 100px 0 100px 0;*/
+}
+
+.trs-print-big-data {
+    padding-top: 25px;
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.trs-print-big-data .print-big-data-title {
+    /*border-top: 2px solid #000;
+        border-bottom: 2px solid #000;*/
+}
+
+.trs-print-big-data .print-big-data-title h3 {
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+}
+
+.trs-print-big-data .print-big-data-title ul {
+    font-size: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.trs-print-big-data .print-big-data-title ul li {
+    margin-bottom: 5px;
+}
+
+.trs-print-big-data .print-big-data-main {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 26px;
+    padding-top: 20px;
+}
+
+.trs-print-big-data .printDesc ul li:nth-child(1)>p:nth-child(1) {
+    width: 25%;
+}
+
+.trs-print-big-data .printDesc ul li:nth-child(1)>p:nth-child(2),
+.trs-print-big-data .printDesc ul li:nth-child(1)>p:nth-child(3) {
+    width: 15%;
+}
+
+.trs-print-big-data .printDesc ul li:nth-child(1)>p:nth-child(4) {
+    width: 45%;
+}
+
+.trs-print-share {
+    display: none;
+    height: 0;
+}
+
+@media print {
+    @page {
+        size: A4;
+    }
+    .trs-print-share .force-next-page {
+        page-break-before: always;
+        /*margin: 100px 0 100px 0;*/
+    }
+    .trs-print-share {
+        padding-top: 25px;
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    .trs-print-share .print-share-title {
+        /*border-top: 2px solid #000;
+        border-bottom: 2px solid #000;*/
+    }
+    .trs-print-share .print-share-title h3 {
+        width: 100%;
+        font-size: 32px;
+        text-align: center;
+    }
+    .trs-print-share .print-share-title ul {
+        font-size: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .trs-print-share .print-share-title ul li {
+        margin-bottom: 5px;
+    }
+    .trs-print-share .print-share-pic-main {
+        text-align: center;
+    }
+    .trs-print-share .print-share-pic-main img {
+        display: block;
+        margin: 20px auto 10px auto;
+        width: 70%;
+    }
+    .trs-print-share .print-share-news-main {
+        padding-top: 20px;
+        font-size: 26px;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .trs-print-share .print-share-main p.print_pic_desc {
+        text-align: left;
+        width: 70%;
+        margin: 0 auto;
+        font-size: 26px;
+    }
+    p.print_pic_all_desc {
+        width: 70%;
+        margin: 0 auto;
+        font-size: 26px;
+        text-align: left;
+    }
+}
+
+@page {
+    size: A4;
+}
+
+.print_editing_main {
+    padding-top: 20px;
+    font-size: 26px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.print_Date_seconed {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+}

@@ -1,0 +1,161 @@
+<div class="createUserSubmit" ng-class="status.whichTabShow === 'role'?'createUserSubmit_wt':''">
+    <div class="submit">
+        <div class="head">
+            <span ng-bind="data.modalTitle"></span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="headline">
+            <ul class="nav">
+                <li ng-click="status.whichTabShow='userInfo'" class="{{status.whichTabShow === 'userInfo'?'active':''}}">用户信息</li>
+                <li ng-click="status.whichTabShow='group'" class="{{status.whichTabShow=== 'group'?'active':''}}">所属组织</li>
+                <li ng-click="status.whichTabShow='role'" class="{{status.whichTabShow === 'role'?'active':''}}">角色设置</li>
+            </ul>
+        </div>
+        <div class="body">
+            <form class="createUserSubmit-form" name="createUserSubmitForm" novalidate autocomplete="off">
+                <div class="main">
+                    <div class="part_1" ng-show="status.whichTabShow==='userInfo'">
+                        <div class="item">
+                            <span class="tit">用户名：</span>
+                            <div class="invalidate-input-box {{createUserSubmitForm.USERNAME.$invalid?'has-error':''}}">
+                                <input type="text" name="USERNAME" style="display:none">
+                                <input type="text" name="USERNAME" ng-model="data.currUser.USERNAME" class="form-control" validator="required,maxlength=20,minlength=2,userName,spechar,userNameChar" ng-if="data.modalTitle=='新建用户'" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" />
+                                <input type="text" name="USERNAME" ng-model="data.currUser.USERNAME" class="form-control" validator="required" ng-if="data.modalTitle!='新建用户'" readonly="readonly" />
+                                <span class="color_r">必填</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="desc">
+                                <p>用户登录名填写规则：</p>
+                                <p>1）由汉字、英文字母（不区分大小写）、数字、点或下划线组成</p>
+                                <p>2）长度为2-20个字符（每个英文字母或数字算一个字符）</p>
+                                <p>3）中间不可以出现空格符、单引号、双引号、减号、逗号等非法字符</p>
+                                <p>4）system、admin是系统的保留账号</p>
+                            </div>
+                        </div>
+                        <trs-pwd-strong password="data.currUser.PASSWORD" description="status.pwdName" ng-if="status.UserId==0"></trs-pwd-strong>
+                        <div class="item" ng-if="status.UserId==0">
+                            <span class="tit">确认密码：</span>
+                            <div class="invalidate-input-box">
+                                <input type="password" name="confIrmpwd" style="display:none">
+                                <input type="password" name="confIrmpwd" class="form-control" ng-model="data.confIrmpwd" validator="minlength=8,required" minlength-error-message="最少8个字符！" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" ng-blur="checkPwd()" /><span class="color_r">必填</span>
+                                <span class="color_r red" ng-show="status.passwordEqual==false">两次输入的密码不一致</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="invalidate-input-box {{createUserSubmitForm.TRUENAME.$invalid?'has-error':''}}">
+                                <span class="tit">真实姓名：</span>
+                                <input type="text" name="trueName" ng-model="data.currUser.TRUENAME" class="form-control" validator="required" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" />
+                                <span class="color_r">必填</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="tit">用户昵称：</span>
+                            <input type="text" name="nickName" ng-model="data.currUser.NICKNAME" class="form-control" />
+                        </div>
+                        <div class="item">
+                            <div class="invalidate-input-box {{createUserSubmitForm.EMAIL.$invalid?'has-error':''}}">
+                                <span class="tit">电子邮箱：</span>
+                                <input type="email" name="email" ng-model="data.currUser.EMAIL" validator="email" class="form-control" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" />
+                               <!--  <span class="color_r">必填</span> -->
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="tit">详细地址：</span>
+                            <input type="text" name="address" ng-model="data.currUser.ADDRESS" class="form-control" />
+                        </div>
+                        <div class="item invalidate-input-box {{createUserSubmitForm.MOBILE.$invalid?'has-error':''}}">
+                            <span class="tit">手机号码：</span>
+                            <input type="text" name="MOBILE" ng-model="data.currUser.MOBILE" class="form-control" validator="maxlength=11,mobilephone" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" />
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="part_2" ng-show="status.whichTabShow==='group'">
+                        <table border="0">
+                            <tr ng-repeat="groupPath in data.groupPaths">
+                                <td class="w50">
+                                    <trs-checkbox class="checkbox" ischecked="data.selectedGroup.indexOf(groupPath)<0?false:true" callback="selectedGroup(groupPath)"></trs-checkbox>
+                                </td>
+                                <td class="textAlign_l padding_8_0"><span ng-bind="groupPath.GROUPPATHS"></span></td>
+                            </tr>
+                        </table>
+                        <div class="adddelBtn">
+                            <!--禁止form回车触发button请勿删除-->
+                            <button style="display:none"></button>
+                            <button class="addUserGroup" ng-click="addGroup()">添加用户组</button>
+                            <button class="delGroup btn-default btn" ng-click="delGroups()" ng-disabled="data.selectedGroup.length<1">删除组织</button>
+                        </div>
+                    </div>
+                    <div class="part_3" ng-show="status.whichTabShow==='role'">
+                        <div class="groupDept_div w250">
+                            <div class="groupDept_head">
+                                <span>集团部门列表</span>
+                            </div>
+                            <div class="groupDeptTree">
+                                <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="data.treeData" options="status.treeOptions" on-selection="showSelected(node)">
+                                    <span ng-bind='node.GNAME'></span>
+                                </treecontrol>
+                            </div>
+                        </div>
+                        <div class="middle">
+                            <img src="./editingCenter/app/images/jt-l.png">
+                        </div>
+                        <div class="groupDept_div">
+                            <div class="groupDept_head">
+                                <span>选择列表</span>
+                            </div>
+                            <input type="text" ng-model="data.filterRole" class="form-control" placeholder="输入关键词">
+                            <div class="groupDept_dialog_list mr10 ml10">
+                                <div class="groupDept_dialog_list_head">
+                                    <span>未分配角色</span>
+                                </div>
+                                <div class="groupDept_dialog_ul">
+                                    <ul>
+                                        <li ng-dblclick="directlyToRight(role)" ng-click="chooseUserName('toChoose',role)" ng-class="role.selected" ng-repeat="role in data.roleDatas | filter:{ROLENAME:data.filterRole}"><span ng-bind="role.ROLENAME | trsLimitTo:15"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="middle">
+                            <div ng-click="toRight()">
+                                <img src="./manageConfig/roleManageMent/images/js4.png">
+                            </div>
+                            <div ng-click="toLeft()">
+                                <img src="./manageConfig/roleManageMent/images/js5.png">
+                            </div>
+                            <div>
+                                <img ng-click="selectedAll()" src="./manageConfig/roleManageMent/images/js6.png">
+                            </div>
+                            <div>
+                                <img ng-click="data.selectedRole=[]" src="./manageConfig/roleManageMent/images/js7.png">
+                            </div>
+                        </div>
+                        <div class="groupDept_div mr0">
+                            <div class="groupDept_head">
+                                <span>选择列表</span>
+                            </div>
+                            <input ng-model="searchRoleWord" type="text" class="form-control" placeholder="输入关键词" bs-options="role as role.ROLENAME for role in getSuggestions($viewValue)" bs-typeahead limit: "30">
+                            <div class="groupDept_dialog_list ml10">
+                                <div class="groupDept_dialog_list_head">
+                                    <span>已分配角色</span>
+                                </div>
+                                <div class="groupDept_dialog_ul">
+                                    <ul>
+                                        <li ng-dblclick="directlyToLeft(item)" ng-class="item.selected" ng-click="chooseUserName('cancelChoose',item)" ng-repeat="item in data.selectedRole | unique:'ROLEID'"><span title="{{item.ROLENAME}}" ng-bind="item.ROLENAME"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <div class="foot">
+                <div>
+                    <button class="confirm" ng-click="confirm()">确定</button>
+                    <button class="cancel" ng-click="cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<form novalidate name="rankForm">
+    <div class="signed-rank-container">
+        <div class="toBeCompiled-review-head">
+            <p>排序</p>
+        </div>
+        <div class="signed-rank-body invalidate-input-box">
+            <p class="{{roleForm.rolename.$invalid?'has-error':''}}">将新闻移动到第
+                <input class="form-control" ng-model="num" validator="maxlength=10,required,number" maxlength-error-message="长度不能超过10个字符！" type="text" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips"/>位</p>
+        </div>
+        <div class="signed-rank-footer">
+            <button validation-submit="rankForm" class="new-role-btn ml140 btn_confirm" ng-click="confirm()">确定</button>
+            <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</form>

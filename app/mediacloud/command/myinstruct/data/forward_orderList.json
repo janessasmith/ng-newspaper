@@ -1,0 +1,13 @@
+{
+    "FORWARDID": "2",
+    "TITLE": "asides",
+    "CONTENT":"XXXXXXXX",
+    "TYPE":"1",
+    "OVERTIME":"2016-01-01 12:12:12",
+    "ISSECRET": "0",
+    "NOTIFICATIONS":"1,2,3",
+    "files":[
+        {"fileId":1,"fileName":"xxxx.jpg","filePath":"http://XXXXXX/w1213313313131313.jpg"},
+        {"fileId":1,"fileName":"xxxx.jpg","filePath":"http://XXXXXX/w1213313313131313.jpg"}
+    ]
+}

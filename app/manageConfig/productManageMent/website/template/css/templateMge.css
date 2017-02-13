@@ -1,0 +1,47 @@
+.edit_right_mid .man_web_temp_recycle {
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #ccc;
+    margin-right: 10px;
+}
+
+.template_mge_tpl {
+    overflow-x: auto;
+}
+
+.template_mge_tpl_dt {
+    padding-top: 9px;
+    border: 1px solid #ccc;
+    margin: auto 10px;
+    height: 690px;
+    overflow: auto;
+}
+
+.template_mge_tpl treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.template_mge_tpl treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.template_mge_tpl treecontrol li .tree-label a {
+    color: #666
+}
+
+.man_web_temp_padding .prohibit-Check-temp {
+    cursor: not-allowed;
+    color: #aaa;
+}

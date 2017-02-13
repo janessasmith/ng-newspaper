@@ -1,0 +1,32 @@
+{
+	"result":[
+	{
+		"actionNum":12,
+		"actionName":"新关注人数",
+		"day":"10%",
+		"week":"20%",
+		"month":"30%",
+		"img":"app/monitor/common/images/wx-ls-icon03.png",
+		"percentage":"60%"
+	},
+	{
+		"actionNum":23,
+		"actionName":"取消关注人数",
+		"day":"13%",
+		"week":"21%",
+		"month":"44%",
+		"img":"app/monitor/common/images/wx-ls-icon04.png",
+		"percentage":"56%"
+		},
+	{
+		"actionNum":67,
+		"actionName":"净增关注人数",
+		"day":"10%",
+		"week":"20%",
+		"month":"30%",
+		"img":"app/monitor/common/images/wx-ls-icon03.png",
+		"percentage":"72%"
+	}
+	
+			]
+}

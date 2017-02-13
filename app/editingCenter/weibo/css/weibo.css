@@ -1,0 +1,46 @@
+.weibo-left-active {
+    background-color: #1c83d2!important;
+}
+
+.weibo-list.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+    min-height: 567px;
+}
+
+.weibo-list .weiboLists li {
+    width: 100%;
+    padding-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #25395a;
+    cursor: pointer;
+    background-color: #466385;
+}
+
+.weibo-list .weiboLists li i {
+    display: block;
+    float: left;
+    width: 20%;
+    padding-left: 6px;
+}
+
+.weibo-list .weiboLists li a {
+    display: block;
+    padding: 0px;
+}
+
+.weibo-list .weiboLists li,
+.weibo-list .weiboLists li a,
+.weibo-list .weiboLists li a:hover {
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    font-family: "Microsoft Yahei";
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1681px) {
+    .weibo-list.container-fluid {
+        min-height: 849px!important;
+    }
+}

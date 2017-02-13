@@ -1,0 +1,4 @@
+<input ng-disabled="disabled" class="regular-radio" type="radio" ng-disabled="disabled" ng-checked="ischecked" name="{{group}}">
+<label class="{{disabled==true?'disabled':''}}" ng-click="toggleStatus()"></label>
+<img ng-src="{{imgurl}}" alt="label" ng-if="imgurl">
+<span ng-bind="label" ng-click="toggleStatus()"></span>

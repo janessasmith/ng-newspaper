@@ -1,0 +1,8 @@
+<div class="dropDown" ng-show="shareRecords.length>5">
+    <div>
+        <ul>
+        <li ng-repeat="item in shareRecords" ng-click="selectItem(item)" class="{{item.isSelected?'selected':''}}" ng-if="$index>4">{{item.DESC}}<span class="{{item.isSelected?'selected':''}}" ng-click="deleteRecord(item)">X</span></li>
+        </ul>
+        <img src="./editingCenter/app/images/l122.png">
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen opacity100" ng-click="invoke()" ng-disabled="!data.selectedArray.length>0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='invoke'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['iwo.specialrightfordoc.diaoyong']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='invoke'&&data.selectedArray.length>0?'i42-1.png':'i42.png'}}" />
+            </span> 调用
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="!data.selectedArray.length>0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='batchExport'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-click="exportDraft()">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='batchExport'&&data.selectedArray.length>0?'i17-1.png':'i17.png'}}" />
+            </span> 导出
+        </button>
+        <button class="btn btn-default btn-commen edit_news_today_btn_commen opacity100" ng-click="printBtn()" ng-disabled="!data.selectedArray.length>0" ng-if="status.btnRights['iwo.specialrightfordoc.dayin']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='print'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='print'&&data.selectedArray.length>0?'zm15-1.png':'zm15.png'}}"/>
+            </span>打印
+        </button>
+        <button class="btn btn-default btn-commen edit_news_today_btn_commen manuscript-archives-copy opacity100" ng-click="outSending()" ng-disabled="!data.selectedArray.length>0" ng-if="status.btnRights['iwo.specialrightfordoc.waifa']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='batchOutgoing'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='batchOutgoing'&&data.selectedArray.length>0?'i20-1.png':'i20.png'}}"/>
+            </span> 邮件外发
+        </button>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li>
+                <span>特权取稿</span>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-6">
+        <trs-single-select selected-option="iWoDocStatusSelected" callback="queryByDropdown('DocType',iWoDocStatusSelected.value)" options="iWoDocStatusName"></trs-single-select>
+        <!-- <trs-single-select selected-option="timeType" callback="queryByDropdown('OperTime',timeType.value)" options="timeTypeJsons"></trs-single-select> -->
+        <!-- 自定义时间 -->
+        <trs-time-select selected-option="timeType" callback="queryByDropdown('OperTime',timeType.value)" options="timeTypeJsons" fromdate="data.fromdate" untildate="data.untildate"></trs-time-select>
+        <!-- 排序方式 -->
+        <trs-single-select ng-show="status.isESSearch" selected-option="sortType" callback="queryByDropdown('', sortType.value)" options="sortTypeJsons"></trs-single-select>
+    </div>
+    <div class="col-md-6">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+                    <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+            </span>
+        </div>
+        <trs-single-select selected-option="iWoAllSelected" callback="queryByiWoAll()" options="iWoAll" class="pull-right"></trs-single-select>
+    </div>
+</div>
+<div class="edit_table border_radius_5">
+    <table class="table table-striped data-table black-box">
+        <thead>
+            <tr>
+                <th class="td-check col-cbx">
+                    <trs-checkbox ischecked="data.items.length != 0 && data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox>
+                    <th class="td-number col-index" style="text-align: center;">序号</th>
+                    <th class="xcol-icon"></th>
+                    <th>标题</th>
+                    <th class="xcol-type">类型</th>
+                    <th class="xcol-releaseBuild">建稿人</th>
+                    <th class="xcol-words">字数</th>
+                    <th class="xcol-lastDate">最后版本时间</th>
+                    <th class="xcol-operation">操作</th>
+                    <th class="xcol-picture">图示</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr ng-repeat="item in data.items">
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <!--全选-->
+                <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td>
+                <!--序号-->
+                <td>
+                    <!--<div class="office_icon_group">-->
+                    <!-- <img src="./editingCenter/iWo/images/i22.png" title="发稿单异常" ng-show="item.FGDERROR =='1'"> -->
+                    <!-- <img src="./editingCenter/iWo/images/i53.png" title="不发稿费" ng-if="item.FGDERROR=='3'"> -->
+                    <!-- <img src="./editingCenter/iWo/images/i23.png" title="已收藏" ng-if="item.ISCOL !='false'"> -->
+                    <!--  <img src="./editingCenter/iWo/images/i19.png" title="复制建新稿" ng-if="item.ISFZG !='false'"> -->
+                    <!--</div>-->
+                </td>
+                <td class="ta-l table-title-size-ta-l">
+                    <a ui-sref="iwopreview({channelid:channelid,chnldocid:item.CHNLDOCID,siteid:siteid,metadataid:item.METADATAID,modalname:'iwo.specialrightfordoc',type:item.DOCTYPEID})" target="_blank">{{item.TITLE}}
+                        
+                       </a>
+                </td>
+                <!--标题-->
+                <td ng-bind="item.DOCTYPE"></td>
+                <!--类型-->
+                <td ng-bind="item.TRUENAME"></td>
+                <!--建稿人-->
+                <td ng-bind="item.DOCWORDSCOUNT"></td>
+                <!--字数-->
+                <td ng-bind="item.OPERTIME" class="pointer" ng-click="showVersionTime(item)"></td>
+                <!--最后版本时间-->
+                <td>
+                    <a href="javascript:void(0)" ng-click="singleInvoke(item)" ng-if="status.btnRights['iwo.specialrightfordoc.diaoyong']" title="调用">
+                        <img src="./editingCenter/iWo/images/i42.png">
+                    </a>
+                </td>
+                <!--操作-->
+                <td class="edit-icon-td">
+                    <trs-thumb item="item" transform="editingCenterAllThumb"></trs-thumb>
+                </td>
+                <!--图示-->
+            </tr>
+        </tbody>
+    </table>
+    <div cg-busy="loadingPromise"></div>
+    <div class="page cls-paging">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+</div>

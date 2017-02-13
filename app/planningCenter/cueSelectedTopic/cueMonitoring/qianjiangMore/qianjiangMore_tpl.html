@@ -1,0 +1,54 @@
+<div class="container-fluid cue-monitor-more-container">
+    <div class="monitor-more-head">
+        <div class="pull-left">
+            <ol class="breadcrumb edit_breadcrumb ml0">
+                <li>
+                    <span>信息检测</span>
+                    <span>实时线索</span>
+                    <span>96068</span>
+                </li>
+            </ol>
+        </div>
+        <div class="pull-right mr15">
+            <div class="pull-left">
+                <custom-select label="时间范围" selected-option="data.time" options="status.timeRange" callback="searchWithTime()"></custom-select>
+            </div>
+            <div class="search-wrap">
+                <input type="text" placeholder="请输入关键字搜索" ng-model='data.searchWord'>
+                <i></i>
+            </div>
+            <button class="cMore_btn" ng-click="queryListBySearchWord()">检索</button>
+        </div>
+    </div>
+    <div class="edit_table">
+        <table class="table table-striped qianjiang-more-table">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>爆料内容</th>
+                    <th>爆料人</th>
+                    <th>来电类型</th>
+                    <th>电话</th>
+                    <th>时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.items">
+                    <td ng-bind="(page.CURRPAGE-1)*10+$index+1"></td>
+                    <td style="text-align:left;">
+                        <a ng-bind-html="item.COMMENTS | trsSce" ui-sref="plancenterdetail({guid:item.GUID,serviceid:'96068'})" target="_blank"></a>
+                    </td>
+                    <td ng-bind="item.NAME"></td>
+                    <td ng-bind="item.CODEDESC"></td>
+                    <td ng-bind="item.MOBILE"></td>
+                    <td ng-bind="item.CREATEDDATE|date:yyyy-MM-dd"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <trs-pagenation-left total-num="page.ITEMCOUNT" page-count="page" pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+            <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+            <trs-pagenation-right callback="jumpToPage()" currpage="status.jumpToPageNum" page="page"></trs-pagenation-right>
+        </div>
+    </div>
+</div>

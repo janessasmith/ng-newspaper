@@ -1,0 +1,105 @@
+.stick-window .modal-dialog {
+    width: 332px;
+    margin-top: 235px;
+}
+
+.stick {
+    width: 331px;
+    height: 210px;
+    border: 2px solid #E0DED9;
+    border-radius: 4px;
+}
+
+.stick .head {
+    height: 38px;
+    line-height: 38px;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.stick .main {
+    height: 123px;
+    padding-left: 20px;
+    font-size: 12px;
+    background-color: #F0F2F4;
+}
+
+.stick .main .children {
+    height: 41px;
+    line-height: 41px;
+    position: relative;
+}
+
+.stick .main .children .date {
+    float: left;
+    margin-right: 8px;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.stick .main .children .stickTime {
+    float: left;
+    margin-right: 2px;
+}
+
+.stick .main .children .time {
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.stick .main .children img.date {
+    position: absolute;
+    left: 160px;
+    top: 5px;
+}
+
+.stick .main .children img.time {
+    position: absolute;
+    width: 16px;
+    height: 21px;
+    top: 5px;
+    right: 25px;
+}
+
+.stick .main .children .date input {
+    width: 97px;
+    height: 28px;
+    background-color: white;
+    cursor: pointer;
+    z-index: 9999
+}
+
+.stick .main .children .time input {
+    width: 97px;
+    height: 28px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.stick .main .children button {
+    margin-right: 0px;
+}
+
+.stick .main .top button {
+    width: 200px;
+}
+
+.stick .main .children li {
+    width: 200px;
+}
+
+.stick .bottom {
+    padding-top: 8px;
+    padding-left: 158px;
+}
+
+.stick .bottom button {
+    height: 25px;
+    width: 75px;
+    font-size: 12px;
+    color: white;
+    background-color: #0095CE;
+    border-radius: 4px;
+    border: 0px;
+}

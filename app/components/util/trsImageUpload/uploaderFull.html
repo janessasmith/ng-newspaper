@@ -1,0 +1,10 @@
+<div class="form-control">
+    <p>
+        <span class="list-stule-delete" ng-click="removeImg()">删除</span>
+        <span class="list-stule-upload">上传</span>
+        <span class="list-stule-modify" ng-click="modifyImg()" ng-show="fileName">编辑</span>
+        <img src="{{fileName?returnFile:'./editingCenter/app/toBeCompiled/images/m-pic.jpg'}}">
+    </p>
+    <div class="uploadSuccess" ng-show="uploaderSuccess"></div>
+    <!--    <p style="margin:0; padding: 0; height:20px; color:#000; position: absolute; top:45px; text-align: center; font-size: 16px;" ng-bind="info"></p> -->
+</div>

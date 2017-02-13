@@ -1,0 +1,38 @@
+<tabset class="m_nav">
+    <tab heading="操作日志">
+        <img class="closeModal" src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        <div class="m_box_2">
+            <trs-timeline title="'操作日志'">
+                <p ng-bind="items.operatLogTitle" class="logTitle"></p>
+                <timegroup tick="item.day" ng-repeat="item in items.operationLog">
+                    <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                        <a class="w60">{{n.value.OPERATION}}</a>
+                        <a class="w88" title="{{n.value.ATTRIBUTE}}">{{n.value.ATTRIBUTE}}  </a>
+                        <a class="w54">{{n.value.OPERUSERNAME}}
+                        </a>
+                        <a title="{{n.value.OPINION}}" class="exttype" ng-if="n.value.OPINION!==''">{{n.value.OPERATION}}意见</a>
+                    </timeitem>
+                </timegroup>
+            </trs-timeline>
+        </div>
+        <div class="websist_normal" data-ng-if="status.operationLogNoMore ">没有更多了...</div>
+        <div data-ng-if="!status.operationLogNoMore" cg-busy="loadingPromise" class="website_timeline_load_more_2 text-center" ng-click="getLoadMore()">
+            <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+        </div>
+    </tab>
+    <tab heading="流程版本">
+        <img class="closeModal" src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        <div class="m_box_2">
+            <trs-timeline title="'流程版本'">
+                <timegroup tick="item.day" ng-repeat="item in items.versionTime">
+                    <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                        <a class="w60">{{n.value.OPERATION}}</a>
+                        <a class="w88" title="{{n.value.OPERSTATEDESC|trsLimitTo:12}}">{{n.value.OPERSTATEDESC}}</a>
+                        <a class="w54">{{n.value.CRUSER}}</a>
+                        <a class="exttype" target="_blank" ui-sref="editingCenterPersonalVersionTime({objectversionid:n.value.OBJECTVERSIONID})">{{n.value.EXTTYPE}}</a>
+                    </timeitem>
+                </timegroup>
+            </trs-timeline>
+        </div>
+    </tab>
+</tabset>

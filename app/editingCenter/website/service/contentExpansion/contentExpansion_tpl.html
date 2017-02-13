@@ -1,0 +1,33 @@
+<div class="contentExpansion">
+   <!-- <div class="head">
+        <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+    </div>-->
+    <div class="main">
+                <tabset class="contentExpansion-downlist">              
+                <tab heading="扩展1">
+                    <accordion close-others="true">
+                        <textarea ng-model="status.AdditionalTextTop" class="form-control edit-news-textarea"></textarea>
+                    </accordion>
+                </tab>              
+                <tab heading="扩展2">
+                    <accordion close-others="true">
+                     <textarea ng-model="status.AdditionalTextBottom" class="form-control edit-news-textarea"></textarea>
+                    </accordion>
+                </tab>
+                <tab heading="扩展3">
+                    <accordion close-others="true">
+                      <textarea ng-model="status.AdditionalTextLeft" class="form-control edit-news-textarea"></textarea>
+                    </accordion>
+                </tab>
+                <tab heading="扩展4">
+                    <accordion close-others="true">
+                       <textarea ng-model="status.AdditionalTextRight" class="form-control edit-news-textarea"></textarea>
+                    </accordion>
+                </tab>
+            </tabset>
+    </div>
+    <div class="bottom">
+        <button class="confirm btn_confirm" ng-click="confirm()">确定</button>
+        <button class="cancel btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

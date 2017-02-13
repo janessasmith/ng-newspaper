@@ -1,0 +1,102 @@
+.edit-outSending-window .modal-dialog {
+    width: 400px;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.edit-outSending-window .man_produ_modify {
+    padding-bottom: 10px;
+}
+
+.edit-outSending-window .edit_outSending_main {
+    background: #fff;
+    overflow: hidden;
+    margin: 10px 10px 0 10px;
+    border: 1px solid #ddd;
+}
+
+.edit-outSending-window .man_produ_modify_footer {
+    background: transparent;
+}
+
+.edit-outSending-window .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+    margin: 0 10px 0 0;
+}
+
+.edit-outSending-window .man_produ_modify_footer {
+    height: 50px;
+    padding: 10px 0 0 0;
+    float: right;
+}
+
+.edit-outSending-window .outSending_top_btn_group {
+    padding: 10px;
+}
+
+.edit-outSending-window .outSending_top_btn_group > div {
+    width: 95px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f9f9f9));
+}
+
+.edit-outSending-window .outSending_top_btn_group > div:hover,
+.edit-outSending-window .outSending_top_btn_group > div:active {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#ffffff));
+}
+
+.edit-outSending-window .outSending_middle_desc {
+    height: 50px;
+    line-height: 30px;
+    padding: 10px;
+    background: #f0f2f5;
+    font-weight: bold;
+}
+
+.edit-outSending-window .outSending_middle_desc > i {
+    display: inline-block;
+    border: 6px solid transparent;
+    border-left-color: #4496d2;
+    vertical-align: -1px;
+    margin-right: 3px;
+}
+
+.edit-outSending-window .outSending_middle_main {
+    height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px 5px 0 6px;
+}
+
+.edit-outSending-window .outSending_middle_main table {
+    width: 100%;
+}
+
+.edit-outSending-window .outSending_middle_main table img {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.edit-outSending-window .outSending_middle_main table label {
+    vertical-align: -6px;
+}
+
+.edit-outSending-window .outSending_middle_main table tbody tr td {
+    line-height: 34px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

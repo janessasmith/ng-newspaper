@@ -1,0 +1,150 @@
+<div class="customMonitor">
+    <div class="customMonitor_nav row">
+        <div class="col-md-8 col-lg-9"></div>
+        <div class="col-md-4 col-lg-3">
+            <ol class="pull-right edit_breadcrumb">
+                <li>
+                    <span>自定义监控</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="customMonitor_con">
+        <div class="customMonitor_con_addMonitor">
+            <div class="addMonitor_title" title="{{data.monitorTitle}}" ng-bind="data.monitorTitle | trsLimitTo:60"></div>
+            <div class="addMonitor_head">
+                <span>媒体热度</span>
+            </div>
+            <div class="addMonitor_heatCon">
+                <div class="addMonitor_heatCon_head">
+                    <ul>
+                        <li>
+                            <div class="heatCon_time"><span>昨日: </span><span ng-bind="data.mediaTrend.YESTERDAY.TOTALNUM"></span></div>
+                            <br>
+                            <div class="heatCon_pct"><img ng-src="{{data.mediaTrend.YESTERDAY.imgSrc}}"><span ng-bind="data.mediaTrend.YESTERDAY.TREND"></span></div>
+                        </li>
+                        <li>
+                            <div class="heatCon_time">三日: <span ng-bind="data.mediaTrend.THREEDAY.TOTALNUM"></span></div>
+                            <br>
+                            <div class="heatCon_pct"><img ng-src="{{data.mediaTrend.THREEDAY.imgSrc}}"><span ng-bind="data.mediaTrend.THREEDAY.TREND"></span></div>
+                        </li>
+                        <li>
+                            <div class="heatCon_time">一周: <span ng-bind="data.mediaTrend.WEEK.TOTALNUM"></span></div>
+                            <br>
+                            <div class="heatCon_pct"><img ng-src="{{data.mediaTrend.WEEK.imgSrc}}"><span ng-bind="data.mediaTrend.WEEK.TREND"></span></div>
+                        </li>
+                        <li>
+                            <div class="heatCon_time">一月: <span ng-bind="data.mediaTrend.MONTH.TOTALNUM"></span></div>
+                            <br>
+                            <div class="heatCon_pct"><img ng-src="{{data.mediaTrend.MONTH.imgSrc}}"><span ng-bind="data.mediaTrend.MONTH.TREND"></span></div>
+                        </li>
+                        <li>
+                            全部: <span ng-bind="data.mediaTrend.TOTALNUM.TOTALNUM"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="addMonitor_heatCon_timeGroup">
+                    <div cg-busy="loadingPromise"></div>
+                    <span>时间区间：</span>
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="status.startTime" placeholder="Date" data-autoclose="1" bs-datepicker readonly="readonly" data-date-format="yyyy-MM-dd" data-max-date="today">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+                    </div>
+                    <span>到</span>
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="status.endTime" placeholder="Date" data-autoclose="1" bs-datepicker readonly="readonly" data-date-format="yyyy-MM-dd" data-max-date="today">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+                    </div>
+                    <button ng-click="checkLine()">确定</button>
+                </div>
+                <!-- 媒体热点折线图 -->
+                <div class="addMonitor_heatCon_line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="customPreview_con">
+        <tabset justified="true">
+            <tab ng-click="getLatestArticles()" heading="最新文章">
+                <div class="customPreview_con_select">
+                    <custom-select selectcustom="data.latestArticle.selectcustom" label="时间范围" selected-option="data.latestArticle.timeType" options="status.timeRange" is-without-compare-time="status.isWithoutCompareTime" callback="searchWithTime(data.latestArticle)" callback-without-compare-time="searchWithTime(data.latestArticle)"></custom-select>
+                    <!-- <button class="btn btn-default btn-commen opacity100">
+                        取消合并重稿
+                    </button> -->
+                </div>
+                <table class="table table-striped data-table">
+                    <thead>
+                        <tr>
+                            <th class="cm-number">序号</th>
+                            <th width="30%">标题</th>
+                            <!-- <th class="cm-hot">热度</th> -->
+                            <th class="cm-source">来源</th>
+                            <th class="cm-datetime">发布时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in data.latestArticle.items">
+                            <td ng-bind="($index+1)+(data.latestArticle.startpage-1)*data.latestArticle.PAGESIZE"></td>
+                            <td class="cm-left">
+                                <div ng-mouseenter="showTitle(item,$event,300)" ng-mouseleave="item.isShowTitle=false" class="title">
+                                    <a ng-bind-html="item.DOCTITLE|trsSce" target="_blank" ui-sref="resourcedetail({guid:item.ZB_GUID_CHAR,indexname:item.TABLENAME})"></a>
+                                    <div class="custom-wrap" ng-show="!!item.isShowTitle" ng-style="item.panelpostion">
+                                        <h6 ng-bind-html="item.DOCTITLE|trsSce"></h6>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- <td>2</td> -->
+                            <td ng-bind="item.SOURCESITE">人民网</td>
+                            <td ng-bind="item.DOCPUBTIME">今天11:52:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="page">
+                    <trs-pagenation-left page-count="data.latestArticle" callback="selectPageNum()" is-select-pagecount="false"></trs-pagenation-left>
+                    <pagination total-items="data.latestArticle.ITEMCOUNT" ng-change="getLatestArticles()" ng-model="data.latestArticle.startpage" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="data.latestArticle.PAGESIZE" rotate="false" num-pages="data.latestArticle.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                    <!-- <trs-pagenation-right callback="jumpToPage()" page="data.latestArticle" currpage="data.latestArticle.willGoPage"></trs-pagenation-right> -->
+                </div>
+            </tab>
+            <tab heading="最热文章" ng-click="getHottestArticles()">
+                <div class="customPreview_con_select">
+                    <!-- <custom-select label="时间范围" selected-option="data.hottestArticle.timeType" options="status.timeRange" callback="searchWithTime(data.hottestArticle)"></custom-select> -->
+                    <!-- <trs-single-select selected-option="data.selectedDocType" callback="queryByDropdown('docType',data.selectedDocType.value)" options="data.docTypeArray"></trs-single-select> -->
+                    <!-- <button class="btn btn-default btn-commen opacity100">
+                        取消合并重稿
+                    </button> -->
+                </div>
+                <table class="table table-striped data-table">
+                    <thead>
+                        <tr>
+                            <th class="cm-number">序号</th>
+                            <th width="30%">标题</th>
+                            <th class="cm-hot">热度</th>
+                            <th class="cm-source">来源</th>
+                            <th class="cm-datetime">发布时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in data.hottestArticle.items">
+                            <td ng-bind="($index+1)+(data.hottestArticle.startpage-1)*data.hottestArticle.PAGESIZE"></td>
+                            <td class="cm-left">
+                                <div ng-mouseenter="showTitle(item,$event,300)" ng-mouseleave="item.isShowTitle=false" class="title">
+                                    <a target="_blank" ui-sref="resourcedetail({guid:item.GUID,indexname:item.TABLENAME})" ng-bind-html="item.DOCTITLE|trsSce"></a>
+                                    <div class="custom-wrap" ng-show="!!item.isShowTitle" ng-style="item.panelpostion">
+                                        <h6 ng-bind-html="item.DOCTITLE|trsSce"></h6>
+                                    </div>
+                                </div>
+                            </td>
+                            <td ng-bind="item.HOTPOINTNUM"></td>
+                            <td ng-bind="item.SOURCESITE"></td>
+                            <td ng-bind="item.DOCPUBTIME"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="page">
+                    <trs-pagenation-left page-count="data.hottestArticle" callback="selectPageNum()" is-select-pagecount="false"></trs-pagenation-left>
+                    <pagination total-items="data.hottestArticle.ITEMCOUNT" ng-change="getHottestArticles()" ng-model="data.hottestArticle.startpage" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="data.hottestArticle.PAGESIZE" rotate="false" num-pages="data.hottestArticle.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                    <!-- <trs-pagenation-right callback="jumpToPage()" page="data.hottestArticle" currpage="data.hottestArticle.willGoPage"></trs-pagenation-right> -->
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</div>

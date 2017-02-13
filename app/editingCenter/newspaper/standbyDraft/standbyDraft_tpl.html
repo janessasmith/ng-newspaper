@@ -1,0 +1,190 @@
+<div trs-scroll-fix class="row edit_right_head editCen-standbyDraft">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length===0" ng-click="shangban()" ng-if="status.btnRights['paper.dyg.shangban']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='banchShangban'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/images/{{status.batchOperateBtn['hoverStatus']=='banchShangban'&&data.selectedArray.length>0?'w19-1.png':'w19.png'}}"/>
+            </span> 上版
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length===0" ng-click="rejection()" ng-if="status.btnRights['paper.dyg.tuigao']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='rejection'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='rejection'&&data.selectedArray.length>0?'i31-1.png':'i31.png'}}"/>
+            </span> 退稿
+        </button>
+        <button class="btn btn-default btn-commen edit_news_today_btn_commen opacity100" ng-click="archive()" ng-disabled="data.selectedArray==0" ng-if="status.btnRights['paper.dyg.guidang']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='archive'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='archive'&&data.selectedArray.length>0?'zm10-1.png':'zm10.png'}}"/>
+            </span>归档
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length===0" ng-click="zhuanban()" ng-if="status.btnRights['paper.dyg.zhuanban']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='zhuanban'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='zhuanban'&&data.selectedArray.length>0?'i58-1.png':'i58.png'}}"/>
+            </span> 调版
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length===0" ng-click="draftlist()" ng-if="status.btnRights['paper.dyg.fagaodan']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='draftlist'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='draftlist'&&data.selectedArray.length>0?'i39-1.png':'i39.png'}}"/>
+            </span> 发稿单
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length===0" ng-click="batchCollect()" ng-if="status.btnRights['paper.dyg.gaojianshoucang']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='collect'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='collect'&&data.selectedArray.length>0?'zm12-1.png':'zm12.png'}}"/>
+            </span> 收藏
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length===0" ng-click="outSending()" ng-if="status.btnRights['paper.dyg.youjianwaifa']&&status.btnLength<9" ng-mouseenter="status.batchOperateBtn['hoverStatus']='outSending'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='outSending'&&data.selectedArray.length>0?'i20-1.png':'i20.png'}}"/>
+            </span> 邮件外发
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length===0" ng-click="exportDraft()" ng-if="status.btnLength<9" ng-mouseenter="status.batchOperateBtn['hoverStatus']='exportDraft'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='exportDraft'&&data.selectedArray.length>0?'i17-1.png':'i17.png'}}"/>
+            </span> 导出
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length===0" ng-click="printBtn()" ng-if="status.btnRights['paper.dyg.dayin']&&status.btnLength<9" ng-mouseenter="status.batchOperateBtn['hoverStatus']='printBtn'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='printBtn'&&data.selectedArray.length>0?'zm15-1.png':'zm15.png'}}"/>
+            </span> 打印
+        </button>
+        <!-- 川报修改1024 -->
+        <div class="btn-group" role="group" ng-if="status.btnLength>=9">
+            <button type="button" class="btn btn-default dropdown-toggle btn-commen opacity100" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-disabled="data.selectedArray.length===0" ng-click="more()" ng-class="{'btn-commen-hover':batchOperateBtn['clickStatus']=='more'}" ng-mouseenter="batchOperateBtn['hoverStatus']='more'" ng-mouseleave="batchOperateBtn['hoverStatus']=''">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/app/images/{{batchOperateBtn['hoverStatus']=='more'&&data.selectedArray.length>0||batchOperateBtn['clickStatus']=='more'?'b8-1.png':'b8.png'}}"/>
+                </span> 更多
+                <span class="pulldown_icon"></span>
+            </button>
+            <ul class="dropdown-menu edit_dropdown_menu" ng-show="data.selectedArray.length>0">
+                <li class="show-operate" ng-if="status.btnRights['paper.dyg.fagaodan']"><a ng-click="draftlist()" >发稿单</a></li>
+                <li class="show-operate" ng-if="status.btnRights['paper.dyg.gaojianshoucang']"><a ng-click="batchCollect()">收藏</a></li>
+                <li ng-if="status.btnRights['paper.dyg.youjianwaifa']"><a ng-click="outSending()">邮件外发</a></li>
+                <li><a ng-click="exportDraft()">导出</a></li>
+                <li ng-if="status.btnRights['paper.dyg.dayin']"><a ng-click="printBtn()">打印</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li>
+                <span ng-bind="data.currSite.SITEDESC|trsLimitTo:10" title="data.currSite.SITEDESC"></span>
+                <span>待用稿平台</span>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid edit_newDocSite_top_right_mid">
+    <div class="col-md-9">
+        <!-- <trs-single-select selected-option="selectdTimeDefault" callback="queryByDropdown('oprtime',selectdTimeDefault.value)" options="selectdTime"></trs-single-select> -->
+        <!-- 自定义时间 -->
+        <trs-time-select selected-option="selectdTimeDefault" callback="queryByDropdown('oprtime',selectdTimeDefault.value)" options="selectdTime" fromdate="data.fromdate" untildate="data.untildate"></trs-time-select>
+        <trs-single-select selected-option="docType" callback="queryByDropdown('docType',docType.value)" options="docTypeJsons"></trs-single-select>
+        <!-- 排序方式 -->
+        <!-- <trs-single-select ng-show="status.isESSearch" selected-option="sortType" callback="queryByDropdown('', sortType.value)" options="sortTypeJsons"></trs-single-select> -->
+    </div>
+    <div class="col-md-3">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+                <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 standby-draft-panel-body min_h_13">
+        <!--<div class="standby-draft-accordion-head standby-draft-unread-head text-center">
+        </div>-->
+    </div>
+</div>
+<div class="edit_table standby-draft-table standby-draft-panel-body editCen-standbyDraft border_radius_5">
+    <table class="table table-striped data-table black-box">
+        <thead>
+            <tr>
+                <th class="td_newspaper_check" style="width:60px">
+                </th>
+                <th class="xcol-newspaper-state">状态</th>
+                <!-- <th class="xcol-newspaper-id">稿件ID</th> -->
+                <th>标题</th>
+                <th class="xcol-newspaper-words">字数</th>
+                <!-- <th class="xcol-newspaper-emp">建稿人部门</th> -->
+                <th class="xcol-newspaper-releaseBuild">创建人</th>
+                <th class="xcol-newspaper-date">最后版本时间</th>
+                <th class="xcol-newspaper-operation">操作</th>
+                <th class="xcol-newspaper-bigPicture">图示
+                    <!-- <img src="./editingCenter/newspaper/images/zm23.png" class="pull-right edit_edit_news_today_table_operate" ng-click="closeAllPanel()"> -->
+                </th>
+            </tr>
+        </thead>
+    </table>
+    <div class="panel-group editCen-standbyDraft">
+        <div cg-busy="loadingPromise"></div>
+        <accordion close-others="false" ng-repeat="items in data.panels track by $index" ng-class="{'ms-special-need':data.msSpecialNeedArr.indexOf(items.BANMIAN)>-1}">
+            <div class="td-check checkbox-position-style" ng-if="status.isPanelOpenArray[$index]">
+                <trs-checkbox ischecked="data.selectedArray.length>0&&determineItemsInSelectedArray(items.DOCUMENTS)" callback="newspaperMultiSelected(items.DOCUMENTS)"></trs-checkbox>
+                全选
+                <!-- <img src="./resourceCenter/images/z19.png" class="editCen-newspaper-type-refresh" ng-click="refreshSingleBanmian(items.BANMIANID,$index)"> -->
+            </div>
+            <div class="panel panel-info">
+                <accordion-group is-open="status.isPanelOpenArray[$index]">
+                    <accordion-heading>
+                        <h4 class="panel-title edit_news_today" ng-click="getCachedById($index)">
+                                <a data-toggle="collapse" data-parent="#accordion" class="pull-left " href="#">
+                                    <img src="./editingCenter/newspaper/images/np02.png"
+                                         ng-class="{'standby-draft-panel-title-rotate':status.isPanelOpenArray[$index]}">
+                                    <span class="edit_news_today_panel_title_name">{{items.DATE}}&nbsp;{{items.DIECI}}<i ng-show="items.DIECI!=''" class="mr5">-</i>{{items.BANMIAN}}【{{items.DOCUMENTS.length||items.DOCCOUNT}}】</span>
+                                </a>
+                            </h4>
+                    </accordion-heading>
+                    <div class="panel-collapse collapse in">
+                        <div class="newspaper_todaysdark_table">
+                            <table class="table table-striped data-table black-box" ng-class="{'standby-draft-panel-close':!isPanelOpenArray[$index]}">
+                                <tbody trs-thumb-container>
+                                    <tr ng-repeat="item in items.DOCUMENTS">
+                                        <td class="xcol-newspaper-cbx td-check newspaper-td-check">
+                                            <trs-checkbox ischecked="isChecked(item)" callback="singleSelect(item)"></trs-checkbox>
+                                            <span ng-bind="items.contents.length"></span>
+                                            <span ng-bind="$index+1"></span>
+                                        </td>
+                                        <!--全选-->
+                                        <td class="xcol-newspaper-state" ng-bind="item.STATUSNAME"></td>
+                                        <!--状态-->
+                                        <!-- <td class="xcol-newspaper-id" ng-bind="item.METADATAID"></td> -->
+                                        <!--稿件ID-->
+                                        <td class="ta-l">
+                                            <a target="_blank" ng-click="newspaperPreview(item)" title="{{item.TITLE}}" target="_blank" ng-bind="item.TITLE"></a>
+                                            <span ng-if="item.HASFILE=='1'" style="color:#f3c832;margin-left:10px;">附</span>
+                                        </td>
+                                        <!--标题-->
+                                        <td class="xcol-newspaper-words" ng-bind="item.DOCWORDSCOUNT"></td>
+                                        <!--字数-->
+                                        <!-- <td class="xcol-newspaper-emp" ng-bind="item.CRUSERDEPT"></td> -->
+                                        <!--建稿人部门-->
+                                        <td class="xcol-newspaper-releaseBuild" ng-bind="item.ORGINUSERNAME"></td>
+                                        <!--建稿人-->
+                                        <td ng-bind="item.OPERTIME" class="xcol-newspaper-date pointer" ng-click="showVersionTime(item)"></td>
+                                        <!--流程版本时间-->
+                                        <!-- <td ng-bind="item.DOCSTATUSNAME"></td> -->
+                                        <!--状态-->
+                                        <td class="xcol-newspaper-operation">
+                                            <!--操作-->
+                                            <a ng-click="isLockEdit(item)" target="_blank" ng-if="status.btnRights['paper.dyg.bianji']" title="编辑">
+                                                <img src="./editingCenter/website/images/images/r1.png">
+                                            </a>
+                                            <!-- <a href="javascript:void(0)" ng-click="singleShangban(item)" ng-if="status.btnRights['paper.dyg.shangban']" title="上版">
+                                                <img src="./editingCenter/newspaper/images/zm37.png">
+                                            </a> -->
+                                        </td>
+                                        <td class="xcol-newspaper-bigPicture edit-icon-td newspaper-icon-td">
+                                            <trs-thumb item="item" transform="editingCenterThumb"></trs-thumb>
+                                            <img src="./editingCenter/newspaper/images/i2.png" ng-click="draftCorrelationView(item.METADATAID)" ng-show="item.RELATEDOCS > 1">
+                                        </td>
+                                        <!--图示-->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </accordion-group>
+            </div>
+        </accordion>
+    </div>
+</div>

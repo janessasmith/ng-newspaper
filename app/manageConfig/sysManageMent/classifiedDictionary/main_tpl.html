@@ -1,0 +1,20 @@
+<div class="col-sm-3">
+    <div class="manage-sys-main-leftDiv">
+        <div class="list-group">
+            <div ng-repeat="item in classificationDatas" ng-click="chooseType(item.type)" >
+                <a ng-class="{'selectedfocus':item.type==optionSelected}" ui-sref="manageconfig.sysmanage.classifieddictionary.classification({type:item.type,name:item.name})" class="list-group-item">{{item.fullName}}</a>
+            </div>
+            <!-- <div ng-click="optionSelected='CKMset'">
+                <a ng-class="{'selectedfocus':'CKMset'==optionSelected}" ui-sref="manageconfig.sysmanage.classifieddictionary.ckm" href="#" class="list-group-item">CKM</a>
+            </div> -->
+            <div class="list-group-padding" style="display:none">
+                <span href="#" class="systemManage-create-item"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-9 manage-sys-main-right">
+    <div ui-view="main">
+        <h2>内容区</h2>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="popup" id="pop-hide" style="display: block">
+    <!--隐藏部分-->
+    <div class="qf-pop-box">
+        <!--提醒未读-->
+        <div class="popup-box qf-box">
+            <div class="popup-top">
+            <span class="tx-wd-box lf">提醒未读</span>
+            <a href="javascript:;" class="popup-close-btn rt" ng-click="cancel();"></a>
+        </div>
+            <div class="popup-con">
+            <div class="tx-wd-con">
+                <div class="tx-wd-bk">
+                    <label>未读：</label>
+                    <div class="tx-wd-sp"><p>吴非，永生肖，王利</p></div>
+                </div>
+                <div class="tx-wd-bk">
+                    <label>通知方式：</label>
+                    <div class="tx-wd-sp">
+                        <div class="sel-form-box lf">
+                            <div class="cg-check-box lf" id="selFormWx"><input type="checkbox" ng-model="selFormWx" ></div>
+                            <span class="all-check-sp">微信</span>
+                        </div>
+                        <div class="sel-form-box lf">
+                            <div class="cg-check-box lf  " id="selFormWb"><input type="checkbox" checked="true"></div>
+                            <span class="all-check-sp">APP</span>
+                        </div>
+                        <div class="sel-form-box lf">
+                            <div class="cg-check-box lf" id="selFormMe"><input type="checkbox"></div>
+                            <span class="all-check-sp">短信</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-btn-bk">
+                <div class="bnt-bk-deal">
+                    <a href="javascript:;" class="popup-btn-confirm" ng-click="determine();">确定</a>
+                    <a href="javascript:;" class="popup-btn-cancel" ng-click="cancel();">取消</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+/* RADIO */
+
+.regular-radio {
+    display: none;
+}
+
+.regular-radio + label.disabled {
+    background-color: #ccc;
+}
+
+.regular-radio + label {
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 6px;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+.regular-radio:checked + label:after {
+    content: ' ';
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    position: absolute;
+    top: 3px;
+    background: #2284ba;
+    /*box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);*/
+    text-shadow: 0px;
+    left: 3px;
+    font-size: 32px;
+}
+
+.regular-radio:checked + label {
+    background-color: #e9ecee;
+    color: #99a1a7;
+    border: 1px solid #63b6e4;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1), inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.regular-radio + label:active,
+.regular-radio:checked + label:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-color: #63b6e4;
+}
+
+.big-radio + label {
+    padding: 16px;
+}
+
+.big-radio:checked + label:after {
+    width: 24px;
+    height: 24px;
+    left: 4px;
+    top: 4px;
+}
+
+trs-single-radio {
+    margin-right: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+trs-single-radio img,
+trs-single-radio label,
+trs-single-radio span,
+trs-single-radio input {
+    vertical-align: middle;
+}
+
+trs-single-radio span {
+    display: inline-block;
+    padding-top: 3px;
+}

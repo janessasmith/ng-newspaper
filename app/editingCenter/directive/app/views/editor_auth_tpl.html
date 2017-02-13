@@ -1,0 +1,93 @@
+<div class="row" ng-form name="authorForm">
+    <label class="editor-label">作者信息：</label>
+    <ul class="nav nav-tabs m_nav_2 editor-author-ul" ng-class="{'w68pen':path=='iwonews'||path=='newspapertext'||path=='websitenews'}">
+        <li>
+            <ul class="m_labels_2 editor-author-cUl">
+                <!-- <li class="active"><a href="">作者信息</a></li> -->
+                <li ng-repeat="author in tempAuthors track by $index " ng-class="{'actived':currAuthor==author}">
+                    <!--部门单位都相同才表示默认选中-->
+                    <span ng-class="{'actived':currAuthor==author,'fgduser':currAuthor!=author&&author.TYPE!=21&&author.TYPE!=23&&(author.USERNAME!=undefined||author.USERNAME=='')}" ng-click="authMessage(author)" ng-bind="author.USERNAME?author.USERNAME:'新建'|trsLimitTo:5">                   
+                            </span>
+                    <span class="delete" ng-class="{'fgduser':currAuthor!=author&&author.TYPE!=21&&author.TYPE!=23&&(author.USERNAME!=undefined||author.USERNAME==''),'actived':currAuthor==author}" ng-click="authDelete($index)">X
+                    </span>
+                </li>
+                <li ng-click="authEdit()" ng-if="isIconShow==undefined||isIconShow==true" class="icon_add" style="margin-left:4px;"><img src="./editingCenter/app/images/b14.png" />
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <table class="m_form">
+        <tbody>
+            <tr>
+                <td class="txt_r"><em class="font_red">*</em>姓名：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 suggestion {{authorForm.fgdUserNameA.$invalid?'has-error':''}}">
+                    <input type="text" name="fgdUserNameA" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.USERNAME" class="form-control sm_lng suggestionname" maxlength-error-message="不能超过20个字符！" validator="maxlength=20" template="./editingCenter/directive/app/views/suggestion.html" bs-options="state as state.SUGGESTION for state in getSuggestions($viewValue)" bs-typeahead ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" template="./editingCenter/directive/app/views/editor_jt_tpl.html">
+                </td>
+                <td class="txt_r">单位：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.fgdCompanyA.$invalid?'has-error':''}}">
+                    <input ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.COMPANY" name="fgdCompanyA" type="text" class="form-control sm_lng" maxlength-error-message="不能超过200个字符！" validator="maxlength=200" ng-mouseenter="companyIsShowTips=true" ng-mouseleave="companyIsShowTips=false" is-show-tips="companyIsShowTips">
+                </td>
+                <td class="txt_r">职务：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.fgdPostA.$invalid?'has-error':''}}">
+                    <input ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.POST" name="fgdPostA" type="text" class="form-control sm_lng" maxlength-error-message="不能超过100个字符！" validator=" maxlength=100" ng-mouseenter="postIsShowTips=true" ng-mouseleave="postIsShowTips=false" is-show-tips="postIsShowTips">
+                </td>
+            </tr>
+            <tr>
+                <td class="txt_r">类别：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.fgdCategoryA.$invalid?'has-error':''}}">
+                    <input type="text" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.CATEGORY" name="fgdCategoryA" class="form-control sm_lng" maxlength-error-message="不能超过50个字符！" validator="maxlength=50" ng-mouseenter="typeIsShowTips=true" ng-mouseleave="typeIsShowTips=false" is-show-tips="typeIsShowTips">
+                </td>
+                <td class="txt_r">部门：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.fgdDeptA.$invalid?'has-error':''}}">
+                    <input type="text" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.DEPT" name="fgdDeptA" class="form-control sm_lng" maxlength-error-message="不能超过50个字符！" validator="maxlength=50" ng-mouseenter="deptIsShowTips=true" ng-mouseleave="deptIsShowTips=false" is-show-tips="deptIsShowTips">
+                </td>
+                <td class="txt_r">报刊：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.fgdPrassA.$invalid?'has-error':''}}">
+                    <input type="text" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.PRESS" name="fgdPrassA" class="form-control sm_lng" maxlength-error-message="不能超过50个字符！" validator="maxlength=50" ng-mouseenter="pressIsShowTips=true" ng-mouseleave="pressIsShowTips=false" is-show-tips="pressIsShowTips">
+                </td>
+            </tr>
+            <tr>
+                <td class="txt_r">
+                    <!-- <em class="font_red">*</em> -->地址：</td>
+                <td colspan="3" class="txt_l invalidate-input-box pos-top-f24 {{authorForm.fgdAddressA.$invalid?'has-error':''}}">
+                    <input ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.ADDRESS" name="fgdAddressA" type="text" class="form-control md_lng" maxlength-error-message="不能超过500个字符！" validator="maxlength=500" ng-mouseenter="addressIsShowTips=true" ng-mouseleave="addressIsShowTips=false" is-show-tips="addressIsShowTips">
+                </td>
+                <td class="txt_r">
+                    <!-- <em class="font_red">*</em> -->邮编：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.ZipCode.$invalid?'has-error':''}}">
+                    <input type="text" name="ZipCode" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.ZIPCODE" class="form-control sm_lng" maxlength-error-message="请输入6位数的邮编！" validator="maxlength=6,minlength=6,number" ng-mouseenter="zcIsShowTips=true" ng-mouseleave="zcIsShowTips=false" is-show-tips="zcIsShowTips">
+                </td>
+            </tr>
+            <tr>
+                <td class="txt_r">电子邮件：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.Email.$invalid?'has-error':''}}">
+                    <input type="text" name="Email" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.EMAIL" ng-maxlength="200" class="form-control sm_lng" maxlength-error-message="不能超过200个字符！" validator="maxlength=100,email" valid-method="blur" ng-mouseenter="emailIsShowTips=true" ng-mouseleave="emailIsShowTips=false" is-show-tips="emailIsShowTips">
+                </td>
+                <td class="txt_r">固定电话：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.Telephone.$invalid?'has-error':''}}">
+                    <input type="text" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.TELEPHONE" name="Telephone" class="form-control sm_lng" maxlength-error-message="不能超过20个字符！" validator=" maxlength=20" valid-method="blur" ng-mouseenter="telIsShowTips=true" ng-mouseleave="telIsShowTips=false" is-show-tips="telIsShowTips">
+                </td>
+                <td class="txt_r">移动电话：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.MobilePhone.$invalid?'has-error':''}}">
+                    <input type="text" name="MOBILEPHONE" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.MOBILEPHONE" class="form-control sm_lng" maxlength-error-message="不能超过11个字符！" validator="maxlength=11,mobilephone" valid-method="blur" ng-mouseenter="mobileIsShowTips=true" ng-mouseleave="mobileIsShowTips=false" is-show-tips="mobileIsShowTips">
+                </td>
+            </tr>
+            <tr ng-if="currAuthor.TYPE!=21&&currAuthor.TYPE!=23">
+                <td class="txt_r">身份证号：</td>
+                <td colspan="3" class="txt_l invalidate-input-box pos-top-f24 {{authorForm.FGDSFZ.$invalid?'has-error':''}}">
+                    <input type="text" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.FGDSFZ" name="FGDSFZ" class="form-control md_lng" maxlength-error-message="不能超过18个字符！" validator="maxlength=18,idcard" ng-mouseenter="idCisShowTips=true" ng-mouseleave="idCisShowTips=false" is-show-tips="idCisShowTips">
+                </td>
+            </tr>
+            <tr>
+                <td class="txt_r">开户银行：</td>
+                <td class="txt_l invalidate-input-box pos-top-f24 {{authorForm.BankAccount.$invalid?'has-error':''}}">
+                    <input ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.BANKACCOUNT" name="BankAccount" type="text" class="form-control sm_lng" maxlength-error-message="不能超过100个字符！" validator="maxlength=100" ng-mouseenter="accountIsShowTips=true" ng-mouseleave="accountIsShowTips=false" is-show-tips="accountIsShowTips">
+                </td>
+                <td class="txt_r">银行卡号：</td>
+                <td colspan="3" class="txt_l invalidate-input-box pos-top-f24 {{authorForm.BankCardNumber.$invalid?'has-error':''}}">
+                    <input type="text" ng-disabled="tempAuthors.length==0||currAuthor.TYPE==21||currAuthor.TYPE==23" ng-model="currAuthor.BANKCARDNUMBER" name="BankCardNumber" class="form-control md_lng" maxlength-error-message="银行卡号不能超过20位！" validator="maxlength=20,number,minlength=16" ng-mouseenter="numIsShowTips=true" ng-mouseleave="numIsShowTips=false" is-show-tips="numIsShowTips">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

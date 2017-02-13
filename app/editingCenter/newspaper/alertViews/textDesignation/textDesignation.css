@@ -1,0 +1,46 @@
+.edit-newspaper-textDesignation .modal-dialog {
+    width: 490px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 50%;
+}
+
+.edit-newspaper-textDesignation .modal-content {
+    background-color: #F0F2F5;
+}
+
+.edit-newspaper-textDesignation .man_produ_modify_inner {
+    margin: 10px;
+}
+
+.edit-newspaper-textDesignation .man_produ_column_modify {
+    background: #fff;
+    padding: 10px;
+}
+
+.edit-newspaper-textDesignation .man_produ_modify_footer {
+    padding-right: 10px;
+    background: #fff;
+    height: 40px;
+}
+
+.edit-newspaper-textDesignation .man_produ_modify_footer_cancel {
+    margin-right: 0;
+}
+
+.edit-newspaper-textDesignation .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.edit-newspaper-textDesignation textarea {
+    width: 448px;
+    max-width: 448px;
+    height: 254px;
+    max-height: 254px;
+    resize: none;
+}

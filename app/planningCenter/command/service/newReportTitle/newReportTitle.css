@@ -1,0 +1,233 @@
+.newReportTitle_popup {
+    margin: 0 auto;
+    width: 825px;
+    border-radius: 5px;
+    border: 4px solid #DDDDDD;
+}
+
+.newReportTitle_popup .head span {
+    margin-left: 25px;
+    font-size: 16px;
+    height: 46px;
+    line-height: 46px;
+    font-weight: bold;
+}
+
+.newReportTitle_popup .correspondentAdd_con {
+    background-color: #F0F2F5;
+	padding:8px;
+}
+
+.newReportTitle_popup .deptMediaSettings_footer {
+    float: right;
+    padding-right: 7px;
+    margin: 10px;
+}
+
+.newReportTitle_popup .deptMediaSettings_footer .news-role-btn,
+.newReportTitle_popup .deptMediaSettings_footer .news-role-btn-success {
+    margin-left: 5px;
+    width: 68px;
+    height: 26px;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background: #4496d2;
+}
+
+.titlePopup_head_right {
+    float: right;
+    padding: 15px 20px 0 0;
+	cursor:pointer;
+}
+.newReportTitle_popup .correspondentAdd_main{
+	background:#fff;
+	overflow:hidden;
+	padding-top:8px;
+	clear:both;
+	border:1px solid #ccc;
+}
+.newReportTitle_popup .royaltiesPSettings_mid{
+	width:30px;
+	height:400px;
+	float:left;
+}
+.newReportTitle_popup .royaltiesPSettings_mid span{
+	width:30px;
+	height:400px;
+	float:left;
+	display:block;
+	padding-top:245px;
+	cursor:pointer;
+}
+.newReportTitle_popup .royaltiesPSettings_leftTree{
+	width: 220px;
+	border:1px solid #ccc;
+	margin-left: 18px;
+	margin-right:8px;
+	float:left;
+	height:583px;
+}
+
+.newReportTitle_popup .left_tree_con{
+	height:536px!important;
+}
+.newReportTitle_popup .royaltiesPSettings_left,
+.newReportTitle_popup .royaltiesPSettings_right{
+	width: 230px;
+	border:1px solid #ccc;
+}
+.newReportTitle_popup .royaltiesPSettings_left{
+	margin-left:8px;
+	float:left;
+}
+.newReportTitle_popup .royaltiesPSettings_right{
+	margin-right:17px;
+	float:right;
+}
+.newReportTitle_popup .deptMediaSettings_left_tit,
+.newReportTitle_popup .right_tit{
+	background:#4496d2;
+	height:30px;
+	line-height:30px;
+	padding-left:10px;
+	color:#fff;
+	font-weight:bold;
+	text-align: left;
+}
+.newReportTitle_popup .deptMediaSettings_left_con,
+.newReportTitle_popup .right_con{
+	height: 535px;
+	overflow-y:auto;
+	margin: 10px 4px 4px 4px;
+}
+
+.newReportTitle_popup .deptMediaSettings_left_con{
+	height: 494px;
+}
+
+.newReportTitle_popup .deptMediaSettings_left_con ul,
+.newReportTitle_popup .right_con ul{
+	margin: 0 3px 0px 0;
+	padding-left:0px;
+	border: 1px solid #ccc;
+	border-top: none;
+	min-height: 505px;
+}
+
+.newReportTitle_popup .deptMediaSettings_left_con ul{
+	min-height: 459px;
+}
+
+.newReportTitle_popup .deptMediaSettings_left_con ul li,
+.newReportTitle_popup .right_con ul li,
+.newReportTitle_popup .royaltiesPSettings_mid ul li{
+	list-style-type:none;
+}
+.newReportTitle_popup .deptMediaSettings_left_con ul li a,
+.newReportTitle_popup .right_con ul li a{
+	height:25px;
+	line-height:25px;
+	color: #676464;
+	text-decoration:none;
+	padding:0 5px 0 10px;
+	font-size: 12px;
+}
+
+/*左侧树*/
+.newReportTitle_popup .royaltiesPSettings_mid ul{
+	margin-top:212px;
+	padding-left:8px;
+}
+
+.newReportTitle_popup .royaltiesPSettings_mid ul li{
+	line-height:50px;
+}
+.newReportTitle_popup .deptManagement_left_tree ul{
+	margin:0 10px;
+}
+
+
+.newReportTitle_popup .deptManagement_left_tree {
+    color:#000;
+	font-size:13px;
+}
+.newReportTitle_popup .left_tree_span {
+    padding-left: 10px;
+    padding-right: 5px;
+    display:block;
+    height:30px;
+    line-height:30px;
+    background:#F0F2F5;
+    margin: 0 3px 0 0;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+.newReportTitle_popup .left_tree_span img{
+	padding-right: 10px;
+	padding-bottom: 4px;
+}
+.newReportTitle_popup .deptManagement_left_tree ul{
+    list-style-type: none;
+    margin-left: 15px;
+}
+
+.newReportTitle_popup .deptManagement_left_tree ul li,
+.newReportTitle_popup .deptManagement_left_tree ul li ol{
+	line-height:26px;
+}
+
+.newReportTitle_popup .deptManagement_left_tree ul li ol {
+     padding-left: 16px;
+    list-style-type: none;
+}
+.newReportTitle_popup .deptManagement_left_tree ul li img{
+    margin-left: -16px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+}
+.newReportTitle_popup .deptManagement_left_tree ul li ol li img{
+    margin-left: -12px;
+    padding-right: 7px;
+}
+.newReportTitle_popup .deptManagement_left_tree .deptManagement_left_tree_ul_ol_ul{
+    margin-left: 0px;
+    padding-left: 15px;
+    list-style-type: none;
+}
+/*下拉框*/
+
+.newReportTitle_popup .correspondentAdd_con_span{
+    display: block;
+    float: left;
+	height:68px;
+	line-height:68px;
+	padding-left:20px;
+	color:#000;
+}
+
+.newReportTitle_popup .correspondentAdd_con_input{
+    float: left;
+    margin: 18px 10px;
+    height: 32px;
+    line-height:32px;
+    border-radius: 4px;
+    width: 89%;
+    border: 1px solid #ccc;
+	padding:0 10px;
+}
+
+.newReportTitle_popup .royaltiesPSettings_left .search{
+    margin: 10px 5px 0;
+    height: 32px;
+    line-height:32px;
+    border-radius: 4px;
+    width: 95%;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}

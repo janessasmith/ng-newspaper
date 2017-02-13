@@ -1,0 +1,75 @@
+.editctrDraftImport .modal-dialog {
+    width: 500px!important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 30%;
+    margin: auto;
+}
+
+.editctr-draftImport {
+    border: 3px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+.editctr-draftImport .head {
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 8px;
+    border-bottom: 2px solid #DDDDDD;
+}
+
+.editctr-draftImport .head .title {
+    font-weight: bold;
+}
+
+.editctr-draftImport .body {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+.editctr-draftImport .body .info {
+    float: left;
+}
+
+.editctr-draftImport .body .text {
+    width: 60%;
+    height: 30px;
+    position: relative;
+    top: -5px;
+    float: left;
+    margin-right: 10px;
+    background-color: white
+}
+
+.editctr-draftImport .head img{
+    position: relative;
+    left: 400px;
+    top: -3px;
+    cursor: pointer;
+}
+
+
+.editctr-draftImport .body button {
+    position: relative;
+    top: -3px;
+}
+.editctr-draftImport .foot {
+    height: 50px;
+    padding-left: 300px;
+    padding-top: 10px;
+}
+.editctr-draftImport button {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+}

@@ -1,0 +1,16 @@
+.edit_right_head_btn_commen {
+    width: 100px!important;
+}
+
+.font-color-red {
+    color: red;
+    float: right;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.edit_breadcrumb li span + p:before {
+    content: "|";
+    color: #777;
+    padding: 0px 5px;
+}

@@ -1,0 +1,40 @@
+<div class="resetPwdSubmit">
+    <div class="submit">
+        <div class="head">
+            <span ng-bind="data.modalTitle"></span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="body">
+            <form class="resetPwdSubmit-form" name="resetPwdSubmitForm" novalidate>
+                <div class="main">
+                    <div class="item_radio mb10">
+                        <trs-single-radio label="重置为系统默认密码" group="resetType" ischecked="status.resetTypeVal==0" callback="resetTypeVal(0)"></trs-single-radio>
+                    </div>
+                    <div class="item_radio mb10">
+                        <trs-single-radio label="手动输入新密码" group="resetType" ischecked="status.resetTypeVal==1" callback="resetTypeVal(1)"></trs-single-radio>
+                    </div>
+                    <div ng-if="status.resetTypeVal == 0" class="h128"></div>
+                    <div ng-if="status.resetTypeVal != 0" class="h128">
+                        <trs-pwd-strong password="data.PASSWORD" description="status.pwdName"></trs-pwd-strong>
+                        <div class="item">
+                            <span class="tit">输入新密码：</span>
+                            <div class="invalidate-input-box">
+                                <input style="display:none">
+                                <!-- for disable autocomplete on chrome -->
+                                <input type="password" name="confirmPwd" class="form-control" ng-model="data.confirmPwd" validator="required" ng-blur="checkPwd()" autocomplete="off" />
+                            </div>
+                            <span class="color_r red" ng-show="status.passwordEqual==false">两次输入的密码不一致</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <div class="foot">
+                <div>
+                    <button class="confirm" ng-click="confirm()">确定</button>
+                    <button class="cancel" ng-click="cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

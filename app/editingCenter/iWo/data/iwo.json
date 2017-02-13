@@ -1,0 +1,31 @@
+[{
+    "CHNLNAME": "我的稿件",
+    "CHILDREN": [{
+        "CHNLNAME": "个人稿件"
+    }, {
+        "CHNLNAME": "已收稿件"
+    }, {
+        "CHNLNAME": "稿件档案"
+    }]
+}, {
+    "CHNLNAME": "融合待编"
+},{
+    "CHNLNAME": "融合审签"
+},{
+    "CHNLNAME": "特权取稿"
+},{
+    "CHNLNAME": "I我资源",
+    "CHILDREN": [{
+        "CHNLNAME": "共享稿库"
+    }, {
+        "CHNLNAME": "新华社稿"
+    }, {
+        "CHNLNAME": "自定义"
+    },{
+        "CHNLNAME": "个人素材"
+    },{
+        "CHNLNAME": "稿件收藏"
+    }]
+},{
+    "CHNLNAME": "废稿箱"
+}]

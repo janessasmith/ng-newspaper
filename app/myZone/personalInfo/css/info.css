@@ -1,0 +1,66 @@
+.myZone_preson_info {
+    margin-top: 15px;
+}
+
+.myZone_preson_info table tbody tr th {
+    width: 15%;
+    height: 50px;
+    padding-right: 1%;
+    vertical-align: middle;
+    text-align: right;
+    color: #323232;
+    background-color: #f1f2f6;
+}
+
+.myZone_preson_info table tbody tr td {
+    width: 30%;
+    height: 50px;
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 2%;
+    color: #666666;
+    border-top: 1px solid #ddd;
+}
+
+.myZone_preson_info li {
+    list-style-type: none;
+}
+
+.myZone_preson_info_button {
+    width: 100%;
+    text-align: center;
+}
+
+.myZone_preson_info_editbutton {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 0;
+}
+
+.myZone_pro_info_modify .myZone_headPortrait,
+.myZone_preson_info .myZone_headPortrait {
+    height: 100px;
+    width: 100px;
+    border: 3px solid #D7EBF3;
+    border-radius: 50%;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.myZone_pro_info_modify .myZone_headPortrait>img,
+.myZone_preson_info .myZone_headPortrait >img {
+    width: 100%;
+    height: 100%;
+}
+
+.myZone_pro_info_modify .myZone_headPortrait>img {
+    cursor: pointer;
+}

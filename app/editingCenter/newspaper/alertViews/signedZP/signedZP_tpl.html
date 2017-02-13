@@ -1,0 +1,15 @@
+<div class="signedZP-container">
+    <div class="signedZP-header">
+        <p>签发照排</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()" />
+    </div>
+    <div class="signedZP-body">
+        <p>你已经选择了[<span ng-bind="items.length"></span>]篇稿件</p>
+        <p>是否执行签发照排的操作?</p>
+    </div>
+    <div class="signed-footer">
+        <button ng-click="confirm()" class="btn_confirm">确定</button>
+        <button ng-click="cancel()" class="btn_cancel">取消</button>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

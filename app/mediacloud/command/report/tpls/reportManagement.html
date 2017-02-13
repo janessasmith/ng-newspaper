@@ -1,0 +1,41 @@
+<div class="dp-rt-main no-pd" ng-controller="reportManagementCtrl">
+    <div class="cg-search-box" style="right: 0px;">
+        <input type="text" class="text lf" ng-model="title" value="信息检索" report-enter/>
+        <a href="javascript:;" class="search-btn rt" ng-click="getReportList();"></a>
+    </div>
+    <ul class="dp-bd-tit rw-fl-lf">
+        <li><a href="javascript:;" class="bd-gl">联合报道管理</a></li>
+    </ul>
+    <div class="map-deal-xs bd-gl-bd">
+        <div class="zl-cp-bk">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <th width="110">序号</th>
+                    <th class="th-al">事件名称</th>
+                    <th width="230">创建时间</th>
+                    <th width="130">编辑</th>
+                </tr>
+                <tr ng-repeat="reportContent in reportContents">
+                    <td>{{$index+1}}</td>
+                    <td class="al"><a ui-sref="command.reportDetailedview.reportViewMain({corpsId:reportContent.CORPSID})">{{reportContent.TITLE}}</a></td>
+                    <td class="ft12">{{reportContent.CRTIME}}</td>
+                    <td>
+                        <div class="lh-ls-opt">
+                            <a class="lh-bd-edit lf"
+                             ui-sref="command.reportReviseReport({corpsId:reportContent.CORPSID})"></a>
+                            <a href="#" ng-show="corpsRightKeys.del" class="lh-bd-del lf" 
+                            ng-click="open('400',reportContent.CORPSID);"></a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="hd-page-bk">
+            <a href ng-click="reduce();" class="log-page hd-pg-pre"></a>
+            <div class="hd-pg-num"><span>{{pageInfo.pageIndex}}</span>-<span>{{pageInfo.pageCount}}</span></div>
+            <a href ng-click="add();" class="log-page hd-pg-next"></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="userName userGroup" ng-mouseleave="loginUserLeave()" ng-mouseenter="loginUserGroup()">
+    <a target="_blank" href="javascript:void(0)"><img ng-src="{{img}}" class="edi_usr"></a><a ui-sref="myzone.personalinfo" >{{user}} 欢迎你！</a> 
+    <div ng-show="isPopoverShow" class="popoverUser bottom in popoverUser_alignment" role="tooltip">
+        <div class="arrow" style="left: 50%;"></div>
+        <div class="popover-content">
+            <table class='table table-bordered'>
+                <tr class="{{status.curGroupId===item.GROUPID?'selected':''}}" ng-click="userGroup(item)" ng-repeat="item in dataUser">
+                    <td>{{item.GROUPPATH+user}}</td>
+                </tr>
+            </table>
+            <!-- <div class="toBeCompiled-directSign-footer">
+            <button class="new-role-btn btn_confirm" ng-click="isConfirm()">确定</button>
+        </div> -->
+        </div>
+    </div>
+</div>

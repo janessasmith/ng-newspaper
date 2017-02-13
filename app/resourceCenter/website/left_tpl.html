@@ -1,0 +1,39 @@
+<!-- left_tpl -->
+<div class="container-fluid resource_list">
+    <accordion close-others="false" ng-if="type=='wz_lyzh'">
+    <div class="resouce-nav-panel">
+            <accordion-group ng-if="!vm.isShowlyzhMenu">
+                <accordion-heading><i class="fa fa-spinner fa-spin"></i> 载入中</accordion-heading>
+            </accordion-group>
+            <accordion-group heading="{{source.dictName}}" ng-repeat="source in vm.sources">
+                    <div class="tagbtn"   ng-repeat="child in source.CHILDREN" 
+                    ng-class="{'active':child.dictNum==vm.dictNum}" ng-click="selectSource(child)">{{child.dictName}}</div>
+            </accordion-group>
+        </div>
+    </accordion>
+    <accordion close-others="false" ng-if="type=='field'">
+    <div class="editing_center_channel">
+            <accordion-group ng-if="!vm.isShowfieldMenu">
+                <accordion-heading><i class="fa fa-spinner fa-spin"></i> 载入中</accordion-heading>
+            </accordion-group>
+            <accordion-group heading="{{field.dictName}}" ng-repeat="field in vm.fields">
+                <div class="panel-body-editcenter" ng-repeat="child in field.CHILDREN" ng-click="refreshListbyItem(child)" >
+                    <a href="">{{child.dictName}}</a>
+                </div>
+            </accordion-group>
+        </div>
+    </accordion>
+    <accordion close-others="false" ng-if="type=='area'">
+        <div class="editing_center_channel">
+            <accordion-group ng-if="!vm.isShowareaMenu">
+                <accordion-heading><i class="fa fa-spinner fa-spin"></i> 载入中</accordion-heading>
+            </accordion-group>
+            <accordion-group ng-repeat="area in vm.areas" is-open="area.isOpen" >
+                <accordion-heading ><a href="">{{area.dictName}}</a></accordion-heading>
+                <div class="panel-body-editcenter" ng-repeat="child in area.CHILDREN" ng-click="refreshListbyItem(child)">
+                    <a href="">{{child.dictName}}</a>
+                </div>
+            </accordion-group>
+        </div>
+    </accordion>
+</div>

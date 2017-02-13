@@ -1,0 +1,272 @@
+.myManuscript-draft .modal-dialog {
+    width: 600px;
+}
+
+.myManuscript-draft .modal-content {
+    position: relative;
+    top: 35px;
+    background-color: #E1DFDA;
+}
+
+.myManuscript .draft {
+    overflow: auto;
+    width: 592px;
+    margin-left: 3px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: white;
+    min-height: 499px;
+}
+
+.myManuscript .draft .head {
+    height: 39px;
+    line-height: 39px;
+    font-weight: bold;
+}
+
+.myManuscript .draft .head span {
+    margin-left: 15px;
+}
+
+.myManuscript .draft .head img {
+    margin-left: 515px;
+    cursor: pointer;
+}
+
+.myManuscript .draft .middle {
+    font-size: 12px;
+    min-height: 41px;
+    line-height: 41px;
+    background-color: #F0F2F4;
+    padding-left: 10px;
+    color: #686969;
+    position: relative;
+}
+
+.myManuscript .draft .middle span {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.myManuscript .draft .middle a {
+    margin-left: 5px;
+    cursor: pointer;
+    color: #686969;
+    text-decoration: none;
+}
+
+.myManuscript .draft .middle .selected {
+    background: #0095CE;
+    color: white;
+    border-radius: 4px;
+}
+
+.myManuscript .draft .middle img.down {
+    margin-left: 5px;
+    cursor: pointer;
+    right: 20px;
+    top: 14px;
+    position: absolute;
+}
+
+.myManuscript .draft .body {
+    margin-top: 20px;
+}
+
+.myManuscript .draft .body .main {
+    position: relative;
+    width: 580px;
+    overflow: hidden;
+}
+
+.myManuscript .draft .body .main .head {
+    height: 28px;
+    background-color: #0095CE;
+    color: white;
+    line-height: 28px;
+    font-size: 13px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.myManuscript .draft .body .main .left {
+    width: 308px;
+    border: 1px solid #DAD7D2;
+    height: 405px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.myManuscript .draft .body .main .right {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 236px;
+    height: 405px;
+    border: 1px solid #DAD7D2;
+    height: 405px;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow-y: auto;
+}
+
+.myManuscript .draft .body .main .right .input input {
+    width: 205px;
+    height: 30px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.myManuscript .draft .body .main .right ul {
+    font-size: 12px;
+    list-style-type: none;
+    color: #8E8E8A;
+    padding-left: 10px;
+}
+
+.myManuscript .draft .body .main .right ul li {
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.myManuscript .draft .body .main .right ul .selected {
+    font-weight: bold;
+    color: white;
+    background-color: #0097D0;
+}
+
+.myManuscript .draft .body .bottom {
+    height: 39px;
+    padding-left: 410px;
+}
+
+.myManuscript .draft .body .bottom button {
+    width: 73px;
+    height: 25px;
+    background-color: #0095CE;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-left:10px;
+}
+
+.myManuscript .draft .middle span.span-title {
+    float: left;
+}
+
+.myManuscript .draft .middle .content {
+    width: 402px;
+    height: auto;
+}
+
+.myManuscript .draft .middle .moreContent {
+    /*padding-left: 77px;*/
+    display: inline;
+}
+
+.myManuscript .draft .middle .moreContent a {
+    display: inline-block;
+    padding-right: 5px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.myManuscript .draft .middle .content a {
+    display: inline-block;
+    padding-right: 5px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.myManuscript .contt {
+    height: 630px;
+    border: 1px solid #ccc;
+    border-top: none;
+    white-space: nowrap;
+}
+
+.myManuscript .contt ul {
+    margin-left: -10px;
+    font-family: "微软雅黑", "Arial";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #666640;
+    text-align: left;
+    line-height: normal;
+}
+
+.contt .tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.contt .tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.over {
+    overflow: none;
+}
+
+.myManuscript .draft .dropDown {
+    width: 92px;
+    background-color: white;
+    z-index: 50;
+    border: 1px solid #D0CDC7;
+    position: absolute;
+    left: 300px;
+    top: 30px;
+}
+
+.myManuscript .draft .dropDown ul {
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.myManuscript .draft .dropDown ul li {
+    padding-left: 10px;
+    line-height: 30px;
+    height: 30px;
+}
+
+.myManuscript .draft .dropDown ul li img {
+    width: 5px;
+    height: 8px;
+}
+
+.myManuscript .draft .dropDown ul li .icon {
+    color: #A0CDE6;
+}
+
+.myManuscript .draft .dropDown ul li.selected {
+    color: white;
+    background-color: #0095CE;
+}
+
+.myManuscript .draft .dropDown ul li:hover {
+    color: white;
+    background-color: #0095CE;
+}
+
+.myManuscript-draft div.br0 {
+    border: 0;
+}
+
+.myManuscript .myManuscript-draft-leftTree{
+    width: 307px;
+    height: 375px;
+}
+/*.myManuscript-draft div.over {
+    white-space: nowrap;
+    overflow: auto
+}
+*/
+.myManuscript .draft .body .main .right .input ul{
+    height: 200px;
+    overflow-y:auto;
+    width: 200px; 
+}

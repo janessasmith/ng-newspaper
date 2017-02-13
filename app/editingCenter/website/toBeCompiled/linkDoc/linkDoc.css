@@ -1,0 +1,312 @@
+.linkDoc .m_box_item .col-sm-10 textarea.textarea {
+    width: 577px;
+    height: 230px
+}
+
+.linkDoc .mt10 {
+    margin-top: 10px
+}
+
+.linkDoc .pd-fix {
+    padding-left: 6px
+}
+
+.row_doc_link .abstractWordLength {
+    position: absolute;
+    color: red;
+    top: -200px;
+}
+
+.mpl {
+    margin-left: -11px;
+}
+
+.newBtnUpload {
+    width: 33px;
+    height: 36px;
+    padding: 0;
+    background: rgba(21, 21, 21, 0.51) url("./editingCenter/app/toBeCompiled/images/b43-1.png") no-repeat scroll center 3px;
+    border: none;
+    color: #fff;
+    line-height: 48px;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    right: 30px;
+    top: 65px;
+}
+
+.iwoatlas-item {
+    overflow: visible !important;
+    min-height: 40px
+}
+
+.row_doc_link .linkDoc {
+    overflow: hidden;
+    /* margin-top: 43px;*/
+}
+
+.row_doc_link .linkDoc .new_tplb .header p {
+    float: left;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.row_doc_link .linkDoc .new_tplb .con {
+    margin: 10px;
+    border: 1px solid #d3d5d4;
+    border-radius: 4px;
+}
+
+.row_doc_link .linkDoc .m_form,
+.m_form {
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+
+.row_news .m_form td.suggestion ul {
+    height: 220px;
+    overflow-y: auto;
+}
+
+
+/*.row_doc_link .linkDoc .m_form td.txt_l  {
+    background: red;
+}
+*/
+
+.row_doc_link .linkDoc .header {
+    overflow: hidden;
+    height: 50px;
+}
+
+.row_doc_link .linkDoc .header p {
+    float: left;
+    line-height: 18px;
+    margin-left: 25px;
+}
+
+.row_doc_link .linkDoc .header .tplb_btn {
+    float: left;
+    width: 118px;
+    height: 32px;
+    background: #f8f8f7;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    margin-left: 10px;
+    text-indent: 5px;
+    margin-top: 12px;
+    padding: 0px;
+    text-indent: -21px;
+}
+
+.row_doc_link .linkDoc .header .tplb_btn img {
+    width: 19px;
+    height: 20px;
+    border: 0;
+    float: left;
+    margin-left: 13px;
+    margin-top: 5px;
+}
+
+.linkDoc .textarea-mid {
+    width: 540px;
+    height: 200px;
+    resize: none;
+}
+
+.linkDoc .new_tplb .invalidate-input-box span {
+    top: -12px;
+}
+
+
+/*处理链接文档中存在的内联样式*/
+
+.linkDoc .new_tplb .con tr.h190 {
+    height: 190px;
+}
+
+.linkDoc .new_tplb .con td.lh180 {
+    line-height: 180px;
+}
+
+.linkDoc .new_tplb .con td div.imgCon {
+    width: 210px;
+    height: 142px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.linkDoc .new_tplb .con td div.imgCon img {
+    width: 208px;
+    height: 140px;
+    border: 0
+}
+
+
+/*cc改动新增*/
+
+.linkDoc .con table th {
+    font-size: 15px;
+}
+
+.linkDoc .m_box_item .col-sm-10 textarea {
+    width: 392px;
+    height: 132px;
+    resize: none;
+}
+
+.list-style-tab label.active {
+    border: 1px solid #0098cf;
+    background: #0098cf;
+    color: #fff;
+}
+
+.linkDoc div.bg-gray {
+    background: #FAFAF9
+}
+
+.linkDoc .open > .dropdown-toggle.btn-default {
+    /*  background: #009ed8;
+    color: #fff;*/
+}
+
+.linkDoc .bg0 {
+    background: #fff;
+}
+
+.linkDoc .td_textarea {
+    width: 500px;
+    height: 142px;
+    margin-top: 14px;
+    resize: none;
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.row_allas .linkDoc .new_tplb {
+    overflow: hidden;
+    background: #f2f2f5;
+    margin-top: 9px;
+}
+
+.row_allas .linkDoc .new_tplb .header p {
+    float: left;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.row_allas .linkDoc .new_tplb .con {
+    margin: 10px;
+    border: 1px solid #d3d5d4;
+    border-radius: 4px;
+}
+
+.linkDoc input.fz12 {
+    font-size: 12px;
+    width: 237px;
+}
+
+.pr12 {
+    padding-right: 12px;
+}
+
+.linkDoc div.pl0 {
+    padding-left: 0px;
+}
+
+.linkDoc div.h35 {
+    height: 31px;
+    overflow: hidden;
+    line-height: 33px;
+    text-align: left;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.linkDoc div.h35 img {
+    padding-right: 12px;
+}
+
+.linkDoc div.mt4 {
+    margin-top: 4px;
+}
+
+.linkDoc div.h35 img.pr7 {
+    padding-right: 7px;
+}
+
+.linkDoc p.newP {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.linkDoc .edit-select {
+    width: 200px;
+    height: 34px;
+    padding-left: 10px;
+    color: #666;
+    font-size: 12px;
+    border-radius: 4px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.linkDoc .edit-select option {
+    color: #666;
+    padding: 4px 0px 4px 14px;
+}
+
+.linkDoc div.pr25 {
+    padding-right: 25px;
+}
+
+.linkDoc div.lh40 {
+    line-height: 40px;
+}
+
+.linkDoc div.lh36 {
+    line-height: 36px;
+}
+
+.linkDoc .linkDoc_bd {
+    background: #FFF none repeat scroll 0% 0%;
+    border: 1px solid #D9D9D9;
+}
+
+.linkDoc .manuinfo-hide {
+    margin-left: 0;
+}
+
+.website-linkDoc .m_box_item {
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.website-linkDoc .m_box.bg-fafafa {
+    padding: 30px 0 20px 0;
+}
+
+.website-linkDoc .m_box.bg-fafafa .m_box_item:nth-child(9),
+.website-linkDoc .m_box.bg-fafafa .m_box_item:nth-child(10) {
+    height: 210px;
+    clear: both;
+}
+
+.website-linkDoc .m_box.bg-fafafa .col-sm-11 {
+    margin-top: -4px;
+}
+
+.website-linkdoc-keyword .host .tags {
+    width: 732px;
+}
+
+.lht-34 {
+    line-height: 34px;
+}

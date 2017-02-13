@@ -1,0 +1,102 @@
+<!--  <div class="row"> 
+    <div class="col-md-2 manage-fixed">
+       <div class="manage-log-left">
+           <div class="log-list">
+               <div class="log-title">操作日志</div>
+           </div>
+           <div class="log-list">
+               <div class="log-title">系统日志</div>
+               <div class="log-title-list">
+                   <a href="">调试</a>
+                   <a href="">性能测试</a>
+               </div>
+           </div>
+           <div class="log-list">
+               <div class="log-title">操作日志</div>
+               <div class="log-title-list">
+                   <a href="">我的队列</a>
+                   <a href="">所有队列</a>
+               </div>
+           </div>
+           <div class="log-list">
+               <div class="log-title">接口日志</div>
+              
+           </div>
+           <div class="log-list">
+               <div class="log-title">安全日志</div>
+              
+           </div>
+
+       </div>
+
+    </div>
+    <div class="col-md-10">
+         <div trs-scroll-fix class="row edit_right_head">
+            <div class="col-md-12">
+                <button class="btn btn-default btn-commen btn-commen-hover">
+                    刷新
+                </button>
+            </div>
+        </div>
+        <div class="row edit_right_mid">
+            <div class="col-md-8">
+                <select class="edit-select">
+                    <option>提交时间选择1</option>
+                    <option>提交时间选择2</option>
+                    <option>提交时间选择3</option>
+                </select>
+                <input type="text" class="form-control log-form-control" placeholder="请输入产品名称">
+            </div>
+            <div class="col-md-4">
+                <div class="input-group edit_input_group">
+                    <input type="text" class="form-control edit_form_control" placeholder="">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default btn_edit_search" type="button">搜索</button>
+                  </span>
+                </div>
+            </div>
+        </div>
+        <div class="edit_table">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th width="8%">
+                            <input type="checkbox" /> 全选
+                        </th>
+                        <th>用户</th>
+                        <th>所属产品</th>
+                        <th>操作类型</th>
+                        <th>时间</th>
+                        <th>IP</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items">
+                        <td class="td-check">
+                            <input type="checkbox" />
+                        </td>
+                        <td ng-bind="item.USER"></td>
+                        <td ng-bind="item.PRODUCTION"></td>
+                        <td ng-bind="item.OPERATETYPE"></td>
+                        <td ng-bind="item.TIME"></td>
+                        <td ng-bind="item.IP"></td>
+                        <td ng-bind="item.DESCRIPTION"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="page">
+                <p>
+                    共<span ng-bind="page.ITEMCOUNT"></span><span>条登录日志，</span> 单页展示 <span ng-bind="page.PAGESIZE"></span><span>
+               </p>
+                   <pagination total-items="totalItems" ng-change="pageChanged()" ng-model="currentPage" max-size="6" boundary-links="true" rotate="false" class="pagination-sm page_left" boundary-links="true" items-per-page="perPage" rotate="true" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页" ></pagination></span>  
+                <p class="magrin-fixed20">
+                 到第
+                    <input type="type" ng-model="pages" class="page_go">页
+                    <button type="button" class="btn btn-info btn_jump" ng-click="jumpToPage(pages)">跳转</button>
+                 </p>
+            </div>
+        </div>
+    </div>
+</div>
+ -->

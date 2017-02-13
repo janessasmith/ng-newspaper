@@ -1,0 +1,21 @@
+.edit_right_head_btn_com {
+    width: 120px!important;
+}
+
+.edit_right_mid_but .dropdown .bth-fix {
+    width: 160px;
+}
+
+.edit_right_mid_but .dropdown .dropdown-menu {
+    min-width: 160px;
+}
+
+.man_produ_newpress p.ZPLayout-DieciName {
+    float: left;
+    line-height: 28px;
+}
+
+.man_produ_newpress .man_produ_newpress_con_form_dieci {
+    height: 28px;
+    overflow: hidden;
+}

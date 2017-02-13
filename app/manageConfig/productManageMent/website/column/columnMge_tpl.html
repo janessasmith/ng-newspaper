@@ -1,0 +1,65 @@
+<!-- <div class="row pmm_website_column_top">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <div class="pmm-column-title-item" ng-repeat="channel in channels" ng-bind="channel.CHNLDESC" ng-class="{'pmm-column-title-item-acitve':channel.CHANNELID==superiorChn}" ui-sref="manageconfig.productmanage.website.column({channel:channel.CHANNELID})"></div>
+        </div>
+    </div>
+</div> -->
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-9 pmm-column-localstate">
+        <div class="input-group edit_input_group manage">
+            <ol class="breadcrumb pull-right edit_breadcrumb">
+                <li ng-repeat="channel in channels" ng-if="channel.CHANNELID==superiorChn">
+                    <p>当前位置：</p>
+                    <!-- <span ng-bind="channel.CHNLDESC|trsLimitTo:25"></span> -->
+                    <span ng-bind="data.siteName|truncate:8:'...'" ng-click="positionToSite()" ></span>
+                    <span ng-repeat="path in data.channelPath" ng-click="positionToChannel(path)" title="{{path.CHANNELPATH}}" ng-bind="path.CHANNELPATH|truncate:8:'...'"></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="col-md-3 pmm_website_site">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control manage-pmm-form-search mr10" placeholder="请输入关键字搜索" ng-model="searchColumnByName">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search mt5" type="button" ng-click="searchColumn()">搜索</button>
+          </span>
+        </div>
+    </div>
+</div>
+<div class="row"></div>
+<div class="manage-pmm-container">
+    <div class="manage-pmm-column-container">
+        <div class="pmm-column-item-out left" ng-repeat="websiteItem in websiteItems">
+            <div class="pmm-column-item-default text-center" ng-bind="websiteItem.CHNLDESC" ng-click="clickChnlDirected(websiteItem)" ng-class="{'selectedChannel-active':selectedColumn===websiteItem}" ng-mouseenter="getInSelectedChl(websiteItem)"></div>
+            <div class="pmm-column-item-icon-group" ng-show="selectedColumn===websiteItem">
+                <a ng-if="status.right.channel.delete" ng-click="delete(websiteItem)" title="删除栏目">
+                    <img src="./manageConfig/productManageMent/images/gl58.png" />
+                </a>
+                <a ng-if="status.right.channel.preview" ng-click="preview(websiteItem)" title="预览栏目">
+                    <img src="./manageConfig/productManageMent/images/i11.png" />
+                </a>
+                <a ng-if="status.right.channel.publish" ng-click="publish(websiteItem)" title="发布栏目">
+                    <img src="./manageConfig/productManageMent/images/gl60.png" />
+                </a>
+                <a ng-if="status.right.channel.edit" ng-click="modify(websiteItem)" title="修改栏目">
+                    <img src="./manageConfig/productManageMent/images/gl61.png" />
+                </a>
+                <a ng-if="status.right.channel.move" ng-click="moveViews()" title="移动栏目">
+                    <img src="./manageConfig/productManageMent/images/gl62.png" />
+                </a>
+            </div>
+        </div>
+        <div ng-if="status.right.channel.add" class="pmm-column-item-out left">
+            <div class="pmm-column-add-item text-center" ng-click="add()">
+                <img src="./manageConfig/productManageMent/images/gl09.png" />
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="status.right.channel.delete" class="manage-pmm-recycle">
+    <a ui-sref="manageconfig.productmanage.website.column.recyclebin">
+        <img src="./manageConfig/productManageMent/images/i7.png" />
+        <span>回收站</span>
+    </a>
+</div>

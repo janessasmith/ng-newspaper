@@ -1,0 +1,122 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12 col-lg-12">
+        <button class="btn btn-default btn-commen" ng-click="openTakeDraftModal()" >
+            <span class="s_icon"><img src="./resourceCenter/images/z56.png" /></span> 取稿
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="CreationAxis()" >
+            <span class="s_icon"><img src="./resourceCenter/images/z14.png" /></span> 创作轴
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="openReserveDraftModal()" >
+            <span class="s_icon"><img src="./resourceCenter/images/z15.png" /></span> 预留
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="collect()" >
+            <span class="s_icon"><img src="./resourceCenter/images/z16.png" /></span> 收藏
+        </button>
+        <!--  <button class="btn btn-default btn-commen">
+            <span class="s_icon"><img src="./resourceCenter/images/z17.png" /></span> 打印
+        </button> -->
+        <button class="btn btn-default btn-commen"  ng-click="export()">
+            <span class="s_icon"><img src="./resourceCenter/images/z55.png" /></span> 导出
+        </button>
+        <!-- <button class="btn btn-default btn-commen" >
+            <span class="s_icon"><img src="./resourceCenter/images/z18.png" /></span> 删除
+        </button> -->
+    </div>
+</div>
+<div class="row mb10" ng-show="vm.numberOfNewDocs > 0">
+    <div class="col-md-12 text-center bm_dot_line mc-padding-xs manuscript-copycreate">
+        <span class="font_red font_color666" ng-click="refreshList()">
+            有<span class="more-data">{{vm.numberOfNewDocs}}</span>条新稿件更新
+            <i class="fa-cursor fa-lg fa-refresh text-primary" ></i>
+        </span>
+    </div>
+</div>
+<div class="row mc-padding-vertical-sm">
+    <div class="col-md-7">
+        <custom-select label="时间范围" options="vm.time.data" callback="searchWithKeyword()" selected-option="vm.time.curValue"></custom-select>
+        <trs-single-select label="稿件类型" options="docTypes" callback="searchWithKeyword()" selected-option="vm.docType"></trs-single-select>
+        <trs-single-select label="信源等级" options="vm.sourcelevel.data" callback="searchWithKeyword()" selected-option="vm.sourcelevel.curValue"></trs-single-select>
+    </div>
+    <div class="col-md-5 text-right">
+        <div class="m_search">
+           <!--  <trs-input-suggest keyword="vm.filterKeyWord" channelname="{{vm.channelName}}" typename="{{vm.typeName}}"></trs-input-suggest> -->
+           <input type="text" class="form-control" placeholder="请输入关键字搜索" ng-model="vm.filterKeyWord">
+            <button class="btn btn-default btn-commen" type="button" ng-click="searchWithKeyword()">检索</button>
+            <button class="btn btn-default btn-commen" type="button" ui-sref="retrieval">高级检索</button>
+        </div>
+    </div>
+</div>
+<!--<div class="row plr10">
+    <div class="col-md-1 text-right mc-padding-0">
+        最近搜索词：
+    </div>
+    <div class="col-md-7 mc-padding-0">
+        <ul class="u_color_list word_in">
+            <li class="bg-danger">西湖</li>
+            <li class="bg-info">科技</li>
+            <li class="bg-warning">媒体</li>
+            <li class="bg-success">蒲公英</li>
+        </ul>
+    </div>
+    <div class="col-md-4 text-right">
+        <ul class="u_color_list">
+            <li><i class="bg-danger"></i>地域</li>
+            <li><i class="bg-info"></i>领域</li>
+            <li><i class="bg-warning"></i>关键词</li>
+            <li><i class="bg-success"></i>账号</li>
+        </ul>
+    </div>
+</div>
+<div class="row plr10">
+    <div class="col-md-1 text-right mc-padding-0">
+        热门标签：
+    </div>
+    <div class="col-md-11 mc-padding-0">
+        <ul class="u_word_list">
+            <li>党建</li>
+            <li>杭州</li>
+            <li>建德</li>
+            <li>经济</li>
+            <li>宁波</li>
+            <li>普陀</li>
+            <li>瑞安</li>
+            <li>台州</li>
+            <li>天气</li>
+            <li>突发</li>
+            <li>温岭</li>
+            <li>文化</li>
+            <li>仙居</li>
+        </ul>
+    </div>
+</div>-->
+<div class="edit_table mc-padding-top-xs">
+    <ul class="flowGrid" ng-flow-grid="weiboGird" min-item-width="200">
+        <li class="flowGridItem" ng-repeat="content in vm.contents">
+            <div class="photo" ng-if="content.imgurl.length>0">
+                <trs-checkbox ischecked="content.ischecked" callback="toggleContent(content)" class="photocheck"></trs-checkbox>
+                <img ng-src="{{content.imgurl[0].url}}"></div>
+            <p class="content">
+                <trs-checkbox ischecked="content.ischecked" callback="toggleContent(content)" ng-if="!content.imgurl.length>0"></trs-checkbox>{{content.IR_STATUS_CONTENT}}</p>
+            <div class="details">
+                <div class="profilephoto"><img src="./editingCenter/app/images/user_icon.jpg"></div>
+                <div class="info"><span></span><span>{{content.DOCPUBTIME | limitTo : 10 }}</span></div>
+                <div class="icons">
+                    <span class="glyphicon glyphicon-envelope clickable" ng-click="openItemTakeDraftModal(content)"></span>
+                    <span class="glyphicon glyphicon-time clickable" ng-click="addweiboToCreationAxis(content.ZB_GUID)"></span>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="row txt_c cursorPointer" ng-click="loadMore()" ng-hide="vm.loadingBusy">
+        <span>
+            <i class="fa fa-lg fa-spinner text-primary" ></i>
+            加载更多
+            </span>
+    </div>
+    <div class="row txt_c" ng-show="vm.loadingBusy">
+        <span>
+            <i class="fa fa-lg fa-spinner fa-spin text-primary" ></i>
+            加载中
+            </span>
+    </div>
+</div>

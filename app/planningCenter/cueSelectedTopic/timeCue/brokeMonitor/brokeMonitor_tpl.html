@@ -1,0 +1,52 @@
+<div class="monitor">
+    <div class="monitor_button">
+        <button class="button_weibo">微博爆料</button>
+        <!--<button class="button_number">96068</button>-->
+        <div class="input-group monitor_input_group">
+            <input type="text" placeholder="请输入关键字搜索" class="form-control monitor_form_control" ng-model="data.keywords" ng-keypress="queryListBySearchWord($event)">
+            <span class="input_group_btn">
+                <button class="btn btn-default btn_monitor_search" type="button" ng-click="queryListBySearchWord()">检索</button>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-8 monitor_weibo_left">
+        <div class="monitor_weibo" ng-repeat="item in data.items">
+            <span class="monitor_icon"><img src="./planningCenter/cueSelectedTopic/timeCue/images/weibo_logo.jpg" ></span>
+            <ul class="monitor_con">
+                <!-- <li ng-bind-html="item.NEWSTITLE|trsSce"></li> -->
+                <li ng-bind="item.SCREENNAME"></li>
+                <li>
+                    <span class="data" ng-bind="timeStamp(item)"></span>
+                    <button class="btn_View"><a href="{{item.ORIGINALURL}}" target="_blank">查看原微博</a></button>
+                </li>
+                <li ng-bind-html="item.STATUSCONTENT|trsSce"></li>
+                <!-- <li><img src="./planningCenter/cueSelectedTopic/timeCue/images/ti-2.png" height="88" width="116" alt="附图"></li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 monitor_weibo_right">
+        <div class="minHeight500">
+            <div class="weibo_right_head" ng-click="status.showWeiboCliques=!status.showWeiboCliques">
+                <img ng-src="./planningCenter/cueSelectedTopic/timeCue/images/{{status.showWeiboCliques?'ti-6.jpg':'ti-6-1.jpg'}}" alt="">
+                <span>集团微博</span>
+            </div>
+            <ul class="weibo_right_con" ng-if="status.showWeiboCliques">
+                <li ng-repeat="weiboClique in data.weiboCliques">
+                    <trs-checkbox ischecked="weiboClique.SELECTED==1" callback="selectedWeiboCliques(weiboClique)"></trs-checkbox>
+                    <span ng-bind="weiboClique.ACCOUNT"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="weibo_right_save">
+            <button class="btn btn-info" type="button" ng-click="saveAndWatch()">保存并查看</button>
+        </div>
+    </div>
+</div>
+<div class="timeCue">
+    <div class="page timeCue_page">
+        <trs-pagenation-left total-num="page.ITEMCOUNT" page-count="page" pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <!-- <trs-pagenation-right callback="jumpToPage()" currpage="status.jumpToPageNum" page="page"></trs-pagenation-right> -->
+    </div>
+</div>
+<div cg-busy="loadingPromise"></div>

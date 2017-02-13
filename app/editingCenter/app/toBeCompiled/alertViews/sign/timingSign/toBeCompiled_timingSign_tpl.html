@@ -1,0 +1,57 @@
+<div class="timing-signed modal-dialog">
+    <div class="modal-content">
+        <div class="timing-tl">
+            <p>定时签发</p>
+            <i ng-click="cancelTimeSigned()"><img src="./editingCenter/app/toBeCompiled/images/cls.jpg"></i>
+        </div>
+        <div class="timing-row">
+            <div class="timing-choose">
+                <div class="timing-check">
+                    <p>
+                        <img src="./editingCenter/app/toBeCompiled/images/t2.png">
+                        <span>请选择日期和时间：</span>
+                    </p>
+                </div>
+                <div class="timing-calendar">
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="status.sharedDate" placeholder="Date" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+                    </div>
+                    <div class="timeGroup ml20">
+                        <input type="text" size="8" class="form-control" ng-model="status.sharedDate" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" placeholder="Time" bs-timepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t1.png" class="imgTwo">
+                    </div>
+                </div>
+                <div class="timing-detail">
+                    <p>本稿件将在<span>{{status.sharedDate | date:'yyyy-MM-dd HH:mm'}}</span>签发成功 </p>
+                </div>
+            </div>
+        </div>
+        <div class="timing-selected">
+            <div class="timing-selected-tl" ng-if="!status.isNewDraft">
+                <div class='timing-bd'></div>
+                <div class="timing-bd-tl">
+                    已选择{{data.items.length}}篇稿件
+                </div>
+            </div>
+            <div class="timing-td" ng-if="!status.isNewDraft">
+                <div class="timing-td-tl">
+                    <p class="timing-td-tl-xl">序列</p>
+                    <p class="timing-td-tl-detail">相关稿件</p>
+                    <p class="timing-td-tl-status">删除</p>
+                </div>
+                <div class="timing-td-detail" ng-repeat="item in data.items">
+                    <p class="timing-td-tl-xl" ng-bind="$index+1"></p>
+                    <p class="timing-td-tl-detail" ng-bind="item.TITLE"></p>
+                    <!--   <p class="timing-td-tl-detail" ng-bind="item.DOCTITLE" ng-if="selectedTitle==='DOCTITLE'"></p> -->
+                    <p class="timing-td-tl-status" ng-click="deleteTimeSigned(item)"><img src="./editingCenter/app/toBeCompiled/images/deleteTime.png"></p>
+                </div>
+            </div>
+            <div class="timing-td-button">
+                <button class="send btn btn_confirm" ng-click="sendTimeSigned()" ng-disabled="data.items.length==0" ng-if="!status.isNewDraft">发送</button>
+                <button class="send btn btn_confirm" ng-click="sendTimeSigned()" ng-if="status.isNewDraft">发送</button>
+                <button class="cancel btn_cancel" ng-click="cancelTimeSigned()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

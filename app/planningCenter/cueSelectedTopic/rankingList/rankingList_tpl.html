@@ -1,0 +1,197 @@
+<div class="calendar mb10 ">
+    <div class="calendar_head">
+        <b>门户排行榜</b>
+    </div>
+    <div class="calendar_content rankList-bar">
+        <div class="calendar_content_right ranking_content_right col-md-12">
+            <tabset justified="true">
+                <tab heading="{{rankingTitle.name}}" ng-repeat="rankingTitle in status.rankingTitle" ng-click="titletab(rankingTitle)">
+                    <tabset class="head_sub_nav">
+                        <tab heading="{{rankingTabList.CATEGORY}}" ng-repeat="rankingTabList in data.rankingTabListNum" ng-click="ranklistTab(rankingTabList)"></tab>
+                    </tabset>
+                    <div ng-if="status.rankingTabs==='新浪'" class="ranking-sina-title">
+                        <p ng-bind="SinaTitle.title" ng-repeat="SinaTitle in status.rankingSinaTitle" class="cursorPointer" ng-click="sinaNewsRanking(SinaTitle,$index)" ng-class="{'sina_click_active':status.sinaAcitve.title==SinaTitle.title}"></p>
+                    </div>
+                    <div class="calendar_con">
+                        <div class="plan_table">
+                            <div class="plan_table_header">
+                                <p class="w50">排名</p>
+                                <p class="b30 {{(status.rankingTabs=='中国搜索'||status.rankingTabs==='人民网')?'b45':''}}">标题</p>
+                                <p class="b10">媒体</p>
+                                <p class="w80" ng-class="{'w170':status.rankingTabs=='腾讯'}">排名变化</p>
+                                <p class="w65" ng-if="status.rankingTabs!='腾讯'&&(status.showReadingCurve==undefined||status.showReadingCurve!=false)">{{data.ranklistLists.name}}数</p>
+                                <p class="w100" ng-if="status.rankingTabs!='腾讯'&&(status.showClick==undefined||status.showClick!=false)">{{data.ranklistLists.name}}曲线</p>
+                                <p class="w170">时间</p>
+                                <p class="w37" ng-class="{'w170':status.rankingTabs=='腾讯'}">上榜时长</p>
+                            </div>
+                            <div class="plan_table_detail" ng-repeat="item in data.ranklistLists |limitTo:10">
+                                <p ng-bind="$index+1" class="w50"></p>
+                                <!--排名-->
+                                <a ng-bind="item.TITLE" title="{{item.TITLE}}" class="b30 iwo_operate tx_hide {{(status.rankingTabs=='中国搜索'||status.rankingTabs=='人民网')?'b45':''}}" ng-click="plancenterdetail(item)" target="_blank"></a>
+                                <!--标题-->
+                                <p ng-bind="status.SRCNAME[$index]|trsLimitTo:10" class=" b10 tx_hide" title="{{item.SRCNAME}}"> </p>
+                                <!--媒体-->
+                                <p class="w80" ng-class="{'w170':status.rankingTabs=='腾讯'}">
+                                    <span class="mgr5" ng-show="item.RANK_DIRECTION==1"><img src="./planningCenter/images/ch18.png"></span>
+                                    <span class="mgr5" ng-show="item.RANK_DIRECTION==-1"><img src="./planningCenter/images/ch19.png"></span>
+                                    <span class="mgr5" ng-show="item.RANK_DIRECTION==0"><img src="./planningCenter/images/hcc20.png" width="20"></span>
+                                    <span class="mgr5" ng-show="item.RANK_DIRECTION=='new'">
+                                             <img src="./planningCenter/images/new.png" width="32" height="12">
+                                         </span>
+                                    <span ng-bind='item.RANK_CHANGE'></span>
+                                </p>
+                                <!--排名变化-->
+                                <p ng-bind="item.VRESERVED2" class="w65" ng-if="status.rankingTabs!='腾讯'&&(status.showClick==undefined||status.showClick!=false)"></p>
+                                <!--评论数-->
+                                <p class="w100 door-list" ng-class="{'plan_acitve_height':status.readCurve==item}" ng-if="status.rankingTabs!='腾讯'&&(status.showReadingCurve==undefined||status.showReadingCurve!=false)">
+                                    <img src="./planningCenter/images/ch42.png" class="pieceMgr-main-list" data-template-url="./planningCenter/cueSelectedTopic/rankingList/directive/rankingLine/planBigMapRankList.html" data-animation="am-flip-x" data-auto-close="1" data-placement="bottom" bs-popover>
+                                    <!--                                     <span class="bigMapRanklist" ng-if='status.readCurve==item'>
+                                        <rank-line option-obj="item" my-style="status.initBigRankingwidth" is-tool=true></rank-line>
+                                    </span> -->
+                                </p>
+                                <!--阅读曲线-->
+                                <p ng-bind="item.LOADTIME" class="w170"></p>
+                                <!--时间-->
+                                <p ng-bind="item.DURATION" ng-class="{'w170':status.rankingTabs=='腾讯'}" class="w37"></p>
+                                <div class="clear"></div>
+                            </div>
+                            <div ng-if="status.sinaStatus.channel=='推荐'" class="page_fix">
+                                <div class="page bottom_10">
+                                    <trs-pagenation-left total-num="page.ITEMCOUNT" page-count="page" pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+                                    <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.startpage" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                                    <trs-pagenation-right callback="jumpToPage()" currpage="status.jumpToPageNum" page="page"></trs-pagenation-right>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="calendar mb10 ">
+    <div class="calendar_head">
+        <b>人物榜单</b>
+    </div>
+    <div class="calendar_content rankList-bar">
+        <div class="calendar_content">
+            <div class="calendar_content_right ranking_content_right col-md-12">
+                <tabset class="head_sub_nav">
+                    <tab heading="{{figureListTab}}" ng-click="changeFigureTab(figureListTab)" ng-repeat="figureListTab in data.figureListTab"></tab>
+                </tabset>
+                <div class="calendar_con">
+                    <div class="plan_table">
+                        <div class="plan_table_header">
+                            <p class="w50">排名</p>
+                            <p class="b20">姓名</p>
+                            <p class="b10">本次排名变化</p>
+                            <p class="b10">24小时排名变化</p>
+                            <p class="b20">热度值</p>
+                            <p class="w100">搜索曲线</p>
+                            <p class="b10">上榜时长</p>
+                        </div>
+                        <div class="plan_table_detail" ng-repeat="item in data.figureListDetail |limitTo:10">
+                            <p ng-bind="$index+1" class="w50"></p>
+                            <!--排名-->
+                            <p ng-bind="item.TITLE" class="b20"></p>
+                            <!--姓名-->
+                            <p class="b10">
+                                <span class="mgr5" ng-show="item.RANK_DIRECTION==1"><img src="./planningCenter/images/ch18.png"></span>
+                                <span class="mgr5" ng-show="item.RANK_DIRECTION==-1"><img src="./planningCenter/images/ch19.png"></span>
+                                <span class="mgr5" ng-show="item.RANK_DIRECTION==0"><img src="./planningCenter/images/hcc20.png" width="20"></span>
+                                <span class="mgr5" ng-show="item.RANK_DIRECTION=='new'">
+                                             <img src="./planningCenter/images/new.png" width="32" height="12">
+                                         </span>
+                                <span ng-bind='item.RANK_CHANGE' ng-show="item.RANK_CHANGE!=0"></span>
+                            </p>
+                            <!--排名变化-->
+                            <p class='b10'>
+                                <span class="mgr5" ng-show="item.RANK_DIRECTION_24_HOUR==1"><img src="./planningCenter/images/ch18.png"></span>
+                                <span class="mgr5" ng-show="item.RANK_DIRECTION_24_HOUR==-1"><img src="./planningCenter/images/ch19.png"></span>
+                                <span class="mgr5" ng-show="item.RANK_DIRECTION_24_HOUR==0"><img src="./planningCenter/images/hcc20.png" width="20"></span>
+                                <span class="mgr5" ng-show="item.RANK_DIRECTION_24_HOUR=='new'">
+                                    <img src="./planningCenter/images/new.png" width="32" height="12">
+                                         </span>
+                                <span ng-bind='item.RANK_CHANGE_24_HOUR' ng-show="item.RANK_CHANGE_24_HOUR!=0"></span>
+                            </p>
+                            <p ng-bind="item.SEARCH_INDEX" class="b20"></p>
+                            <!--阅读数-->
+                            <p class="w100 people-list">
+                                <span class="pieceMgr-main-list">
+                                         <img src="./planningCenter/images/ch42.png" data-template-url="./planningCenter/cueSelectedTopic/rankingList/directive/rankingLine/planBigMapRankList.html" data-animation="am-flip-x" data-auto-close="1" data-placement="bottom"  bs-popover >
+                                </span>
+                                <!--                                 <span class="bigMapRanklist left_732" ng-if='status.readCurve==item'>
+                                    <rank-line option-obj="item" my-style="status.initBigRankingwidth" is-tool=true></rank-line>
+                                </span> -->
+                            </p>
+                            <!--时间-->
+                            <p ng-bind="item.DURATION" class="b10"></p>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="calendar mb10 " ui-view="wechatpostlist">
+</div>
+<!-- <div class="calendar calendar_overflow">
+    <div class="calendar_head">
+        <b>微信文章排行榜</b>
+    </div>
+    <div class="calendar_content rankList-bar">
+        <div class=" mt0 calendar_content_right ranking_content_right col-md-12">
+            <tabset class="head_sub_nav">
+                <tab heading="全国" ng-click="changeType(0)"></tab>
+                <tab heading="浙江省" ng-click="changeType(1)"></tab>
+            </tabset>
+            <div class="edit_table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th width="28%">标题</th>
+                            <th>排名变化</th>
+                            <th>评论数</th>
+                            <th>阅读曲线</th>
+                            <th>点赞数</th>
+                            <th width="18%">时间</th>
+                            <th>上榜时长</th>
+                        </tr>
+                    </thead>
+                    <tbody> -->
+<!-- <tr ng-repeat="item in datas">
+                            <td ng-bind="$index+1"></td> -->
+<!--排名-->
+<!-- <td ng-bind="item.title" class="ta-l"></td> -->
+<!--标题-->
+<!-- <td>
+                                <span class="mgr5" ng-show="item.readingCurveRise==1"><img src="./planningCenter/images/ch18.png"></span>
+                                <span class="mgr5" ng-show="item.readingCurveFall==1"><img src="./planningCenter/images/ch19.png"></span>
+                                <span ng-bind="item.rankingChange"></span>
+                            </td> -->
+<!--排名变化-->
+<!-- <td ng-bind="item.readingNumber"></td> -->
+<!--评论数-->
+<!-- <td>
+                                <img src="./planningCenter/images/ch42.png">
+                            </td> -->
+<!--阅读曲线-->
+<!-- <td ng-bind="item.readingNumber"></td> -->
+<!--点赞数-->
+<!-- <td ng-bind="item.time"></td> -->
+<!--时间-->
+<!-- <td ng-bind="item.longList"></td> -->
+<!--上榜时长-->
+<!--                         </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="ht140"></div> -->
+<div cg-busy="loadingPromise"></div>

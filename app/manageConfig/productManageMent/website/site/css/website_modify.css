@@ -1,0 +1,121 @@
+.productManageMent-website-modify-view .modal-dialog {
+    width: 400px;
+}
+
+.productManageMent-website-modify-view img {
+    cursor: pointer;
+}
+
+.productManageMent-website-modify-view .dropdown button.dropdown-toggle {
+    height: 30px;
+    width: 240px;
+}
+
+.productManageMent-website-modify-view .dropdown li {
+    height: 30px;
+    width: 240px;
+}
+
+.productManageMent-website-modify-view .man_produ_modify {
+    padding-bottom: 2px;
+}
+
+.productManageMent-website-modify-view .man_produ_modify_inner {
+    background: #fff;
+    margin: 10px;
+    padding-top: 20px;
+    line-height: 45px;
+    color: #777;
+    font-size: 12px;
+}
+
+.productManageMent-website-modify-view .man_produ_column_modify > div > b {
+    display: inline-block;
+    font-weight: normal;
+    width: 27%;
+    height: 100%;
+    line-height: 100%;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.productManageMent-website-modify-view .man_produ_column_modify > div:last-child > b {
+    width: 35%;
+    font-weight: normal;
+}
+
+.productManageMent-website-modify-view .man_produ_column_modify .input {
+    position: relative;
+}
+
+.productManageMent-website-modify-view .man_produ_column_modify .input span.ng-scope {
+    position: absolute;
+    line-height: normal;
+    top: -20px;
+    width: initial;
+    height: initial;
+}
+
+.productManageMent-website-modify-view .man_produ_column_modify .man_produ_sensitive_text {
+    width: 240px;
+    height: 30px;
+    display: inline-block;
+    font-size: 12px;
+    color: #777;
+}
+
+.productManageMent-website-modify-view .man_produ_column_modify select {
+    width: 100%;
+    border-color: #ddd;
+    color: #aaa;
+}
+
+.productManageMent-website-modify-view .man_produ_modify_footer {
+    background: transparent;
+    padding-left: 177px;
+}
+
+.productManageMent-website-modify-view .man_produ_modify input.repeatTake {
+    width: 220px;
+}
+
+.productManageMent-website-modify-view .man_produ_modify span.repeatTake {
+    margin-left: 10px;
+}
+
+.productManageMent-website-modify-view .man_produ_modify_footer_cancel {
+    margin-right: 0;
+}
+
+.productManageMent-website-modify-view .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.productManageMent-website-modify-view i {
+    font-style: normal;
+}
+
+.man_produ_column_modify .invalidate-input-box span {
+    top: -26px!important;
+}
+
+.man_produ_column_modify_ulAndLabel .regular-checkbox + label {
+    z-index: 20;
+    position: relative;
+}
+
+.man_produ_column_modify_ulAndLabel .dropdown .dropdown-menu,
+.man_produ_column_modify_ulAndLabel .dropdown .dropdown-menu li {
+    z-index: 999;
+    background: #fff;
+}
+
+.productManageMent-website-modify-view .man_produ_column_modify .input span.ng-scope:nth-child(2) {
+    position: absolute;
+    line-height: normal;
+    top: -20px;
+    width: 400px;
+    height: initial;
+    left: -78px;
+}

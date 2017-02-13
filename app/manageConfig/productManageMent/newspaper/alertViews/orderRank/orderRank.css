@@ -1,0 +1,14 @@
+.man_produ_newpress .selected{
+	background-color:#0095CE;
+	color:white;
+}
+.pressRank_conctent_bg{
+	padding-left:18px;
+}
+.pressRank_conctent_bg img{
+	cursor: pointer;
+	margin-right: 5px;
+}
+.man_produ_batchDelete_con_form{
+	cursor:pointer;
+}

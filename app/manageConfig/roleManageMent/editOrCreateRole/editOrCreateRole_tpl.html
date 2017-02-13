@@ -1,0 +1,29 @@
+<div class="container-fluid manage-createRole">
+    <form novalidate name="roleForm" class="role-form">
+        <div class="row">
+            <div class="manage-createRole-head">
+                <span class="manage-createRole-head-span">角色信息</span>
+            </div>
+            <div class="manage-createRole-body">
+                <div class="manage-createRole-rolename invalidate-input-box {{roleForm.rolename.$invalid?'has-error':''}}">
+                    <p class="manage-createRole-rolename-span">角色名称：</p>
+                    <input type="text" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,required" placeholder="请输入角色名称" ng-model="roleData.ROLEDESC" name="rolename" class="form-control role-name-input" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                </div>
+                <div class="manage-createRole-group">
+                    <span class="manage-createRole-group-span">所属分组：</span>&nbsp;&nbsp;<span ng-bind="realGroupObj.GNAME"></span>
+                    <span>
+					<input type="button" ng-click="changeGroup($event)" value="更改分组" ng-click="changeGroup()" class="role-btn-commen ml30"/>&nbsp;&nbsp;
+					<input ng-if="$parent.status.operatingAuthority.copyright" value="从其他角色中复制权限" type="button" ng-click="copyAuthority($event)" class="role-btn-commen ml30" style="width:140px;" />
+				</span>
+                    <button validation-submit="roleForm" class="btn-commen btn-commen-hover save-role-btn btn_confirm" ng-click="saveRole()">
+                        保存角色
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div ui-view="roleChildren">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

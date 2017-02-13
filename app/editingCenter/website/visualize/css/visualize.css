@@ -1,0 +1,34 @@
+.edit_website_visualize button,
+.edit_website_visualize button:hover {
+    width: 110px;
+}
+
+.edit_website_visualize button span img {
+    width: 15px;
+}
+
+.edit_website_visualize_buttonGroup {
+    float: right;
+    margin-top: 14px;
+}
+
+.edit_website_visualize_buttonGroup >button {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    background: #4396d2;
+    border: none;
+    border-radius: 6px;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-family: "黑体";
+}
+
+.edit_website_visualize_buttonGroup >button:hover {
+    background: #46b8da;
+}
+
+.edit_website_visualize_main trs-single-radio span {
+    display: inline;
+}

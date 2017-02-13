@@ -1,0 +1,41 @@
+
+<div class="popup" id="pop-hide" style="display: block;">
+    <!--隐藏部分-->
+    <div class="qf-pop-box">
+        <!--操作日志-->
+        <div class="popup-box qf-box">
+            <div class="popup-top">
+                <span class="cz-rz-box lf">操作日志</span>
+                <a href="javascript:;" class="popup-close-btn rt" ng-click="cancel();"></a>
+            </div>
+            <!--slider-->
+            <div class="popup-log-con" scroll style="overflow: overlay;">
+                <div class="log-time-axis lf">
+                    <p><img src="common/images/bord.png"/></p>
+                    <div ng-repeat="journalContent in journalContents"> 
+                        <!-- 表头 -->
+                        <div class="t-head">
+                            <span>{{journalContent.date}}</span>
+                            <div class="list-act"></div>
+                        </div>
+                        <p><img src="common/images/bord.png"/></p>
+                        <!-- 列表 -->
+                        <div ng-repeat="log in journalContent.logs">
+                            <div class="t-body">
+                                <span>{{log.time}}</span>
+                                <div class="list-b"></div>
+                                 <div class="list-status" 
+                                 ng-class="{'status-blue':log.operation=='查阅','status-green':log.operation=='完成','status-red':log.operation=='转发','status-yellow':log.operation=='转待办','status-purple':log.operation=='创建','status-orange':log.operation=='发布','status-cyanblue':log.operation=='送审','status-pink':log.operation=='审核','status-mgreen':log.operation=='审核未通过'}"
+                                 >{{log.operation}}</div>
+                                <div class="list-name">{{log.userName}}</div>
+                               
+                            </div>
+                            <p><img src="common/images/bord.png"/></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end slider-->
+        </div>
+    </div>
+</div>

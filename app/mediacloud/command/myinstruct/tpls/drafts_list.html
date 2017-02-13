@@ -1,0 +1,27 @@
+<div class="cg-ls-top">
+    <div class="all-check-box lf">
+        <div class="cg-check-box lf" id="allCheckBox" >
+            <input name="title" type="checkbox" ng-model="master" ng-click="all(master,contents);"/>
+        </div>
+        <span class="all-check-sp" >全选</span>
+    </div>
+    <a href="javascript:;" ng-show="dictateRightKeys.del" class="cg-top-del lf" ng-click="multipleDel('400');">删除</a>
+</div>
+<div class="cg-main-ls">
+    <ul>
+        <li ng-repeat="content in contents" ng-class="{'blue-bac':($index+1)%2==0}">
+            <div class="cg-check-box lf">
+                <input name="title" id="{{content.DICTATEID}}" type="checkbox" 
+                       ng-checked="master" ng-model="x" ng-click="chk(content.DICTATEID,x)"/>
+            </div>
+            <a href  ui-sref="command.myinstructDrafts_details({dictateId:content.DICTATEID,issecret:content.ISSECRET})" class="cg-ls-tit lf">{{content.TITLE}}</a><span style="color: red;" ng-show="content.ISWAITING=='1'">(返工)</span>
+            <b ng-show="{{content.ISSECRET}}==1"></b>
+            <a href class="cg-ls-del rt"  ng-click="oneDel(content.DICTATEID);">删除</a>
+        </li>
+    </ul>
+    <div class="hd-page-bk">
+        <a href ng-click="reduce();" class="log-page hd-pg-pre"></a>
+        <div class="hd-pg-num"><span>{{pageInfo.pageIndex}}</span>-<span>{{pageInfo.pageCount}}</span></div>
+        <a href ng-click="add();" class="log-page hd-pg-next"></a>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="editor-win-container">
+    <div class="editor-win-head">
+        <p>编辑选择</p>
+        <button class="editor-win-btn" ng-click="cancel()">取消</button>
+        <button class="editor-win-btn" ng-click="confirm()">确定</button>
+    </div>
+    <div class="editor-win-body">
+        <div class="editor-win-body-tit">
+            <label>
+                <input name="addType" ng-model="addType" value="0" type="radio" name="editorRadio">编辑流
+            </label>
+            <label>
+                <input name="addType" ng-model="addType" value="1" type="radio" name="editorRadio">其他人员
+            </label>
+        </div>
+        <div class="editor-win-body-con" ng-show="addType=='0'?true:false">
+            <div class="editor-win-body-sub-con">
+                <button ng-click="addEditor('editorsFlow')">添加</button>
+                <button ng-disabled="mySelf.selected" ng-click="addMySelf()">添加本人</button>
+            </div>
+            <div class="editor-win-body-context">
+                <ul class="editor-win-body-ul">
+                    <li class="editor-win-body-ul-li" ng-repeat="editor in editors">
+                        <span ng-bind="editor.GROUPPATH"></span>
+                        <div ng-click="chooseUser($event,editor)" class="editor-win-body-ul-chooseDiv">
+                        </div>
+                        <div ng-show="editor.selected" class="editor-win-body-ul-selectedDiv"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="editor-win-body-con" ng-show="addType=='1'?true:false">
+            <div class="editor-win-body-other-con">
+                <p>用户名：</p>
+                <!-- <input type="text" params="seracheParams" trs-user-support value="" class="form-control"> -->
+                <input type="text" watch-options='true' ng-model="searchUser" bs-options="state as state.SUGGESTION for state in getStatus($viewValue)" bs-typeahead placeholder="输入用户名" class="input-form" value="" limit="30">
+            </div>
+            <div class="editor-user-choose">
+                <div class="editor-user-choose-tit">
+                    <p>用户选择</p>
+                    <button class="editor-win-btn" ng-click="addEditor('other')">添加</button>
+                    <button class="editor-win-btn" ng-disabled="mySelf.selected" ng-click="addMySelf()">添加本人</button>
+                </div>
+                <div class="editor-user-choose-con">
+                    <div class="editor-user-choose-con-left">
+                        <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node)"><span ng-bind='node.GNAME'></span>
+                        </treecontrol>
+                    </div>
+                    <div class="editor-user-choose-con-right">
+                        <ul class="editor-win-body-ul">
+                            <li class="editor-win-body-ul-li" ng-repeat="user in userDatas"><span ng-bind="user.USERNAME"></span>
+                                <div class="editor-win-body-ul-chooseDivO" ng-click="chooseUser($event,user)">
+                                </div>
+                                <div ng-show="user.selected" class="editor-win-body-ul-selectedDivO"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="editor-win-footer">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>媒体</th>
+                    <th>部门</th>
+                    <th>编辑姓名</th>
+                    <th>操作人</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="editor in selectedEditors">
+                    <td ng-bind="editor.COMPANY">浙江日报</td>
+                    <td ng-bind="editor.DEPT">信息技术中心</td>
+                    <td ng-bind="editor.USERNAME">陈伟杰</td>
+                    <td ng-bind="editor.OPERATOR">陈伟杰</td>
+                    <td><a ng-click="deleteEditor(editor)" href="javascript:void(0)">删除</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

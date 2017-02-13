@@ -1,0 +1,20 @@
+<div class="img-flow clearfix trs-masonry">
+    <div class="img-box" ng-repeat="pic in datas track by $index">
+        <div style="position:relative;">
+            <trs-checkbox ischecked="selectedArray.indexOf(pic)>-1" callback="selectDoc(pic)" class="ckbox"></trs-checkbox>
+            <a ng-href="#/resourcegxgkdetail?metadataid={{pic.METADATAID}}&type={{pic.DOCTYPEID}}&iscbpic=1" target="_blank" class="a-wrap">
+                <img ng-src="{{pic.METALOGOURL.PICSLOGO}}" alt="">
+            </a>
+            <span>
+                <a class="title" ng-href="#/resourcegxgkdetail?metadataid={{pic.METADATAID}}&type={{pic.DOCTYPEID}}&iscbpic=1" target="_blank" title="{{pic.TITLE}}">{{pic.TITLE|truncate:8:'...'}}</a>
+                <i ng-show="showOperFlag(pic.METADATAID,0)||showOperFlag(pic.METADATAID,1)||showOperFlag(pic.METADATAID,2)||showOperFlag(pic.METADATAID,3)||showOperFlag(pic.METADATAID,4)">
+                    <b ng-show="showOperFlag(pic.METADATAID,0)" ng-click="viewBigDataInfo(pic.METADATAID)">取</b>
+                    <b ng-show="showOperFlag(pic.METADATAID,1)" ng-click="viewBigDataInfo(pic.METADATAID)">签</b>
+                    <b ng-show="showOperFlag(pic.METADATAID,2)" ng-click="viewBigDataInfo(pic.METADATAID)">见</b>
+                    <b ng-show="showOperFlag(pic.METADATAID,3)" ng-click="viewBigDataInfo(pic.METADATAID)">撤</b>
+                    <b ng-show="showOperFlag(pic.METADATAID,4)" ng-click="viewBigDataInfo(pic.METADATAID)">重</b>
+                </i>
+            </span>
+        </div>
+    </div>
+</div>

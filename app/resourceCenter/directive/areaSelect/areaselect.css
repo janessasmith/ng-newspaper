@@ -1,0 +1,26 @@
+.m_area{
+	position: relative;
+}
+.select_panel{
+	position: absolute;
+	top:35px;
+	z-index: 2;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.select_panel ul{
+	list-style: none;
+}
+.select_panel >ul li{
+	width: 25%;
+}
+.m_area_list li{
+	margin-right: 10px;
+	font-size: 12px;
+	color: #666;
+	cursor: pointer;
+}
+.m_area_list li:hover,.m_area_list li.active{
+	background-color: #fbefe6;
+}

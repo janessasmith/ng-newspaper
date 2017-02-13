@@ -1,0 +1,210 @@
+trs-thumb {
+    position: relative;
+    cursor: pointer;
+}
+
+trs-thumb .thumb-img {
+    width: 45px;
+    height: 25px;
+}
+
+trs-thumb .thumb-img img {
+    width: 100%;
+}
+
+trs-thumb .img_switcher {
+    position: absolute;
+    top: -160px;
+    right: 50px;
+    z-index: 3;
+    width: 630px;
+    height: 460px;
+    background-color: #b7b6b6;
+    overflow: hidden;
+    padding: 8px;
+    border: 5px solid #ccc;
+}
+
+trs-thumb .video,
+trs-thumb .audio {
+    position: absolute;
+    top: -160px;
+    right: 50px;
+    z-index: 3;
+    width: 550px;
+    height: 410px;
+    background-color: #b7b6b6;
+    overflow: hidden;
+    padding: 8px;
+    border: 5px solid #ccc;
+}
+
+trs-thumb .thumb-play {
+    position: absolute;
+    left: 14px;
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    background-image: url(./components/util/trsThumb/images/play.png);
+    background-size: 15px;
+    background-position: center center;
+}
+
+trs-thumb .img_switcher img {
+    width: 100%;
+}
+
+trs-thumb .close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -2px;
+    top: 0;
+    z-index: 10;
+    color: #fff;
+    background-image: url(./editingCenter/app/toBeCompiled/images/cls.jpg);
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+
+trs-thumb .carousel-control.right,
+trs-thumb .carousel-control.left {
+    background: transparent;
+}
+
+
+/*
+trs-thumb.posBottom .img_switcher {
+    bottom: -50px;
+    top: inherit;
+}
+*/
+
+
+/*
+@keyframes imgSwitcherShow {
+    from {
+        transform: scale(.7,.7);
+        opacity: .7;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes imgSwitcherHide {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: scale(.7,.7);
+        opacity: 0;
+    }
+}
+
+trs-thumb .img_switcher.ng-hide-remove {
+    animation: imgSwitcherShow 0.2s both ease-in;
+}
+
+trs-thumb .img_switcher.ng-hide-add {
+    animation: imgSwitcherHide 0.2s both ease-in;
+}
+*/
+
+trs-thumb .carousel-indicators li {
+    margin: 1px 5px;
+}
+
+
+/*滚动图片箭头图案*/
+
+.carousel-control .right-scroll-pic {
+    background-image: url('./resourceCenter/images/left-no.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: none;
+}
+
+.carousel-control .left-scroll-pic {
+    background-image: url('./resourceCenter/images/right-no.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: none;
+}
+
+trs-thumb .carousel-control.right:hover span {
+    background-image: url('./resourceCenter/images/right-ok.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: none;
+}
+
+trs-thumb .carousel-control.left:hover span {
+    background-image: url('./resourceCenter/images/left-ok.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: none;
+}
+
+.xcol-doctype .carousel-control {
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+
+.xcol-doctype .carousel-control:hover,
+.carousel-control:focus {
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    -khtml-opacity: 0.8;
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-control .right-scroll-pic,
+    .carousel-control .icon-next {
+        margin-right: -15px;
+    }
+    .carousel-control .left-scroll-pic,
+    .carousel-control .right-scroll-pic,
+    .carousel-control .icon-prev,
+    .carousel-control .icon-next {
+        width: 50px;
+        height: 50px;
+        margin-top: -15px;
+        font-size: 30px;
+    }
+}
+
+.carousel-control .icon-next,
+.carousel-control .glyphicon-menu-right {
+    right: 50%;
+    margin-right: -10px;
+}
+
+.carousel-control .icon-prev,
+.carousel-control .icon-next,
+.carousel-control .right-scroll-pic {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+    font-size: 35px;
+    opacity: 1;
+}
+
+.carousel-control .icon-prev,
+.carousel-control .icon-next,
+.carousel-control .left-scroll-pic {
+    position: absolute;
+    top: 50%;
+    right: 40%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+    font-size: 35px;
+    opacity: 1;
+}

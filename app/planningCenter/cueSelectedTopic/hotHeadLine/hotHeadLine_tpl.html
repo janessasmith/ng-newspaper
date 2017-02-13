@@ -1,0 +1,206 @@
+
+<div class="hot_head_line_calendar">
+    <tabset justified="true">
+        <tab heading="媒体热点" ng-click="hotRefersh()">
+            <div class="calendars mt10">
+                <div class="calendar_head">
+                    <b>垂直热点聚合</b>
+                    <img src="./planningCenter/images/ch20.png" class="clue_pull_right" ng-click="showDiscloseConfig()">
+                </div>
+                <div class="calendar_con hotpic mt10 border_fixed">
+                    <tabset justified="true">
+                        <tab ng-repeat="fzItem in status.fzItems" heading={{fzItem.DICTNAME}} ng-click="hotPic(fzItem)">
+                            <div class=" hot_head_line">
+                                <div ng-repeat="hotNum in hotNums track by $index" class="hot_head_module_1">
+                                    <div class=" hot_head_li_{{num.size}} {{num.CLASS}}" ng-repeat="num in hotNum track by $index">
+                                        <ul class="">
+                                            <li>
+                                                <a target="_blank" ui-sref="hotpointcluster({guids:num.ID})">{{num.STRVALUE}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </tab>
+                    </tabset>
+                   <!--  <div class="loadpic" cg-busy="hotPicPromise"></div> -->
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="dateline">
+                    <div class="date" ng-repeat="date in data.dateLine"><span class="day  {{status.selectedDate===date?'pladateselected':''}} {{!!hotPicPromise?'busy':''}}" ng-click="chooseDate(date)" ng-bind="date"></span>
+                        <div ng-click="chooseDate(date)" class="icon {{status.selectedDate===date?'plaiconselectted':''}} {{!!hotPicPromise?'busy':''}}"></div>
+                    </div>
+                </div>
+                <div class="hourline">
+                    <div ng-if="status.curDate==status.selectedDate" ng-click="chooseHour(hour)" class="hour {{status.selectedHour===hour?'plahourselected':''}} {{compareHour(hour)?'plahournotallow':''}} {{!!hotPicPromise?'busy':''}}" ng-repeat="hour in data.hours"><span ng-bind="hour+'点'"></span></div>
+                </div>
+            </div>
+            <iframe width="100%" height="1540" src="./planningCenter/cueSelectedTopic/hotHeadLine/template/hotInfoVisual/index.html" frameBorder="0" style="margin-top:10px;"></iframe>
+            <!-- <div class="calendar calendar_0_padding">
+                <div class="calendar_head">
+                    <b>热点关系导图</b>
+                </div>
+                <div class="calendar_content hot_head_line_calendar">
+                    <div class="hot_head_line_concat_map">
+                        <div class="concat_map_title">
+                            <div class="concat_map_title_chose_group">
+                                <a>
+                                    <img src="./planningCenter/images/ch23.png" />
+                                </a>
+                                <a>
+                                    <img src="./planningCenter/images/ch24.png" />
+                                </a>
+                                <trs-single-select selected-option="iWoDocTypeSelected" callback="queryByDocType()" options="iWoDocTypes"></trs-single-select>
+                                <a>
+                                    <img src="./planningCenter/images/ch25.png" />
+                                </a>
+                                <a>
+                                    <img src="./planningCenter/images/ch26.png" />
+                                </a>
+                            </div>
+                            <span class="hot_head_line_concat_map_title_date">2015.12.29</span>
+                            <span class="hot_head_line_concat_map_title_time">10:18:28</span>
+                        </div>
+                        <div class="concat_map_main">
+                            <div>
+                                <img src="./planningCenter/cueSelectedTopic/hotHeadLine/images/l1.jpg" width="100%" height="100%" />
+                            </div>
+                            <img src="./planningCenter/images/ch28.png" class="concat_map_main_arrow_left" />
+                            <img src="./planningCenter/images/ch29.png" class="concat_map_main_arrow_right" />
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </tab>
+        <tab heading="网民热点" ng-click="peopleSelected()">
+            <div class="calendars mt10">
+                <div class="calendar_head">
+                    <b>网民热搜</b>
+                    <img src="./planningCenter/images/refersh_03.png" width="30" ng-click="refersh()" class="search_refersh" alt="刷新" title="刷新">
+                </div>
+                <div class="calendar_content hot_head_line_calendar border_fixed">
+                    <tabset justified="true" class="ht38">
+                        <tab ng-repeat="tab in search.tab" heading={{tab}} ng-click="hotSearch(tab)">
+                            <div class=" hot_head_line fix-margin">
+                                <div ng-repeat="hotNum in hotNums track by $index" class="hot_head_module_1">
+                                    <div class=" hot_head_li_{{num.size}} {{num.CLASS}}" ng-repeat="num in hotNum track by $index">
+                                        <ul class="">
+                                            <li class="effect">
+                                                <a target="_blank" ui-sref="retrieval.allsearch({planKey:num.STRVALUE})" ng-bind="num.STRVALUE"></a>
+                                                <!-- <figcaption ng-show="status.hotStrvalue">
+                                        <a href=""><span ng-bind="num.STRVALUE"></span></a>
+                                                </figcaption> -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </tab>
+                        </div>
+                    </tabset>
+                    <div class="hot_search_time">
+                        <div class="hot_sarch_list" ng-repeat="time in search.time">
+                            <a href="" ng-click="listSearchTime(time)">
+                                <span ng-bind="time" ng-class="{'active':time==search.specificTime}"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab heading="纸媒头版">
+            <div class="calendar mt10">
+                <div class="calendar_head calender_head_time">
+                    <b>纸媒头版</b>
+                    <p class="timeRange" ng-repeat="time in status.newspaperChooseTime" ng-bind="time.timeName" ng-click="timeChoose(time,'news')" ng-class="{'cur':status.time==time}"></p>
+                </div>
+                <div class="calendar_content mheight420">
+                    <columnar-dir option-jsons="status.initTopNewspaperData" newspaperlist-detail="status.newspaperlistDetail" channel="'newspaper'"></columnar-dir>
+                </div>
+            </div>
+            <div class="hot_head_line_big_table_calendar calendar">
+                <div class="calendar_head">
+                    <b ng-bind="data.newspaperMedias.title"></b>
+                    <span ng-click="showGroupPaper()" class="show-group-paper" ng-if="status.group=='0'">显示集团报刊</span>
+                    <span ng-click="showAllPaper()" class="show-group-paper" ng-if="status.group=='1'">显示所有报刊</span>
+                </div>
+                <div class="clear"></div>
+                <div class="calendar_content hot_head_line_calendar">
+                    <div class="edit_table hot_head_line_hotspot_table">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>文章标题</th>
+                                    <th>来源</th>
+                                    <th>时间</th>
+                                    <th>转载数</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="detail in data.newspaperMedias.newsMediasDetailList">
+                                    <td ng-bind="$index+1"></td>
+                                    <td class="hot_head_line_information">
+                                        <a target='_blank' ui-sref="resourcedetail({indexname:status.newspaperindexname,guid:detail.GUID})" ng-bind-html="detail.TITLE|trsLimitTo:30"></a>
+                                    </td>
+                                    <td ng-bind="detail.SOURCE"></td>
+                                    <td ng-bind="detail.PUBTIME|date:'yyyy-MM-dd'"></td>
+                                    <td ng-bind="data.newspaperMedias.reprintedNum"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span class="hot_head_line_website_down_more" ng-click="pageChange('news')" ng-if="data.newspaperMedias.newsMediasDetailList.length>1">
+                            <img src="./planningCenter/cueSelectedTopic/hotHeadLine/images/i1.png" ng-class="{'notAllow':data.newspaperMedias.page.page_no>=data.newspaperMedias.page.pagecount-1}"/>
+                        </span>
+                        <span ng-if="data.newspaperMedias.newsMediasDetailList<1">暂时没有数据</span>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab heading="网媒头条" ng-click="getDefaultWebsite()">
+            <div class="calendar mt10 border_fixed">
+                <div class="calendar_head">
+                    <b>网媒头条</b>
+                    <p class="timeRange" ng-repeat="time in status.newspaperChooseTime" ng-bind="time.timeName" ng-click="timeChoose(time,'website')" ng-class="{'cur':status.time==time}"></p>
+                </div>
+                <div class="calendar_content  mheight420">
+                    <columnar-dir option-jsons="data.websiteMedias.charts" newspaperlist-detail="status.websiteMediasDetail" channel="'website'"></columnar-dir>
+                </div>
+            </div>
+            <div class="hot_head_line_big_table_calendar calendar">
+                <div class="calendar_head">
+                    <b ng-bind="data.websiteMedias.title"></b>
+                </div>
+                <div class="calendar_content hot_head_line_calendar">
+                    <div class="edit_table hot_head_line_hotspot_table">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>文章标题</th>
+                                    <th>来源</th>
+                                    <th>时间</th>
+                                    <th>生命力</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in data.websiteMedias.websiteMediasDetailList">
+                                    <td>{{$index+1}}</td>
+                                    <td class="hot_head_line_information">
+                                        <a target='_blank' ui-sref="planwebsitedetail({key:item.HKEY})" ng-bind-html="item.TITLE"></a>
+                                    </td>
+                                    <td>{{item.SOURCE}}</td>
+                                    <td>{{item.PUBTIME|date:'yyyy-MM-dd'}}</td>
+                                    <td>{{item.VITALITY}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--     <span class="hot_head_line_website_down_more" ng-click="pageChange('web')">
+                            <img src="./planningCenter/cueSelectedTopic/hotHeadLine/images/i1.png" ng-class="{'notAllow':data.websiteMedias.page.page_no>=data.websiteMedias.page.pagecount-1}"/>
+                        </span> -->
+                    </div>
+                </div>
+            </div>
+        </tab>
+    </tabset>
+</div>

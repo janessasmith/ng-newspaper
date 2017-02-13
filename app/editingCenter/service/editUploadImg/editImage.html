@@ -1,0 +1,31 @@
+<div class="multiImgsUploader-container">
+    <div class="multiImgsUploader-head">
+        <!-- <p>{{status.tilte}}</p> -->
+        <p>更换图片</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()" ng-show="!status.lockBtn">
+    </div>
+</div>
+<div class="multiImgsUploader-body">
+    <div class="uploadCon">
+        <div class="file-item thumbnail oneImage">
+            <div class="upload_div wu-example">
+                <img ng-src="{{status.uploadImg.src}}">
+                <div class="progress" ng-show="status.lockBtn">
+                    <span class="text" ng-bind="status.progress"></span>
+                    <span class="percentage" ng-style="{'width':status.progress}"></span>
+                </div>
+            </div>
+            <div class="uploadBtn" trs-upload auto="false" filetype="images" add-btn="true" call-back="callBack" src="/wcm/openapi/uploadImage">
+            </div>
+        </div>
+    </div>
+    <!-- <div class="progress" ng-show="status.showProgressBar">
+        <span class="text" ng-bind="status.percentage"></span>
+        <span class="percentage" ng-style="status.progressBarWidth"></span>
+    </div> -->
+</div>
+<div class="multiImgsUploader-footer">
+    <button class="btn btn-default gray" ng-click="close()" ng-disabled="status.lockBtn">取消</button>
+    <button class="btn btn-default blue" ng-click="finish()" ng-disabled="status.lockBtn">完成</button>
+</div>
+</div>

@@ -1,0 +1,59 @@
+<div class="zh-bh-qs"  ng-controller="weiboView">
+    <div class="wb-ls-con">
+        <div class="ls-con-dt lf">
+                <input type="text" style="display: block;width: 100px;float: left;line-height: 24px;" 
+                       uib-datepicker-popup="{{format}}" ng-model="startTime" 
+                       max-date="maxStartTime" min-date="minStartTime" is-open="status.startOpened" show-weeks="false" 
+                       show-button-bar="false" on-open-focus="false"/>
+                <span class="datelist" ng-click="startOpen($event)"></span>
+        </div>
+        <span class="lf" style="line-height:28px;margin-left:22px;">至</span>
+        <div class="ls-con-dt lf">
+            <input type="text" style="display: block;width: 100px;float: left;line-height: 24px;" 
+               uib-datepicker-popup="{{format}}" ng-model="endTime" 
+               max-date="maxEndTime" min-date="minEndTime" is-open="status.endOpened" show-weeks="false" 
+               show-button-bar="false" on-open-focus="false"/>                
+            <span class="datelist" ng-click="endOpen($event)"></span>
+        </div>
+        <div class="ls-con-rd lf">
+            <ul>
+                <li>
+                    <input name="rd-category" class="rad-bac" 
+                           type="radio" value="1"  ng-checked="true" ng-model="orderType">按日期
+                </li>
+                <li >
+                    <input name="rd-category" class="rad-bac" 
+                           type="radio" value="2" ng-model="orderType">按热度
+                </li>
+            </ul>
+        </div>
+                <div class="rt" ng-click="Search(countTime,dateId,readId,fowordId,commentId,search);">
+                    <!-- <input type="text" placeholder="请输入关键词" ng-model="search"/><span></span> -->
+                    <a href class="news-search-btn rt" ng-click="getcontent();">搜索</a>
+                </div>
+    </div>
+    <div class="wb-ls-deal">             
+        <div class="my_mdscon rw_my_mdsm" ng-repeat="weibolist in weibolists">
+            <div class="my_mdsm">
+                <div class="ls-con-tit">
+                    <p class="my-hish-tit lf"><a href >{{weibolist.content}}</p>
+                    
+                </div>
+                <div class="ls-con-tit">
+                    <div class="zf_imgb">
+                       
+                    </div>
+                    <div class="my_mdsr rw_my_mdsr">
+                        <p class="my_mdsr_dt lf"><span class="my_mdate">{{weibolist.crtime}}</span><span>社会新闻</span><span> > </span><span>{{weibolist.source}}</span></p>
+                        <ul class="ls-us-opt rt">
+                            <li class="new-read">{{weibolist.readNum}}</li>
+                            <li class="new-up">{{weibolist.likesNum}}</li>
+                            <li class="new-replay">{{weibolist.commentNum}}</li>
+                            <li class="new-trans no-br">{{weibolist.forwardNum}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

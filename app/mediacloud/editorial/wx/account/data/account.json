@@ -1,0 +1,60 @@
+{
+	"result": [{
+	"name":"蝴蝶",   
+        "wxid":"001",
+        "AppId":"10",
+        "AppSecret":"",
+        "description":"",
+        "wxType":"服务号",
+        "wxheadImg":"",
+        "groupId":1,
+        "fansNum":888,
+	"massageNum":3,
+	"noteNum":21
+	},
+        {
+        "name":"动感超人",   
+        "wxid":"001",
+        "AppId":"10",
+        "AppSecret":"",
+        "description":"",
+        "wxType":"测试号",
+        "wxheadImg":"",
+        "groupId":1,
+        "fansNum":1008,
+        "massageNum":3,
+        "noteNum":21
+        },
+        {
+        "name":"千钰",   
+        "wxid":"001",
+        "AppId":"10",
+        "AppSecret":"",
+        "description":"",
+        "wxType":"服务号",
+        "wxheadImg":"",
+        "groupId":1,
+        "fansNum":998,
+        "massageNum":3,
+        "noteNum":21
+        },
+        {
+	"name":"弦月",   
+        "wxid":"",
+        "AppId":"",
+        "AppSecret":"",
+        "description":"",
+        "wxType":"测试号",
+        "wxheadImg":"",
+        "groupId":1,
+        "fansNum":1000,
+	"massageNum":5,
+	"noteNum":13
+}],
+	"pageInfo": { 
+		"totalNum": 2, 
+		"pageSize": 1, 
+		"pageCount": 2, 
+		"pageIndex": 2 
+	}
+}

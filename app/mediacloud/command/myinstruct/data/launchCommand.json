@@ -1,0 +1,43 @@
+{
+    "DICTATEID": "2",
+    "TITLE": "重庆举行“人肉麻将”比赛",
+    "CONTENT":"2月1日，重庆一主题公园内，来自川渝两地的20位麻将爱好者举行了一场“人肉麻将”比赛。20位麻将爱好者被分成5组，指挥108位身穿麻将制服的工作人员“血战到底”。钟欣摄",
+    "TYPE":"1",
+    "OVERTIME":"2016-01-01 12:12:12",
+    "ISSECRET": "0",
+    "files":[
+        {"fileName":"xxxx.jpg","filePath":"common/images/new-pic.jpg"},
+        {"fileName":"xxxx.jpg","filePath":"common/images/new-pic.jpg"}
+    ],
+    "noRead":[
+        {
+            "userHead":"common/images/new-pic.jpg",
+            "userName":"张一"
+        },
+        {
+            "userHead":"common/images/new-pic.jpg",
+            "userName":"张二"
+        }
+    ],
+    "read":[
+        {
+            "userHead":"common/images/new-pic.jpg",
+            "userName":"张三"
+        },
+        {
+            "userHead":"common/images/new-pic.jpg",
+            "userName":"张四"
+        }
+    ],
+    "over":[
+        {
+            "userHead":"common/images/new-pic.jpg",
+            "userName":"张五"
+        },
+        {
+            "userHead":"common/images/new-pic.jpg",
+            "userName":"张六"
+        }
+    ]
+     
+}

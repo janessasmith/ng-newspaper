@@ -1,0 +1,60 @@
+<div class="modal-header">
+    <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+    <p class="modal-title">任务查看页</p>
+</div>
+<div class="modal-body mc-padding-0">
+    <div class="reportdetail">
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label>标题:</label>
+            </div>
+            <div class="col-sm-6">{{task.TITLE}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label>内容:</label>
+            </div>
+            <div class="col-sm-6">{{task.CONTENT}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label> 任务时间:</label>
+            </div>
+            <div class="col-sm-6">{{task.TASKTIME | limitTo:10}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label>任务地点:</label>
+            </div>
+            <div class="col-sm-6">{{task.TASKADDRESS}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 txt_r">
+                <label> 任务日志:</label>
+            </div>
+            <div class="col-sm-8">
+                <p ng-repeat="log in logs">
+                    <span>{{log.CRTIME}}</span>
+                    <span>{{log.OPERUSER}}</span>
+                    <span>{{taskstatus[log.OPERSTATUS]}}</span>
+                    <span ng-if="log.OPERSTATUS==12">{{log.CRUSER}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="row" ng-show="toRedirect">
+            <div class="col-sm-4 txt_r">
+                <label>转发到:</label>
+            </div>
+            <div class="col-sm-6">
+                <input type="text" ng-model="searchWord" class="form-control" placeholder="搜索人员姓名" bs-options="user as user.SUGGESTION||user.GNAME for user in getSuggestions($viewValue)" bs-typeahead limit: '30'>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="revice()" ng-if="task.TASKTYPE == 1 || task.TASKTYPE == 2" ng-hide="toRedirect">接受</button>
+    <button class="btn btn-primary" ng-click="redirect()" ng-if="task.TASKTYPE != 4" ng-hide="toRedirect">转发</button>
+    <button class="btn btn-primary" ng-click="close()" ng-if="task.TASKTYPE == 3 || task.TASKTYPE == 4" >确认</button>
+    <button class="btn btn-primary" ng-click="cancelRedirect()" ng-show="toRedirect">取消</button>
+    <button class="btn btn-primary" ng-click="doRedirect()" ng-show="toRedirect" ng-disabled="checkRedirect()">确认转发</button>
+</div>

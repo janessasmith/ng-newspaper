@@ -1,0 +1,21 @@
+<!--任务管理-->
+<div class="lh-bd-xl no-pd" ng-controller="reportViewManagementCtrl">
+    <div class="my-ck-jt">
+		<div class="cg-ls-top">
+		    <ul class="i-started-top">
+		        <li ui-sref-active="i-start-cur" class="i-start-cur" ui-sref="command.reportDetailedview.reportViewManagement.list({corpsId:corpsId,orderType:'upcoming'})">
+		        	<a href="javascript:;">待办</a>
+		        </li>
+		        <li ui-sref-active="i-start-cur" ui-sref="command.reportDetailedview.reportViewManagement.list(
+            {corpsId:corpsId,orderType:'over'})">
+		        	<a href="javascript:;">已完成</a>
+		        </li>
+		        <li ui-sref-active="i-start-cur" ui-sref="command.reportDetailedview.reportViewManagement.list(
+            {corpsId:corpsId,orderType:'myPublish'})">
+		        	<a href="javascript:;">我发布的任务</a>
+		        </li>
+		    </ul>
+		</div>
+		<div class="cg-main-ls" ui-view> </div>
+	</div>
+</div>

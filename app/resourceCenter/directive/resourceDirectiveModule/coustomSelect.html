@@ -1,0 +1,29 @@
+<div class="customselect">
+<div class="btn-group " dropdown on-toggle="toggled(open)">
+    <button type="button" class="btn btn-default bth-fix" ng-style="buttonwidth()" dropdown-toggle keyboard-nav>
+        <span ng-if="!selectcustom" class="btn-fix-title" value="{{selectedOption.value}}">{{label|| selectedOption.name}}</span>
+        <span ng-if="selectcustom" class="btn-fix-title" value="{{selectedOption.value}}">{{time.startdate || '不限' | date:'yyyy/MM/dd'}}-{{time.enddate ||'不限' | date:'yyyy/MM/dd'}}</span>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+        <li role="menuitem" ng-repeat="option in options track by $index" ng-click="setSelected(option)">
+            <a href="" title="{{option.name}}" ng-bind="option.name|trsLimitTo:10" value="{{option.value}}"></a>
+        </li>
+        <li role="menuitem" ng-click="selectCustomOption()">
+            <a href="" title="{{customOption.name}}" ng-bind="customOption.name" value="{{customOption.value}}"></a>
+        </li>
+    </ul>
+</div>
+
+    <div class="customarea" ng-if="showcustom">
+    <label>开始时间:</label>
+    <p class="customdatepicker" >
+        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="time.startdate" is-open="start.open" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions"   close-text="关闭" current-text="今天" clear-text="清空"ng-click="openStart()"/>
+    </p>
+    <label>结束时间:</label>
+    <p class="customdatepicker">
+        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="time.enddate" is-open="end.open" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions"   close-text="关闭" current-text="今天" clear-text="清空" ng-click="openEnd()" />
+    </p>
+    <button type="button" class="btn-sm btn btn-info pull-right mt10" ng-click="setCustomOption()">确定</button>
+    </div>
+</div>

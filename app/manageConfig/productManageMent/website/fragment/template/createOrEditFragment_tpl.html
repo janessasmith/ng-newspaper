@@ -1,0 +1,22 @@
+<form name="fragmentForm" novalidate>
+    <div class="website_fra_new">
+        <div class="website_fra_new_head">
+            <img src="./manageConfig/productManageMent/images/new5.png" alt="">
+            <span class="website_fra_new_head_span">{{operName}}碎片</span>
+        </div>
+        <div class="website_fra_new_content">
+            <div class="website_fra_new_content_newFragment invalidate-input-box  {{fragmentForm.widgetname.$invalid?'has-error':''}}">
+                <b>碎片名称：</b>
+                <input ng-model="widgetName" type="text" placeholder="碎片名称" maxlength-error-message="长度不能超过100个字符！" validator="maxlength=100,required" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA" name="widgetname" class="input-xlarge form-control">
+            </div>
+            <div class="textarea invalidate-input-box  fragmentForm.widgetcontent.$invalid?'has-error':''">
+                <textarea name="widgetcontent" ng-model="widgetContent" class="form-control" validator="required" ng-mouseenter="isShowTipsG=true" ng-mouseleave="isShowTipsG=false" is-show-tips="isShowTipsG">
+                </textarea>
+            </div>
+        </div>
+        <div class="website_fra_new_footer">
+            <button validation-submit="fragmentForm" class="news-role-btn man_produ_modify_footer_cancel btn_confirm" ng-click="confirm()">保存</button>
+            <button class="news-role-btn-success btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</form>

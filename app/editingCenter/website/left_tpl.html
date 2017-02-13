@@ -1,0 +1,91 @@
+<div class="container-fluid editing-list">
+    <div ng-click="status.isdownPicShow=!status.isdownPicShow" class="editing-pos">
+        <div class="editing-list-zjxw site_btn">
+            <img src="./editingCenter/app/images/w33.png" class="editing_list_zjxw_img" />
+            <span href="" title="{{status.selectedSite.SITENAME}}">{{status.selectedSite.SITENAME | trsLimitTo:12}}</span>
+        </div>
+        <div ng-if="status.sites.length>1"><img src="./editingCenter/app/images/l5-1.png" class='edit_mark' ng-show="!status.isdownPicShow">
+            <img src="./editingCenter/app/images/l5-2.png" class='edit_mark' ng-show="status.isdownPicShow"></div>
+        <div ng-show="status.isdownPicShow" class="editing-Sites_fa">
+            <div class="editing-Sites" ng-repeat="site in status.sites" ng-click="setWebSiteSelected(site)">
+                <span title="{{site.SITENAME}}"> {{site.SITENAME|trsLimitTo:12}}</span>
+                <img src="./editingCenter/app/images/l8.png" ng-show="site == status.selectedSite">
+            </div>
+        </div>
+    </div>
+    <tabset class="editing-downlist">
+        <tab heading="待编" class="icon-compiled pointer" active="status.waitcompiled.isSelected" ng-click="changeWebPlatform('waitcompiled')">
+            <div class="treeContent" trs-scrollbar>
+                <treecontrol selected-node="getSelectedNode()" class="tree-classic" on-node-toggle="queryNodeChildren(node)" tree-model="status['waitcompiled'].channels" options="status.channelTreeOptions">
+                    <span class="mySelect" ng-click="setWebSelectedChnl(node,'waitcompiled')" title="{{node.flag?node.CHANNELID:''}}">
+                <b ng-show="(node.flag||status.waitcompiled.selectedChnl==node)&&status.utilBtns['PREVIEW'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-preview" ng-click="websiteChannelPreview(node)" title="预览"></b> {{node.CHNLDESC}}</span>
+                    <b ng-show="(node.flag||status.waitcompiled.selectedChnl==node)&&status.utilBtns['SPECIAL'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-subject" ng-click="websiteVisualize(node)" title="专题"></b>
+                    <b ng-show="(node.flag||status.waitcompiled.selectedChnl==node)&&status.utilBtns['FILE'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-file" ng-click="websiteCloud(node,'waitcompiled')" title="文件夹"></b>
+                </treecontrol>
+            </div>
+            <accordion class="iwo_accordion website_accordion" close-others="false">
+                <accordion-group ng-if="status.websiteAccessAuthority.signtime!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'timingSign'==status.waitcompiled.selectedChnl}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/website/images/left_images/{{'timingSign'==status.waitcompiled.selectedChnl?'wl06-1.png':'wl06.png'}}" /></i>
+                        <a class="ml0" ng-click="setWebSelectedChnl('timingSign','waitcompiled')">管理定时签发</a>
+                    </accordion-heading>
+                </accordion-group>
+                <accordion-group is-disabled="true" ng-if="status.websiteAccessAuthority.recyclemgr!=undefined" ng-class="{'iWo-left-accordion-active':'recycle'==status.waitcompiled.selectedChnl}">
+                    <accordion-heading>
+                        <i><img class="editctr_website_waitcompiled_ml1" ng-src="./editingCenter/website/images/left_images/{{'recycle'==status.waitcompiled.selectedChnl?'wl07-1.png':'wl07.png'}}" /></i>
+                        <a class="ml0" ng-click="setWebSelectedChnl('recycle','waitcompiled')">管理废稿</a>
+                    </accordion-heading>
+                </accordion-group>
+            </accordion>
+        </tab>
+        <tab heading="待审" class="icon-pending pointer" active="status.pending.isSelected" ng-click="changeWebPlatform('pending')">
+            <div class="treeContent" trs-scrollbar>
+                <treecontrol selected-node="getSelectedNode()" class="tree-classic" on-node-toggle="queryNodeChildren(node)" tree-model="status['pending'].channels" options="status.channelTreeOptions">
+                    <span ng-click="setWebSelectedChnl(node,'pending')" class="mySelect" title="{{node.flag?node.CHANNELID:''}}">
+                        <!-- <b ng-mouseenter="treeEyes(node,true,$even)" ng-mouseleave="treeEyes(node,false,$even)" ng-show="node.flag" class="tree-branch-head" ng-class="[mouseEye()]" ng-click="websiteChannelPreview(node)"></b>  -->
+                        <b ng-show="(node.flag ||status.pending.selectedChnl==node)&&status.utilBtns['PREVIEW'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-preview"  ng-click="websiteChannelPreview(node)" title="预览"></b>
+                        <b ng-show="(node.flag ||status.pending.selectedChnl==node)&&status.utilBtns['SPECIAL'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-subject" ng-click="websiteVisualize(node)" title="专题"></b>
+                        <b ng-show="(node.flag||status.pending.selectedChnl==node)&&status.utilBtns['FILE'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-file" ng-click="websiteCloud(node,'pending')" title="文件夹"></b>
+                        {{node.CHNLDESC}}</span>
+                </treecontrol>
+            </div>
+            <accordion class="iwo_accordion website_accordion" close-others="false">
+                </accordion-group>
+                <accordion-group ng-if="status.websiteAccessAuthority.signtime!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'timingSign'==status.pending.selectedChnl}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/website/images/left_images/{{'timingSign'==status.pending.selectedChnl?'wl06-1.png':'wl06.png'}}" /></i>
+                        <a class="ml0" ng-click="setWebSelectedChnl('timingSign','pending')">管理定时签发</a>
+                    </accordion-heading>
+                </accordion-group>
+            </accordion>
+        </tab>
+        <tab heading="已签发" class="icon-signed pointer" active="status.signed.isSelected" ng-click="changeWebPlatform('signed')">
+            <div class="treeContent" trs-scrollbar>
+                <treecontrol class="tree-classic" on-node-toggle="queryNodeChildren(node)" tree-model="status['signed'].channels" selected-node="getSelectedNode()" on-selection="showSelected(node,'signed')" options="status.channelTreeOptions">
+                    <span class="mySelect" ng-click="setWebSelectedChnl(node,'signed')" title="{{node.flag?node.CHANNELID:''}}">
+                        <b ng-show="(node.flag ||status.signed.selectedChnl==node)&&status.utilBtns['PREVIEW'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-preview"  ng-click="websiteChannelPreview(node)" title="预览"></b> 
+                        <b ng-show="(node.flag ||status.signed.selectedChnl==node)&&status.utilBtns['SPECIAL'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-subject"  ng-click="websiteVisualize(node)" title="专题"></b>
+                        <b ng-show="(node.flag||status.signed.selectedChnl==node)&&status.utilBtns['FILE'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-file" ng-click="websiteCloud(node,'signed')" title="文件夹"></b>
+                        <b ng-if="(node.flag ||status.signed.selectedChnl==node)&&status.utilBtns['WIDGET'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-fragement" ng-click="websiteFragment(node)" title="碎片化"></b>
+                       {{node.CHNLDESC}} </span>
+                </treecontrol>
+            </div>
+            <accordion class="iwo_accordion website_accordion" close-others="false">
+                </accordion-heading>
+                </accordion-group>
+                <accordion-group ng-if="status.websiteAccessAuthority.create!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'batchGeneratingNews'==status.signed.selectedChnl}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/website/images/left_images/{{'batchGeneratingNews'==status.signed.selectedChnl?'wl04-1.png':'wl04.png'}}" /></i>
+                        <a class="ml0" ng-click="setWebSelectedChnl('batchGeneratingNews','signed')">批量生成新闻</a>
+                    </accordion-heading>
+                </accordion-group>
+                <accordion-group ng-if="status.websiteAccessAuthority.transfer!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'batchMoveNews'==status.signed.selectedChnl}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/website/images/left_images/{{'batchMoveNews'==status.signed.selectedChnl?'wl05-1.png':'wl05.png'}}" /></i>
+                        <a class="ml0" ng-click="setWebSelectedChnl('batchMoveNews','signed')">新闻批量转移</a>
+                    </accordion-heading>
+                </accordion-group>
+            </accordion>
+        </tab>
+    </tabset>
+</div>

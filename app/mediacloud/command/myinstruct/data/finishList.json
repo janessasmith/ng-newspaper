@@ -1,0 +1,40 @@
+ {
+    "result": [
+        {
+            "DICTATEID": "2",
+            "TITLE": "asides1",
+            "ISSECRET": "0"
+        },
+        {
+            "DICTATEID": "3",
+            "TITLE": "asides2",
+            "ISSECRET": "0"
+        },
+        {
+            "DICTATEID": "4",
+            "TITLE": "asides3",
+            "ISSECRET": "0"
+        },
+        {
+            "DICTATEID": "5",
+            "TITLE": "asides4",
+            "ISSECRET": "0"
+        },
+        {
+            "DICTATEID": "6",
+            "TITLE": "asides5",
+            "ISSECRET": "1"
+        },
+        {
+            "DICTATEID": "7",
+            "TITLE": "asides6",
+            "ISSECRET": "1"
+        }
+    ],
+    "pageInfo": {
+        "totalNum": 6,
+        "pageSize": 10,
+        "pageCount": 1,
+        "pageIndex": 1
+    }
+}

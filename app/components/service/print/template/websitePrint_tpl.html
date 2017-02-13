@@ -1,0 +1,56 @@
+<!-- 网站的打印模板 -->
+<printcontainer>
+    <div class="winPrint" ng-repeat="printItem in printItems track by $index" id="printPage{{$index}}" trs-finish-repeat>
+        <span class="print_Date_seconed">打印时间：{{date}}</span>
+        <div class="printTit" ng-bind="printItem.TITLE"></div>
+        <div class="printDesc">
+            <ul>
+                <li>
+                    <p>见报：{{printItem.PUBDATE}}</p>
+                    <p>第<span>&nbsp;&nbsp;&nbsp;</span>版</p>
+                    <p>版面：{{printItem.CHNLDESC}}</p>
+                    <p>序号：{{printItem.METADATAID}}</p>
+                </li>
+                <li>
+                    <p>正文：<span ng-bind="printItem.XIAOYANGFILE" ng-if="printItem.XIAOYANGFILE"></span></p>
+                    <p>字数：<span ng-if="printItem.DOCTYPEID!=4">{{printItem.DOCWORDSCOUNT}}</span></p>
+                    <p>行数：<span ng-if="printItem.DOCTYPEID!=4">{{parseHang(printItem.DOCWORDSCOUNT)}}</span></p>
+                </li>
+                <li>
+                    <p>图片：
+                        <p><span ng-bind="printItem.XIAOYANGGRAYIMGFILE" ng-if="printItem.XIAOYANGGRAYIMGFILE"></span>
+                            <br ng-if="printItem.XIAOYANGIMGFILE"><span ng-bind="printItem.XIAOYANGIMGFILE" ng-if="printItem.XIAOYANGIMGFILE"></span></p>
+                    </p>
+                </li>
+                <li>
+                    <p>流程：<span ng-repeat="version in printItem.VERSION">[{{version.CRTIME}}]{{version.ATTRIBUTE}}-{{version.OPERUSERNAME}}({{version.OPERATION}})</span></p>
+                </li>
+                <li>
+                    <p>备注：<span>{{printItem.REMARKS}}</span></p>
+                </li>
+            </ul>
+        </div>
+        <div class="printContent mt10">
+            <span class="win_print_shoulder" ng-if="printItem.LEADTITLE" ng-bind="printItem.LEADTITLE"></span>
+            <!-- <span class="win_print_shoulder" ng-if="printItem.MOVETITLE" ng-bind="printItem.MOVETITLE"></span> -->
+            <div class="printTit" ng-bind="printItem.TITLE"></div>
+            <span class="win_print_yinti" ng-if="printItem.SUBTITLE" ng-bind="printItem.SUBTITLE"></span>
+            <span class="printAuthor" ng-bind="printItem.AUTHOR"></span>
+        </div>
+        <div class="printContent mt10" ng-if="printItem.DOCTYPEID==2" ng-repeat="pic in printItem.DOC_PICTURELIST">
+            <img src="{{pic.PERPICURL|trsSceUrl}}">
+            <p ng-bind-html="pic.APPDESC|trsWrap"></p>
+        </div>
+        <p class="print_pic_all_desc" ng-if="printItem.DOCTYPEID=='2'">
+            <br>
+            <br> 图集说明：
+        </p>
+        <div class="print_editing_main mt10">
+            <p ng-bind-html="printItem.HTMLCONTENT" ng-if="printItem.HTMLCONTENT"></p>
+        </div>
+        <div class="print_editing_main mt10" ng-if="printItem.DOCTYPEID==4">
+            <p ng-bind="printItem.SRCURL" ng-if="printItem.DOCTYPEID==4"></p>
+        </div>
+        <div style="page-break-before:always;"></div>
+    </div>
+</printcontainer>

@@ -1,0 +1,392 @@
+.m_box_wrap {
+    margin: 10px;
+    border-top: 1px solid #d4d4d6;
+}
+
+.myManuSubmit .submit.full_wt {
+    width: 100%;
+}
+
+.resource-take-draft .modal-dialog {
+    width: 652px;
+    overflow: hidden;
+}
+
+.resource-take-draft .modal-content {
+    position: relative;
+    background-color: #fff;
+}
+
+.resource-take-draft .myManuSubmit .submit .footer button,
+.resource-take-draft .myManuSubmit .submit .footer button:hover {
+    border: none;
+}
+
+.resource-take-draft .take-draft-top {
+    line-height: 30px;
+    padding: 10px 0 0 10px;
+    background: #f1f2f6;
+}
+
+.resource-take-draft .take-draft-top span,
+.resource-take-draft .take-draft-top p,
+.resource-take-draft .take-draft-top input.form-control,
+.myManuSubmit_headline .take-draft-top input.form-control {
+    display: inline-block;
+}
+
+.resource-take-draft .take-draft-top span,
+.resource-take-draft .take-draft-top input.form-control,
+.myManuSubmit_headline .take-draft-top input.form-control {
+    color: #666;
+}
+
+.resource-take-draft .take-draft-top p {
+    width: 40%;
+    margin: 0;
+}
+
+.resource-take-draft .take-draft-top input.form-control,
+.myManuSubmit_headline .take-draft-top input.form-control {
+    width: 245px;
+    height: 26px;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    line-height: 8px;
+}
+
+
+/*标题后面加个“x”*/
+
+.resource-take-draft .take-draft-top-span .title-container span {
+    margin-left: -27px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.myManuSubmit_headline .take-draft-top-span .title-container .title-container_repeat span {
+    margin-left: -27px;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.myManuSubmit_headline .take-draft-top-span .title-container div.title-container_repeat {
+    float: left;
+    padding-top: 12px;
+    height: 50px;
+}
+
+.myManuSubmit_headline .take-draft-top .title-container p {
+    font-size: 14px!important;
+    margin: 15px 0 0 13px!important;
+}
+
+.myManuSubmit_headline {
+    height: 100%!important;
+}
+
+.myManuSubmit .submit .content .myManuSubmit_headline img.del {
+    right: -4px;
+    top: -9px;
+}
+
+.myManuSubmit .submit .content .myManuSubmit_headline img {
+    top: 20px;
+}
+
+.myManuSubmit .submit .content .headline img.active {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.myManuSubmit_headline .clear {
+    clear: both;
+}
+
+.myManuSubmit .content .moreList span.moreList_span_img {
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.resource-take-draft .content ul.nav li {
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+.resource-take-draft ul.nav {
+    padding-top: 15px;
+}
+
+.resource-take-draft .main_container {
+    height: 310px;
+    padding: 5px;
+}
+
+.resource-take-draft .main_container.main_container_iwo {
+    padding: 30px;
+}
+
+.resource-take-draft .main_container trs-single-radio span {
+    padding-top: 0;
+}
+
+.m_edit_labels li {
+    float: left;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 5px 30px 5px 8px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    color: #333;
+}
+
+.m_edit_labels li img {
+    position: absolute;
+    cursor: pointer;
+    top: 3px;
+    right: 3px;
+}
+
+.resource-take-draft .m_white_panel {
+    padding-left: 0;
+    padding-bottom: 0;
+    min-height: 67px;
+    overflow: hidden;
+}
+
+.resource-take-draft .take_draft_top_date {
+    height: 40px;
+    padding-top: 5px;
+}
+
+.resource-take-draft .take_draft_top_date input.form-control {
+    display: inline-block;
+    width: 240px;
+    height: 30px;
+}
+
+.resource-take-draft .take_draft_list_group {
+    padding-top: 10px;
+    height: 252px;
+}
+
+.resource-take-draft .take_draft_list_group > div {
+    border: 1px solid #ddd;
+    display: inline-block;
+    height: 100%;
+}
+
+.resource-take-draft .take_draft_list_group > div > p {
+    background: #f1f2f6;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.resource-take-draft .take_draft_list_group > div > ul {
+    height: 210px;
+    overflow-x: auto;
+}
+
+.resource-take-draft .take_draft_website_list > div ul li,
+.resource-take-draft .take_draft_list_group > div > ul li {
+    padding-left: 15px;
+    min-height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.resource-take-draft .take_draft_website_list > div ul li.active,
+.resource-take-draft .take_draft_website_list > div ul li:hover,
+.resource-take-draft .take_draft_list_group > div > ul li.active,
+.resource-take-draft .take_draft_list_group > div > ul li:hover {
+    background: #4496d2;
+    color: #fff;
+}
+.resource-take-draft .take_draft_weixin_list > div ul li.active,
+.resource-take-draft .take_draft_weixin_list > div ul li:hover,
+.resource-take-draft .take_draft_list_group > div > ul li.active,
+.resource-take-draft .take_draft_list_group > div > ul li:hover {
+    background: #4496d2;
+    color: #fff;
+}
+
+.resource-take-draft .take_draft_media_list,
+.resource-take-draft .take_draft_dieCi_list {
+    width: 170px;
+    margin-right: 10px;
+}
+
+.resource-take-draft .take_draft_media_list {}
+
+.resource-take-draft .take_draft_dieCi_list {}
+
+.resource-take-draft .take_draft_caiBian_list {
+    width: 254px;
+}
+
+.resource-take-draft .take_draft_website_list,
+.resource-take-draft .take_draft_channel_tree {
+    display: inline-block;
+}
+
+.resource-take-draft .take_draft_website_list {
+    width: 220px;
+    margin-right: 10px;
+}
+
+.resource-take-draft .take_draft_weixin_list {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.resource-take-draft .take_draft_weixin_list > div ul {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+}
+.resource-take-draft .take_draft_weixin_list > div.con,
+.resource-take-draft .take_draft_channel_tree > div.con {
+    border: 1px solid #ddd;
+    height: 270px;
+}
+
+.resource-take-draft .take_draft_weixin_list > div.header{
+    overflow: hidden;
+}
+.resource-take-draft .take_draft_weixin_list > div.header > p{
+    float: left;
+    width: 25%;
+}
+.resource-take-draft .take_draft_weixin_list > div.header>div.suggestion{
+    height: 40px;
+    overflow: hidden;
+}
+.resource-take-draft .take_draft_weixin_list > div ul li,
+.resource-take-draft .take_draft_list_group > div > ul li {
+    padding-left: 15px;
+    min-height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.resource-take-draft .take_draft_channel_tree {
+    width: 390px;
+    float: right;
+}
+
+.resource-take-draft .take_draft_website_list > div,
+.resource-take-draft .take_draft_channel_tree > div {
+    border: 1px solid #ddd;
+    height: 270px;
+}
+
+.resource-take-draft .take_draft_channel_tree > div {
+    overflow: auto;
+    padding-top: 10px;
+}
+
+.resource-take-draft .take_draft_channel_tree div.h33 {
+    height: 33px;
+    line-height: 33px;
+    display: block;
+    border: none;
+    padding: 0px;
+}
+
+.resource-take-draft .take_draft_channel_tree div.h33 input {
+    width: 80%;
+    height: 28px;
+    float: right;
+}
+
+.take_draft_weixin_list div.h33 input {
+    width: 85%;
+    height: 28px;
+    float: right;
+    margin-top:8px;
+}
+.myManuSubmit .take_draft_weixin_list .header p{
+    font-weight: normal;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
+.resource-take-draft .take_draft_website_list p,
+.resource-take-draft .take_draft_channel_tree p {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 0;
+}
+
+.resource-take-draft .take_draft_website_list > div ul {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+}
+
+.resource-take-draft .take-draft-top .title-container,
+.myManuSubmit_headline .take-draft-top .title-container {
+    position: relative;
+}
+
+.resource-take-draft .take-draft-top .title-container > img,
+.myManuSubmit_headline .take-draft-top .title-container > img {
+    cursor: pointer;
+}
+
+.resource-take-draft .take-draft-top .title-container > img.active,
+.myManuSubmit_headline .take-draft-top .title-container > img.active {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.resource-take-draft .take-draft-top .title-container .title-absolute-container,
+.myManuSubmit_headline .take-draft-top .title-container .title-absolute-container {
+    min-width: 315px;
+    position: absolute;
+    left: 250px;
+    top: 40px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+.resource-take-draft .take-draft-top .title-container .title-absolute-container ul {
+    list-style: none;
+}
+
+.resource-take-draft .take-draft-top .title-absolute-container ul > li {
+    background: url("./resourceCenter/images/i2.png") 0 10px no-repeat;
+    padding-left: 10px;
+}
+
+.resource-take-draft .take-draft-top .title-absolute-container ul > li > a {
+    color: #666;
+    font-size: 12px;
+}
+
+.resource-take-draft .take-draft-top .title-absolute-container ul > li > a:hover {
+    text-decoration: none;
+}
+
+.resource-take-draft .main_container_app .take_draft_appList {
+    padding-left: 15px;
+    line-height: 25px;
+    list-style: none;
+}

@@ -1,0 +1,333 @@
+<form name="allocationForm" novalidate>
+    <div trs-scroll-fix class="row edit_right_head">
+        <!-- 按钮待定-->
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-8">
+            <ol class="breadcrumb pull-right edit_breadcrumb">
+                <li>
+                    <span>产品管理</span>
+                    <span>报纸管理</span>
+                    <span>参数配置</span>
+                    <p class="font-color-red" ng-bind="SITEDESC|trsLimitTo:30"></p>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!--报刊名称-->
+    <div class="newspaper_fontsize">
+        报纸名称 ：{{SITEDESC}}
+    </div>
+    <!--飞腾配置-->
+    <div class="newspaper_management">
+        <div class="newspaper_management_tl">
+            飞腾配置
+        </div>
+        <div class="newspaper_management_dt newspaper_management_dt_col_md_2">
+            <div class="m_box_item col-md-12  ">
+                <div class="col-md-2 txt_l_fix">基本参数配置:</div>
+                <div class="col-md-10 checkbox_style">
+                    <div class="newspaper_management_checkbox ">
+                        <trs-checkbox ischecked="list.ISADDTITLEINXIAOYANG==true" ng-model="list.ISADDTITLEINXIAOYANG" callback="selectDoc('$scope.list.ISADDTITLEINXIAOYANG==true?$scope.list.ISADDTITLEINXIAOYANG=false:$scope.list.ISADDTITLEINXIAOYANG=true')"></trs-checkbox><span>标题排入正文</span>
+                    </div>
+                    <div class="newspaper_management_checkbox">
+                        <trs-checkbox ischecked="list.ISCREATEXIAOYANG==true" ng-model="list.ISCREATEXIAOYANG" callback="selectDoc('$scope.list.ISCREATEXIAOYANG==true?$scope.list.ISCREATEXIAOYANG=false:$scope.list.ISCREATEXIAOYANG=true')"></trs-checkbox><span>形成小样文件</span>
+                    </div>
+                    <!--    <div class="newspaper_management_checkbox">
+                    <trs-checkbox  callback="selectDoc()"></trs-checkbox><span>文件路径访问模式（共享）</span>
+                </div>
+                <div class="newspaper_management_checkbox">
+                    <trs-checkbox  callback="selectDoc()"></trs-checkbox><span>参加考核</span>
+                </div> -->
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 ">
+                <div class="col-md-2 txt_l_fix">版心文件目录:</div>
+                <div class="col-md-10 invalidate-input-box {{allocationForm.PAGETEMPLATEPATH.$invalid?'has-error':''}}">
+                    <input class="form-control md_lng" type="text" name="PAGETEMPLATEPATH" ng-model="list.PAGETEMPLATEPATH" placeholder="请输入版心文件目录" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" is-show-tips="isShowTipsB">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12">
+                <div class="col-md-2 txt_l_fix">小样文件目录: (Windows)</div>
+                <div class="col-md-10 invalidate-input-box {{allocationForm.XIAOYANGFILEPATH.$invalid?'has-error':''}}">
+                    <input class="form-control md_lng" type="text" ng-model="list.XIAOYANGFILEPATH" name="XIAOYANGFILEPATH" placeholder="请输入小样文件目录" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsC=true" ng-mouseleave="isShowTipsC=false" is-show-tips="isShowTipsC">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12">
+                <div class="col-md-2 txt_l_fix">小样文件路径:</div>
+                <div class="col-md-10 invalidate-input-box {{allocationForm.DaYangMonitorPathForWin.$invalid?'has-error':''}}">
+                    <input class="form-control md_lng" type="text" ng-model="list.XIAOYANGFILEPATHFORWIN" name="XiaoYangFilePathForWin" placeholder="请输入小样文件目录" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsR=true" ng-mouseleave="isShowTipsR=false" is-show-tips="isShowTipsR">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 mb35">
+                <div class="col-md-2 txt_l_fix">小样文件段首缩进:</div>
+                <div class="col-md-10">
+                    <trs-single-select selected-option="selectdTimeDefault" callback="queryByTimeType()" options="AllocationSelect" class="allocation-select"></trs-single-select>
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 pt35 newspaper_management_bd_top_1px">
+                <div class="col-md-2 txt_l_fix">飞腾副本备份路径:</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.FITFILEBAKPATH" name="FITFILEBAKPATH" placeholder="请输入副本备份路径" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsD=true" ng-mouseleave="isShowTipsD=false" is-show-tips="isShowTipsD">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 ">
+                <div class="col-md-2 txt_l_fix">飞腾文件路径:</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" name="FITFILEPATH" ng-model="list.FITFILEPATH" placeholder="请输入飞腾文件路径" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsF=true" ng-mouseleave="isShowTipsF=false" is-show-tips="isShowTipsF">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 ">
+                <div class="col-md-2 txt_l_fix">图片稿照排路径:(Windows)</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.COLORIMAGEXIAOYANGPATH" name="COLORIMAGEXIAOYANGPATH" placeholder="请输入图片稿照排路径" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsE=true" ng-mouseleave="isShowTipsE=false" is-show-tips="isShowTipsE">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 ">
+                <div class="col-md-2 txt_l_fix">彩色图片照排路径:</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.COLORIMAGEXIAOYANGPATHFORWIN" name="ColorImageXiaoYangPathForWin" placeholder="请输入图片稿照排路径" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsV=true" ng-mouseleave="isShowTipsV=false" is-show-tips="isShowTipsV">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 ">
+                <div class="col-md-2 txt_l_fix">灰色图片稿照排路径:(Windows)</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.GRAYIMAGEXIAOYANGPATH" name="GRAYIMAGEXIAOYANGPATH" placeholder="灰色图片稿照排路径" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsG=true" ng-mouseleave="isShowTipsG=false" is-show-tips="isShowTipsG">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 ">
+                <div class="col-md-2 txt_l_fix">灰色图片稿照排路径:</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.GRAYIMAGEXIAOYANGPATHFORWIN" name="GrayImageXiaoYangPathForWin" placeholder="灰色图片稿照排路径(Windows)" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsS=true" ng-mouseleave="isShowTipsS=false" is-show-tips="isShowTipsS">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 ">
+                <div class="col-md-2 txt_l_fix">畅流监控目录:</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.CHANGLIUMONITORPATH" name="CHANGLIUMONITORPATH" placeholder="请输入畅流监控目录路径" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsH=true" ng-mouseleave="isShowTipsH=false" is-show-tips="isShowTipsH">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12">
+                <div class="col-md-2 txt_l_fix">大样监控目录:(Windows)</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.DAYANGMONITORPATH" name="DAYANGMONITORPATH" placeholder="请输入大样监控路径" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsY=true" ng-mouseleave="isShowTipsY=false" is-show-tips="isShowTipsY">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12">
+                <div class="col-md-2 txt_l_fix">大样监控目录:</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.DAYANGMONITORPATHFORWIN" name="DaYangMonitorPathForWin" placeholder="请输入大样监控路径(Windows)" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsT=true" ng-mouseleave="isShowTipsT=false" is-show-tips="isShowTipsT">
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 mb32">
+                <div class="col-md-2 txt_l_fix">广告传版目录:</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.ADFILEPATH" name="ADFILEPATH" placeholder="请输入广告传版目录路径" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-blur="showError(true)" ng-mouseenter="isShowTipsI=true" ng-mouseleave="isShowTipsI=false" is-show-tips="isShowTipsI">
+                </div>
+            </div>
+            <!--复制选项-->
+            <div class="m_box_item col-md-12 newspaper_management_bd">
+                <div class="col-md-2 txt_l_fix">复制选项:</div>
+                <div class="col-md-10 checkbox_style">
+                    <div class="newspaper_management_checkbox mgr39">
+                        <trs-checkbox ischecked="list.ISCOPYPSTOCL==true" callback="selectDoc('$scope.list.ISCOPYPSTOCL==true?$scope.list.ISCOPYPSTOCL=false:$scope.list.ISCOPYPSTOCL=true')" ng-model="list.ISCOPYPSTOCL"></trs-checkbox><span>是否将PS文件复制到畅游监控目录</span>
+                    </div>
+                    <div class="newspaper_management_checkbox">
+                        <trs-checkbox ng-model="list.ISCOPYPDFTOCL" ischecked="list.ISCOPYPDFTOCL==true" callback="selectDoc('$scope.list.ISCOPYPDFTOCL==true?$scope.list.ISCOPYPDFTOCL=false:$scope.list.ISCOPYPDFTOCL=true')"></trs-checkbox><span>是否将PDF文件复制到畅游监控目录</span>
+                    </div>
+                    <div class="newspaper_management_checkbox">
+                        <trs-checkbox ng-model="list.ISCOPYVFTTOCL" ischecked="list.ISCOPYVFTTOCL==true" callback="selectDoc('$scope.list.ISCOPYVFTTOCL==true?$scope.list.ISCOPYVFTTOCL=false:$scope.list.ISCOPYVFTTOCL=true')"></trs-checkbox><span>是否将飞腾VTF复制到畅游监控目录</span>
+                    </div>
+                    <div class="newspaper_management_checkbox">
+                        <trs-checkbox ng-model="list.ISCOPYICONPICTOCL" ischecked="list.ISCOPYICONPICTOCL==true" callback="selectDoc('$scope.list.ISCOPYICONPICTOCL==true?$scope.list.ISCOPYICONPICTOCL=false:$scope.list.ISCOPYICONPICTOCL=true')"></trs-checkbox><span>是否将版面图标复制到畅游监控目录</span>
+                    </div>
+                    <div class="newspaper_management_checkbox">
+                        <trs-checkbox ng-model="list.ISCOPYBRIEFPICTOCL" ischecked="list.ISCOPYBRIEFPICTOCL==true" callback="selectDoc('$scope.list.ISCOPYBRIEFPICTOCL==true?$scope.list.ISCOPYBRIEFPICTOCL=false:$scope.list.ISCOPYBRIEFPICTOCL=true')"></trs-checkbox><span>是否将版面简图复制到畅游监控目录</span>
+                    </div>
+                    <div class="newspaper_management_checkbox">
+                        <trs-checkbox ng-model="list.ISCOPYACTUALPICTOCL" ischecked="list.ISCOPYACTUALPICTOCL==true" callback="selectDoc('$scope.list.ISCOPYACTUALPICTOCL==true?$scope.list.ISCOPYACTUALPICTOCL=false:$scope.list.ISCOPYACTUALPICTOCL=true')"></trs-checkbox><span>是否将版面真图复制到畅游监控目录</span>
+                    </div>
+                </div>
+            </div>
+            <!--生成文件选项-->
+            <div class="m_box_item col-md-12 ">
+                <div class="col-md-2 txt_l_fix">生成文件选项:</div>
+                <div class="col-md-10 checkbox_style">
+                    <div class="newspaper_management_checkbox">
+                        <trs-checkbox ng-model="list.ISCREATEPS" ischecked="list.ISCREATEPS==true" callback="selectDoc('$scope.list.ISCREATEPS==true?$scope.list.ISCREATEPS=false:$scope.list.ISCREATEPS=true')"></trs-checkbox><span>生成PS文件</span>
+                    </div>
+                    <div class="newspaper_management_checkbox">
+                        <trs-checkbox ng-model="list.ISCREATEPDF" ischecked="list.ISCREATEPDF==true" callback="selectDoc('$scope.list.ISCREATEPDF==true?$scope.list.ISCREATEPDF=false:$scope.list.ISCREATEPDF=true')"></trs-checkbox><span>生成PDF文件</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m_box_item col-md-12 mb32">
+                <div class="col-md-2 txt_l_fix">签发图片DPI:</div>
+                <div class="col-md-10 invalidate-input-box">
+                    <input class="form-control md_lng" type="text" ng-model="list.DPI" name="DPI" placeholder="请输入签发图片DPI" maxlength-error-message="长度不能超过10个字符！" validator="maxlength=10,number" ng-blur="showError(true)" ng-mouseenter="isShowTipsI=true" ng-mouseleave="isShowTipsI=false" is-show-tips="isShowTipsI">
+                </div>
+            </div>
+            <!--生成版面图标-->
+            <div class=" col-md-12 ">
+                <div class="col-md-2 txt_l_fix management_fix_padding">
+                    生成版面图标:
+                    <trs-checkbox ischecked="list.ISCREATEPAGEICONPIC==true" ng-model="list.ISCREATEPAGEICONPIC" callback="selectDoc('$scope.list.ISCREATEPAGEICONPIC==true?$scope.list.ISCREATEPAGEICONPIC=false:$scope.list.ISCREATEPAGEICONPIC=true')"></trs-checkbox>
+                </div>
+                <div class="col-md-10 management_fix_padding">
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">最大宽度:</div>
+                        <div clsas="col-md-10">
+                            <input class="form-control md_lng" type="text" ng-model="list.ICONPICINFO.MAXWIDTH" name="ICONPICINFO.MAXWIDTH" placeholder="请输入最大宽度" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number" ng-blur="showError(true)" ng-mouseenter="isShowTipsJ=true" ng-mouseleave="isShowTipsJ=false" is-show-tips="isShowTipsJ">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">最大高度:</div>
+                        <div clsas="col-md-10">
+                            <input class="form-control md_lng" type="text" ng-model="list.ICONPICINFO.MAXHEIGHT" name="ICONPICINFO.MAXHEIGHT" placeholder="请输入最大高度" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number" ng-blur="showError(true)" ng-mouseenter="isShowTipsK=true" ng-mouseleave="isShowTipsK=false" is-show-tips="isShowTipsK">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20">
+                        <div class="col-md-2 management_fix_height">图像质量:</div>
+                        <div clsas="col-md-10">
+                            <div class="newspaper_management_checkbox radio_style allocation_radio">
+                                <trs-single-radio ng-repeat="chooseImage in ICONPICINFO" label="{{chooseImage.desc}}" group="'ICONPICINFO'" ischecked="chooseImage.value==list.ICONPICINFO.QUALITY" callback="selectIcon(chooseImage)"></trs-single-radio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">打印分辨率:</div>
+                        <div clsas="col-md-10">
+                            <input class="form-control md_lng" type="text" ng-model="list.ICONPICINFO.DPI" name="ICONPICINFO.DPI" placeholder="请输入分辨率" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number" ng-blur="showError(true)" ng-mouseenter="isShowTipsL=true" ng-mouseleave="isShowTipsL=false" is-show-tips="isShowTipsL">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--生成版面简图-->
+            <div class=" col-md-12 ">
+                <div class="col-md-2 txt_l_fix management_fix_padding">
+                    生成版面简图:
+                    <trs-checkbox ischecked="list.ISCREATEPAGEBRIEFPIC==true" ng-model="list.ISCREATEPAGEBRIEFPIC" callback="selectDoc('$scope.list.ISCREATEPAGEBRIEFPIC==true?$scope.list.ISCREATEPAGEBRIEFPIC=false:$scope.list.ISCREATEPAGEBRIEFPIC=true')"></trs-checkbox>
+                </div>
+                <div class="col-md-10 management_fix_padding">
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">最大宽度:</div>
+                        <div clsas="col-md-10">
+                            <input class="form-control md_lng" type="text" ng-model="list.BRIEFPICINFO.MAXWIDTH" name="BRIEFPICINFO.MAXWIDTH" placeholder="请输入最大宽度" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsJ=true" ng-mouseleave="isShowTipsJ=false" is-show-tips="isShowTipsJ">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">最大高度:</div>
+                        <div clsas="col-md-10">
+                            <input class="form-control md_lng" type="text" ng-model="list.BRIEFPICINFO.MAXHEIGHT" name="BRIEFPICINFO.MAXHEIGHT" placeholder="请输入最大高度" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsK=true" ng-mouseleave="isShowTipsK=false" is-show-tips="isShowTipsK">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20">
+                        <div class="col-md-2 management_fix_height">图像质量:</div>
+                        <div clsas="col-md-10">
+                            <div class="newspaper_management_checkbox radio_style allocation_radio">
+                                <trs-single-radio ng-repeat="chooseImage in chooseImages" label="{{chooseImage.desc}}" group="'chooseImages'" ischecked="chooseImage.value==list.BRIEFPICINFO.QUALITY" callback="selectGenre(chooseImage)"></trs-single-radio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">打印分辨率:</div>
+                        <div clsas="col-md-10">
+                            <input class="form-control md_lng" type="text" ng-model="list.BRIEFPICINFO.DPI" name="BRIEFPICINFO.DPI" placeholder="请输入分辨率" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsL=true" ng-mouseleave="isShowTipsL=false" is-show-tips="isShowTipsL">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--生成版面真图-->
+            <div class=" col-md-12 ">
+                <div class="col-md-2 txt_l_fix management_fix_padding">
+                    生成版面真图:
+                    <trs-checkbox ischecked="list.ISCREATEPAGEACTUALPIC==true" ng-model="list.ISCREATEPAGEACTUALPIC" callback="selectDoc('$scope.list.ISCREATEPAGEACTUALPIC==true?$scope.list.ISCREATEPAGEACTUALPIC=false:$scope.list.ISCREATEPAGEACTUALPIC=true')"></trs-checkbox>
+                </div>
+                <div class="col-md-10 management_fix_padding">
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">最大宽度:</div>
+                        <div clsas="col-md-10">
+                            <input class="form-control md_lng" type="text" ng-model="list.ACTUALPICINFO.MAXWIDTH" name="ACTUALPICINFO.MAXWIDTH" placeholder="请输入最大高度" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsN=true" ng-mouseleave="isShowTipsN=false" is-show-tips="isShowTipsN">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">最大高度:</div>
+                        <div clsas="col-md-10 ">
+                            <input class="form-control md_lng" type="text" ng-model="list.ACTUALPICINFO.MAXHEIGHT" name="ACTUALPICINFO.MAXHEIGHT" placeholder="请输入最大高度" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsM=true" ng-mouseleave="isShowTipsM=false" is-show-tips="isShowTipsM">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20">
+                        <div class="col-md-2 management_fix_height">图像质量:</div>
+                        <div clsas="col-md-10 radio_style">
+                            <div class="newspaper_management_checkbox radio_style">
+                                <trs-single-radio ng-repeat="chooseImage in ACTUALPICINFO" label="{{chooseImage.desc}}" group="'ACTUALPICINFO'" ischecked="chooseImage.value==list.ACTUALPICINFO.QUALITY" callback="selectBM(chooseImage)"></trs-single-radio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb20 invalidate-input-box">
+                        <div class="col-md-2 management_fix_height">打印分辨率:</div>
+                        <div clsas="col-md-10">
+                            <input class="form-control md_lng" type="text" ng-model="list.ACTUALPICINFO.DPI" name="ACTUALPICINFO.DPI" placeholder="请输入分辨率" maxlength-error-message="长度不能超过5个字符！" validator="maxlength=5,number,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsO=true" ng-mouseleave="isShowTipsO=false" is-show-tips="isShowTipsO">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--编辑页面与签样-->
+            <div class=" col-md-12 newspaper_management_bd-top">
+                <div class="col-md-6 management_fix_padding">
+                    <div class="col-md-2 txt_l_fix management_fix_padding">版面编辑:</div>
+                    <div class="col-md-10">
+                        <div class="management_edit_tl" ng-click="add_edit()">添加版面编辑</div>
+                        <div class="management_edit_detail">
+                            <ul>
+                                <li ng-repeat="EDITORS in list.EDITORS">
+                                    {{EDITORS.NAME}}<i ng-click="remove_edit(EDITORS)"><img src="./manageConfig/images/bk3.png"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-2 txt_l_fix management_fix_padding">签样者:</div>
+                    <div class="col-md-10">
+                        <div class="management_edit_tl" ng-click="add_sign()">添加签样者</div>
+                        <div class="management_edit_detail">
+                            <ul>
+                                <li ng-repeat="SIGNUSES in list.SIGNUSES">
+                                    {{SIGNUSES.NAME}}<i ng-click="remove_edits(SIGNUSES)"><img src="./manageConfig/images/bk3.png"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 川报修改 -->
+            <div class="row newspaper_management_bd-top ">
+                <div class="col-md-6 management_fix_padding" style="margin-top:15px;">
+                    <div class="col-md-2 txt_l_fix management_fix_padding">授权版面:</div>
+                    <div class="col-md-10">
+                        <accordion class="resource_nav cb-authorized-wrap" close-others="false">
+                            <div>
+                                <accordion-group ng-repeat="authorizedItem in cbList.authorizedItems" ng-mouseenter="authorizedCur=authorizedItem" ng-mouseleave="authorizedCur=''">
+                                    <accordion-heading>
+                                        <span>{{authorizedItem.CHNLDESC}}</span>
+                                        <span class="management_edit_tl" style="position:absolute;right:10px;top:4px;font-size:14px;" ng-click="add_author($index)" ng-show="authorizedCur==authorizedItem">添加版面编辑
+                                        </span>
+                                    </accordion-heading>
+                                    <div ng-repeat="subAnthorItem in cbList.authorizedItems[$index].ZHUBANSET" >
+                                        {{subAnthorItem.name}}
+                                        <i ng-click="remove_author(subAnthorItem,$parent.$index)">
+                                            <img src="./manageConfig/images/bk3.png">
+                                        </i>
+                                    </div>
+                                </accordion-group>
+                            </div>
+                        </accordion>
+                    </div>
+                </div>
+            </div>
+            <div class="management_edit_button">
+                <button>取消</button>
+                <button ng-click="save()">保存</button>
+            </div>
+        </div>
+    </div>
+</form>

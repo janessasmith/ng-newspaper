@@ -1,0 +1,87 @@
+<div class="row summary summary_top">
+    <div class="col-md-6">
+        <button class="btn btn-default btn-commen" ng-click="deleteSelectedTopic()">
+            <span class="s_icon"><i class="fa fa-trash"></i></span> 撤回精选话题
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="deleteSelectedReports()">
+            <span class="s_icon"><i class="fa fa-trash"></i></span> 撤回精选报题
+        </button>
+    </div>
+    <div class="col-md-6 txt_r">
+        <trs-single-select label="选择部门" options="vm.depts" callback="searchWithDept()" selected-option="vm.dept" ng-if="vm.dept.length>0"></trs-single-select>
+        <input type="text" size="12" class="form-control searchInput" ng-model="vm.search.date" data-autoclose="1" placeholder="日期" date-format="yyyy-MM-dd" bs-datepicker>
+        <button class="btn btn-default btn_edit_search mc-margin-left-xs" type="button" ng-click="fullTextSearch()">搜索</button>
+    </div>
+</div>
+<div class="row mc-margin-bottom-xs plansummary">
+    <div class="col-md-12">
+        <div class="hot_search_time ">
+            <div class="hot_sarch_list" ng-repeat="time in vm.time track by $index">
+                <a href="" ng-click="listSearchTime(time)">
+                    <span ng-class="{'active':time.dftStr==vm.search.datestr}">{{time.text}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mc-margin-0">
+    <div class="reportsummary col-sm-9 ">
+        <div class="topic-reports" ng-repeat="topic in vm.topics">
+            <div class="topictitle clickable" ng-click="getReportList(topic)">
+                <span><i class="fa fa-lg" ng-class="{true:'fa-angle-down',false:'fa-angle-right'}[topic.isexpanded]"></i>({{topic.DEPARTNAME}}){{topic.CONTENT}}</span>
+            </div>
+            <div class="panel-collapse am-collapse" ng-show="topic.isexpanded">
+                <div class="topic">
+                    <div class="topicbar">
+                        <span>{{topic.CRTIME}} </span> <span class="pull-right"><i class="icon glyphicon glyphicon-comment"></i>精选数: 
+                    {{topic.reports.length}}</span>
+                    </div>
+                    <div class="topicdetail">
+                        <div class="topicremark" ng-bind-html="topic.REMARK"></div>
+                    </div>
+                </div>
+                <div class="report " ng-repeat="report in topic.reports">
+                    <div class="reportbar">
+                        <span class="floor" ng-class="{'active':report.ischecked}" ng-click="toggleReport(report,topic)"><i class="fa fa-star starmark" ng-if="report.REPORTTYPE==1"></i> {{$index+1}}#</span>
+                        <span class="username">{{report.CRUSER}}</span>
+                        <span>发表于:{{report.CRTIME}}</span>
+                        <span class="pull-right mc-margin-right-sm clickable" ng-hide="report.editing" ng-click="toRemarkReport(report)"><i class="fa fa-pencil fa-primary"></i> 记录</span>
+                        <span class="pull-right mc-margin-right-sm clickable" ng-show="report.editing" ng-click="remarkReport(report)"><i class="fa fa-pencil fa-primary"></i> 保存</span>
+                    </div>
+                    <div class="reportdetail">
+                        <div class="reportcontent">
+                            <div class="row">
+                                <div class="shortlabel">标题:</div>
+                                <div class="longtext" ng-bind="report.STATEMENT"></div>
+                            </div>
+                            <div class="row">
+                                <div class="shortlabel">关键字:</div>
+                                <div class="longtext clickable" ng-click="selectKeywords(report)">
+                                    <span class="kwtag" ng-repeat="keyword in report.KEYWORDS" ng-bind="keyword.name"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="shortlabel">报题:</div>
+                                <div class="longtext" ng-bind-html="preFix(report.SELECTEDCONTENT)|| report.CONTENT"></div>
+                            </div>
+                        </div>
+                        <div class="" ng-hide="report.editing">
+                            <div class="record row">
+                                <div class="shortlabel">记录:</div>
+                                <div class="longtext" ng-bind-html="preFix(report.REMARK)">
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-show="report.editing">
+                            <textarea ng-model="report.remark"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 dailyselection bigFaceDetailRigth">
+        <plancenter-moreinfos  content="vm.keywords"></plancenter-moreinfos>
+    </div>
+</div>
+</script>

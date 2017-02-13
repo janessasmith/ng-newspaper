@@ -1,0 +1,87 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-8">
+        <button class="btn btn-default btn-commen" ng-disabled="selectedArray.length==0" ng-click="collect()">
+            <span class="s_icon"><img src="./editingCenter/app/images/b5.png" /></span> 收藏
+        </button>
+    </div>
+    <div class="col-md-4 col-lg-4">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <trs-nav-location></trs-nav-location>
+            ><span style="padding-left: 5px; cursor: not-allowed">焦点图管理</span>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-8">
+        <span class="s_onlyme">只看我的</span>
+        <trs-radio ckstatus="onlyMine" ckcallback="isOnlyMine()"></trs-radio>
+        <label for="checkbox_c1"></label>
+        <trs-single-select selected-option="docType" callback="queryByDocStatus()" options="docTypeJsons"></trs-single-select>
+        <trs-single-select selected-option="timeType" callback="queryByTimeType()" options="timeTypeJsons"></trs-single-select>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button">搜索</button>
+          </span>
+        </div>
+    </div>
+</div>
+<div class="edit_table">
+    <table class="table table-striped data-table black-box">
+        <thead>
+            <tr>
+                <th class="td-number">排序</th>
+                <th class="td-check xcol-icon">
+                    <trs-checkbox ischecked="selectedArray.length==items.length" callback="selectAll()"></trs-checkbox>全选</th>
+                <th class="td-number">序号</th>
+                <th>标题</th>
+                <th class="xcol-newspaper-date">流程版本时间</th>
+                <th class="xcol-newspaper-releaseBuild">创建人</th>
+                <th class="xcol-newspaper-type">类型</th>
+                <th class="xcol-newspaper-state">状态</th>
+                <th class="xcol-newspaper-operation">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td>
+                    <img ng-show="item.IMGSTATUS=='1'&&!(items[$index+1].IMGSTATUS=='1')" src="./editingCenter/app/images/jd-xh.png">
+                    <img ng-show="item.IMGSTATUS=='1'&&items[$index+1].IMGSTATUS=='1'" ng-click="downImg(item.DOCFOCUSIMGRELID,$index)" src="./editingCenter/app/images/jd-x.png">
+                    <img ng-show="item.IMGSTATUS=='1'&&$index!=0" ng-click="upImg(item.DOCFOCUSIMGRELID,$index)" src="./editingCenter/app/images/jd-s.png">
+                    <img ng-show="item.IMGSTATUS=='1'&&$index==0" src="./editingCenter/app/images/jd-xh2.png">
+                </td>
+                <!--排序-->
+                <td class="td-check">
+                    <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <!--全选-->
+                <td ng-bind="$index+1"></td>
+                <!--序号-->
+                <td class="ta-l"><a title="{{item.METADATAID}}" ui-sref="{{previewPath[item.DOCTYPEID-1]}}({channelid:channelid,metaDataId:item.METADATAID,siteid:siteid})" target="_blank">{{item.TITLE}}</a></td>
+                <!--标题-->
+                <td ng-bind="item.FLOWVERSIONTIME"></td>
+                <!--流程版本时间-->
+                <td ng-bind="item.CRUSER"></td>
+                <!--创建人-->
+                <td ng-bind="item.DOCTYPE" class="hidden-operate"></td>
+                <!--类型-->
+                <td ng-bind="item.IMGSTATUSDESC" ng-class={ "red":isRed, "bule":isBlue}></td>
+                <!--状态-->
+                <td>
+                    <img src="./editingCenter/app/images/jd1.png" ng-show="item.IMGSTATUS=='1'" ng-click="undercarriage(item)"> <span ng-show="item.IMGSTATUS=='1'" ng-click="undercarriage(item)"><a href="javascript:void(0)">下架</a></span>
+                    <img src="./editingCenter/app/images/jd2.png" ng-show="item.IMGSTATUS!='1'" ng-click="grounding(item)"> <span ng-show="item.IMGSTATUS!='1'" ng-click="grounding(item)"><a href="javascript:void(0)">上架</a></span>
+                    <img src="./editingCenter/app/images/r1.png"> <span> <a ui-sref="{{urlPath[item.DOCTYPEID-1]}}({channelid:channelid,metaDataId:item.METADATAID,siteid:siteid})" target="_blank">编辑</a></span>
+                    <img src="./editingCenter/app/images/jd3.png" ng-show="item.IMGSTATUS!='1'"> <span ng-show="item.IMGSTATUS!='1'" ng-click="retraction(item.RECID)"><a href="javascript:void(0)">撤稿</a></span>
+                </td>
+                <!--操作-->
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="copyCurrPage"></trs-pagenation-right>
+    </div>
+</div>

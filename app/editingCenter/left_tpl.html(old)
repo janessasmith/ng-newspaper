@@ -1,0 +1,409 @@
+<div class="container-fluid editing-list">
+    <tabset justified="true" class="editing-nav">
+        <i class="unread-icon pos-abs iwo-unread-icon-pos" ng-if="isUnreadIconShow"></i>
+        <tab heading="我" class="editing-nav-iwo pointer" active="status.tab.iWo.isTabSelect" ng-click="setTabSelected('iWo')">
+            <accordion class="iwo_accordion iwo_accordion_new" close-others="false">
+                <accordion-group is-open="status.iWo.isMyManuscriptShow">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/iWo/images/{{'personalManuscript'==status.iWo.selectedItem||'receivedManuscript'==status.iWo.selectedItem||'manuscriptArchives'==status.iWo.selectedItem?'i1-1.png':'i1.png'}}" class="fixed_align" /></i>
+                        <a class="ml0" ng-class="{'font_color':('personalManuscript'==status.iWo.selectedItem||'receivedManuscript'==status.iWo.selectedItem||'manuscriptArchives'==status.iWo.selectedItem)}">我的稿件</a>
+                    </accordion-heading>
+                    <ul>
+                        <li ng-if="status.iWo.iwoAccessAuthority.PERSONALMANUSCRIPT==='true'" ng-class="{'iWo-left-li-active':'personalManuscript'==status.iWo.selectedItem}" ng-click="setIWoSelectedChnl('personalManuscript')">
+                            <i><img ng-src="./editingCenter/iWo/images/{{'personalManuscript'==status.iWo.selectedItem?'i2-1.png':'i2.png'}}" /></i>
+                            <a ui-sref="editctr.iWo.personalManuscript" ui-sref-opts="{reload :'editctr.iWo.personalManuscript'}">个人稿库</a>
+                        </li>
+                        <li ng-if="status.iWo.iwoAccessAuthority.RECEIVEDMANUSCRIPT==='true'" ng-class="{'iWo-left-li-active':'receivedManuscript'==status.iWo.selectedItem}" ng-click="setIWoSelectedChnl('receivedManuscript')">
+                            <i><img ng-src="./editingCenter/iWo/images/{{'receivedManuscript'==status.iWo.selectedItem?'i3-1.png':'i3.png'}}" /></i>
+                            <a ui-sref="editctr.iWo.receivedManuscript" ui-sref-opts="{reload :'editctr.iWo.receivedManuscript'}">已收稿库</a>
+                            <i class="unread-icon pos-abs rcv-manu-unread-icon-pos" ng-if="isUnreadIconShow"></i>
+                        </li>
+                        <li ng-if="status.iWo.iwoAccessAuthority.MANUSCRIPTARCHIVES==='true'" ng-class="{'iWo-left-li-active':'manuscriptArchives'==status.iWo.selectedItem}" ng-click="setIWoSelectedChnl('manuscriptArchives')">
+                            <i><img ng-src="./editingCenter/iWo/images/{{'manuscriptArchives'==status.iWo.selectedItem?'i4-1.png':'i4.png'}}" /></i>
+                            <a ui-sref="editctr.iWo.manuscriptArchives" ui-sref-opts="{reload :'editctr.iWo.manuscriptArchives'}">稿件档案</a>
+                        </li>
+                    </ul>
+                </accordion-group>
+                <div ng-if="status.iWo.iwoAccessAuthority.FUSIONPENDING==='true'" class="iWo-left-div" ng-class="{'iWo-left-accordion-active':'fusionPending'==status.iWo.selectedItem}">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'fusionPending'==status.iWo.selectedItem?'i5-1.png':'i5.png'}}" /></i>
+                    <a class="ml0" ui-sref="editctr.iWo.fusionPending" ng-click="setIWoSelectedChnl('fusionPending')" ui-sref-opts="{reload :'editctr.iWo.fusionPending'}">融合待编</a>
+                </div>
+                <div ng-if="status.iWo.iwoAccessAuthority.FUSIONSIGN==='true'" class="iWo-left-div" ng-class="{'iWo-left-accordion-active':'fusionSign'==status.iWo.selectedItem}">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'fusionSign'==status.iWo.selectedItem?'i6-1.png':'i6.png'}}" /></i>
+                    <a class="ml0" ui-sref="editctr.iWo.fusionSign" ng-click="setIWoSelectedChnl('fusionSign')" ui-sref-opts="{reload :'editctr.iWo.fusionSign'}">融合审签</a>
+                </div>
+                <div ng-if="status.iWo.iwoAccessAuthority.PRIVILEGEDRAFT==='true'" class="iWo-left-div" ng-class="{'iWo-left-accordion-active':'privilegeDraft'==status.iWo.selectedItem}" ng-show="status.iWo.iwoAccessAuthority.PRIVILEGEDRAFT === 'true'">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'privilegeDraft'==status.iWo.selectedItem?'i7-1.png':'i7.png'}}" /></i>
+                    <a class="ml0" ui-sref="editctr.iWo.privilegeDraft" ng-click="setIWoSelectedChnl('privilegeDraft')" ui-sref-opts="{reload :'editctr.iWo.privilegeDraft'}">特权取稿</a>
+                </div>
+                <accordion-group is-open="status.iWo.isUsualOpened">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/iWo/images/{{status.iWo.isUsualOpened?'i8-1.png':'i8.png'}}" class="fixed_align"/></i>
+                        <a class="ml0">常用资源</a>
+                    </accordion-heading>
+                    <ul>
+                        <!--  <li ng-click="setIWoSelectedChnl('shareInventory')" ng-class="{'iWo-left-li-active':'shareInventory'==status.iWo.selectedItem}">
+                            <i><img ng-src="./editingCenter/iWo/images/{{'shareInventory'==status.iWo.selectedItem?'i9-1.png':'i9.png'}}" /></i>
+                            <a ui-sref="editctr.iWo.shareInventory">共享稿库</a>
+                        </li>
+                        <li ng-click="setIWoSelectedChnl('xinHuaManuscript')" ng-class="{'iWo-left-li-active':'xinHuaManuscript'==status.iWo.selectedItem}">
+                            <i><img ng-src="./editingCenter/iWo/images/{{'xinHuaManuscript'==status.iWo.selectedItem?'i10-1.png':'i10.png'}}" /></i>
+                            <a ui-sref="editctr.iWo.xinHuaManuscript">新华社稿</a>
+                        </li> -->
+                        <li ng-repeat="item in status.iWo.customItems" ng-click="setIWoSelectedChnl(item)" ng-class="{'iWo-left-li-active':item.CUSTOMID==status.iWo.selectedItem.CUSTOMID}">
+                            <i>
+                                <img ng-src="./editingCenter/app/images/{{item.CUSTOMID==status.iWo.selectedItem.CUSTOMID?'l11-1.png':'l11.png'}}" ng-show="item.ISSPECIAL=='0'"/>
+                                <img ng-src="./editingCenter/app/images/{{item.CUSTOMID==status.iWo.selectedItem.CUSTOMID?'ad-c1.png':'ad-c.png'}}" ng-show="item.ISSPECIAL=='1'"/>
+                            </i>
+                            <a ng-click="iwoCustomRouter(item)" ng-bind="item.CUSTOM"></a>
+                            <!-- <a ui-sref="editctr.iWo.emaildraft({customid:iteH.CUSTOMID,customtype:item.CUSTOMTYPE,path:item.PATH,mycustomid:item.MYCUSTOMID})" ui-sref-opts="{reload:'editctr.iWo.emaildraft'}" ng-bind="item.CUSTOM"></a> -->
+                        </li>
+                        <li ng-click="setIWoSelectedChnl('personalmaterial')" ng-class="{'iWo-left-li-active':'personalmaterial'==status.iWo.selectedItem}">
+                            <i><img ng-src="./editingCenter/iWo/images/{{'personalmaterial'==status.iWo.selectedItem?'i12-1.png':'i12.png'}}" /></i>
+                            <a ui-sref="editctr.iWo.personalmaterial" ui-sref-opts="{reload :'editctr.iWo.personalmaterial'}">个人素材</a>
+                        </li>
+                        <li ng-if="status.iWo.iwoAccessAuthority.MANUSCRIPTCOLLECTION==='true'" ng-click="setIWoSelectedChnl('manuscriptCollection')" ng-class="{'iWo-left-li-active':'manuscriptCollection'==status.iWo.selectedItem}">
+                            <i><img ng-src="./editingCenter/iWo/images/{{'manuscriptCollection'==status.iWo.selectedItem?'i13-1.png':'i13.png'}}" /></i>
+                            <a ui-sref="editctr.iWo.manuscriptCollection" ui-sref-opts="{reload :'editctr.iWo.manuscriptCollection'}">稿件收藏</a>
+                        </li>
+                    </ul>
+                </accordion-group>
+                <div ng-if="status.iWo.iwoAccessAuthority.DRAFTBOX==='true'" class="iWo-left-div" ng-class="{'iWo-left-accordion-active':'draftBox'==status.iWo.selectedItem}">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'draftBox'==status.iWo.selectedItem?'i14-1.png':'i14.png'}}" /></i>
+                    <a class="ml0" ui-sref="editctr.iWo.draftBox" ng-click="setIWoSelectedChnl('draftBox')" ui-sref-opts="{reload :'editctr.iWo.draftBox'}">废稿箱</a>
+                </div>
+            </accordion>
+        </tab>
+        <tab heading="报纸" ng-if="hasRight('newspaper')" class="editing-nav-newspaper pointer" active="status.tab.newspaper.isTabSelect" ng-click="setTabSelected('newspaper')">
+            <div ng-click="status.newspaper.isdownPicShow=!status.newspaper.isdownPicShow" class="editing-pos">
+                <div class="editing-news-list-zjxw site_btn"><img src="editingCenter/app/images/w33.png" class="editing_list_zjxw_img" /><span ng-bind="status.newspaper.selectedSite.SITEDESC | trsLimitTo:8" title="{{status.newspaper.selectedSite.SITEDESC}}"></span></div>
+                <div ng-if="status.newspaper.sites.length>1"><img src="./editingCenter/app/images/l5-1.png" class='edit_mark' ng-show="!status.newspaper.isdownPicShow">
+                    <img src="./editingCenter/app/images/l5-2.png" class='edit_mark' ng-show="status.newspaper.isdownPicShow"></div>
+                <div ng-show="status.newspaper.isdownPicShow" class="editing-Sites_fa">
+                    <div class="editing-Sites" ng-repeat="site in status.newspaper.sites" ng-click="setPaperSiteSelected(site)">{{site.SITEDESC| trsLimitTo:8}}
+                        <img src="./editingCenter/app/images/l8.png" ng-show="site == status.newspaper.selectedSite">
+                    </div>
+                </div>
+            </div>
+            <accordion class="iwo_accordion newspaper_active" close-others="false">
+                <!-- <accordion-group ng-if="status.newspaper.paperAccessAuthority['DAIYONG']=='true'&&status.newspaper.multiShenHe=='1'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'standbyDraft'==status.newspaper.selectedItem}"> -->
+                <accordion-group ng-if="status.newspaper.paperAccessAuthority['DAIYONG']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'standbyDraft'==status.newspaper.selectedItem}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'standbyDraft'==status.newspaper.selectedItem?'nl01-1.png':'nl01.png'}}" class="editctr_newspaper_title_image"/></i>
+                        <a class="ml0" ui-sref="editctr.newspaper.standbyDraft({paperid:status.newspaper.selectedSite.SITEID})" ng-click="setNewspaperSelectedChnl('standbyDraft')" ui-sref-opts="{reload :'editctr.newspaper.standbyDraft'}">待用稿</a>
+                    </accordion-heading>
+                </accordion-group>
+                <!-- <accordion-group ng-if="status.newspaper.paperAccessAuthority['JINRI']=='true'&&status.newspaper.multiShenHe=='1'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'todaysDraft'==status.newspaper.selectedItem}"> -->
+                <accordion-group ng-if="status.newspaper.paperAccessAuthority['JINRI']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'todaysDraft'==status.newspaper.selectedItem}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'todaysDraft'==status.newspaper.selectedItem?'nl02-1.png':'nl02.png'}}" class="editctr_newspaper_title_image"/></i>
+                        <a class="ml0" ui-sref="editctr.newspaper.todaysDraft({paperid:status.newspaper.selectedSite.SITEID})" ui-sref-opts="{reload :'editctr.newspaper.todaysDraft'}" ng-click="setNewspaperSelectedChnl('todaysDraft')">今日稿</a>
+                    </accordion-heading>
+                </accordion-group>
+                <accordion-group ng-if="status.newspaper.paperAccessAuthority['SHANGBAN']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'pageDraft'==status.newspaper.selectedItem}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'pageDraft'==status.newspaper.selectedItem?'nl03-1.png':'nl03.png'}}" class="editctr_newspaper_title_image"/></i>
+                        <a class="ml0" ui-sref="editctr.newspaper.pageDraft({paperid:status.newspaper.selectedSite.SITEID,iszhaopai:status.newspaper.selectedSite.ISZHAOPAI})" ui-sref-opts="{reload :'editctr.newspaper.pageDraft'}" ng-click="setNewspaperSelectedChnl('pageDraft')">上版稿</a>
+                    </accordion-heading>
+                </accordion-group>
+                <accordion-group ng-if="status.newspaper.paperAccessAuthority['YIQIAN']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'signedDraft'==status.newspaper.selectedItem}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'signedDraft'==status.newspaper.selectedItem?'nl04-1.png':'nl04.png'}}" class="editctr_newspaper_title_image"/></i>
+                        <a class="ml0" ui-sref="editctr.newspaper.signedDraft({paperid:status.newspaper.selectedSite.SITEID,iszhaopai:status.newspaper.selectedSite.ISZHAOPAI})" ng-click="setNewspaperSelectedChnl('signedDraft')" ui-sref-opts="{reload :'editctr.newspaper.signedDraft'}">已签稿</a>
+                    </accordion-heading>
+                </accordion-group>
+                <accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':'archiveDraft'==status.newspaper.selectedItem}" ng-if="status.newspaper.paperAccessAuthority['GUIDANG']=='true'">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'archiveDraft'==status.newspaper.selectedItem?'nl05-1.png':'nl05.png'}}" class="editctr_newspaper_title_image"/></i>
+                        <a class="ml0" ui-sref="editctr.newspaper.archiveDraft({paperid:status.newspaper.selectedSite.SITEID})" ng-click="setNewspaperSelectedChnl('archiveDraft')" ui-sref-opts="{reload :'editctr.newspaper.archiveDraft'}">归档稿</a>
+                    </accordion-heading>
+                </accordion-group>
+                <accordion-group ng-if="status.newspaper.paperAccessAuthority['DAYANGSHENYUE']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'sampleReview'==status.newspaper.selectedItem}">
+                    <accordion-heading>
+                        <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'sampleReview'==status.newspaper.selectedItem?'nl06-1.png':'nl06.png'}}" class="editctr_newspaper_title_image"/></i>
+                        <a class="ml0" ui-sref="editctr.newspaper.sampleReview({paperid:status.newspaper.selectedSite.SITEID})" ng-click="setNewspaperSelectedChnl('sampleReview')" ui-sref-opts="{reload :'editctr.newspaper.sampleReview'}">大样审阅</a>
+                    </accordion-heading>
+                </accordion-group>
+                <!-- <accordion-group ng-if="status.newspaper.paperAccessAuthority['DIGITAL']=='true'">
+                    <accordion-heading>
+                        <i><img src="./editingCenter/newspaper/images/dn-1.png" class="editctr_newspaper_title_image"/></i>
+                        <a ng-click="digitalNewspapercheck()" target="_blank" class="ml0">数字报检查</a>
+                    </accordion-heading>
+                </accordion-group> -->
+            </accordion>
+        </tab>
+        <tab heading="网站" ng-if="hasRight('newspaper')" class="editing-nav-website pointer" active="status.tab.website.isTabSelect" ng-click="setTabSelected('website')">
+            <div ng-click="status.website.isdownPicShow=!status.website.isdownPicShow" class="editing-pos">
+                <div class="editing-list-zjxw site_btn">
+                    <img src="./editingCenter/app/images/w33.png" class="editing_list_zjxw_img" />
+                    <span href="" title="{{status.website.selectedSite.SITENAME}}">{{status.website.selectedSite.SITENAME | trsLimitTo:12}}</span>
+                </div>
+                <div ng-if="status.website.sites.length>1"><img src="./editingCenter/app/images/l5-1.png" class='edit_mark' ng-show="!status.website.isdownPicShow">
+                    <img src="./editingCenter/app/images/l5-2.png" class='edit_mark' ng-show="status.website.isdownPicShow"></div>
+                <div ng-show="status.website.isdownPicShow" class="editing-Sites_fa">
+                    <div class="editing-Sites" ng-repeat="site in status.website.sites" ng-click="setWebSiteSelected(site)">
+                        <span title="{{site.SITENAME}}"> {{site.SITENAME|trsLimitTo:12}}</span>
+                        <img src="./editingCenter/app/images/l8.png" ng-show="site == status.website.selectedSite">
+                    </div>
+                </div>
+            </div>
+            <tabset class="editing-downlist">
+                <tab heading="待编" class="icon-compiled pointer" actqueryRelateive="status.website.waitcompiled.isSelected" ng-click="changeWebPlatform('waitcompiled')">
+                    <div class="treeContent">
+                        <treecontrol selected-node="getSelectedNode()" class="tree-classic" on-node-toggle="queryNodeChildren(node,1)" tree-model="status.website['waitcompiled'].channels" options="treeOpts">
+                            <span class="mySelect" ng-click="setWebSelectedChnl(node,'waitcompiled')" title="{{node.flag?node.CHANNELID:''}}">
+                            <!-- <b ng-mouseenter="treeEyes(node,true,$even)" ng-mouseleave="treeEyes(node,false,$even)" ng-show="node.flag" class="tree-branch-head" ng-class="[mouseEye()]" ng-click="websiteChannelPreview(node)"></b>  -->
+                            <b ng-show="(node.flag||status.website.waitcompiled.selectedChnl==node)&&status.website.utilBtns['PREVIEW'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-preview"  ng-click="websiteChannelPreview(node)" title="预览"></b> 
+                            {{node.CHNLDESC}}</span>
+                            <b ng-show="(node.flag||status.website.waitcompiled.selectedChnl==node)&&status.website.utilBtns['SPECIAL'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-subject" ng-click="websiteVisualize(node,'waitcompiled')" title="专题"></b>
+                            <b ng-show="(node.flag||status.website.waitcompiled.selectedChnl==node)&&status.website.utilBtns['FILE'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-file" ng-click="websiteCloud(node,'waitcompiled')" title="文件夹"></b>
+                        </treecontrol>
+                    </div>
+                    <accordion class="iwo_accordion website_accordion" close-others="false">
+                        <!--  <accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':'ProjectManagement'==status.website.waitcompiled.selectedChnl}">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/{{'ProjectManagement'==status.website.waitcompiled.selectedChnl?'wl01-1.png':'wl01.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('ProjectManagement','waitcompiled',$event)">专题管理</a>
+                            </accordion-heading>
+                        </accordion-group> -->
+                        <!--     <accordion-group ng-if="status.website.websiteAccessAuthority.widget!=undefined" is-open="status.website.isFragOpen">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/{{'fragmentManagement'==status.website.waitcompiled.selectedChnl?'wl02-1.png':'wl02.png'}}" /></i>
+                                <a class="ml0" ng-click="getWidget()">碎片化管理</a>
+                            </accordion-heading>
+                            <div ng-repeat="widget in status.website.widgets" class="panel-body-editcenter" ng-class="{'panel-body-editcenter_active':widget==status.website['waitcompiled'].selectedChnl}" ng-click="setSelectedWidget(widget)">
+                                <a title="{{widget.TEMPNAME}}" ng-bind="widget.TEMPNAME | trsLimitTo:8"  ui-sref="editctr.website.fragmentManagement({tempid:widget.TEMPID,objectid:widget.OBJECTID,objecttype:widget.OBJECTTYPE,siteid:status.website.selectedSite.SITEID})"></a>
+                            </div>
+                        </accordion-group> -->
+                        <accordion-group ng-if="status.website.websiteAccessAuthority.signtime!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'timingSign'==status.website.waitcompiled.selectedChnl}">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/{{'timingSign'==status.website.waitcompiled.selectedChnl?'wl06-1.png':'wl06.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('timingSign','waitcompiled')">管理定时签发</a>
+                            </accordion-heading>
+                        </accordion-group>
+                        <accordion-group is-disabled="true" ng-if="status.website.websiteAccessAuthority.recyclemgr!=undefined" ng-class="{'iWo-left-accordion-active':'recycle'==status.website.waitcompiled.selectedChnl}">
+                            <accordion-heading>
+                                <i><img class="editctr_website_waitcompiled_ml1" ng-src="./editingCenter/website/images/left_images/{{'recycle'==status.website.waitcompiled.selectedChnl?'wl07-1.png':'wl07.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('recycle','waitcompiled')">管理废稿</a>
+                            </accordion-heading>
+                        </accordion-group>
+                        <!-- <accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':'cloud'==status.website.waitcompiled.selectedChnl}">
+                            <accordion-heading>
+                                <i><img class="editctr_website_waitcompiled_cloudIcon" ng-src="./editingCenter/website/images/left_images/{{'cloud'==status.website.waitcompiled.selectedChnl?'wl09-1.png':'wl09.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('cloud','waitcompiled')">文件库</a>
+                            </accordion-heading>
+                        </accordion-group> -->
+                    </accordion>
+                </tab>
+                <tab heading="待审" class="icon-pending pointer" active="status.website.pending.isSelected" ng-click="changeWebPlatform('pending')">
+                    <div class="treeContent">
+                        <treecontrol selected-node="getSelectedNode()" class="tree-classic" on-node-toggle="queryNodeChildren(node,2)" tree-model="status.website['pending'].channels" options="treeOpts">
+                            <span ng-click="setWebSelectedChnl(node,'pending')" class="mySelect" title="{{node.flag?node.CHANNELID:''}}">
+                        <!-- <b ng-mouseenter="treeEyes(node,true,$even)" ng-mouseleave="treeEyes(node,false,$even)" ng-show="node.flag" class="tree-branch-head" ng-class="[mouseEye()]" ng-click="websiteChannelPreview(node)"></b>  -->
+                        <b ng-show="(node.flag ||status.website.pending.selectedChnl==node)&&status.website.utilBtns['PREVIEW'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-preview"  ng-click="websiteChannelPreview(node)" title="预览"></b>
+                        <b ng-show="(node.flag ||status.website.pending.selectedChnl==node)&&status.website.utilBtns['SPECIAL'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-subject" ng-click="websiteVisualize(node,'pending')" title="专题"></b>
+                        <b ng-show="(node.flag||status.website.pending.selectedChnl==node)&&status.website.utilBtns['FILE'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-file" ng-click="websiteCloud(node,'pending')" title="文件夹"></b>
+                        {{node.CHNLDESC}}</span>
+                        </treecontrol>
+                    </div>
+                    <accordion class="iwo_accordion website_accordion" close-others="false">
+                        <!--<accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':'ProjectManagement'==status.website.pending.selectedChnl}">-->
+                        <!--<accordion-heading>-->
+                        <!--<i><img ng-src="./editingCenter/website/images/left_images/{{'ProjectManagement'==status.website.pending.selectedChnl?'wl01-1.png':'wl01.png'}}" /></i>-->
+                        <!--<a class="ml0" ng-click="setWebSelectedChnl('ProjectManagement','pending',$event)">专题管理</a>-->
+                        <!--</accordion-heading>-->
+                        <!--</accordion-group>-->
+                        <!--   <accordion-group ng-if="status.website.websiteAccessAuthority.widget!=undefined" is-open="status.website.isFragOpen">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/wl02.png" /></i>
+                                <a class="ml0" ng-click="getWidget()">碎片化管理</a>
+                            </accordion-heading>
+                            <div ng-repeat="widget in status.website.widgets" class="panel-body-editcenter" ng-class="{'panel-body-editcenter_active':widget==status.website['pending'].selectedChnl}" ng-click="setSelectedWidget(widget)">
+                                <a title="{{widget.TEMPNAME}}" ng-bind="widget.TEMPNAME | trsLimitTo:8"  ui-sref="editctr.website.fragmentManagement({tempid:widget.TEMPID,objectid:widget.OBJECTID,objecttype:widget.OBJECTTYPE,siteid:status.website.selectedSite.SITEID})"></a>
+                            </div>
+                        </accordion-group> -->
+                        <accordion-group ng-if="status.website.websiteAccessAuthority.signtime!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'timingSign'==status.website.pending.selectedChnl}">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/{{'timingSign'==status.website.pending.selectedChnl?'wl06-1.png':'wl06.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('timingSign','pending')">管理定时签发</a>
+                            </accordion-heading>
+                        </accordion-group>
+                        <!-- <accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':'cloud'==status.website.pending.selectedChnl}">
+                            <accordion-heading>
+                                <i><img class="editctr_website_waitcompiled_cloudIcon" ng-src="./editingCenter/website/images/left_images/{{'cloud'==status.website.pending.selectedChnl?'wl09-1.png':'wl09.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('cloud','pending')">文件库</a>
+                            </accordion-heading>
+                        </accordion-group> -->
+                    </accordion>
+                </tab>
+                <tab heading="已签发" class="icon-signed pointer" active="status.website.signed.isSelected" ng-click="changeWebPlatform('signed')">
+                    <div class="treeContent">
+                        <treecontrol class="tree-classic" on-node-toggle="queryNodeChildren(node,3)" tree-model="status.website['signed'].channels" selected-node="getSelectedNode()" on-selection="showSelected(node,'signed')" options="treeOpts">
+                            <span class="mySelect" ng-click="setWebSelectedChnl(node,'signed')" title="{{node.flag?node.CHANNELID:''}}">
+                        <b ng-show="(node.flag ||status.website.signed.selectedChnl==node)&&status.website.utilBtns['PREVIEW'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-preview"  ng-click="websiteChannelPreview(node)" title="预览"></b> 
+                        <b ng-show="(node.flag ||status.website.signed.selectedChnl==node)&&status.website.utilBtns['SPECIAL'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-subject"  ng-click="websiteVisualize(node,'signed')" title="专题"></b>
+                        <b ng-show="(node.flag||status.website.signed.selectedChnl==node)&&status.website.utilBtns['FILE'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-file" ng-click="websiteCloud(node,'signed')" title="文件夹"></b>
+                        <b ng-if="(node.flag ||status.website.signed.selectedChnl==node)&&status.website.utilBtns['WIDGET'].indexOf(node.CHANNELID)>-1" class="tree-branch-head tree-branch-head-fragement" ng-click="websiteFragment(node,'signed')" title="碎片化"></b>
+                       {{node.CHNLDESC}} 
+                       </span>
+                        </treecontrol>
+                    </div>
+                    <accordion class="iwo_accordion website_accordion" close-others="false">
+                        <!--<accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':'ProjectManagement'==status.website.signed.selectedChnl}">-->
+                        <!--<accordion-heading>-->
+                        <!--<i><img ng-src="./editingCenter/website/images/left_images/{{'ProjectManagement'==status.website.signed.selectedChnl?'wl01-1.png':'wl01.png'}}" /></i>-->
+                        <!--<a class="ml0" ng-click="setWebSelectedChnl('ProjectManagement','signed',$event)">专题管理</a>-->
+                        <!--</accordion-heading>-->
+                        <!--</accordion-group>-->
+                        <!--    <accordion-group ng-if="status.website.websiteAccessAuthority.widget!=undefined" is-open="status.website.isFragOpen">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/{{'fragmentManagement'==status.website.signed.selectedChnl?'wl02-1.png':'wl02.png'}}" /></i>
+                                <a class="ml0" ng-click="getWidget()">碎片化管理</a>
+                            </accordion-heading>
+                            <div ng-repeat="widget in status.website.widgets" class="panel-body-editcenter" ng-class="{'panel-body-editcenter_active':widget==status.website['signed'].selectedChnl}"ng-click="setSelectedWidget(widget)">
+                                <a title="{{widget.TEMPNAME}}" ng-bind="widget.TEMPNAME | trsLimitTo:8"  ui-sref="editctr.website.fragmentManagement({tempid:widget.TEMPID,objectid:widget.OBJECTID,objecttype:widget.OBJECTTYPE,siteid:status.website.selectedSite.SITEID})"></a>
+                            </div>
+                        </accordion-group> -->
+                        <!--     <accordion-group ng-if="status.website.websiteAccessAuthority.draft!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'cancelDraftMgr'==status.website.signed.selectedChnl}">
+                                <accordion-heading>
+                                    <i><img ng-src="./editingCenter/website/images/left_images/{{'cancelDraftMgr'==status.website.signed.selectedChnl?'wl03-1.png':'wl03.png'}}" /></i>
+                                    <a class="ml0" ng-click="setWebSelectedChnl('cancelDraftMgr','signed',$event)">管理撤稿</a>
+                                </accordion-heading>
+                            </accordion-group> -->
+                        <!-- <accordion-group ng-if="status.website.websiteAccessAuthority.create!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'visualize'==status.website.signed.selectedChnl}">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/{{'visualize'==status.website.signed.selectedChnl?'wl08-1.png':'wl08.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('visualize','signed')">
+                                可视化专题</a>
+                            </accordion-heading>
+                        </accordion-group> -->
+                        <accordion-group ng-if="status.website.websiteAccessAuthority.create!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'batchGeneratingNews'==status.website.signed.selectedChnl}">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/{{'batchGeneratingNews'==status.website.signed.selectedChnl?'wl04-1.png':'wl04.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('batchGeneratingNews','signed')">批量生成新闻</a>
+                            </accordion-heading>
+                        </accordion-group>
+                        <accordion-group ng-if="status.website.websiteAccessAuthority.transfer!=undefined" is-disabled="true" ng-class="{'iWo-left-accordion-active':'batchMoveNews'==status.website.signed.selectedChnl}">
+                            <accordion-heading>
+                                <i><img ng-src="./editingCenter/website/images/left_images/{{'batchMoveNews'==status.website.signed.selectedChnl?'wl05-1.png':'wl05.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('batchMoveNews','signed')">新闻批量转移</a>
+                            </accordion-heading>
+                        </accordion-group>
+                        <!-- <accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':'cloud'==status.website.signed.selectedChnl}">
+                            <accordion-heading>
+                                <i><img class="editctr_website_waitcompiled_cloudIcon" ng-src="./editingCenter/website/images/left_images/{{'cloud'==status.website.signed.selectedChnl?'wl09-1.png':'wl09.png'}}" /></i>
+                                <a class="ml0" ng-click="setWebSelectedChnl('cloud','signed')">文件库</a>
+                            </accordion-heading>
+                        </accordion-group> -->
+                    </accordion>
+                </tab>
+            </tabset>
+        </tab>
+        <div ng-repeat="item in status.more.moreTabList" ng-click="setMoreTabRouter(item.id)" ng-bind="item.name" class="editCenter-more-tab-link" ng-if="status.app.isAccessAuthority&&(!status.newspaper.isAccessAuthority||!status.website.isAccessAuthority)"></div>
+        <tab heading="APP" class="editing-nav-app" active="status.tab.app.isTabSelect" ng-if="hasRight('app')" ng-click="setTabSelected('app')">
+            <div ng-click="status.isWebSitesShow=!status.isWebSitesShow" class="editing-pos">
+                <div class="editing-list-zjxw site_btn" ng-bind="siteSelected.SITENAME"></div>
+                <img src="./editingCenter/app/images/l5-1.png" class='edit_mark' ng-show="!status.isWebSitesShow">
+                <img src="./editingCenter/app/images/l5-2.png" class='edit_mark' ng-show="status.isWebSitesShow">
+                <div ng-show="status.isWebSitesShow" class="editing-Sites_fa">
+                    <div class="editing-Sites" ng-repeat="site in sites" ng-click="setSelectedSite(site)">{{site.SITENAME}}
+                        <img src="./editingCenter/app/images/l8.png" ng-show="site == siteSelected">
+                    </div>
+                </div>
+            </div>
+            <tabset class="editing-downlist">
+                <!--   <tab heading="待编" class="icon-compiled" active="statusTabs.waitcompiled" ui-sref="editctr.app.waitcompiled({siteid:siteSelected.SITEID,channelid:chnlSelected.CHANNELID})"> -->
+                <tab heading="待编" class="icon-compiled" active="statusTabs.waitcompiled" ng-click="setRouter('editctr.app.waitcompiled')">
+                    <accordion close-others="true">
+                        <div ng-repeat="channel in channels" ng-switch="channel.CHNLNAME" class="editing_center_channel">
+                            <accordion-group heading="{{channel.CHNLNAME}}" is-open="status.isChnlOpen[$index]">
+                                <div ng-repeat="seclevchnl in channel.CHILDREN" class="panel-body-editcenter" ng-class="{'panel-body-editcenter_active':seclevchnl==chnlSelected}" ng-click='setSelectedChnl(seclevchnl)'>
+                                    <a ng-bind="seclevchnl.CHNLNAME" ui-sref="editctr.app.waitcompiled({channelid:seclevchnl.CHANNELID})" ng-click="setCurrLocation(seclevchnl.CHNLNAME)">
+                                    </a>
+                                </div>
+                            </accordion-group>
+                        </div>
+                        <div class="editing-list-icon site_btn" ng-click="setSelectedChnl('draft')">
+                            <p class="manage"><a ng-class="{'active':'draft'==chnlSelected}" ui-sref="editctr.app.waitcompiled.draft">管理废稿</a></p>
+                        </div>
+                        <div class="editing-list-icon site_btn" ng-click="setSelectedChnl('timesignedmanage')">
+                            <p class="signed"><a ng-class="{'active':'timingSign'==timingSign}" ui-sref="editctr.app.waitcompiled.timingSign">管理定时签发</a></p>
+                        </div>
+                        <div class="editing-list-icon site_btn" ng-click="setSelectedChnl('officials')">
+                            <p class="officer"><a ng-class="{'active':'officials'==chnlSelected}">官员管理</a></p>
+                        </div>
+                    </accordion>
+                </tab>
+                <!-- <tab heading="待审" class="icon-pending" ui-sref="editctr.app.pending({siteid:siteSelected.SITEID,channelid:chnlSelected.CHANNELID})" active="statusTabs.pending"> -->
+                <tab heading="待审" class="icon-pending" active="statusTabs.pending" ng-click="setRouter('editctr.app.pending')">
+                    <accordion close-others="true">
+                        <div ng-repeat="channel in channels" ng-switch="channel.CHNLNAME" class="editing_center_channel">
+                            <!--  <div ng-switch-when="频道" class="first_channel">
+                                <img src="./editingCenter/app/images/l9.png">
+                            </div>
+                            <div ng-switch-when="地市列表" class="second_channel">
+                                <img src="./editingCenter/app/images/l10.png">
+                            </div>
+                            <div ng-switch-when="地市" class="first_channel">
+                                <img src="./editingCenter/app/images/l10.png">
+                            </div>
+                            <div ng-switch-when="浙江即时报" class="first_channel">
+                                <img src="./editingCenter/website/images/w30.png">
+                            </div>
+                            <div ng-switch-when="浙江视界" class="first_channel">
+                                <img src="./editingCenter/website/images/w31.png">
+                            </div> -->
+                            <accordion-group heading="{{channel.CHNLNAME}}" is-open="status.isChnlOpen[$index]">
+                                <div ng-repeat="seclevchnl in channel.CHILDREN" class="panel-body-editcenter" ng-class="{'panel-body-editcenter_active':seclevchnl==chnlSelected}" ng-click='setSelectedChnl(seclevchnl)'>
+                                    <a ng-bind="seclevchnl.CHNLNAME" ui-sref="editctr.app.pending({channelid:seclevchnl.CHANNELID})">
+                                    </a>
+                                </div>
+                            </accordion-group>
+                        </div>
+                        <div class="editing-list-icon site_btn" ng-click="setSelectedChnl('pendingtimingSign')">
+                            <p class="signed"><a ng-class="{'active':'pendingtimingSign'==chnlSelected}" ui-sref="editctr.app.pending.pendingtimingSign">管理定时签发</a></p>
+                        </div>
+                        <div class="editing-list-icon site_btn" ng-click="setSelectedChnl('pendingofficials')">
+                            <p class="officer"><a ng-class="{'active':'pendingofficials'==chnlSelected}">官员管理</a></p>
+                        </div>
+                    </accordion>
+                </tab>
+                <tab heading="已签发" class="icon-signed pointer" ng-click="setRouter('editctr.app.signed')" active="statusTabs.signed">
+                    <accordion close-others="true">
+                        <div ng-repeat="channel in channels" ng-switch="channel.CHNLNAME" class="editing_center_channel">
+                            <!--        <div ng-switch-when="频道" class="first_channel">
+                                <img src="./editingCenter/app/images/l9.png">
+                            </div>
+                            <div ng-switch-when="地市列表" class="first_channel">
+                                <img src="./editingCenter/app/images/l10.png">
+                            </div>
+                            <div ng-switch-when="地市" class="first_channel">
+                                <img src="./editingCenter/app/images/l10.png">
+                            </div>
+                            <div ng-switch-when="浙江即时报" class="first_channel">
+                                <img src="./editingCenter/website/images/w30.png">
+                            </div>
+                            <div ng-switch-when="浙江视界" class="first_channel">
+                                <img src="./editingCenter/website/images/w31.png">
+                            </div> -->
+                            <accordion-group heading="{{channel.CHNLNAME}}" is-open="status.isChnlOpen[$index]">
+                                <div ng-repeat="seclevchnl in channel.CHILDREN" class="panel-body-editcenter" ng-class="{'panel-body-editcenter_active':seclevchnl==chnlSelected}" ng-click='setSelectedChnl(seclevchnl)'>
+                                    <a ng-bind="seclevchnl.CHNLNAME" ui-sref="editctr.app.signed({channelid:seclevchnl.CHANNELID})">
+                                    </a>
+                                </div>
+                            </accordion-group>
+                        </div>
+                        <div class="editing-list-icon site_btn" ng-click="setSelectedChnl('retraction')">
+                            <p class="manage"><a ng-class="{'active':'retraction'==chnlSelected}" ui-sref="editctr.app.signed.retraction">管理撤稿</a></p>
+                        </div>
+                        <div class="editing-list-icon site_btn" ng-click="setSelectedChnl('singnedofficials')">
+                            <p class="officer"><a ng-class="{'active':'singnedofficials'==chnlSelected}">官员管理</a></p>
+                        </div>
+                    </accordion>
+                </tab>
+            </tabset>
+        </tab>
+        <!-- <button type="button" ng-click="status.more.isMoreTabListShow = !status.more.isMoreTabListShow" ng-class="{'editing-more-rotate':status.more.isMoreTabListShow}" class="editing-more" data-placement="right-bottom" data-auto-close="1" data-template-url="./editingCenter/service/moreTabList/moreTabList.html" data-animation="am-slide-left" bs-popover></button> -->
+        <button type="button" class="editing-more" data-placement="right-bottom" data-auto-close="1" data-template-url="./editingCenter/service/moreTabList/moreTabList.html" data-animation="am-slide-left" ng-if="status.app.isAccessAuthority&&status.newspaper.isAccessAuthority&&status.website.isAccessAuthority" bs-popover></button>
+    </tabset>
+</div>

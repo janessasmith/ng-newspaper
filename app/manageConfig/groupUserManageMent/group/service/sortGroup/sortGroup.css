@@ -1,0 +1,140 @@
+.sortGroupSubmit .clear {
+    clear: both;
+}
+
+.sortGroupSubmit .textAlign_l {
+    text-align: left;
+}
+
+.userManageMent-sortGroup-window .modal-dialog .modal-content {
+    border: 0!important;
+}
+
+.sortGroupSubmit {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sortGroupSubmit .submit {
+    border: 4px solid #dddddd;
+    background: #fff;
+}
+
+.sortGroupSubmit .submit .head {
+    height: 42px;
+}
+
+.sortGroupSubmit .submit .head span {
+    float: left;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.sortGroupSubmit .submit .head img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 12px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.sortGroupSubmit .submit .body {
+    padding: 10px;
+    font-size: 12px;
+    background: #f0f2f5;
+    height: 200px;
+}
+
+.sortGroupSubmit .submit .body .main {
+    margin-top: 10px;
+    height: 85px;
+}
+
+.sortGroupSubmit .submit .body .main .item {
+    line-height: 32px;
+    clear: both;
+    padding-left: 65px;
+    margin-top: 20px;
+}
+
+.sortGroupSubmit .submit .body .main .item_radio {
+    line-height: 32px;
+    clear: both;
+    padding-left: 50px;
+}
+
+.sortGroupSubmit .submit .body .main .item_radio input {
+    position: relative;
+    top: 2px;
+}
+
+.sortGroupSubmit .submit .body .main .item .tit {
+    display: block;
+    float: left;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sortGroupSubmit .submit .body .main .item .invalidate-input-box {
+    float: left;
+}
+
+.sortGroupSubmit .submit .body .main .item input {
+    width: 110px;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+.sortGroupSubmit .submit .body .main .item input.mb0 {
+    margin-bottom: 0px!important;
+}
+
+.sortGroupSubmit .submit .body .main .item .desc {
+    margin-left: 70px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.sortGroupSubmit .submit .body .main .item .desc p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 25px;
+}
+
+
+/*foot*/
+
+.sortGroupSubmit .submit .body .foot {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.sortGroupSubmit .submit .body .foot button {
+    margin: 0 20px;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.sortGroupSubmit .submit .body .foot button.cancel {
+    border: none;
+    background: #0095ce;
+}
+
+.sortGroupSubmit .submit .body .foot button.confirm {
+    border: none;
+    background: #00bd9b;
+}

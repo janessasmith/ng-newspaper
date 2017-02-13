@@ -1,0 +1,23 @@
+<div class="thumb-img">
+	<img ng-if="thumb.type" ng-src="{{thumb.imgUrl}}" class="fa" ng-mousemove="toggleStatus()" autofitsize=".thumb-img"></div>
+
+<div ng-if="thumb.type=='image'" ng-mouseleave="close()">
+	<carousel ng-if="showimgFocus&& isSelected()" class="img_switcher bigPreview">
+		<slide ng-repeat="slide in thumb.data" index="$index">
+			<img ng-src="{{slide.url}}" style="margin:auto;" autofitsize=".img_switcher"></slide>
+	</carousel>
+</div>
+
+<div ng-if="thumb.type=='audio'" ng-mouseleave="close()" >
+	<div class="thumb-play"></div>  
+	<div ng-if="showimgFocus && isSelected()" class="bigPreview">
+		<iframe ng-src="{{thumb.audioUrl}}" frameborder="0" class="audio"></iframe>
+	</div>
+</div> 
+
+<div ng-if="thumb.type=='video'" ng-mouseleave="close()">
+	<div class="thumb-play"></div>
+	<div ng-if="showimgFocus && isSelected()" class="bigPreview">
+		<iframe ng-src="{{thumb.videoUrl}}" class="video"></iframe>
+	</div>
+</div>

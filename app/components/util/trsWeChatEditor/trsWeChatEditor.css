@@ -1,0 +1,27 @@
+.weixin_editor-template-list {
+    width: 384px;
+    padding-left: 0;
+}
+
+.weixin_insert-style-list{
+    height: 722px;
+    overflow-y: auto;
+}
+
+.weixin_insert-style-list li {
+    position: relative;
+    background: #FFF;
+    border-bottom: 1px dotted #ddd;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.weixin_insert-style-list li:hover {
+    background: #f0f0f0;
+}
+
+.weixin_insert-style-list .ui-portlet-list > li p {
+    clear: both;
+    margin: 0 0;
+    line-height: 1.6;
+}

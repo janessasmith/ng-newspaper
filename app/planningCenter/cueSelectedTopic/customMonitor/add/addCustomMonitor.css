@@ -1,0 +1,288 @@
+.addCustomMonitor {
+    margin-top: -15px;
+}
+
+.addCustomMonitor .invalidate-input-box span.ng-scope {
+    left: 20px;
+}
+
+.addCustomMonitor trs-single-radio {}
+
+.addCustomMonitor trs-single-radio label {
+    cursor: pointer;
+}
+
+.addCustomMonitor .clear {
+    clear: both;
+}
+
+.addCustomMonitor .fl {
+    float: left;
+}
+
+.addCustomMonitor .plr0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.addCustomMonitor .ml78 {
+    margin-left: 78px;
+}
+
+.addCustomMonitor .mt10 {
+    margin-top: 10px;
+}
+
+.addCustomMonitor .customMonitor_nav {
+    height: 54px;
+    background: #eff0f2;
+    padding-top: 13px;
+}
+
+.addCustomMonitor_con {
+    padding: 10px 10px 10px 0;
+}
+
+.addCustomMonitor_con .customMonitor_con_addMonitor .addMonitor_head {
+    height: 43px;
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #f4f4f6;
+}
+
+.addCustomMonitor_con .customMonitor_con_addMonitor .addMonitor_head span.addMonitor_head_span {
+    margin: 0px 10px;
+    padding: 0px 20px;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-bottom: none;
+    border-top: 4px solid #2f98d2;
+    font-weight: bold;
+    height: 43px;
+    line-height: 40px;
+}
+
+.addMonitor_main_Info .unselected {
+    color: grey!important;
+}
+
+.addMonitor_main_Info .tit {
+    background: url(./planningCenter/images/addCustomMonitor_con_tit.png) no-repeat 1% center;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+    padding-left: 34px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.addMonitor_main_Info .label_info {
+    margin: 10px 28px;
+}
+
+.addMonitor_main_Info .label_info span {
+    line-height: 35px;
+    padding: 0 4px;
+}
+
+.addMonitor_main_Info .label_info span.w78 {
+    width: 78px;
+    display: inline-block;
+}
+
+.addMonitor_main_Info .label_info input {
+    width: 840px;
+}
+
+.addMonitor_main_Info .label_info input.w910 {
+    width: 910px;
+}
+
+.addMonitor_main_Info .label_info .recommend {
+    color: #286090;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 0 6px;
+}
+
+.addMonitor_main_Info .label_info textarea {
+    width: 840px;
+    height: 230px;
+    overflow-y: scroll;
+}
+
+.addMonitor_main_Info .label_info .source_infos ul.source_infos_ul {
+    margin-left: 10px;
+}
+
+.addMonitor_main_Info .label_info .source_info .title {
+    margin-right: 20px;
+    margin-left: -4px;
+}
+
+.addMonitor_main_Info .label_info .source_infos ul.source_infos_ul li {
+    float: left;
+    padding: 10px 8px;
+}
+
+.addMonitor_main_Info .label_info .source_infos ul.source_infos_ul li span.chnl_span {
+    padding: 0 8px;
+    line-height: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    list-style: none;
+    background: none;
+    border-radius: 4px;
+    display: block;
+}
+
+.addMonitor_main_Info .label_info .source_infos ul.source_infos_ul li.on {
+    color: #fff;
+    background: url(./planningCenter/images/chnl_search_arrow.png) no-repeat center 87%;
+}
+
+.addMonitor_main_Info .label_info .source_infos ul.source_infos_ul li span.on {
+    background: #2f98d3;
+}
+
+.addMonitor_main_Info .label_info .source_info {
+    float: left;
+    width: 830px;
+    line-height: 35px;
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 5px;
+}
+
+.addMonitor_main_Info .label_info .source_info_radio {
+    width: 20px;
+    position: relative;
+    top: 2px;
+}
+
+
+/*search strat*/
+
+.addMonitor_main_Info .edit_input_group {
+    width: 100%;
+    float: left;
+    z-index: 1;
+    margin-left: 20px;
+}
+
+.addMonitor_main_Info .edit_input_group .edit_form_control {
+    width: 45%;
+    float: left;
+}
+
+.addMonitor_main_Info button.btn_edit_search {
+    width: 68px;
+    color: #65635f;
+    background: url("./editingCenter/app/images/b-m.jpg") repeat-x;
+    line-height: 28px;
+    border-radius: 5px;
+}
+
+.addMonitor_main_Info .label_info span.input-group-btn {
+    margin-top: -3px;
+}
+
+.addMonitor_main_Info .label_info .search_chnls ul {
+    padding: 5px 0 5px 8px;
+}
+
+.addMonitor_main_Info .label_info .search_chnls ul.search_chnls_ul li {
+    width: 30%;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 0px;
+    margin: 3px 0px 3px 2px;
+    text-align: left;
+    float: left;
+    padding: 0 10px;
+}
+
+.addMonitor_main_Info .label_info .chnls_right {
+    border: 1px solid #ddd;
+    padding: 0;
+    margin: -32px 0 0 0;
+}
+
+.addMonitor_main_Info .label_info .chnls_right .tit {
+    background: #fafafa;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.addMonitor_main_Info .label_info .chnls_right .chnls_right_con {
+    margin: 5px;
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.addMonitor_main_Info .label_info .chnls_right .chnls_right_con ul.chnls_right_con_ul li {
+    width: 45%;
+    height: 32px;
+    line-height: 30px;
+    padding-left: 5px;
+    margin: 3px 10px 8px 5px;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    padding-right: 3px;
+    background: #fafafa;
+    padding: 0 0 0 5px;
+    float: left;
+}
+
+.addMonitor_main_Info .label_info .chnls_right .chnls_right_con ul.chnls_right_con_ul li span {
+    float: right;
+    background: url("./planningCenter/images/chnl_close_black.png") no-repeat center;
+    width: 20px;
+    height: 32px;
+    display: block;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.addMonitor_main_Info .label_info .chnls_right .chnls_right_con ul.chnls_right_con_ul li span:hover {
+    background: url("./planningCenter/images/chnl_close_blue.png") no-repeat center;
+}
+
+.addMonitor_main_Info .label_info .search_chnls .page {
+    position: relative;
+    padding-top: 0px;
+    bottom: 0;
+    left: -50px;
+}
+
+.addMonitor_main_Info .label_info .search_chnls .page .page_left{
+    margin-left: 100px!important;
+}
+
+.addCustomMonitor_con .addMonitor_main .foot {
+    padding-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.addCustomMonitor_con .addMonitor_main .foot button {
+    margin: 0 20px;
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.addCustomMonitor_con .addMonitor_main .foot button.addMonitor_btn {
+    border: none;
+    background: #0095ce;
+}

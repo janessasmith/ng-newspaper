@@ -1,0 +1,50 @@
+<div class="row edit_right_head">
+    <div class="col-md-8 col-lg-9"></div>
+    <div class="col-md-4 col-lg-3">
+        <div class="input-group edit_input_group">
+            <ol class="breadcrumb pull-right edit_breadcrumb">
+                <li>
+                    <span>管理配置</span>
+                    <span>产品管理</span>
+                    <span>APP</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-7"></div>
+    <div class="col-md-5">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control manage-pmm-form-search" placeholder="">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button">搜索</button>
+          </span>
+        </div>
+        <img src="./manageConfig/productManageMent/images/manage_icon1.png" class="pull-right manage-pmm-before-search" />
+    </div>
+</div>
+<div class="manage-pmm-container">
+    <div class="manage-pmm-app-container">
+        <div class="pmm-app-item-out left" ng-repeat="item in PmmAppChnlSelected.DOCTYPE">
+            <div class="pmm-app-item-default text-center" ng-bind="item" ng-mouseenter="btnClick(item)"></div>
+            <div class="pmm-app-item-icon-group" ng-class="{'pmm-app-btn-show':item==click_btn}">
+                <a ng-click="delete()">
+                    <img src="./editingCenter/app/images/fg-r2.png">
+                </a>
+                <a>
+                    <img src="./editingCenter/app/images/r2.png">
+                </a>
+                <a ng-click="modifyFn()">
+                    <img src="./editingCenter/app/images/r1.png">
+                </a>
+            </div>
+        </div>
+        <div class="pmm-app-item-out left">
+            <div class="pmm-app-add-item text-center" ng-click="modifyFn()">+</div>
+        </div>
+    </div>
+</div>
+<div class="manage-pmm-recycle">
+    <button class="btn btn-default manage-pmm-recyle-btn">回收站</button>
+</div>

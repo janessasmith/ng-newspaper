@@ -1,0 +1,91 @@
+    <!--main-->
+    <!-- <div class="cb-home-container" 
+         style="background-image:url(common/images/rw-sy-bac.jpg);background-repeat: no-repeat;
+background-position: center 100%;" resize>
+        <div class="home-con-main">
+            <div class="home-con-ls clearfix"> -->
+                <!--最新微信-->
+                <!-- <div class="con-deal-bk" style="margin-right: 36px;" 
+                     ng-controller="homeweixinListCtrl" ui-view="newWeixinList">    
+                </div> -->
+                <!--微信-->
+                <!-- <div class="con-deal-bk" style="margin-right: 36px;" ui-view="weixinHome" 
+                     ng-controller="homeweixinAccountCtrl">
+                </div> -->
+                <!--微博-->
+                <!-- <div class="con-deal-bk" style="margin-right: 36px;" ui-view="weiboHome" 
+                    ng-controller="homeweiboAccountCtrl"> 
+                </div> -->
+                <!--最新微博-->
+                <!-- <div class="con-deal-bk" ui-view="newWeiboList" ng-controller="homeweiboListCtrl">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="sy-ft-sp">
+            <p><span>©2015</span><span>重庆日报报业集团</span><span>ICP备10011451号-6</span></p>
+        </div>
+    </div> -->
+<div class="sj-pt-container cb-home-container" ng-controller="homeweixinListCtrl">
+   <!--  <span class="cq-sp-icon"></span> -->
+   <!--  <div class="sj-pt-con clearfix">
+        <div class="sj-con-lf">
+            <ul class="sj-lf-tit">
+                <li ng-class="{'sj-lf-cur':clType=='wx'}">
+                    <a href="javascript:;" ng-click="getWxList();">最新微信</a>
+                </li>
+                <li ng-class="{'sj-lf-cur':clType=='wb'}">
+                    <a href="javascript:;" ng-click="getWbList();">最新微博</a>
+                </li>
+            </ul>
+            <ul class="sj-lf-ls">
+                <li ng-repeat="content in contents">
+                    <a href="javascript:;" class="sj-ls-pc">
+                        <img ng-src="{{content.headPicUrl}}"/>
+                    </a>
+                    <div class="sj-ls-rt">
+                        <h1><a href="javascript:;" ng-click="open('lg',content.Id);">{{content.title}}</a></h1>
+                        <p><span>{{content.name}}</span><span>{{content.crtime}}</span></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="sj-con-rt">
+            <div class="sj-rt-bk bd-bk"><a ui-sref="wxaccount.list" class="sj-bd-wx"></a><p class="sj-bd">绑定微信账号</p></div>
+            <div class="sj-rt-bk" ng-controller="homeweixinAccountCtrl">
+                <div class="wx-bd-pc">
+                    <div class="sj-bd-opt">
+                        <a ng-click="preAccount();" class="bd-opt-pre"></a>
+                        <a ng-click="nextAccount();" class="bd-opt-next"></a>
+                    </div>
+                </div>
+                <div class="sj-bd-lb">
+                    <a href="/wcm/app/wx/wx.html?wxId={{wxAccount.wxid}}&nodeId={{wxAccount.channelId}}">
+                        <img ng-src="{{wxAccount.wxHeadImg}}" alt="{{wxAccount.name}}"/>
+                        <i ng-show="wxAccount.sign"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="sj-rt-bk" ng-controller="homeweiboAccountCtrl">
+                <div class="wb-bd-pc">
+                    <div class="sj-bd-opt">
+                        <a ng-click="preAccount();" class="bd-opt-pre"></a>
+                        <a ng-click="nextAccount();" class="bd-opt-next"></a>
+                    </div>
+                </div>
+                <div class="sj-bd-lb">
+                    <a href="/wcm/app/scm/index.jsp?AccountId={{wbAccount.ACCOUNTID}}">
+                        <img ng-src="{{wbAccount.HEADPIC}}" alt="{{wbAccount.ACCOUNTNAME}}"/>
+                        <i ng-show="wbAccount.ISSIGN"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="sj-rt-bk bd-bk"><a ui-sref="wbaccount.list" class="sj-bd-wb"></a><p class="sj-bd">绑定微博账号</p></div>
+        </div>
+    </div> -->
+    <!--footer-->
+    <!-- <div class="sj-pt-foot">
+        <p>©2015 重庆日报报业集团   ICP备10011451号-6</p>
+    </div> -->
+</div>
+    <!--end main-->

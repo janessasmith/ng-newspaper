@@ -1,0 +1,185 @@
+<div trs-scroll-fix class="row edit_right_head" ng-show="!checkPreview()">
+    <div class="col-md-12 col-lg-12 mb10">
+        <button class="btn btn-default btn-commen opacity100" ng-click="openTakeDraftModal()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='openTakeDraftModal'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-disabled="opDisabled">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='openTakeDraftModal'?'z56-1.png':'z56.png'}}"/>
+            </span> 取稿
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="CreationAxis()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='CreationAxis'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-disabled="opDisabled">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='CreationAxis'?'z14-1.png':'z14.png'}}"/>
+            </span> 创作轴
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="openReserveDraftModal()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='openReserveDraftModal'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-disabled="opDisabled">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='openReserveDraftModal'?'z15-1.png':'z15.png'}}" />
+            </span> 预留
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="collect()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='collect'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-disabled="opDisabled">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='collect'?'z16-1.png':'z16.png'}}" />
+            </span> 收藏
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="printbtn()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='printbtn'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-disabled="opDisabled">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='printbtn'?'z17-1.png':'z17.png'}}" />
+            </span> 打印
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="export()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='export'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-disabled="opDisabled">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='export'?'z55-1.png':'z55.png'}}" />
+            </span> 导出
+        </button>
+        <!-- <button class="btn btn-default btn-commen" >
+            <span class="s_icon"><img src="./resourceCenter/images/z18.png" /></span> 删除
+        </button> -->
+    </div>
+    <div class="col-md-12 text-center mc-padding-xs manuscript-copycreate" style="background-color:#fff" ng-show="vm.numberOfNewDocs > 0">
+        <span class="font_red font_color666" ng-click="refreshList()">
+            有<span class="more-data">{{vm.numberOfNewDocs}}</span>条新稿件更新
+        <i class="fa-cursor fa-lg fa-refresh text-primary"></i>
+        </span>
+    </div>
+</div>
+<div class="row edit_right_mid edit_right_mid_margin_top0">
+    <div class="col-md-6">
+        <custom-select label="时间范围" options="vm.time.data" callback="searchWithKeyword()" selected-option="vm.time.curValue"></custom-select>
+        <trs-single-select label="稿件类型" options="vm.docType.data" callback="searchWithKeyword()" selected-option="vm.docType.curValue"></trs-single-select>
+        <trs-single-select label="可靠性等级" options="vm.sourcelevel.data" callback="searchWithKeyword()" selected-option="vm.sourcelevel.curValue"></trs-single-select>
+    </div>
+    <div class="col-md-6 text-right">
+        <div class="m_search">
+            <!-- <trs-input-suggest keyword="vm.filterKeyWord" channelname="{{vm.channelName}}" typename="{{vm.typeName}}" curel="selectEl" callback="reloadData(selectEl)"></trs-input-suggest> -->
+            <div class="btn-group">
+                <i class="mcicon mcicon-list clickable" ng-class="{true:'active'}[!vm.hasphoto]" ng-click="togglehasphoto(false)" ng-show="vm.showbutton"></i>
+                <i class="mcicon mcicon-pic clickable" ng-class="{true:'active'}[vm.hasphoto]" ng-click="togglehasphoto(true)" ng-show="vm.showbutton"></i>
+            </div>
+            <trs-input-suggest keyword="vm.filterKeyWord" channelname="{{vm.channelName}}" typename="{{vm.typeName}}" curel="vm.suggestResult" callback="getSuggestResult(vm.suggestResult)"></trs-input-suggest>
+            <button class="btn btn-default btn-commen" type="button" ng-click="searchWithKeyword()">检索</button>
+            <button class="btn btn-default btn-commen" type="button" ui-sref="retrieval({channelName:'szb'})">高级检索</button>
+        </div>
+    </div>
+</div>
+<div class="row mc-padding-bottom-xs">
+    <div class="col-md-1 text-right mc-padding-0">
+        <span ng-show="vm.suggestContentList.length">当前检索：</span>
+    </div>
+    <div class="col-md-7 mc-padding-0">
+        <ul class="u_color_list word_in">
+            <li class="bkg-{{item.type}} cursor" ng-repeat="item in vm.suggestContentList" ng-click="removeItem($index,vm.suggestContentList)" data-ng-bind-html="item.dictname"></li>
+        </ul>
+    </div>
+    <div class="col-md-4 text-right mc-padding-0">
+        <ul class="u_color_list">
+            <li><i class="bkg-area"></i>地域</li>
+            <li><i class="bkg-zyzxfield"></i>领域</li>
+            <!-- <li><i class="bkg-warning"></i>关键词</li> -->
+            <li><i class="bkg-account"></i>账号</li>
+        </ul>
+    </div>
+</div>
+<!--<div class="row plr10">
+    <div class="col-md-1 text-right mc-padding-0">
+        最近搜索词：
+    </div>
+    <div class="col-md-7 mc-padding-0">
+        <ul class="u_color_list word_in">
+            <li class="bg-danger">西湖</li>
+            <li class="bg-info">科技</li>
+            <li class="bg-warning">媒体</li>
+            <li class="bg-success">蒲公英</li>
+        </ul>
+    </div>
+    <div class="col-md-4 text-right">
+        <ul class="u_color_list">
+            <li><i class="bg-danger"></i>地域</li>
+            <li><i class="bg-info"></i>领域</li>
+            <li><i class="bg-warning"></i>关键词</li>
+            <li><i class="bg-success"></i>账号</li>
+        </ul>
+    </div>
+</div>
+<div class="row plr10">
+    <div class="col-md-1 text-right mc-padding-0">
+        热门标签：
+    </div>
+    <div class="col-md-11 mc-padding-0">
+        <ul class="u_word_list">
+            <li>党建</li>
+            <li>杭州</li>
+            <li>建德</li>
+            <li>经济</li>
+            <li>宁波</li>
+            <li>普陀</li>
+            <li>瑞安</li>
+            <li>台州</li>
+            <li>天气</li>
+            <li>突发</li>
+            <li>温岭</li>
+            <li>文化</li>
+            <li>仙居</li>
+        </ul>
+    </div>
+</div>-->
+<div class="edit_table border_radius_5" ng-hide="checkPreview()">
+    <div cg-busy="loadingPromise"></div>
+    <div class="min_height">
+        <table class="table table-striped resouce_center_share_table data-table">
+            <thead>
+                <tr ng-show="IsHeadersShow">
+                    <th class="td-check col-cbx">
+                        <trs-checkbox ischecked="vm.isAllchecked" callback="toggleSelectAll(vm.isAllchecked)"></trs-checkbox>
+                    </th>
+                    <th class="td-number col-index txt_c">序号</th>
+                    <th ng-repeat="hd in vm.tableheaders" class="xcol-{{hd.FIELDENNAME | lowercase}}" ng-bind="hd.FIELDCNNAME" ng-if="hd.FIELDENNAME !='IR_ABSTRACT'&&hd.FIELDENNAME !='doctype'"></th>
+                    <th class="xcol-doctype"></th>
+                </tr>
+            </thead>
+            <tbody trs-thumb-container>
+                <tr ng-repeat="content in vm.contents">
+                    <td class="td-check" ng-init="p_index=$index">
+                        <trs-checkbox ischecked="content.ischecked" callback="toggleContent(content)"></trs-checkbox>
+                    </td>
+                    <td>{{(vm.page.pagenumber-1)*vm.page.pagesize+$index+1}}</td>
+                    <td ng-repeat="hd in vm.tableheaders" ng-class="{'resouce_center_share_title_td':hd.FIELDENNAME=='DOCTITLE'}" ng-if="hd.FIELDENNAME!='IR_ABSTRACT'&&hd.FIELDENNAME !='doctype'">
+                        <div ng-if="hd.FIELDENNAME=='DOCTITLE'" class="gaiOpe">
+                            <preview-title class="pull-left" summary-text="content.IR_ABSTRACT" title-text="content.DOCTITLE" target-url="#/resourcedetail?guid={{content.ZB_GUID}}&channel=szb&service=szb&indexname={{vm.indexname}}"></preview-title>
+                            <span class="text-warning gai cursorPointer" ng-show="content.QU" ng-click="viewBigDataInfo(content.ZB_GUID)">取</span>
+                            <span class="text-success gai cursorPointer" ng-show="content.QIAN" ng-click="viewBigDataInfo(content.ZB_GUID)">签</span>
+                            <span class="text-primary gai cursorPointer" ng-show="content.JIAN" ng-click="viewBigDataInfo(content.ZB_GUID)">见</span>
+                            <span class="text-danger gai cursorPointer" ng-show="content.CHE" ng-click="viewBigDataInfo(content.ZB_GUID)">撤</span>
+                            <span class="text-info gai cursorPointer" ng-show="content.CHONG" ng-click="viewBigDataInfo(content.ZB_GUID,true)">重</span>
+                        </div>
+                        <span ng-if="hd.FIELDENNAME!='DOCTITLE'&& hd.FIELDENNAME !='doctype'">
+                            {{content[hd.FIELDENNAME]}}
+                        </span>
+                        <!-- trsImgSwitcher
+                        <trs-img-switcher ng-if="hd.FIELDENNAME=='doctype'" doctype="content.doctype" showimg="content.ZB_GUID==curImg" imgurl="content.imgurl" callback="switchImg(content,p_index)" ng-class="{'posBottom':content.pos}"></trs-img-switcher>
+                        <!-- trsListImg -->
+                        <!-- <trs-list-icon  ng-if="hd.FIELDENNAME=='doctype'" item="content"></trs-list-icon> -->
+                    </td>
+                    <td class="xcol-doctype">
+                        <trs-thumb item="content" transform="resourceCenterThumb"></trs-thumb>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page resourcectrl cls-paging">
+        <trs-set-columns columns="vm.fields" callback="setColumns()"></trs-set-columns>
+        <trs-pagenation-left page-count="vm.page"  callback="selectPageNum()" is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="vm.page.ITEMCOUNT" ng-change="pageChanged()" ng-model="vm.page.pagenumber" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="vm.page.pagesize" rotate="false" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <!-- <trs-pagenation-right callback="jumpToPage()" currpage="vm.jumpToPageNum"></trs-pagenation-right> -->
+    </div>
+</div>
+<div class="edit_table mc-padding-0" ng-show="checkPreview()">
+    <ul>
+        <li ng-repeat="content in vm.contents" class="newspaper mc-margin-sm">
+            <div class="cover">
+                <img ng-src="{{content.imgurl[0].urlM}}" alt="">
+            </div>
+            <p class="mc-margin-vertical-xs">钱江晚报</p>
+            <span class="text-grey">收藏</span>
+        </li>
+    </ul>
+</div>

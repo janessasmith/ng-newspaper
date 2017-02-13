@@ -1,0 +1,208 @@
+.userManageMent-userMngGroupMngMoveGroup-window .modal-dialog {
+    width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 80%;
+    margin: auto;
+}
+
+.userMngGroupMngMoveGroupSubmit {
+    width: 598px;
+    min-height: 505px;
+    border: 2px solid #E1DFDB;
+    border-radius: 4px;
+}
+
+.userMngGroupMngMoveGroupSubmit .head {
+    height: 40px;
+}
+
+.userMngGroupMngMoveGroupSubmit .head span {
+    position: relative;
+    top: 10px;
+    font-weight: bold;
+    left: 10px;
+}
+
+.userMngGroupMngMoveGroupSubmit .head img {
+    position: relative;
+    top: 8px;
+    left: 490px;
+    cursor: pointer;
+}
+
+.userMngGroupMngMoveGroupSubmit .search {
+    height: 60px;
+    background-color: #F0F2F4;
+}
+
+.userMngGroupMngMoveGroupSubmit .search span {
+    position: relative;
+    float: left;
+    top: 20px;
+    left: 20px;
+}
+
+.userMngGroupMngMoveGroupSubmit .search input {
+    width: 460px;
+    position: relative;
+    top: 12px;
+    left: 30px;
+}
+
+.userMngGroupMngMoveGroupSubmit .body {
+    height: 465px;
+    background: #f0f2f4;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .right {
+    /* width: 338px;*/
+    height: 334px;
+    margin-top: 10px;
+    margin-left: 10px;
+    /*border: 1px solid #E4E2DE;*/
+    float: left;
+    /* overflow-y: auto;*/
+}
+
+.userMngGroupMngMoveGroupSubmit .body .right .tree {
+    padding-top: 10px;
+    /*  overflow-y: scroll;
+    overflow-x: auto;*/
+    height: 310px;
+    padding-left: 10px;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .right .tree .checkbox {
+    display: initial;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .right .tree .checkbox label {
+    padding: 6px;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .right .tree .checkbox .regular-checkbox:checked + label:after {
+    top: 0px;
+    left: 0px
+}
+
+.userMngGroupMngMoveGroupSubmit .body .right .head {
+    height: 26px;
+    background-color: #0095CE;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .right .head span {
+    top: 2px;
+    color: white;
+    left: 4px;
+    cursor: pointer;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .right .head img {
+    position: initial;
+    margin-left: 20px;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .left {
+    height: 334px;
+    width: 231px;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: 1px solid #E4E2DE;
+    padding-left: 5px;
+    overflow: auto;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .main {
+    /* overflow: hidden;*/
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .left span.myLabel {
+    font-size: 14px;
+    border: 1px solid #E4E2DE;
+    padding: 5px;
+    height: 28px;
+    line-height: 15px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .left span.myClose {
+    cursor: pointer;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .foot {
+    height: 55px;
+    overflow: hidden;
+}
+.userMngGroupMngMoveGroupSubmit .body .foot div{
+    margin-top: 10px;
+    overflow: hidden;
+}
+.userMngGroupMngMoveGroupSubmit treecontrol li {
+    line-height: 30px;
+    width: 550px
+}
+
+.userMngGroupMngMoveGroupSubmit treecontrol li .tree-label span.selected {
+    font-weight: bold;
+}
+
+.userMngGroupMngMoveGroupSubmit treecontrol.tree-light li .tree-selected {
+    font-weight: normal;
+}
+
+.userMngGroupMngMoveGroupSubmit treecontrol li .tree-label {
+    position: relative;
+    top: -5px;
+}
+
+.userMngGroupMngMoveGroupSubmit treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    padding: 3px 10px;
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat !important;
+}
+
+.userMngGroupMngMoveGroupSubmit treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .foot button.confirm {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    background: #00bd9b;
+    border: none;
+    border-radius: 4px;
+    float: left;
+    margin-left: 165px;
+    margin-top: 10px;
+    padding:0px;
+}
+
+.userMngGroupMngMoveGroupSubmit .body .foot button.cancel {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    border-color: #C1C1C1!important;
+    background-color: #0095ce;
+    float: left;
+    margin-left: 72px;
+    margin-top: 10px;
+}

@@ -1,0 +1,20 @@
+<div class="man_produ_modify">
+    <div class="man_produ_modify_head">
+        <p>删除</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()"/>
+    </div>
+    <div class="man_produ_column_delete" ng-if="!isDeleteFirst">
+        <img src="./manageConfig/productManageMent/images/gl02.png"/>
+        &nbsp;&nbsp;
+        您确认要删除此栏目
+    </div>
+    <div class="man_produ_column_delete" ng-if="isDeleteFirst">
+        <span>登录用户密码：</span>
+        <input type="text" class="form-control"/>
+    </div>
+    <div class="man_produ_delete_footer">
+        <button class="news-role-btn man_produ_delete_footer_cancel btn_confirm" ng-click="deleteToggle()" ng-if="!isDeleteFirst">删除</button>
+        <button class="news-role-btn man_produ_delete_footer_cancel btn_confirm" ng-click="confirm()" ng-if="isDeleteFirst">删除</button>
+        <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

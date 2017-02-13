@@ -1,0 +1,32 @@
+<div class="frame_title">
+    <p>账号延期</p>
+    <a ng-click="cancel();" class="frame_cancel"></a>
+</div>
+<div class="account_edit_cont" ng-controller="accountDelay">
+    <ul>
+        <li><p>所属单位：</p>
+
+            <div class="account_edit_list">
+                <p>{{UnitTitle|unitFlr:UnitTitle}}</p>
+            </div>
+        </li>
+        <li><p>所属类别：</p>
+
+            <div class="account_edit_list">
+                <p>{{ClassTitle|classFlr:ClassTitle}}</p>
+            </div>
+        </li>
+        <li><p>账号：</p>
+                <input class="common" type="text" ng-model="UserId" placeholder="请用微博账号登录"/>
+        </li>
+        <li><p>密码：</p>
+            <input class="common" type="password" ng-model="Passwd" placeholder="请输入密码"/>
+        </li>
+    </ul>
+    <div class="delete_btn">
+        <div class="tz-tk-btn">
+            <a ng-click="ok(UserId,Passwd);" class="edit_save">保存</a>
+            <a ng-click="cancel();" class="edit_cancel">取消</a>
+        </div>
+    </div>
+</div>

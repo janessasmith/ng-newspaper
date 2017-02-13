@@ -1,0 +1,159 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12 col-lg-12">
+        <button class="btn btn-default btn-commen opacity100" ng-click="openTakeDraftModal()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='openTakeDraftModal'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='openTakeDraftModal'?'z56-1.png':'z56.png'}}"/>
+            </span> 取稿
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="CreationAxis()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='CreationAxis'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='CreationAxis'?'z14-1.png':'z14.png'}}"/>
+            </span> 创作轴
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="openReserveDraftModal()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='openReserveDraftModal'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='openReserveDraftModal'?'z15-1.png':'z15.png'}}" />
+            </span> 预留
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="collect()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='collect'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='collect'?'z16-1.png':'z16.png'}}" />
+            </span> 收藏
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="printbtn()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='printbtn'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='printbtn'?'z17-1.png':'z17.png'}}" />
+            </span> 打印
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="export()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='export'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='export'?'z55-1.png':'z55.png'}}" />
+            </span> 导出
+        </button>
+    </div>
+</div>
+<!-- <div class="row mb10">
+    <div class="col-md-12 text-center bm_dot_line mc-padding-xs">
+        <span class="font_red">有8条新稿件更新
+            <img src="./resourceCenter/images/z19.png" alt="刷新">
+        </span>
+    </div>
+</div> -->
+<div class="row mb10 mt10">
+    <div class="col-md-12 iw-custom-top">
+        <custom-select label="时间范围" options="data.timeArray" callback="searchWithKeyword('time',data.selectedTime)" selected-option="data.selectedTime"></custom-select>
+        <div class="m_search pull-right">
+            <!--  <a href="" class="u_little_icon">
+                <img src="./resourceCenter/images/z21.png" alt="">
+            </a>
+            <a href="" class="u_little_icon">
+                <img src="./resourceCenter/images/z20.png" alt="">
+            </a> -->
+            <input type="text" class="form-control" placeholder="请输入关键字搜索" ng-model="filterKeyWord">
+            <button class="btn btn-default btn-commen" type="button" ng-click="searchWithKeyword('content_keyword',filterKeyWord)">检索</button>
+            <button class="btn btn-default btn-commen" type="button" ui-sref="retrieval({channelName:'iwo'})">高级检索</button>
+        </div>
+    </div>
+</div>
+<!-- <div class="row plr10">
+    <div class="col-md-1 text-right mc-padding-0">
+        最近搜索词：
+    </div>
+    <div class="col-md-7 mc-padding-0">
+        <ul class="u_color_list word_in">
+            <li class="bkg-danger">西湖</li>
+            <li class="bkg-info">科技</li>
+            <li class="bkg-warning">媒体</li>
+            <li class="bkg-success">蒲公英</li>
+        </ul>
+    </div>
+    <div class="col-md-4 text-right mc-padding-0">
+        <ul class="u_color_list">
+            <li><i class="bkg-danger"></i>地域</li>
+            <li><i class="bkg-info"></i>领域</li>
+            <li><i class="bkg-warning"></i>关键词</li>
+            <li><i class="bkg-success"></i>账号</li>
+        </ul>
+    </div>
+</div>
+<div class="row plr10 mb10">
+    <div class="col-md-1 text-right mc-padding-0">
+        热门标签：
+    </div>
+    <div class="col-md-11 mc-padding-0">
+        <ul class="u_word_list">
+            <li>党建</li>
+            <li>杭州</li>
+            <li>建德</li>
+            <li>经济</li>
+            <li>宁波</li>
+            <li>普陀</li>
+            <li>瑞安</li>
+            <li>台州</li>
+            <li>天气</li>
+            <li>突发</li>
+            <li>温岭</li>
+            <li>文化</li>
+            <li>仙居</li>
+        </ul>
+    </div>
+</div> -->
+<div class="edit_table border_radius_5 iw-custom-table">
+    <div class="min_height">
+        <table class="table table-striped resouce_center_share_table data-table">
+            <thead>
+                <tr>
+                    <th class="td-check col-cbx">
+                        <trs-checkbox callback="selectAll()" ischecked="data.items.length>0&&data.selectedArray.length==data.items.length"></trs-checkbox>
+                    </th>
+                    <th class="td-number col-index" style="text-align: center;">序号</th>
+                    <th>标题</th>
+                    <th class="xcol-docpubtime">时间</th>
+                    <th class="xcol-source">来源</th>
+                    <th class="xcol-source">频道</th>
+                    <th class="xcol-doctype"></th>
+                </tr>
+            </thead>
+            <tbody trs-thumb-container>
+                <tr ng-repeat="item in data.items">
+                    <td class="td-check">
+                        <trs-checkbox ischecked="data.selectedArray.indexOf(item)>-1" callback="selectDoc(item)"></trs-checkbox>
+                    </td>
+                    <!--全选-->
+                    <td>{{(page.CURRPAGE-1)*page.PAGESIZE+$index+1}}</td>
+                    <td class="resouce_center_share_title_td gaiOpe">
+                        <preview-title class="pull-left" summary-text="item.IR_ABSTRACT" title-text="item.DOCTITLE" target-url="#/resourcedetail?guid={{item.ZB_GUID}}&indexname={{basicParams.indexName}}"></preview-title>
+                        <a href="">
+                            <span class="text-warning gai" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,0)">取</span>
+                        </a>
+                        <a href="">
+                            <span class="text-success gai" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,1)">签</span>
+                        </a>
+                        <a href="">
+                            <span class="text-primary gai" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,2)">见</span>
+                        </a>
+                        <a href="">
+                            <span class="text-danger gai" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,3)">撤</span>
+                        </a>
+                        <a href="">
+                            <span class="text-info gai" ng-click="viewBigDataInfo(item.ZB_GUID,true)" ng-show="showOperFlag(item.ZB_GUID,4)">重</span>
+                        </a>
+                    </td>
+                    <td>{{item.DOCPUBTIME}}</td>
+                    <td>{{item.ZB_SOURCE_SITE}}</td>
+                    <td>{{item.DOCCHANNEL}}</td>
+                    <td class="xcol-doctype">
+                        <trs-thumb item="item" transform="resourceCenterThumb"></trs-thumb>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="page resourcectrl cls-paging">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <!-- <trs-pagenation-right callback="jumpToPage()" currpage="jumpToPageNum"></trs-pagenation-right> -->
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>
+<trs-go-top></trs-go-top>

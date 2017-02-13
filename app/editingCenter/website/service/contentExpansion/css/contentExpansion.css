@@ -1,0 +1,96 @@
+.website-contentExpansion-window .modal-dialog {
+    width: 617px;
+}
+
+.contentExpansion {
+    width: 617px;
+    min-height: 566px;
+    background-color: #F2F2F5;
+    border: 2px solid #E1DFDB;
+    border-radius: 4px;
+}
+
+.contentExpansion .head {
+    height: 28px;
+	width:100%; 
+}
+
+.contentExpansion .head img {
+    cursor: pointer;
+	position:relative;
+	left:580px;
+	top:5px;
+}
+
+.contentExpansion .bottom {
+    height: 58px;
+    width: 100%;
+    padding-top: 15px;
+	position:relative;
+	left:400px;
+}
+
+.contentExpansion .bottom button {
+    width: 74px;
+    height: 25px;
+    border: 0px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+}
+
+.contentExpansion .bottom button.confirm {
+    background-color: #00BD9A;
+}
+
+.contentExpansion .bottom button.cancel {
+    background-color: #0095CE;
+}
+.contentExpansion-downlist ul{
+	background-color: #F1F2F6;
+	overflow:hidden;
+	height:37px;
+	border:none;
+}
+.contentExpansion-downlist textarea.edit-news-textarea{
+	height: 500px
+}
+
+.contentExpansion-downlist ul li.active{
+	background-color: #fff;
+	border:none;
+	color:#000;
+}
+.contentExpansion-downlist ul li{
+	height:37px;
+	position:relative;
+	width:25%;
+	border:1px solid #DDDDDD;
+	border-top:none;
+}
+.contentExpansion-downlist .tab-content{
+	min-height:500px;
+	background-color:#fff;
+}
+.contentExpansion-downlist ul li:hover {
+    background: none;
+	color:#fff;
+}
+.contentExpansion-downlist ul li a {
+    padding: 10px 0px 10px 20px;
+    font-size: 14px;
+    background: none
+}
+.contentExpansion-downlist > ul > li > a:hover,
+.nav-tabs.nav-justified > .active > a:hover {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 22px;
+}
+.contentExpansion-downlist .nav-tabs > li.active > a{
+	border:none;
+	background:none;
+	color:#000;
+	line-height:22px;
+}

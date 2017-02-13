@@ -1,0 +1,38 @@
+.ya-search-wrap {
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.ya-search-wrap .title {
+    font-size: 16px;
+    color: #4496d2;
+    font-family: "Microsoft Yahei";
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    cursor: pointer;
+}
+
+.ya-search-wrap .content {
+	font-family: "Microsoft Yahei";
+	line-height: 22px;
+	color: #555;
+}
+
+.ya-search-wrap .time {
+	font-size: 13px;
+	color: #339a31;
+}
+
+.no-result-text{
+	text-align: center;
+    width: 50%;
+    color: #bbb;
+    font-size: 18px;
+    font-family: "Microsoft yahei";
+    margin-top: 100px;
+    /* box-shadow: 1px 1px 1px; */
+    text-shadow: 3px 3px 5px #ccc;
+}

@@ -1,0 +1,30 @@
+<div class="new-wb-bk lf">
+    <div class="weibo-tit zb-zx-wz"><span>最新文章</span>
+    </div>
+    <div class="new-wb-tit" >
+        <div style="position: relative;width: 495px;overflow: hidden;float: left;height: 29px;">
+            <div style="position: absolute;" change num="1" ele="zxChange" width="495">
+                <a href="" checked="lg-sel-cur" class="lg-sel-btn lg-sel-cur" 
+                   ng-click="queryLatestArticle();">全部</a>
+                <a href="" ng-repeat="class in classs" class="lg-sel-btn" checked="lg-sel-cur" 
+                   ng-click="queryLatestArticle(class.ClassName);">{{class.ClassName}}</a>
+            </div>
+        </div>
+        <div>
+            <a href class="wb-go-btn" id="zxChange"></a>
+        </div>
+    </div>
+    <div class="league-deal-list" style="padding-top: 4px;height: 509px;">
+        <a href class="wb-add-btn" ng-click="more();" ></a>
+        <div class="wb-ls-bk" ng-repeat="content in contents">
+            <div class="wb-gf-img wb-ls-img"><img ng-src="{{content.headPicUrl}}" alt=""></div>
+            <div class="new-wb-deal">
+                <div class="wb-deal-name"><a href >{{content.name}}</a>
+                    
+                </div>
+                <a href class="new-wb-p">{{content.content}}</a>
+                <p><span>{{content.crtime}}</span><span>来自</span><span>{{content.source}}</span></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.manuscript-archives-select .dropdown .bth-fix {
+    margin-right: 0px;
+}
+
+.manuscript-archives-select .s_onlyme {
+    float: none;
+    margin-right: 1px;
+}
+
+.manuscript-archives-select input.manuscript-checkbox[type="checkbox"] {
+    float: none;
+    vertical-align: -2px;
+}
+
+.manuscript-archives-select .ml12 {
+    margin-left: 12px;
+}
+
+.manuscript-copycreate {
+    cursor: pointer;
+}
+
+.manuscript-archives-copy {
+    width: 120px;
+}
+
+.manuscript-archives-copy:hover {
+    width: 120px;
+}
+
+.manuscript-archives-copy:focus {
+    width: 120px;
+}
+
+.manuscript-onlyme-word {
+    margin: 0;
+    vertical-align: 1px;
+}
+
+.manuscript-first-checkbox label {
+    margin-left: -10px;
+}
+
+.btn-email-cbx {
+    width: 114px;
+}
+
+.manuscript_archives_select_create_draft {
+    display: inline-block;
+    vertical-align: -3px;
+}

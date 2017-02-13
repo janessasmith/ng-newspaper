@@ -1,0 +1,50 @@
+td .show-td-icon-btn {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.trs-list-icon-main {
+    position: absolute;
+    width: 460px;
+    height: 320px;
+}
+
+.trs-list-icon-img-main {
+    position: absolute;
+    max-width: 590px;
+    margin-bottom: 10px;
+    z-index: 1000000;
+    background: #b7b6b6;
+    text-align: center;
+    width: 460px;
+    height: 320px;
+    overflow: hidden;
+    border: 6px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.trs-list-icon-img-main img {
+    width: 100%;
+    max-width: 450px;
+}
+
+td .edit-list-icon {
+    width: 40px;
+    max-height: 30px;
+}
+
+.trs-list-icon-video-main,
+.trs-list-icon-audio-main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 6px solid #ddd;
+}
+
+.trs-list-icon-video-main iframe,
+.trs-list-icon-audio-main iframe {
+    width: 100%;
+    height: 100%;
+}

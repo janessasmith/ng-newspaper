@@ -1,0 +1,54 @@
+<form name="addNewSiteForm">
+    <div class="man_produ_modify">
+        <div class="man_produ_modify_head">
+            <p ng-bind="title"></p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="edit_outSending_main">
+            <div class="add_new_site_row">
+                <p>
+                    {{type}}名称：
+                </p>
+                <div>
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="add_new_site_row">
+                <p>
+                    {{type}}描述：
+                </p>
+                <div>
+                    <textarea class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="add_new_site_row">
+                <p>
+                    预留字段1：
+                </p>
+                <div>
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="add_new_site_row">
+                <p>
+                    预留字段2：
+                </p>
+                <div>
+                    <input type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="add_new_site_row">
+                <p>
+                    排序：
+                </p>
+                <div>
+                    <trs-single-select selected-option="" callback="" options=""></trs-single-select>
+                </div>
+            </div>
+            <div class="man_produ_modify_footer">
+                <button class="news-role-btn right btn_cancel" ng-click="cancel()">取消</button>
+                <button class="news-role-btn man_produ_modify_footer_cancel right btn_confirm" ng-click="confirm()">确定</button>
+            </div>
+        </div>
+    </div>
+</form>

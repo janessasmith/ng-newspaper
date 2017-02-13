@@ -1,0 +1,19 @@
+<form name="addAndModForm" novalidate>
+    <div class="man_produ_modify">
+        <div class="man_produ_modify_head">
+            <p>推首页</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_modify_inner">
+            <div class="man_produ_column_modify">
+                <p ng-repeat="item in datas">
+                    <trs-single-radio ischecked="item.CHANNELID==selected.CHANNELID" label="{{item.CHANNELNAME|trsLimitTo:10}}" group="'BFWChnnl'" callback="selectChannel(item)"></trs-single-radio>
+                </p>
+            </div>
+            <div class="man_produ_modify_footer">
+                <button validation-submit="addAndModForm" class="news-role-btn man_produ_modify_footer_cancel btn_confirm" ng-click="confirm()">确定</button>
+                <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

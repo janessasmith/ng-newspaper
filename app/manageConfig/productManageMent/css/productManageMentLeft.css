@@ -1,0 +1,53 @@
+.product-manage-left-content .editing-nav ul li:nth-child(1) {
+    background: url("./manageConfig/productManageMent/images/gl16.png") #222933 22% center no-repeat;
+    padding-left: 8px;
+}
+
+.product-manage-left-content .editing-nav ul li.active:nth-child(1) {
+    background: url("./manageConfig/productManageMent/images/gl16.png") #374760 22% center no-repeat;
+}
+
+.product-manage-left-content .editing-nav ul li:nth-child(2) {
+    background: url("./editingCenter/app/images/l3.png") #222933 14% center no-repeat;
+}
+
+.product-manage-left-content .editing-nav ul li.active:nth-child(2) {
+    background: url("./editingCenter/app/images/l3.png") #374760 14% center no-repeat;
+}
+
+.product-manage-left-content .editing-nav ul li:nth-child(3) {
+    background: url("./editingCenter/app/images/l2.png") #222933 18% center no-repeat;
+}
+
+.product-manage-left-content .editing-nav ul li.active:nth-child(3) {
+    background: url("./editingCenter/app/images/l2.png") #374760 18% center no-repeat;
+}
+
+.product-manage-left-content .editing-more {
+    width: 7%;
+}
+
+.product-manage-left-content .nav-tabs.nav-justified {
+    /*margin-left: 3%;*/
+    padding-left: 3%;
+    overflow: hidden;
+}
+.product-manage-left-content .nav-tabs.nav-justified > li {
+    width:33%;
+}
+
+.product-manage-left-content .editing-downlist {
+    margin-left: 15px;
+}
+.product-manage-left-content .editing-downlist .tab-content{
+    min-height: initial;
+}
+.product-manage-left-content .editing-list ul{
+    background-color: initial;
+}
+.product-manage-left-content .iwo_accordion .panel-default > .panel-heading .panel-title a{
+    width: inherit;
+}
+.product-manage-left-content .editing-downlist .tab-content treecontrol ul li{
+    width: 300px
+}

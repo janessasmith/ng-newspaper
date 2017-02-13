@@ -1,0 +1,145 @@
+<div class="manCon-sys-souCenClassifyMgr-chnnlMgr">
+    <div trs-scroll-fix class="row edit_right_head proManMent_pmm_head">
+        <div class="col-md-8 col-lg-9">
+            <div class="left">
+                <ol class="breadcrumb pull-right edit_breadcrumb">
+                    <li>
+                        <span>显示来自哪个渠道</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+            <form name="searchForm" novalidate>
+                <div class="input-group edit_input_group invalidate-input-box">
+                    <input name="searchWord" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50" type="text" ng-model="searchWord" class="form-control manCon-sys-souCenClassifyMgr-form-search mr10" placeholder="请输入关键字" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                    <b class="input-group-btn">
+                        <button validation-submit="searchForm" class="btn btn-default btn_edit_search mt5" ng-click="search()" type="button">搜索</button>
+                    </b>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="manCon-sys-souCen-chnnl-container">
+       <div class="chnnl-level-block">
+            <div class="chnnl-level-block-title">
+                <p>一级分类</p>
+            </div>
+           <div class="sys-souCen-chnnlMgr-item-out left" ng-repeat="websiteItem in websiteItems" ng-mouseenter="getInSelectedChl(websiteItem)">
+               <div class="sys-souCen-chnnlMgr-item-default text-center" ng-click="" ng-class="{'selectedChannel-active':selectedChannel==websiteItem}">
+                   <a ui-sref="manageconfig.productmanage.website.column({channel:websiteItem.CHANNELID})" ng-bind="websiteItem.CHNLDESC">
+                   </a>
+               </div>
+               <div class="sys-souCen-chnnlMgr-item-icon-group" ng-show="selectedChannel==websiteItem">
+                   <a ng-click="deleteViews()">
+                       <img src="./manageConfig/productManageMent/images/gl58.png" />
+                   </a>
+                   <a ng-click="modifyViews()">
+                       <img src="./manageConfig/productManageMent/images/gl61.png" />
+                   </a>
+               </div>
+           </div>
+           <div class="sys-souCen-chnnlMgr-item-out left">
+               <div class="sys-souCen-chnnlMgr-item-default text-center selectedChannel-active">
+                   <a>
+                       这是假的1
+                   </a>
+               </div>
+               <div class="sys-souCen-chnnlMgr-item-icon-group">
+                   <a ng-click="deleteViews()">
+                       <img src="./manageConfig/productManageMent/images/gl58.png" />
+                   </a>
+                   <a ng-click="modifyViews()">
+                       <img src="./manageConfig/productManageMent/images/gl61.png" />
+                   </a>
+               </div>
+           </div>
+           <div class="sys-souCen-chnnlMgr-item-out left">
+               <div class="sys-souCen-chnnlMgr-item-default text-center">
+                   <a>
+                       这是假的2
+                   </a>
+               </div>
+               <div class="sys-souCen-chnnlMgr-item-icon-group">
+                   <a ng-click="deleteViews()">
+                       <img src="./manageConfig/productManageMent/images/gl58.png" />
+                   </a>
+                   <a ng-click="modifyViews()">
+                       <img src="./manageConfig/productManageMent/images/gl61.png" />
+                   </a>
+               </div>
+           </div>
+           <div class="sys-souCen-chnnlMgr-item-out left">
+               <div class="pmm-channel-add-item text-center" ng-click="addViews()">
+                   <img src="./manageConfig/productManageMent/images/gl09.png" />
+               </div>
+           </div>
+           <div class="clear"></div>
+       </div>
+        <div class="chnnl-level-block">
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="chnnl-level-block-delete"/>
+            <div class="chnnl-level-block-title">
+                <p>
+                    二级分类
+                    <span>+</span>
+                </p>
+            </div>
+            <div class="sys-souCen-chnnlMgr-item-out left" ng-repeat="websiteItem in websiteItems" ng-mouseenter="getInSelectedChl(websiteItem)">
+                <div class="sys-souCen-chnnlMgr-item-default text-center" ng-click="" ng-class="{'selectedChannel-active':selectedChannel==websiteItem}">
+                    <a ui-sref="manageconfig.productmanage.website.column({channel:websiteItem.CHANNELID})" ng-bind="websiteItem.CHNLDESC">
+                    </a>
+                </div>
+                <div class="sys-souCen-chnnlMgr-item-icon-group" ng-show="selectedChannel==websiteItem">
+                    <a ng-click="deleteViews()">
+                        <img src="./manageConfig/productManageMent/images/gl58.png" />
+                    </a>
+                    <a ng-click="modifyViews()">
+                        <img src="./manageConfig/productManageMent/images/gl61.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="sys-souCen-chnnlMgr-item-out left">
+                <div class="sys-souCen-chnnlMgr-item-default text-center selectedChannel-active">
+                    <a>
+                        这是假的3
+                    </a>
+                </div>
+                <div class="sys-souCen-chnnlMgr-item-icon-group">
+                    <a ng-click="deleteViews()">
+                        <img src="./manageConfig/productManageMent/images/gl58.png" />
+                    </a>
+                    <a ng-click="modifyViews()">
+                        <img src="./manageConfig/productManageMent/images/gl61.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="sys-souCen-chnnlMgr-item-out left">
+                <div class="sys-souCen-chnnlMgr-item-default text-center">
+                    <a>
+                        这是假的4
+                    </a>
+                </div>
+                <div class="sys-souCen-chnnlMgr-item-icon-group">
+                    <a ng-click="deleteViews()">
+                        <img src="./manageConfig/productManageMent/images/gl58.png" />
+                    </a>
+                    <a ng-click="modifyViews()">
+                        <img src="./manageConfig/productManageMent/images/gl61.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="sys-souCen-chnnlMgr-item-out left">
+                <div class="pmm-channel-add-item text-center" ng-click="addViews()">
+                    <img src="./manageConfig/productManageMent/images/gl09.png" />
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="manCon-sys-souCenClassifyMgr-recycle">
+        <a ui-sref="manageconfig.sysmanage.soucenclassifymgr.channelmgr.recyclebin">
+            <img src="./manageConfig/productManageMent/images/i7.png" />
+            <span>回收站</span>
+        </a>
+    </div>
+</div>

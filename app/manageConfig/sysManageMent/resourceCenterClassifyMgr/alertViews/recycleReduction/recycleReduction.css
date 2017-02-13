@@ -1,0 +1,39 @@
+.manCon-sys-souCen-recycle-reduction .modal-dialog {
+    width: 400px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    height: 38%;
+}
+
+.manCon-sys-souCen-recycle-reduction .man_produ_column_delete {
+    background: #F0F2F5;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.manCon-sys-souCen-recycle-reduction .man_produ_delete_footer {
+    background: #fff;
+    padding: 10px 10px 10px 200px;
+}
+
+.manCon-sys-souCen-recycle-reduction .man_produ_delete_footer .man_produ_delete_footer_cancel {
+    margin-right: 0;
+    background: #1aba9f;
+}
+
+.manCon-sys-souCen-recycle-reduction .man_produ_delete_footer button {
+    width: 80px;
+    height: 30px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}

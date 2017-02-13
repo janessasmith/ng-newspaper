@@ -1,0 +1,29 @@
+{
+    "result": [{
+        "DICTATEID": "2",
+        "TITLE": "业内揭秘抢票神器保险搭售：超单独购买价5倍",
+        "ISSECRET": "0",
+        "ONLYDAY": "1"
+    }, {
+        "DICTATEID": "2",
+        "TITLE": "众泰2016年又要出新SUV车型啦 8万落地 这些合资车不错",
+        "ISSECRET": "1",
+        "ONLYDAY": "2"
+    }, {
+        "DICTATEID": "2",
+        "TITLE": "那些让勇士望其项背的神队 分居!卡戴珊给奥多姆另租房",
+        "ISSECRET": "0",
+        "ONLYDAY": "3"
+    }, {
+        "DICTATEID": "2",
+        "TITLE": "小芈月海边度假打扮俏皮 八一八:赵本山都有哪16个头衔",
+        "ISSECRET": "0",
+        "ONLYDAY": "5"
+    }],
+    "pageInfo": {
+        "totalNum": 1,
+        "pageSize": 10,
+        "pageCount": 1,
+        "pageIndex": 1
+    }
+}

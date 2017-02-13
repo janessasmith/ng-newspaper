@@ -1,0 +1,57 @@
+<div class="weixin_headline">
+    <ul class="weixin_islist">
+        <li ng-click="showTab('title')" ng-class="isSelectedTab==status.tabLists.title?'islist_Select':''">
+            <span class="islist_icon"><img src="./editingCenter/weixin/images/wx1.png"></span>
+            <span class="islist_txt" ng-bind="status.tabLists.title"><!-- 标题 --></span>
+        </li>
+        <li ng-click="showTab('content')" ng-class="isSelectedTab==status.tabLists.content?'islist_Select':''">
+            <span class="islist_icon"><img src="./editingCenter/weixin/images/wx2.png"></span>
+            <span class="islist_txt" ng-bind="status.tabLists.content"><!-- 正文 --></span>
+        </li>
+        <li ng-click="showTab('picture')" ng-class="isSelectedTab==status.tabLists.picture?'islist_Select':''">
+            <span class="islist_icon"><img src="./editingCenter/weixin/images/wx3.png"></span>
+            <span class="islist_txt" ng-bind="status.tabLists.picture"><!-- 图片 --></span>
+        </li>
+        <li ng-click="showTab('imageText')" ng-class="isSelectedTab==status.tabLists.imageText?'islist_Select':''">
+            <span class="islist_icon"><img src="./editingCenter/weixin/images/wx4.png"></span>
+            <span class="islist_txt" ng-bind="status.tabLists.imageText"><!-- 图文 --></span>
+        </li>
+        <li ng-click="showTab('layout')" ng-class="isSelectedTab==status.tabLists.layout?'islist_Select':''">
+            <span class="islist_icon"><img src="./editingCenter/weixin/images/wx5.png"></span>
+            <span class="islist_txt" ng-bind="status.tabLists.layout"><!-- 布局 --></span>
+        </li>
+        <li ng-click="isSelectedTab=status.tabLists.colorScheme" ng-class="isSelectedTab==status.tabLists.colorScheme?'islist_Select':''">
+            <span class="islist_icon"><img src="./editingCenter/weixin/images/wx6.png"></span>
+            <span class="islist_txt" ng-bind="status.tabLists.colorScheme"><!-- 配色方案 --></span>
+        </li>
+    </ul>
+    <div class="weixin_news_detail">
+        <div class="weixin_news_detail_first">
+            排序：<span>2</span> 收藏时间：
+            <span calss="detail_first_time">2015.07.02 09:30:23</span> 使用次数：
+            <span>2</span>
+        </div>
+        <div class="weixin_insert-style-list" trs-scrollbar>
+            <!-- 标题开始 -->
+            <ul id="title" class="weixin_editor-template-list ui-portlet-list" ng-show="isSelectedTab==status.tabLists.title"></ul>
+            <!-- 标题结束 -->
+            <!-- 正文开始 -->
+            <ul id="content" class="weixin_editor-template-list ui-portlet-list" ng-show="isSelectedTab==status.tabLists.content"></ul>
+            <!-- 正文结束 -->
+            <!-- 图片开始 -->
+            <ul id="picture" class="weixin_editor-template-list ui-portlet-list" ng-show="isSelectedTab==status.tabLists.picture"></ul>
+            <!-- 图片结束 -->
+            <!-- 图文开始 -->
+            <ul id="imageText" class="weixin_editor-template-list ui-portlet-list" ng-show="isSelectedTab==status.tabLists.imageText"></ul>
+            <!-- 图文结束 -->
+            <!-- 布局开始 -->
+            <ul id="layout" class="weixin_editor-template-list ui-portlet-list" ng-show="isSelectedTab==status.tabLists.layout"></ul>
+            <!-- 布局结束 -->
+            <!-- 配色方案开始 -->
+            <ul class="weixin_editor-template-list ui-portlet-list" ng-show="isSelectedTab==status.tabLists.colorScheme">
+                配色方案
+            </ul>
+            <!-- 配色方案结束 -->
+        </div>
+    </div>
+</div>

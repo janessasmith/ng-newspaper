@@ -1,0 +1,18 @@
+{
+
+	"id": "line1",
+	"type": "logarithmic",
+	"date": ["09-01", "09-02", "09-03", "09-04", "09-05"],
+	"type": {
+		"data": [],
+		"x": "right"
+	},
+	"symbol": ["emptyCircle"],
+	"data": [{
+		"name": "粉丝数",
+		"type": "line",
+		"stack": "总数",
+		"data": [80, 130, 142, 96, 120]
+	}],
+	"color": ["red"]
+}

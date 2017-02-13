@@ -1,0 +1,47 @@
+[
+	{
+        "ROLETYPE" : "0",
+        "ROLEID" : "1",
+        "CRTIME" : "",
+        "SYSDEFINED" : "0",
+        "ROLENAME" : "RoleManagers",
+        "VIEWABLE" : "1",
+        "CRUSER" : "admin",
+        "ROLEORDER" : "2",
+        "GROUPID" : "4",
+        "ROLERANGE" : "-1",
+        "RIGHTVALUE" : "0",
+        "REMOVEABLE" : "0",
+        "ROLEDESC" : "角色维护"
+    },
+	{
+        "ROLETYPE" : "0",
+        "ROLEID" : "2",
+        "CRTIME" : "",
+        "SYSDEFINED" : "0",
+        "ROLENAME" : "RoleManagers",
+        "VIEWABLE" : "1",
+        "CRUSER" : "admin",
+        "ROLEORDER" : "2",
+        "GROUPID" : "4",
+        "ROLERANGE" : "-1",
+        "RIGHTVALUE" : "0",
+        "REMOVEABLE" : "0",
+        "ROLEDESC" : "前端人员"
+    },
+	{
+        "ROLETYPE" : "0",
+        "ROLEID" : "3",
+        "CRTIME" : "",
+        "SYSDEFINED" : "0",
+        "ROLENAME" : "RoleManagers",
+        "VIEWABLE" : "1",
+        "CRUSER" : "admin",
+        "ROLEORDER" : "2",
+        "GROUPID" : "4",
+        "ROLERANGE" : "-1",
+        "RIGHTVALUE" : "0",
+        "REMOVEABLE" : "0",
+        "ROLEDESC" : "后台人员"
+    }
+]

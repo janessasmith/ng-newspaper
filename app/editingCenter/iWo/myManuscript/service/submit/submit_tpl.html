@@ -1,0 +1,148 @@
+<div class="myManuSubmit">
+    <div class="submit">
+        <div class="header">
+            <p>多渠道提交</p>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="content">
+            <div class="headline">
+                <ul class="nav">
+                    <li ng-repeat="media in cur.medias" ng-bind="media.mediaName" ng-click="setCurrMedia(media,$index)" ng-class="{'active':cur.currMedia===media}" ng-if="status.accessAuthority[media.type]==true"></li>
+                </ul>
+            </div>
+            <ul class='moreList' ng-show="status.hideNewsList">
+                <li ng-repeat="moreList in status.anthorSelected">
+                    <a href="javascript:void(0)" ng-bind="moreList.TITLE | trsLimitTo:20" title="{{moreList.TITLE}}">
+                    </a>
+                </li>
+            </ul>
+            <div class="con">
+                <div class="conLeft" ng-if="cur.currMedia.mediaType!=4">
+                    <p ng-if="cur.currMedia.mediaType===1">APP列表</p>
+                    <p ng-if="cur.currMedia.mediaType===2">网站列表</p>
+                    <!--一级审核的报纸带有见报日期-->
+                    <div class="timeGroup" ng-show="cur.currMedia.mediaType===3&&data.newspaper.selectedItem.ISDUOJISHEN==0">
+                        <span class="dateTitle">见报日期：</span>
+                        <input type="text" size="10" class="form-control" ng-model="status.createDate" placeholder="Date" data-autoclose="1" bs-datepicker readonly="readonly">
+                    </div>
+                    <div class="timeGroup" ng-show="cur.currMedia.mediaType===3&&data.newspaper.selectedItem.ISDUOJISHEN!=0">
+                    </div>
+                    <div class="siteCon">
+                        <!--报纸-->
+                        <div ng-if="cur.currMedia.mediaType===3&&status.accessAuthority.newspaper==true">
+                            <!--报纸列表-->
+                            <div class="newspaperSite left">
+                                <p class="newsP">报纸列表</p>
+                                <ul>
+                                    <li ng-repeat="site in data.newspaper.lists" ng-click="getDieci(site,status.initParams[0])" ng-bind="site.SITEDESC|truncate:8:'...'" ng-class="{'active':data.newspaper.selectedItem===site}" title="{{site.SITEDESC}}">
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--报纸叠次列表-->
+                            <div class="newspaperDieci left">
+                                <p class="newsP">叠次列表</p>
+                                <ul>
+                                    <li ng-repeat="dieci in data.newspaper.dieciList" ng-click="getBanmian(dieci)" ng-bind="dieci.CHNLNAME|truncate:8:'...'" ng-class="{'active':cur.currDieci===dieci}" title="{{dieci.CHNLNAME}}">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--网站列表-->
+                        <div class="submitBr submitWeb_list" ng-if="cur.currMedia.mediaType===2&&status.accessAuthority.website==true">
+                            <ul>
+                                <li ng-repeat="site in data.website.lists" ng-click="selectWebSite(site,status.initParams[1])" ng-bind="site.SITEDESC|trsLimitTo:20" ng-class="{'active':data.website.selectedItem===site}">
+                                </li>
+                            </ul>
+                        </div>
+                        <!--APP列表-->
+                        <div class="submitBr" ng-if="cur.currMedia.mediaType===1&&status.accessAuthority.app==true">
+                            <ul>
+                                <li ng-repeat="applist in data.app.lists" ng-class="{'active':data.app.selectedItem==applist}" ng-bind="applist.SITEDESC" ng-click="selectApp(applist)"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--除微信-->
+                <div class="conRight" ng-if="cur.currMedia.mediaType!=4">
+                    <div class="h33" ng-show="cur.currMedia.mediaType===3">
+                        版面检索：
+                        <input type="text" ng-model="data.banMianFilter" class="form-control">
+                    </div>
+                    <div class="over">
+                        <!--网站栏目列表-->
+                        <div ng-show="cur.currMedia.mediaType===2&&status.accessAuthority.website==true">
+                            <!-- <p>树结构</p> -->
+                            <div class="h33 suggestion">
+                                频道检索：
+                                <input type="text" placeholder="请输入关键词" ng-model="data.webChannelFilter" class="form-control" bs-options="state as state.SUGGESTION for state in getWebSuggestions($viewValue)" limit="30" bs-typeahead/>
+                            </div>
+                            <div class="channelTree h347">
+                                <div ng-bind="data.website.selectedItem.SITEDESC" class="sitedescDown"></div>
+                                <div class="treeDiv">
+                                    <treecontrol selected-node="data.selectedNode" expanded-nodes="data.expandedTest" on-node-toggle="showToggle(node)" class="tree-light" tree-model="data.website.columns" options="status.treeOptions" on-selection="showSelected(node)">
+                                        <trs-single-radio label="{{node.CHNLDESC}}" callback="getChannel(node)" ischecked="status.selectedArr.website[data.website.selectedItem.SITEID]==node.CHANNELID"></trs-single-radio>
+                                        <!--   <input type="radio" name="radio" ng-click="getChannel(node)" ng-checked="data.selectedNode.CHANNELID==node.CHANNELID">
+                                    <a title="{{node.CHNLDESC}}" href="javascript:void(0)">{{node.CHNLDESC}}</a> -->
+                                    </treecontrol>
+                                </div>
+                            </div>
+                        </div>
+                        <!--报纸版面列表-->
+                        <div ng-if="cur.currMedia.mediaType===3&&status.accessAuthority.newspaper==true">
+                            <p class="newsP">版面列表</p>
+                            <div class="channelTree h318">
+                                <ul class="newsPaperlist">
+                                    <li ng-repeat="item in data.newspaper.banmianList |fuzzy:data.banMianFilter" ng-click="getChannel(item)" ng-bind="item.CHNLDESC|trsLimitTo:12" ng-class="{'active':status.selectedArr.newspaper[item.SITEID]==item.CHANNELID}">
+                                        <!-- <li ng-repeat="item in data.newspaper.banmianList |filter:data.banMianFilter" ng-click="getChannel(item)" ng-bind="item.CHNLDESC|trsLimitTo:12" ng-class="{'active':status.selectedArr.newspaper[item.SITEID]==item.CHANNELID}"> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!--APP栏目列表-->
+                        <div ng-if="cur.currMedia.mediaType===1&&status.accessAuthority.app==true">
+                            <div class="h33 suggestion">
+                                频道检索：
+                                <input type="text" placeholder="请输入关键词" ng-model="data.appChannelFilter" class="form-control" bs-options="state as state.SUGGESTION for state in getAppSuggestions($viewValue)" limit="30" bs-typeahead/>
+                            </div>
+                            <div class="channelTree h347">
+                                <div ng-bind="data.app.selectedItem.SITEDESC" class="sitedescUp"></div>
+                                <div class="treeDiv">
+                                    <treecontrol selected-node="data.selectedNode" expanded-nodes="data.expandedTest" on-node-toggle="showToggle(node)" class="tree-light" tree-model="data.app.columns" options="status.treeOptions" on-selection="showSelected(node)">
+                                        <trs-single-radio label="{{node.CHNLDESC}}" callback="getChannel(node)" ischecked="status.selectedArr.app[data.app.selectedItem.SITEID]==node.CHANNELID"></trs-single-radio>
+                                    </treecontrol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--除微信-->
+                <!--微信-->
+                <div ng-if="cur.currMedia.mediaType===4&&status.accessAuthority.weixin==true" class="weixin">
+                    <div class="header">
+                        <div class="h33 suggestion">
+                            <p class="left">微信检索：</p>
+                            <input type="text" placeholder="请输入关键词" ng-model="data.weixinFilter" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="con">
+                        <ul>
+                            <li ng-repeat="weixinlist in data.weixin.lists|fuzzy:data.weixinFilter" ng-class="{'active':data.weixin.selectedItem==weixinlist}" ng-bind="weixinlist.CHNLDESC" ng-click="selectWeixin(weixinlist)"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="trackCon">
+            <div class="track" ng-repeat="path in path.pathArray">
+                <p ng-show="path.mediaName">{{path.mediaName}}<i>></i></p>
+                <p ng-show="path.siteName">{{path.siteName}}<i>></i></p>
+                <p ng-show="path.channelName">{{path.channelName}}</p>
+                <img src="./editingCenter/iWo/images/closep.jpg" ng-click="deleteTrack($index,path)">
+            </div>
+        </div>
+        <div class="footer">
+            <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+            <button class="btn btn-primary btn_confirm" ng-click="confirm()" ng-disabled="path.pathArray.length==0">确定</button>
+        </div>
+    </div>
+    <div class="busy" cg-busy="loadingPromise"></div>
+</div>

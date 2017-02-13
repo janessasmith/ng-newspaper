@@ -1,0 +1,167 @@
+.panel-body-editcenter .multilevelMenu {
+    height: 500px;
+    left: 224px!important;
+    top: -119px!important;
+    position: absolute!important;
+    width: 800px;
+    z-index: 200;
+    display: none !important;
+}
+
+.panel-body-editcenter .show {
+    display: block !important;
+}
+
+.panel-body-editcenter .multilevelMenu .thirdMenu {
+    width: 196px;
+    float: left;
+    height: 496px;
+    border: 2px solid #e4e3e2;
+    background: #fff;
+}
+
+.panel-body-editcenter .multilevelMenu .children {
+    height: 35px;
+    cursor: pointer;
+    position: relative;
+}
+
+.panel-body-editcenter .multilevelMenu .children img.frontImg {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.panel-body-editcenter .thirdMenu .children .thirdchnlAll:hover {
+    background: #0095ce;
+}
+
+.panel-body-editcenter .thirdMenu .children:hover .thirdchnlAll a {
+    color: #fff;
+}
+
+
+/*.panel-body-editcenter .multilevelMenu .children img {
+    width: 16px;
+    height: 14px;
+    border: none;
+    float: left;
+}*/
+
+.panel-body-editcenter .multilevelMenu .children a {
+    font-size: 12px;
+    text-indent: 10px;
+    float: left;
+    line-height: 35px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: block;
+    height: 35px;
+    text-indent: 35px;
+    text-decoration: none;
+    background: url("./editingCenter/app/images/ej2.png") 10px 10px no-repeat;
+}
+
+
+/*标识有子的图标为文件夹*/
+
+.panel-body-editcenter .multilevelMenu a.panel-body-hasChild {
+    background: url("./editingCenter/app/images/ej3.png") 10px 10px no-repeat;
+}
+
+.panel-body-editcenter .multilevelMenu .children a.panel-body-hasChild:hover {
+    background: url("./editingCenter/app/images/ej3.png") 10px 10px no-repeat #dcdcdc;
+}
+
+
+/*标识有子的图标被选中过*/
+
+.panel-body-editcenter .multilevelMenu .children .selectedchnlHasChl {
+    background: url("./editingCenter/app/images/ej3-1.png") 10px 10px no-repeat #4595d2;
+    color: #fff;
+}
+
+
+/*标识无子的图标被选中过*/
+
+.panel-body-editcenter .multilevelMenu .children .selectedchnlHasNoChl {
+    background: url("./editingCenter/app/images/ej2-1.png") 10px 10px no-repeat #4595d2;
+    color: #fff;
+}
+
+.panel-body-editcenter .multilevelMenu .children .selectedchnlHasChl:hover {
+    background: url("./editingCenter/app/images/ej3.png") 10px 10px no-repeat #4595d2;
+    color: #575757;
+}
+
+.panel-body-editcenter .multilevelMenu .children .selectedchnlHasNoChl:hover {
+    background: url("./editingCenter/app/images/ej2.png") 10px 10px no-repeat #dcdcdc;
+    color: #575757;
+}
+
+.panel-body-editcenter .multilevelMenu a:hover {
+    background: url("./editingCenter/app/images/ej2.png") 10px 10px no-repeat #dcdcdc;
+    color: #575757;
+    text-decoration: none;
+}
+
+.panel-body-editcenter .multilevelMenu .children img.nextMenu {
+    border: none;
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    padding: 10px;
+}
+
+.panel-body-editcenter .multilevelMenu .children .panel-body-selectedchnl:hover img.nextMenu {
+    border: none;
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    padding: 10px;
+}
+
+.panel-body-editcenter .thoroughMenu {
+    width: 198px;
+    height: 496px;
+    background: #fff;
+    float: left;
+    border-right: 2px solid #e4e3e2;
+    border-top: 2px solid #e4e3e2;
+    border-bottom: 2px solid #e4e3e2;
+}
+
+
+/*.panel-body-editcenter .fifthMenu {
+    width: 200px;
+    height: 500px;
+    background: #fff;
+    left: 196px!important;
+    top: -2px!important;
+    position: absolute!important;
+    border: 2px solid #e4e3e2;
+}
+
+.panel-body-editcenter .sixthMenu {
+    width: 200px;
+    height: 500px;
+    background: #fff;
+    left: 196px!important;
+    top: -2px!important;
+    position: absolute!important;
+    border: 2px solid #e4e3e2;
+}*/
+
+.panel-body-editcenter img.exhibitionMenu {
+    width: 9px;
+    height: 41px;
+    border: none;
+    position: absolute;
+    left: 223px;
+    top: 0px;
+    cursor: pointer;
+    z-index: 300;
+    padding: 0;
+}
+

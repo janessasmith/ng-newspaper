@@ -1,0 +1,336 @@
+<div class="calendar">
+    <div class="calendar_head">
+        <b>线索日历</b>
+    </div>
+    <div class="calendar_content">
+        <div class="calendar_content_left col-md-6">
+            <div class="mt10 calendarHead mb10">
+                <trs-single-select selected-option="dropDown.selectedYearDefault" callback="gotoSelectedTime()" options="dropDown.selectedYear" class="left"></trs-single-select>
+                <trs-single-select selected-option="dropDown.selectedMonthDefault" callback="gotoSelectedTime()" options="dropDown.selectedMonth" class="left"></trs-single-select>
+                <button ng-click="gotoToday()" class="backtoToday">返回今天</button>
+                <hr class="line" />
+                <button ng-click="createNewCalandar()" class="backtoToday">新建日程</button>
+            </div>
+            <div ui-calendar="uiConfig.calendar" ng-model="data.eventSources" class="Almanac" calendar="myCalendar"></div>
+        </div>
+        <div class="calendar_content_right col-md-6 fix_height450">
+            <tabset justified="true">
+                <tab heading="近期日程" ng-click="custom()">
+                    <table class="table table-striped mt10 custom-table data-table">
+                        <tbody>
+                            <tr ng-repeat="customItem in data.custom.customItems track by $index">
+                                <td>
+                                    <custom-title tit="customItem.TITLE" content="customItem.CONTENT" before-date="customItem.BEFOREDATE | date:'yyyy-MM-dd'" end-date="customItem.ENDDATE | date:'yyyy-MM-dd'" callback="getCaledarModal(customItem)"></custom-title>
+                                </td>
+                                <td class="xcol-date from">{{customItem.BEFOREDATE | date:"yyyy-MM-dd"}}</td>
+                                <td class="xcol-date to">&nbsp&nbsp至&nbsp&nbsp{{customItem.ENDDATE | date:"yyyy-MM-dd"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="recent-policy-page left">
+                        <trs-pagenationwith-pagecount total-num="data.custom.page.ITEMCOUNT" page-size="data.custom.page.PAGESIZE" page-count="data.custom.page.PAGECOUNT">
+                        </trs-pagenationwith-pagecount>
+                        <pagination total-items="data.custom.page.ITEMCOUNT" ng-change="custopmPageChanged()" ng-model="data.custom.page.CURRPAGE" max-size="1" class="pagination-sm page_left" boundary-links="true" items-per-page="data.custom.page.PAGESIZE" rotate="false" num-pages="data.custom.page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页">
+                        </pagination>
+                        <a href="" target="_blank" class="more" ui-sref="plancueOverview({serviceid:'customremind',modelid:'search',time:status.curTime})" ng-if="data.custom.customItems.length>0">更多</a>
+                    </div>
+                </tab>
+                <tab heading="近期政策" class="clue_calendar_border" ng-click="getRecentPolicy('china')">
+                    <div class="clue_calendar_button">
+                        <button ng-click="getRecentPolicy('china')" class="{{data.recentpolicy.curPolicy=='china'?'clue_calendar_btn_success':'clue_calendar_btn'}}">中国</button>
+                        <button ng-click="getRecentPolicy('zj')" class="{{data.recentpolicy.curPolicy=='zj'?'clue_calendar_btn_success':'clue_calendar_btn'}}">浙江</button>                    
+                    </div>
+                    <table class="table table-striped mt10 recent-policy data-table">
+                        <tbody>
+                            <tr ng-repeat="recentPolicyItem in data.recentpolicy.items">
+                                <td>
+                                    <div class="custom-wrap-outer" ng-mouseenter="mouseenter(recentPolicyItem,$event,400)" ng-mouseleave="mouseleave()">
+                                        <a target="_blank" ng-bind-html="recentPolicyItem.URLTITLE | trsSce" ui-sref="resourcedetail({indexname:indexname,guid:recentPolicyItem.ZB_GUID})"></a>
+                                        <div class="custom-wrap" ng-if="isSelectedDetail===recentPolicyItem" ng-style="panelpostion">
+                                            <h6 ng-bind-html="recentPolicyItem.URLTITLE | trsSce"></h6>
+                                            <b>摘要:</b>
+                                            <p ng-bind-html="recentPolicyItem.ABSTRACTCONTENT | trsLimitTo:160" ng-hide="recentPolicyItem.ABSTRACTCONTENT==''"></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="xcol-source xcol-nowrap" ng-bind="recentPolicyItem.CHANNEL" title="{{recentPolicyItem.CHANNEL}}"></td>
+                                <td class="xcol-date" ng-bind="recentPolicyItem.URLDATE | date:'yyyy-MM-dd'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="recent-policy-page pull-left">
+                        <trs-pagenationwith-pagecount total-num="data.recentpolicy.page.ITEMCOUNT" page-size="data.recentpolicy.page.PAGESIZE" page-count="data.recentpolicy.page.PAGECOUNT">
+                        </trs-pagenationwith-pagecount>
+                        <pagination total-items="data.recentpolicy.page.ITEMCOUNT" ng-change="recentPolicypageChanged()" ng-model="data.recentpolicy.page.CURRPAGE" max-size="1" class="pagination-sm page_left" boundary-links="false" items-per-page="data.recentpolicy.page.PAGESIZE" rotate="false" num-pages="data.recentpolicy.page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页">
+                        </pagination>
+                        <a href="" target="_blank" class="more" ui-sref="plancueOverview({serviceid:'recentpolicy',modelid:'search',region:data.recentpolicy.curPolicy,time:status.curTime})" ng-if="data.recentpolicy.items.length>0">更多</a>
+                    </div>
+                </tab>
+                <tab heading="近期灾害" class="clue_calendar_border" ng-click="recentDisasters('weather')">
+                    <div class="clue_calendar_button">
+                        <button ng-click="recentDisasters('weather')" class="{{data.recentDisasters.curdisaster=='weather'?'clue_calendar_btn_success':'clue_calendar_btn'}}">天气预警</button>
+                        <button ng-click="recentDisasters('earthquake')" class="{{data.recentDisasters.curdisaster=='earthquake'?'clue_calendar_btn_success':'clue_calendar_btn'}}">地震预警</button>
+                        <button ng-click="recentDisasters('typhoon')" class="{{data.recentDisasters.curdisaster=='typhoon'?'clue_calendar_btn_success':'clue_calendar_btn'}}">台风预警</button>                        
+                    </div>
+                    <table class="table table-striped mt10 data-table">
+                        <tbody>
+                            <tr ng-repeat="item in data.recentDisasters.items">
+                                <td class="td_50 xcol-autofit">
+                                    <div class="custom-wrap-outer" ng-mouseenter="mouseenter(item,$event,400)" ng-mouseleave="mouseleave()">
+                                        <a target="_blank" ng-bind-html="item.URLTITLE | trsSce"></a>
+                                        <div class="custom-wrap" ng-if="isSelectedDetail===item" ng-style="panelpostion">
+                                            <h6 ng-bind-html="item.URLTITLE | trsSce"></h6>
+                                            <b>摘要:</b>
+                                            <p ng-bind-html="item.ABSTRACTCONTENT | trsLimitTo:160" ng-hide="item.ABSTRACTCONTENT==''"></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="xcol-source" ng-bind="item.SITENAME"></td>
+                                <td class="xcol-date" ng-bind="item.URLTIME |date:'yyyy-MM-dd'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="recent-policy-page pull-left">
+                        <trs-pagenationwith-pagecount total-num="data.recentDisasters.page.ITEMCOUNT" page-size="data.recentDisasters.page.PAGESIZE" page-count="data.recentDisasters.page.PAGECOUNT">
+                        </trs-pagenationwith-pagecount>
+                        <pagination total-items="data.recentDisasters.page.ITEMCOUNT" ng-change="recentDisasterspageChanged()" ng-model="data.recentDisasters.page.CURRPAGE" max-size="1" class="pagination-sm page_left" boundary-links="true" items-per-page="data.recentDisasters.page.PAGESIZE" rotate="false" num-pages="data.recentDisasters.page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页">
+                        </pagination>
+                        <a href="" target="_blank" class="more" ui-sref="plancueOverview({serviceid:'recentdisaster',modelid:'search',disasterType:data.recentDisasters.curdisaster,time:status.curTime})" ng-if="data.recentDisasters.items.length>0">更多</a>
+                    </div>
+                </tab>
+                <tab heading="历史今天" ng-click="getHistoryToday()">
+                    <div class="clue_calendar_button">
+                    </div>
+                    <table ng-show="alertType==undefined||alertType=='group'" class="table table-striped mt10 data-table">
+                        <tbody>
+                            <tr ng-repeat="historyToday in data.historyToday.items">
+                                <td class="td_50 xcol-autofit w-76">
+                                    <div class="custom-wrap-outer" ng-mouseenter="mouseenter(historyToday,$event,400)" ng-mouseleave="mouseleave()">
+                                        <a target="_blank" ng-bind-html="historyToday.CONTENT | trsSce"></a>
+                                        <div class="custom-wrap" ng-if="isSelectedDetail===historyToday" ng-style="panelpostion">
+                                            <h6 ng-bind-html="historyToday.CONTENT | trsSce"></h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="xcol-date">
+                                    <span ng-bind="historyToday.HISTORYDATE | date:'yyyy年'"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="recent-policy-page left">
+                        <trs-pagenationwith-pagecount total-num="data.historyToday.page.ITEMCOUNT" page-size="data.historyToday.page.PAGESIZE" page-count="data.historyToday.page.PAGECOUNT">
+                        </trs-pagenationwith-pagecount>
+                        <pagination total-items="data.historyToday.page.ITEMCOUNT" ng-change="historyTodayChanged()" ng-model="data.historyToday.page.CURRPAGE" max-size="1" class="pagination-sm page_left" boundary-links="true" items-per-page="data.historyToday.page.PAGESIZE" rotate="false" num-pages="data.historyToday.page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页">
+                        </pagination>
+                        <a href="" target="_blank" class="more" ui-sref="plancueOverview({serviceid:'todayinhistory',modelid:'search',time:status.curTime})" ng-if="data.historyToday.items.length>0">更多</a>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>
+<div class="tipOff ">
+    <div class="tipOff_head ">
+        <b>爆料监控</b>
+        <img src="./planningCenter/images/ch20.png " class="clue_pull_right " ng-click="showDiscloseConfig() " ng-if="isShowDiscloseConfig ">
+    </div>
+    <div class="tipOff_content mt10">
+        <tabset justified="true ">
+            <tab heading="微博" ng-click="showWeiboDiscloseIcon() ">
+                <table class="table table-striped data-table">
+                    <thead>
+                        <tr>
+                            <th>爆料内容</th>
+                            <th class="xcol-people">线索提供人</th>
+                            <th class="xcol-source">来源</th>
+                            <th class="xcol-datetime">发布时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="weiboItem in weiboItems ">
+                            <td class="td_50 xcol-autofit ">
+                                <span>
+                                    <div>
+                                        <div ng-mouseenter="mouseenter(weiboItem,$event,600)" ng-mouseleave="mouseleave()" class="custom-wrap-outer" >
+                                            <a ng-bind-html="weiboItem.STATUSCONTENT | trsSce"></a>
+                                            <div class="custom-wrap w600" ng-if="isSelectedDetail===weiboItem" ng-style="panelpostion">
+                                                <h6 ng-bind-html="weiboItem.STATUSCONTENT | trsSce"></h6>
+                                            </div>
+                                        </div>  
+                                    </div>   
+                                </span>
+                            </td>
+                            <td ng-bind="weiboItem.SCREENNAME "></td>
+                            <td ng-bind="weiboItem.SITENAME "></td>
+                            <td ng-bind="weiboItem.CREATEDAT | date:'yyyy-MM-dd HH:mm:ss'"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tipOff_content_footer ">
+                    <a ui-sref="weibodisclose" target="_blank">更多</a >
+                </div>
+            </tab>
+            <!-- <tab heading="96068 " ng-click="initQJDatas() ">
+                <table class="table table-striped data-table">
+                    <thead>
+                        <tr class=" ">
+                            <th>爆料内容</th>
+                            <th class="xcol-people">爆料人</th>
+                            <th class="xcol-source">来电类型</th>
+                            <th class="xcol-telephone">电话</th>
+                            <th class="xcol-datetime">时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="qianjiangItem in qianjiangItems ">
+                            <td class="td_50 xcol-autofit " >
+                            <div ng-mouseenter="mouseenter(qianjiangItem,$event,600)" ng-mouseleave="mouseleave()" class="custom-wrap-outer" >
+                                <a ng-bind-html="qianjiangItem.COMMENTS | trsSce"></a>
+                                <div class="custom-wrap w600" ng-if="isSelectedDetail===qianjiangItem" ng-style="panelpostion">
+                                    <h6 ng-bind-html="qianjiangItem.COMMENTS | trsSce"></h6>
+                                </div>
+                            </div>
+                            </td>
+                <td ng-bind="qianjiangItem.NAME "></td>
+                <td ng-bind="qianjiangItem.CODEDESC "></td>
+                <td ng-bind="qianjiangItem.MOBILE "></td>
+                <td ng-bind="qianjiangItem.CREATEDDATE | date:'yyyy-MM-dd HH:mm:ss'"></td>
+                </tr>
+                </tbody>
+                </table>
+                <div class="tipOff_content_footer ">
+                    <a ui-sref="qianjiang" target="_blank">更多</a >
+                </div>
+            </tab> -->
+        </tabset>
+    </div>
+</div>
+
+<div class="monitor-wrap ">
+    <div ng-repeat="monitor in monitors">
+        <div class="clue_newspaper mb10" ng-class-odd=" 'plan-monitor-odd' ">
+            <div class="tipOff_head ">
+                <b ng-bind="monitor.MONITORNAME "></b>
+                <img src="./planningCenter/images/gl50.png" class="clue-config-close " alt="close " ng-click="closeCurMonitor(monitor) ">
+                <img src="./planningCenter/images/ch20.png" class="clue_pull_right " ng-click="showConfig(monitor) ">    
+            </div>
+            <div class="clue_newspaper_content ">
+                <tabset justified="true " class="mt10 ">
+                    <tab heading="最新">
+                        <table class="table table-striped cue-monitor-table data-table">
+                            <tbody>
+                                <tr ng-repeat="lastItem in monitor.NEWSTESTNEWS track by $index">
+                                    <td class="td_50 xcol-autofit pointer">
+                                    <div ng-mouseenter="mouseenter(lastItem,$event,400)" ng-mouseleave="mouseleave()" class="custom-wrap-outer" >
+                                    <a ng-bind-html="lastItem.TITLE | trsSce" ui-sref="resourcedetail({indexname:monitor.indexname,guid:lastItem.ZB_GUID})" target="_blank" class="w300"></a>
+                                    <div class="custom-wrap" ng-if="isSelectedDetail===lastItem" ng-style="panelpostion">
+                                        <h6 ng-bind-html="lastItem.TITLE | trsSce"></h6>
+                                        <b>摘要:</b>
+                                        <p ng-bind-html="lastItem.ABSTRACTCONTENT | trsLimitTo:160" ng-hide="lastItem.ABSTRACTCONTENT==''"></p>
+                                    </div>
+                                </div>
+                </td>
+                <td class="xcol-source xcol-nowrap" ng-bind="lastItem.SITENAME" title="{{lastItem.SITENAME}}"></td>
+                <td class="xcol-datetime" ng-bind="lastItem.PUBTIME | trsDateTransform"></td>
+                </tr>
+                </tbody>
+                </table>
+                <div class="tipOff_content_footer">
+                    <a ui-sref="monitorOverview({id:monitor.ID})" target="_blank">更多</a>
+                </div>
+            </tab>
+            <tab heading="热度 ">
+                <table class="table table-striped cue-monitor-table data-table ">
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th class="xcol-source">来源</th>
+                            <th class="xcol-date">时间</th>
+                            <th class="xcol-hotvalue">热度值</th>
+                            <th class="xcol-trend">趋势</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="hotItem in monitor.HOTTESTNEWS track by $index ">
+                            <td class="pointer">
+                                <div class="custom-wrap-outer"  ng-mouseenter="mouseenter(hotItem,$event,400) " ng-mouseleave="mouseleave()" >
+                                    <a ng-bind-html="hotItem.TITLE | trsSce" ui-sref="resourcedetail({indexname:monitor.indexname,guid:hotItem.ZB_GUID})" target="_blank"></a>
+                                    <div class="custom-wrap" ng-if="isSelectedDetail===hotItem" ng-style="panelpostion">
+                                        <h6 ng-bind-html="hotItem.TITLE | trsSce"></h6>
+                                        <b>摘要:</b>
+                                        <p ng-bind-html="hotItem.ABSTRACTCONTENT | trsLimitTo:160"></p>
+                                    </div>
+                                </div>  
+                            </td>
+                            <td ng-bind="hotItem.SITENAME " class="xcol-nowrap" title="{{hotItem.SITENAME}}"></td>
+                            <td class="xcol-datetime" ng-bind="hotItem.LOADTIME | date:'yyyy-MM-dd'"></td>
+                            <td ng-bind="hotItem.HOTVALUE "></td>
+                            <td>
+                                <img src="./planningCenter/images/ch19.png " ng-if="hotItem.TREND<0 ">
+                                <span ng-if="hotItem.TREND<0 " ng-bind="hotItem.TREND|trsStrToAbs "></span>
+                                <img src="./planningCenter/images/ch18.png " ng-if="hotItem.TREND>0&&hotItem.TREND!=999">
+                                <span ng-if="hotItem.TREND>0&&hotItem.TREND!=999" ng-bind="hotItem.TREND|trsStrToAbs"></span>
+                                <span ng-if="hotItem.TREND==999">-</span>
+                                <img src="./planningCenter/images/new.png" ng-if="hotItem.TREND==0" width="32" height="12">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </tab>
+        </tabset>
+    </div>
+</div>
+</div>
+<!-- <div class="clue_plus">
+        <img src="./planningCenter/images/ch21.png" ng-click="chooseMonitorType()" style="cursor:pointer;">
+    </div> -->
+<div class="clue_newspaper">
+    <div class="tipOff_head ">
+        <b>监控类型</b>
+    </div>
+    <div class="clue_newspaper_content ">
+        <div class="cue-monitor-type-body">
+            <!-- <div ng-click="goToCustom()" class="cue-monitor-type-custom">
+                <img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/jt7-1.png" alt="自定义">
+                <span>自定义</span>
+            </div> -->
+            <div class="cue-monitor-type-wrap">
+                <button ng-click="showDifConfig('website','网站监控配置','网站监控')" ng-class="{'disabled':status.isExisted['website']}" ng-disabled="status.isExisted['website']">
+                    <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['website']=='website'?'jt1.png':'jt1-1.png'}}" alt="网站">
+                    <span>网站</span>
+                </button>
+                <button ng-click="showDifConfig('weixin','微信监控配置','微信监控')" ng-class="{'disabled':status.isExisted.weixin}" ng-disabled="status.isExisted['weixin']">
+                    <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['weixin']=='weixin'?'jt2.png':'jt2-1.png'}}" alt="微信">
+                    <span>微信</span>
+                </button>
+            </div>
+            <div class="cue-monitor-type-wrap">
+                <button ng-click="showDifConfig('epaper','纸媒监控配置','纸媒监控')" ng-class="{'disabled':status.isExisted.epaper}" ng-disabled="status.isExisted['epaper']">
+                    <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['epaper']=='epaper'?'jt5.png':'jt5-1.png'}}" alt="纸媒">
+                    <span>纸媒</span>
+                </button>
+                <button ng-click="showDifConfig('app','APP监控配置','APP监控')" ng-class="{'disabled':status.isExisted.app}" ng-disabled="status.isExisted['app']">
+                    <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['app']=='app'?'jt4.png':'jt4-1.png'}}" alt="APP">
+                    <span>APP</span>
+                </button>
+            </div>
+            <div class="cue-monitor-type-wrap">
+            <!-- ng-class="{'disabled':status.isExisted.weibo}" ng-disabled="status.isExisted['weibo']" -->
+                <button ng-click="showDifConfig('weibo','微博监控配置','微博监控')"  class="disabled" disabled="true">
+                    <!-- <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['weibo']=='weibo'?'jt3.png':'jt3-1.png'}}" alt="微博"> -->
+                    <img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/jt3.png" alt="微博">
+                    <span>微博</span>
+                </button>
+                <!-- ng-class="{'disabled':status.isExisted.discuz}" ng-disabled="status.isExisted['discuz']" -->
+                <button ng-click="showDifConfig('discuz','论坛监控配置','论坛监控')" class="disabled" disabled="true">
+                    <!-- <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['discuz']=='discuz'?'jt6.png':'jt6-1.png'}}" alt="论坛"> -->
+                    <img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/jt6.png" alt="论坛">
+                    <span>论坛</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="clearfix"></div>

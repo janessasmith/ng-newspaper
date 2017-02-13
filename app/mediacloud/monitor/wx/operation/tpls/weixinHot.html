@@ -1,0 +1,32 @@
+<div ng-controller="hotwxNewsCtr">
+    <div class="new-wb-tit">
+            <div>
+                 <span class="new-wb-sp">热点新闻</span>
+            </div>
+            <div style="position: relative;width: 355px;overflow: hidden;float: left;height: 29px;">
+                <div style="position: absolute;" change num="2" ele="rdChange" width="355">
+                    <a href="" checked="lg-sel-cur" class="lg-sel-btn lg-sel-cur" ng-click="getContent();">全部</a>
+                    <a href="" ng-repeat="class in classs" class="lg-sel-btn" 
+                        checked="lg-sel-cur" ng-click="getContent(class.ClassName);">{{class.ClassName}}</a>
+                </div>
+            </div>
+            <div>
+                <a href class="wb-go-btn" id="rdChange"></a>
+            </div>  
+    </div>
+    <div class="league-deal-list" style="padding-top: 4px;">
+        <a ng-click="more();" href class="wb-add-btn"></a>
+        <div class="wb-ls-bk" ng-repeat="content in contents">
+            <div class="wb-gf-img wb-ls-img"><img ng-src="{{content.headPicUrl}}" alt=""></div>
+            <div class="new-wb-deal">
+                <div class="wb-deal-name"><a href >{{content.name}}</a></div>
+                <a href="javascript:void(0);" class="new-wb-p">{{content.content}} </a>
+                <ul>
+                    <li>转发<span>{{content.forwardNum}}</span></li>
+                    <li>评论<span>{{content.commentNum}}</span></li>
+                    <li class="no-br">{{content.likesNum}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

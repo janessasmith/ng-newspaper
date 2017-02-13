@@ -1,0 +1,98 @@
+.eidt_iwo_personalMaterial {
+    padding: 10px;
+}
+
+.eidt_iwo_personalMaterial .iwo_personalMaterial_loadMore {
+    cursor: pointer;
+    height: 42px;
+    line-height: 42px;
+    background-color: #fafafa;
+    color: #23527c;
+    text-align: center;
+}
+
+.eidt_iwo_personalMaterial .content_timeline.m_timeline .time_item_cnt {
+    width: 80%;
+    position: relative;
+}
+
+.eidt_iwo_personalMaterial .content_timeline.m_timeline .time_item_cnt p.delete_single_creation {
+    cursor: pointer;
+    float: left;
+    margin: 0;
+    position: relative;
+    left: 40px;
+    top: 6px;
+}
+
+.eidt_iwo_personalMaterial .content_timeline.m_timeline .time_item_cnt p.delete_single_creation>img {
+    display: inline;
+    width: auto;
+}
+
+.eidt_iwo_personalMaterial .personalMaterial_single_select {
+    float: left;
+    position: relative;
+    bottom: -7px;
+}
+
+.eidt_iwo_personalMaterial .personalMaterial_creation_title {
+    background: #fafafa;
+}
+
+.eidt_iwo_personalMaterial .personalMaterial_creation_title>div {
+    width: 83%;
+    margin-left: 77px;
+    font-weight: bold;
+    position: relative;
+    height: 42px;
+    line-height: 32px;
+}
+
+.eidt_iwo_personalMaterial .personalMaterial_creation_title>div>span {
+    position: absolute;
+    right: 30px;
+}
+
+.eidt_iwo_personalMaterial .content_timeline.m_timeline .time_tick {
+    width: 180px;
+}
+
+.eidt_iwo_personalMaterial .content_timeline.m_timeline:before {
+    left: 180px;
+}
+
+.eidt_iwo_personalMaterial .content_timeline.m_timeline .time_item_cnt {
+    margin-left: 180px;
+}
+
+.eidt_iwo_personalMaterial .personalMaterial_single_select {
+    left: -103px;
+}
+
+.eidt_iwo_personalMaterial .content_timeline.m_timeline .time_tick span.circle2 {
+    margin-right: -8px;
+}
+
+.popover {
+    outline: none;
+}
+
+.content_timelineText.m_timeline .time_item_cnt a {
+    overflow: hidden;
+    width: 550px !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content_timeline.m_timeline .time_item_cnt img {
+    margin-left: 10px;
+}
+
+.container-fluid .popover {
+    min-width: 600px;
+}
+
+.eidt_iwo_personalMaterial .website_newTab_modular_createY_all {
+    height: 600px;
+}

@@ -1,0 +1,102 @@
+<div>
+    <div class="oneImage_popup" style="border: 0;">
+        <div class="modal-content oneImage_popup_main">
+            <div class="oneImage_popup_fa">
+                <div class='oneImage_son'>
+                    <div class="modal-body oneImage_popup_content" style="margin-top:0px">
+                        <div class="modal_left clearfix">
+                            <div class="clearfix" class='oneImage_dritcive'>
+                                <div class="oneImage_rightimg">
+                                    <div class="file-item thumbnail oneImage {{item.imgsrc==undefined||item.imgsrc==''?'error':''}}">
+                                        <div class="upload_div wu-example">
+                                            <img src="{{item.imgsrc}}">
+                                            <div class="uploadSuccess" ng-show="uploaderSuccess==true"></div>
+                                        </div>
+                                        <!--    <div style="overflow: hidden;margin-top:10px;">
+                                            <div class="file" ng-class="{'fileShow':isShow}" ng-bind="uploadFileName"></div>
+                                            <div class="info" ng-bind="uploadInfo"></div>
+                                            <div class="error" ng-model="uploadError"></div>
+                                        </div> -->
+                                        <input type="text" ng-model="item.imgsrc" style="display:none" validator="required" name="imgsrc_{{index}}_image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='threeImg'>
+                                <div class="left one_div img_upload" trs-upload dirupload-src="item.imgsrc" dirupload-name="item.imgName" auto="true" src="/wcm/openapi/uploadImage" filetype="images" call-back="callBack" title="上传">
+                                </div>
+                                <div class="left one_div" ng-click="modifyImg()" ng-if="item.imgName"><img src="./editingCenter/website/fragmentManagement/images/cangkuImage.png" title="编辑"></div>
+                                <!--  <div class="left one_div"><img src="./editingCenter/website/fragmentManagement/images/imageLink.png"></div> -->
+                            </div>
+                        </div>
+                        <!--左侧完毕-->
+                        <div class="modal_right">
+                            <div class="right_header">
+                                <button class="btn" type="button" ng-click="showConSelModal()">选择内容</button>
+                            </div>
+                            <!-- <trs-file-upload></trs-file-upload> -->
+                            <div class="right_main">
+                                <div class="content">
+                                    <div ng-if="requiredObj.title!=undefined" class="unit1 form-group invalidate-input-box" id="oneImageFsd">
+                                        <!-- <small-icon-dir main-icon="item.titleicon"></small-icon-dir> -->
+                                        <b>标题:</b>
+                                        <input validator="maxlength=50,required" maxlength-error-message="长度不能超过50个字符" name="title_{{index}}_image" placeholder="请输入标题" type="text" ng-style="{color:item.titlecolor}" class="form-control oneImageInput" ng-model="item.title" ng-mouseenter="isShowTips_title=true" ng-mouseleave="isShowTips_title=false" is-show-tips="isShowTips_title">
+                                        <div class='shutdonw' ng-click="cleanIput()">
+                                            <img src="./editingCenter/website/fragmentManagement/images/d-1.jpg" alt="">
+                                        </div>
+                                        <trs-color-picker col-obj="item.titlecolor"></trs-color-picker>
+                                        <trs-word-num num-obj="{{item.title}}"></trs-word-num>
+                                        <span style="display:none" ng-bind="item.reltime=item.reltime?item.reltime:nowTime">
+                                                  </span>
+                                    </div>
+                                    <div ng-if="requiredObj.subtitle!=undefined" class="unit overflow_visible invalidate-input-box">
+                                        <b>副标题:</b>
+                                        <input type="text" ng-model="item.subtitle" class="form-control" name="subtitle_{{index}}_image" maxlength-error-message="长度不能超过50个字符" validator="maxlength=50" type="text" ng-mouseenter="isShowTips_subtitle=true" ng-mouseleave="isShowTips_subtitle=false" is-show-tips="isShowTips_subtitle">
+                                    </div>
+                                    <div ng-if="requiredObj.url!=undefined" class="unit overflow_visible invalidate-input-box">
+                                        <b>链接:</b>
+                                        <input type="text" ng-model="item.url" class="form-control" name="url_{{index}}_image" maxlength-error-message="长度不能超过1000个字符" validator="maxlength=1000,url" type="text" ng-mouseenter="isShowTips_url=true" ng-mouseleave="isShowTips_url=false" is-show-tips="isShowTips_url">
+                                    </div>
+                                    <div ng-if="!(requiredObj.editor==undefined&&requiredObj.author==undefined&&requiredObj.source==undefined)" class="unit overflow_visible invalidate-input-box">
+                                        <div ng-if="requiredObj.editor!=undefined">
+                                            <b>编辑:</b>
+                                            <input type="text" ng-model="item.editor" class="form-control short" name="editor_{{index}}_doc" maxlength-error-message="长度不能超过50个字符" validator="maxlength=50" type="text" ng-mouseenter="isShowTips_editor=true" ng-mouseleave="isShowTips_editor=false" is-show-tips="isShowTips_editor">
+                                        </div>
+                                        <div ng-if="requiredObj.author!=undefined">
+                                            <b>作者:</b>
+                                            <input type="text" ng-model="item.author" class="form-control short" name="author_{{index}}_doc" maxlength-error-message="长度不能超过50个字符" validator="maxlength=50" type="text" ng-mouseenter="isShowTips_author=true" ng-mouseleave="isShowTips_author=false" is-show-tips="isShowTips_author">
+                                        </div>
+                                        <div ng-if="requiredObj.source!=undefined">
+                                            <b>来源:</b>
+                                            <input type="text" ng-model="item.source" class="form-control short" name="source_{{index}}_doc" maxlength-error-message="长度不能超过50个字符" validator="maxlength=50" type="text" ng-mouseenter="isShowTips_source=true" ng-mouseleave="isShowTips_source=false" is-show-tips="isShowTips_source">
+                                        </div>
+                                    </div>
+                                    <div ng-if="requiredObj.abstract!=undefined" class="unit overflow_visible invalidate-input-box">
+                                        <b>摘要:</b>
+                                        <textarea ng-model="item.abstract" cols='20' rows='20' class='form-control filed_text' maxlength-error-message="长度不能超过1000个字符" validator="maxlength=1000" name="abstract_{{index}}_image" ng-mouseenter="isShowTips_abs=true" ng-mouseleave="isShowTips_abs=false" is-show-tips="isShowTips_abs"></textarea </div>
+                                    </div>
+                                    <div ng-if="requiredObj.remark!=undefined" class="unit overflow_visible invalidate-input-box">
+                                        <b>备注:</b>
+                                        <textarea ng-model="item.remark" cols='20' rows='20' class='form-control filed_text' maxlength-error-message="长度不能超过1000个字符" validator="maxlength=1000" name="remark_{{index}}_doc" ng-mouseenter="isShowTips_remark=true" ng-mouseleave="isShowTips_remark=false" is-show-tips="isShowTips_remark"></textarea>
+                                    </div>
+                                </div>
+                                <div class="timepicker">
+                                    <span class="timespan">时间:</span>
+                                    <div class="date">
+                                        <trs-date-time-picker time-obj="item.reltime" position="top-right" language="zh-CN"></trs-date-time-picker>
+                                        <!--    <input type="text" placement="top" size="10" ng-change="item.reltime=changeTime(item.reltime)" ng-model="item.reltime" placeholder="" data-autoclose="1" bs-datepicker readonly="readonly" data-container=".oneImage_popup" data-placement="auto">
+                                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne"> -->
+                                    </div>
+                                    <!--  <div class="time">
+                                        <input type="text" placement="top" size="8" class="" ng-change="item.reltime=changeTime(item.reltime)" ng-model="item.reltime" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" bs-timepicker readonly="readonly" data-container=".oneImage_popup" data-placement="auto">
+                                        <img class="time" src="./editingCenter/app/toBeCompiled/images/t1.png">
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>

@@ -1,0 +1,104 @@
+.createGroupSubmit .clear{
+    clear: both;
+}
+.createGroupSubmit .mb8{
+    margin-bottom: 8px;
+}
+.userManageMent-userMngGroupMngCreateGroup-window .modal-dialog .modal-content{
+    border:0!important;
+}
+.createGroupSubmit{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.createGroupSubmit .submit {
+    border: 4px solid #dddddd;
+    background:#fff;
+}
+
+.createGroupSubmit .submit .head {
+    height: 42px;
+}
+
+.createGroupSubmit .submit .head span {
+    float: left;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.createGroupSubmit .submit .head img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 12px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.createGroupSubmit .submit .body{
+    padding: 10px;
+    font-size:12px;
+    background: #f0f2f5;
+    min-height:275px;
+}
+.createGroupSubmit .submit .body .main{
+    margin-top:10px;
+}
+.createGroupSubmit .submit .body .main .item{
+    line-height: 32px;
+    clear:both;
+    padding-left: 105px;
+}
+.createGroupSubmit .submit .body .main .item span{
+    display: block;
+    float: left;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.createGroupSubmit .submit .body .main .item input{
+    width: 240px;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+.createGroupSubmit .submit .body .main .item input.mb0{
+    margin-bottom: 0px!important;
+}
+/*foot*/
+.createGroupSubmit .submit .body .foot{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.createGroupSubmit .submit .body .foot button{
+    margin:0 45px;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.createGroupSubmit .submit .body .foot button.cancel {
+    border: none;
+    background: #0095ce;
+}
+
+.createGroupSubmit .submit .body .foot button.confirm {
+    border: none;
+    background: #00bd9b;
+}
+
+.createGroupSubmit .invalidate-input-box span.ng-scope{
+    left: 0px;
+}

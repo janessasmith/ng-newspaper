@@ -1,0 +1,171 @@
+<div class="jk-main-container">
+    <div class="jk-main-con">
+        <div class="zh-pf-bk" ng-controller="accountCtrl">
+            <!--左边-->
+            <div class="zh-pf-lf wb-ls-last lf" >
+                <div class="zh-info-deal">
+                    <div class="zh-info-pic">
+                        <img ng-src="{{account.headPicUrl}}" class="zh-info-tx"/>
+                        <img ng-src="common/images/wx-ls-icon01.png" class="zh-info-wb"/>
+                    </div>
+                    <div class="zh-info-name" style="width: 170px;">
+                        <p class="zh-name">{{account.accountName}}</p><img ng-src="common/images/wb-ls-icon02.png" class="zh-gz-v"/>
+                    </div>
+                    <div class="wx-zh-rz">
+                       <!-- <p><label>微信号：</label><span>{{account.weixinId}}</span></p>
+                        <p><label>微信认证：</label><span>{{account.approve}}</span></p>
+                        <p><label>简介：</label><span>{{account.content}}</span></p>
+                        -->
+                    </div>
+                    <div class="wx-fx-ct" ng-controller="actionlineMapCtrl">
+                         <echarts-line id="line1"  width="518" height="318" type="stacked"
+                            legend="legend" xaxis="xaxis" series="series" symbol="symbol" grid="grid" color="color">
+                        </echarts-line>
+                    </div>
+                </div>
+            </div>
+            <!--右边-->
+            <div class="zh-pf-rt rt">
+                <div class="pf-rt-top wx-fx-bac" ng-controller="radarMapCtrl">
+                    <div class="pf-fb-tit rw-rt-top"><span>评分分布</span></div>
+                    <div class="pf-fb-pc">
+                        <echarts-radar id="radar1"  width="662" height="410" indicator="indicator"  series="series" >
+                        </echarts-radar>
+                    </div>
+                </div>
+                
+                <!--综合评分-->
+                <div class="zh-pf-res" ng-controller="countScoreCtrl">
+                    <div class="pf-res-deal" style="width: 368px;">
+                        <div class="pf-res-dt lf">
+                            <p>{{countScore.countdate}}</p>
+                            <p>综合评分</p>
+                        </div>
+                        <p class="pf-res lf">{{countScore.score}}</p>
+                        <span class="res-pm lf">第{{countScore.orderNum}}名</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--数据统计-->
+        <div class="wx-data-stat">
+            <div class="weibo-tit fs-bh-tit">数据统计</div>
+            <div class="data-stat-con">
+                <!--昨日关键指标-->
+                <!--
+                <div class="wx-zr-zb" ng-controller="countCtrl">
+                    <div class="zr-zb-top">
+                        <span>昨日关键指标</span>
+                        <a href="javascript:;"></a>
+                    </div>
+                    <div class="zr-zb-deal">
+                        <div class="zr-wth1 lf">
+                            <div class="zb-gz-rs">
+                                <p class="gz-rs-tt">新关注人数</p>
+                                <p class="gz-rs-num">{{actionCounts.addFansNum}}</p>
+                                <div class="data-fq-p" style="width: 95px;">
+                                    <p><label>日</label></p>
+                                    <p><label>周</label><span class="data-sp"><img ng-src="common/images/wx-ls-icon04.png" alt=""/><span>100%</span></span></p>
+                                    <p><label>月</label></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zr-wth1 lf">
+                            <div class="zb-gz-rs">
+                                <p class="gz-rs-tt">取消关注人数</p>
+                                <p class="gz-rs-num">{{actionCounts.cancelFansNum}}</p>
+                                <div class="data-fq-p" style="width: 95px;">
+                                    <p><label>日</label></p>
+                                    <p><label>周</label><span class="data-sp"><img ng-src="common/images/wx-ls-icon04.png" alt=""/><span>100%</span></span></p>
+                                    <p><label>月</label></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zr-wth1 lf">
+                            <div class="zb-gz-rs">
+                                <p class="gz-rs-tt">净增关注人数</p>
+                                <p class="gz-rs-num">{{actionCounts.increaseFansNum}}</p>
+                                <div class="data-fq-p" style="width: 95px;">
+                                    <p><label>日</label></p>
+                                    <p><label>周</label><span class="data-sp"><img ng-src="common/images/wx-ls-icon04.png" alt=""/><span>100%</span></span></p>
+                                    <p><label>月</label></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zr-wth1 no-br lf">
+                            <div class="zb-gz-rs">
+                                <p class="gz-rs-tt">累积关注人数</p>
+                                <p class="gz-rs-num">{{actionCounts.fansNum}}</p>
+                                <div class="data-fq-p" style="width: 95px;">
+                                    <p><label>日</label><span class="data-sp"><img ng-src="common/images/wx-ls-icon03.png" alt=""/><span>50%</span></span></p>
+                                    <p><label>周</label><span class="data-sp"><img ng-src="common/images/wx-ls-icon03.png" alt=""/><span>20%</span></span></p>
+                                    <p><label>月</label><span class="data-sp"><img ng-src="common/images/wx-ls-icon03.png" alt=""/><span>100%</span></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <!--end 昨日关键指标-->
+                <!--发布-->
+                <div class="data-fb-cs">
+                    <div class="fb-cs-lf lf" ng-controller="publishNumCtrl">
+                        <!--发布次数-->
+                        <div class="fb-cs-deal lf">
+                            <p>发布次数</p>
+                            <div class="fb-cs-bac fb-cs">
+                                <p>{{publics.pubNum}}<span>次</span></p>
+                            </div>
+                        </div>
+                        <!--发布篇数-->
+                        <div class="fb-cs-deal lf">
+                            <p>发布篇数</p>
+                            <div class="fb-cs-bac fb-ps">
+                                <p>{{publics.pubArticle}}<span>篇</span></p>
+                            </div>
+                        </div>
+                        <!--10W+发布-->
+                        <div class="fb-cs-deal lf">
+                            <p>10W+发布</p>
+                            <div class="fb-cs-bac fb-ws">
+                                <p>{{publics.tenwNums}}<span>篇</span></p>
+                            </div>
+                        </div>
+                        <!--最高阅读数-->
+                        <div class="fb-cs-deal no-mr lf">
+                            <p>最高阅读数</p>
+                            <div class="fb-cs-bac fb-yds">
+                                <p>{{publics.maxReadNum}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fb-data-tb lf" ng-controller="totalCtrl">
+                        <div class="zr-zb-deal">
+                            <div class="fb-wth fb-br fb-bb"></div>
+                            <div class="fb-wth fb-br fb-bb fb-rd-th">阅读数</div>
+                            <div class="fb-wth fb-bb fb-dz-th">点赞数</div>
+                        </div>
+                        <div class="zr-zb-deal fb-deal-tr">
+                            <div class="fb-wth fb-br fb-bb">总计</div>
+                            <div class="fb-wth fb-br fb-bb">{{total.totalNum[0]}}</div>
+                            <div class="fb-wth fb-bb">{{total.totalNum[1]}}</div>
+                        </div>
+                        <div class="zr-zb-deal fb-deal-tr">
+                            <div class="fb-wth fb-br">平均</div>
+                            <div class="fb-wth fb-br">{{total.avgNum[0]}}</div>
+                            <div class="fb-wth">{{total.avgNum[1]}}</div>
+                        </div>
+                    </div>
+                </div>
+                <!--end 发布-->
+               
+            </div>
+        </div>
+        <!--end 数据统计-->
+        
+        <!--微信列表-->
+        <div ui-view></div>
+    </div>
+</div>
+<!--end main-->

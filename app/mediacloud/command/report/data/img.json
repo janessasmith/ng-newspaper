@@ -1,0 +1,34 @@
+{
+    "result": [
+        {
+            "fileId":1,
+            "fileName":"xxxx.jpg",
+            "filePath":"common/images/new-pic.jpg",
+            "userName":"zhangyi"
+        },
+        {
+            "fileId":2,
+            "fileName":"xxxx.jpg",
+            "filePath":"common/images/new-pic.jpg",
+            "userName":"zhanger"
+        },
+        {
+            "fileId":3,
+            "fileName":"xxxx.jpg",
+            "filePath":"common/images/new-pic.jpg",
+            "userName":"zhangsan"
+        },
+        {
+            "fileId":4,
+            "fileName":"xxxx.jpg",
+            "filePath":"common/images/new-pic.jpg",
+            "userName":"zhangsi"
+        }
+    ],
+    "pageInfo": {
+        "totalNum": 1,
+        "pageSize": 10,
+        "pageCount": 1,
+        "pageIndex": 1
+    }
+}

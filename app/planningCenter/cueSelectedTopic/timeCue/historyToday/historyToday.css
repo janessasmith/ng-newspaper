@@ -1,0 +1,160 @@
+.history {
+    padding-bottom: 10px;
+    border: 1px solid #CFCFCF;
+    border-top: transparent;
+    overflow: hidden;
+}
+
+.history_left {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.history_left .history_button {
+    height: 50px;
+    line-height: 50px;
+}
+
+.history_left .history_button button {
+    margin-right: 10px;
+}
+
+.history_left .history_button .history_default,
+.history_left .history_button .history_primary {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.history_left .history_button .history_primary {
+    color: #fff;
+    border: 1px solid #2f98d2;
+    background-color: #2f98d2;
+}
+
+.history_left .history_button .history_default {
+    color: #343434;
+    border: 1px solid #e4e4e4;
+    background-color: #fbfbfb;
+}
+
+.history_left .history_today {}
+
+.history_left .history_today .history_main:first-child {
+    margin-top: 0px!important;
+}
+
+.history_left .history_today .history_main {
+    border-bottom: 1px dashed #E4E4E4;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.history_left .history_today .history_main .history_year {
+    float: left;
+    width: 65px;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2f99d5;
+}
+
+.history_left .history_today .history_main .history_con {
+    float: left;
+    width: 90%;
+    color: #454545;
+    line-height: 28px;
+}
+
+.historyToday_right {
+    min-height: 820px;
+}
+
+.historyToday_right .today_infos {
+    background: #f8f9fb;
+    border: 1px solid #d3d8db;
+    border-bottom: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.historyToday_right .today_infos h2 {
+    font-size: 60px;
+    margin: 5px;
+}
+
+.historyToday_right .fc-unthemed .fc-today {
+    background: #43a2d8;
+    color: #fff;
+}
+
+.historyToday_right .fc-widget-header th {
+    padding: 5px 0;
+    background: #f2f5f5;
+}
+
+.historyToday_right .fc-toolbar {
+    display: none;
+}
+
+.historyToday_right .calendarHead .dropdown button.bth-fix {
+    width: 100px!important;
+}
+
+.historyToday_right .calendarHead .dropdown .dropdown-menu {
+    min-width: 100px!important;
+}
+
+.historyToday_right .calendarHead button.searchDateBtn {
+    width: 65px;
+    height: 30px;
+    border: 1px solid #e4e4e4;
+    background: #fbfbfb;
+    font-size: 12px;
+    color: #53534f;
+    text-align: center;
+    line-height: 25px;
+    float: right;
+}
+
+.historyToday_right .clearBoth {
+    clear: both;
+}
+
+.historyToday_right .fc-bg table tbody tr td {
+    background: #f8f9fb;
+}
+
+.historyToday_right .fc-bg table tbody tr td.selectedDay {
+    background: #ffee99;
+}
+
+
+/*20160624修改右侧月日选择查询*/
+
+.historyToday_right .calendarHead .date_c {
+    float: left;
+    position: relative;
+    width: 138px;
+}
+
+.historyToday_right .calendarHead .date_c .form-control {
+    width: 150px;
+    height: 32px;
+    background-color: #fff;
+    cursor: pointer;
+    padding-left: 33px;
+    background: url(./editingCenter/app/toBeCompiled/images/t3.png) no-repeat 90% center;
+    margin-right: 20px;
+}
+
+.historyToday_right .calendarHead .date_c img.dateImg {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+}

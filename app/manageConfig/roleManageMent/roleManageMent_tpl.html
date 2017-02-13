@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-sm-2 manage-left editing-left-fixed editing-height-fixed navsidebar">
+        <div class="manage-left-tree" trs-scrollbar>
+            <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node)">
+                <span ng-bind='node.GNAME||node.GDESC'></span>
+            </treecontrol>
+        </div>
+    </div>
+    <div class="col-sm-10 manage-main">
+        <div class="row">
+            <div class="col-sm-3 manage-main-left">
+                <div class="manage_right_head">
+                    <div class="input-group manage_input_group">
+                        <div class="edit_input_left">
+                            <input type="text" ng-model="roleSearch" ng-change="limitInput()" class="form-control role_form_control" placeholder="请输入角色名称搜索">
+                        </div>
+                        <div class="edit_input_right">
+                            <img ng-if="!status.isSystemRole&&!!status.operatingAuthority.add" ng-click="createRole()" src="./manageConfig/images/js3.jpg" class="role-search-img">
+                            <img class="role-search-img-not" ng-if="status.isSystemRole" src="./manageConfig/roleManageMent/images/js3.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="manage-main-leftDiv">
+                    <div cg-busy="loadingPromise"></div>
+                    <div class="manage-role-select" ng-repeat="roleData in roleDatas | filter:{ROLEDESC:roleSearch} | orderBy:roleData.createTime">
+                        <a href="javascript:void(0)" title="{{roleData.ROLEDESC}}" style="display:block;width: 100%; overflow: hidden">
+                            <span ng-click="selectRole($event,roleData)" ng-bind="roleData.ROLENAME | trsLimitTo:15" class="roleDesc"></span>
+                            <img ng-if="roleData.ROLEID!='1'&&roleData.ROLEID!='2'&&!!status.operatingAuthority.delete" src="./manageConfig/images/gb1-1.png" ng-click="deleteRole(roleData.ROLEID,roleData.ROLEDESC)">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 manage-main-right">
+                <div class="edit_right_head">
+                    <button ng-if="roleData.ROLEID!=='1'&&roleData.ROLEID!=='2'&&!!status.operatingAuthority.edit" ng-click="editRole()" class="btn btn-default btn-commen" ng-class="{'btn-commen-hover':buttons[1]}">
+                        <span class="s_icon1">
+                            <img ng-if="buttons[1]" src="./manageConfig/images/gb3-1.png" />
+                            <img ng-if="!buttons[1]" src="./manageConfig/images/gb3.png" />
+                        </span> 角色编辑
+                    </button>
+                    <a ng-if="roleData.ROLEID==='2'||!!status.operatingAuthority.setright" href="javascript:void(0)" style="display:inline-block;">
+                        <button class="btn btn-default btn-commen" ng-class="{'btn-commen-hover':buttons[2]}" ng-click="rightAssign()">
+                            <span class="s_icon1">
+                                <img ng-if="buttons[2]" src="./manageConfig/images/gb4-1.png" />
+                                <img ng-if="!buttons[2]" src="./manageConfig/images/gb4.png" />
+                            </span> 权限分配
+                        </button>
+                    </a>
+                    <button ng-if="roleData.ROLEID=='1'||(!!status.operatingAuthority.deleteuser||!!status.operatingAuthority.adduser)" ng-click="addUser()" class="btn btn-default btn-commen" ng-class="{'btn-commen-hover':buttons[3]}">
+                        <span class="s_icon1">
+                            <img ng-if="buttons[3]" src="./manageConfig/images/gb5-1.png" />
+                            <img ng-if="!buttons[3]" src="./manageConfig/images/gb5.png" />
+                        </span> 用户管理
+                    </button>
+                    <button ng-if="status.isSystemUser&&roleData.ROLEID!='2'&&roleData.ROLEID!='1'" ng-click="systemRole()" class="btn btn-default btn-commen" ng-class="{'btn-commen-hover':buttons[4]}">
+                        <span class="s_icon1">
+                            <img ng-if="buttons[4]" src="./manageConfig/images/gb5-1.png" />
+                            <img ng-if="!buttons[4]" src="./manageConfig/images/gb5.png" />
+                        </span> 系统角色
+                    </button>
+                </div>
+                <div class="manage-main-rightDiv" ui-view="rightEdit">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</div>

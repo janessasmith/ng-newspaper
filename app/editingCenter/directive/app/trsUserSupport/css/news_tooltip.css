@@ -1,0 +1,110 @@
+.news-tooltip-wrap {
+    width: 512px;
+    height: 344px;
+    border: 2px solid #835b45;
+    border-radius: 12px;
+    overflow: hidden;
+    position: absolute;
+    background: #eeebe0;
+    z-index: 2;
+    left: 8px;
+    top: 44px;
+}
+.news-tooltip-header {
+    height: 35px;
+    line-height: 35px;
+    background: #e1d9c7;
+    overflow: hidden;
+}
+.news-tooltip-header ul {
+    height: 14px;
+    line-height: 14px;
+    overflow: hidden;
+    margin-top: 11px;
+    margin-left: -40px;
+}
+.news-tooltip-header ul li {
+    float: left;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+    border-right: 2px solid #ccc4b6;
+    list-style: none;
+}
+.news-tooltip-header ul li:last-of-type {
+    border-right: none;
+}
+.news-tooltip-body {
+    width: 500px;
+    height: 290px;
+    overflow-y: auto;
+    margin-left: 6px;
+}
+.news-tooltip-body ul {
+    overflow: hidden;
+    margin-left: -40px;
+    margin-right: 4px;
+}
+.news-tooltip-body ul li {
+    height: 27px;
+    line-height: 27px;
+    border-bottom: 1px solid #d6ceba;
+    cursor: pointer;
+    list-style: none;
+}
+
+.news-tooltip-body ul li:nth-child(odd) {
+    background: #eeebe0;
+}
+.news-tooltip-body ul li:nth-child(even) {
+    background: #e6e1d2;
+}
+
+.news-tooltip-body ul li:hover{
+    background: #e1d9c7;
+}
+
+.news-tooltip-body ul li b {
+    font-size: 12px;
+    color: #a39c91;
+    text-align: center;
+    display: inline-block;
+    font-weight: normal;
+    float: left;
+}
+.news-tooltip-body ul li:hover b{
+    color:#fff;
+}
+
+/*新的需求的样式*/
+.user-support{
+    position: absolute;
+    left: 10px;
+    top: 43px;
+    border: 1px solid #ccc;
+    width: 200px;
+    background: #fff;
+    z-index: 2;
+    height: 150px;
+    overflow-y:auto;
+}
+.user-support ul{
+    margin-left: -40px;
+    margin-bottom: 0px;
+}
+.user-support ul li{
+    list-style:none;
+    height: 22px;
+    line-height: 22px;
+    cursor: pointer;
+}
+.user-support ul li b{
+    font-weight: normal;
+    margin-left: 10px;
+}
+.user-support ul li:hover{
+    background: #eee;
+}
+.user-support-a{
+    color: black;
+}

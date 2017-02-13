@@ -1,0 +1,23 @@
+<div class="userMngGroupMngMoveGroupSubmit">
+    <div class="head">
+        <span ng-bind="data.modalTitle"></span>
+        <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+    </div>
+    <div class="body">
+        <div class="main">
+            <div class="right">
+                <div class="tree" ng-show="status.ifExpand">
+                    <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="data.treeData" options="status.treeOptions" on-selection="showSelected(node)">
+                        <trs-single-radio label="" disabled="node.GROUPID==data.fromGroupId||node.GROUPID==data.parentGroupId||node.PARENTID==data.fromGroupId" ischecked="node.GROUPID===data.selectedGroup.GROUPID" group="" callback="chooseGroup(node)"></trs-single-radio><span ng-bind='node.GNAME' ng-click="chooseGroup(node)"></span>
+                    </treecontrol>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div>
+                <button class="confirm btn" ng-click="confirm()" ng-disabled="data.selectedGroup.length<1">确定</button>
+                <button class="cancel" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

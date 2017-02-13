@@ -1,0 +1,65 @@
+ .IM_bg .search {
+    margin: 0 auto;
+    width: 208px;
+    height: 300px;
+    overflow: auto;
+    color: #fff;
+    background-color: #4E6C90;
+    position: absolute !important;
+    top:30px !important;
+
+}
+
+.IM_bg .search .search_Friends,
+.search_Contacts {}
+
+.IM_bg .search .search_Friends p,
+.search_Contacts p {
+    color: #C1C1C1;
+    margin: 0px;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #445D7B;
+}
+
+.IM_bg .search .search_Friends .search_Friends_con,
+.search_Contacts .search_Contacts_con {
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.IM_bg .search .search_Friends .search_Friends_con:hover {
+    background-color: #54769C;
+}
+
+.IM_bg .search .search_Friends .search_Friends_con,
+.search_Contacts .search_Contacts_con {
+    padding: 5px 10px;
+    height: 41px;
+    line-height: 30px;
+    border-bottom: 1px solid #445D7B;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.IM_bg .search .search_Friends .search_Friends_con .friend_img,
+.search_Friends .search_Friends_con .friend_img img,
+.search_Contacts .search_Contacts_con .contact_img,
+.search_Contacts .search_Contacts_con .contact_img img {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.IM_bg .search .search_Friends .search_Friends_con span,
+.search_Contacts .search_Contacts_con span {
+    float: left;
+    display: block;
+    padding-left: 10px;
+    width: 140px;
+    text-align: left;
+}
+
+.IM_bg .search .search_Contacts p {
+    clear: both;
+}

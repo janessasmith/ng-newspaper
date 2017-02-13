@@ -1,0 +1,50 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12 col-lg-12">
+        <button class="btn btn-default btn-commen" ng-click="openTakeDraftModal()" ng-disabled="data.selectedArray.length == 0" ng-mouseenter="status.batchOperateBtn.hoverStatus='qugao'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus=='qugao'?'z56-1':'z56'}}.png" /></span> 取稿
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="CreationAxis()" ng-disabled="data.selectedArray.length == 0" ng-mouseenter="status.batchOperateBtn.hoverStatus='creationAxis'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'creationAxis'?'z14-1':'z14'}}.png" /></span> 创作轴
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="openReserveDraftModal()" ng-disabled="data.selectedArray.length == 0" ng-mouseenter="status.batchOperateBtn.hoverStatus='reserve'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'reserve'?'z15-1':'z15'}}.png" /></span> 预留
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="collect()" ng-disabled="data.selectedArray.length == 0" ng-mouseenter="status.batchOperateBtn.hoverStatus='collect'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'collect'?'z16-1':'z16'}}.png" /></span> 收藏
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="printbtn()" ng-disabled="data.selectedArray.length == 0" ng-mouseenter="status.batchOperateBtn.hoverStatus='print'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'print'?'z17-1':'z17'}}.png" /></span> 打印
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="export()" ng-disabled="data.selectedArray.length == 0" ng-mouseenter="status.batchOperateBtn.hoverStatus='export'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'export'?'z55-1':'z55'}}.png" /></span> 导出
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="deleteDrafts()" ng-disabled="data.selectedArray.length == 0" ng-mouseenter="status.batchOperateBtn.hoverStatus='delete'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='delete'?'z18-1.png':'z18.png'}}" />
+            </span> 删除
+        </button>
+    </div>
+</div>
+<div class="row mb10" style="margin-top:10px;">
+    <div class="col-md-6">
+        <trs-single-select selected-option="time.curValue" options="time.data" callback="queryItemsByDropDown('ShareTime',time.curValue.value)"></trs-single-select>
+    </div>
+    <div class="col-md-6">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="data.keywords" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+        </div>
+        <trs-single-select selected-option="data.esSelected" callback="queryByiWoAll()" options="data.esOptions" class="pull-right"></trs-single-select>
+    </div>
+</div>
+<div class="row plr10" style="min-height:620px;">
+    <trs-masonry datas="dataJson" selected-array="data.selectedArray"></trs-masonry>
+    <div class="loading text-center" ng-show="page.CURRPAGE!=page.PAGECOUNT&&page.PAGECOUNT!=0">
+        <img src="./resourceCenter/images/z61.png" alt="" style="width:20px;cursor:pointer;">
+        <span style="cursor:pointer;">加载更多</span>
+    </div>
+</div>
+<!-- <div cg-busy="loadingPromise"></div> -->
+<trs-go-top></trs-go-top>

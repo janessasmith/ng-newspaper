@@ -1,0 +1,229 @@
+.newspaper_signedZPInfo .modal-dialog {
+    width: 680px;
+    height: 500px;
+    background: #ddd;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.newspaper_signedZPInfo .modal-dialog .modal-content {
+    width: 672px;
+    height: 592px;
+    background: #fff;
+    margin: 4px auto;
+    overflow: hidden;
+}
+
+.newspaper_signedZPInfo .useSignedZP-body {
+    width: 564px;
+    height: 480px;
+    border: 1px solid #d3d7da;
+    background: #fff;
+    margin: 10px auto 0;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+.newspaper_signedZPInfo .signedZP-container .signedZP-body {
+    background: #fff;
+    text-align: center;
+    overflow-y: auto;
+    height: 400px;
+}
+
+.newspaper_signedZPInfo .signedZP-container .signed-footer button:nth-child(1) {
+    margin-left: 224px;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.newspaper_useSignedZP .modal-dialog {
+    width: 590px;
+    height: 600px;
+    background: #ddd;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.newspaper_useSignedZP .modal-dialog .modal-content {
+    width: 582px;
+    height: 592px;
+    background: #f0f2f5;
+    margin: 4px auto;
+    overflow: hidden;
+}
+
+.useSignedZP-container .useSignedZP-head {
+    height: 40px;
+    line-height: 40px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.useSignedZP-container .useSignedZP-head p {
+    color: #333;
+    font-weight: bold;
+    float: left;
+    margin-left: 18px;
+}
+
+.useSignedZP-container .useSignedZP-head img {
+    float: right;
+    margin: 12px 20px 0 0;
+    cursor: pointer;
+}
+
+.useSignedZP-container .useSignedZP-body {
+    width: 564px;
+    height: 480px;
+    border: 1px solid #d3d7da;
+    background: #fff;
+    margin: 10px auto 0;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+.useSignedZP-container .useSignedZP-body p.choosed-manu {
+    width: 526px;
+    height: 56px;
+    line-height: 56px;
+    border-bottom: 1px solid #d3d7da;
+    margin: 0 auto;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.useSignedZP-container .useSignedZP-body p.opinion {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 0;
+    margin-left: 10px;
+    color: #444;
+    font-weight: bold;
+}
+
+.useSignedZP-container .useSignedZP-body .date {
+    height: 77px;
+}
+
+.useSignedZP-container .useSignedZP-body .date p {
+    color: #444;
+    float: left;
+    margin-left: 12px;
+    font-size: 12px;
+    margin-bottom: 0px;
+    line-height: 77px;
+}
+
+.useSignedZP-container .useSignedZP-body .date .timeGroup {
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.useSignedZP-container .useSignedZP-body .date .timeGroup input[type="text"] {
+    width: 200px;
+    height: 32px;
+}
+
+.useSignedZP-container .useSignedZP-body .date .timeGroup img {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+
+.useSignedZP-container .useSignedZP-body .lists {
+    overflow: hidden;
+}
+
+.useSignedZP-container .useSignedZP-body .lists div {
+    height: 238px;
+    border: 1px solid #d0cfcf;
+    float: left;
+    margin-left: 10px;
+}
+
+.useSignedZP-container .useSignedZP-body .lists div:nth-child(1) {
+    width: 158px;
+}
+
+.useSignedZP-container .useSignedZP-body .lists div:nth-child(2) {
+    width: 356px;
+}
+
+.useSignedZP-container .useSignedZP-body .lists div p {
+    height: 30px;
+    line-height: 30px;
+    background: #f0f2f5;
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 0px;
+}
+
+.useSignedZP-container .useSignedZP-body .lists div ul {
+    height: 206px;
+    overflow-y: auto;
+}
+
+.useSignedZP-container .useSignedZP-body .lists div ul li {
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.useSignedZP-container .useSignedZP-body .lists div ul li span {
+    display: block;
+    width: 100%;
+    height: 28px;
+    padding-left: 10px;
+}
+
+.useSignedZP-container .useSignedZP-body .lists div ul li span.cur {
+    background: #4496d2;
+    color: #fff;
+}
+
+.useSignedZP-container .useSignedZP-body textarea {
+    width: 524px;
+    height: 120px;
+    resize: none;
+    margin-left: 10px;
+}
+
+.useSignedZP-container .useSignedZP-foot {
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.useSignedZP-container .useSignedZP-foot button {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 12px;
+    font-family: "MicsoftYahei";
+    float: left;
+    background: #4496d2;
+}
+
+.useSignedZP-container .useSignedZP-foot button:nth-child(1) {
+    margin-left: 216px;
+    margin-right: 10px;
+}
+
+.useSignedZP-body .invalidate-input-box span {
+    top: 7px;
+    left: 10px;
+}

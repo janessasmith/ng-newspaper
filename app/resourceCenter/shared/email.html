@@ -1,0 +1,86 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12 col-lg-12">
+        <button class="btn btn-default btn-commen opacity100" ng-click="openTakeDraftModal()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='openTakeDraftModal'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                 <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='openTakeDraftModal'?'z56-1.png':'z56.png'}}"/>
+            </span> 取稿
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="CreationAxis()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='CreationAxis'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='CreationAxis'?'z14-1.png':'z14.png'}}"/>
+            </span> 创作轴
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="openReserveDraftModal()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='openReserveDraftModal'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='openReserveDraftModal'?'z15-1.png':'z15.png'}}" />
+            </span> 预留
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="collect()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='collect'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='collect'?'z16-1.png':'z16.png'}}" />
+            </span> 收藏
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="printBtn()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='printbtn'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='printbtn'?'z17-1.png':'z17.png'}}" />
+            </span> 打印
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="export()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='export'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='export'?'z55-1.png':'z55.png'}}" />
+            </span> 导出
+        </button>
+    </div>
+</div>
+<div class="row edit_right_mid edit_newDocSite_top_right_mid">
+    <div class="col-md-12">
+        <trs-single-select selected-option="status.timeTypeSelected" options="status.timeTypeJson" callback="searchWithKeyword('TimeType',status.timeTypeSelected)"></trs-single-select>
+        <trs-single-select label="来源筛选" selected-option="status.selectedSource" options="status.sourceArray"></trs-single-select>
+        <trs-single-select selected-option="status.docTypeSelected" options="status.docTypeJson" callback="searchWithKeyword('DocType',status.docTypeSelected)"></trs-single-select>
+        <trs-single-select ng-show="status.isESSearch" label="排序方式" selected-option="shareSort.curValue" options="shareSort.data" callback="searchWithKeyword()"></trs-single-select>
+        <!-- <trs-single-select label="稿件分类" selected-option="newsType.curValue" options="newsType.data" callback="searchWithKeyword()" ng-hide="!isESSearch"></trs-single-select> -->
+        <div class="m_search pull-right">
+            <!-- <trs-single-select class="fixed-dropdown" label="全部" selected-option="status.allSelected" options="status.allJson"></trs-single-select>
+            <input type="text" class="form-control" placeholder="请输入关键字搜索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+            <button class="btn btn-default btn-commen" type="button" ng-click="fullTextSearch()">检索</button> -->
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="panel-group col-md-12 min_h_13">
+        <!--<div class="standby-draft-accordion-head standby-draft-unread-head text-center">
+        </div>-->
+    </div>
+</div>
+<div class="resouCen_emailDraft_min_height">
+    <div class="edit_table edit_news_today_table border_radius_5 resouCen_emailDraft_main">
+        <table class="table table-striped">
+            <thead>
+                <tr class="pagedraft-tr-bottom">
+                    <th class="emailDraft-th-check "> </th>
+                    <th>主标题</th>
+                    <th class="xcol-emailDraft-date">共享时间</th>
+                    <th class="xcol-emailDraft-source">来源</th>
+                    <!-- <th class="xcol-emailDraft-releaseBuild">取稿人</th> -->
+                    <th class="xcol-emailDraft-bigPicture">图示</th>
+                </tr>
+            </thead>
+        </table>
+        <div class="panel-group">
+            <div cg-busy="status.loadingPromise"></div>
+            <div ng-click="status.downCon=false" ng-if="status.selectedSource.value==''||status.selectedSource.value == items.TYPE" ng-repeat="items in data.panels track by $index" class="restEmail">
+                <div class="email-content" ng-click="toggleOpenPanel($index)">
+                    <img src="./editingCenter/newspaper/images/np02.png" ng-class="{'standby-draft-panel-title-rotate':status.isOpenedPanel[$index]}">
+                    <span class="email_title_name">{{items.MDATE}}&nbsp;{{items.TYPENAME}}【{{items.DOCUMENTS==undefined?'0':items.DOCUMENTS.length}}/{{items.COUNT}}】</span>
+                    <div class="td-check edit_news_today_pull_right email-checkbox-position-style">
+                        <trs-checkbox ischecked="determineItemsInSelectedArray(items.DOCUMENTS)" callback="newspaperMultiSelected(items.DOCUMENTS)"></trs-checkbox>全选
+                        <!-- <img src="./resourceCenter/images/z19.png" class="editCen-newspaper-type-refresh" ng-click="refreshSingleBanmian(items)"> -->
+                    </div>
+                </div>
+                <div class="newspaper_todaysdark_table" ng-show="status.isOpenedPanel[$index]">
+                    <table class="newspaper_todaysdark_table table table-striped data-table black-box" trs-thumb-container id="render{{$index}}">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

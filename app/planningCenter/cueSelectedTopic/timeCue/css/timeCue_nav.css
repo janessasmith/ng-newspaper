@@ -1,0 +1,52 @@
+.timeCue_nav {
+    height: 46px;
+    border-bottom: 1px solid #CFCFCF;
+}
+
+.timeCue_nav ul {
+    height: 45px;
+    border-left: 1px solid #CFCFCF;
+}
+
+.timeCue_nav ul li {
+    float: left;
+    width: 120px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-weight: bold;
+    border-top: 1px solid #CFCFCF;
+    border-right: 1px solid #CFCFCF;
+    list-style-type: none;
+}
+
+.timeCue_nav ul li.timeCue_nav_state:hover {
+    height: 46px;
+    line-height: 43px;
+    color: #2f98d2;
+    border-top: 2px solid #2f98d2;
+}
+
+.timeCue_nav ul li.timeCue_nav_state {
+    background-color: #fff;
+}
+
+.timeCue_nav ul li.timeCue_nav_state_active {
+    height: 46px;
+    line-height: 43px;
+    color: #2f98d2;
+    border-top: 2px solid #2f98d2;
+}
+
+.timeCue_nav ul a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.timeCue_page {
+    position: relative!important;
+    bottom: 0px!important;
+}
+.timeCue .page p{
+    margin-top: 28px;
+}

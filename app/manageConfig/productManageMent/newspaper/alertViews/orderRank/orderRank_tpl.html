@@ -1,0 +1,23 @@
+<div class="man_produ_newpress">
+    <div class="man_produ_newpress_head">
+        <p>叠次管理—排序</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+    </div>
+    <div class="pressRank_conctent_bg">
+        <img src="./manageConfig/productManageMent/images/news1.png" ng-click="moveToTop()">
+        <img src="./manageConfig/productManageMent/images/news2.png" ng-click="moveToBottom()">
+        <img src="./manageConfig/productManageMent/images/news3.png" ng-click="moveUp()">
+        <img src="./manageConfig/productManageMent/images/news4.png" ng-click="moveNext()">
+    </div>
+    <div class="man_produ_batchDelete_conctent">
+        <div class="man_produ_batchDelete_con_form" ng-repeat="item in rankItems" ng-click="selectItem(item,$index)" ng-class="{'selected':selectedItem==item}">
+            <span class="newpress_con_form_text">{{item.CHNLDESC}}</span>
+        </div>
+        
+    </div>
+    <div class="man_produ_newpress_footer">
+        <button class="news-role-btn-success man_produ_newpress_footer_cancel btn_confirm" ng-click="confirm()">确定</button>
+        <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        
+    </div>
+</div>

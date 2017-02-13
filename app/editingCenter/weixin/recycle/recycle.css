@@ -1,0 +1,32 @@
+.vx_selectBox {
+    width: 50px;
+}
+
+.vx_no {
+    width: 70px;
+}
+
+.vx_delete {
+    width: 110px;
+}
+
+.vx_deleteTime {
+    width: 150px;
+}
+
+.vx_operate {
+    width: 60px;
+}
+
+.vx_icon {
+    width: 60px;
+}
+
+.vx_con {
+    text-align: left;
+}
+
+.vx_btn,
+.vx_btn:hover {
+    width: 115px;
+}

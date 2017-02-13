@@ -1,0 +1,44 @@
+<div class="row mc-padding-xs" id="searchPanel">
+    <div class="col-md-6 plr0">
+        <div class="input-group resource_ctr">
+            <input type="text" class="form-control" placeholder="全库搜索" aria-describedby="basic-addon2" ng-model="filterKeyWord" ng-keypress="searchWithKeyword($event)">
+            <span class="input-group-addon" ng-click="searchWithKeyword()">搜索</span>
+            <!-- <span class="input-group-addon" ui-sref="retrieval({channelName:'iwo'})">高级检索</span> -->
+        </div>
+    </div>
+</div>
+<!-- <div class="row mc-padding-xs blue_bar">
+    已找到相关记录<em ng-bind="page.ITEMCOUNT">0</em>条,用时<em ng-bind="costTime">0</em>秒
+</div> -->
+<!-- <div class="row mc-padding-xs search_list">
+    <div class="col-md-8 mc-padding-xs" ng-repeat="item in items track by $index">
+        <div class="m_box_3">
+            <a ng-href="#/resourcedetail?guid={{item.ZB_GUID}}&channel=iwo&service=iwo&indexname={{page.indexName}}" target="_blank">
+                <h4 class="tit" data-ng-bind-html="item.DOCTITLE" ></h4>
+            </a>
+            <p data-ng-bind-html="item.CONTENT">
+            </p>
+            <div class="bm">
+                <span class="source" ng-bind="item.ZB_SOURCE_SITE">
+                </span>
+                <span class="dete" ng-bind="item.DOCPUBTIME">
+                </span>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="row" ng-if="data.items.length>0">
+    <div ng-repeat="item in data.items" class="col-sm-8 ya-search-wrap">
+        <p ng-bind="item.TITLE" class="title" ng-click="showDetailWin(item)"></p>
+        <p ng-bind="item.CONTENT | truncate:100:'...'" class="content"></p>
+        <!-- <img ng-src="{{item.FILEA}}" alt="" style="max-width:600px;"> -->
+        <span ng-bind="item.MAKETIME" class="time"></span>
+
+    </div>
+</div>
+<p ng-if="data.items.length==0" class="no-result-text">没有检索到相关的数据</p>
+<div class="page resourcectrl allsearch" ng-if="data.items.length>0">
+    <trs-set-columns columns="fields" callback="setColumns()"></trs-set-columns>
+    <trs-pagenation-left page-count="page" callback="selectPageNum()" pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+    <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+</div>

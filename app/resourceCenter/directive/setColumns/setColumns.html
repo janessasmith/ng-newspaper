@@ -1,0 +1,8 @@
+ <div class="m_diylist">
+ 	<ul class="m_words_tpl" ng-show="showPanel">
+        <li ng-repeat="item in columns" ng-class="{'active':item.isChecked}" ng-click="toggleStatus(item)" ng-if="item.isSummary==1">
+        	{{item.fieldCnName}}
+        </li>
+    </ul>
+    <a href="javascript:;" ng-click="togglePanel()">设置字段</a>
+</div>

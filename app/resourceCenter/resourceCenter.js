@@ -1,0 +1,50 @@
+"use strict";
+angular.module('resourceCenterModule', [
+	'resourceCenterRouterModule',
+	'util.checkbox',
+	'util.trsGoTopModule',
+	'trsSetColumnsModule',
+	'trsAreaSelectModule',
+	'trsngsweetalert',
+	'trsInputSuggestModule',
+	'resCtrModalModule',
+	'resourceCenterinitComDataModule',
+	'resCenterSubTabModule',
+	'resourceCenterLeftModule',
+	'resourceCenterIwoLeftModule',
+	'resourceCenterIwoModule',
+	'resourceCenterSharedModule',
+	'oldResourceCenterSharedModule',
+	'resourceCenterPictureModule',
+	// 川报修改
+	// 'resourceCenterXinhuaModule',
+	'resourceCenterStockModule',
+	'resourceCenterVideoModule',
+	'resourceDirectiveModule',
+	'resCenWebsiteModule',
+	'resCenDigitalnewsModule',
+	'resCenDigitalPreviewModule',
+	'resCenWechatModule',
+	'resCenWeiboModule',
+	'resCenAppModule',
+	'resourceCenterServiceModule',
+	'resourceCenterDetailModule',
+	'resCenRetMoulde',
+	'resCenSearchMoulde',
+	'resMangementModule',
+	'resSubscribeModule',
+	'appResourceDetailModule',
+	'resourceCenterGxgkDetailModule',
+	// 川报修改
+	'resourceCenterCbXinhuaModule',
+	'cbPicLeftModule',
+	//川报修改
+	'cbCustomWindowModule',
+	'cbCustomServiceModule',
+	'cbCustomModule',
+	'videoModule',
+	'resourceCenterLiveMoudle',//直播模块
+	'imgPreloadDireciveModule',
+	'cbCustomClassifyModule'
+]).
+controller('resourceCenterController', ['$scope', '$state', '$location', function($scope, $state, $location) {}]);

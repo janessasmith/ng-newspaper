@@ -1,0 +1,11 @@
+<carousel interval="myInterval" no-wrap="noWrapSlides" template-url="./editingCenter/directive/app/Carousel/carousel_tpl.html" pics="sliderPic">
+    <slide class="carousel-list" ng-repeat="slide in sliderPic" active="slide.active">
+        <div class="carousel-img">
+            <img ng-src="{{slide.PERPICURL}}" class="pointer" ng-click="openOriginalPic(slide.PERPICURL)" trs-download-original-pic origin-pic="slide">
+        </div>
+        <div class="carousel-list-row">
+            <div class="carousel-num"><span class="ft-red">{{$index+1}}</span>/<span ng-bind="len" class="mgl3"></span></div>
+            <div class="carousel-list-detail" ng-bind-html="convertFormat(slide.APPDESC)"></div>
+        </div>
+    </slide>
+</carousel>

@@ -1,0 +1,32 @@
+.debug_right{
+	float: right;
+}
+.manageCon-logMgr-debugLog {
+    position: relative;
+}
+
+.manageCon-logMgr-debugLog td {
+    word-break: break-all;
+}
+
+.manageCon-logMgr-debugLog th.lcol-time {
+    width: 155px;
+}
+
+.manageCon-logMgr-debugLog th.lcol-operation {
+    width: 155px;
+}
+.manageCon-logMgr-debugLog th.lcol-type{
+
+}
+.manageCon-logMgr-debugLog th.td-check {
+    width: 60px;
+}
+
+.manageCon-logMgr-debugLog th.lcol-user {
+    width: 200px;
+}
+
+.manageCon-logMgr-debugLog th.lcol-ip {
+    width: 130px;
+}

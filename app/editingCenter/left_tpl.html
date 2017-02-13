@@ -1,0 +1,26 @@
+<div class="container-fluid editing-list">
+    <tabset justified="true" class="editing-nav">
+        <i class="unread-icon pos-abs iwo-unread-icon-pos" ng-if="isUnreadIconShow"></i>
+        <tab heading="我" class="editing-nav-iwo pointer" active="status.tab.iWo.isTabSelect" ng-click="setTabSelected('iWo')">
+          <div ui-view="iwo"></div>
+        </tab>
+        <tab heading="报纸" ng-if="status.authority.newspaper.isAccessAuthority" class="editing-nav-newspaper pointer" active="status.tab.newspaper.isTabSelect" ng-click="setTabSelected('newspaper')">
+          <div ui-view="newspaper"></div>
+            
+        </tab>
+        <tab heading="网站" ng-if="status.authority.website.isAccessAuthority" class="editing-nav-website pointer" active="status.tab.website.isTabSelect" ng-click="setTabSelected('website')" ng-show="status.isThisTabShow == 'website'">
+           
+          <div ui-view="website"></div>
+        </tab>
+        <tab heading="APP" ng-if="status.authority.app.isAccessAuthority" class="editing-nav-app" active="status.tab.app.isTabSelect" ng-show="status.isThisTabShow == 'app'" ng-click="setTabSelected('app')">
+            <div ui-view="app"></div>
+        </tab>
+        <tab heading="微信" ng-if="status.authority.weixin.isAccessAuthority" class="editing-nav-weixin pointer" active="status.tab.weixin.isTabSelect" ng-click="setTabSelected('weixin')" ng-show="status.isThisTabShow == 'weixin'">
+            <div ui-view="weixin"></div>
+        </tab>
+        <tab heading="微博" ng-if="status.authority.weibo.isAccessAuthority" class="editing-nav-weibo pointer" active="status.tab.weibo.isTabSelect" ng-click="setTabSelected('weibo')" ng-show="status.isThisTabShow == 'weibo'">
+            <div ui-view="weibo"></div>
+        </tab>
+        <button type="button" ng-show="status.authority.app.isAccessAuthority||status.authority.weixin.isAccessAuthority||status.authority.weibo.isAccessAuthority" class="editing-more" data-placement="right-bottom" data-auto-close="1" data-template-url="./editingCenter/service/moreTabList/moreTabList.html" data-animation="am-slide-left"  bs-popover></button>
+    </tabset>
+</div>

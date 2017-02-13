@@ -1,0 +1,7 @@
+<div class="user-support">
+	<ul>
+		<li ng-repeat="option in options" ng-click="selectOption(option)">
+			<a class="user-support-a" href="javascipt:void(0)" title="{{option.SUGGESTION}}"><b ng-bind="option.SUGGESTION | limitTo:30"></b></a>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,614 @@
+.toBeCompiled-Share-window .modal-content {
+    width: 795px;
+    border: 4px solid #e2e0d8;
+    background: #f1f2f4;
+}
+
+@keyframes slideDown {
+    from {
+        min-height: 0px;
+    }
+    to {
+        min-height: 675px;
+    }
+}
+
+.con.ng-add {
+    animation: slideDown 0.3s both ease-in;
+}
+
+.toBeCompiled-share-content .hide {
+    display: none;
+}
+
+.toBeCompiled-Share-window .modal-dialog {
+    width: 795px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 65%;
+    margin: auto;
+}
+
+.toBeCompiled-Share-window .toBeCompiled-share-container {
+    width: 792px;
+    min-height: 230px;
+    border-radius: 6px;
+}
+
+.toBeCompiled-share-head {
+    height: 38px;
+    background: #fff;
+    width: 786px;
+    overflow: visible;
+}
+
+.toBeCompiled-share-head p {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+    float: left;
+    line-height: 38px;
+}
+
+.toBeCompiled-share-head img {
+    float: right;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    margin-right: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.toBeCompiled-share-body {
+    background-color: white;
+    width: 775px;
+    margin-top: -5px;
+    margin-left: 6px;
+    /*overflow-y: auto;*/
+}
+
+.toBeCompiled-share-content {
+    max-height: 490px;
+    margin: 0px 0px 0px 10px;
+    background-color: white;
+    /*overflow: auto;*/
+}
+
+.toBeCompiled-share-content .title {
+    margin-top: 15px;
+}
+
+.toBeCompiled-share-content .shareRecord {
+    margin-top: 0px;
+    min-height: 50px;
+    border-bottom: 1px solid #E5E2DF;
+    padding-top: 10px;
+    position: relative;
+    overflow: auto;
+}
+
+.toBeCompiled-share-content .shareRecord .title {
+    line-height: 30px;
+    width: 72px;
+    margin-top: 0px;
+    height: 30px;
+    float: left;
+}
+
+.toBeCompiled-share-content .shareRecord .mainRecord {
+    margin-right: 70px;
+    /*margin-left: 80px;*/
+    float: left;
+}
+
+.toBeCompiled-share-content .middle p {
+    cursor: pointer;
+}
+
+.toBeCompiled-share-content .shareRecord span.record {
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px;
+    margin-right: 5px;
+    margin-left: 0px;
+    padding-right: 20px;
+    border: 1px solid #D6D3CE;
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px
+}
+
+.toBeCompiled-share-content .shareRecord span .deleteRecord {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+}
+
+.toBeCompiled-share-content .shareRecord span .selected {
+    color: white;
+}
+
+.toBeCompiled-share-content .shareRecord .more {
+    color: white;
+}
+
+.toBeCompiled-share-content .selected {
+    background-color: #0097d0;
+    color: white !important;
+}
+
+.toBeCompiled-share-content .subject span {
+    cursor: pointer;
+}
+
+.toBeCompiled-share-content .shareRecord p {
+    font-size: 13px;
+    color: #313231;
+    padding-top: 3px;
+    margin: 0;
+    width: 65px;
+    float: left;
+}
+
+.toBeCompiled-share-content .shareRecord button {
+    font-size: 12px;
+    right: 0px;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    width: 76px;
+    height: 24px;
+    border: 0px;
+    top: 10px;
+}
+
+.toBeCompiled-share-content .coalesce {
+    overflow: hidden;
+    margin-top: 0px;
+    /* line-height: 38px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E5E2DF;
+}
+
+.toBeCompiled-share-content .coalesce .ctitle {
+    float: left;
+}
+
+.toBeCompiled-share-content .coalesce .ctitle span {
+    margin-right: 0px;
+}
+
+.toBeCompiled-share-content .coalesce .item {
+    margin-left: 60px;
+}
+
+.toBeCompiled-share-content .coalesce .item span {
+    display: inline-block;
+}
+
+.toBeCompiled-share-content .classification {
+    border-bottom: 0px !important;
+}
+
+.toBeCompiled-share-content .classification .stitle {
+    margin-right: 0px
+}
+
+.toBeCompiled-share-content .coalesce p {
+    font-size: 13px;
+    color: #313231;
+    padding: 0;
+    margin: 0;
+    float: left;
+    line-height: 39px;
+}
+
+.toBeCompiled-share-content .coalesce span {
+    font-size: 12px;
+    color: #666460;
+    margin-right: 12px;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.toBeCompiled-share-content .subject {
+    overflow: hidden;
+    margin-top: 0px;
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #E5E2DF;
+}
+
+.toBeCompiled-share-content .subject p {
+    font-size: 13px;
+    color: #313231;
+    padding: 0;
+    margin: 0;
+    float: left;
+    line-height: 39px;
+}
+
+.toBeCompiled-share-content .middle {
+    height: 30px;
+    line-height: 40px;
+    font-size: 13px;
+}
+
+.toBeCompiled-share-content .subject span {
+    font-size: 12px;
+    color: #666460;
+    margin-right: 12px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.toBeCompiled-share-content .con {
+    margin: 15px auto;
+    /*overflow: hidden;*/
+    padding-top: 20px
+}
+
+.toBeCompiled-share-content .con .conL {
+    width: 210px;
+    height: 370px;
+    /* overflow-x: auto;*/
+    /*background: #fff;*/
+}
+
+.toBeCompiled-share-content .con .conL .header {
+    height: 30px;
+    background: #0097d0;
+}
+
+.toBeCompiled-share-content .con .conL .header p {
+    margin: 0px 12px;
+    padding: 0px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.toBeCompiled-share-content .con .conR {
+    height: 370px;
+    float: left;
+}
+
+.toBeCompiled-share-content .con .conR .header {
+    height: 30px;
+    background: #0097d0;
+}
+
+.toBeCompiled-share-content .con .conR .header p {
+    margin: 0px 12px;
+    padding: 0px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.toBeCompiled-share-content .con .conR .body {
+    padding-left: 10px;
+    border-top: none;
+    padding-right: 10px;
+}
+
+
+/*.toBeCompiled-share-content .con .conR .body-right {
+    margin-top: 10px;
+}*/
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .body-right .list ul {
+    height: 240px !important;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .body-right .list {
+    min-height: 310px !important;
+}
+
+.toBeCompiled-share-content .con .conR .body input {
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.toBeCompiled-share-content .con .conR .body .input {
+    width: 220px;
+    float: left;
+    height: 25px;
+    padding: 0 12px;
+    line-height: 25px;
+    font-size: 12px;
+}
+
+.toBeCompiled-share-content .con .middle {
+    width: 50px;
+    height: 360px;
+    padding-top: 120px;
+    float: left;
+    padding-left: 10px;
+}
+
+.toBeCompiled-share-content .con .middle img {
+    cursor: pointer;
+}
+
+.toBeCompiled-share-content .con .conR .body .main .middle {
+    text-align: center;
+    float: left;
+}
+
+.toBeCompiled-share-content .con .conR .body .main .middle div {
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+    top: -80px;
+    height: 30px
+}
+
+.toBeCompiled-share-content .con .conR .body .search {
+    margin-left: 10px;
+    height: 25px;
+    width: 80px;
+    font-size: 12px;
+    background-color: #FAFAFA;
+    border: 1px solid #DEDEDE;
+    border-radius: 4px;
+}
+
+.toBeCompiled-share-content .con .conR .body .left {
+    padding-right: 0px;
+    float: left;
+}
+
+.toBeCompiled-share-content .con .conR .body .right {
+    padding-right: 15px;
+    padding-left: 0px;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div {
+    height: 360px;
+    border: 1px solid #ccc;
+    background: #fff;
+    width: 200px;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .head {
+    height: 30px;
+    font-size: 12px;
+    background: #0097d0;
+    border-bottom: 1px solid #EFF1F4;
+    line-height: 30px;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .head .savetemplate {
+    margin-left: 50px;
+    background-color: #C4E3F3;
+    color: black;
+    padding: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .body .list {
+    border: 1px solid #D7D3CE;
+    min-height: 275px;
+    min-width: 170px;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .body .list .head {
+    height: 33px;
+    line-height: 33px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #F0F2F4;
+    color: black;
+    width: 100%;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .body .list ul {
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 13px;
+    list-style: none;
+    overflow: auto;
+    height: 240px;
+    margin-bottom: 0px;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .body ul li {
+    cursor: pointer;
+    white-space: nowrap;
+    color: #666640;
+    font-family: "微软雅黑", "Arial";
+    font-size: 12px;
+    max-width: 350px;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .body ul .selected a {
+    background: #0097D0;
+    color: white;
+}
+
+.toBeCompiled-share-content .con .conR .body .left .left-div .body ul .selected {
+    background: #0097D0;
+    color: white;
+}
+
+
+/*.cont {
+    min-height: 330px;
+     overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+}*/
+
+.cont {
+    min-height: 325px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    /* width: 180px;*/
+    /* height: 330px;*/
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.cont_ {
+    overflow-y: scroll;
+    width: 210px;
+    height: 330px;
+    overflow-y: scroll;
+}
+
+.cont ul {
+    margin-left: -10px;
+    font-family: "微软雅黑", "Arial";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #666640;
+    text-align: left;
+    line-height: normal;
+}
+
+.cont.treecontrol li {
+    position: relative;
+    padding: 0px 0px 0px 20px;
+    line-height: 24px;
+}
+
+
+/*.manage-left .tree-light li.tree-expanded i.tree-branch-head {
+    background: transparent url("./manageConfig/images/m-1.png") no-repeat scroll 0px center;
+}*/
+
+.cont treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.cont treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.cont treecontrol.tree-light ul li div span {
+    font-size: 12px;
+}
+
+.share-btn {
+    min-width: 66px;
+    height: 24px;
+    line-height: 24px;
+    background: #0097d0;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+}
+.share-btn[disabled]{
+    cursor: not-allowed;
+    border-color: #C1C1C1;
+    background-color: #C1C1C1;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.ml116 {
+    margin-left: 116px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.ml136 {
+    margin-left: 574px;
+}
+
+.pb20 {
+    padding-bottom: 10px;
+}
+
+.toBeCompiled-Share-window .dropDown {
+    width: 327px;
+    min-height: 150px;
+    border: 2px solid #008DCB;
+    border-radius: 4px;
+    background-color: white;
+    z-index: 9999;
+    position: absolute;
+}
+
+.toBeCompiled-Share-window .dropDown div {
+    position: relative;
+}
+
+.toBeCompiled-Share-window .dropDown div ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.toBeCompiled-Share-window .dropDown div ul li {
+    float: left;
+    margin: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 5px;
+    padding-right: 20px;
+    border: 1px solid #D6D3CE;
+    border-radius: 4px;
+    position: relative;
+}
+
+.toBeCompiled-Share-window .dropDown div ul li span {
+    position: absolute;
+    right: 5px;
+    top: 2px;
+}
+
+.toBeCompiled-Share-window .dropDown div ul li span.selected {
+    color: white;
+}
+
+.toBeCompiled-Share-window .dropDown img {
+    position: absolute;
+    top: -18px;
+    left: 150px;
+    height: 8px;
+}
+
+.footer_button {
+    overflow: visible;
+}
+
+.commonShare_title {
+    float: left;
+    display: inline-block;
+    font-size: 12px;
+    color: #666460;
+    margin-right: 0px;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.toBeCompiled-share-content .con .conR .body .suggestion ul {
+    height: 220px;
+    overflow-y: auto;
+}

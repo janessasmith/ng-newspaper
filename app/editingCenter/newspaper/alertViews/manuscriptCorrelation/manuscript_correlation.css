@@ -1,0 +1,87 @@
+.edit-newspaper-draft-correlation .modal-dialog {
+    width: 500px;
+    position: absolute;
+    margin: auto;
+    height: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.edit-newspaper-draft-correlation a,
+.edit-newspaper-draft-correlation a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.edit-newspaper-draft-correlation ul {
+    list-style: none;
+    height: 240px;
+    overflow: auto;
+}
+
+.edit-newspaper-draft-correlation .man_produ_column_modify ul {
+    overflow: auto;
+    height: 320px;
+    list-style: none;
+}
+
+.edit-newspaper-draft-correlation .man_produ_column_modify ul li img {
+    /*width: 446px;
+    height: 280px;*/
+    border: none;
+}
+
+.edit-newspaper-draft-correlation ul > li > span,
+.edit-newspaper-draft-correlation ul > li > b {
+    display: inline-block;
+}
+
+.edit-newspaper-draft-correlation ul > li > span {
+    width: 89%;
+}
+
+.edit-newspaper-draft-correlation ul > li > b {
+    font-weight: normal;
+    width: 10%;
+}
+
+.edit-newspaper-draft-correlation .man_produ_modify {
+    padding-bottom: 2px;
+}
+
+.edit-newspaper-draft-correlation .man_produ_modify_inner {
+    background: #fff;
+    margin: 10px;
+    padding: 15px;
+    line-height: 35px;
+}
+
+.edit-newspaper-draft-correlation .man_produ_column_modify {
+    min-height: 300px;
+}
+
+.edit-newspaper-draft-correlation .man_produ_modify_footer {
+    background: transparent;
+    padding-left: 140px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.edit-newspaper-draft-correlation .man_produ_modify_footer_cancel {
+    margin-right: 0;
+}
+
+.edit-newspaper-draft-correlation .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.edit-newspaper-draft-correlation i {
+    font-style: normal;
+}
+
+.edit-newspaper-draft-correlation ul > li > img {
+    max-width: 280px;
+}

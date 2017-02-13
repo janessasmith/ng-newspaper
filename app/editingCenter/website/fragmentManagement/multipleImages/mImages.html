@@ -1,0 +1,31 @@
+<div class="modal-content oneImage_popup_main">
+    <div class="oneImage_popup_fa">
+        <div class="oneImage_son">
+            <div class="modal-body oneImage_popup_content" style="margin-top:0">
+                <div class="multiImages_btns">
+                    <button class="btn multiImages_btn" ng-click="addItem()">手工导入</button>
+                    <button class="btn multiImages_btn" ng-click="showDocSel()">选择内容</button>
+                </div>
+                <ul dnd-list="list" 
+                    dnd-allowed-types="['listType']"
+                    dnd-horizontal-list="true" 
+                    dnd-external-sources="true" 
+                    dnd-dragover="dragoverCallback(event, index, external, type)" 
+                    dnd-drop="dropCallback(event, index, item, external, type, 'listType')" id="dragList" class="multiimages_drag_lst" style="position:static;margin-top:15px;overflow:auto;">
+                    <!-- <ul id="dragList" class="multiimages_drag_lst" style="position:static;margin-top:15px;overflow:auto;"> -->
+                    <expander dnd-draggable="item" 
+                              dnd-type="'listType'" 
+                              dnd-effect-allowed="move" 
+                              dnd-moved="dragMoved($index)"
+                              dnd-dragstart="dragStart()" showme="{{showMe}}" required="{{required}}" index="{{index}}" ver="multipleImages/mimgTmpl" ng-repeat="item in list"></expander>
+                    <li class="dndPlaceholder">
+                        <div>
+                            选定位置后松开鼠标
+                        </div>
+                    </li>
+                    <!-- <expander required="{{required}}" index="{{index}}" ver="multipleImages/mimgTmpl" ng-repeat="item in list track by $index"></expander> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

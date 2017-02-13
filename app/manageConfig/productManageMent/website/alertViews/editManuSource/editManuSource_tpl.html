@@ -1,0 +1,24 @@
+<form name="editManuSrcForm" novalidate>
+    <div class="man_produ_modify">
+        <div class="man_produ_modify_head">
+            <p ng-bind="topTitle"></p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_modify_inner">
+            <div class="man_produ_column_modify">
+                <div class="invalidate-input-box {editManuSrcForm.srcName.$invalid?'has-error':''}}">
+                    <p class="tit">来源名称：</p>
+                    <input type="text" class="form-control man_produ_sensitive_text" ng-model="srcName" name="srcname" maxlength-error-message="长度不能超过100个字符！" validator="maxlength=100,required" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA"/>
+                </div>
+                <div class="invalidate-input-box {editManuSrcForm.srclink.$invalid?'has-error':''}}">
+                    <p class="tit">来源链接：</p>
+                    <input type="text" class="form-control man_produ_sensitive_text" ng-model="srcLink" name="srclink" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500,url" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" is-show-tips="isShowTipsB" placeholder="http://开头"/>
+                </div>
+            </div>
+            <div class="man_produ_modify_footer">
+                <button class="news-role-btn man_produ_modify_footer_cancel btn_confirm" ng-click="confirm()">确定</button>
+                <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,12 @@
+<div class="editing-operate-lst">
+    <ul>
+        <a href="javascript:void(0)" ng-click="directSign(item)" ng-if='status.btnRights["web.daibian.qianfa"]'>直接签发</a>
+        <a href="" ng-click="timeSign(item)" ng-if="status.btnRights['web.daibian.qianfa']">定时签发</a>
+        <a href="" ng-click="share(item)" ng-if="status.btnRights['web.daibian.gongxiang']">共享</a>
+        <a href="" ng-click="moveDraft(item)" ng-if="status.btnRights['web.daibian.yidong']">移动</a>
+        <a href="" ng-click="copyDraft(item)" ng-if="status.btnRights['web.daibian.fuzhi']">复制</a>
+        <a ng-click="delete(item)" href="javascript:void(0)" ng-if="status.btnRights['web.daibian.feigao']">废稿</a>
+        <a href="" ng-if="status.btnRights['web.daibian.waifa']" ng-click="outSending(item)">外发</a>
+        <a href="" ng-click="collect(item)" ng-if="status.btnRights['web.daibian.shoucang']">收藏</a>
+    </ul>
+</div>

@@ -1,0 +1,28 @@
+.press-rank-container {
+    width: 466px;
+    height: 300px;
+    background: #FFF none repeat scroll 0% 0%;
+    margin: 2px;
+    border-radius: 6px;
+}
+
+.press-rank-head {
+    height: 34px;
+    padding-top: 6px;
+}
+
+.press-rank-head p.tit {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+    line-height: 20px;
+    margin-bottom: 0px;
+}
+
+.press-rank-head img {
+    cursor: pointer;
+    float: right;
+    margin-right: 8px;
+    margin-top: -18px;
+}

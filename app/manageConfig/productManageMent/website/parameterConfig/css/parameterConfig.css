@@ -1,0 +1,108 @@
+.parameter_config .page_left {
+    margin-left: 350px;
+}
+
+.parameter_config .edit_input_group {
+    position: relative;
+}
+
+.parameter_config .edit_input_group .ng-scope {
+    position: absolute;
+}
+
+.parameter_config .edit_right_mid {
+    height: 20px;
+}
+
+.parameter_config .value {
+    word-break: break-word;
+}
+
+.parameter_config .cdesc {
+    word-break: break-word;
+}
+
+.parameter_config trs-checkbox {
+    float: left;
+}
+
+.parameterConfigs-add-view .modal-dialog {
+    width: 436px;
+    top: 150px;
+}
+
+.parameterConfig-add {
+    width: 436px;
+    height: 364px;
+    border: 3px solid #E2E0DB;
+    border-radius: 4px;
+    background-color: #F0F2F4;
+}
+
+.parameterConfig-add .parameterConfig-add_tl {
+    height: 41px;
+    width: 100%;
+    font-weight: bold;
+    background-color: white;
+    line-height: 41px;
+    padding-left: 10px;
+}
+
+.parameterConfig-add .parameterConfig-add_tl img {
+    margin-left: 330px;
+    cursor: pointer;
+}
+
+.parameterConfig-add .parameterConfig-add_row {
+    padding-left: 50px;
+    font-size: 12px;
+}
+
+.parameterConfig-add .parameterConfig-add_row b.title {
+    float: left;
+    margin-top: 8px;
+    margin-right: 10px;
+    font-weight: normal;
+}
+
+.parameterConfig-add .parameterConfig-add_row span.ng-scope {
+    position: absolute;
+}
+
+.parameterConfig-add .parameterConfig-add_row input {
+    width: 280px;
+    height: 28px;
+}
+
+.parameterConfig-add .parameterConfig-add_row .name {
+    height: 50px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.parameterConfig-add .parameterConfig-add_row .content {
+    height: 50px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.parameterConfig-add .parameterConfig-add_row .distribute {
+    height: 140px;
+    padding-top: 10px;
+    position: relative;
+}
+
+.parameterConfig-add .parameterConfig-add_row .distribute textarea {
+    width: 280px;
+    height: 130px;
+    resize: none;
+}
+
+.parameterConfig-add_row .invalidate-input-box span {
+    left: 50px;
+    top: -25px;
+}
+
+.productManageMent_main .templateMge-content-table .edit_table table thead tr th.parameterConfig_content_table_width{
+    width: 30%;
+}

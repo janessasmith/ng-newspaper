@@ -1,0 +1,65 @@
+[
+    {
+        "MEDIATYPE": "1",
+        "MEDIANAME": "APP",
+        "CHILDREN": [
+            {
+                "SITEID": "1",
+                "SITENAME": "浙江新闻",
+                "RIGHTVALUE": "101010010111"
+            },
+            {
+                "SITEID": "2",
+                "SITENAME": "浙江24小时",
+                "RIGHTVALUE": ""
+            },
+            {
+                "SITEID": "3",
+                "SITENAME": "浙江在线",
+                "RIGHTVALUE": "111100100100101"
+            }
+        ]
+    },
+    {
+        "MEDIATYPE": "2",
+        "MEDIANAME": "网站",
+        "CHILDREN": [
+            {
+                "SITEID": "4",
+                "SITENAME": "浙江晚报",
+                "RIGHTVALUE": ""
+            },
+            {
+                "SITEID": "5",
+                "SITENAME": "浙江晨报",
+                "RIGHTVALUE": ""
+            },
+            {
+                "SITEID": "6",
+                "SITENAME": "浙江小报",
+                "RIGHTVALUE": ""
+            }
+        ]
+    },
+    {
+        "MEDIATYPE": "3",
+        "MEDIANAME": "报纸",
+        "CHILDREN": [
+            {
+                "SITEID": "7",
+                "SITENAME": "钱报网",
+                "RIGHTVALUE": "11010101001111"
+            },
+            {
+                "SITEID": "8",
+                "SITENAME": "浙江新闻报",
+                "RIGHTVALUE": ""
+            },
+            {
+                "SITEID": "9",
+                "SITENAME": "浙江夜报",
+                "RIGHTVALUE": "111001010011"
+            }
+        ]
+    }
+]

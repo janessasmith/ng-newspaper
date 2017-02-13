@@ -1,0 +1,10 @@
+.alert-detail .modal-dialog {
+    width: 900px;
+    height: 600px;
+    font-family: "微软雅黑"
+}
+
+.bianji_height {
+    height: 600px;
+    overflow-y: auto;
+}

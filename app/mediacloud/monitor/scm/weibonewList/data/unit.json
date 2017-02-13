@@ -1,0 +1,28 @@
+{
+    "result": [{
+        "UnitId": 2,
+        "UnitName": "重庆日报",
+        "UnitPic": ""
+    },
+    {
+        "UnitId": 3,
+        "UnitName": "重庆晨报",
+        "UnitPic": ""
+    },
+    {
+        "UnitId": 4,
+        "UnitName": "重庆晚报",
+        "UnitPic": ""
+    },
+    {
+        "UnitId": 5,
+        "UnitName": "重庆商报",
+        "UnitPic": ""
+    },
+    {
+        "UnitId": 6,
+        "UnitName": "华龙网",
+        "UnitPic": ""
+    }
+    ]
+}

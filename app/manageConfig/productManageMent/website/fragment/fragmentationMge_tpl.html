@@ -1,0 +1,77 @@
+<div class="fragmentationMge">
+    <div trs-scroll-fix class="row edit_right_head">
+        <div class="col-md-8 col-lg-9">
+            <button ng-if="isWidgetRecycleBin!=true&&status.right.widget.bianji" class="btn btn-default btn-commen" ng-click="createOrEditFragment()">
+                <span class="s_icon"><img src="./editingCenter/app/images/b1.png" /></span> 新建
+            </button>
+            <button ng-disabled="selectedArray.length==0" ng-if="isWidgetRecycleBin==true&&status.right.widget.delete" class="btn btn-default btn-commen" ng-click="batRestore()">
+                <span class="s_icon"><img src="./editingCenter/app/images/fg1.png" /></span> 还原
+            </button>
+            <button ng-if="isWidgetRecycleBin==true&&status.right.widget.delete" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-disabled="selectedArray.length<1" ng-click="batchDelete()">
+                <span class="s_icon"><img src="./editingCenter/app/images/fg2.png" /></span> 删除
+            </button>
+            <button ng-show="status.right.widget.delete" class="btn btn-default btn-commen edit_right_head_btn_commen widgetrecyclebin" ng-click="isWidgetRecycleBin=isWidgetRecycleBin==true?false:true">
+                <span class="s_icon"><img src="{{isWidgetRecycleBin==true?'./manageConfig/productManageMent/images/gl21-1.png':'./manageConfig/productManageMent/images/gl43-1.png'}}" /></span> <span ng-bind="isWidgetRecycleBin==true?'返回碎片管理':'碎片回收站管理'">碎片回收站管理</span>
+            </button>
+        </div>
+        <div class="col-md-4 col-lg-3">
+            <div class="row edit_right_mid">
+                <div class="input-group edit_input_group">
+                    <input type="text" ng-model="widgetSearch" class="form-control edit_form_control mr10" placeholder="请输入关键字搜索">
+                    <span class="input-group-btn">
+        <button class="btn btn-default btn_edit_search" ng-click="search()" type="button">搜索</button></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="edit_table">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="td-check">
+                            <trs-checkbox ischecked="selectedArray.length==items.length && selectedArray.length!=0" callback="selectAll()"></trs-checkbox>
+                        </th>
+                        <th class="td-number">全选</th>
+                        <th width="35%">碎片名称</th>
+                        <th>最后修改人</th>
+                        <th>最后修改时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items">
+                        <td class="td-check">
+                            <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                        </td>
+                        <!-- <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td> -->
+                        <td></td>
+                        <!--序号-->
+                        <td title="{{item.TEMPDESC}}" ng-click="createOrEditFragment(item.TEMPID)" ng-bind="item.TEMPDESC" class="ta-l pointer"></td>
+                        <!--碎片名称-->
+                        <td ng-bind="item.TRUENAME"></td>
+                        <!--最后修改人-->
+                        <td ng-bind="item.LASTMODIFIEDTIME"></td>
+                        <!--最后修改时间-->
+                        <td>
+                            <!--操作-->
+                            <img ng-show="isWidgetRecycleBin!=true" ng-click="clipboardUrl(item.TEMPID)" src="./editingCenter/app/images/b3.png">
+                            <a ng-show="isWidgetRecycleBin!=true" ng-click="clipboardUrl(item.TEMPID)" target="_blank">复制地址</a>
+                            <img ng-if="status.right.widget.delete" ng-show="isWidgetRecycleBin==true" ng-click="restore(item.TEMPID)" src="./editingCenter/app/images/r2.png">
+                            <a ng-if="status.right.widget.delete" ng-show="isWidgetRecycleBin==true" ng-click="restore(item.TEMPID)" target="_blank">还原</a>
+                            <!-- <img src="./manageConfig/productManageMent/images/a-d1.png">
+                            <a target="_blank">预览</a> -->
+                            <img ng-if="status.right.widget.delete" ng-click="delete(item.TEMPID)" src="./editingCenter/app/images/fg-r2.png">
+                            <a ng-if="status.right.widget.delete" ng-click="delete(item.TEMPID)" target="_blank">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="page">
+                <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+                <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                <trs-pagenation-right callback="jumpToPage()" currpage="copyCurrPage" page="page"></trs-pagenation-right>
+            </div>
+        </div>
+    </div>
+</div>

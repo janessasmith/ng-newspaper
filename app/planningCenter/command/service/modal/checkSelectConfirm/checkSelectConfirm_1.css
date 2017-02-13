@@ -1,0 +1,113 @@
+.checkSelectConfirm_1_popup{
+	width:100%;
+	margin:0 auto;
+	padding:10px;
+}
+
+.checkSelectConfirm_1_popup .header{
+	height: 35px;
+	width:100%;
+	background:#fafafa;
+	border-bottom:1px solid #ccc;
+	line-height: 35px;
+	font-weight: bold;
+}
+
+.checkSelectConfirm_1_popup .header img{
+	margin:0 10px;
+}
+
+.checkSelectConfirm_1_popup .topRight_btn{
+	margin-right: 10px;
+	float: right;
+}
+
+.checkSelectConfirm_1_popup .topRight_btn .s_icon{
+	padding-right: 5px;
+	margin-right: 5px;
+	position: relative;
+	left: 8px;
+	width: 18px;
+	height: 18px;
+	border: none;
+}
+
+.checkSelectConfirm_1_popup .topRight_btn button {
+    width: 87px;
+    height: 30px;
+    margin: 0 5px;
+    font-size: 12px;
+    float:left;
+    padding: 0 15px 0 0;
+    background:url(./planningCenter/jointCommand/images/pup6.png) repeat-x;
+    color:#000;
+    border:1px solid #ccc;
+}
+
+.checkSelectConfirm_1_popup .content{
+	padding:10px 0 20px 0;
+}
+
+.checkSelectConfirm_1_popup .content .con{
+	line-height:35px;
+}
+
+.checkSelectConfirm_1_popup .content .con img{
+	width:22px;
+	cursor:pointer;
+	margin-right: 10px;
+}
+
+.checkSelectConfirm_1_popup .content .con b{
+	width:100px;
+	text-align:right;
+	padding-right:10px;
+	font-weight:normal;
+	display: block;
+	float: left;
+	font-size:16px;
+}
+
+.checkSelectConfirm_1_popup .content .con p{
+	padding-left:100px;
+	margin:0;
+}
+
+.checkSelectConfirm_1_popup .footer{
+	text-align:center;
+	margin:20px 0;
+}
+
+.checkSelectConfirm_1_popup .footer button{
+    width: 80px;
+    height: 32px;
+    background-color: #0095CE;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.checkSelectConfirm_1_popup .footer button.backColor999{
+    background-color:#999999!important;
+}
+
+.checkSelectConfirm_1_popup .fl{
+	float:left;
+}
+.checkSelectConfirm_1_popup .clear{
+	clear:both;
+}
+.checkSelectConfirm_1_popup .mr50{
+	margin-right:50px;
+}
+
+
+.checkSelectConfirm_1_popup .content_part{
+	padding:20px 0;
+}
+.checkSelectConfirm_1_popup .bgColorAndBorder {
+	background:#fafafa;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}

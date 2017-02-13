@@ -1,0 +1,27 @@
+<div class="toBeCompiled-draftlist-container">
+    <div class="subject-title">
+        <p>发稿单</p>
+        <trs-checkbox ischecked="list.ISNOPAYMENT==='1'" label="不发稿费" callback="list.ISNOPAYMENT=list.ISNOPAYMENT=='0'?'1':'0'"></trs-checkbox>
+        <!--   <p class="ml10">不发稿费</p> -->
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()" class='editng-left'>
+    </div>
+    <div class="toBeCompiled-draftlist-content">
+        <div class="row mt_20">
+            <div class="m_box_item mb0 gjtc_select_outer mpl">
+                <p class="left newP">稿件体裁：</p>
+                <trs-single-select selected-option="list.DocGenre" options="DOCGENRE"></trs-single-select>
+            </div>
+        </div>
+        <form name="draftForm" novalidate>
+            <editor>
+            </editor>
+            <!-- <editor-dir meta-data-id="{{metaDataId}}" editor-json="list.fgd_editinfo"></editor-dir>
+            <editor-auth-dir author="list.fgd_authinfo"></editor-auth-dir> -->
+        </form>
+    </div>
+    <div class="toBeCompiled-draftlist-footer">
+        <button class="draftlist-btn btn_cancel" ng-click="cancel()">取消</button>
+        <button class="draftlist-btn btn_confirm" ng-click="confirm()">确定</button>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

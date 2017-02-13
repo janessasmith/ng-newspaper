@@ -1,0 +1,32 @@
+<div class="websiteSingleChooseChnl">
+    <div class="head">
+        <span ng-bind="modalTitle"></span>
+        <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+    </div>
+    <div class="search">
+        <span>栏目</span>
+        <input ng-model="searchChannel" watch-options='true' bs-options="sChannel as sChannel.SUGGESTION for sChannel in getSuggestionsSc($viewValue)" bs-typeahead type="text" placeholder="请输入关键字搜索" class="form-control channelInput">
+    </div>
+    <div class="body">
+        <div class="main">
+            <div class="right">
+                <div class="tree">
+                    <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node)">
+                        <trs-single-radio disabled="node.disabled=(node.CHANNELID==channelid)" label="" ischecked="ischecked_node.CHANNELID=(node.CHANNELID == selectedChannel.CHANNELID)" group="'channelTypes'" callback="chooseChannel(node)"></trs-single-radio>
+                        <span ng-bind='node.CHNLDESC || node.SITEDESC'></span>
+                    </treecontrol>
+                </div>
+            </div>
+        </div>
+        <div class="selectedChannels">
+            <span ng-if="selectedNode.SITENAME">目标站点：{{selectedNode.SITENAME}}</span>
+            <span ng-if="selectedNode.CHNLDESC">目标栏目：{{selectedNode.CHNLDESC}}</span>
+        </div>
+        <div class="foot">
+            <div class="button">
+                <button class="cancel" ng-click="cancel()">取消</button>
+                <button class="confirm" ng-click="confirm()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="row edit_right_mid manage-sys-rignt-head">
+    <!-- <div class="col-md-6"> -->
+    <button class="btn btn-default btn-commen opacity100" ng-mouseenter="status.batchOperateBtn['hoverStatus']='create'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+        <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='create'?'b1-1.png':'b1.png'}}"/>
+            </span> 新建
+    </button>
+    <button ng-click="shareDraft()" class="btn btn-default btn-commen opacity100" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+        <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='delete'?'fg2-1.png':'fg2.png'}}" />
+            </span> 删除
+    </button>
+    <button class="btn btn-default btn-commen opacity100" ng-click="refresh()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='refresh'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+        <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='refresh'?'i39-1.png':'i39.png'}}" />
+            </span>刷新
+    </button>
+    <!-- </div>
+    <div class="col-md-6"> -->
+    <div class="input-group edit_input_group mr15">
+        <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+        <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+    </div>
+    <!-- <trs-single-select selected-option="data.dropDown.websiteAllSelected" callback="queryByiWoAll()" options="data.dropDown.websiteAll" class="pull-right"></trs-single-select> -->
+    <!-- </div> -->
+</div>
+<div class="edit_table border_radius_5">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-check w90 txt_l">
+                    <trs-checkbox ischecked="data.items.length != 0 && data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox>
+                </th>
+                <th>名称</th>
+                <th>名称</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr>
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                    <span ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1"></span>
+                </td>
+                <td>SMS_PARAM_NAME_TO</td>
+                <td>Addr</td>
+                <td>发送手机信息的URL中参数To的名称</td>
+                <td>修改</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" new-pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        </span>
+        <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

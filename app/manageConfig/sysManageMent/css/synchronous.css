@@ -1,0 +1,72 @@
+.toBeCompiled-synchronousModel-window .modal-content{
+     width:396px;
+     background:#DDD;
+     top:205px;
+     margin:0px auto;
+    }
+.sys_classified_cl_synch {
+    padding-right: 22px;
+    width: 394px;
+    height: 223px;
+    border: 4px solid #DDDDDD;
+    border-radius: 5px;
+    background-color:#fff;
+}
+
+.sys_classified_cl_synch_head {
+    font-size: 14px;
+    margin: 20px 0px 10px 20px;
+    color: #333333;
+}
+
+.sys_classified_cl_synch_content {
+    margin-bottom: 15px;
+    height: 113px;
+    overflow-y: auto;
+}
+
+.sys_classified_cl_synch_content .synch_content_input {
+    width: 16px;
+    height: 16px;
+    vertical-align:-3px;
+}
+
+.sys_classified_cl_synch_content table tr td input {
+    padding-left: 10px;
+}
+
+.sys_classified_cl_synch_content .synch_content_line {
+    padding-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    float:left;
+}
+
+.sys_classified_cl_synch_content .form-control {
+    height: 30px;
+    width: 246px;
+}
+
+.sys_classified_cl_synch_content button {
+    margin-left: 10px;
+    padding: 0px;
+    width: 77px;
+    height: 30px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    color: #333333;
+    background: url(images/i001.jpg) repeat-x;
+}
+
+.sys_classified_cl_synch_bot .synch_bot_upload,
+.sys_classified_cl_synch_bot .synch_bot_cancel {
+    width: 80px;
+    height: 28px;
+    padding: 0px;
+    border: none;
+    background: #4496d2;
+}
+
+.sys_classified_cl_synch_bot .synch_bot_upload {
+    margin-right: 10px;
+}

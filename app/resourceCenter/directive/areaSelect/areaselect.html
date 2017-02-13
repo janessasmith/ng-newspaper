@@ -1,0 +1,21 @@
+<div class="m_area">
+	<input type="text" class="form-control" ng-model="selectAreaText" ng-click="status.showPanel=true" readonly="readonly">
+	<div class="select_panel" ng-show="status.showPanel" ng-mouseleave="status.showPanel=false">
+		<ul class="m_nav_5 list-inline">
+			<li ng-repeat="item in data.areaLevel" ng-bind="item.dictName" ng-class="{'active':item.level==status.curAreaLevel.level}" ng-mouseover="changeAreaLevel(item,$index)"></li>
+		</ul>
+		<div class="m_box_2">
+			<ul class="u_color_list word_in mb10" ng-if="data.areaList.length" style="border-bottom: 1px solid #ccc;padding-bottom: 10px;">
+				<li style="padding: 0">已选：</li>
+	            <li class="bkg-zyzxfield cursor" ng-repeat="item in data.areaList" ng-click="removeItem($index,data.areaList)" ng-bind="item.dictName">
+	            </li>
+        	</ul>
+			<ul class="m_area_list list-inline">
+				<li ng-repeat="item in data.area" ng-bind="item.dictName" ng-class="{'active':item.id==data.areaLevel[status.curAreaLevel.level].cur.id}" ng-click="loadSubArea(item,status.curAreaLevel.level)" ng-dblclick="getCurArea(item,$event)"></li>
+			</ul>
+			<div class="text-right">
+				<span class="text-info cursorPointer" ng-click="emptySelectArea()">清空</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,69 @@
+.productManageMent-sensitive-import .modal-dialog{
+    width: 480px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    margin: auto;
+}
+.man_produ_sensitive_import{
+    background: #e8e9ed;
+    padding-top: 20px;
+    line-height: 45px;
+    color: #777;
+    font-size: 12px;
+    overflow: hidden;
+}
+.man_produ_sensitive_import>span{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    line-height: 100%;
+    text-align: right;
+    margin-right: 15px;
+    vertical-align: 120px;
+}
+
+.man_produ_sensitive_import .sensitive_import_main{
+    width: 60%;
+    display: inline-block;
+}
+.man_produ_sensitive_import .sensitive_import_main input[type='text']{
+    display: inline-block;
+    width: 200px;
+}
+.man_produ_sensitive_import .sensitive_import_main button{
+    height: 32px;
+    width: 70px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    vertical-align: 1px;
+}
+.man_produ_sensitive_import .sensitive_import_main span{
+    display: block;
+    line-height: 30px;
+    font-weight: bold;
+}
+.man_produ_sensitive_import .sensitive_import_main ol{
+    line-height: 25px;
+    padding-left:20px;
+}
+.man_produ_sensitive_add .man_produ_sensitive_text {
+    width: 240px;
+    display: inline-block;
+}
+.productManageMent-sensitive-import .man_produ_modify_footer{
+    padding-left: 120px;
+}
+.productManageMent-sensitive-import .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}

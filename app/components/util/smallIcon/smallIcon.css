@@ -1,0 +1,21 @@
+.smallIcon{
+    position:absolute;
+}
+.smallIcon-body{
+    position:relative;
+    cursor:pointer;
+}
+.smallIcon-iconList{
+    width:320px;
+    position:absolute;
+    top:30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #9BD2E8;
+}
+.smallIcon-show{
+    display:block;
+}
+.smallIcon-hide{
+    display:none;
+}

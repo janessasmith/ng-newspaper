@@ -1,0 +1,101 @@
+<div class="dp-rt-main no-pd" style="margin-top: 0;" ng-controller="launchCommandShowCtrl" >
+    <div class="cg-ls-top white-bac">
+        <div class="cg-deal-tit cy-zl-tit lf">查阅指令</div>
+    </div>
+    <div class="cy-zl-con" >
+        <!-- <a href="javascript:;" class="cy-zl-opt cy-zl-left"></a>
+        <a href="javascript:;" class="cy-zl-opt cy-zl-right"></a> -->
+        <div class="cy-zl-main">
+        <div class="box-shadow-bk cy-zl-bk" >
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <th>指令标题：</th>
+                    <td>{{launchCommandContent.TITLE}}</td>
+                </tr>
+                <tr>
+                    <th>指令内容：</th>
+                    <td>{{launchCommandContent.CONTENT}}</td>
+                </tr>
+                <tr>
+                    <th>指令类型：</th>
+                    <td ng-show="launchCommandContent.TYPE==1">采访任务</td>
+                    <td ng-show="launchCommandContent.TYPE==2">通知</td>
+                </tr>
+                <tr>
+                    <th>附件相关：</th>
+                    <td ng-show="launchCommandContent.files==''">无</td>
+                    <td ng-show="launchCommandContent.files!=''">
+                      	<a ng-repeat="file in launchCommandContent.files" ng-href="{{file.filePath}}" 
+                      	id="{{file.fileId}}">{{file.fileName}}</a></td>
+                </tr>
+                <tr>
+                    <th>期望完成时间：</th>
+                    <td>{{launchCommandContent.OVERTIME}}</td>
+                </tr>
+                <tr>
+                    <th>密级指令：</th>
+                    <td ng-show="launchCommandContent.ISSECRET==0"><span class="mj-zl-yes">不是</span></td>
+                    <td ng-show="launchCommandContent.ISSECRET==1"><span class="mj-zl-yes">是</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box-shadow-bk sf-yd-bk">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <th>未读：</th>
+                    <td>
+                        <div class="sf-yd-mw">
+                            <div class="sf-yd-per" ng-repeat="noRea in launchCommandContent.noRead">
+                                <img ng-src="{{noRea.userHead}}" />
+                                <span>{{noRea.userName}}</span>
+                            </div>
+                        </div>
+                        <a href="#" class="fq-gt-btn">发起沟通</a>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <th>已读：</th>
+                    <td>
+                        <div class="sf-yd-mw">
+                            <div class="sf-yd-per" ng-repeat="rea in launchCommandContent.read">
+                                <img ng-src="{{rea.userHead}}" />
+                                <span>{{rea.userName}}</span>
+                            </div>
+                        </div>
+                        <a href="#" class="fq-gt-btn">发起沟通</a>
+                    </td>
+                </tr> -->
+                <tr>
+                    <th>完成：</th>
+                    <td>
+                        <div class="sf-yd-mw">
+                            <div class="sf-yd-per" ng-repeat="ove in launchCommandContent.over">
+                                <img ng-src="{{ove.userHead}}" />
+                                <span>{{ove.userName}}</span>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0);" class="fq-gt-btn">发起沟通</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div class="cg-xq-btn">
+        <div class="cy-zl-btn">
+            <a href="javascript:;" class="re-yd" ng-controller="noReadRemindCtrl" 
+                ng-click="open('400',$event);">提醒未读</a>
+            <a href="javascript:;" class="re-ch" ng-controller="revokeCtrl" ng-click="open('400',$event);">撤回</a>
+            <a href="javascript:;" class="re-qk">查看指令情况</a>
+            <a href="javascript:;" class="re-dy">打印</a>
+            <a href="javascript:;" class="re-zf">转发</a>
+            <a href="javascript:;" class="re-wc">完成</a>
+        </div>
+    </div>
+</div>
+        
+     

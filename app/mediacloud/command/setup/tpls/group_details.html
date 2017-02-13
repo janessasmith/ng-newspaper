@@ -1,0 +1,54 @@
+<div class="dp-rt-main no-pd" style="margin-top: 0;" ng-controller="groupDetailsCtrl">
+    <div class="cg-ls-top">
+        <div class="cg-deal-tit rw-zl-tit lf">分组详情</div>
+    </div>
+    <form class="w5c-form" method="post" id="iconForm" name="iconForm" 
+          enctype="multipart/form-data" w5c-form-validate="vm.validateOptions" 
+          novalidate>
+    <div class="cg-xq-main">
+        <div class="cg-xq-deal">
+            <div class="cg-xq-bk">
+                <label>分组名称：</label>
+                <div class="xq-bk-rt">
+                    <input type="text" class="form-control" name="groupname" required ng-model="params.groupName"/>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>分组人员：</label>
+                <div class="xq-bk-rt rw-js-pe">
+                    <input name="userIds" type="text" class="form-control" ng-model="userNames" required readonly/>
+                    <a href="javascript:void(0);" class="add-per-btn rt" ng-click="open_cp('1000',$event);"></a>
+                </div>
+            </div>
+            <div class="box-shadow-bk sf-yd-bk" style="margin-left:25px;">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <th>已选人员：</th>
+                        <td>
+                            <div class="sf-yd-mw">
+                                <div class="sf-yd-per" ng-repeat="groupmember in groupmembers">
+                                    <img ng-src="{{groupmember.headImg}}" />
+                                    <span>{{groupmember.userName}}</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>   
+    <div class="cg-xq-btn" >
+        <div class="xq-btn-deal rw-btn-dl">
+            <button href="javascript:void();" class="btn-re-pb" 
+                    w5c-form-submit="revise();">保存</button>
+            <button href="javascript:void();" 
+                    onClick="javascript: history.go(-1);" class="btn-cancel">返回</button>
+        </div>
+    </div>
+    </form>
+    <div ng-show="bgShow">
+        <div class="bg-sj-zdc"></div>
+        <div class="bg-zdc-msg">修改中…………</div>
+    </div> 
+</div>

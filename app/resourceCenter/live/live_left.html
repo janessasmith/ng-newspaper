@@ -1,0 +1,14 @@
+<div class="resource_list" style="min-height:720px;">
+    <accordion close-others="true" class="resource_nav">
+        <div class="editing_center_channel" ng-if="!status.isdataLoaded">
+            <accordion-group>
+                <accordion-heading><i class="fa fa-spinner fa-spin"></i> 载入中</accordion-heading>
+            </accordion-group>
+        </div>
+        <div class="editing_center_channel" ng-if="status.isdataLoaded">
+            <div ng-click="selectList(list)" class="panel-body-editcenter editCenter_left_panel_body" ng-class="{'checked':list == data.selectedList}" ng-repeat="list in data.lists">
+                <span href="" ng-bind="list.BIAOQIANNAME"></span>
+            </div>
+        </div>
+    </accordion>
+</div>

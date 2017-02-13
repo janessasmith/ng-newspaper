@@ -1,0 +1,34 @@
+{
+    "result": [
+        {
+            "DICTATEID": "1",
+            "TITLE": "最新通讯 前沿行业观点、创新技术应用、行业专家态度,尽在",
+            "ISSECRET": "0",
+            "ONLYDAY": "0"
+        },
+        {
+            "DICTATEID": "2",
+            "TITLE": "深圳罗湖海关查获鞋内藏金案 查获2千克黄金。",
+            "ISSECRET": "1",
+            "ONLYDAY": "2"
+        },
+        {
+            "DICTATEID": "3",
+            "TITLE": "中国国产航母要用蒸汽弹射？专家：电磁弹射更好。",
+            "ISSECRET": "0",
+            "ONLYDAY": "3"
+        },
+        {
+            "DICTATEID": "4",
+            "TITLE": "女子大雪天穿短裙相亲 一个大喷嚏打歪下巴。",
+            "ISSECRET": "0",
+            "ONLYDAY": "5"
+        }
+    ],
+    "pageInfo": {
+        "totalNum": 1,
+        "pageSize": 10,
+        "pageCount": 1,
+        "pageIndex": 1
+    }
+}

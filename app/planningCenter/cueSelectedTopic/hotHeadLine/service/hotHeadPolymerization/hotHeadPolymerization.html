@@ -1,0 +1,17 @@
+<div class="cue-monitor-disclose-config-container">
+    <div class="cue-monitor-disclose-config-head">
+        <p ng-bind="title"></p>
+    </div>
+    <div class="cue-monitor-disclose-config-body">
+       <ul>
+           <li ng-repeat="item in items">
+               <trs-checkbox ischecked="item.ORDERNUM==1" callback="selectItem(item)"></trs-checkbox>
+               <span ng-bind="item.DICTNAME"></span>
+           </li>
+       </ul>
+    </div>
+    <div class="cue-monitor-disclose-config-footer">   
+        <button class="btn_confirm" ng-click="save()">保存</button>
+        <button class="btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

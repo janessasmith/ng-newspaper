@@ -1,0 +1,12 @@
+<div class="container-fluit res-ctr-detail">
+    <div class="res-ctr-con" style="margin-top:40px;">
+        <p class="res-ctr-con-tit" ng-bind="detailInfos.DOCTITLE" ng-show="detailInfos.DOCTITLE"></p>
+        <div class="res-ctr-con-tit-rel-wrap">
+            <p>
+                <span ng-bind="detailInfos.DOCAUTHOR" ng-show="detailInfos.DOCAUTHOR"></span>
+            </p>
+            <p><span ng-bind="detailInfos.DOCPUBTIME" ng-show="detailInfos.DOCPUBTIME"></span></p>
+        </div>
+        <p class="res-ctr-con-det" ng-bind-html="detailInfos.CONTENT"></p>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+.editing-list .edit_more_tab_list ul li a {
+    color: #466385;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    text-decoration: none;
+}
+
+.edit_more_tab_list > img {
+    position: absolute;
+    top: 12px;
+    left: 7px;
+}
+
+.editing-more {
+    background: url("./editingCenter/app/images/l4.png") 5px center #466385 no-repeat;
+    width: 6%;
+    right: 0px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    border-bottom: 1px solid #30455a;
+    border-left: 1px solid #30455a;
+    outline: none;
+    z-index: 999;
+}
+
+.editing-more-rotate {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.edit_more_tab_list {
+    width: 105px;
+    padding-left: 15px;
+    position: absolute;
+    right: 0px;
+    top: 0!important;
+    z-index: 10;
+    font-size: 16px;
+}
+
+.edit_more_tab_list ul.list-group {
+    border: none;
+    border-radius: 5px;
+    height: auto;
+}
+
+.edit_more_tab_list ul.list-group li.list-group-item {
+    width: 90px;
+    background: #466285;
+    color: #ddeaf3;
+    text-align: center;
+    height: 40px;
+    cursor: pointer;
+    border: 1px solid #304458;
+}
+
+.edit_more_tab_list ul.list-group li.list-group-item:hover {
+    background: #1c83d2;
+}
+
+.edit_more_tab_list_out {
+    right: -110px;
+}
+
+.edit_more_tab_list.edit_more_tab_list_out-add {
+    animation: MoreTabListSlideLeftOut 0.3s both ease-in;
+}
+
+.edit_more_tab_list.edit_more_tab_list_out-remove {
+    animation: MoreTabListSlideLeftIn 0.2s both ease-in;
+}
+
+
+/*.editing-more:focus {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}*/
+
+div.editCenter-more-tab-link {
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: #ddeaf3;
+    border-radius: 0px;
+    border-left: 1px solid #30455a;
+    border-right: 1px solid #30455a;
+    margin-right: 0;
+    text-align: center;
+    display: block;
+    padding: 10px 2px 10px 20px;
+    position: relative;
+    float: left;
+    width: 32%;
+    height: 39px;
+    background: url("./editingCenter/app/images/l2.png") #466385 14% 55% no-repeat;
+    cursor: pointer;
+    z-index: 999;
+    left: -1px;
+}
+
+div.editCenter-more-tab-link:hover {
+    background-color: #1c83d2;
+}
+
+div.editCenter-more-tab-link:nth-child(1) {
+    /*background: url("./editingCenter/app/images/b-z.png") #466385 14% 55% no-repeat;*/
+}

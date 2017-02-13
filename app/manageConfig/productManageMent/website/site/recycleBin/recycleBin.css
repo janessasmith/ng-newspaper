@@ -1,0 +1,14 @@
+.manage-pmm-container.website-site-container {
+    border-top: 1px solid #ddd;
+}
+
+.manage-pmm-container.website-site-container.recycle_site {
+    border-top: none;
+}
+
+.recycle_site .pmm-website-item-default {
+	cursor: pointer !important;
+}
+.recycle_site .pmm-website-item-active{
+	cursor: auto !important;
+}

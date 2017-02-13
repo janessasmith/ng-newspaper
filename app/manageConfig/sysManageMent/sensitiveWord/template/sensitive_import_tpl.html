@@ -1,0 +1,29 @@
+<div class="man_produ_modify">
+    <div class="man_produ_modify_head">
+        <p>导入敏感词</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1"
+             ng-click="cancel()"/>
+    </div>
+    <div class="man_produ_sensitive_import">
+        <span>选择需要上传的附件：</span>
+
+        <div class="sensitive_import_main">
+            <div>
+                <input type="text" class="form-control" ng-model="file.name" ng-disabled="true"/>
+                <button ngf-select="chooseFile()" ng-model="file" ngf-validate="{pattern: '.xls','xlsx'}" accept=".xls">浏览</button>
+            </div>
+            <span>
+                * 请选择.xls格式文件
+            </span>
+            <ol>
+                <li>每行要求一个敏感词条目</li>
+                <li>请使用英文标点，参数之间用英文“,”隔开</li>
+                <li>敏感级别由数字1,2代替，1 一般；2 严重</li>
+            </ol>
+        </div>
+    </div>
+    <div class="man_produ_modify_footer">
+        <button class="news-role-btn-success man_produ_modify_footer_cancel btn_cancel" ng-click="cancel()">取消</button>
+        <button class="news-role-btn btn_confirm" ng-click="confirm()">确定</button>
+    </div>
+</div>

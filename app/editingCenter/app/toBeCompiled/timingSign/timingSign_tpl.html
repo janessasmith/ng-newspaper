@@ -1,0 +1,83 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="restoreTime()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='restoreTime'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['appsite.signtime.chexiao']">
+            <span class="s_icon pmm-four-word-btn-icon"><img ng-src="./editingCenter/website/images/images/{{status.batchOperateBtn['hoverStatus']=='restoreTime'&&data.selectedArray.length>0?'w12-1.png':'w12.png'}}"/></span> 撤销定时
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="changeTimeSinged()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='changeTimeSinged'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['appsite.signtime.xiugai']">
+            <span class="s_icon pmm-four-word-btn-icon"><img ng-src="./editingCenter/website/images/images/{{status.batchOperateBtn['hoverStatus']=='changeTimeSinged'&&data.selectedArray.length>0?'w13-1.png':'w13.png'}}" /></span> 修改定时
+        </button>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li class="">
+                <span>
+                    定时签发列表
+                </span>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid app-selectedTimeType">
+    <div class="col-md-5 app-selected">
+        <span class="s_onlyme">只看我的</span>
+        <trs-radio ckstatus="status.onlyMine" ckcallback="isOnlyMine()"></trs-radio>
+        <trs-single-select selected-option="data.selectedDocType" callback="queryDropDown('DocType',data.selectedDocType.value)" options="data.docTypeJsons"></trs-single-select>
+        <trs-time-select selected-option="data.selectedTimeType" options="data.timeTypeJsons"  callback="queryDropDown('timeType',data.selectedTimeType.value)" fromdate="data.fromdate" untildate="data.untildate"></trs-time-select>
+    </div>
+    <div class="col-md-7">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键词检索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+        </div>
+        <trs-single-select class="pull-right" callback="" selected-option="data.selectedClassify" options="data.classifyJsons"></trs-single-select>
+        <trs-single-select class="pull-right" ng-show="status.isESSearch" selected-option="data.sortType" callback="queryDropDown('', data.sortType.value)" options="data.sortTypeJsons"></trs-single-select>
+    </div>
+</div>
+<div class="edit_table">
+    <div class="website_timeSign_pd">
+        <table class="table table-striped data-table">
+            <thead>
+                <tr>
+                    <th class="td-check xcol-icon">
+                        <trs-checkbox ischecked="data.selectedArray.length==data.items.length&&items.length>0" callback="selectAll()"></trs-checkbox>
+                    </th>
+                    <th class="td-number">序号</th>
+                    <th>标题</th>
+                    <th class="xcol-newspaper-type">类型</th>
+                    <th class="xcol-newspaper-releaseBuild">操作人</th>
+                    <th class="xcol-newspaper-date">流程版本时间</th>
+                    <th class="xcol-newspaper-date">定时签发时间</th>
+                    <th class="xcol-newspaper-state">状态</th>
+                    <th class="xcol-newspaper-operation">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.items">
+                    <td class="td-check">
+                        <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                    </td>
+                    <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td>
+                    <td class="ta-l">
+                        <a title="{{item.METADATAID}}" ui-sref="appPreview({channelid:status.channelId,chnldocid:item.CHNLDOCID,siteid:status.siteId,metadataid:item.METADATAID,platform:3,doctype:(item.DOCTYPEID-1)})" target="_blank">{{item.TITLE}}</a>
+                    </td>
+                    <td ng-bind="item.DOCTYPE"></td>
+                    <td ng-bind="item.TRUENAME"></td>
+                    <td ng-bind="item.OPERTIME" class="pointer" ng-click="showVersionTime(item)"></td>
+                    <td ng-bind="item.TIMINGPUBLISHTIME"></td>
+                    <td ng-bind="item.DOCSTATUSALIAS"></td>
+                    <td class="hidden-operate">
+                        <a title="修改定时" href="javascript:void(0)" ng-click="changeTimeSinged(item)"><img src="./editingCenter/website/images/images/w15.png" ng-if="status.btnRights['appsite.signtime.xiugai']"></a>
+                    </td>
+                </tr>
+            </tbody>
+            <div cg-busy="loadingPromise"></div>
+        </table>
+    </div>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="data.copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+</div>

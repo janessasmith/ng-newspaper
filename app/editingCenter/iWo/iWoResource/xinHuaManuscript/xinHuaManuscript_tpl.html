@@ -1,0 +1,91 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen" ng-disabled="selectedArray.length===0" ng-mouseenter="batchOperateBtn['hoverStatus']='getDraft'" ng-mouseleave="batchOperateBtn['hoverStatus']=''" ng-click="getDraft()" ng-if="btnRights['iwo.xinhuarelease.qugao']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/i20.png" />
+            </span> 取稿
+        </button>
+        <button class="btn btn-default btn-commen" ng-disabled="selectedArray.length===0" ng-mouseenter="batchOperateBtn['hoverStatus']='batchExport'" ng-mouseleave="batchOperateBtn['hoverStatus']=''" ng-click="batchExport()">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/i17.png" />
+            </span> 导出
+        </button>
+        <button class="btn btn-default btn-commen" ng-disabled="selectedArray.length===0" ng-mouseenter="batchOperateBtn['hoverStatus']='batchOutgoing'" ng-mouseleave="batchOperateBtn['hoverStatus']=''" ng-click="batchOutgoing()" ng-if="btnRights['iwo.xinhuarelease.waifa']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/i18.png" />
+            </span> 外发
+        </button>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li>
+                <span>常用资源</span>
+                <span>新华社稿</span>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-6">
+        <trs-single-select selected-option="docType" callback="queryByDocType()" single-jsons="iWoDocStatus"></trs-single-select>
+        <trs-single-select selected-option="iWoSource" callback="queryByDocType()" single-jsons="iWoSourceJsons"></trs-single-select>
+        <trs-single-select selected-option="timeType" callback="queryByTimeType()" single-jsons="timeTypeJsons"></trs-single-select>
+    </div>
+    <div class="col-md-6">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="keywords"  ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+        </div>
+        <trs-single-select class="pull-right" callback="" selected-option="iWoEntire" single-jsons="iWoEntireJsons"></trs-single-select>
+    </div>
+</div>
+<div class="edit_table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="td-check">
+                    <trs-checkbox ischecked="selectedArray.length==items.length" callback="selectAll()"></trs-checkbox>
+                    <th class="td-number">序号</th>
+                    <th>标题</th>
+                    <th>图示</th>
+                    <th>类型</th>
+                    <th>建稿人</th>
+                    <th>来源</th>
+                    <th>创建时间</th>
+                    <th>字数</th>
+                    <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td class="td-check">
+                    <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td>
+                <td  class="ta-l">
+                      <a ui-sref="{{preview[item.DOCTYPEID-1]}}({channelid:channelid,chnldocid:item.CHNLDOCID,siteid:siteid,metadataid:item.METADATAID})" target="_blank" ng-bind=" item.DOCTITLE"></a>
+                </td>
+                <td><span class="mgr5" ng-show="item.PICSLOGO==1"><img src="./editingCenter/iWo/images/i25.png"></span>
+                    <span class="mgr5" ng-show="item.VIDEOLOGO==1"><img src="./editingCenter/iWo/images/i27.png"></span>
+                    <span class="mgr5" ng-show="item.AUDIOLOGO==1"><img src="./editingCenter/iWo/images/i26.png"></span></td>
+                <td ng-bind="item.DOCTYPE"></td>
+                <td ng-bind="item.CRUSER"></td>
+                <td ng-bind="item.MEDIATYPE"></td>
+                <td ng-bind="item.FLOWVERSIONTIME"></td>
+                <td ng-bind="item.NUMBER"></td>
+                <td>
+                    <img src="./editingCenter/iWo/images/i40.png" ng-if="btnRights['iwo.xinhuarelease.qugao']">
+                    <a target="_blank" ng-if="btnRights['iwo.xinhuarelease.qugao']">取稿</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div cg-busy="loadingPromise"></div>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="jumpToPageNum" page="page"></trs-pagenation-right>
+    </div>
+</div>

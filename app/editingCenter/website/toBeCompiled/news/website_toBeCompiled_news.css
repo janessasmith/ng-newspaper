@@ -1,0 +1,797 @@
+.website-docinfo-tit {
+    float: left;
+    width: 8%;
+    text-align: right;
+    height: 34px;
+    line-height: 34px;
+    margin-bottom: 0px;
+}
+
+.websiteOrIwo_timeLine_head_row_news input.audiovideo {
+    float: left;
+}
+
+.websiteOrIwo_timeLine_head_row_news img.audiovideo {
+    position: relative;
+    margin-left: 10px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.websiteOrIwo_timeLine_head_row_news .abstractWordLength {
+    position: absolute;
+    color: red;
+}
+
+.websiteOrIwo_timeLine_head_row_news .iwoAbstractWordCount {
+    color: red;
+    position: absolute;
+}
+
+.mb15 {
+    margin-bottom: 15px;
+}
+
+.mlNeg15 img {
+    cursor: pointer;
+}
+
+.manuinfo-hide {
+    font-style: normal;
+    color: #337ab7;
+    margin-left: 14px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.timing-calendar .timeGroup img.news-imgOne {
+    width: 15px;
+    height: 15px;
+    border: 0;
+    position: absolute;
+    top: 10px;
+    left: 118px;
+}
+
+.timing-calendar .timeGroup img.news-imgTwo {
+    width: 15px;
+    height: 15px;
+    border: 0;
+    position: absolute;
+    top: 10px;
+    left: 268px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.news-add-btn {
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.rel-news-label {
+    height: 34px;
+    line-height: 34px;
+    margin-bottom: 0px;
+    font-weight: normal;
+}
+
+.rel-news-label input[type="checkbox"] {
+    vertical-align: -2px;
+    cursor: pointer;
+}
+
+.mlr0 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.fa_upload p {
+    float: left;
+    overflow: hidden;
+    width: 152px;
+    height: 111px;
+    position: relative;
+    margin-right: 11px;
+    margin-bottom: 0px;
+}
+
+.list-style-img p span.list-stule-delete {
+    top: 64%;
+    right: 8px;
+    cursor: pointer;
+    background: rgba(21, 21, 21, 0.51);
+    /* background: rgba(21, 21, 21, 0.51) url("./editingCenter/app/toBeCompiled/images/b43-2.png") no-repeat scroll center 3px;*/
+}
+
+.list-style-img p span.list-stule-modify {
+    top: 64%;
+    right: 83px;
+    cursor: pointer;
+    background: rgba(21, 21, 21, 0.51);
+}
+
+.list-style-img p span {
+    border-radius: 4px;
+    position: absolute;
+    opacity: 0.8;
+    width: 33px;
+    height: 36px;
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.list-style-img p img {
+    width: 152px;
+    height: 111px;
+}
+
+.form-control .uploadSuccess {
+    width: 100%;
+    height: 40px;
+    top: 0px;
+    z-index: 200;
+    position: absolute;
+    left: 0px;
+    background: url(./editingCenter/website/images/uploadImgsuccess.png) no-repeat right bottom;
+}
+
+.w613 {
+    width: 613px;
+}
+
+.w732 {
+    width: 732px;
+}
+
+.w240 {
+    width: 240px;
+}
+
+.website-news-keyword .host .tags,
+.website-news-keyword .host {
+    width: 613px;
+    margin-bottom: 12px;
+}
+
+.website-news-keyword tags-input {
+    float: left;
+}
+
+.website-news-keyword .extract-keywords {
+    float: left;
+    margin-left: 10px;
+    color: #333;
+    text-decoration: underline;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+.web-news-extract-abstract {
+    float: left;
+    margin-left: -20px;
+    color: #333;
+    text-decoration: underline;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.introduce-img div.fa_upload {
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+.website-file-upload {
+    position: relative;
+}
+
+.website-file-upload .website-file-upload-icon {
+    width: 28px;
+    height: 32px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: url("./editingCenter/website/images/w300.png") no-repeat;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.website-file-upload .website-file-upload-input {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    filter: alpha(opacity=0);
+    width: 28px;
+    height: 32px;
+}
+
+
+/*新增添加图片*/
+
+.list-style-img button.div_btn {
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    background: url("./editingCenter/app/toBeCompiled/images/b14.png") no-repeat;
+    float: left;
+    margin-left: 10px;
+    margin-top: 96px;
+    border: 0;
+}
+
+.mglr0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.more-content {
+    margin-left: 0;
+    margin-right: 0;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+
+.more-content p {
+    text-align: right;
+    margin-bottom: 0px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.mlNeg15 {
+    margin-left: -15px;
+}
+
+.web-tobecompiled-news .invalidate-input-box span.ng-scope {
+    left: 120px;
+}
+
+.website-linkDoc .invalidate-input-box span.ng-scope {
+    left: 120px;
+}
+
+.atals .invalidate-input-box span.ng-scope {
+    left: 120px;
+}
+
+.web-tobecompiled-news-tit trs-color-picker {
+    display: inline-block;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    left: 588px;
+    top: 2px;
+    z-index: 2;
+}
+
+.web-tobecompiled-news-tit img.timepicker-img {
+    position: absolute;
+    z-index: 1;
+    left: 610px;
+    top: 4px;
+}
+
+.web-toBeCompiled-star {
+    color: #d72420;
+    font-style: normal;
+    vertical-align: -2px;
+    margin-right: 6px;
+}
+
+.visual-choose {
+    float: left;
+    margin-left: 10px;
+    color: #333;
+    text-decoration: underline;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+.pd10 {
+    padding-top: 10px;
+}
+
+.bg-fafafa {
+    background: #fafafa;
+}
+
+.channel-choose-icon {
+    margin-top: 5px;
+    cursor: pointer;
+    float: left;
+}
+
+
+/*.channel-choose-ul {
+    float: left;
+    line-height: 34px;
+    margin-bottom: 0px;
+}
+
+.channel-choose-ul li {
+    list-style: none;
+    float: left;
+    margin-right: 4px;
+}
+
+.channel-choose-ul li:nth-child(1){
+    margin-left: -24px;
+}
+
+.channel-choose-ul li + li:before{
+    content:">";
+}*/
+
+.w357 {
+    width: 357px;
+}
+
+.channel-choose-content {
+    margin-bottom: 0px;
+    line-height: 34px;
+    float: left;
+    margin-left: 10px;
+}
+
+.iwonews-item {
+    overflow: visible !important;
+    min-height: 40px
+}
+
+.file-uploader-table {
+    width: 63%;
+    margin-top: 42px;
+    margin-bottom: 0px;
+}
+
+.file-uploader-table tbody tr td input {
+    border: none;
+    text-align: center;
+    box-shadow: none;
+}
+
+.file-uploader-table tbody tr:nth-child(even) {
+    background: #fff;
+}
+
+.file-uploader-table tbody tr td input:focus,
+.file-uploader-table tbody tr td input.ng-invalid.form-control:focus {
+    /*outline: none;
+    box-shadow: none;*/
+}
+
+.file-uploader-table .invalidate-input-box span {
+    left: 32px !important;
+}
+
+.file-uploader-table tbody tr td:nth-child(3) button {
+    margin-top: 6px;
+}
+
+.file-uploader-table tbody tr td:nth-child(4) img {
+    float: left;
+    margin-top: 6px;
+    margin-left: 10px;
+    width: 19px;
+    height: 19px;
+}
+
+.file-uploader-table tbody tr td:nth-child(4) span.text {
+    width: 90px;
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.website-news-visual-selected {
+    clear: both;
+    margin-left: 10px;
+}
+
+.website-news-visual-selected li {
+    list-style: none;
+    font-size: 12px;
+    line-height: 28px;
+    overflow: hidden;
+}
+
+.website-news-visual-selected li span {
+    float: left;
+    overflow: hidden;
+}
+
+.website-news-visual-selected li span:nth-child(1) {
+    margin-right: 6px;
+}
+
+.website-news-visual-selected li span:nth-child(2) {
+    margin-right: 16px;
+}
+
+.website-news-visual-selected li span:nth-child(3) {
+    color: #f1272a;
+    cursor: pointer;
+}
+
+.website-file-upload-button {
+    width: 28px;
+    height: 32px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.website-upload-btn {
+    float: right;
+    margin: 10px 40px 10px 0;
+    width: 60px;
+}
+
+
+/*--------newTab1 创作轴more--------*/
+
+.timeline .website_timeline_load_more_2 {
+    width: 78%;
+    background: none;
+}
+
+.website_timeline_load_more_2 {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fafafa;
+    color: #23527c;
+    bottom: 2px;
+    position: absolute;
+    width: 99%;
+    margin-left: -10px;
+    height: 42px;
+}
+
+.website_timeline_load_more_1 img,
+.website_timeline_load_more_2 img {
+    margin-top: -2px;
+    margin-right: 5px;
+}
+
+.website_timeline_mgl10 {
+    margin-left: -10px
+}
+
+
+/*--------newTab2 主题延伸--------*/
+
+.website_timeline_load_more_1 {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fafafa;
+    color: #23527c;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    height: 42px;
+    /*margin-left: -10px;*/
+}
+
+.website_timeline_load_show_1 {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fafafa;
+    color: #23527c;
+    width: 100%;
+    height: 42px;
+}
+
+.website_m_box_2_1 {
+    border-left: 1px solid #d4d4d6;
+    border-right: 1px solid #d4d4d6;
+    border-bottom: 1px solid #d4d4d6;
+    /*padding:0 10px;*/
+}
+
+.website_newTab_modular {
+    padding: 10px!important;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.website_newTab_tit span,
+.website_newTab_p span {
+    color: red;
+    cursor: pointer;
+}
+
+.website_newTab_tit span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.website_newTab_tit {
+    /*height:32px;
+    line-height:32px;*/
+}
+
+.website_newTab_tit a {
+    color: #000;
+    font-weight: bold;
+    /*padding-bottom: 6px;*/
+    text-decoration: none;
+}
+
+.website_newTab_content {
+    /*padding-top: 5px;*/
+}
+
+.website_newTab_content img {
+    float: left;
+    margin-right: 10px;
+    padding-top: 4px;
+}
+
+.website_newTab_p,
+.website_newTab_p a {
+    color: #333;
+    line-height: 1.5em;
+    text-decoration: none;
+    padding-top: 3px;
+}
+
+.website_newTab_source_time {
+    padding-top: 5px;
+}
+
+.website_newTab_source,
+.website_newTab_time {
+    color: #777;
+}
+
+.website_newTab_source {
+    float: left;
+}
+
+.website_newTab_time {
+    float: right;
+    padding-right: 5px;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/*--------newTab3 稿件背景--------*/
+
+.website_newTab_table {
+    padding: 15px 10px 5px 10px!important;
+}
+
+.website_newTab_table th {
+    padding-right: 5px;
+    text-align: right;
+    /*height:42px;
+    line-height:42px;*/
+    background: #f0f2f5;
+    font-weight: normal;
+    height: 39px;
+    width: 18%;
+}
+
+.website_newTab_table td {
+    width: 85%;
+    position: relative;
+}
+
+.website_newTab_table table {
+    border: 1px solid #D1D0D0;
+}
+
+.website_newTab_table ul {
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 92%;
+}
+
+.website_newTab_table ul li {
+    float: left;
+    padding: 0 5px;
+    margin: 5px;
+    list-style-type: none;
+    border: 1px solid #fff;
+}
+
+.website_newTab_table ul li a {
+    height: 26px;
+    line-height: 26px;
+    text-decoration: none;
+    color: #333;
+}
+
+.website_newTab_table ul li.website_newTab_table_borde {
+    border: 1px solid #D1D0D0;
+    background: #0081B1;
+}
+
+.website_newTab_table ul li.website_newTab_table_borde a {
+    color: white
+}
+
+.website_newTab_td_span_img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.website_newTab_td_span_img a img,
+.websiteCabletPreview_head_rank img,
+.websiteCabletPreview_head_rank img {
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    -moz-transition: -moz-transform 0.2s ease-out;
+    -o-transition: -o-transform 0.2s ease-out;
+    -ms-transition: -ms-transform 0.2s ease-out;
+}
+
+.website_newTab_td_span_img .website_m_box_2_minHeight,
+.website_m_box_2_1 {
+    position: relative;
+    height: 547px;
+}
+
+.website_m_box_2_minHeight {
+    padding-right: 0px!important;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+
+.website-content-ueditorLocation-pr10 {
+    padding-right: 0px!important;
+}
+
+.websiteaudiovideo .cue {
+    display: inline-block;
+    top: 5px;
+    position: relative;
+}
+
+
+/* add overflow-y */
+
+.website_newTab_modular_theme_all {
+    /*height:423px;*/
+    height: 531px;
+}
+
+.website_newTab_modular_manuscript_all {
+    height: 531px;
+}
+
+.website_newTab_modular_theme_all,
+.website_newTab_modular_manuscript_all,
+.website_newTab_modular_createY_all {
+    overflow-y: auto;
+}
+
+.website_newTab_modular_createY_all {
+    height: 577px;
+    margin-bottom: 26px;
+    padding-right: 10px!important;
+    padding-top: 10px!important;
+}
+
+.website_img_rota {
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    -o-transform: rotateZ(180deg);
+    -ms-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.website-newDoc-templateDropDown .dropdown .bth-fix,
+.website-newDoc-templateDropDown .dropdown .dropdown-menu {
+    width: 400px;
+}
+.websiteaudiovideo ul.audiovideo li {
+    float: left;
+    position: relative;
+    width: 300px;
+    height: 170px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+}
+/**
+ * 音视频上传样式
+ */
+.websiteaudiovideo ul.audiovideo li div.toolbar {
+    position: absolute;
+    top: 5px;
+    right: 5px
+}
+
+.websiteaudiovideo ul.audiovideo li div.default {
+    width: 300px;
+    height: 170px;
+    border: 1px solid gainsboro;
+}
+
+.websiteaudiovideo ul.audiovideo li video {
+    width: 300px;
+    height: 170px;
+    border: 1px solid gainsboro;
+}
+
+.websiteaudiovideo ul.audiovideo li label {
+    width: 33px;
+    height: 36px;
+    padding: 0;
+    background: rgba(21, 21, 21, 0.51);
+    color: white;
+    border-radius: 5px;
+    padding-top: 12px;
+    padding-left: 5px;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 12px!important;
+    opacity: 0.7;
+}
+.edit-UploadMasProgress {
+    border: 1px solid #ccc;
+    line-height: 170px;
+    text-align: center;
+}
+
+.edit-UploadMasProgress div {
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 60%;
+    margin-right: 10px;
+    height: 20px;
+    border-radius: 10px;
+    vertical-align: -5px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.edit-UploadMasProgress p {
+    height: 100%;
+    margin: 0;
+    background: #3879D9;
+}
+
+.edit-UploadMasProgress span {
+    color: #999;
+}
+
+.edit-UploadMasBtn {
+    float: left;
+}
+
+.edit-UploadMasBtn .webuploader-pick {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    background: url('./editingCenter/app/toBeCompiled/images/b14.png') no-repeat;
+}

@@ -1,0 +1,28 @@
+<!-- <img class="getmultilevelMenuImg {{seclevchnl.leveClass}}" ng-click="getNextLevel(seclevchnl,'thirdchnl')" ng-show="seclevchnl.HASCHILDREN==='true'" ng-src="{{seclevchnl.leveSrc || './editingCenter/app/images/ej5.png'}}" data-auto-close="1" > -->
+<span class="arrowBtn {{seclevchnl.arrowBtn}}" ng-click="getNextLevel(seclevchnl,'chnl1')" ng-show="seclevchnl.HASCHILDREN==='true'"></span>
+<div class="subLevelMenu {{seclevchnl.show}}">
+    <div class="menuContent">
+        <div class="children" ng-repeat="menu in status.website.subLevelMenu.chnl1.DATA">
+            <img ng-mouseenter="clearPreivew($event)" ng-src="./editingCenter/website/images/i54-1.png" ng-click="websiteChannelSignedPreview(menu)" class="multipreview" ng-show="menu.CHANNELID==status.website.isPreview.CHANNELID" ng-if="status.website.selectedPlatform=='signed'">
+            <img ng-mouseenter="clearPreivew($event)" ng-src="./editingCenter/website/images/i54-1.png" ng-click="websiteChannelPreview(menu)" class="multipreview" ng-show="menu.CHANNELID==status.website.isPreview.CHANNELID" ng-if="status.website.selectedPlatform!='signed'">
+            <a ng-click="hideNextLevel(menu,'chnl2',seclevchnl,$event)" ng-mouseenter="clearPreivew($event)" ng-bind="menu.CHNLDESC" ui-sref="editctr.website.{{status.isUiSref}}({channelid:menu.CHANNELID,siteid:menu.SITEID})" ng-class="{'panel-body-hasChild':menu.HASCHILDREN=='true','selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl.chnl2.CHANNELID&&menu.HASCHILDREN=='true','selectedchnlHasnoChl':menu.CHANNELID==status.website.websiteSelectChl.chnl2.CHANNELID&&menu.HASCHILDREN=='false'}" href="javascript:void(0)" ng-mouseover="status.website.isPreview=menu;$event.stopPropagation()" ng-mouseleave="resetPreview($event)"></a>
+            <i ng-click="getNextLevel(menu,'chnl2',seclevchnl)" ng-show="menu.HASCHILDREN=='true'" ng-class="{'selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl.chnl2.CHANNELID}"></i>
+        </div>
+    </div>
+    <div class="menuContent" ng-if="status.website.subLevelMenu['chnl2'].DATA">
+        <div class="children" ng-repeat="menu in status.website.subLevelMenu.chnl2.DATA">
+            <img ng-mouseenter="clearPreivew($event)" ng-src="./editingCenter/website/images/i54-1.png" ng-click="websiteChannelSignedPreview(menu)" class="multipreview" ng-show="menu.CHANNELID==status.website.isPreview.CHANNELID" ng-if="status.website.selectedPlatform=='signed'">
+            <img ng-mouseenter="clearPreivew($event)" ng-src="./editingCenter/website/images/i54-1.png" ng-click="websiteChannelPreview(menu)" class="multipreview" ng-show="menu.CHANNELID==status.website.isPreview.CHANNELID" ng-if="status.website.selectedPlatform!='signed'">
+            <a ng-click="hideNextLevel(menu,'chnl3',seclevchnl,$event)" ng-bind="menu.CHNLDESC" ui-sref="editctr.website.{{status.isUiSref}}({channelid:menu.CHANNELID,siteid:menu.SITEID})" href="javascript:void(0)" ng-class="{'panel-body-hasChild':menu.HASCHILDREN=='true','selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl.chnl3.CHANNELID&&menu.HASCHILDREN=='true','selectedchnlHasnoChl':menu.CHANNELID==status.website.websiteSelectChl.chnl3.CHANNELID&&menu.HASCHILDREN=='false'}" class="{{menu.active}}" ng-mouseover="status.website.isPreview=menu;$event.stopPropagation()" ng-mouseleave="resetPreview($event)"></a>
+            <i ng-click="getNextLevel(menu,'chnl3',seclevchnl)" ng-show="menu.HASCHILDREN=='true'" ng-class="{'selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl.chnl3.CHANNELID}"></i>
+        </div>
+    </div>
+    <div class="menuContent" ng-if="status.website.subLevelMenu['chnl3'].DATA">
+        <div class="children" ng-repeat="menu in status.website.subLevelMenu.chnl3.DATA">
+            <img ng-mouseenter="clearPreivew($event)" ng-src="./editingCenter/website/images/i54-1.png" ng-click="websiteChannelSignedPreview(menu)" class="multipreview" ng-show="menu.CHANNELID==status.website.isPreview.CHANNELID" ng-if="status.website.selectedPlatform=='signed'">
+            <img ng-mouseenter="clearPreivew($event)" ng-src="./editingCenter/website/images/i54-1.png" ng-click="websiteChannelPreview(menu)" class="multipreview" ng-show="menu.CHANNELID==status.website.isPreview.CHANNELID" ng-if="status.website.selectedPlatform!='signed'">
+            <a ng-click="hideNextLevel(menu,'chnl4',seclevchnl,$event)" ng-bind="menu.CHNLDESC" ui-sref="editctr.website.{{status.isUiSref}}({channelid:menu.CHANNELID,siteid:menu.SITEID})" href="javascript:void(0)" ng-class="{'panel-body-hasChild':menu.HASCHILDREN=='true','selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl.chnl4.CHANNELID&&menu.HASCHILDREN=='true','selectedchnlHasnoChl':menu.CHANNELID==status.website.websiteSelectChl.chnl4.CHANNELID&&menu.HASCHILDREN=='false'}" class="{{menu.active}}" ng-mouseover="status.website.isPreview=menu;$event.stopPropagation()" ng-mouseleave="resetPreview($event)"></a>
+            <i ng-click="getNextLevel(menu,'chnl4',seclevchnl)" ng-show="menu.HASCHILDREN=='true'" ng-class="{'selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl.chnl4.CHANNELID}"></i>
+        </div>
+    </div>
+</div>

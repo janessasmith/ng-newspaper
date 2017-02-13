@@ -1,0 +1,203 @@
+.userManageMent-chooseGroup-window .modal-dialog {
+    width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 80%;
+    margin: auto;
+}
+
+.userManageMentChooseGroup {
+    width: 598px;
+    min-height: 505px;
+    border: 2px solid #E1DFDB;
+    border-radius: 4px;
+}
+
+.userManageMentChooseGroup .head {
+    height: 40px;
+}
+
+.userManageMentChooseGroup .head span {
+    position: relative;
+    top: 10px;
+    font-weight: bold;
+    left: 10px;
+}
+
+.userManageMentChooseGroup .head img {
+    position: relative;
+    top: 8px;
+    left: 490px;
+    cursor: pointer;
+}
+
+.userManageMentChooseGroup .search {
+    height: 60px;
+    background-color: #F0F2F4;
+}
+
+.userManageMentChooseGroup .search span {
+    position: relative;
+    float: left;
+    top: 20px;
+    left: 20px;
+}
+
+.userManageMentChooseGroup .search input {
+    width: 460px;
+    position: relative;
+    top: 12px;
+    left: 30px;
+}
+
+.userManageMentChooseGroup .body {
+    height: 462px;
+    background:#F0F2F4;
+}
+
+.userManageMentChooseGroup .body .right {
+    width: 338px;
+    height: 395px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 1px solid #E4E2DE;
+    float: left;
+    background:#fff;
+}
+
+.userManageMentChooseGroup .body .right .tree {
+    padding-top: 10px;
+    overflow-y: scroll;
+    overflow-x: auto;
+    height: 367px;
+    padding-left: 10px;
+}
+
+.userManageMentChooseGroup .body .right .tree .checkbox {
+    display: initial;
+}
+
+.userManageMentChooseGroup .body .right .tree .checkbox label {
+    padding: 6px;
+}
+
+.userManageMentChooseGroup .body .right .tree .checkbox .regular-checkbox:checked + label:after {
+    top: 0px;
+    left: 0px
+}
+
+.userManageMentChooseGroup .body .right .head {
+    height: 26px;
+    background-color: #0095CE;
+}
+
+.userManageMentChooseGroup .body .right .head span {
+    top: 2px;
+    color: white;
+    left: 4px;
+    cursor: pointer;
+}
+
+.userManageMentChooseGroup .body .right .head img {
+    position: initial;
+    margin-left: 20px;
+}
+
+.userManageMentChooseGroup .body .left {
+    height: 395px;
+    width: 231px;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: 1px solid #E4E2DE;
+    padding-left: 5px;
+    overflow: auto;
+    background:#fff;
+}
+
+.userManageMentChooseGroup .body .main {
+    overflow: hidden;
+}
+
+.userManageMentChooseGroup .body .left span.myLabel {
+    font-size: 14px;
+    border: 1px solid #E4E2DE;
+    padding: 5px;
+    height: 28px;
+    line-height: 15px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.userManageMentChooseGroup .body .left span.myClose {
+    cursor: pointer;
+}
+
+.userManageMentChooseGroup .body .foot {
+    height: 55px;
+    position: relative;
+    top: 345px;
+}
+
+.userManageMentChooseGroup .body .foot div {
+    position: relative;
+    top: -330px;
+    left: 421px;
+}
+
+.userManageMentChooseGroup treecontrol li {
+    line-height: 30px;
+    width: 550px
+}
+
+.userManageMentChooseGroup treecontrol li .tree-label span.selected {
+    font-weight: bold;
+}
+
+.userManageMentChooseGroup treecontrol.tree-light li .tree-selected {
+    font-weight: normal;
+}
+
+.userManageMentChooseGroup treecontrol li .tree-label {
+    position: relative;
+    top: -5px;
+}
+
+.userManageMentChooseGroup treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    padding: 3px 10px;
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat !important;
+}
+
+.userManageMentChooseGroup treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat;
+}
+
+.userManageMentChooseGroup .body .foot button.confirm {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    background: #4496d2;
+    border: none;
+    border-radius: 4px;
+}
+
+.userManageMentChooseGroup .body .foot button.cancel {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    border-color: #C1C1C1!important;
+    background-color: #C1C1C1!important;
+}

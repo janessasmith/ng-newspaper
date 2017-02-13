@@ -1,0 +1,94 @@
+<ul ng-show="orderType=='myPublish'">
+    <li ng-repeat="publishTaskList in publishTaskLists" ng-class="{'blue-bac':($index+1)%2==0}">
+        <a href="#" class="cg-ls-tit lf sp-blue" ui-sref="command.reportLaunchCommandShow({DICTATEID:publishTaskList.DICTATEID,issecret:publishTaskList.ISSECRET})">{{publishTaskList.TITLE}}</a>
+        <b ng-show="publishTaskList.ISSECRET==1"></b>
+        <div class="my-rz-ts rt">
+            <!--已读-->
+            <!-- <div class="read-sta-bk lf" ng-controller="reportOrderViewCtrl">
+                <a href="javascript:;" showbox="{{publishTaskList.READNUM}}" class="read-sta read-already"
+                ng-click="getreportOrderList(publishTaskList.DICTATEID,'read');">已读
+                	<span>{{publishTaskList.READNUM}}</span>
+                </a>
+               
+                <div class="read-sta-box">
+                    <div class="read-box-bk" ng-repeat="OrderShowList in OrderShowLists"
+                    	ng-click="openMessage(OrderShowList.userId);">
+                        <div class="read-box-per">
+                            <img ng-src="{{OrderShowList.userHead}}">
+                            <span>{{OrderShowList.userName}}</span>
+                        </div>
+                        <a href="javascript:void(0);" class="read-box-lt rt"></a>
+                    </div>
+                </div>
+            </div> -->
+            <!--未读-->
+            <div class="read-sta-bk lf" ng-controller="reportOrderViewCtrl">
+                <a href="javascript:;" showbox="{{publishTaskList.NOREADNUM}}" class="read-sta read-not lf"
+                ng-click="getreportOrderList(publishTaskList.DICTATEID,'noRead');">未读
+                <span>{{publishTaskList.NOREADNUM}}</span></a>
+                <!--弹框-->
+                <div class="read-sta-box">
+                    <div class="read-box-bk" ng-repeat="OrderShowList in OrderShowLists"
+                    	ng-click="openMessage(OrderShowList.userId);">
+                        <div class="read-box-per">
+                            <img ng-src="{{OrderShowList.userHead}}">
+                            <span>{{OrderShowList.userName}}</span>
+                        </div>
+                        <a href="javascript:void(0);" class="read-box-lt rt"></a>
+                    </div>
+                </div>
+            </div>
+            <!--完成-->
+            <div class="read-sta-bk lf" ng-controller="reportOrderViewCtrl">
+                <a href="javascript:;" showbox="{{publishTaskList.OVERNUM}}" class="read-sta read-complete lf"
+                ng-click="getreportOrderList(publishTaskList.DICTATEID,'over');">完成
+                <span>{{publishTaskList.OVERNUM}}</span></a>
+                <!--弹框-->
+                <div class="read-sta-box">
+                    <div class="read-box-bk" ng-repeat="OrderShowList in OrderShowLists"
+                    	ng-click="openMessage(OrderShowList.userId);">
+                        <div class="read-box-per">
+                            <img ng-src="{{OrderShowList.userHead}}">
+                            <span>{{OrderShowList.userName}}</span>
+                        </div>
+                        <a href="javascript:void(0);" class="read-box-lt rt"></a>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="my-cz-rz lf" ng-controller="reportJournalReadlCtrl" 
+         ng-click="openAll('400',$event,publishTaskList.DICTATEID);"><i></i><span>操作日志</span></a>
+        </div>
+    </li>
+</ul>
+<ul ng-show="orderType=='over'">
+    <li ng-repeat="overList in overLists" ng-class="{'blue-bac':($index+1)%2==0}">
+        <div class="cg-check-box lf dis-check-box" ng-controller="overRemindCtrl"
+             ng-click="open('400',$event,overList.DICTATEID,$index);">
+             <input type="checkbox" selectbox class="selectbox" />
+        </div>
+        <a class="cg-ls-tit lf sp-blue" ui-sref="command.reportCommandShow({DICTATEID:overList.DICTATEID,issecret:overList.ISSECRET})">{{overList.TITLE}}</a>
+        <b ng-show="overList.ISSECRET==1"></b>
+        <div class="my-rz-ts rt">
+            <a href="javascript:;" class="my-cz-rz lf" ng-controller="reportJournalReadlCtrl" 
+         ng-click="open('400',$event,overList.DICTATEID);"><i></i><span>操作日志</span></a>
+        </div>
+    </li>
+</ul>
+<ul ng-show="orderType=='upcoming'">
+    <li ng-repeat="upcomingList in upcomingLists" ng-class="{'blue-bac':($index+1)%2==0}">
+        <div class="cg-check-box lf dis-check-box" ng-controller="delRemindCtrl"
+             ng-click="open('400',$event,upcomingList.DICTATEID,$index);">
+             <input type="checkbox" selectbox class="selectbox" />
+         </div>
+        <a  class="cg-ls-tit lf sp-blue" ui-sref="command.reportBlacklog_details({dictateId:upcomingList.DICTATEID,issecret:upcomingList.ISSECRET})">
+            {{upcomingList.TITLE}}</a>
+        <b ng-show="upcomingList.ISSECRET==1"></b>
+        <div class="my-rz-ts rt">
+            <a class="my-sy-ts" ng-class="{'zl-danger':upcomingList.ONLYDAY==0,
+            'zl-warn':0<upcomingList.ONLYDAY&&upcomingList.ONLYDAY<=4,
+            'zl-ok':upcomingList.ONLYDAY>4}">
+            	<i></i><p>剩余<span>{{upcomingList.ONLYDAY}}</span>天</p>
+            </a>
+        </div>
+    </li>
+</ul>

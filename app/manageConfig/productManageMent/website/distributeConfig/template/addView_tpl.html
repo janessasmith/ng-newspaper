@@ -1,0 +1,62 @@
+<form name="urlForm" novalidate>
+    <div class="distribute-add">
+        <div class="distribute-add_tl">
+            <p>分发配置</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+        </div>
+        <div class="distribute-add_row">
+            <div class="distribute-detail">
+                <div class="distribute-detail-left">类型:</div>
+                <trs-single-select selected-option="initProductWebsite" callback="queryByDocStatus(initProductWebsite)" options="productWebsite" ng-model="list.TARGETTYPE"></trs-single-select>
+            </div>
+            <div class="clear"></div>
+            <div ng-if="list.TARGETTYPE!='FILE'">
+                <div class="distribute-detail">
+                    <div class="distribute-detail-left">服务器地址:</div>
+                    <div class="input_url invalidate-input-box">
+                        <input type="text" class="form-control" ng-model="list.TARGETSERVER" name="TARGETSERVER" maxlength-error-message="长度不能超过30个字符！" validator="maxlength=30,required,ipconfig" ng-blur="showError(true)" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA">
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="distribute-detail">
+                    <div class="distribute-detail-left">服务器端口:</div>
+                    <div class="input_url invalidate-input-box">
+                        <input type="text" class="form-control" ng-model="list.TARGETPORT" name="TARGETPORT" maxlength-error-message="长度不能超过10个字符！" validator="maxlength=10,number" ng-blur="showError(true)" ng-mouseenter="isShowTipsC=true" ng-mouseleave="isShowTipsC=false" is-show-tips="isShowTipsC">
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="distribute-detail">
+                    <div class="distribute-detail-left">用户名:</div>
+                    <div class="input_url invalidate-input-box">
+                        <input type="text" class="form-control" ng-model="list.LOGINUSER" name="LOGINUSER" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,haschinese,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsD=true" ng-mouseleave="isShowTipsD=false" is-show-tips="isShowTipsD">
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="distribute-detail">
+                    <div class="distribute-detail-left">密码:</div>
+                    <div class="input_url invalidate-input-box">
+                        <input type="text" class="form-control" ng-model="list.LOGINPASSWORD" name="LOGINPASSWORD" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,haschinese,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsF=true" ng-mouseleave="isShowTipsF=false" is-show-tips="isShowTipsF">
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="distribute-detail">
+                <div class="distribute-detail-left">存放路径:</div>
+                <div class="input_url invalidate-input-box">
+                    <input type="text" class="form-control" ng-model="list.DATAPATH" name="DATAPATH" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500,required" ng-blur="showError(true)" ng-mouseenter="isShowTipsG=true" ng-mouseleave="isShowTipsG=false" is-show-tips="isShowTipsG">
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="distribute-detail">
+                <h3 class="distribute-detail-left"></h3>
+                <div class="input_url">
+                    <trs-checkbox label="启用配置" ischecked="list.ENABLED==1" callback="selectDoc('$scope.list.ENABLED==0?$scope.list.ENABLED=1:$scope.list.ENABLED=0')" class="mc-margin-left-xs">
+                </div>
+            </div>
+        </div>
+        <div class="man_produ_modify_footer">
+            <button class="news-role-btn btn_confirm" ng-click="isConfirm()" validation-submit="urlForm">确定</button>
+            <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</form>

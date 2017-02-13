@@ -1,0 +1,42 @@
+<div class="myManuscript">
+    <div class="outSending">
+        <div class="head">
+            <span>邮件外发</span>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="body">
+            <div class="main">
+               <div class="content">
+			       <div class="headbar">
+				      <button type="button" class="btn btn-default margin-right-btn">通讯录</button>
+                      <button type="button" class="btn btn-default margin-right-btn">已选</button>
+				   </div>
+				   <div class="titlebar">
+                      <img src="./editingCenter/iWo/images/l3.png"/>				   
+				      <span>个人通讯</span>
+				   </div>
+	 <div class="contentbody">
+        <table class="table table-striped">
+        
+        <tbody>
+            <tr>
+			    <td class="iwo_operate" width="20px">
+				    <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                    <img src="./editingCenter/iWo/images/i36.png">
+                </td>
+                <td>321</td>
+                <td>123</td>
+                
+            </tr>
+        </tbody>
+        </table>
+     </div>
+			   </div>
+            </div>
+            <div class="bottom">
+                <button class="btn_confirm" ng-click="confirm()">确定</button>
+                <button class="btn_cancel"  ng-click="close()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

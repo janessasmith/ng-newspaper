@@ -1,0 +1,981 @@
+.hot_head_line_detail {
+    font-family: "微软雅黑";
+}
+
+.hot_head_line {
+    min-height: 340px;
+    overflow: hidden;
+}
+
+.head_lg,
+.head_lg a {
+    width: 318px;
+    height: 169px;
+}
+
+.head_x_lg,
+.head_x_lg a {
+    width: 316px;
+    height: 84px;
+}
+
+.head_x_ms,
+.head_x_ms a {
+    width: 158px;
+    height: 84px;
+}
+
+.head_x_ms-fix,
+.head_x_ms-fix a {
+    width: 159px;
+    height: 85px;
+    display: table-cell;
+    color: white;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+    border: 1px solid white;
+}
+
+.head_x_ms-fix p {
+    font-size: 24px;
+    margin: 0px;
+}
+
+.head_x_ms-fix span {
+    font-size: 24px;
+    margin: 0px;
+}
+
+.head_y_lg,
+.head_y_lg a {
+    width: 160px;
+    height: 170px
+}
+
+.head_lg,
+.head_x_lg,
+.head_x_ms,
+.head_y_lg,
+.head_x_ms-fix {
+    float: left;
+    border: 1px solid white;
+}
+
+.head_lg a,
+.head_x_lg a,
+.head_x_ms a,
+.head_y_lg a {
+    display: table-cell;
+    color: white;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.head_lg p,
+.head_x_lg p,
+.head_x_ms p,
+.head_y_lg p {
+    font-size: 24px;
+    margin: 0px;
+}
+
+.head_lg span,
+.head_x_lg span,
+.head_x_ms span,
+.head_y_lg span {
+    font-size: 18px
+}
+
+.hot_head_line_detail .blue,
+.color-1 {
+    background: #17a2b7
+}
+
+.hot_head_line_detail .orange,
+.color-2 {
+    background: #3c90f3
+}
+
+.hot_head_line_detail .more_yellow,
+.color-3 {
+    background: #c6395f;
+}
+
+.hot_head_line_detail .yellow,
+.color-4 {
+    background: #125ccb;
+}
+
+.hot_head_line_detail .green,
+.color-5 {
+    background: #6eb33e
+}
+
+.hot_head_line_detail .purple,
+.color-6 {
+    background: #c066a4
+}
+
+.hot_head_line_detail .red,
+.color-7 {
+    background: #e95724
+}
+
+.hot_head_line_detail .reseda,
+.color-8 {
+    background: #92cf68
+}
+
+.hot_head_line_detail .ft36 {
+    font-size: 36px!important;
+}
+
+
+/*demo animate*/
+
+.animate-repeat {
+    line-height: 40px;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+    -webkit-transition: all linear 2s;
+    transition: all linear 2s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+    opacity: 0;
+    max-height: 0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+    opacity: 1;
+    max-height: 300px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.hot_head_module_1,
+.hot_head_module_2,
+.hot_head_module_3,
+.hot_head_module_4,
+.hot_head_module_5,
+.hot_head_module_6,
+.hot_head_module_7,
+.hot_head_module_8,
+.hot_head_module_9 {
+    width: 25%;
+    float: left;
+    border: 1px solid white;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hot_head_li_1 ul li,
+.hot_head_li_2 ul li,
+.hot_head_li_3 ul li,
+.hot_head_li_4 ul li {
+    list-style: none;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.hot_head_li_1 ul li:hover,
+.hot_head_li_2 ul li:hover,
+.hot_head_li_3 ul li:hover,
+.hot_head_li_4 ul li:hover {
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+}
+
+.hot_head_li_1 ul li a,
+.hot_head_li_2 ul li a,
+.hot_head_li_3 ul li a,
+.hot_head_li_4 ul li a {
+    padding: 0% 1%;
+    font-family: "微软雅黑";
+    font-size: 18px;
+    display: block;
+    color: white;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    text-decoration: none;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.hot_head_module_2 {
+    width: 25%;
+    float: left;
+    border: 1px solid white;
+}
+
+.hot_head_li_1 {
+    width: 50%;
+    float: left;
+    border: 1px solid white;
+    height: 85px;
+    position: relative;
+}
+
+
+/*.hot_head_li_1 ul li,*/
+
+.hot_head_li_1 ul li a {
+    height: 84px;
+    overflow: hidden;
+    font-size: 16px;
+    padding-top: 5px;
+    text-align: center;
+    line-height: 34px;
+    display: table-cell;
+    width: 1%
+}
+
+.hot_head_li_2 {
+    position: relative;
+    width: 100%;
+    float: left;
+    height: 85px;
+    border: 1px solid white;
+}
+
+
+/*.hot_head_li_2 ul li,*/
+
+.hot_head_li_2 ul li a {
+    height: 84px;
+    display: table-cell;
+    width: 1%;
+    padding-top: 5px;
+    font-size: 22px;
+    line-height: 35px;
+}
+
+.hot_head_li_3 {
+    position: relative;
+    width: 50%;
+    float: left;
+    border: 1px solid white;
+    height: 169px
+}
+
+
+/*.hot_head_li_3 ul li,*/
+
+.hot_head_li_3 ul li a {
+    height: 169px;
+    line-height: 40px;
+    font-size: 25px;
+    margin-top: 35px;
+    width: 1%;
+    display: table-cell;
+}
+
+.hot_head_li_4 {
+    position: relative;
+    width: 100%;
+    float: left;
+    height: 170px;
+    border: 1px solid white;
+}
+
+// .hot_head_module_1:nth-child(1) > div:last-child,
+// .hot_head_module_2:nth-child(1)>div:last-child {
+//     background: #3f86c3
+// }
+.anim-1,
+.anim-11 {
+    background: #3f86c3;
+    animation: seventh-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-2,
+.anim-12 {
+    background: #618ea8;
+    animation: seventh-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-3,
+.anim-13 {
+    background: #cd5789;
+    animation: thirdly-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-4,
+.anim-14 {
+    background: #e9504a;
+    animation: fourth-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-5,
+.anim-15 {
+    background: #449ea9;
+    animation: sixth-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-6,
+.anim-16 {
+    background: #f98b10;
+    animation: seventh-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-7,
+.anim-17 {
+    background: #55ac8e;
+    animation: first-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-8,
+.anim-18 {
+    background: #009dd7;
+    animation: fourth-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-9,
+.anim-19 {
+    background: #e78a3d;
+    animation: sixth-child .5s linear;
+    animation-direction: alternate;
+}
+
+.anim-10,
+.anim-0 {
+    background: #c6395f;
+    animation: eight-child .5s linear;
+    animation-direction: alternate;
+}
+
+.hot_head_li_4 ul li a {
+    height: 169px;
+    font-size: 34px;
+    width: 1%;
+    display: table-cell;
+    line-height: 44px;
+    margin-top: 29px;
+}
+
+.hot_head_line_calendar {
+    padding: 10px 0 0px 0;
+    position: relative;
+}
+
+
+/*动画*/
+
+@-webkit-keyframes wobble {
+    0% {
+        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+    25% {
+        -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+    50% {
+        -webkit-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+    75% {
+        -webkit-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+    100% {
+        -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+}
+
+
+/*各种动画渐进*/
+
+@keyframes first-child {
+    0% {
+        left: 200px;
+        bottom: 100px;
+    }
+    100% {
+        left: 0px;
+        bottom: 0px;
+    }
+}
+
+@keyframes second-child {
+    0% {
+        top: 200px;
+        bottom: 100px;
+    }
+    100% {
+        top: 0px;
+        bottom: 0px;
+    }
+}
+
+@keyframes thirdly-child {
+    0% {
+        top: 100px;
+        bottom: 100px;
+        left: 100px
+    }
+    100% {
+        top: 0px;
+        bottom: 0px;
+        left: 0px
+    }
+}
+
+@keyframes fourth-child {
+    0% {
+        top: 100px;
+        bottom: 100px;
+        right: 100px
+    }
+    100% {
+        top: 0px;
+        bottom: 0px;
+        right: 0px
+    }
+}
+
+@keyframes sixth-child {
+    0% {
+        left: 200px;
+        bottom: 100px;
+    }
+    100% {
+        left: 0px;
+        bottom: 0px;
+    }
+}
+
+@keyframes seventh-child {
+    0% {
+        bottom: 100px;
+        right: 100px
+    }
+    100% {
+        bottom: 0px;
+        right: 0px
+    }
+}
+
+@keyframes eight-child {
+    0% {
+        bottom: 100px;
+    }
+    100% {
+        bottom: 0px;
+    }
+}
+
+@-moz-keyframes wobble {
+    0% {
+        -moz-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+    25% {
+        -moz-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+    50% {
+        -moz-transform: rotateY(180deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+    75% {
+        -moz-transform: rotateY(90deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+    100% {
+        -moz-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateZ(0px);
+    }
+}
+
+
+/*动画结束*/
+
+.hot_head_line_calendar .date_button_newspaper_group,
+.hot_head_line_calendar .date_button_website_group {
+    position: absolute;
+}
+
+.hot_head_line_calendar .date_button_newspaper_group {
+    top: 1px;
+    right: 1px;
+}
+
+.hot_head_line_calendar .date_button_website_group {
+    top: -30px;
+    right: 5px;
+}
+
+.hot_head_line_calendar .date_button {
+    font-family: fantasy;
+    font-weight: bold;
+    background: #fbfbfb;
+    border: 1px solid #e0e0e0;
+    height: 22px;
+    width: 40px;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.hot_head_line_calendar .hot_head_line_calendar_main_right {
+    position: inherit;
+}
+
+.hot_head_line_calendar .hot_head_line_sm_chart {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+
+.calendar .hot_head_line_calendar .tab-content {
+    padding: 0px 0 0 10px;
+    height: 340px;
+    margin-top: 10px;
+}
+
+.calendar .hot_head_line_calendar .fix-margin {
+    margin: 10px 10px 0px 0px
+}
+
+.hot_head_line_calendar_main_right,
+.hot_head_line_calendar_main_left {
+    display: inline-block;
+}
+
+.hot_head_line_calendar .nav-tabs.nav-justified {
+    border-bottom: 1px solid #cecece;
+    height: 39px;
+}
+
+.hot_head_line_calendar .nav-tabs.nav-justified > li {
+    border: 1px solid #cecece;
+    border-right: none;
+    width: auto;
+    width: 7%;
+}
+
+.hot_head_line_calendar .nav-tabs.nav-justified > li:last-child {
+    border-right: 1px solid #cecece;
+}
+
+.hot_head_line_calendar .nav-tabs.nav-justified > li > a {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #545454;
+    height: 37px;
+    line-height: 39px;
+    display: block;
+    padding: 0px;
+    font-family: initia;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.hot_head_line_calendar .nav-tabs.nav-justified > li.active > a {
+    color: #2f98d2;
+    border-top: 2px solid #2f98d2;
+    background: #fff;
+    height: 40px;
+    line-height: 39px;
+}
+
+.hot_head_line_calendar .hot_head_line_hotspot_table {
+    border: none;
+    overflow: hidden;
+}
+
+.hot_head_line_calendar .hot_head_line_information {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.hot_head_line_calendar .hot_head_line_click_rate {
+    width: 15%;
+    color: #46ad9a;
+}
+
+.hot_head_line_calendar .hot_head_line_next_page > p {
+    float: right;
+    margin-right: 20px;
+}
+
+.hot_head_line_calendar .hot_head_line_next_page > p > a,
+.hot_head_line_calendar .hot_head_line_next_page > p > a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+.hot_head_line_calendar .hot_head_line_city_hotspot_table {
+    width: 530px;
+}
+
+.hot_head_line_calendar .hot_head_line_city_hotspot_table table {
+    margin-bottom: 0;
+}
+
+.hot_head_line_calendar .hot_head_line_city_hotspot_table > table > tbody > tr > td:first-child {
+    background: #ededed;
+}
+
+.hot_head_line_calendar .hot_head_line_city_hotspot_table > table > thead > tr > th {
+    font-weight: normal;
+}
+
+.hot_head_line_calendar .hot_head_line_concat_map .concat_map_title,
+.hot_head_line_concat_map .concat_map_title .concat_map_title_chose_group {
+    height: 40px;
+}
+
+.hot_head_line_calendar .hot_head_line_concat_map .concat_map_title {
+    border: 1px solid #9f9d9e;
+    border-bottom: none;
+    text-align: center;
+    padding: 5px;
+    background: #f7f7f7;
+}
+
+.hot_head_line_concat_map .concat_map_title .concat_map_title_chose_group {
+    line-height: 30px;
+    height: 30px;
+}
+
+.hot_head_line_concat_map .concat_map_title .concat_map_title_chose_group > select {
+    height: 25px;
+    width: 220px;
+}
+
+.hot_head_line_concat_map .concat_map_title .concat_map_title_chose_group > a,
+.hot_head_line_concat_map .concat_map_title .concat_map_title_chose_group > a:hover {
+    text-decoration: none;
+}
+
+.hot_head_line_concat_map_title_date,
+.hot_head_line_concat_map_title_time {
+    position: absolute;
+    color: #707070;
+}
+
+.hot_head_line_concat_map_title_date {
+    font-size: 18px;
+    right: 10px;
+    top: 18px;
+}
+
+.hot_head_line_concat_map_title_time {
+    font-size: 26px;
+    right: 110px;
+    top: 10px;
+}
+
+.hot_head_line_calendar .hot_head_line_concat_map .concat_map_title,
+.hot_head_line_calendar .hot_head_line_concat_map .concat_map_main {
+    position: relative;
+}
+
+.hot_head_line_concat_map .concat_map_main .concat_map_main_arrow_left,
+.hot_head_line_concat_map .concat_map_main .concat_map_main_arrow_right {
+    position: absolute;
+    top: 300px;
+    cursor: pointer;
+}
+
+.hot_head_line_concat_map .concat_map_main .concat_map_main_arrow_left {
+    left: 10px;
+}
+
+.hot_head_line_concat_map .concat_map_main .concat_map_main_arrow_right {
+    right: 10px;
+}
+
+
+/*.hot_head_line_calendar_clear_padding{*/
+
+
+/*padding: 0!important;*/
+
+
+/*}*/
+
+.hot_head_line_big_table_calendar.calendar {
+    border: 0;
+}
+
+.hot_head_line_big_table_calendar.calendar .calendar_content {
+    padding: 0;
+}
+
+.calendar_content .ht38 {
+    height: 380px
+}
+
+.hot_head_line_big_table_calendar .hot_head_line_website_down_more {
+    display: block;
+    text-align: center;
+}
+
+.calendars {
+    border: 3px solid #dddddd;
+}
+
+.calendar_con {
+    min-height: 380px;
+}
+
+.hot_head_line_calendar .nav-tabs.nav-justified > li.active > a {
+    margin-top: -1px!important;
+}
+
+.effect figcaption {
+    top: auto;
+    bottom: 85px;
+    position: relative;
+    height: 100%;
+    line-height: 0px;
+    background: #000;
+    opacity: 0.8;
+    color: #fff;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+
+.effect h3 {
+    height: 51px;
+    overflow: hidden;
+}
+
+.effect figcaption > a span {
+    font-size: 18px;
+    font-family: "微软雅黑";
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    height: 100%;
+}
+
+.effect p {
+    position: absolute;
+    bottom: 8em;
+    padding: 2em;
+    color: #fff;
+    text-transform: none;
+    font-size: 90%;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+
+.effect h2,
+.effect figcaption > span {
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 200%, 0);
+    transform: translate3d(0, 200%, 0);
+}
+
+.effect figcaption > span::before {
+    display: inline-block;
+    padding: 8px 10px;
+    font-family: 'feathericons';
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.effect:hover p {
+    opacity: 1;
+}
+
+.effect:hover figcaption,
+.effect:hover h2,
+.effect:hover figcaption > span {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.hot_head_li_4 ul li.effect figcaption {
+    bottom: 170px;
+}
+
+.hot_head_li_3 ul li.effect figcaption {
+    padding: 0px;
+    bottom: 170px;
+    height: 100%;
+}
+
+.hot_head_li_1 ul li.effect figcaption > a span {
+    font-size: 15px
+}
+
+.border_fixed .nav-tabs.nav-justified li:first-child {
+    border-left: 0px
+}
+
+.calendar .calender_head_time {}
+
+.calendar .calendar_head p.timeRange {
+    float: right;
+    line-height: 20px;
+    margin-right: 10px;
+    background: #2f98d2;
+    color: white;
+    text-align: center;
+    margin-top: 16px;
+    border-radius: 10px;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.hot_head_line_calendar .calendar .calendar_head p.cur {
+    background: red;
+}
+
+.edit_table img.notAllow,
+.edit_table a.notAllow {
+    cursor: not-allowed;
+}
+
+.bottom_10 {
+    bottom: 0px!important;
+}
+
+.relative {
+    position: relative;
+}
+
+.calendar_head .show-group-paper {
+    display: inline-block;
+    background: #2F98D2;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    border-radius: 11px;
+    float: right;
+    padding: 0px 10px;
+    cursor: pointer;
+    margin-right: 11px;
+    margin-top: 7px;
+}
+
+.hot_head_line_calendar .timeline {
+    width: 100%;
+    height: 100px;
+    margin-top: 5px;
+}
+
+.hot_head_line_calendar .timeline .dateline {
+    width: 100%;
+    height: 70px;
+    background: url("./planningCenter/images/eva.png");
+    position: relative;
+    overflow: hidden;
+}
+
+.hot_head_line_calendar .timeline .dateline .date {
+    width: 14.2%;
+    height: 70px;
+    float: left;
+}
+
+.hot_head_line_calendar .timeline .dateline .date span {
+    position: relative;
+}
+
+.hot_head_line_calendar .timeline .dateline .date span.day {
+    font-weight: bold;
+    left: 45px;
+    cursor: pointer;
+}
+
+.pladateselected {
+    color: #2F98D3;
+}
+
+.hot_head_line_calendar .timeline .dateline .date div.icon {
+    background: url(./planningCenter/images/ch8.png) no-repeat center bottom;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: 60px;
+    cursor: pointer;
+}
+
+.plaiconselectted {
+    background: url(./planningCenter/images/ch8-1.png) no-repeat center bottom!important;
+}
+
+.hot_head_line_calendar .timeline .hourline {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #EDEDED;
+    font-weight: bold;
+}
+
+.hot_head_line_calendar .timeline .hourline .hour {
+    width: 4.1%;
+    float: left;
+    height: 30px;
+    text-align: center;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.plahourselected {
+    color: white;
+    background-color: #019DD6;
+}
+
+.plahournotallow {
+    color: #D9D9D9;
+    cursor: not-allowed!important;
+}
+
+.hot_head_line_calendar .timeline .busy {
+    cursor: not-allowed!important;
+}
+
+.hot_head_line_calendar .hotpic {
+    position: relative;
+}
+
+.hot_head_line_calendar .hotpic .loadpic {
+    width: 100%;
+    height: 380px;
+    top: 0px;
+    position: absolute;
+}
+
+.hot_head_line_calendar .hotpic .mlf-busy {
+    position: absolute!important;
+}
+
+.hot_head_line_calendar .cg-busy-default-sign {
+    margin-top: 160px!important;
+}

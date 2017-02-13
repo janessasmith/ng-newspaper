@@ -1,0 +1,64 @@
+<style type="text/css">
+    .group_wrap{
+        margin-left: -10px;
+        background-color: #fff;
+    }
+    .group_list{
+        padding-left: 10px;
+    }
+    .group_list span{
+        margin-left: 10px !important;
+    }
+    .group_list li.active .btn{
+        background: #4496d2;
+        color: #fff;
+    }
+</style>
+<div class="myManuSubmit">
+    <div class="submit">
+        <div class="header">
+            <p>添加到分组</p>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="content">
+            <div class="take-draft-top take-draft-top-span">
+                <div class="title-container">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            订阅名称：
+                        </div>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" ng-model="basicParams.title">
+                        </div>
+                    </div>
+                    订阅存放位置：
+                    <div class="group_wrap">
+                        <ul class="group_list mc-padding-bottom-xs">
+                           <!--  <li ng-click="addNewGroup()">
+                                 <span class="text-center btn btn-default btn-commen lg_size add_btn">
+                                      <i class="glyphicon glyphicon-plus"></i>
+                                 </span>
+                            </li> -->
+                            <li ng-repeat="group in groups" ng-class="{'active':status.curGroup.id == group.id}">
+                                <span class="btn btn-default btn-commen lg_size" ng-click="setCurtGroup(group)">{{group.title}}</span>
+                                <span class="f_color_666">{{group.resourceGroup.length}}条订阅</span>
+                            </li>
+                        </ul>
+                        <!-- <div class="col-xs-12 m-create-group" ng-show="status.showCreateGroup">
+                            <input type="text" placeholder="新建分组" class="form-control line-height-26" ng-model="newGroupName"/>
+                            <button class="btn xs btn-default" ng-click="addNewItem()">保存</button>
+                            <button class="btn xs btn-default" ng-click="status.showCreateGroup=false">取消</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <button class="btn btn-primary btn_confirm pull-left mc-margin-left-xs" ng-click="addNewGroup()">新建分组</button>
+                <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+                <button class="btn btn-primary btn_confirm" ng-click="selectGroup(group)">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

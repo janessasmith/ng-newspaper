@@ -1,0 +1,41 @@
+[{
+    "name": "浙江日报",
+    "id": "21",
+    "haschildren":true,
+    "children": [{
+        "name": "浙江日报子1",
+        "id": "42",
+        "haschildren":true,
+        "children": []
+    }, {
+        "name": "浙江日报子2",
+        "id": "21",
+         "haschildren":false,
+        "children": [{
+            "name": "浙江日报子2.1",
+            "id": "23",
+             "haschildren":true,
+            "children": [{
+                "name": "浙江日报子2.1.1",
+                "id": "32",
+                 "haschildren":false,
+                "children": []
+            }, {
+                "name": "浙江日报子2.1.2",
+                "id": "34",
+                 "haschildren":false,
+                "children": []
+            }]
+        }]
+    }]
+}, {
+    "name": "钱江晚报",
+    "id": "33",
+     "haschildren":true,
+    "children": []
+}, {
+    "name": "24小时在线",
+    "id": "29",
+     "haschildren":false,
+    "children": []
+}]

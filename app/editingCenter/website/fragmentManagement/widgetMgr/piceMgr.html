@@ -1,0 +1,37 @@
+<div class='oneImage_popup'>
+    <!-- <div trs-scroll-fix-for-modal class="modal-header oneImage_popup_header">
+        <button type="button" class="close" ng-click="cancel()">
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+            编辑碎片
+        </h4>
+    </div> -->
+    <div trs-scroll-fix-for-modal class="modal-footer" style="background:#fff">
+        <span class="fragmentTitle">编辑碎片</span>
+        <div class="dsfb">
+            <trs-checkbox ischecked="datepickerToggle" callback="datapkerClk()" style="" class="timeSignBtn"></trs-checkbox>
+            <span>定时发布:</span>
+            <trs-date-time-picker json-obj="pubtime" language="zh-CN" position="top-left" weekstart="6" todaybtn="linked" available="datepickerToggle"></trs-date-time-picker>
+            <div class='calendar'>
+                <img src="editingCenter/website/fragmentManagement/images/calendar .jpg" alt="">
+            </div>
+        </div>
+        <div class="foot_btn">
+            <button class="btn" type="button" ng-click="save(1)">保存</button>
+            <button class="btn" type="button" ng-click="save(2)">保存并发布</button>
+            <button class="btn" type="button" ng-click="preview()">预览</button>
+            <button class="btn last_btn btn_cancel" type="button" ng-click="cancel()" aria-hidden="true">取消</button>
+        </div>
+    </div>
+    <div class="oneImage_popup_fa">
+        <div class='oneImage_son'>
+            <div class="modal-body oneImage_popup_content">
+                <form name="fragementForm" novalidate>
+                    <all>
+                    </all>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

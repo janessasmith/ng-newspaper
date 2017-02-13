@@ -1,0 +1,65 @@
+/**
+稿件列表
+**/
+.toBeCompiled-getDraft .modal-content{
+	width:635px;
+	top: 160px;
+	}
+.toBeCompiled-review-head {
+    background: white;
+}
+
+.toBeCompiled-darft-list {
+    min-height: 226px;
+    background: #F0F2F5
+}
+
+.toBeCompiled-darft-list p {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    margin: 0px;
+    margin-left: 20px
+}
+
+.toBeCompiled-darft-list ul li.active {
+    background: #4496D2;
+    color: white;
+}
+
+.toBeCompiled-darft-list ul {
+    padding: 0px;
+    margin-left: 17px;
+    width: 600px;
+    height: 165px;
+    overflow-y: auto;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #D2D1D2;
+}
+
+.toBeCompiled-darft-list ul li {
+    cursor: pointer;
+    padding-left: 20px;
+    line-height: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #666666;
+    font-size: 12px
+}
+
+.toBeCompiled-list-container {
+    width: 640px;
+    border: 3px solid #DDD;
+    top: 205px;
+    margin: 0px auto;
+}
+
+.toBeCompiled-directSign-footer .ml460 {
+    margin-left: 484px!important;
+}
+
+
+.toBeCompiled_review_head_sign_span{
+    margin-left: 20px;
+}

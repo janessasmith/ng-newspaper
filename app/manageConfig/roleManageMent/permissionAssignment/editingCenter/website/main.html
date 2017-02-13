@@ -1,0 +1,54 @@
+<div class="websitePermission">
+    <div class="row manage-main-rightDiv-head">
+        <div class="col-sm-2 col-lg-3 manage-main-rightDivc">
+            <span class="manage-main-rightDiv-proS" ng-click="productAndModule()">产品\模块:</span>
+        </div>
+        <div class="col-sm-10 col-lg-9 manage-main-rightDivc2">
+            <span class="manage-main-rightDiv-poS">原子权限列表</span>
+            <selectTemplate>
+                <button ng-click="ifSelect()" class="manage-button-select"><span ng-bind="selectTemplate.RIGHTTEMPLATENAME | limitTo:tempNameNum"></span><span class="manage-button-select-icon"><img ng-show="!ifSelected" src="manageConfig/images/select.jpg"/><img ng-show="ifSelected" src="manageConfig/images/selectup.jpg"/></span></button>
+                <div ng-show="ifSelected" class="manage-button-select-ul">
+                    <div ng-repeat="template in templateList" class="manage-button-select-div">
+                        <div ng-click="selectTemplateFn($index)" class="manage-button-select-text"><a style="color:black" title="{{template.RIGHTTEMPLATENAME}}" href="javascript:void(0)"><span ng-bind="template.RIGHTTEMPLATENAME | limitTo:tempNameNum"></span></a></div>
+                        <img ng-show="template.RIGHTTEMPLATEID!=undefined" class="manage-button-select-deleteImg" ng-click="deleteTemplate($index)" src="./manageConfig/images/gb1-1.png">
+                    </div>
+                </div>
+            </selectTemplate>
+            <!--模板列表结束-->
+            <input type="button" class="manage-main-button btn-commen-hover" value="保存为模板" ng-click="SavePermissions()" />
+            <input type="button" ng-click="save()" class="manage-main-button btn-commen-hover" value="保存" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 manage-main-rightDiv-left">
+            <div class="manage-main-rightDiv-leftDiv">
+                <div ng-if="leftTemplatePath!=undefined" ng-include="leftTemplatePath"></div>
+                <!--组织树开始-->
+                <div ng-if="leftTemplatePath==undefined" class="manage-main-rightDiv-leftDiv-title">
+                    <span class="manage-main-rightDiv-leftDiv-titleSpan" ng-bind="moduleName"></span>
+                    <span ng-show="siteDesc!=undefined" class="manage-main-rightDiv-leftDiv-titleSpanSite">-</span>
+                    <span class="manage-main-rightDiv-leftDiv-titleSpanSite" ng-bind="siteDesc"></span>
+                    <!--   <span class="manage-main-rightDiv-leftDiv-set">同步设置下级权限</span> -->
+                </div>
+                <div class="manage-main-rightDiv-leftDiv-treeDiv">
+                    <div class="inherit">
+                        <span>传递权限到子栏目：</span><trs-checkbox ischecked="status.isToChildren" callback="setToChildren()"></trs-checkbox>
+                    </div>
+                    <treecontrol selected-node="perSelectedNode" on-node-toggle="showToggle(node)" on-selection="cTshowSelected(node)" class="tree-light" tree-model="channelTree" options="channelTreeOptions" expanded-nodes="expandedNodes">
+                        <trs-checkbox ng-if="node.CHANNELID!=undefined&&!status.isToChildren" ischecked='batSetChanls[node.OBJID]!=undefined' callback='batPermissionAssignment(node)'></trs-checkbox>
+                        <trs-single-radio ng-if="node.CHANNELID!=undefined&&status.isToChildren" ischecked="node==perSelectedNode" ckcallback="callback(node)"></trs-single-radio>
+                        <span class="{{node.RIGHTINDEX!=undefined&&isAuthorized(node)?'assignedAuthority':''}} {{node==perSelectedNode?'commonLight':''}}" ng-class="{true: 'nobold', false: ''}[node.ISONLYNODE=='true']" ng-bind="getNodeDesc(node)"></span>
+                    </treecontrol>
+                </div>
+                <!--组织树结束-->
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="manage-main-rightDiv-rightDiv">
+                <perssion-assignment right-classify="rightClassify" author-selected-node="authorSelectedNode" init-select-all="initSelectAll()" classify="{{classify}}" module-name="{{moduleName}}" pages="pages" page-ids="pageIds">
+                </perssion-assignment>
+            </div>
+        </div>
+        <div cg-busy="loadingPromise"></div>
+    </div>
+</div>

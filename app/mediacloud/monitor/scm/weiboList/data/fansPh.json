@@ -1,0 +1,24 @@
+{
+	"result":[
+	{
+		"ranking":1,
+		"headImg":"",
+		"accountName":"陈正",
+	    "accountId":"",
+		"zhuanpingNum":55
+	},
+	{
+		"ranking":2,
+		"headImg":"",
+		"accountName":"王萍萍",
+	    "accountId":"",
+		"zhuanpingNum":33
+	},
+	{
+		"ranking":3,
+		"headImg":"",
+		"accountName":"李伟",
+	    "accountId":"",
+		"zhuanpingNum":44
+	}]
+}

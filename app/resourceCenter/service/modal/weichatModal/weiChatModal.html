@@ -1,0 +1,45 @@
+<div class="myManuSubmit">
+    <div class="submit full_wt">
+        <div class="header">
+            <p>选择账号</p>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="content">
+        	<div class="m_box_wrap">
+        		<div class="m_box_2 clearfix">
+	            	<div class="col-sm-8">
+	            		<input type="text" class="form-control" ng-model="params.keyword" placeholder="请输入需要搜索的关键字">
+	            	</div>
+	            	<div class="col-sm-4">
+	            		<button class="btn btn-primary" ng-click="requestDataPromise()">搜索</button>
+	            	</div>
+	            </div>
+	            <div class="m_box_2 clearfix">
+	            	<b>已选账号：</b>
+	            	<ul class="m_del_labels">
+                        <li ng-repeat="item in selectedList" ng-click="removeItem(item,$index)" data-ng-bind-html="item.dictName">
+                        </li>
+                    </ul>
+	            </div>
+	            <div class="m_box_2">
+	            	<ul class="m_list">
+	            		<li ng-repeat="item in items">
+	            			<b>{{item.newsId}}.</b>
+	            			<trs-checkbox ischecked="item.ischecked" callback="slectItem(item,$index)"></trs-checkbox>
+	            			<span data-ng-bind-html="item.dictName"></span>
+	            			<p>{{item.regionalstructure}}</p>
+	            		</li>
+	            	</ul>
+	            </div>
+	            <div class="page">
+			        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+			        <trs-pagenation-right callback="jumpToPage()" currpage="copyCurrPage" page="page"></trs-pagenation-right>
+			    </div>
+        	</div>
+            <div class="footer">
+                <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+                <button class="btn btn-primary btn_confirm" ng-click="sendInfo()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>

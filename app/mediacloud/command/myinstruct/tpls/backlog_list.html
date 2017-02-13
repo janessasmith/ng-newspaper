@@ -1,0 +1,24 @@
+<!--今天-->
+<table-fold heading="今天">
+    <table-list ng-repeat="todayContent in todayContents" 
+                  index="{{$index}}"
+                  dictateid="{{todayContent.DICTATEID}}"
+                  title="{{todayContent.TITLE}}"
+                  cruser="{{todayContent.CRUSER}}"
+                  issecert="{{todayContent.ISSECRET}}"
+                  ionlyday="{{todayContent.ONLYDAY}}"
+                  dataarray="todayContents" 
+      ></table-list>
+</table-fold>
+<!--下阶段-->
+<table-fold heading="下阶段" >
+    <table-list ng-repeat="upBenchContent in upBenchContents" 
+              index="{{$index}}"
+              dictateid="{{upBenchContent.DICTATEID}}"
+              title="{{upBenchContent.TITLE}}"
+              cruser="{{upBenchContent.CRUSER}}"
+              issecert="{{upBenchContent.ISSECRET}}"
+              ionlyday="{{upBenchContent.ONLYDAY}}"
+              dataarray="upBenchContents" 
+  ></table-list>
+</table-fold>

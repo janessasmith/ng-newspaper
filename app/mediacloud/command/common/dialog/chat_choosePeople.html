@@ -1,0 +1,193 @@
+
+<div class="popup-box sel-con-box">
+    <div class="popup-top">
+        <span>选择联系人</span>
+        <a href="javascript:;" class="popup-close-btn rt" ng-click="cancel();"></a>
+    </div>
+    <div class="">
+        <div class="con-sel-bk">
+            <ul class="con-sel-top">
+                <li checked="con-sel-cur" class="con-sel-cur">
+                    <a choose="one" sibling-class="con-ls-bk" href="javascript:;">组织机构</a>
+                </li>
+                <li checked="con-sel-cur">
+                    <a choose="two" sibling-class="con-ls-bk" href="javascript:;">领域</a>
+                </li>
+                <li checked="con-sel-cur">
+                    <a choose="three" sibling-class="con-ls-bk" href="javascript:;">指挥调度</a>
+                </li>
+            </ul>
+            <div class="con-sel-bk">
+                <!--组织机构-->
+                <div class="con-sel-deal">
+                    <!--联系人列表-->
+                    <div class="con-sel-lf lf">
+                        <div class="sel-lf-search">
+                            <div class="sel-search-box lf">
+                                <input type="text" ng-keyup="getcxUserListt($event)" 
+                                ng-model="userName" choose="four" sibling-class="con-ls-bk"/>
+                                <a href="javascript:;" choose="four" sibling-class="con-ls-bk" 
+                                ng-click="getcxUserList(userName);"></a>
+                            </div>
+                            <!--<a href="javascript:;" class="sel-search-btn rt"></a>-->
+                            <!-- <a href="javascript:;" class="cj-ry-btn sel-search-btn rt"><span></span>地图</a> -->
+                        </div>
+                        <div class="con-ls-bk one">
+                            <div class="ls-se-deal">
+                                <div class="se-deal-div">
+                                    <!-- <div class="ls-se-tit con-tit-cur">
+                                        <span class="se-op"></span>
+                                        <span class="se-cl" style="display: none;"></span>
+                                        <label>重庆日报报业集团</label>
+                                    </div> -->
+                                    <div class="ls-th-deal ls-over menu-ml">
+                                    <div class="tree_div" ng-controller="Light">
+                                        <treecontrol class="tree-light"
+                                         tree-model="treedata"
+                                         on-selection="showSelected(node)">
+                                         <a href="javascript:;" class="tree_a con-ls-deal" 
+                                         selected="selected" ng-hide="node.type==1" >
+                                                <div class="con-ls-pc lf conlspc">
+                                                    <input type="hidden" class="userId" value="{{node.roleId}}">
+                                                    <input type="hidden" class="headImg" value="{{node.headImg}}">
+                                                    <img ng-src="{{node.headImg}}">
+                                                </div>
+                                                <span class="con-ls-name roleName">{{node.roleName}}</span>
+                                            </a>
+                                            <a ng-show="node.type==1" class="tree_title">
+                                                {{node.roleName}}
+                                            </a>  
+                                        </treecontrol>
+                                    </div>
+                                        <!-- <div
+	                                          data-angular-treeview="true"
+	                                          data-tree-id="mytree"
+	                                          data-ctree-model="txUsers"
+	                                          data-node-id="roleId"
+	                                          data-node-img="headImg"
+	                                          data-node-label="roleName"
+	                                          data-node-type="type"
+	                                          data-node-children="children" >
+	                                    </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 领域 -->
+                        <div class="con-ls-bk two" style="display:none">
+                            <div class="ls-se-deal">
+                                <div class="se-deal-div">
+                                    <!-- <div class="ls-se-tit con-tit-cur">
+                                        <span class="se-op"></span>
+                                        <span class="se-cl" style="display: none;"></span>
+                                        <label>领域</label>
+                                    </div> -->
+                                    <div class="ls-th-deal ls-over">
+                                        <div ng-repeat="lyUser in lyUsers">
+                                            <div class="ls-se-tit" ly-menu-open>
+                                                <span class="se-op" style="display: none;"></span>
+                                                <span class="se-cl"></span>
+                                                <label>{{lyUser.fieldname}}</label>
+                                            </div>
+                                            <div class="ls-th-deal" style="display: none;">
+                                                <a href="javascript:;" class="con-ls-deal" selected="selected"
+                                                ng-repeat="member in lyUser.members">
+                                                    <div class="con-ls-pc lf conlspc">
+                                                        <input type="hidden" class="userId" value="{{member.userId}}">
+                                                        <input type="hidden" class="headImg" value="{{member.headImg}}">
+                                                        <img ng-src="{{member.headImg}}">
+                                                    </div>
+                                                    <span class="con-ls-name roleName">{{member.userName}}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 自定义分组 -->
+                        <div class="con-ls-bk three" style="display:none">
+                            <div class="ls-se-deal">
+                                <div class="se-deal-div">
+                                    <!-- <div class="ls-se-tit con-tit-cur">
+                                        <span class="se-op"></span>
+                                        <span class="se-cl" style="display: none;"></span>
+                                        <label>自定义分组</label>
+                                    </div> -->
+                                    <div class="ls-th-deal ls-over">
+                                        <div ng-repeat="fzUser in fzUsers">
+                                            <div class="ls-se-tit" ly-menu-open>
+                                                <span class="se-op" style="display: none;"></span>
+                                                <span class="se-cl"></span>
+                                                <label>{{fzUser.groupname}}</label>
+                                            </div>
+                                            <div class="ls-th-deal" style="display: none;">
+                                                <a href="javascript:;" class="con-ls-deal" selected="selected"
+                                                ng-repeat="member in fzUser.members" ng-hide="member.userId==1">
+                                                    <div class="con-ls-pc lf conlspc">
+                                                        <input type="hidden" class="userId" value="{{member.userId}}">
+                                                        <input type="hidden" class="headImg" value="{{member.headImg}}">
+                                                        <img ng-src="{{member.headImg}}">
+                                                    </div>
+                                                    <span class="con-ls-name roleName">{{member.userName}}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 人员查询 -->
+                        <div class="con-ls-bk four" style="display:none">
+                            <div class="ls-se-deal">
+                                <div class="se-deal-div">
+                                    <div class="ls-th-deal ls-over">
+                                        <a href="javascript:;" class="con-ls-deal" selected="selected" 
+                                        ng-repeat="cxUser in cxUsers">
+                                            <div class="con-ls-pc lf conlspc">
+                                                <input type="hidden" class="userId" value="{{cxUser.userid}}">
+                                                <input type="hidden" class="headImg" value="{{cxUser.headImg}}">
+                                                <img ng-src="{{cxUser.headImg}}"/>
+                                            </div>
+                                            <span class="con-ls-name roleName">{{cxUser.userName}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--添加删除-->
+                    <div class="con-sel-opt lf">
+                        <a href="javascript:;" class="sel-add-btn" add-people>添加</a>
+                        <a href="javascript:;" class="sel-del-btn" remove-people>删除</a>
+                    </div>
+                    <!--选中人员-->
+                    <div class="con-sel-lf rt">
+                        <div class="sel-lf-search">
+                            <span class="sel-per-tit">选中人员</span>
+                        </div>
+                        <div class="con-ls-bk sel-per-deal">
+                            <div class="ls-th-deal add-peo-list ls-over">
+                                <a class="con-ls-deal" selected="bg-white" ng-repeat="fhUser in fhUsers">
+                                    <div class="con-ls-pc lf">
+                                        <img ng-src="{{fhUser.headImg}}"/>
+                                    </div>
+                                    <span class="con-ls-name">{{fhUser.userName}}</span>
+                                    <input class="roleName" type="hidden" value="{{fhUser.userName}}">
+                                    <input class="headImg" type="hidden" value="{{fhUser.headImg}}">
+                                    <input class="roleId" type="hidden" value="{{fhUser.userId}}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-btn-bk">
+            <div class="bnt-bk-deal">
+                <a href="javascript:;" class="popup-btn-confirm" ng-click="determine('400',$event);">确定</a>
+                <a href="javascript:;" class="popup-btn-cancel" ng-click="cancel();">取消</a>
+            </div>
+        </div>
+    </div>
+</div>

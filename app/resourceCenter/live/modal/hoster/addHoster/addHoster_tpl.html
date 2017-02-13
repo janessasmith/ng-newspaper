@@ -1,0 +1,68 @@
+<form name="hosterForm" novalidate>
+    <div class='live'>
+        <div class="header">
+            <p ng-if="data.isCreate">新建主持人</p>
+            <p ng-if="!data.isCreate">编辑主持人</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        </div>
+        <div class="main">
+            <div class="children">
+                <p class="w90">主持人类型</p>
+                <div class="con">
+                    <trs-single-radio label="嘉宾" group="'guest'" ischecked="hoster.COMPERETYPE==0" callback="hoster.COMPERETYPE=hoster.COMPERETYPE==0?1:0"></trs-single-radio>
+                    <trs-single-radio label="主持人" group="'hoster'" ischecked="hoster.COMPERETYPE==1" callback="hoster.COMPERETYPE=hoster.COMPERETYPE==0?1:0"></trs-single-radio>
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">主持人姓名</p>
+                <div class="con">
+                    <div class="invalidate-input-box {{hosterForm.name.$invalid?'has-error':''}}">
+                        <input class="form-control" type="text" name="name" ng-model="hoster.COMPERENAME" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                    </div>
+                </div>
+            </div>
+            <div class="children" style="height:66px;">
+                <p class="w90">主持人简介</p>
+                <div class="con">
+                    <div class="invalidate-input-box {{hosterForm.name.$invalid?'has-error':''}}">
+                        <textarea class="form-control" name="description" ng-model="hoster.CONTENT" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200" ng-mouseenter="isShowTips_REMARKS=true" ng-mouseleave="isShowTips_REMARKS=false" is-show-tips="isShowTips_REMARKS" style=""> </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="children" style="height:auto;overflow:hidden">
+                <p class="w90" style="line-height:50px;">主持人头像</p>
+                <div class="con" style="margin-bottom:12px;">
+                    <div class='conOfImg' ng-show="hoster.HEADPICURL!=''">
+                        <img src="{{hoster.HEADPICURL}}" alt="" class="thumbnail">
+                        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="delete" ng-click="deleteImg()">
+                        <div class="loading" ng-show="hoster.HEADPICNAME==''">
+                            <img src="./editingCenter/newspaper/images/loading3.gif" />
+                        </div>
+                    </div>
+                    <button class='uploadButton' ngf-select="choosePortrait($file,$newFiles)" ngf-validate="{pattern: '.jpg,.png,.gif,.jpeg,.bmp,.svg'}" accept="image/*">浏览</button>
+                    <!--  <p class="cue">
+                        <span>支持格式：</span>
+                        <span>.jpg,.pen,.gif,.jpeg,.bmp,.svg</span>
+                    </p> -->
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">发布时间</p>
+                <div class="con">
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="hoster.INSERTTIME" placeholder="Date" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgDate">
+                    </div>
+                    <div class="timeGroup ml20">
+                        <input type="text" size="8" class="form-control" ng-model="hoster.INSERTTIME" data-time-format="HH:mm:ss" data-autoclose="1" data-minute-step="1" placeholder="Time" bs-timepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t1.png" class="imgTime">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="submit" ng-click="confirm()">提交保存</button>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

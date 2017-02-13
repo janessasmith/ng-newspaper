@@ -1,0 +1,49 @@
+.productManageMent-sensitive-add .modal-dialog {
+    width: 480px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    margin: auto;
+}
+
+.productManageMent-sensitive-add .man_produ_sensitive_add {
+    background: #e8e9ed;
+    padding-top: 20px;
+    line-height: 45px;
+    color: #777;
+    font-size: 12px;
+}
+
+.productManageMent-sensitive-add .man_produ_sensitive_add .sensitive_add_span {
+    display: inline-block;
+    width: 18%;
+    height: 100%;
+    line-height: 100%;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.productManageMent-sensitive-add .man_produ_sensitive_add .man_produ_sensitive_text {
+    width: 240px;
+    display: inline-block;
+}
+
+.productManageMent-sensitive-add .man_produ_modify_footer {
+    padding-left: 120px;
+}
+
+.productManageMent-sensitive-add .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.productManageMent-sensitive-add .invalidate-input-box {
+    display: inline-block;
+}
+
+.productManageMent-sensitive-add .dropdown {
+    margin-right: 0;
+}

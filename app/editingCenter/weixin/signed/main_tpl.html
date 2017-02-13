@@ -1,0 +1,91 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen web_signed_btn_pixel100 opacity100" ng-click="revoke()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='batchCancelDraft'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['wechat.yiqianfa.chegao']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/newspaper/images/{{status.batchOperateBtn['hoverStatus']=='batchCancelDraft'&&data.selectedArray.length>0?'zm31-1.png':'zm31.png'}}" />
+            </span> 取消签发
+        </button>
+        <div class="btn-group hidden-operate" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle btn-commen opacity100" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-disabled="data.selectedArray.length==0" ng-mouseenter="batchOperateBtn['hoverStatus']='more'" ng-mouseleave="batchOperateBtn['hoverStatus']=''">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/app/images/{{batchOperateBtn['hoverStatus']=='more'&&data.selectedArray.length>0?'b8-1.png':'b8.png'}}" />
+                </span> 更多
+                <span class="pulldown_icon"></span>
+            </button>
+            <ul class="dropdown-menu edit_dropdown_menu" ng-show="data.selectedArray.length>0">
+                <li><a ng-click="outSending()" ng-if="status.btnRights['wechat.yiqianfa.waifa']">邮件外发</a></li>
+                <li><a ng-click="collect()" ng-if="status.btnRights['wechat.yiqianfa.shoucang']">收藏</a></li>
+                <li><a ng-click="printBtn()">打印</a></li>
+                <li><a ng-click="exportDraft()">导出</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li>
+                <span ng-bind="status.currChannel|trsLimitTo:10" title="{{status.currChannel}}"></span>
+                <span>已签发平台</span>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <span class="s_onlyme">只看我的</span>
+    <trs-radio ckstatus="status.onlyMine" ckcallback="isOnlyMine()"></trs-radio>
+    <trs-time-select selected-option="data.selectedTimeType" callback="queryByDropdown('timeType',data.selectedTimeType.value)" options="data.timeTypeArray" fromdate="data.fromdate" untildate="data.untildate"></trs-time-select>
+    <div class="input-group edit_input_group mr15">
+        <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+        <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+        </span>
+    </div>
+    <trs-single-select selected-option="data.iWoAllSelected" class="pull-right" options="data.iWoAll"></trs-single-select>
+    <trs-single-select class="pull-right" ng-show="status.isESSearch" selected-option="data.sortType" callback="queryByDropdown('', data.sortType.value)" options="data.sortTypeJsons"></trs-single-select>
+</div>
+<div class="edit_table border_radius_5 websiteSigned weixin_border_radius_5">
+    <table class="table data-table table-striped">
+        <thead>
+            <tr>
+                <th class="td-check w90 txt_l">
+                    <trs-checkbox ischecked="data.items.length != 0&& 
+                    data.selectedArray.length == data.items.length" callback="selectAll()"></trs-checkbox>全选
+                </th>
+                <th class="xcol-td-number">序号</th>
+                <th class="xcol-newspaper-title">标题</th>
+                <th class="xcol-newspaper-releaseBuild">创建人</th>
+                <th class="xcol-newspaper-date">最后版本时间</th>
+                <th class="xcol-newspaper-sengstatus">发布状态</th>
+                <th class="xcol-newspaper-operation">操作</th>
+                <th class="xcol-newspaper-picture">图示</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr ng-repeat="item in data.items">
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <td ng-bind="(page.CURRPAGE-1)*(page.PAGESIZE)+$index+1"></td>
+                <td class="vx_con">
+                    <a ui-sref="wxPreview({channelid:status.params.ChannelId,chnldocid:item.CHNLDOCID,metadataid:item.METADATAID,platform:2})" target="_blank" title="{{item.TITLE}}" ng-bind="item.TITLE"></a>
+                </td>
+                <td ng-bind="item.TRUENAME"> </td>
+                <td ng-bind="item.OPERTIME" ng-click="showVersionTime(item)" class="pointer"></td>
+                <td ng-bind="item.WEBSTATUSNAME"></td>
+                <td>
+                    <a title="编辑" target="_blank" ui-sref="wxnews({channelid:status.params.ChannelId,chnldocid:item.CHNLDOCID,metadataid:item.METADATAID,platform:2})" ng-if="status.btnRights['wechat.yiqianfa.bianji']">
+                        <img src=".\editingCenter\weixin\images\r1.png">
+                    </a>
+                </td>
+                <td>
+                    <trs-thumb item="item" transform="editingCenterAllThumb"></trs-thumb>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" new-pagesize="page.PAGESIZE" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

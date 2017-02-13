@@ -1,0 +1,207 @@
+<!-- <div class="toBeCompiled-draftlist-container">
+    <div class="toBeCompiled-draftlist-head">
+        <p>发稿单</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" alt="close" ng-click="cancel()" />
+    </div>
+    <div class="toBeCompiled-draftlist-body">
+        <div class="toBeCompiled-draftlist-body-top">
+            <p class="title">标题:</p>
+            <p class="content">多篇稿件</p>
+        </div>
+        <div class="toBeCompiled-draftlist-body-middle">
+            <tabset>
+                <tab heading="作者信息">
+                    <div class="toBeCompiled-draftlist-body-row1">
+                        <p>最近选择的记者:</p>
+                        <ul>
+                            <li>金波</li>
+                            <li>金波</li>
+                            <li>金波</li>
+                            <li>金波</li>
+                        </ul>
+                    </div>
+                    <div class="toBeCompiled-draftlist-body-row7">
+                        <p>用户名:</p>
+                        <input type="text" value="" class="toBeCompiled-draftlist-text">
+                    </div>
+                    <div class="toBeCompiled-draftlist-user-choose">
+                        <div class="toBeCompiled-draftlist-body-row3">
+                            <p>用户选择</p>
+                            <button>添加本人</button>
+                            <button>添加</button>
+                        </div>
+                        <div class="toBeCompiled-draftlist-body-row4">
+                            <div class="toBeCompiled-draftlist-body-row4-left">
+                                <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node)">
+                                    <span ng-bind='node.GNAME'></span>
+                                </treecontrol>
+                            </div>
+                            <div class="toBeCompiled-draftlist-body-row4-right">
+                                <ul>
+                                    <li>1111111</li>
+                                    <li>1111111</li>
+                                    <li>1111111</li>
+                                    <li>1111111</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toBeCompiled-draftlist-body-row5">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>作者类型</th>
+                                    <th>作者</th>
+                                    <th>部门名称或通讯地址</th>
+                                    <th>媒体或邮编</th>
+                                    <th>操作人</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>媒体</td>
+                                    <td>部门</td>
+                                    <td>编辑姓名</td>
+                                    <td>操作人</td>
+                                    <td>操作</td>
+                                    <td>操作</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="toBeCompiled-draftlist-body-row6" style="display:none;">
+                        <ul>
+                            <li>1111111111</li>
+                        </ul>
+                    </div>
+                </tab>
+                <tab heading="编辑信息">
+                    <div class="toBeCompiled-draftlist-body-row1">
+                        <p>最近选择的记者:</p>
+                        <ul>
+                            <li>金波</li>
+                            <li>金波</li>
+                            <li>金波</li>
+                            <li>金波</li>
+                        </ul>
+                    </div>
+                    <div class="toBeCompiled-draftlist-body-row2">
+                        <label>
+                            <input type="radio" name="select" value="0" ng-model="addType"> 编辑流
+                        </label>
+                        <label>
+                            <input type="radio" name="select" value="1" ng-model="addType"> 其他人员
+                        </label>
+                    </div>
+                    <div ng-show="addType=='0'?true:false">
+                        <div class="toBeCompiled-draftlist-body-row8">
+                            <button>添加</button>
+                            <button>添加本人</button>
+                        </div>
+                        <div class="toBeCompiled-draftlist-body-row6"></div>
+                    </div>
+                    其他人员
+                    <div ng-show="addType=='1'?true:false">
+                        <div class="toBeCompiled-draftlist-body-row7">
+                            <p>用户名:</p>
+                            <input type="text" value="" class="toBeCompiled-draftlist-text">
+                        </div>
+                        <div class="toBeCompiled-draftlist-user-choose">
+                            <div class="toBeCompiled-draftlist-body-row3">
+                                <p>用户选择</p>
+                                <button>添加本人</button>
+                                <button>添加</button>
+                            </div>
+                            <div class="toBeCompiled-draftlist-body-row4">
+                                <div class="toBeCompiled-draftlist-body-row4-left">
+                                </div>
+                                <div class="toBeCompiled-draftlist-body-row4-right">
+                                    <ul>
+                                        <li>1111111</li>
+                                        <li>1111111</li>
+                                        <li>1111111</li>
+                                        <li>1111111</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    其他人员
+                    <div class="toBeCompiled-draftlist-body-row5">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>媒体</th>
+                                    <th>部门</th>
+                                    <th>编辑姓名</th>
+                                    <th>操作人</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>媒体</td>
+                                    <td>部门</td>
+                                    <td>编辑姓名</td>
+                                    <td>操作人</td>
+                                    <td>操作</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </tab>
+                <tab heading="稿件属性">
+                    <p class="draft-title">稿件体裁</p>
+                    <div class="draft-content">
+                        <ul>
+                            <li>11111111</li>
+                            <li>11111111</li>
+                            <li>11111111</li>
+                            <li>11111111</li>
+                            <li>11111111</li>
+                            <li>11111111</li>
+                            <li>11111111</li>
+                        </ul>
+                    </div>
+                    <div class="draft-bottom">
+                        <p class="p-tit">操作人员:</p>
+                        <p class="p-con">杨霞云</p>
+                        <p class="p-tit">操作时间:</p>
+                        <p class="p-con">2015-09-09</p>
+                    </div>
+                </tab>
+            </tabset>
+            <label class="payment">
+                <input type="checkbox"> 不发稿费
+            </label>
+        </div>
+    </div>
+    <div class="toBeCompiled-draftlist-footer">
+        <button class="draftlist-btn" ng-click="cancel()">取消</button>
+        <button class="draftlist-btn" ng-click="confirm()">确定</button>
+    </div>
+</div>
+ -->
+<div class="toBeCompiled-draftlist-container">
+    <div class="subject-title">
+        <p>发稿单</p>
+        <input type="checkbox" ng-model="list.ISNOPAYMENT" ng-true-value="'1'" ng-false-value="'0'">
+        <p class="ml10">不发稿费</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()" class='editng-left'>
+    </div>
+    <div class="row mt_20">
+        <div class="m_box_item mb0">
+            <p class="left newP">稿件体裁：</p>
+            <select class="edit-select w200" ng-model="list.DOCGENRE">
+                <option ng-repeat="docgenre in data.DocGenre" value="{{docgenre.value}}">{{docgenre.desc}}</option>
+            </select>
+        </div>
+    </div>
+    <editor-dir meta-data-id="{{list.METADATAID}}" editor-json="list.FGD_EDITINFO" show-all-tips="showAllTips" editor-form="atalsForm"></editor-dir>
+    <editor-auth-dir author-json="list.FGD_AUTHINFO" show-all-tips="showAllTips" editor-form="atalsForm"></editor-auth-dir>
+    <div class="toBeCompiled-draftlist-footer">
+        <button class="draftlist-btn" ng-click="cancel()">取消</button>
+        <button class="draftlist-btn" ng-click="confirm()">确定</button>
+    </div>
+</div>

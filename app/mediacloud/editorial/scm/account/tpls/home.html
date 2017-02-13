@@ -1,0 +1,57 @@
+<div class="management_main com_width" >
+    <div class="management_condition">
+        <div class="selected_condition_box">
+            <p class="selected_condition_title">已选条件：</p>
+
+            <div class="selected_condition_list">
+                <div class="selected_condition " ng-show="UnitId">
+                    <p>
+                        所在单位：
+                        <span>{{UnitId | unitFlr:UnitId}}</span>
+                    </p>
+                    <a ng-click="closeUnit();" ui-sref="wbaccount.list({UnitId:''})"></a>
+                </div>
+                <div class="selected_condition " ng-show="ClassId">
+                    <p>
+                        所在类别：
+                        <span>{{ClassId | classFlr:ClassId}}</span>
+                    </p>
+                    <a ui-sref="wbaccount.list({ClassId:''})"></a>
+                </div>
+            </div>
+            <a class="cancel_all" ng-href="#/wbaccount/list">全部撤销</a>
+            <form action="" class="management_search">
+                <input type="text" class="management_search_txt" placeholder="搜索" ng-model="Search"/>
+                <input type="button" class="management_search_btn" ui-sref="wbaccount.list({Search:Search})"/>
+            </form>
+        </div>
+        <div class="choice_condition">
+            <div class="condition_box" ng-controller="unitCtrl">
+                <div class="condition_title">
+                    <p>所在单位：</p>
+                </div>
+                <div class="condition_list">
+                    <div class="condition_list_box clearfix">
+                        <p class="optional_condition" ng-repeat="unit in units" 
+                       ui-sref="wbaccount.list({UnitId:unit.UnitId,UnitTitle:unit.UnitName})"
+                       ui-sref-active="active">{{unit.UnitName}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="condition_box" ng-controller="classCtrl">
+                <div class="condition_title">
+                    <p>所属类别：</p>
+                </div>
+                <div class="condition_list">
+                    <div class="condition_list_box clearfix">
+                        <p class="optional_condition" ng-repeat="class in classs" 
+                       ui-sref="wbaccount.list({ClassId:class.ClassId,ClassTitle:class.ClassName})"
+                       ui-sref-active="active">{{class.ClassName}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--账号列表-->
+    <div ui-view>正在加载数据。。。</div>
+</div>

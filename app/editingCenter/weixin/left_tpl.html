@@ -1,0 +1,39 @@
+<div class="container-fluid editing-list weixin-editing-list">
+    <div ng-click="status.weixin.isdownPicShow=!status.weixin.isdownPicShow" class="editing-pos">
+        <div class="editing-list-zjxw site_btn">
+            <img src="./editingCenter/app/images/w33.png" class="editing_list_zjxw_img" />
+            <span href="" title="{{status.weixin.selectedChnl.CHNLDESC}}">{{status.weixin.selectedChnl.CHNLDESC | trsLimitTo:12}}</span>
+        </div>
+        <div ng-if="status.weixin.channels.length>1">
+            <img src="./editingCenter/app/images/l5-1.png" class='edit_mark' ng-show="!status.weixin.isdownPicShow">
+            <img src="./editingCenter/app/images/l5-2.png" class='edit_mark' ng-show="status.weixin.isdownPicShow"></div>
+        <div ng-show="status.weixin.isdownPicShow" class="editing-Sites_fa">
+            <div class="editing-Sites" ng-repeat="channel in status.weixin.channels" ng-click="setWeixinSelected(channel)">
+                <span title="{{channel.CHNLDESC}}"> {{channel.CHNLDESC|trsLimitTo:12}}</span>
+                <img src="./editingCenter/app/images/l8.png" ng-show="channel == status.weixin.selectedChnl">
+            </div>
+        </div>
+    </div>
+    <accordion class="weixin_accordion weixin_accordion_new">
+        <div ng-class="{'weixin-left-accordion-active':'tobecompiled'==status.weixin.selectedItem}" class="weixin-left-div" ng-if="status.weixinAccessAuthority['DAIBIAN']=='true'">
+            <i><img ng-src="./editingCenter/weixin/images/{{'tobecompiled'==status.weixin.selectedItem?'wb3.png':'wb3-1.png'}}" /></i>
+            <a class="ml0" ng-click="setWeixinItem('tobecompiled')" ui-sref-opts="{reload :'editctr.weixin.tobecompiled'}">待编</a>
+        </div>
+        <div ng-class="{'weixin-left-accordion-active':'pending'==status.weixin.selectedItem}" class="weixin-left-div" ng-if="status.weixinAccessAuthority['DAISHEN']=='true'">
+            <i><img ng-src="./editingCenter/weixin/images/{{'pending'==status.weixin.selectedItem?'wb4.png':'wb4-1.png'}}" /></i>
+            <a class="ml0" ng-click="setWeixinItem('pending')" ui-sref-opts="{reload :'editctr.weixin.pending'}">待审</a>
+        </div>
+        <div ng-class="{'weixin-left-accordion-active':'signed'==status.weixin.selectedItem}" class="weixin-left-div" ng-if="status.weixinAccessAuthority['YIQIANFA']=='true'">
+            <i><img ng-src="./editingCenter/weixin/images/{{'signed'==status.weixin.selectedItem?'wb5.png':'wb5-1.png'}}" /></i>
+            <a class="ml0" ng-click="setWeixinItem('signed')" ui-sref-opts="{reload :'editctr.weixin.signed'}">已签发</a>
+        </div>
+        <div ng-class="{'weixin-left-accordion-active':'recycle'==status.weixin.selectedItem}" class="weixin-left-div" ng-if="status.weixinAccessAuthority['RECYCLEMGR']=='true'">
+            <i><img ng-src="./editingCenter/weixin/images/{{'recycle'==status.weixin.selectedItem?'gl.png':'gl-1.png'}}" /></i>
+            <a class="ml0" ng-click="setWeixinItem('recycle')" ui-sref-opts="{reload :'editctr.weixin.recycle'}">管理废稿</a>
+        </div>
+        <!-- <div ng-class="{'weixin-left-accordion-active':'cloud'==status.weixin.selectedItem}" class="weixin-left-div">
+            <i><img ng-src="./editingCenter/weixin/images/{{'cloud'==status.weixin.selectedItem?'xml.png':'xml-1.png'}}" /></i>
+            <a class="ml0" ng-href="http://192.168.200.28:8080/wcm/mlfcenter.do?ChannelId={{status.weixin.selectedChnl.CHANNELID}}&methodname=redirectLoginUrl&serviceid=mlf_wechat">新媒体云服务</a>
+        </div> -->
+    </accordion>
+</div>

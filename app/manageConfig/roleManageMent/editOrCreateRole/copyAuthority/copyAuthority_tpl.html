@@ -1,0 +1,57 @@
+<div class="manage-createRole-children">
+    <div class="manage-createRole-chooseRole-head">
+        <span>角色选择</span>
+    </div>
+    <div class='row'>
+        <div class="col-xs-5 manage-createRole-chooseRole-body">
+            <div class="manage-createRole-chooseRole-body-left-head">
+                <span>请选择用户组织</span>
+            </div>
+            <div class="manage-createRole-chooseRole-body-left-list min-height-410">
+                <treecontrol class="tree-light" tree-model="dataForTheTree" expanded-nodes="expandedCopy" options="cAtreeOptions" on-selection="cAshowSelected(node)" on-node-toggle="showToggleCopy(node)" selected-node="selectedNodeCopy">
+                    {{node.GNAME}}
+                </treecontrol>
+            </div>
+        </div>
+        <div class="col-xs-7 manage-createRole-chooseRole-body">
+            <div class="row">
+                <div class="col-xs-6 manage-createRole-chooseRole-body-r">
+                    <div class="manage-createRole-chooseRole-body-right">
+                        <div class="manage-createRole-chooseRole-body-right-head">
+                            <span>未选角色列表</span>
+                        </div>
+                        <div>
+                            <div class="notSelectedRole">
+                                <div class="" ng-repeat="roleData in wCaRoleDatas">
+                                    <span ng-click="selectWCaRole($event,roleData)" ng-bind="roleData.ROLEDESC" class="role-list-span"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 manage-createRole-chooseRole-body-r margin-right">
+                    <div class="manage-createRole-chooseRole-body-right no-bor-r">
+                        <div class="manage-createRole-chooseRole-body-right-head">
+                            <span>已选角色列表</span>
+                        </div>
+                        <div>
+                            <div class="notSelectedRole">
+                                <div class="" ng-repeat="roleData in cadRoleDatas"><span ng-click="selectCadRole($event,roleData)" ng-bind="roleData.ROLEDESC" class="role-list-span"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="manage-createRole-chooseRole-botton">
+                <div ng-click="rightRole()"><img src="./manageConfig/roleManageMent/images/js4.png" /></div>
+                <div ng-click="leftRole()" class="mgb30"><img src="./manageConfig/roleManageMent/images/js5.png" /></div>
+                <div ng-click="rightAllRole()"><img src="./manageConfig/roleManageMent/images/js6.png" /></div>
+                <div ng-click="leftAllRole()"><img src="./manageConfig/roleManageMent/images/js7.png" /></div>
+            </div>
+            <div class="manage-createRole-chooseRole-botton-c">
+                <button ng-click="confirm()" class="submit btn_confirm">确定</botton>
+                    <button ng-click="cancel()" class="cancel btn_cancel">取消</botton>
+            </div>
+        </div>
+    </div>
+</div>

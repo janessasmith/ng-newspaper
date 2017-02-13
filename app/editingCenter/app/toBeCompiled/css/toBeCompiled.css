@@ -1,0 +1,1766 @@
+/*.modal-open {
+    margin-right: 17px;
+}*/
+
+.compiled-subject {
+    padding: 20px;
+    width: 100%;
+    /*overflow-y: auto;*/
+}
+
+.subject-tab {
+    border-bottom: 1px solid #D9D9D9;
+    height: 47px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    top: 0px;
+    background: white;
+}
+
+.subject-tab ul li {
+    float: left;
+    width: 125px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    color: #434343;
+    cursor: pointer;
+    border-right: 1px solid #ccc;
+}
+
+.subject-tab ul li a:hover {
+    height: 48px;
+    background: none;
+    border: none;
+}
+
+.subject-tab ul li a {
+    color: #474747;
+}
+
+.subject-tab ul li.active {
+    background: rgb(26, 186, 160);
+    color: white
+}
+
+.subject-tab ul li.active a {
+    color: white
+}
+
+.subject-row {
+    /* margin-top: 37px*/
+}
+
+.subject-detail {
+    margin-bottom: 10px
+}
+
+.subject-row .bd,
+.subject-item .bd {
+    border: 1px solid #D9D9D9;
+    background: #FAFAFA;
+}
+
+.subject-list-style .host {
+    width: 352px;
+}
+
+.subject-list-style .host .tags {
+    border-radius: 4px;
+}
+
+.subject-title {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    background: url(./editingCenter/app/toBeCompiled/images/b1.png) 14px 55% #fafafa no-repeat;
+    padding-left: 33px;
+    font-weight: 700;
+    color: #434343
+}
+
+.groupSlected {
+    color: #fff;
+    background: #4496D2;
+    outline: none;
+    border: none;
+    width: 65px;
+    height: 30px;
+    font-size: 12px;
+    float: right;
+    border-radius: 5px;
+}
+.groupSlected:hover{
+    color:#fff;
+}   
+.subject-title p {
+    float: left;
+    padding: 0;
+    margin: 0px 10px 0px 10px;
+    line-height: 45px;
+}
+
+.subject-title input {
+    margin-top: 16px;
+    margin-left: 10px;
+    float: left;
+}
+
+.subject-title div {
+    float: left;
+    margin-left: 10px;
+}
+
+.subject-list-style {
+    margin: 15px 0px 0px 0px
+}
+
+.subject-list-style .list-style-radio {
+    /*overflow: hidden;*/
+    margin-bottom: 2px;
+}
+
+.subject-list-style .style-radio {
+    width: 72px;
+    float: left;
+    line-height: 34px;
+}
+
+.subject-list-style .style-radio input {
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.subject-list-style .subject-item {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.subject-list-style .subject-fix {
+    margin-bottom: 46px;
+}
+
+.subject-list-style .subject-item .form-control {
+    width: 233px;
+    /*  height: 29px;*/
+    font-size: 12px;
+}
+
+.subject-detail .subject-list-style .m_box_item {
+    height: initial;
+    min-height: 40px;
+}
+
+.subject-list-style .m_box_item .checkbox {
+    position: relative;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+
+.subject-list-style .m_box_item .fixed_size {
+    top: 8px;
+    left: -42px;
+}
+
+.subject-list-style .txt-style {
+    line-height: 34px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.subject-list-style {
+    display: block;
+    /*overflow: hidden;*/
+}
+
+.subject-list-style .list-style-input .input-img {
+    width: 236px;
+    border-radius: 4px;
+    overflow: hidden;
+    /* border: 1px solid #CCC;*/
+    height: 32px;
+    line-height: 32px
+}
+
+.subject-list-style .mg10 {
+    margin-top: 10px!important;
+}
+
+.subject-list-style .mgt15 {
+    padding-top: 15px
+}
+
+.subject-list-style .mgr20 {
+    margin-left: 20px
+}
+
+.subject-list-style .list-style-img {
+    /*margin-top: 10px;*/
+    /* overflow: hidden;*/
+}
+
+.subject-list-style .list-style-img p {
+    float: left;
+    overflow: hidden;
+  /*  width: 152px;
+    height: 111px;*/
+    position: relative;
+    margin-right: 11px;
+    margin-bottom: 0px;
+}
+
+
+/*
+.subject-list-style .list-style-img p img {
+    width: 152px;
+    height: 111px;
+}*/
+
+.subject-list-style .list-style-img p span {
+    border-radius: 4px;
+    position: absolute;
+    opacity: 0.8;
+    width: 33px;
+    height: 36px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    line-height: 48px;
+    text-align: center
+}
+
+.subject-list-style .list-style-img p span.list-style-upload {
+    top: 64%;
+    right: 45px;
+    cursor: pointer;
+    background: url(./editingCenter/app/toBeCompiled/images/b43-1.png) center 3px rgba(21, 21, 21, 0.51) no-repeat;
+}
+
+.subject-list-style .list-style-tab {
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.subject-list-style .list-style-tab p {
+    float: left;
+    width: 77px;
+    height: 26px;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    line-height: 26px;
+    margin-right: 10px
+}
+
+.subject-list-style .list-style-tab p.active {
+    border: 1px solid #3099D3;
+}
+
+.subject-list-style .list-style-check {
+    margin-top: 5px
+}
+
+.subject-list-style .list-style-check input {
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+}
+
+.subject-list-style .list-style-check span {
+    position: relative;
+}
+
+.subject-list-style .list-style-check span.subject-down {
+    margin-right: 13px
+}
+
+.subject-list-style .list-style-input {
+    float: left;
+    margin-right: 11px;
+}
+
+.subject-list-style .list-style-input p {
+    float: left;
+    line-height: 34px;
+    margin-left: 10px
+}
+
+.subject-list-style .list-style-input .wordNum {
+    float: left;
+    height: 18px;
+    margin-left: 4px;
+    margin-top: 7px;
+    text-align: center;
+    color: red;
+}
+
+.subject-list-style .list-style-input .input-title {
+    width: 665px;
+    border-radius: 4px;
+    overflow: hidden;
+    /*border: 1px solid #CCC;*/
+    height: 32px;
+    color: #000;
+    padding-left: 5px;
+    line-height: 32px;
+    font-size: 12px;
+    float: left;
+}
+
+.subject-detail .m_box_item {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.subject-list-style .list-style-input .keywords-blank {
+    float: left;
+    height: 34px;
+    padding-top: 2px;
+}
+
+.subject-list-style .list-style-input input.input-keyword {
+    outline: none;
+    background: white
+}
+
+.subject-list-style .minwidth {
+    min-width: 363px;
+    background: white;
+}
+
+.subject-list-style .list-style-input .input-keyword {
+    width: 60px;
+    overflow: hidden;
+    border: none;
+    height: 32px;
+    color: #000;
+    line-height: 32px;
+    font-size: 12px;
+    float: left;
+}
+
+.subject-list-style .list-style-input .input-detail {
+    width: 352px;
+    border-radius: 4px;
+    float: left;
+    resize: none;
+    overflow: hidden;
+    /*border: 1px solid #CCC;*/
+    height: 128px;
+    padding-left: 5px;
+    /*    line-height: 32px;*/
+    font-size: 12px;
+    float: left;
+}
+
+.subject-list-style .list-style-input .input-concont {
+    width: 365px;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 32px;
+    color: #000;
+    padding-left: 5px;
+    line-height: 32px;
+    font-size: 12px
+}
+
+.subject-list-style .list-style-input a {
+    color: #454545;
+    float: left;
+    padding-left: 8px;
+    padding-right: 5px;
+    text-decoration: underline;
+    padding-top: 10px
+}
+
+.subject-list-style .list-style-input .keywords-blank span {
+    text-align: center;
+    line-height: 30px;
+    display: block;
+    margin-left: 5px;
+    position: relative;
+    width: 114px;
+    height: 30px;
+    border: 1px solid #ccc;
+    float: left
+}
+
+.subject-list-style .list-style-input .keywords-blank span i {
+    font-style: normal;
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    top: 0px;
+    right: -3px;
+    background: url(./editingCenter/app/toBeCompiled/images/b15.png) 0 center no-repeat;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.subject-list-style .list-style-img div {
+    /* border-radius: 4px;
+    position: absolute;
+    width: 33px;
+    height: 36px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    line-height: 48px;
+    text-align: center*/
+}
+
+.subject-list-style .list-style-img div.list-style-upload {
+    top: 64%;
+    right: 45px;
+    cursor: pointer;
+    background: url(./editingCenter/app/toBeCompiled/images/b43-1.png) center 3px rgba(21, 21, 21, 0.51) no-repeat;
+}
+
+.subject-list-style .height33 {
+    height: 33px
+}
+
+.subject-list-style .list-style-tab {}
+
+.list-style-img div.fa_upload {
+    width: 154px;
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+.subject-list-style .list-style-tab p {
+    float: left;
+    width: 77px;
+    height: 26px;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    line-height: 26px;
+    margin-right: 10px
+}
+
+.subject-list-style .list-style-textarea {
+    font-size: 12px;
+    padding-left: 0px;
+    padding-top: 0px;
+    border: 1px solid #d5d5d5;
+    height: 184px;
+    width: 365px;
+    margin-top: 45px;
+    overflow-y: auto;
+    margin-bottom: 0px;
+}
+
+.subject-list-style .list-style-textarea li {
+    line-height: 22px;
+    height: 22px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.subject-list-style .list-style-textarea li span {
+    display: block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.subject-list-style .list-style-textarea li.active {
+    background: rgb(17, 63, 191);
+    color: white;
+}
+
+
+/*label按钮*/
+
+.subject-list-style .list-style-textarea .textarea_news {
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 10px;
+    border: 1px solid #d5d5d5;
+    resize: none;
+    height: 184px;
+    width: 365px
+}
+
+.subject-list-style .list-style-tab label {
+    float: left;
+    width: 77px;
+    height: 26px;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    line-height: 26px;
+    margin-right: 10px;
+    border-radius: 0px;
+    padding: 0;
+    background-color: #fafafa;
+    box-shadow: none;
+}
+
+.subject-list-style .list-style-tab label.selected {
+    background: #0081b1;
+    color: #fff;
+}
+
+.subject-list-style .list-style-tab label input {
+    width: 77px;
+    height: 26px;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    line-height: 26px;
+}
+
+
+/*.list-style-tab .btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background: #009ed8;
+    color: #fff;
+}*/
+
+.list-style-icon {}
+
+.list-style-icon span {
+    display: block;
+    float: left;
+    cursor: pointer;
+    width: 50px;
+    padding-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 20px
+}
+
+.list-style-icon span.delete {
+    background: url(./editingCenter/app/toBeCompiled/images/b37.png) 0 center no-repeat;
+}
+
+.list-style-icon span.icon_up {
+    background: url(./editingCenter/app/toBeCompiled/images/b36.png) 0 center no-repeat;
+}
+
+.list-style-icon span.icon_down {
+    background: url(./editingCenter/app/toBeCompiled/images/b38.png) 0 center no-repeat;
+}
+
+
+/* maroon */
+
+.subject-table-wrap {
+    margin-top: 14px;
+    padding-top: 14px;
+    margin-bottom: 60px;
+    border-top: 1px solid #e3e1dd;
+}
+
+.subject-table-container {
+    width: 700px;
+}
+
+.bg-f2f2f5 {
+    background: #f2f2f5;
+}
+
+.subject-table-container .tab-content {
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.box-fix-bt {
+    position: fixed;
+    right: 10px;
+    bottom: 0px;
+    margin-top: 60px;
+    z-index: 999;
+    height: 36px;
+}
+
+.subject-table-container table {
+    margin-bottom: 0px;
+}
+
+.subject-table-container ul {
+    background-color: #f1f2f6;
+}
+
+.subject-table-container a {
+    color: #000 !important;
+}
+
+.subject-table-container ul li {
+    width: 100px;
+    border-top: 1px solid #d4d4d6;
+    border-bottom: 1px solid #d4d4d6;
+    border-right: 1px solid #d4d4d6;
+    cursor: pointer;
+    text-align: center;
+}
+
+.subject-table-container ul li:first-child {
+    border-left: 1px solid #d4d4d6;
+}
+
+.subject-table-container ul li.active {
+    font-weight: bold;
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.subject-table-container ul li.active a {
+    margin-bottom: 2px;
+}
+
+.padfixed {}
+
+
+/*fix css 1024*/
+
+@media screen and (min-width: 768px) and (max-width: 1163px) {
+    .padfixed {
+        padding-left: 0px;
+        padding-right: 0px
+    }
+    .modal-open {
+        margin-right: 0px;
+    }
+}
+
+.web-attr-info {}
+
+.web-attr-info-tit {
+    height: 45px;
+    line-height: 45px;
+    background: #fafaf9;
+    border-bottom: 1px solid #e3e4e3;
+    overflow: hidden;
+}
+
+.web-attr-info-tit p {
+    color: #272727;
+    font-weight: bold;
+    background: url("./editingCenter/app/toBeCompiled/images/b1.png") no-repeat left center;
+    margin-left: 12px;
+    padding-left: 16px;
+}
+
+.web-attr-info-con {
+    background: #fafafa;
+    border: 1px solid #e3e1dd;
+    /*    overflow: hidden;*/
+    margin-top: 14px;
+    padding-bottom: 10px;
+}
+
+.web-list-info-con .row,
+.web-attr-info-con .row {
+    /* height: 28px;
+    line-height: 28px;
+    margin-top: 14px;*/
+}
+
+.web-list-info-con .row p,
+.web-attr-info-con .row p {
+    text-align: right;
+    font-size: 14px;
+    color: #333;
+}
+
+.web-list-info-con .row p span.color-red,
+.web-attr-info-con .row p span.color-red {
+    color: #D72420;
+    font-weight: bolder;
+    vertical-align: -2px;
+}
+
+.web-attr-info-con .row .web-text {
+    width: 330px;
+    height: 30px;
+    line-height: 30px;
+    /*border: 1px solid #e0deda;*/
+    padding-left: 8px;
+    color: #555;
+    border-radius: 4px;
+}
+
+.web-attr-info-con .row select {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    padding-left: 8px;
+    color: #666;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.web-attr-info-con .row select option {
+    padding-left: 8px;
+}
+
+.web-list-info-con .row label,
+.web-attr-info-con .row label {
+    /*color: #666;*/
+    /*  margin-right: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;*/
+}
+
+.web-attr-info-con .txt-style {
+    line-height: 34px;
+    font-size: 14px;
+    text-align: right;
+}
+
+.web-list-info-con .row label input,
+.web-attr-info-con .row label input {
+    vertical-align: -2px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.pr0 {
+    padding-right: 0px;
+}
+
+.web-list-info-con {
+    /* padding-bottom: 20px; */
+}
+
+.web-list-info-con .list-style-tab p {
+    float: left;
+    width: 77px;
+    height: 26px;
+    border: 1px solid #D9D9D9;
+    text-align: center;
+    line-height: 26px;
+    margin-right: 10px
+}
+
+.web-list-info-con .list-style-tab p.active {
+    border: 1px solid #3099D3;
+}
+
+.web-list-info-con .row .list-text {
+    width: 236px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 12px;
+    border-radius: 4px;
+    color: #555;
+    font-size: 12px;
+}
+
+.list-img-ul {
+    float: left;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.mb60 {
+    margin-bottom: 60px;
+}
+
+.u_upload_hide input[type="file"] {
+    cursor: pointer;
+}
+
+.mtb15 {
+    margin: 15px 0;
+    /*padding: 0px;*/
+}
+
+.edit-ueditor-iframe {
+    border: 0px;
+    width: 100%;
+    height: 950px;
+}
+
+.edit-news-select {
+    height: 34px;
+    line-height: 34px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #666;
+}
+
+.edit-news-relateofficals input {
+    float: left;
+}
+
+.edit-news-relateofficals label {
+    margin-left: 10px;
+    line-height: 34px;
+    font-weight: lighter;
+}
+
+.edit-news-group {
+    margin-left: 40px;
+}
+
+.edit-news-relatenews {
+    padding-left: 0px
+}
+
+.edit-news-relatenews li {
+    list-style: none;
+}
+
+.edit-news-relatenews-span {
+    color: #7FC6E4;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.edit-news-groupName {
+    margin-bottom: 20px;
+}
+
+.edit-news-relateNews {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.edit-news-group lable {
+    height: 34px;
+    line-height: 34px;
+    float: left;
+}
+
+.edit-news-group input {
+    margin-right: 5px;
+    float: left;
+    width: 340px;
+}
+
+.edit-news-processversion {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 15px;
+}
+
+.edit-news-lable {
+    margin-top: 10px;
+}
+
+.edit-news-lable-title {
+    height: 52px;
+    line-height: 52px;
+}
+
+.edit-news-lable-body {
+    margin-top: 7px;
+}
+
+.edit-news-focusImage p {
+    margin-right: 13px;
+}
+
+.edit-news-title {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    background: url(./editingCenter/app/toBeCompiled/images/b1.png) 14px 55% #fafafa no-repeat;
+    padding-left: 33px;
+    font-weight: 700;
+    color: #434343;
+}
+
+.edit-news-radio {
+    height: 34px;
+    line-height: 34px;
+}
+
+.edit-news-radio label {
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+.edit-news-listStyleDiv {
+    height: 49px;
+    line-height: 49px;
+}
+
+.edit-news-h40 {
+    height: 40px !important;
+    line-height: 40px !important;
+}
+
+.fs14 {
+    font-size: 14px !important;
+}
+
+.edit-news-titlePic-body {
+    margin-top: 14px;
+}
+
+.edit-news-belongchannel {
+    height: 30px;
+    width: 180px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.edit-news-focusImageDiv {
+    padding-left: 0px;
+    margin-bottom: 10px;
+}
+
+.edit-news-relateofficals {
+    padding-left: 83px;
+}
+
+.edit-news-listStyleBody {
+    margin-top: 8px;
+}
+
+.edit-news-radio label input {
+    margin-right: 4px;
+}
+
+.edit-news-focusDiv {}
+
+.edit-news-attribute-text {
+    width: 352px;
+}
+
+.row_news {
+    /*    font-size: 13px;*/
+}
+
+.mr16 {
+    margin-right: 16px;
+}
+
+.mt140 {
+    margin-top: 205px;
+}
+
+textarea.edit-news-textarea {
+    width: 100%;
+    height: 160px;
+    resize: none;
+}
+
+textarea.edit-news-textare-h70 {
+    width: 100%;
+    height: 70px;
+    resize: none;
+}
+
+.left_596 {
+    left: 596px!important;
+}
+
+.mtb15 .wordNum {
+    margin-left: 5px;
+    margin-right: 9px;
+}
+
+.edit-news-checkbox {
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+.edit-news-checkbox input {
+    vertical-align: -2px;
+    margin-right: 4px;
+}
+
+.ml15 {
+    margin-left: 9px;
+}
+
+.bm_line {
+    margin: 20px 0 60px 0;
+}
+
+
+/* maroon */
+
+
+/*新增焦点图展开*/
+
+
+/*.foucusWindow .modal-content{ width: 348px; height: 223px; 
+
+background: #ddd; top: 132px; margin:0 auto;}
+.new-role-container{ width: 340px; height: 217px; background: #fff; 
+
+margin:2px 3px; border-radius: 6px;}
+.new-role-container .new-role-head{ height: 40px; line-height: 40px;} 
+.new-role-container .new-role-head p{ font-size: 14px; color: #333; 
+
+font-weight:bold; margin-left: 18px;}
+
+.new-role-container .new-role-body{ height: 125px; background: 
+
+#f0f2f5; overflow: hidden; }
+.new-role-container .new-role-body p{ height: 30px; line-height: 
+
+30px; margin:13px 0 0 20px; }
+.new-role-container .new-role-body p.passover{padding: 0px; margin-
+
+top: 5px;}
+.new-role-container .new-role-body p span{ font-size: 12px; color: 
+
+#333;}
+.new-role-container .new-role-body p span.c-666{ color: #666;}
+.new-role-container .new-role-body p input{ width: 244px; height: 
+
+30px; line-height: 30px; border:1px solid #ccc; font-family: ""; 
+color: #b4b4b4; padding-left: 6px; border-radius: 6px; font-size: 
+
+12px;}
+.new-role-footer .new-role-btn{ width: 80px; height: 28px; line-
+
+height: 28px; background: #4496d2; color: #fff; text-align:center; 
+
+border:none;
+margin-top: 12px; margin-left: 10px; border-radius: 4px;}
+.new-role-footer .ml156{ margin-left: 156px;}
+*/
+
+
+/*新增焦点图展开*/
+
+.foucusWindow .modal-content {
+    width: 397px;
+    height: 171px;
+    background: #ddd;
+    top: 132px;
+    margin: 0 auto;
+}
+
+.foucusWindow-container {
+    width: 389px;
+    height: 162px;
+    background: #fff;
+    margin: 2px 3px;
+    border-radius: 6px;
+}
+
+.foucusWindow-container .foucusWindow-head {
+    height: 40px;
+    line-height: 40px;
+}
+
+.foucusWindow-container .foucusWindow-head p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+}
+
+.foucusWindow-container .foucusWindow-body {
+    height: 125px;
+    background: #f0f2f5;
+    overflow: hidden;
+    background: #ECF5FF;
+}
+
+.foucusWindow-container .foucusWindow-body .foucusWindow-body-left {
+    width: 211px;
+    overflow: hidden;
+    height: 125px;
+}
+
+.foucusWindow-container .foucusWindow-body .foucusWindow-body-left input {
+    width: 190px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.foucusWindow-container .foucusWindow-body .foucusWindow-body-rigth {
+    width: 170px;
+    overflow: hidden;
+    background: #efefef;
+    height: 125px;
+}
+
+.foucusWindow-body-rigth .twoBtns {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.foucusWindow-body-rigth .twoBtns div {
+    width: 54px;
+    height: 34px;
+    padding: 0px;
+    background: #286090;
+    float: left;
+    margin-left: 20px;
+}
+
+.foucusWindow-body-rigth .webuploader-pick {
+    padding: 0px;
+    background: #286090;
+}
+
+.foucusWindow-container .foucusWindow-body .foucusWindow-body-rigth button {
+    float: left;
+    margin-left: 10px;
+    margin-top: 85px;
+}
+
+.foucusWindow-container .foucusWindow-body .foucusWindow-body-rigth button.ml30 {
+    margin-left: 30px;
+}
+
+
+/*图集新增*/
+
+.row_allas .atals {
+    overflow: hidden;
+}
+
+.br0 {
+    border: 0;
+}
+
+.atals .bg0 {
+    background: #fff;
+}
+
+.atals .table-striped .td_textarea {
+    width: 500px;
+    height: 145px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.atals .table-striped textarea.ml135 {
+    margin-left: 145px;
+}
+
+.row_allas .atals .new_tplb .header p {
+    float: left;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.row_allas .atals .new_tplb .con {
+    margin: 10px;
+    border: 1px solid #d3d5d4;
+    border-radius: 4px;
+}
+
+.row_allas .atals .m_form,
+.m_form {
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+
+.row_allas .atals .header {
+    overflow: hidden;
+    height: 50px;
+}
+
+.row_allas .atals .header p {
+    float: left;
+    line-height: 18px;
+    margin-left: 25px;
+}
+
+.atals .row_news .md_lngchange {
+    width: 390px;
+    display: inline-block;
+    padding: 0;
+}
+
+.row_allas .atals .header .tplb_btn {
+    float: left;
+    width: 118px;
+    height: 32px;
+    background: #f8f8f7;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #666;
+    line-height: 30px;
+    margin-left: 10px;
+    text-indent: 5px;
+    margin-top: 12px;
+    padding: 0px;
+    text-indent: -21px;
+}
+
+.row_allas .atals .header .tplb_btn img {
+    width: 19px;
+    height: 20px;
+    border: 0;
+    float: left;
+    margin-left: 13px;
+    margin-top: 5px;
+}
+
+.atals .focusDiv {
+    width: 100%;
+}
+
+.atals .focusDiv .row {
+    margin-left: 110px;
+    margin-top: 10px;
+}
+
+.focusDiv div.fa_upload {
+    width: 154px;
+    height: 135px;
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.focusDiv div.list-style-upload {
+    top: 38px;
+    right: 45px;
+    cursor: pointer;
+    background: url(./editingCenter/app/toBeCompiled/images/b3.png) no-repeat;
+    width: 40px;
+    height: 38px;
+}
+
+.focusDiv div.list-style-upload .webuploader-pick {
+    width: 40px;
+    height: 38px;
+    padding: 0px;
+    line-height: 55px;
+    background: transparent;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.focusDiv div.list-style-upload .webuploader-pick #rt_rt_1a2oqrs9cgql1pe6vqi1vj511bba {
+    width: 40px;
+    height: 38px;
+}
+
+.news_input_check {
+    position: relative;
+    float: left;
+}
+
+.text-success {
+    /*border-color: #3c763d !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);*/
+}
+
+.text-error {
+    border-color: #a94442 !important;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.news_input_check {
+    position: relative;
+    float: left;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.atals .website-list-style-upload {
+    width: 40px;
+    height: 38px;
+    float: left;
+    background: #000 url("./editingCenter/app/toBeCompiled/images/b43-1.png") no-repeat scroll center 3px;
+    position: absolute;
+    top: 5%;
+    right: 45px;
+    cursor: pointer;
+}
+
+.newuploader .webuploader-pick {
+    background: url(./editingCenter/app/toBeCompiled/images/b43-1.png) center 3px rgba(21, 21, 21, 0.51) no-repeat;
+}
+
+.mt60 {
+    margin-top: 60px;
+}
+
+
+/*cc改动新增*/
+
+.atals .con table th {
+    font-size: 15px;
+}
+
+.atals .m_box_item .col-sm-10 textarea {
+    width: 392px;
+    height: 132px;
+    resize: none;
+}
+
+.list-style-tab label.active {
+    border: 1px solid #0098cf;
+    background: #0098cf;
+    color: #fff;
+}
+
+.bg-gray {
+    background: #FAFAF9
+}
+
+.bg-gray .dropdown .bth-fix {
+    width: 104px;
+}
+
+.bg-gray .dropdown .dropdown-menu {
+    min-width: 104px;
+}
+
+.atals .open > .dropdown-toggle.btn-default {
+    /*  background: #009ed8;
+    color: #fff;*/
+}
+
+.atals .bg0 {
+    background: #fff;
+}
+
+.atals .td_textarea {
+    width: 500px;
+    height: 142px;
+    margin-top: 14px;
+    resize: none;
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.row_allas .atals .new_tplb {
+    /*overflow: hidden;*/
+    background: #f2f2f5;
+    margin-top: 9px;
+}
+
+.row_allas .atals .new_tplb .header p {
+    float: left;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.row_allas .atals .new_tplb .con {
+    margin: 10px;
+    border: 1px solid #d3d5d4;
+    border-radius: 4px;
+}
+
+.atals input.fz12 {
+    font-size: 12px;
+    width: 237px;
+}
+
+.pr12 {
+    padding-right: 12px;
+}
+
+.atals div.pl0 {
+    padding-left: 0px;
+}
+
+.atals div.h35 {
+    height: 31px;
+    overflow: hidden;
+    line-height: 33px;
+    text-align: left;
+    margin-left: 20px;
+    cursor: pointer;
+    width: 65%;
+}
+
+.atals td div.ml85 {
+    margin-left: 85px;
+}
+
+.atals div.h35 img {
+    padding-right: 12px;
+}
+
+.atals div.mt4 {
+    margin-top: 4px;
+}
+
+.atals div.h35 img.pr7 {
+    padding-right: 7px;
+}
+
+.atals p.newP {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.atals .edit-select {
+    width: 200px;
+    height: 34px;
+    padding-left: 10px;
+    color: #666;
+    font-size: 12px;
+    border-radius: 4px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.atals .edit-select option {
+    color: #666;
+    padding: 4px 0px 4px 14px;
+}
+
+.atals div.pr25 {
+    padding-right: 25px;
+}
+
+.lh40 {
+    line-height: 40px !important;
+}
+
+.atals div.lh36 {
+    line-height: 36px;
+}
+
+.atals .atals_bd {
+    background: #FFF none repeat scroll 0% 0%;
+    border: 1px solid #D9D9D9;
+}
+
+.mt60 {
+    margin-top: 60px;
+}
+
+.mt6 {
+    margin-top: 6px;
+}
+
+.web-pro-ver .nav {
+    background: #f2f2f5;
+}
+
+.web-pro-ver .nav-tabs > li > a {
+    color: #666;
+    padding: 12px 22px;
+    border: 1px solid #d4d4d6;
+    border-bottom: none;
+    border-radius: 0px;
+    margin-right: -1px;
+}
+
+.web-pro-ver .nav-tabs > li.active > a,
+.web-pro-ver .nav-tabs > li.active > a:hover,
+.web-pro-ver .nav-tabs > li.active > a:focus {
+    background: #fff;
+    color: #666;
+    font-weight: bold;
+    height: 45px;
+}
+
+.subject-list-style .web-style-radio {
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.pr12 {
+    padding-right: 12px;
+}
+
+span.list-stule-upload {
+    top: 64%;
+    right: 45px;
+    cursor: pointer;
+    width: 33px;
+    height: 36px;
+}
+
+.list-stule-upload .webuploader-pick {
+    width: 33px;
+    height: 36px;
+    padding: 0;
+    /*background: rgba(21, 21, 21, 0.51) url("./editingCenter/app/toBeCompiled/images/b43-1.png") no-repeat scroll center 3px;*/
+    background: rgba(21, 21, 21, 0.51);
+}
+
+
+/* 提示框样式 */
+
+.invalidate-input-box {
+    position: relative;
+}
+
+.invalidate-input-box span.ng-scope {
+    display: block;
+    background: #e74955;
+    color: #FFF;
+    position: absolute;
+    top: -33px;
+    text-align: center;
+    min-width: 140px;
+    border-radius: 16px;
+    line-height: 28px;
+    left: -50px;
+}
+
+.invalidate-input-box span i {
+    content: "";
+    background: url("./editingCenter/app/toBeCompiled/images/sjx.png") no-repeat;
+    display: block;
+    width: 10px;
+    height: 7px;
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.invalidate-input-box span p {
+    margin-bottom: 0px !important;
+    color: #fff !important;
+    text-align: center !important;
+    font-size: 12px !important;
+    float: none!important;
+    line-height: 28px!important;
+}
+
+
+/* 提示框样式 */
+
+.atals .row_news .m_nav_3 > ul li {
+    width: 130px;
+}
+
+.pos-top-f24 span {
+    top: -24px;
+}
+
+.edit-news-focusImage p {
+    line-height: 28px;
+}
+
+.pb60 {
+    padding-bottom: 60px;
+}
+
+.mt8 {
+    margin-top: 8px;
+}
+
+@media screen and (max-width:1024px) {
+    .web-compatible-ml14 {
+        margin-left: 14px;
+    }
+    .web-compatible-mlNeg14 {
+        margin-left: -14px;
+    }
+    .web-compatible-pr15 {
+        padding-right: 15px;
+    }
+}
+
+.subject-item tags-input .host {
+    margin: 0 0;
+}
+
+.websiteOrIwo_timeLine_head_row_news .btn-primary .s_icon {
+    padding-right: 0px;
+}
+
+.box-fix-bt .text-right .btn,
+.box-fix-bt .txt_r .btn {
+    padding-right: 22px;
+}
+
+.box-fix-bt .btn-primary {
+    width: auto;
+    height: 30px;
+    margin-right: 5px;
+    font-size: 14px;
+    background: #0081b1;
+    padding: 4px 0;
+    font-family: "Microsoft Yahei";
+}
+
+.box-fix-bt .btn-primary img {
+    position: relative;
+    left: 8px;
+    width: 18px;
+    height: 18px;
+    border: none;
+}
+
+.box-fix-bt .btn-primary:hover {
+    background: #1ABAA0;
+    border-color: #1ABAA0;
+}
+
+.mb60 {
+    margin-bottom: 60px;
+}
+
+.table tbody tr td,
+.table tbody tr td a {
+    color: black;
+}
+
+.table tbody tr td a:hover {
+    text-decoration: none;
+}
+
+.m_box_2 .time_item_cnt a {
+    color: #666;
+    line-height: 30px;
+    margin-left: 6px;
+}
+
+.m_box_2 .time_item_cnt a:hover {
+    text-decoration: none;
+}
+
+
+/*针对Chrome的兼容*/
+
+@media all and (min-width:0) {
+    .pos-top-neg4 {
+        top: 1px !important;
+    }
+}
+
+
+/*针对Firefox的兼容
+
+@-moz-document url-prefix() {
+    .pos-top-neg4 {
+        top: -4px !important;
+    }
+}
+*/
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.row_allas {
+    padding: 20px 0px 50px 20px;
+}
+
+.news_input_check .form-control {
+    width: 236px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.h120 {
+    height: 120px;
+}
+
+.star-red {
+    color: #d72420;
+    font-style: normal;
+    float: left;
+    margin: 9px 20px 0 4px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.pt63 {
+    padding-top: 63px;
+}
+
+.mb16 {
+    margin-bottom: 16px;
+}
+
+.webaddress-star-red {
+    color: #d72420;
+    font-style: normal;
+    margin-right: 4px;
+    vertical-align: -3px;
+}
+
+.manuinfo-star-red {
+    color: #D72420;
+    font-style: normal;
+    margin: 0 10px 0 -14px;
+    vertical-align: -3px;
+}
+
+.toBeCompiled-draftlist-footer {
+    margin-top: -4px!important;
+}
+
+.pb46 {
+    padding-bottom: 46px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.page p .dropdown .bth-fix {
+    width: 80px;
+}
+
+.page p .dropdown .dropdown-menu {
+    min-width: 80px;
+}
+
+.row_news .m_nav_3.rt_wt.close-to-right {
+    position: absolute;
+    right: 0;
+}
+
+.row_allas .atals .new_tplb .new_con {
+    border: 1px solid #d3d5d4;
+    border-radius: 4px;
+}
+
+.atals .new_tplb .new_con td div.imgCon img {
+    width: 208px;
+    height: 140px;
+    border: 0px;
+}
+
+.row_allas .mt0 {
+    margin-top: 0px;
+}
+
+.row_allas .pd0 {
+    padding-top: 0px;
+}
+
+.atals .new_tplb .new_con td .imgCon {
+    width: 210px;
+    height: 142px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 48px;
+}
+
+.Iw-box-fix {
+    top: -50px;
+    z-index: 1000;
+    right: 0px;
+}

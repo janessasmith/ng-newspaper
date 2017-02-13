@@ -1,0 +1,53 @@
+<div class="toBeCompiled-share-container select-item-by-tree">
+    <div class="toBeCompiled-share-head">
+        <p ng-bind="title"></p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+    </div>
+    <div class="toBeCompiled-share-body">
+        <div class="toBeCompiled-share-content">
+            <div class="con">
+                <div class="conL left">
+                    <div class="header">
+                        <p>组织列表</p>
+                    </div>
+                    <div class="cont cont_">
+                        <treecontrol selected-node="selectedNodePA" expanded-nodes="expandedPA" on-node-toggle="showToggle(node)" class="tree-light" tree-model="treedataPA" options="treePAOptions" on-selection="showSelected(node)"><span title="{{node.GNAME}}" ng-bind="node.GNAME"></span></treecontrol>
+                    </div>
+                </div>
+                <div class="middle cursorDefault">
+                    <img src="./editingCenter/app/images/jt-l.png">
+                </div>
+                <div class="conR right">
+                    <div class="body">
+                        <div class="main">
+                            <div class="left">
+                                <div class="left-div">
+                                    <div class="head">
+                                        <p>选择角色</p>
+                                    </div>
+                                    <div class="body">
+                                        <input type="text" ng-model="searchWordLeft" class="form-control" placeholder="输入关键词" />
+                                        <div class="list">
+                                            <div class="head">
+                                                <p>角色列表</p>
+                                            </div>
+                                            <ul>
+                                                <li ng-show="selectedRole.indexOf(role.ROLEID)<0" ng-class="{'selected':role==currRole}" ng-click="chooseUserName(role)" ng-repeat="role in roleDatas | filter:myFilter"><span title="{{role.ROLEDESC!=undefined?role.ROLEDESC:role.ROLEDESC}}" ng-bind="role.ROLEDESC!=undefined?role.ROLEDESC:role.ROLEDESC"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pb20">
+                <div class="row mt20 button">
+                    <button ng-click="submit()" class="share-btn ml136 btn_confirm">确定</button>
+                    <button ng-click="close()" class="share-btn ml20 btn_cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,322 @@
+<div class="websiteCabletPreview_nav">
+    <div class="box-fix-bt box-fix-top">
+        <div class="txt_r">
+            <button class="btn btn-primary" ng-click="edit()" ng-if="status.btnRights['web.daibian.bianji']||status.btnRights['web.daishen.bianji']">
+                <span class="s_icon">
+                    <img src="./editingCenter/newspaper/images/bj46-1.png"> 
+                </span>编辑
+            </button>
+            <button class="btn btn-primary" ng-click="creationAxis()" ng-if="status.typeOfDraft<3">
+                <span class="s_icon">
+                    <img ng-src="./resourceCenter/images/z14-1.png" />
+                </span>创作轴
+            </button>
+            <!-- 因为眉山日报要求图集的总图说也能查看痕迹，所以去掉item.DOCTYPEID==status.preview.news的判断 -->
+            <!-- <button class="btn btn-primary wt120" ng-click="bigFace(item)" ng-if="item.DOCTYPEID==status.preview.news&&status.bigFaceRights['website.trace.chakan']"> -->
+            <button class="btn btn-primary wt120" ng-click="bigFace(item)" ng-if="status.bigFaceRights['website.trace.chakan']">
+                <span class="s_icon width-pic">
+                    <img src="./editingCenter/app/toBeCompiled/images/b9.png"> 
+                </span> <span ng-bind="status.bitFaceTit"></span>
+            </button>
+            <!-- ngIf: status.btnRights['web.daishen.tuigao'] -->
+            <!-- ngIf: status.btnRights['web.daibian.songshen']||status.btnRights['web.draft.songshen'] -->
+            <!-- <button class="btn btn-primary ng-scope" ng-click="webDraftPend()" ng-if="status.btnRights['web.daibian.songshen']||status.btnRights['web.draft.songshen']">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/website/images/b105.png" src="./editingCenter/website/images/b105.png"> 
+                </span> 送审
+            </button> -->
+            <!-- end ngIf: status.btnRights['web.daibian.songshen']||status.btnRights['web.draft.songshen'] -->
+            <!-- ngIf: status.btnRights['web.daishen.qianfa']||status.btnRights['web.draft.qianfa'] -->
+            <!-- ngIf: status.btnRights['web.daishen.qianfa'] -->
+            <!-- ngIf: status.btnRights['web.daibian.qianfa'] -->
+            <!--  <button class="btn btn-primary ng-scope" ng-click="webSignDirect()" ng-if="status.btnRights['web.daibian.qianfa']">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/website/images/b122.1.png" src="./editingCenter/website/images/b122.1.png"> 
+                </span> 直接签发
+            </button> -->
+            <!-- end ngIf: status.btnRights['web.daibian.qianfa'] -->
+            <!-- ngIf: status.btnRights['web.daibian.qianfa'] -->
+            <!-- <button class="btn btn-primary ng-scope" ng-click="webSignTime()" ng-if="status.btnRights['web.daibian.qianfa']">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/website/images/b122.2.png" src="./editingCenter/website/images/b122.2.png"> 
+                </span> 定时签发
+            </button> -->
+            <!-- end ngIf: status.btnRights['web.daibian.qianfa'] -->
+            <!-- ngIf: status.btnRights['web.signtime.chexiaodingshi'] -->
+            <!-- ngIf: status.btnRights['web.signtime.xiugaidingshi'] -->
+            <!-- ngIf: status.btnRights['web.recyclemgr.huanyuan'] -->
+            <!-- ngIf: status.btnRights['web.recyclemgr.delete'] -->
+            <button class="btn btn-primary" ng-click="preview()" ng-if="status.btnRights['web.daibian.yulan']||status.btnRights['web.daishen.yulan']||status.btnRights['web.yiqianfa.yulan']">
+                <span class="s_icon">
+                    <img src="./editingCenter/website/images/b104.png"> 
+                </span> 预览
+            </button>
+            <!-- <button class="btn btn-primary" ng-click="showVersionTime()">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/website/images/b104.png" src="./editingCenter/website/images/b104.png"> 
+                </span> 流程版本
+            </button> -->
+            <button class="btn btn-primary" ng-click="printBtn()" ng-hide="status.typeOfDraft==3">
+                <span class="s_icon">
+                     <img ng-src="./editingCenter/app/images/zm15.png" /> 
+                </span> 打印
+            </button>
+            <button class="btn btn-primary" ng-click="close()">
+                <span class="s_icon">
+                    <img src="./editingCenter/website/images/bclose.png"> 
+                </span> 关闭
+            </button>
+        </div>
+    </div>
+</div>
+<div class="websiteCabletPreview">
+    <!-- websiteCabletPreview_context s-->
+    <div class="websiteCabletPreview_context slide-down" ng-if="status.initBth">
+        <!-- <div class="websiteCabletPreview_head">
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>来源：</b>
+                    <span>{{item.DOCSOURCENAME}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>关键字：</b>
+                    <span>{{item.KEYWORDS}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>最后修改时间：</b>
+                    <span>{{item.CRTIME}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>栏目：</b>
+                    <span>{{item.CHNLDESC}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>原地址：</b>
+                    <span>{{item.ORIGINALADDRESS}}</span>
+                </p>
+                <p class="col-md-4" ng-if="item.DOCSTATUSNAME!=='已发'">
+                    <b>状态：</b>
+                    <span>{{item.DOCSTATUSNAME}}</span>
+                </p>
+                <p class="col-md-4" ng-if="item.DOCSTATUSNAME=='已发'">
+                    <b>发布时间：</b>
+                    <span>{{item.CRTIME}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>作者：</b>
+                    <span>{{item.AUTHOR}}</span>
+                </p>
+                <p class="col-md-8" ng-if="item.DOCSTATUSNAME!=='已发'">
+                    <b>原标题：</b>
+                    <span>{{item.ORIGINALTITLE}}</span>
+                </p>
+                <p class="col-md-4"  ng-if="item.DOCSTATUSNAME=='已发'">
+                    <b>状态：</b>
+                    <span>{{item.DOCSTATUSNAME}}</span>
+                </p>
+                <p class="col-md-4" ng-if="item.DOCSTATUSNAME=='已发'">
+                    <b>已签时间：</b>
+                    <span>{{item.FLOWVERSIONTIME}}</span>  
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank" ng-if="item.DOCSTATUSNAME=='已发'">
+                <p class="col-md-12">
+                    <b>原标题：</b>
+                    <span>{{item.ORIGINALTITLE}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-12">
+                    <b>摘要：</b>
+                    <span>{{item.ABSTRACT}}</span>
+                </p>
+            </div>
+        </div> -->
+        <div class="websiteCabletPreview_head">
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4" ng-if="data.params.methodname!=='getLinkDoc'">
+                    <b>来源：</b>
+                    <span>{{item.DOCSOURCENAME}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>作者：</b>
+                    <span>{{item.AUTHOR}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>关键字：</b>
+                    <span>{{item.KEYWORDS}}</span>
+                </p>
+                <p class="col-md-4" ng-if="data.params.methodname==='getLinkDoc'">
+                    <b>状态：</b>
+                    <span>{{item.WEBSTATUSNAME}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>最后版本时间：</b>
+                    <span>{{item.OPERTIME}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>原标题：</b>
+                    <span>{{item.ORIGINALTITLE}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>原地址：</b>
+                    <span>{{item.ORIGINALADDRESS}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>栏目：</b>
+                    <span>{{item.CHNLDESC}}</span>
+                </p>
+                <p class="col-md-4" ng-if="data.params.methodname!=='getLinkDoc'">
+                    <b>状态：</b>
+                    <span>{{item.WEBSTATUSNAME}}</span>
+                </p>
+                <p class="col-md-4" ng-if="item.DOCSTATUSNAME!=='已发' && data.params.methodname!=='getLinkDoc'">
+                    <b>责任编辑：</b>
+                    <span>{{item.EDITORTRUENAME}}</span>
+                </p>
+                <p class="col-md-4" ng-if="item.DOCSTATUSNAME=='已发'">
+                    <b>发布时间：</b>
+                    <span>{{item.DOCPUBTIME}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank" ng-if="item.DOCSTATUSNAME=='已发'">
+                <p class="col-md-4" ng-if="item.DOCSTATUSNAME=='已发'">
+                    <b>签发时间：</b>
+                    <span>{{item.ISSUETIME}}</span>
+                </p>
+                <p class="col-md-4" ng-if="item.DOCSTATUSNAME=='已发'">
+                    <b>摘要：</b>
+                    <span ng-bind-html="item.ABSTRACT" title="{{item.ABSTRACT}}" class="pointer"></span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank" ng-if="item.DOCSTATUSNAME!=='已发'">
+                <p class="col-md-12">
+                    <b>摘要：</b>
+                    <span ng-bind-html="item.ABSTRACT" title="{{item.ABSTRACT}}" class="pointer"></span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-12">
+                    <b>备注：</b>
+                    <span ng-bind="item.REMARKS" title="{{item.REMARKS}}" class="pointer"></span>
+                </p>
+            </div>
+        </div>
+        <!-- websiteCabletPreview_context e-->
+    </div>
+    <!-- <div class="websiteCabletPreview_head_rank">
+        <img src="./editingCenter/website/images/cablet1.jpg" alt="Top" ng-click="status.initBth=!status.initBth" ng-class="{'website_img_rota':status.initBth==true}" class="pos">
+    </div> -->
+    <div class="websiteCabletPreview_content" ng-if="item.DOCTYPEID==status.preview.news" trs-add-to-create>
+        <!-- <h1>{{item.TITLE}}</h1>
+        <h4>{{item.CRTIME}}</h4> -->
+        <h4 class="newspaper-abstract" ng-bind="item.LEADTITLE"> </h4>
+        <h1 class="newspaper-title" ng-bind-html="item.TITLE" ng-style="{color:item.TITLECOLOR}"></h1>
+        <h4 class="newspaper-abstract" ng-bind="item.SUBTITLE"></h4>
+        <!--        <span class="content_img"><img src="./editingCenter/website/images/cablet2.jpg"></span>
+        <h3>浙江启动防台风2级应急响应</h3>-->
+        <div class="TRS_ueditor" ng-bind-html="item.HTMLCONTENT|trsSce" ng-hide="status.bitFaceTit=='关闭痕迹'"></div>
+    </div>
+    <div class="websiteCabletPreview_content" ng-if="item.DOCTYPEID==status.preview.atlas" trs-add-to-create>
+        <h4 class="newspaper-abstract" ng-bind="item.LEADTITLE"> </h4>
+        <h1 class="newspaper-title" ng-bind-html="item.TITLE" ng-style="{color:item.TITLECOLOR}"></h1>
+        <h4 class="newspaper-abstract" ng-bind="item.SUBTITLE"> </h4>
+        <div class=" wt960 edit">
+            <div class="carousel-row">
+                <trs-slider slider-pic="item.DOC_PICTURELIST"></trs-slider>
+            </div>
+        </div>
+        <p ng-show="data.item.CONTENT!=''" class="mc-margin-left-xl">
+            <span class="websiteCabletPreview_nav_atlas_shows">图集说明:</span>
+            <span ng-bind-html="item.HTMLCONTENT" class="websiteCabletPreview_nav_item_CONTENT TRS_ueditor" ng-show="status.bitFaceTit=='关闭痕迹'"></span>
+            <!-- 眉山图集总图说也支持查看痕迹 -->
+            <span class="TRS_ueditor" ng-bind-html="item.HTMLCONTENT|trsSce" ng-hide="status.bitFaceTit=='关闭痕迹'"></span>
+        </p>
+    </div>
+    <div class="websiteCabletPreview_content" ng-if="item.DOCTYPEID==status.preview.linkDoc" trs-add-to-create>
+        <h4 class="newspaper-abstract" ng-bind="item.LEADTITLE"> </h4>
+        <h1 class="newspaper-title" ng-bind-html="item.TITLE" ng-style="{color:item.TITLECOLOR}"></h1>
+        <h4 class="newspaper-abstract" ng-bind="item.SUBTITLE"> </h4>
+        <p class="TRS_ueditor">
+            <a target="_blank" href="{{item.SRCURL}}">{{item.SRCURL}}</a>
+        </p>
+        <div class=" wt960 edit" ng-show="item.PICSLOGO!=status.media.noPic">
+            <div class="carousel-row">
+                <trs-slider slider-pic="item.DOC_PICTURELIST"></trs-slider>
+            </div>
+        </div>
+    </div>
+    <div class="websiteCabletPreview_content" ng-if="item.DOCTYPEID==status.preview.subject" trs-add-to-create>
+        <h4 class="newspaper-abstract" ng-bind="item.LEADTITLE"> </h4>
+        <h1 class="newspaper-title" ng-bind-html="item.TITLE" ng-style="{color:item.TITLECOLOR}"></h1>
+        <h4 class="newspaper-abstract" ng-bind="item.SUBTITLE"> </h4>
+        <h4>{{item.CRTIME}}</h4>
+        <p ng-bind-html="item.SPECIALCONTENT"></p>
+    </div>
+    <div class="websiteCabletPreview_content bigFace websiteAtlasPreview_content">
+        <trs-big-face></trs-big-face>
+    </div>
+    <!-- websiteCabletPreview_content e-->
+    <!-- websiteCabletPreview_audioVideo s -->
+    <!-- <div class="websiteCabletPreview_audioVideo">
+        <div class="websiteCabletPreview_audioVideo_con">
+            <h4>音频视频：</h4>
+            <ul>
+                <li>
+                    <a href="#"><img src="./editingCenter/website/images/cablet3.jpg" alt="前方记者发回实况录音实况.wma">
+                        <span>前方记者发回实况录音实况.wma</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="./editingCenter/website/images/cablet4.jpg" alt="台风实况拍摄.mp4">
+                        <span>台风实况拍摄.mp4</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+    <!-- websiteCabletPreview_audioVideo e -->
+    <div class="websiteCabletPreview_readPictures">
+        <div class="websiteCabletPreview_readPictures_con">
+            <h4 ng-show="data.params.methodname!=='getLinkDoc'">导读图片：</h4>
+            <!-- <a href="javascript:void(0);"><img ng-src="{{item.READINGPICS[0].PERPICURL}}" height="90"> </a> -->
+            <a href="javascript:void(0);" ng-show="data.params.methodname!=='getLinkDoc'" class="website_preview_read_pictures" ng-repeat='outlinePic in item.OUTLINEPICS'>
+                <!-- <span style="background: red;height: 90px;width: 90px; display: inline-block;"></span> -->
+                <img ng-src="{{outlinePic.PERPICURL}}" height="90" alt="" ng-click="picPreview(outlinePic)">
+            </a>
+            <!-- <a href="javascript:void(0);" ng-repeat='readPic in item.READINGPICS'><img ng-src="{{readPic.PERPICURL}}" height="90"> </a> -->
+            <div class="websiteCabletPreview_newsAnnex">
+                <h4>新闻附件：</h4>
+                <ul>
+                    <li ng-repeat="attachfile in item.ATTACHFILE || item.SPECIALFILE">
+                        <a href="{{attachfile.SRCPICURL}}" download style="cursor:pointer;">
+                            <img ng-src="./editingCenter/website/images/{{data.typeOfAttachmentArr[$index]}}.png" alt="">
+                            <span ng-bind="attachfile.SRCFILE |truncate:28:'...' " title="{{attachfile.SRCFILE}}"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="websiteCabletPreview_extendedRead" ng-if="data.params.methodname!=='getLinkDoc'&&item.RELATEDNEWS.length!=0">
+        <div class="websiteCabletPreview_extendedRead_con">
+            <h4>相关新闻：</h4>
+            <ul>
+                <li ng-repeat="extendItem in item.RELATEDNEWS">
+                    <a href="{{extendItem.DOCPUBURL}}" target="_blank" ng-bind="extendItem.TITLE"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <trs-go-top></trs-go-top>
+    <div class="websiteCabletPreview_bottomborder"></div>
+    <div cg-busy="loadingPromise"></div>
+</div>

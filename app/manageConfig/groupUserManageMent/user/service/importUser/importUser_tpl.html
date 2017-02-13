@@ -1,0 +1,26 @@
+<div class="userManageMent-imptUser">
+    <div class="head">
+        <p ng-bind="data.modalTitle"></p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1"
+             ng-click="cancel()"/>
+    </div>
+    <div class="userManageMent-importUser">
+        <span>选择需要上传的附件：</span>
+        <div class="userManageMent-importUser_main">
+            <div>
+                <input type="text" class="form-control" ng-model="file.name" ng-disabled="true"/>
+                <button ngf-select="chooseFile()" ng-model="file" ngf-validate="{pattern: '.xls'}">浏览</button>
+            </div>
+            <span>
+                * 请选择.xls格式文件
+            </span>
+            <!-- <ol>
+                <li>请使用英文标点，参数之间用英文“,”隔开</li>
+            </ol> -->
+        </div>
+    </div>
+    <div class="userManageMent-importUser_footer">
+        <button class="news-role-btn-success btn_cancel" ng-click="cancel()">取消</button>
+        <button class="news-role-btn btn_confirm" ng-click="confirm()">确定</button>
+    </div>
+</div>

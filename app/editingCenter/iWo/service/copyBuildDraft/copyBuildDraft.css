@@ -1,0 +1,129 @@
+.copyBuildDraftMain {
+    padding-top: 208px;
+}
+
+.copyBuildDraftMain .modal-dialog {
+    width: 458px;
+}
+
+.copyBuildDraftMain .modal-content {
+    background-color: #DEDCD6;
+}
+
+.copyBuildDraft {
+    width: 454px;
+    min-height: 170px;
+    border:3px solid #DEDCD6;
+}
+
+.copyBuildDraft .main {
+    width: 450px;
+    min-height: 164px;
+    background: white;
+}
+
+.copyBuildDraft .head {
+    height: 36px;
+    line-height: 36px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.copyBuildDraft .head img {
+    margin-left: 340px;
+    cursor: pointer;
+}
+
+.copyBuildDraft .main .body {
+    min-height: 75px;
+    color: #676562;
+    font-size: 12px;
+    background-color: #F0F2F4;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+.copyBuildDraft .main .body .sep {
+    /*height: 1px;
+    background-color: white;*/
+}
+
+.copyBuildDraft .main .body .itext {
+    width: 360px;
+    height: 28px;
+    line-height: 14px;
+    display: inherit;
+}
+
+.copyBuildDraft .main .body div {
+    line-height: 34px;
+}
+
+.copyBuildDraft .main .body .title {
+    margin-left: 25px;
+}
+
+.copyBuildDraft .main .body .text {
+    margin-left: 12px;
+}
+
+.copyBuildDraft .main .body .value {
+    overflow: hidden;
+}
+
+.copyBuildDraft .main .body .value .input {
+    position: relative;
+    top: 2px;
+}
+.copyBuildDraft .main .body .value .input input{
+    cursor: pointer;
+}
+
+.copyBuildDraft .main .body .value .title {
+    float: left;
+    margin-left: 0px;
+}
+
+.copyBuildDraft .main .body .value ul {
+    list-style: none;
+    padding-left: 70px
+}
+
+.copyBuildDraft .main .body .value ul li {
+    float: left;
+    line-height: 0px;
+    margin-top: 4px;
+    margin-right: 10px;
+}
+
+.copyBuildDraft .main .body .value ul li span {
+    margin-left: 6px;
+}
+
+.copyBuildDraft .main .bottom {
+    padding-left: 276px;
+    padding-top: 15px;
+    font-size: 12px;
+    color: white;
+    height: 54px;
+}
+
+.copyBuildDraft .main .bottom button {
+    width: 74px;
+    height: 25px;
+    border: 0px;
+    border-radius: 4px;
+    background-color: #0095CE
+}
+
+
+/* 2015/12/3 复制建新稿*/
+
+.copyBuildDraft_body .invalidate-input-box span {
+    left: 40px;
+}
+
+.copyBuildDraft_body_copy_b {
+    font-weight: normal;
+}

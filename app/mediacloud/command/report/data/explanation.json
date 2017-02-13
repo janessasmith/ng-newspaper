@@ -1,0 +1,10 @@
+{
+    "CORPSId": "2",
+    "TITLE": "重庆邮电大学",
+    "CONTENT":"重庆邮电大学（Chongqing University of Posts and Telecommunications）简称重邮，坐落于中国重庆市主城区南山风景区内，是中华人民 共和国工业和信息化部与重庆市人民政府共建的教学研究型大学，入选国家“中西部高校基础能力建设工程”",
+    "NOTIFICATIONS":"1,2,3",
+    "files":[
+        {"fileId":1,"fileName":"xxxx.jpg","filePath":"common/images/new-pic.jpg"},
+        {"fileId":1,"fileName":"xxxx.jpg","filePath":"common/images/new-pic.jpg"}
+    ]
+}

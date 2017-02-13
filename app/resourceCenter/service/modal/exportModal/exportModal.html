@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <button type="button" class="close"><span>&times;</span></button>
+    <span class="modal-title">文档－导出文档</span>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <trs-checkbox label="同时导出文档附件" ischecked="list.ISNOPAYMENT==1" callback="togglepayment()" class="mc-margin-left-xs"></trs-checkbox>
+    </div>
+    <div class="row">
+        <trs-checkbox label="同时导出扩展字段" ischecked="list.ISNOPAYMENT==1" callback="togglepayment()" class="mc-margin-left-xs"></trs-checkbox>
+    </div>
+    <div class="row"><span class="mc-margin-left-xs">选择要导出的字段</span>
+        <trs-checkbox label="全部" ischecked="list.ISNOPAYMENT==1" callback="togglepayment()" class="mc-margin-left-xs"></trs-checkbox>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <trs-checkbox label="所属栏目" ischecked="list.ISNOPAYMENT==1" callback="togglepayment()" class="mc-margin-left-xs"></trs-checkbox>
+        </div>
+        <div class="col-md-6">
+            <trs-checkbox label="标题" ischecked="list.ISNOPAYMENT==1" callback="togglepayment()" class="mc-margin-left-xs"></trs-checkbox>
+        </div>
+        <div class="col-md-6">
+            <trs-checkbox label="来源" ischecked="list.ISNOPAYMENT==1" callback="togglepayment()" class="mc-margin-left-xs"></trs-checkbox>
+        </div>
+        <div class="col-md-6">
+            <trs-checkbox label="首页标题" ischecked="list.ISNOPAYMENT==1" callback="togglepayment()" class="mc-margin-left-xs"></trs-checkbox>
+        </div>
+    </div>
+    <div class="row"><span class="mc-margin-left-xs">导出到</span>
+        <button class="btn btn-default btn-commen">
+            <span class="s_icon"><img src="./editingCenter/app/images/b4-1.png" /></span> 浏览
+        </button>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary btn-sm btn_confirm" type="button" ng-click="export()">导出</button>
+    <button class="btn btn-primary btn-sm btn_cancel" type="button" ng-click="cancel()">取消</button>
+</div>

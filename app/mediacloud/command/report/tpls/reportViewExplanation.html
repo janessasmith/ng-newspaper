@@ -1,0 +1,14 @@
+<div class="lh-bd-xl" ng-controller="reportViewExplanationCtrl">
+    <div class="lh-rw-sm">
+        <label>联合报道描述：</label>
+        <div class="lh-rw-sp">
+            <p>{{explanationContents.CONTENT}}</p>
+        </div>
+    </div>
+    <div class="lh-rw-sm">
+        <label>附件：</label>
+        <div class="rw-fj" ng-repeat="file in explanationContents.files">
+            <a ng-href="/wcm/file/read_file.jsp?FileName={{file.filePath}}">{{file.fileName}}</a>
+        </div>
+    </div>
+</div>

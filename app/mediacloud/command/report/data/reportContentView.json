@@ -1,0 +1,52 @@
+{
+    "result": [
+        {
+            "CORPSPUBCONTENTID": "2",
+            "CONTENT": "马拉松(Marathon)长跑是国际上非常普及的长跑比赛项目，全程距离26英里385码，折合为42.195公 里（也有说法为42.193公里）。分全程马拉松（Full Marathon）",
+            "CRUSER": "肖永生",
+            "USERHEAD":"common/images/new-pic.jpg",
+            "CRTIME": "2016-01-01 12:12:12",
+            "files":[
+                {
+                    "fileId":1,
+                    "fileName":"xxxx.jpg",
+                    "fileType":"1",
+                    "filePath":"common/images/new-pic.jpg"
+                },
+                {
+                    "fileId":1,
+                    "fileName":"xxxx.jpg",
+                    "fileType":"2",
+                    "filePath":"common/images/new-pic.jpg"
+                }
+            ]
+        },
+        {
+            "CORPSPUBCONTENTID": "3",
+            "CONTENT": "马拉松(Marathon)长跑是国际上非常普及的长跑比赛项目，全程距离26英里385码，折合为42.195公 里（也有说法为42.193公里）。分全程马拉松（Full Marathon）",
+            "CRUSER": "肖永生",
+            "USERHEAD":"common/images/new-pic.jpg",
+            "CRTIME": "2016-01-01 12:12:12",
+            "files":[
+                {
+                    "fileId":1,
+                    "fileName":"xxxx.jpg",
+                    "fileType":"1",
+                    "filePath":"common/images/new-pic.jpg"
+                },
+                {
+                    "fileId":1,
+                    "fileName":"xxxx.jpg",
+                    "fileType":"2",
+                    "filePath":"common/images/new-pic.jpg"
+                }
+            ]
+        }
+    ],
+    "pageInfo": {
+        "totalNum": 1,
+        "pageSize": 10,
+        "pageCount": 1,
+        "pageIndex": 1
+    }
+}

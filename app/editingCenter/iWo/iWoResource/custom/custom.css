@@ -1,0 +1,18 @@
+.iWoCustom_edit_input_group {
+    margin-right: 90px;
+}
+
+div.edit_input_group.iWoCustom_edit_input_group .input-group-btn button.btn_edit_search.iWoCustom_senior_search {
+    margin-left: 10px;
+    width: 80px;
+    color: #65635f;
+    background: url("./editingCenter/app/images/b-m.jpg") repeat-x;
+    line-height: 28px;
+    border-radius: 5px;
+}
+div.edit_input_group.iWoCustom_edit_input_group .input-group-btn button.btn_edit_search.iWoCustom_senior_search:hover{
+	border: none;
+	background: #4696d3;
+	color: #fff;
+	outline: none;
+}

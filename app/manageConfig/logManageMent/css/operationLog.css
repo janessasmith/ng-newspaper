@@ -1,0 +1,27 @@
+.manageCon-logMgr-operationLog {
+    position: relative;
+}
+
+.manageCon-logMgr-operationLog td {
+    word-break: break-all;
+}
+
+.manageCon-logMgr-operationLog th.lcol-time {
+    width: 155px;
+}
+
+.manageCon-logMgr-operationLog th.lcol-products {
+    width: 120px;
+}
+
+.manageCon-logMgr-operationLog th.td-check {
+    width: 60px;
+}
+
+.manageCon-logMgr-operationLog th.lcol-user {
+    width: 200px;
+}
+
+.manageCon-logMgr-operationLog th.lcol-ip {
+    width: 130px;
+}

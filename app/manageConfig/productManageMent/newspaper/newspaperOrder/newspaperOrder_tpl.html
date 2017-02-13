@@ -1,0 +1,75 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-6">
+        <button ng-if="status.right.dieci.xinjian" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="newOrder()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='newOrder'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" >
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='newOrder'?'b1-1.png':'b1.png'}}" /></span> 新建叠次
+        </button>
+        <button ng-if="status.right.dieci.diecipaixu" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="orderRank()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='orderRank'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" >
+            <span class="s_icon"><img ng-src="./manageConfig/productManageMent/images/{{status.batchOperateBtn['hoverStatus']=='orderRank'?'new1-1.png':'new1.png'}}" /></span> 叠次排序
+        </button>
+        <button ng-if="status.right.dieci.shanchu" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-disabled="selectedArray.length<1" ng-click="orderDelete()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='orderDelete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" >
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='orderDelete'?'fg3-1.png':'fg3.png'}}" /></span> 批量删除
+        </button>
+    </div>
+    <div class="col-md-6">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li>
+                <span>产品管理</span>
+                <span>报纸管理</span>
+                <span>叠次管理</span>
+                <p class="font-color-red" ng-bind="channelName|trsLimitTo:25"></p>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-6">
+        <trs-single-select selected-option="newspaperManageStateSelected" callback="queryByDieCiType()" options="newspaperManageState"></trs-single-select>
+    </div>
+    <div class="col-md-6">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字" ng-model="keywords">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="searchDieCi()">搜索</button>
+          </span>
+        </div>
+    </div>
+</div>
+<div class="row col-md-12 templateMge-content-table">
+    <div class="edit_table">
+        <table class="table table-striped">
+            <thead>
+                <tr nowrap="nowrap">
+                    <th class="td-check">
+                        <trs-checkbox ischecked="selectedArray.length==items.length && items.length!=0" callback="selectAll()"></trs-checkbox>
+                    </th>
+                    <th class="td-number" nowrap="nowrap">序号</th>
+                    <th nowrap="nowrap">叠次名</th>
+                    <th nowrap="nowrap">创建人</th>
+                    <th nowrap="nowrap">创建时间</th>
+                    <th nowrap="nowrap">管理</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items" nowrap="nowrap">
+                    <td class="td-check">
+                        <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                    </td>
+                    <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td>
+                    <td ng-bind="item.CHNLNAME" ng-click="modifyOrderInformation(item)" class="pointer" nowrap="nowrap"></td>
+                    <td ng-bind="item.TRUENAME" class="pointer" nowrap="nowrap"></td>
+                    <td ng-bind="item.CRTIME" nowrap="nowrap"></td>
+                    <td class="iwo_operate" nowrap="nowrap">
+                        <span class="mgr5" ng-if="item.STATUS!=0&&status.right.dieci.tingyong"><a ng-click="enableViews(item.CHANNELID,item.CHNLNAME)"><img src="./manageConfig/productManageMent/images/n5.png">启用</a></span>
+                        <span class="mgr5" ng-if="item.STATUS==0&&status.right.dieci.tingyong"><a ng-click="disableViews(item.CHANNELID,item.CHNLNAME)"><img src="./manageConfig/productManageMent/images/n5_1.png">停用</a></span>
+                        <img ng-if="status.right.dieci.shanchu" ng-click="deleteViews(item.CHANNELID,item.CHNLNAME)" src="./manageConfig/productManageMent/images/n6.png">
+                        <a ng-if="status.right.dieci.shanchu" ng-click="deleteViews(item.CHANNELID,item.CHNLNAME)">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div cg-busy="loadingPromise"></div>
+    </div>
+</div>
+<div class="templateMge-footer">
+    2016 眉山日报传媒集团 北京拓尔思信息技术股份有限公司 版权所有 保留所有权
+</div>

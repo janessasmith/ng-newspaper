@@ -1,0 +1,93 @@
+<div trs-scroll-fix class="row edit_right_head edit-news-sample">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen opacity100" ng-click="enforcedUlock()" ng-disabled="selectedArray.length==0" ng-if="status.btnRights['paper.dysy.qiangzhijiesuo']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='enforcedUlock'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon pmm-four-word-btn-icon">
+                <img ng-src="./editingCenter/newspaper/images/{{status.batchOperateBtn['hoverStatus']=='enforcedUlock'?'zm50-1.png':'zm50.png'}}" />
+            </span> 强制解锁
+        </button>
+        <!-- <button class="btn btn-default btn-commen hidden-operate" ng-click="outSending()" ng-disabled="selectedArray.length==0" ng-if="status.btnRights['paper.dysy.youjianwaifa']">
+            <span class="s_icon mlr0"><img src="./editingCenter/app/images/i20.png" /></span> 邮件外发
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate" ng-click="exportDraft()" ng-disabled="selectedArray.length==0">
+            <span class="s_icon"><img src="./editingCenter/app/images/i17.png" /></span> 导出
+        </button> -->
+        <!-- <button class="btn btn-default btn-commen hidden-operate" ng-click="printBtn()" ng-disabled="selectedArray.length==0" ng-if="status.btnRights['paper.dysy.dayin']">
+            <span class="s_icon"><img src="./editingCenter/app/images/i32.png" /></span> 打印
+        </button> -->
+        <button class="btn btn-default btn-commen" ng-click="refresh()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='refresh'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='refresh'?'i18-1.png':'i18.png'}}" />
+            </span> 刷新
+        </button>
+        <!-- <button class="btn btn-default btn-commen hidden-operate">
+            <span class="s_icon"><img src="./editingCenter/app/images/i18.png" /></span><a target="_blank" ui-sref="newspapersampledetail">详情</a>
+        </button> -->
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li>
+                <span ng-bind="data.paperMsg.SITEDESC|trsLimitTo:10" title="data.paperMsg"></span>
+                <span>大样审阅</span>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-7 sampleReview-archives-select">
+        <div class="page-totals">
+            版面总数：<span class="page-totals-number" ng-bind="data.items.length"></span>
+        </div>
+        <trs-checkbox ischecked="status.isUnSigned" callback="queryBySingleSelect('isUnSigned')"></trs-checkbox>
+        <span class="s_onlyme hidden-operate manuscript-onlyme-word">未签</span>
+        <trs-checkbox ischecked="status.isSigned" callback="queryBySingleSelect('isSigned')"></trs-checkbox>
+        <span class="s_onlyme hidden-operate manuscript-onlyme-word">已签</span>
+        <trs-checkbox ischecked="status.isReviewed" callback="queryBySingleSelect('isReviewed')"></trs-checkbox>
+        <span class="s_onlyme hidden-operate manuscript-onlyme-word">评审</span>
+        <trs-checkbox ischecked="status.isUnReviewed" callback="queryBySingleSelect('isUnReviewed')"></trs-checkbox>
+        <span class="s_onlyme hidden-operate manuscript-onlyme-word">未评审</span>
+        <div class="order-box">
+            <span class="order-box-lable" ng-class="{'order-box-lable-active':data.selectedDieCiArray.indexOf(item)>-1}" ng-click="setSelectedDieCi(item)" ng-repeat="item in data.DieCiArray" ng-bind="item.CHNLDESC"></span>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="navbar-form navbar-right">
+            <span class="navbar-right-date" ng-click="queryTime(data.queryTimeOper.minus)">前一天</span>
+            <span class="navbar-right-date" ng-click="queryTime(data.queryTimeOper.today)">今天</span>
+            <span class="navbar-right-date" ng-click="queryTime(data.queryTimeOper.add)">后一天</span>
+            <div class="form-group">
+                <input type="text" size="10" class="form-control w140" ng-model="pubDate" placeholder="{{data.time.queryTime}}" data-autoclose="1" bs-datepicker readonly="readonly" placement="left-bottom" data-date-format="yyyy-MM-dd">
+                <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="editCen-sampleReview-calendar-img">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sampleReview-content">
+    <div cg-busy="loadingPromise"></div>
+    <div class="row">
+        <div class="col-md-3" ng-repeat="item in data.items">
+            <div class="thumbnail edit-news-sample-content">
+                <a target="_blank" ui-sref="newspapersampledetail({composeId:item.COMPOSEPAGEINFOID})">
+                    <img src="{{'/wcm/imgcenter.do?ServiceId=mlf_paper&MethodName=findImageOfComposePage&Width=224&ComposeId='+item.COMPOSEPAGEINFOID}}" class="edit-news-sample-img-link">
+                    <span ng-show="item.SIGNCOUNT>status.noSignCount" class="tips" ng-bind="item.SIGNCOUNT"></span>
+                </a>
+            </div>
+            <div class="edit-news-sample-caption-content-container">
+                <div>
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)>-1" callback="singleSelecte(item)"></trs-checkbox><b class="edit-news-sample-caption-content-title">{{item.FTPAGECODE}}&nbsp;&nbsp;{{item.DIECINAME}}-{{item.PAGENAME}}</b></div>
+                <div>
+                    <label class="title-bar">修改时间：</label><span class="title-content" ng-bind="item.UPDATEDATE"></span></div>
+                <div>
+                    <label class="title-bar">组版人：</label><span class="title-content" ng-bind="item.OPRUSER_TNAME"></span></div>
+                <div>
+                    <label class="title-bar">状态：</label><span class="title-content"><a class="title-status" ng-click="processRecordingView(item)" ng-bind="item.STATUS_NAME"></a></span></div>
+                <div>
+                    <label class="title-bar">见报日期：</label><span class="title-content" ng-bind="item.FTPUBDATE"></span></div>
+                <div>
+                    <label class="title-bar">见报版次：</label><span class="title-content" ng-bind="item.FTPAGECODE"></span></div>
+                <div>
+                    <label class="title-bar">见报版名：</label><span class="title-content" ng-bind="item.FTPAGENAME"></span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr/>

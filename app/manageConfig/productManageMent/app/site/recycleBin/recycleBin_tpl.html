@@ -1,0 +1,34 @@
+<div trs-scroll-fix class="row edit_right_head proManMent_pmm_head">
+    <div class="col-md-8 col-lg-9"></div>
+    <div class="col-md-4 col-lg-3 pmm_website_site">
+        <form name="searchForm" novalidate>
+            <div class="input-group edit_input_group invalidate-input-box">
+                <input name="searchword" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50" type="text" ng-model="searchWord" class="form-control manage-pmm-form-search mr10" placeholder="请输入关键字" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                <b class="input-group-btn">
+                    <button validation-submit="searchForm" class="btn btn-default btn_edit_search mt5" ng-click="search()" type="button">搜索</button>
+                </b>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="manage-pmm-container website-site-container recycle_site">
+    <div class="pmm-website-item-out left" ng-repeat="item in items">
+        <div ng-click="selectSite(item)" class="pmm-website-item-default text-center {{item.SITEID == selectedSite.SITEID?'pmm-website-item-active':''}}">
+            <span title="{{item.SITEDESC}}" ng-bind="item.SITEDESC | trsLimitTo:10"></span>
+        </div>
+        <div ng-show="item.SITEID == selectedSite.SITEID" class="pmm-website-item-btn-group">
+            <a>
+                <img src="./manageConfig/productManageMent/images/i3.png" ng-click="deleteViews(item.SITEID)"/>
+            </a>
+            <a>
+                <img src="./manageConfig/productManageMent/images/i1.png" ng-click="reductionViews(item.SITEID)"/>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="manage-pmm-recycle">
+    <a ng-click="goBack()">
+        <img src="./manageConfig/productManageMent/images/i8.png"/>
+        <span>返回列表</span>
+    </a>
+</div>

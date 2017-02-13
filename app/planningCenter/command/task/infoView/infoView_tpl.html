@@ -1,0 +1,42 @@
+<div class="edit_right_mid"> 
+</div>
+<div class="edit_table infoAssignment">
+    <table class="table table-striped">
+        <thead>
+            <tr> 
+                <th class=" ">标题</th>
+                <th class=" ">接收人</th>
+                <th>类型</th>
+                <th class=" ">发布时间</th>
+                <th class=" ">创建人</th>
+                <th class=" ">创建时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="info in vm.infos"> 
+                <td class="txt_c clickable" ng-bind="info.TITLE" ng-click="viewInfo(info)"></td>
+                <td>
+                    {{info.FLAG}}
+                </td>
+                <td>{{info.INFOTYPE}}</td>
+                <td>{{info.PUBDATE }}</td>
+                <td>{{info.CRUSERNAME }}</td>
+                <td>{{info.CRTIME }}</td>
+            </tr>
+        </tbody>
+    </table>
+  <!--   <div class="info mc-margin-bottom-xs" ng-repeat="info in vm.infos">
+        <div class="reportbar mc-padding-horizontal-sm"> 
+            <span class="username"><i class="fa fa-circle red mc-padding-right-xs" ng-show="checkunread(info)"></i>{{info.CRUSERNAME}}</span>
+            <span class="pull-right">发送于:{{info.CRTIME}}</span>
+            <p class="title">{{info.TITLE}} </p>
+        </div>
+        <div class="reportdetail" ng-bind="info.CONTENT"> 
+        </div>
+    </div> -->
+    <div class="page" ng-if="vm.pager">
+        <trs-pagenation-left page-count="vm.pager.PAGECOUNT" total-num="vm.pager.ITEMCOUNT" pagesize="vm.pager.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="vm.pager.ITEMCOUNT" ng-change="pageChanged()" ng-model="vm.pager.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="vm.pager.PAGESIZE" rotate="false" num-pages="vm.pager.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumptoPage()" currpage="vm.pageParams.jumptoPage" page="vm.pager"></trs-pagenation-right>
+    </div>
+</div>

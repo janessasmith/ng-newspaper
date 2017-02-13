@@ -1,0 +1,25 @@
+<form name="newOrderForm" novalidate>
+    <div class="man_produ_newpress">
+        <div class="man_produ_newpress_head">
+            <p>叠次管理-新建叠次</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_newpress_content">
+            <div class="man_produ_newpress_con_form">
+                <b>报纸名称：</b>
+                <span class="newOrder-content-title" ng-bind="paper.SITEDESC"></span>
+            </div>
+            <div class="man_produ_newpress_con_form">
+                <b>名称：</b>
+                <div class="invalidate-input-box">
+                    <input class="form-control" type="text" name="content" ng-model="content" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA">
+                </div>
+            </div>
+        </div>
+        <div class="man_produ_newpress_footer">  
+            <button class="news-role-btn-success man_produ_newpress_footer_cancel btn_confirm" ng-click="confirm()">确定</button>		
+            <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>			
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

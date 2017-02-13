@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "name": "重庆日报官方微信",
+            "accountUnit": "重庆日报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "95",
+            "weiboId": "dj-love-ysl",
+            "num":3
+        },
+        {
+            "name": "重庆日报官方微信",
+            "accountUnit": "重庆晨报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "87",
+            "weiboId": "dj",
+            "num":4
+        },
+        {
+            "name": "重庆日报官方微信",
+            "accountUnit": "重庆晚报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "85",
+            "weiboId": "love",
+            "num":5
+        },
+        {
+            "name": "重庆晨报官方微信",
+            "accountUnit": "重庆晚报",
+            "accountType": "财经",
+            "headPicUrl": "http://img5.imgtn.bdimg.com/it/u=3494656842,1664655621&fm=21&gp=0.jpg",
+            "score": "85",
+            "weiboId": "love",
+            "num":1
+        }
+    ]
+}

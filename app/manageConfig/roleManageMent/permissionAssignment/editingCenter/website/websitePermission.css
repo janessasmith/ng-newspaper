@@ -1,0 +1,26 @@
+.websitePermission .assignedAuthority {
+    background-color: #1EBBA1;
+    padding: 3px;
+    color: white;
+    border-radius: 5px;
+}
+
+.websitePermission .commonLight {
+    font-size: 15px;
+    font-weight: bolder;
+    color: black;
+}
+
+.websitePermission .regular-checkbox + label {
+    padding: 6px!important;
+}
+
+.websitePermission .regular-checkbox:checked + label:after {
+    top: 0px!important;
+    left: 0px!important;
+}
+
+.websitePermission .inherit {
+    margin: 10px;
+    font-size: 13px;
+}

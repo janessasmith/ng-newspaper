@@ -1,0 +1,128 @@
+<form name="addCusMonForm" novalidate>
+    <div class="addCustomMonitor">
+        <div class="customMonitor_nav row">
+            <div class="col-md-8 col-lg-9"></div>
+            <div class="col-md-4 col-lg-3">
+                <ol class="breadcrumb pull-right edit_breadcrumb">
+                    <li>
+                        <span>自定义监控</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="addCustomMonitor_con">
+            <div class="customMonitor_con_addMonitor">
+                <div class="addMonitor_head">
+                    <span class="addMonitor_head_span" ng-bind="status.isAdd?'新增监控':'修改监控'"></span>
+                </div>
+                <div class="addMonitor_main">
+                    <div class="addMonitor_main_Info">
+                        <div class="tit mb15">基本信息</div>
+                        <div class="label_info invalidate-input-box"><span class="fl w78">监控名称：</span>
+                            <input name="monitorname" validator="required" class="form-control fl" maxlength="50" ng-model="data.monitorname" type="text" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA" />
+                            <!-- <span class="recommend">推荐</span> --></div>
+                        <div class="clear"></div>
+                        <div class="label_info"><span class="fl w78">监控简介：</span>
+                            <textarea class="form-control fl" ng-model="data.monitorabstract" name="monitorAbstract" id="monitorAbstract" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="addMonitor_main_Info">
+                        <div class="tit">检索条件</div>
+                        <div class="label_info">
+                            <span>包含以下<b>全部</b>的关键词，多个关键词请用空格隔开</span></br>
+                            <input ng-model="data.searchincludeall" class="form-control fl w910" type="text" /><span class="recommend"><!-- 推荐 --></span>
+                        </div>
+                        <div class="label_info">
+                            <span>包含以下<b>任意一个</b>关键词，多个关键词请用空格隔开</span></br>
+                            <input ng-model="data.searchincludeanyone" class="form-control w910" type="text" />
+                        </div>
+                        <div class="label_info">
+                            <span>不包含以下关键词，多个关键词请用空格隔开</span></br>
+                            <input ng-model="data.searchincludenone" class="form-control w910" type="text" />
+                        </div>
+                    </div>
+                    <div class="addMonitor_main_Info">
+                        <div class="tit">来源选择</div>
+                        <div class="label_info">
+                            <span class="w78 fl">来源：</span>
+                            <div class="source_info {{data.sourcetype!=='1'?'unselected':''}}">
+                                <trs-single-radio ischecked="data.sourcetype==='1'" group="source" callback="data.sourcetype='1'"></trs-single-radio>全部来源
+                            </div>
+                            <div class="clear"></div>
+                            <div class="source_info ml78 mt10 {{data.sourcetype!=='2'?'unselected':''}}">
+                            <trs-single-radio ischecked="data.sourcetype==='2'" group="source" callback="data.sourcetype='2'"></trs-single-radio><span class="title">按来源类型</span>
+                                <trs-checkbox ischecked="temp.sourcecontentByType[type.SOURCENAME]==true" ng-repeat="type in status.types" ng-if="type.SOURCENAME!=='zjxz'" label="{{type.DISPLAYNAME}}" callback="chooseByType(type)"></trs-checkbox>
+                                <!-- <trs-checkbox ischecked="" label="数字报" callback=""></trs-checkbox>
+                            <trs-checkbox ischecked="" label="网站" callback=""></trs-checkbox>
+                            <trs-checkbox ischecked="" label="APP" callback=""></trs-checkbox>
+                            <trs-checkbox ischecked="" label="微信" callback=""></trs-checkbox>
+                            <trs-checkbox ischecked="" label="集团成品库" callback=""></trs-checkbox> -->
+                            </div>
+                            <div class="clear"></div>
+                            <div class="source_infos ml78 mt10  {{data.sourcetype!=='3'?'unselected':''}}">
+                                <trs-single-radio ischecked="data.sourcetype==='3'" group="source" callback="data.sourcetype='3'"></trs-single-radio>按来源栏目
+                                <ul class="source_infos_ul">
+                                    <!-- <li class="on"><span class="chnl_span on">新华社</span></li>
+                                <li><span class="chnl_span">网站</span></li>
+                                <li><span class="chnl_span">数字报</span></li>
+                                <li><span class="chnl_span">APP</span></li>
+                                <li><span class="chnl_span">微信</span></li>
+                                <li><span class="chnl_span">微博</span></li>
+                                <li><span class="chnl_span">集团成品库</span></li>
+                                <li><span class="chnl_span">最近选择</span></li> -->
+                                    <li ng-click="chooseChannel(type)" ng-repeat="type in status.types" class="{{temp.selectChannel.SOURCENAME==type.SOURCENAME?'on':''}}"><span class="chnl_span {{temp.selectChannel.SOURCENAME==type.SOURCENAME?'on':''}}" ng-bind="type.DISPLAYNAME"></span></li>
+                                </ul>
+                                <div class="search_chnls">
+                                    <div class="input-group edit_input_group">
+                                        <input ng-readonly="data.sourcetype!=='3'?true:false" type="text" ng-model="searchword" class="form-control edit_form_control" placeholder="请输入搜索关键字">
+                                        <span class="input-group-btn">
+                                        <button ng-disabled="data.sourcetype !== '3'" ng-click="searchChannels()" class="btn btn-default btn_edit_search" type="button">搜索</button>
+                                    </span>
+                                    </div>
+                                    <div class="col-md-7 plr0">
+                                        <ul class="search_chnls_ul">
+                                            <li ng-repeat="channel in status.sourceChannels.PAGEITEMS">
+                                                <trs-checkbox ng-init="getUniqueId(channel)" ischecked="!!temp.sourceChannels[channel.uniqueId]" label="" callback="chooseSourceName(channel)"></trs-checkbox><span title="{{channel.desc}}" ng-bind="channel.desc|trsLimitTo:6"></span>
+                                            </li>
+                                            <div class="clear"></div>
+                                        </ul>
+                                        <div class="clear"></div>
+                                        <div ng-if="page.PAGECOUNT>1" class="page">
+                                            <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.startpage" max-size="4" class="pagination-sm page_left" boundary-links="false" items-per-page="page.pagesize" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                                        </div>
+                                    </div>
+                                    <div class="chnls_right col-md-5">
+                                        <div class="tit">已选栏目</div>
+                                        <div class="chnls_right_con">
+                                            <ul class="chnls_right_con_ul">
+                                                <li ng-repeat="(key,value) in temp.sourceChannels" title="{{value.desc}}">{{value.desc | trsLimitTo:8}}<span ng-click="deleteSrcChannel(key)"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <!-- <div class="addMonitor_main_Info">
+                    <div class="tit">其他条件</div>
+                    <div class="label_info">
+                        <span class="w78">可靠性：</span>
+                        <trs-checkbox ischecked="" label="高" callback=""></trs-checkbox>
+                        <trs-checkbox ischecked="" label="中" callback=""></trs-checkbox>
+                        <trs-checkbox ischecked="" label="低" callback=""></trs-checkbox>
+                    </div>
+                </div> -->
+                    <div class="foot">
+                        <div>
+                            <button class="addMonitor_btn" ng-click="cancel()">取消</button>
+                            <button class="addMonitor_btn" ng-click="confirm()" ng-bind="status.isAdd?'添加监控':'修改监控'"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

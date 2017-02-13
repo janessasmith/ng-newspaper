@@ -1,0 +1,16 @@
+<div class="weibo-account-yy lf" ng-controller="wxoperatingCtrl">
+    <div class="weibo-tit fs-bh-tit">账号运营状况</div>
+    <div class="wb-league-deal">
+        <div class="league-deal-top">
+            <a href="" class="lg-sel-btn lg-sel-cur" checked="lg-sel-cur" ng-click="queryOperating(0)">数据量</a>
+            <a href="" class="lg-sel-btn" checked="lg-sel-cur" ng-click="queryreadNum()">阅读数</a>
+            <a href="" class="lg-sel-btn" checked="lg-sel-cur" ng-click="querycommentNum()">评论数</a>
+        </div>
+        <div class="wb-zb-chart">
+            <echarts-line id="line2"  width="888" height="411" type="stacked" 
+            legend="legend"  xaxis="xaxis" series="series" grid="grid" symbol="symbol"  color="color">
+        </echarts-line>
+        </div>
+
+    </div>
+</div>

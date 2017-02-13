@@ -1,0 +1,43 @@
+<!-- 资源中心大数据的打印模板 -->
+<printcontainer>
+    <div class="print-group trs-print-big-data" ng-repeat="item in printItems.content" id="printPage{{$index}}" trs-finish-repeat>
+        <div class="print-big-data-title">
+            <span class="print_Date_seconed">打印时间：{{date}}</span>
+            <div class="printTit" ng-bind="item.DOCTITLE"></div>
+            <div class="printDesc">
+                <ul>
+                    <li>
+                        <p>见报：{{item.DOCPUBTIME}}</p>
+                        <p>第<span>&nbsp;&nbsp;&nbsp;</span>版</p>
+                        <p>版面：</p>
+                        <p>序号：{{item.ZB_GUID}}</p>
+                    </li>
+                    <li>
+                        <p>正文：<span ng-bind="item.XIAOYANGFILE" ng-if="item.XIAOYANGFILE"></span></p>
+                        <p>字数：{{item.TXS}}</p>
+                        <p>行数：{{parseHang(item.TXS)}}</p>
+                    </li>
+                    <li>
+                        <p>图片：
+                            <p ng-repeat="pic in item.IMAGE" ng-bind="pic.img"></p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>流程：<span ng-repeat="version in item.VERSION">[{{version.CRTIME}}]{{version.ATTRIBUTE}}-{{version.OPERUSERNAME}}({{version.OPERATION}})</span></p>
+                    </li>
+                    <li>
+                        <p>备注：<span></span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="printContent mt10">
+            <span class="win_print_shoulder" ng-if="item.JTITLE" ng-bind="item.JTITLE"></span>
+            <div class="printTit" ng-bind="item.DOCTITLE"></div>
+            <span class="win_print_yinti" ng-if="item.SUBTITLE" ng-bind="item.SUBTITLE"></span>
+            <span class="printAuthor" ng-bind="item.DOCAUTHOR"></span>
+        </div>
+        <div class="print-big-data-main" ng-bind-html="item.CONTENT|trsSce"></div>
+        <div style="page-break-before:always;"></div>
+    </div>
+</printcontainer>

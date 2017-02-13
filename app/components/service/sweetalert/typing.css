@@ -1,0 +1,61 @@
+.toBeCompiled-typing-window .modal-dialog{
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    margin: auto;
+}
+
+.toBeCompiled-typing-window .man_produ_column_delete{
+    background: #F0F2F5;
+    text-align: center;
+    font-size: 12px;
+    padding: 40px 15px;
+}
+
+.toBeCompiled-typing-window .man_produ_delete_footer{
+    padding: 10px 10px 10px 200px;
+}
+
+.toBeCompiled-typing-window .man_produ_delete_footer button{
+    width: 80px;
+    height: 30px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.toBeCompiled-typing-window textarea {
+    width: 385px;
+    max-width: 385px;
+    height: 200px;
+    max-height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    resize: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+.toBeCompiled-typing-window .man_produ_delete_footer button.confirm-btn{
+    background: #1aba9f;
+}
+.toBeCompiled-typing-window .man_produ_column_delete > p,
+.toBeCompiled-typing-window .man_produ_column_delete > div{
+    display: inline-block;
+}
+.toBeCompiled-typing-window .man_produ_column_delete > p{
+    font-size: 14px;
+    text-align: right;
+    max-width: 39%;
+}
+.toBeCompiled-typing-window .man_produ_column_delete > div{
+    width: 60%;
+}

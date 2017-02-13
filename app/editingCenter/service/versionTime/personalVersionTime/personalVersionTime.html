@@ -1,0 +1,47 @@
+<div class="websiteCabletPreview">
+    <!-- websiteCabletPreview_context s-->
+    <div class="websiteCabletPreview_context">
+        <div class="websiteCabletPreview_head">
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>来源：</b>
+                    <span class="ml27">{{data.item.NEWSSOURCES}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>署名作者：</b>
+                    <span>{{data.item.SIGNATUREAUTHOR}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>创建时间：</b>
+                    <span>{{data.item.FLOWVERSIONTIME}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-12">
+                    <b>关键词：</b>
+                    <span>{{data.item.KEYWORDS}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-12">
+                    <b>摘要：</b>
+                    <span>{{data.item.ABSTRACT}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="websiteCabletPreview_content" ng-if="data.item.DOCTYPE=='新闻'">
+        <h4>{{data.item.LEADTITLE}}</h4>
+        <h1>{{data.item.TITLE}}</h1>
+        <h4>{{data.item.SUBTITLE}}</h4>
+        <p ng-bind-html="data.htmlContent"></p>
+    </div>
+    <div class="websiteCabletPreview_content" ng-if="data.item.DOCTYPE=='图集'">
+        <h1>{{data.item.TITLE}}</h1>
+        <div class=" wt960 edit">
+            <div class="carousel-row">
+                <trs-slider slider-pic="data.item.DOC_PICTURELIST"></trs-slider>
+            </div>
+        </div>
+    </div>
+</div>

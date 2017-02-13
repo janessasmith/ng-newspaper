@@ -1,0 +1,754 @@
+.event_track .calendar {
+    min-height: 544px;
+    border: 3px solid #dddddd;
+    border-radius: 3px;
+}
+
+.event_track .calendar_head {
+    height: 48px;
+    line-height: 48px;
+    background-color: #f1f2f6;
+}
+
+.event_track .calendar_head b {
+    padding-left: 15px;
+    color: #333333;
+}
+
+.event_track .eventAxis {
+    width: 100%;
+    height: 640px;
+}
+
+.event_track .eventAxis .eventAxis-head {
+    height: 50px;
+    width: 100%;
+    background-size: 100%;
+    background: url("./planningCenter/images/eva.png");
+    position: relative;
+    overflow: hidden;
+}
+
+.event_track .eventAxis .eventAxis-head .eventAxisUl {
+    position: relative;
+    width: 2000px;
+}
+
+.event_track .eventAxis .eventAxis-head .eventAxisUl .timenode {
+    float: left;
+    list-style: none;
+    width: 133px;
+    position: relative;
+    height: 30px;
+}
+
+.event_track .eventAxis .eventAxis-head .eventAxisUl .timenode img {
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    cursor: pointer;
+}
+
+.event_track .eventAxis .eventAxis-left {
+    height: 590px;
+    width: 413px;
+    float: left;
+    border-right: 2px solid #EDEDED;
+    position: relative;
+}
+
+.event_track .eventAxis .eventAxis-left img.node {
+    position: absolute;
+    right: -12px;
+}
+
+.event_track .eventAxis .eventAxis-left img.no1 {
+    top: 90px;
+}
+
+.event_track .eventAxis .eventAxis-left img.no2 {
+    top: 180px;
+}
+
+.event_track .eventAxis .eventAxis-left img.no3 {
+    top: 270px;
+}
+
+.event_track .eventAxis .eventAxis-left img.no4 {
+    top: 360px;
+}
+
+.event_track .eventAxis .eventAxis-left img.no5 {
+    top: 450px;
+}
+
+.event_track .eventAxis .eventAxis-left .info {
+    position: absolute;
+    width: 324px;
+    height: 55px;
+    right: 30px;
+    border-radius: 4px;
+    line-height: 55px;
+    text-align: right;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.event_track .eventAxis .eventAxis-left .info .info-inner {
+    position: relative;
+    background-color: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.event_track .eventAxis .eventAxis-left .info .info-inner .info-arrow {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-color: inherit;
+    border-radius: 4px;
+    right: -3px;
+    top: 16px;
+    transform: rotate(45deg) !important;
+    -ms-transform: rotate(45deg) !important;
+    -moz-transform: rotate(45deg) !important;
+    -webkit-transform: rotate(45deg) !important;
+    -o-transform: rotate(45deg) !important;
+    z-index: -10;
+}
+
+.event_track .eventAxis .eventAxis-left .info span {
+    margin-right: 10px;
+}
+
+.event_track .eventAxis .eventAxis-left .inf1 {
+    top: 73px;
+}
+
+.event_track .eventAxis .eventAxis-left .inf2 {
+    top: 163px;
+}
+
+.event_track .eventAxis .eventAxis-left .inf3 {
+    top: 253px;
+}
+
+.event_track .eventAxis .eventAxis-left .inf4 {
+    top: 343px;
+}
+
+.event_track .eventAxis .eventAxis-left .inf5 {
+    top: 433px;
+}
+
+.event_track .eventAxis .eventAxis-right {
+    height: 590px;
+    width: 660px;
+    border-left: 2px solid #EDEDED;
+    margin-left: 413px;
+}
+
+.event_track .eventAxis .eventAxis-right .leftPics {
+    height: 590px;
+    width: 300px;
+    padding-top: 30px;
+    float: left;
+}
+
+.event_track .eventAxis .eventAxis-right .leftPics>div:last-child {
+    border-bottom: none;
+}
+
+.event_track .eventAxis .eventAxis-right .rightPics {
+    width: 300px;
+    height: 590px;
+    margin-left: 300px;
+    padding-top: 120px;
+}
+
+.event_track .eventAxis .eventAxis-right .rightPics>div {
+    border-bottom: none;
+}
+
+.event_track .eventAxis .eventAxis-right .picStyle {
+    width: 100%;
+    height: 185px;
+    background-size: 100%;
+    background: url("./planningCenter/images/axislpic.png");
+    border-bottom: 4px solid #EDEDED;
+    line-height: 185px
+}
+
+.event_track .eventAxis .eventAxis-right .picStyle .eventAxis-pic {
+    width: 80%;
+    height: 90%;
+    margin-top: 10px;
+    float: right;
+    border: 1px solid #D0CDC7;
+}
+
+.event_track .eventAxis .eventAxis-right .picStyle .eventAxis-pic .eventAxis-pic-info {
+    width: 100%;
+    height: 20%;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.event_track .eventAxis .eventAxis-right .picStyle .eventAxis-pic .evepicdiv {
+    height: 80%;
+}
+
+.event_track .eventAxis .eventAxis-right .picStyle .eventAxis-pic img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    background-color: #EDEDED;
+}
+
+.event_track .calendar_content {
+    min-height: 496px;
+}
+
+.event_track .hot_head_line_calendar {
+    padding: 10px 0 20px 0;
+    position: relative;
+}
+
+.event_track .calendar.calendar_clear_height,
+.event_track .calendar.calendar_clear_height .calendar_content {
+    min-height: 0;
+}
+
+.event_track .calendar.event_track_group_newest_news {
+    margin: 0 10px 10px 0;
+}
+
+
+/*.event_track .calendar_head {*/
+
+
+/*height: 37px !important;*/
+
+
+/*}*/
+
+.event_track .calendar.event_track_group_newest_news .calendar_content {
+    padding: 10px;
+}
+
+.event_track p.evefocred {
+    text-indent: 2em;
+    padding-left: 5px;
+    line-height: 30px;
+    padding-right: 5px;
+}
+
+.event_track .event_track_newest_page_group {
+    text-align: center;
+}
+
+.event_track .event_track_newest_page_group > p {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+
+.event_track .event_track_newest_page_group > p > input {
+    width: 30px;
+    height: 20px;
+}
+
+.event_track .event_track_group_statistics_left > div {
+    margin-bottom: 10px;
+}
+
+.event_track .event_track_group_statistics_left > div > span,
+.event_track .event_track_group_statistics_left > div > div {
+    display: inline-block;
+}
+
+.event_track .event_track_group_statistics_left > div > span {
+    vertical-align: top;
+    font-family: serif;
+    font-weight: bold;
+    width: 9%;
+    margin-left: 10px;
+}
+
+.event_track .event_track_group_statistics_left > div > div {
+    width: 88%;
+}
+
+.event_track .event_track_group_statistics_left .group_statistics_item {
+    float: left;
+    margin: 0 0 10px 10px;
+    background: #ececec;
+    padding: 0 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    min-width: 90px;
+    height: 20px;
+    text-align: center;
+}
+
+.event_track .event_track_group_statistics_left .group_statistics_item.group_statistics_item_active {
+    color: #fff;
+    background: #19b99d;
+}
+
+.event_track .focus_reduction_main_left {
+    overflow: hidden;
+    height: 230px;
+    margin-bottom: 20px;
+}
+
+.event_track .focus_reduction_main_left > div {
+    width: 50%;
+    float: left;
+}
+
+.event_track .focus_reduction_main_left > div .calendar {
+    margin-top: 0;
+}
+
+.event_track .focus_reduction_main_left > div .calendar.calendar_clear_height .calendar_content {
+    padding: 0;
+    height: 187px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event_track .event_track_focus_reduction .focus_reduction_main_left .calendar_head {
+    height: 36.5px;
+    line-height: 36.5px;
+}
+
+.event_track .event_track_focus_reduction .table {
+    margin-bottom: 0;
+}
+
+.event_track .event_track_focus_reduction .table td {
+    line-height: 21px;
+}
+
+.event_track .calendar.calendar_bottom_20_padding .calendar_content.hot_head_line_calendar {
+    padding: 10px 10px 20px 10px;
+}
+
+.event_track .calendar.calendar_bottom_10_padding .calendar_content.hot_head_line_calendar {
+    padding: 10px 10px 10px 10px;
+}
+
+.event_track .calendar.calendar_bottom_0_padding .calendar_content.hot_head_line_calendar {
+    padding: 10px 10px 0 10px;
+}
+
+.event_track .calendar.calendar_0_padding .calendar_content.hot_head_line_calendar {
+    padding: 0;
+}
+
+.event_track .event_track_concat_pic .calendar_content > div,
+.event_track .event_track_concat_video .calendar_content > div {
+    margin-bottom: 10px;
+}
+
+.event_track .event_track_concat_pic .calendar_content > div:last-child,
+.event_track .event_track_concat_video .calendar_content > div:last-child {
+    margin-bottom: 0;
+}
+
+.event_track .event_track_concat_pic .concat_pic_chose_page,
+.event_track .event_track_concat_video .concat_pic_chose_page {
+    height: 50px;
+    background: #f8f9fb;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.event_track .event_track_concat_pic .concat_pic_chose_page > button,
+.event_track .event_track_concat_video .concat_pic_chose_page > button {
+    width: 95px;
+    height: 30px;
+}
+
+.event_track .event_track_concat_pic .concat_pic_chose_page > button:nth-child(1),
+.event_track .event_track_concat_video .concat_pic_chose_page > button:nth-child(1) {
+    margin-right: 30px;
+}
+
+.event_track .event_track_concat_video_main {
+    min-height: 360px;
+    height: 70%;
+}
+
+.event_track .event_track_concat_video_main > div {
+    float: left;
+    margin: 0 1% 10px 0;
+    width: 19%;
+    height: 170px;
+    background: #f8efc0;
+}
+
+.event_track .event_track_point_contrast .edit_table table {
+    margin-bottom: 0;
+}
+
+.event_track .event_track_point_contrast .calendar {
+    margin-right: 20px;
+}
+
+.event_track .calendar_content .hot_head_line_tl {
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    text-align: center;
+    font-family: "微软雅黑";
+    color: #2E2E2E;
+}
+
+.event_track .calendar_content .hot_head_line_detail {
+    overflow: hidden;
+    position: relative;
+    height: 360px;
+    text-align: center;
+    color: white
+}
+
+.event_track .calendar_content .hot_head_line_detail p {
+    margin: 0px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div {
+    position: absolute;
+    border-radius: 140px
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(1) {
+    background: url('./planningCenter/images/ch35.png') #2F98D2 no-repeat center 35px;
+    background-size: 30%;
+    z-index: 2;
+    font-size: 36px;
+    left: 432px;
+    top: 10%;
+    width: 273px;
+    height: 249px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(2) {
+    background: url('./planningCenter/images/ch36.png') #1ABAA0 no-repeat center 18%;
+    font-size: 22px;
+    background-size: 37%;
+    z-index: 1;
+    position: absolute;
+    left: 305px;
+    top: 40%;
+    width: 160px;
+    height: 140px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(3) {
+    background: url(./planningCenter/images/ch37.png) #F19041 no-repeat center 18px;
+    background-size: 40%;
+    z-index: 1;
+    left: 675px;
+    position: absolute;
+    top: 50%;
+    width: 152px;
+    height: 130px;
+    font-size: 18px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(4) {
+    background: url(./planningCenter/images/ch33.png) #6A9CCD no-repeat center 11%;
+    background-size: 48%;
+    z-index: 1;
+    border-radius: 100px;
+    font-size: 18px;
+    position: absolute;
+    top: 5%;
+    left: 653px;
+    width: 130px;
+    height: 120px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(5) {
+    background: url(./planningCenter/images/ch38.png) #A28FC7 no-repeat 8px center;
+    background-size: 30%;
+    z-index: 1;
+    border-radius: 100px;
+    position: absolute;
+    top: 74%;
+    left: 525px;
+    width: 96px;
+    font-size: 18px;
+    height: 79px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(6) {
+    background: url(./planningCenter/images/ch34.png) #E16871 no-repeat 1px center;
+    background-size: 35%;
+    z-index: 1;
+    border-radius: 50px;
+    position: absolute;
+    top: 8%;
+    left: 394px;
+    width: 77px;
+    height: 68px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(1) p {
+    margin-top: 105px;
+    height: 46px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(2) p {
+    margin-top: 66px;
+    height: 29px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(3) p {
+    margin-top: 68px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(4) p {
+    margin-top: 62px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(5) p {
+    margin-top: 18px;
+    padding-left: 36px;
+    padding-right: 16px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(5) span {
+    padding: 0px 2px 0px 16px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(6) p {
+    margin-top: 10px;
+    padding: 0px 0px 0px 9px;
+}
+
+.event_track .calendar_content .hot_head_line_detail div:nth-child(6) span {
+    display: block;
+    padding: 0px 0px 0px 9px;
+}
+
+.event_track .calendar_content .related_information {
+    width: 100%;
+    position: relative;
+    min-width: 710px;
+    margin: 0 auto;
+    height: 310px;
+}
+
+.event_track .related_information div {
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+
+.event_track .related_information div p {
+    margin: 0px;
+}
+
+.event_track .related_information div p a {
+    color: white;
+    text-decoration: none;
+}
+
+.event_track .related_information div:nth-child(1) {
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-5.png) no-repeat;
+    top: 112px;
+    left: 355px;
+    width: 285px;
+    font-size: 40px;
+    height: 169px;
+    line-height: 169px;
+}
+
+.event_track .related_information div:nth-child(2) {
+    top: 105px;
+    left: 710px;
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-8.png) no-repeat;
+    width: 222px;
+    font-size: 30px;
+    height: 146px;
+    line-height: 146px;
+}
+
+.event_track .related_information div:nth-child(3) {
+    top: 123px;
+    left: 100px;
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-2.png) no-repeat;
+    width: 196px;
+    font-size: 24px;
+    height: 128px;
+    line-height: 128px;
+}
+
+.event_track .related_information div:nth-child(4) {
+    top: 250px;
+    left: 610px;
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-9.png) no-repeat;
+    width: 229px;
+    font-size: 30px;
+    height: 148px;
+    line-height: 148px;
+}
+
+.event_track .related_information div:nth-child(5) {
+    top: 277px;
+    left: 305px;
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-6.png) no-repeat;
+    width: 210px;
+    font-size: 20px;
+    height: 129px;
+    line-height: 129px;
+}
+
+.event_track .related_information div:nth-child(6) {
+    top: 250px;
+    left: 50px;
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-3.png) no-repeat;
+    width: 153px;
+    font-size: 20px;
+    height: 98px;
+    line-height: 98px;
+}
+
+.event_track .related_information div:nth-child(7) {
+    top: 31px;
+    left: 200px;
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-1.png) no-repeat;
+    width: 153px;
+    font-size: 18px;
+    height: 99px;
+    line-height: 99px;
+}
+
+.event_track .related_information div:nth-child(8) {
+    top: 0px;
+    left: 505px;
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-4.png) 0 center no-repeat;
+    width: 185px;
+    font-size: 20px;
+    height: 114px;
+    line-height: 114px;
+}
+
+.event_track .related_information div:nth-child(9) {
+    top: 14px;
+    left: 810px;
+    background: url(./planningCenter/eventAnalyse/eventTrack/images/y-7.png) 0 center no-repeat;
+    width: 160px;
+    font-size: 18px;
+    height: 97px;
+    line-height: 97px;
+}
+
+.event_track .event_table_thead {
+    background: #f4f4f4;
+}
+
+.event_track .event_table_thead tr th {
+    color: #666;
+}
+
+
+/*@keyframes right-move {
+    0% {
+        left: -133px;
+    }
+    100% {
+        left: 10000px;
+    }
+}*/
+
+
+/*相关图片信息*/
+
+.event_track .calender_content_img {
+    float: left;
+    height: 140px;
+    margin-right: 1%;
+    width: 24%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    /*    margin: -0.135em;*/
+    cursor: pointer;
+}
+
+.event_track .calender_content_img img {
+    width: 100%;
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.effect-zoe figcaption {
+    top: auto;
+    bottom: 140px;
+    position: relative;
+    padding: 2em;
+    background: #000;
+    opacity: 0.8;
+    color: #fff;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+
+.effect-zoe h3 {
+    height: 51px;
+    overflow: hidden;
+}
+
+.effect-zoe figcaption > span {
+    float: right;
+}
+
+.effect-zoe p {
+    position: absolute;
+    bottom: 8em;
+    padding: 2em;
+    color: #fff;
+    text-transform: none;
+    font-size: 90%;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+
+.effect-zoe h2,
+.effect-zoe figcaption > span {
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 200%, 0);
+    transform: translate3d(0, 200%, 0);
+}
+
+.effect-zoe figcaption > span::before {
+    display: inline-block;
+    padding: 8px 10px;
+    font-family: 'feathericons';
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.effect-zoe:hover p {
+    opacity: 1;
+}
+
+.effect-zoe:hover figcaption,
+.effect-zoe:hover h2,
+.effect-zoe:hover figcaption > span {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}

@@ -1,0 +1,54 @@
+<div class="container-fluid editing-list plan_head manageCon-logMgr-left">
+    <tabset justified="true">
+        <tab>
+            <accordion class="plan_accordion iwo_accordion log_accordion" close-others="false">
+                <accordion-group class="{{status.currSelected=='operationlog'?'selectedCurr':''}}">
+                    <accordion-heading>
+                        <i></i>
+                        <a ng-click="goToPage('operationlog')" class="ml0">操作日志</a>
+                    </accordion-heading>
+                </accordion-group>
+                <accordion-group>
+                    <accordion-heading>
+                        <i></i>
+                        <a class="ml0">系统日志</a>
+                    </accordion-heading>
+                    <ul>
+                        <li ng-class="{'selectedCurr':status.currSelected=='debug'}" ng-click="goToPage('debug')">
+                            <a>调试</a>
+                        </li>
+                        <!-- <li ng-class="{'selectedCurr':status.currSelected=='performancetest'}" ng-click="goToPage('performancetest')">
+                            <a>性能诊断</a>
+                        </li> -->
+                    </ul>
+                </accordion-group>
+                <accordion-group>
+                    <accordion-heading>
+                        <i></i>
+                        <a class="ml0">事件监控</a>
+                    </accordion-heading>
+                    <ul>
+                        <li ng-class="{'selectedCurr':status.currSelected=='myqueues'}" ng-click="goToPage('myqueues')">
+                            <a>我的队列</a>
+                        </li>
+                        <li ng-class="{'selectedCurr':status.currSelected=='allqueues'}" ng-click="goToPage('allqueues')">
+                            <a>所有队列</a>
+                        </li>
+                    </ul>
+                </accordion-group>
+                <!-- <accordion-group class="{{status.currSelected=='interfacelog'?'selectedCurr':''}}">
+                    <accordion-heading>
+                        <i></i>
+                        <a ng-click="goToPage('interfacelog')" class="ml0">接口日志</a>
+                    </accordion-heading>
+                </accordion-group> -->
+                <accordion-group class="{{status.currSelected=='securitylog'?'selectedCurr':''}}">
+                    <accordion-heading>
+                        <i></i>
+                        <a ng-click="goToPage('securitylog')" class="ml0">安全日志</a>
+                    </accordion-heading>
+                </accordion-group>
+            </accordion>
+        </tab>
+    </tabset>
+</div>

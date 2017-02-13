@@ -1,0 +1,49 @@
+<div class="editCen-newspaper-sampleDetail">
+    <div class="close-sampleDetail" ng-click="closePage()">×</div>
+    <div class="sampleDetail-img-container" trs-drag>
+        <img ng-src="{{'/wcm/imgcenter.do?ServiceId=mlf_paper&MethodName=findImageOfComposePage&Width=0&ComposeId='+status.composeId}}" style="width:{{status.imgWidth}}%;">
+    </div>
+    <div class="show-sampleDetail-bthGroup-container">
+        <div class="sampleDetail-bthGroup">
+            <div ng-repeat="item in status.btnGroup" ng-class="{'versionShow':status.btnStatus.isVersionShow}" ng-mouseenter="enterOperationBtn(item.activeWord)">
+                <!-- <button type="button" class="sampleDetail-hover-btn" data-trigger="hover" data-placement="left" data-template-url="./editingCenter/newspaper/sampleReview/sampleDetail/template/buttonActive.html" data-animation="scale-fade" ng-click="functionOrientation(item.functionName)" bs-popover ng-mouseenter="enterOperationBtn($event)" ng-mouseleave="leaveOperationBtn($event)">
+                </button> -->
+                <div class="sampleDetail-bth-active" ng-show="status.currActiveBtn==item.activeWord" ng-mouseleave="leaveOperationBtn()" ng-click="functionOrientation(item.functionName)">
+                    {{item.activeWord}}
+                    <img src="./editingCenter/newspaper/images/{{item.img}}.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sampleDetail-version-container" ng-show="status.btnStatus.isVersionShow">
+        <p class="cancel-version" ng-click="status.btnStatus.isVersionShow=false">×</p>
+        <div class="sampleDetail-version-line"></div>
+        <div class="sampleDetail-version-inner">
+            <div class="sampleDetail-version-item" ng-repeat="item in data.versionItems">
+                <img src="./editingCenter/app/images/bigcircle.png" alt="">
+                <p>详签时间：<span ng-bind="item.CRTIME"></span></p>
+                <p>详签人：<span ng-bind="item.TRUENAME"></span></p>
+                <p>详签意见：
+                    <span ng-bind="item.REVIEWCONTENT" ng-if="item.REVIEWTYPE==1"></span>
+                    <div class="sampleReview_voice_container" ng-if="item.REVIEWTYPE==2">
+                        <audio preload controls ng-src="{{trustUrl(data.voiceObj[item.REVIEWCONTENT])}}">
+                            <!-- <source src="http://mlf.8531.cn/masvod/public/2016/05/25/20160525_154e5a028e9_r1_64k.mp4"> -->
+                            <!-- <source ng-src="{{data.voiceObj[item.REVIEWCONTENT]}}"> -->
+                        </audio>
+                        <!-- <span ng-bind="item.REVIEWLENGTH+' 秒'"></span> -->
+                    </div>
+                </p>
+                <div class="sampleDetail-version-item-img">
+                    <!-- <img src="" alt=""> -->
+                </div>
+            </div>
+            <div class="sampleDetail-version-loadMore" ng-click="loadMore()" ng-class="{'cursorPointer':page.CURRPAGE * page.PAGESIZE < page.ITEMCOUNT}">
+                <img src="./editingCenter/website/images/images/newTab_2.png" ng-if="page.CURRPAGE * page.PAGESIZE < page.ITEMCOUNT">
+                <span ng-bind="page.CURRPAGE * page.PAGESIZE < page.ITEMCOUNT?'点击展开更多':'没有更多了....'"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div style="width: 100px;height: 100px;background: green;" draggable>
+    
+</div> -->

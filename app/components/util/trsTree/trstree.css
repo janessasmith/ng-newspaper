@@ -1,0 +1,282 @@
+.editing-downlist .tab-content treecontrol ul {
+    height: 120%;
+    background: #3F5974;
+    overflow-y: auto;
+}
+
+.editing-downlist .tab-content treecontrol ul li {
+    width: 120%;
+    display: inline-block;
+}
+
+.editing-list .editing-downlist ul li:hover {
+    background-color: transparent;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem ul {
+    overflow-x: hidden;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li i {
+    margin-left: 74px;
+    position: absolute;
+    top: 12px;
+    width: 20px;
+    height: 16px
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li span {
+    padding-left: 100px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li i {
+    margin-left: 86px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b {
+    margin-left: 5px;
+    width: 12px;
+    height: 8px;
+    position: absolute;
+    top: 0;
+    padding: 22px 8px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-preview {
+    background: url("./editingCenter/website/images/i54.png") no-repeat left center;
+    left: 0px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-preview:hover {
+    background: url("./editingCenter/website/images/i54-1.png") no-repeat left center;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-fragement {
+    background: url("./editingCenter/website/images/i55.png") no-repeat left center;
+    left: 50px;
+    /* top: 40px;*/
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-fragement:hover {
+    background: url("./editingCenter/website/images/i55-1.png") no-repeat left center;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-file {
+    background: url("./editingCenter/website/images/i57.png") no-repeat left center;
+    background-size: 12px;
+    left: 34px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-file:hover {
+    background: url("./editingCenter/website/images/i57-1.png") no-repeat left center;
+    background-size: 12px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-subject {
+    background: url("./editingCenter/website/images/i56.png") no-repeat left center;
+    left: 16px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-subject:hover {
+    background: url("./editingCenter/website/images/i56-1.png") no-repeat left center;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li b.tree-branch-head-more {
+    background: url("/editingCenter/app/images/b8-1.png") no-repeat left center;
+    background-size: 12px 12px;
+    left: 20px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic ul li:last-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul li:last-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul li:last-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul li:last-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul li:last-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul ul li:last-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul ul ul li:last-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul ul ul ul li:last-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul ul ul ul ul li:last-child {
+    border-bottom: 0;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic ul ul li:first-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul li:first-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul li:first-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul li:first-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul ul li:first-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul ul ul li:first-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul ul ul ul li:first-child,
+.editing-downlist .tab-content treecontrol.tree-classic ul ul ul ul ul ul ul ul ul li:first-child {
+    border-top: 1px solid #304558;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-leaf i.tree-leaf-head {
+    background: url("./lib/angular-tree-control/file.png") no-repeat 6px 2px;
+}
+
+.treeContent treecontrol li li span.mySelect .website-left-panel-opened {
+    left: 37px;
+}
+
+.treeContent treecontrol li li span.mySelect .website-left-panel-opened b {
+    margin-left: 10px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li li b {
+    margin-left: 20px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li li li b {
+    margin-left: 30px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li li li li b {
+    margin-left: 52px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li li li li li b {
+    margin-left: 52px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li li li li li li b {
+    margin-left: 72px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li li li li li li b {
+    margin-left: 98px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li span {
+    padding-left: 112px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li treeitem li i {
+    margin-left: 98px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li treeitem li span {
+    padding-left: 124px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li treeitem li treeitem li i {
+    margin-left: 110px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li treeitem li treeitem li span {
+    padding-left: 135px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li treeitem li treeitem li treeitem li i {
+    margin-left: 130px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li treeitem li treeitem li treeitem li span {
+    padding-left: 155px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li treeitem li treeitem li treeitem li treeitem li i {
+    margin-left: 150px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li treeitem li treeitem li treeitem li treeitem li treeitem li span {
+    padding-left: 175px;
+}
+
+.editing-downlist .tab-content treecontrol li {
+    padding: 0 0 0 0;
+    border-bottom: 1px solid #304558;
+}
+
+.editing-downlist .tab-content treecontrol li .tree-label {
+    line-height: 44px;
+    /*margin-left: 25px;*/
+    width: 100%;
+    display: inline-block;
+}
+
+.editing-downlist .tab-content treecontrol li .tree-label:hover {
+    background-color: #4f6f95;
+}
+
+.editing-downlist .tab-content treecontrol ul {}
+
+.editing-downlist .tab-content treecontrol li .tree-label span {
+    color: #fff;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+.editing-downlist .tab-content treecontrol ul {}
+
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-expanded i.tree-branch-head {
+    background: url("./components/util/trsTree/images/s2.png") no-repeat;
+    padding: 1px 14px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-collapsed i.tree-branch-head {
+    padding: 1px 14px;
+    background: url("./components/util/trsTree/images/s1.png") no-repeat;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-expanded i.tree-selected {
+    background: url("./components/util/trsTree/images/s2-1.png") no-repeat;
+    padding: 1px 14px;
+}
+
+.editing-downlist .tab-content treecontrol li .tree-label span.mySelect {
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-collapsed b.tree-selected,
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-leaf b.tree-selected,
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-expanded b.tree-selected {
+    display: block !important;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-collapsed i.tree-selected {
+    padding: 1px 14px;
+    background: url("./components/util/trsTree/images/s1-1.png") no-repeat;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li.tree-selected {
+    background: #2676BD !important;
+    font-weight: normal;
+}
+
+.treeClass {
+    height: 900px;
+}
+
+.editing-downlist .tab-content treecontrol.tree-classic li .tree-selected {
+    background-color: #2676BD;
+    font-weight: normal;
+}
+
+.product-manage-left-content .editing-nav .editing-downlist .tab-content treecontrol ul li:nth-child(1),
+.product-manage-left-content .editing-nav .editing-downlist .tab-content treecontrol ul li:nth-child(2),
+.product-manage-left-content .editing-nav .editing-downlist .tab-content treecontrol ul li:nth-child(3) {
+    background: none;
+    padding-left: 0;
+}
+
+@media screen and (max-width: 1366px) {
+    .editing-downlist .tab-content treecontrol ul li {
+        width: 140%;
+        display: inline-block
+    }
+}
+
+.website-left-panel-opened {
+    position: absolute;
+    overflow: hidden;
+    height: 90px;
+    width: 33px;
+    left: 20px;
+    z-index: 12;
+    top: 44px;
+    background-color: #2676BD;
+}

@@ -1,0 +1,25 @@
+[{
+    "desc": "通用",
+    "value": "0",
+    "imgurl": "./editingCenter/iWo/images/ti-1.png"
+}, {
+    "desc": "微信",
+    "value": "4",
+    "imgurl": "./editingCenter/iWo/images/ti-2.png"
+}, {
+    "desc": "微博",
+    "value": "5",
+    "imgurl": "./editingCenter/iWo/images/ti-4.png"
+}, {
+    "desc": "APP",
+    "value": "1",
+    "imgurl": "./editingCenter/iWo/images/ti-3.png"
+},{
+    "desc": "网站",
+    "value": "2",
+    "imgurl": "./editingCenter/iWo/images/ti-6.png"
+}, {
+    "desc": "报纸",
+    "value": "3",
+    "imgurl": "./editingCenter/iWo/images/ti-5.png"
+}]

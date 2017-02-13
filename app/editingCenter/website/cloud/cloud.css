@@ -1,0 +1,93 @@
+.edit_folder_right_mid,
+.edit_folder_right_head {
+    padding-left: 15px;
+    background: #f4f4f6;
+}
+
+.edit_folder_right_mid {
+    /*height: 40px;*/
+    line-height: 40px;
+}
+
+.edit_folder_right_mid span {
+    color: #3f5974;
+}
+
+.edit_folder_right_mid a {
+    color: #2190d8;
+    text-decoration: none;
+}
+
+.edit_folder_right_mid_name {
+    display: inline-block;
+    width: 75px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.edit_folder_right_head {
+    padding-bottom: 15px;
+}
+
+.edit_folder_right_head .s_icon {
+    padding-right: 6px;
+}
+
+.edit_folder_right_head_bts {
+    float: left;
+    padding-right: 15px;
+}
+
+.edit_folder_right_head .edit_input_group {
+    float: left;
+    width: 350px;
+}
+
+.edit_folder_right_head .input-group .edit_form_control {
+    background: #fff url("./editingCenter/app/images/sch.jpg") no-repeat 10px center;
+}
+
+.folder_w70,
+.folder_w70:hover {
+    width: 70px;
+}
+
+.folder_w110,
+.folder_w110:hover {
+    width: 110px;
+}
+
+.edit_folder_right_allfiles {
+    height: 40px;
+    line-height: 40px;
+    color: #666;
+}
+
+.edit_folder_table {
+    border: none;
+}
+
+.edit_folder_table .folder_name_left {
+    text-align: left;
+    word-break: break-all;
+}
+
+.edit_folder_table .folder_name_left_operation {
+    display: inline-block;
+    float: right;
+    margin: 0;
+}
+
+.file-upload_detail .man_produ_modify_footer {
+    height: 45px
+}
+
+.edit_folder_right_mid a.edit_cloud_notAllowedReturn {
+    color: #3f5974;
+    cursor: not-allowed;
+}
+
+.edit_folder_table table tbody tr td {
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+}

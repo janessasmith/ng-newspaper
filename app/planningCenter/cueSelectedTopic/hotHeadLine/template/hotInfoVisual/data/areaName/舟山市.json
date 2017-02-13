@@ -1,0 +1,38 @@
+[
+    {
+        "content": "定海区~解放街道 环南街道 昌国街道 城东街道 盐仓街道 临城街道 双桥镇 小沙镇 金塘镇 白泉镇 岑港镇 马岙镇 干缆镇 长白乡 册子乡 北蝉乡~三毛祖居~马岙古文化遗址~黄杨尖山",
+        "dictName": "定海区",
+        "dictNum": "001020009001",
+        "id": "area_001020009001",
+        "orderNum": 1,
+        "section": "area",
+        "type": "file"
+    },
+    {
+        "content": "岱山县~高亭镇 东沙镇 岱西镇 长涂镇 衢山镇 岱东镇 秀山乡~东亭寺~观音山",
+        "dictName": "岱山县",
+        "dictNum": "001020009002",
+        "id": "area_001020009002",
+        "orderNum": 2,
+        "section": "area",
+        "type": "file"
+    },
+    {
+        "content": "嵊泗县~嵊泗县~嵊泗列岛~菜园镇 嵊山镇 洋山镇~五龙乡 黄龙乡 枸杞乡 花鸟乡~基湖沙滩~圣姑礁~东崖绝壁~南长途沙滩",
+        "dictName": "嵊泗县",
+        "dictNum": "001020009003",
+        "id": "area_001020009003",
+        "orderNum": 3,
+        "section": "area",
+        "type": "file"
+    },
+    {
+        "content": "普陀区",
+        "dictName": "普陀区",
+        "dictNum": "001020009004",
+        "id": "area_001020009004",
+        "orderNum": 4,
+        "section": "area",
+        "type": "file"
+    }
+]

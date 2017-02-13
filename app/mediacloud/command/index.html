@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>协调指挥系统</title>
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../common/css/dialog.css">
+	<link rel="stylesheet" type="text/css" href="common/css/public.css">
+	<link rel="stylesheet" type="text/css" href="common/css/style.css">
+	<link rel="stylesheet" type="text/css" href="common/css/angular.treeview.css">
+	<link rel="stylesheet" type="text/css" href="../lib/jquery/jquery.mCustomScrollbar.css"></head>
+	<link rel="stylesheet" type="text/css" href="common/css/prettify-style.css" >
+    <link rel="stylesheet" type="text/css" href="common/css/tree-control.css">
+    <link rel="stylesheet" type="text/css" href="common/css/tree-control-attribute.css">
+</head>
+<body class="body-app">
+	<rong-widget></rong-widget>
+	<div class="dp-header">
+		<a href="javascript:void(0);" class="cb-logo lf">
+			<img src="common/images/dp-head-bac01.png" width="178px" height="60px"/>
+			<span>报业集团</span>
+		</a>
+		<a href="#" class="dp-logo lf">指挥调度平台</a>
+		<div class="dp-head-opt rt clearfix">
+			<a href="#" class="head-opt-set lf"></a>
+			<a href="javascript:void(0);" class="head-opt-mp lf" ui-sref="command.map"></a>
+			<div class="head-user-account lf">
+				<div class="user-pic lf boxF">
+					<div class="boxS">
+						<img class="boxT" ng-src="{{userInfo.headImg}}"/>
+					</div>
+				</div>
+				<span class="user-name" ng-bind="userInfo.userName"></span>
+				<!-- <span class="arrow-icon"></span> -->
+				<div class="user-info-box" style="display: none;">
+					<div class="info-box-top"></div>
+					<div class="user-info-des">
+						<div class="user-info-pc lf">
+							<img src="common/images/new-pic.jpg"/>
+							<div class="user-zx-sta on-line">在线</div>
+						</div>
+						<div class="user-info-deal lf">
+							<p>
+								<label>单位：</label>
+								<span>重庆晨报</span>
+							</p>
+							<p>
+								<label>职位：</label>
+								<span>编辑部主任</span>
+							</p>
+							<p>
+								<label>账号：</label>
+								<span>XUYONG</span>
+							</p>
+						</div>
+					</div>
+					<div class="user-info-opt">
+						<a href="javascript:;" class="user-opt-set">设置</a>
+						<a href="javascript:;" class="user-opt-lock">页面锁定</a>
+						<a href="javascript:;" class="user-opt-logout">退出</a>
+					</div>
+				</div>
+			</div>
+			<div class="dp-icon-user lf">
+				<img src="common/images/dp-head-icon05.png" width="29px" height="20px" chatshow/>
+				<span class="dp-red" style="display:none"></span>
+				<chat></chat>
+			</div>
+			<!-- <p class="closebox"><a href="../../logout.jsp" class="logout"></a></p> -->
+		</div>
+	</div>
+	<div class="clearfix clearfix-body" ui-view ></div>
+	
+    <script type="text/javascript" src="../lib/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="../lib/ueditor/ueditor.all.js"></script>
+	<script type="text/javascript" src="../lib/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" src="../lib/angular/angular.js"></script>
+    <script type="text/javascript" src="../lib/angular/angular-ui-router.js"></script>
+    <script type="text/javascript" src="../lib/angular/angular-animate.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap/ui-bootstrap-tpls-0.14.3.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="../lib/w5cValidator/w5cValidator.js"></script>
+    <script type="text/javascript" src="../common/i18n/dateLocale.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Spf76kmECjASEkgwwiBIxhDA"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox.js "></script>
+	<!-- 树 -->
+	<script src="common/js/prettify.1.0.1.js"></script>
+    <script src="common/js/angular-tree-control.js"></script>
+    
+    <script type="text/javascript" src="common/js/directives.js"></script>
+    <script type="text/javascript" src="common/js/servers.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="home/js/controllers.js"></script>
+    <script type="text/javascript" src="home/js/directives.js"></script>
+    <script type="text/javascript" src="home/js/servers.js"></script>
+    <!--我的待办-->
+    <script type="text/javascript" src="myinstruct/js/controllers.js"></script>
+    <script type="text/javascript" src="myinstruct/js/directives.js"></script>
+    <script type="text/javascript" src="myinstruct/js/servers.js"></script>
+    <!--联合报道-->
+    <script type="text/javascript" src="report/js/controllers.js"></script>
+    <script type="text/javascript" src="report/js/directives.js"></script> 
+    <script type="text/javascript" src="report/js/servers.js"></script>
+	<!--设置-->
+	<script type="text/javascript" src="setup/js/controllers.js"></script>
+    <script type="text/javascript" src="setup/js/directives.js"></script> 
+    <script type="text/javascript" src="setup/js/servers.js"></script>
+</body>
+</html>

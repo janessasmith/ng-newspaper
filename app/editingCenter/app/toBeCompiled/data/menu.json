@@ -1,0 +1,22 @@
+[{
+    "Label": "无",
+    "VALUE":1
+}, {
+    "Label": "突发",
+     "VALUE":2
+}, {
+    "Label": "独家",
+     "VALUE":3
+}, {
+    "Label": "专题",
+     "VALUE":4
+}, {
+    "Label": "图集",
+     "VALUE":5
+}, {
+    "Label": "视频",
+     "VALUE":6
+}, {
+    "Label": "活动",
+     "VALUE":7
+}]

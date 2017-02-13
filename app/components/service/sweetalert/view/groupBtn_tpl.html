@@ -1,0 +1,8 @@
+<div class="editing-operate-lst">
+    <ul>
+        <a href="javascript:void(0)" ng-if="status.btnRights[item.GROUPID].delete&&status.selectedGroupStatus.value==0" ng-click="deleteGroup(item)">删除组织</a>
+        <a href="javascript:void(0)" ng-if="status.btnRights[item.GROUPID].move&&status.selectedGroupStatus.value==0" ng-click="moveGroup(item)">移动组织</a>
+        <a href="javascript:void(0)" ng-if="status.btnRights[item.GROUPID].hidden&&status.selectedGroupStatus.value==0" ng-click="hiddenGroup(item)">隐藏组织</a>
+        <a href="javascript:void(0)" ng-if="status.btnRights[item.GROUPID].qiyong&&status.selectedGroupStatus.value==2" ng-click="restoreGroup(item)">还原组织</a>
+    </ul>
+</div>

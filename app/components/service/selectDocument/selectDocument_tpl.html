@@ -1,0 +1,95 @@
+<!-- 模态框（Modal） -->
+<div class="conSel-modal-dialog modal-dialog " style="top:0px;">
+    <div class="modal-content conSel-modal">
+        <div class="modal-body conSel-modal-body">
+            <div class="row">
+                <div class="col-sm-3 conSel-left">
+                    <div>
+                        <div class="btn-primary conSel-left_head pointer" ng-bind="siteDesc" ng-click="chooseSite()"></div>
+                        <div class="panel panel-default conSel-pannel-default">
+                            <div class="panel-collapse collapse in select_document_leftTree" ng-class="{'hasSelectedSite':status.isChooseSite}">
+                                <treecontrol class="tree-classic" options="treeOptions" expanded-nodes="expandedTest" on-node-toggle="showToggle(node)" tree-model="treeData" on-selection="showSelected(node)" selected-node="selectedNode">
+                                    <span title="{{node.CHANNELID}}" ng-bind="node.CHNLDESC"></span>
+                                </treecontrol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 conSel-center">
+                    <div class="conSel-center-h">
+                        <div class="input-group edit_input_group mr15 mb10">
+                            <trs-single-select selected-option="data.dropDown.searchAllSelected" options="data.dropDown.searchAllType" class=""></trs-single-select>
+                            <input type="text" class="form-control edit_form_control input-text" placeholder="{{data.dropDown.searchAllSelected.placeholder}}" ng-model="status.SearchValue" ng-keypress="fullTextSearch($event)">
+                            <span class="input-group-btn">
+                                 <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">检索</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="conSel-center-c">
+                        <table class="table table-bordered conSel-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <trs-checkbox ischecked="checkSelectedAll()" callback="selectAll()"></trs-checkbox>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>标题</th>
+                                    <!-- <th>栏目</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in items ">
+                                    <td class="td-checked">
+                                        <trs-checkbox ischecked="checkChecked(item)" callback="selectDoc(item)"></trs-checkbox>
+                                    </td>
+                                    <td ng-bind="item.METADATAID" ng-if="status.showMetadaId"></td>
+                                    <td ng-bind="item.RECID" ng-if="!status.showMetadaId"></td>
+                                    <td>
+                                        <span ng-if="item.OutLinePics" class="conSel-title-pic" title="该稿件含有导读图片">图</span>
+                                        <span title="{{item.TITLE}}" ng-bind="item.TITLE | trsLimitTo:15"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="conSelPaginator">
+                            <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="1" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 conSel-right">
+                    <div class="conSel-right-c">
+                        <div class="btn-primary conSel-right_head">已选择文章列表</div>
+                        <div class="conSel-right-d">
+                            <table class="table table-bordered conSel-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>标题</th>
+                                        <th class="conSel-right-del">删除</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in selectedArray |unique:'RECID'">
+                                        <td ng-bind="item.METADATAID" ng-if="status.showMetadaId"></td>
+                                        <td ng-bind="item.RECID" ng-if="!status.showMetadaId"></td>
+                                        <td title="{{item.TITLE}}" ng-bind="item.TITLE | trsLimitTo:10"></td>
+                                        <td ng-click="delSelected(item)" class="conSel-delbtn">删除</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="conSel-button" style="float:right;margin-right:20px;">
+                    <button class="btn-primary btn_confirm" ng-click="sureChked()">确定</button>
+                    <button class="btn-primary btn_cancel" ng-click="cancel()">取消</button>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal -->

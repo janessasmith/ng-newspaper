@@ -1,0 +1,44 @@
+<div class="editWebsite_owner row">
+    <div class="col-md-2 editWebsite_owner_left">
+        <div class="editWebsite_owner_search">
+            <input class="form-control edit_form_control" placeholder="请输入要查找的归属人" ng-model="status.search.TRUENAME">
+        </div>
+        <ul>
+            <li ng-repeat="item in data.ownerItems | filter:status.search:strict" ng-bind="item.TRUENAME" ng-click="chooseOwner(item)" ng-class="{'active':item.USERID==status.currOwnerId}"></li>
+        </ul>
+    </div>
+    <div class="col-md-10 editWebsite_owner_right">
+        <div class="editWebsite_owner_right_head" ng-bind="status.currOwnerName"></div>
+        <div class="editWebsite_owner_right_content">
+            <div class="edit_table border_radius_5">
+                <table class="table table-striped data-table black-box">
+                    <thead>
+                        <tr>
+                            <th class="td-number col-index" style="text-align: center;">序号</th>
+                            <th class="xcol-newspaper-id">稿件ID</th>
+                            <th>标题</th>
+                            <th class="xcol-newspaper-column">栏目</th>
+                            <th class="xcol-newspaper-date">最后版本时间</th>
+                    </thead>
+                    <tbody>
+                        <div cg-busy="loadingPromise"></div>
+                        <tr ng-repeat="item in data.draftItems">
+                            <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1"></td>
+                            <td ng-bind="item.DOCID"></td>
+                            <td class="ta-l">
+                            	<a ui-sref="websitePreviewAll({channelid:item.CHANNELID,chnldocid:item.CHNLDOCID,siteid:item.SITEID,metadataid:item.DOCID,platform:{{status.position[item.DOCSTATUS]}},typeid:item.DOCTYPE})" target="_blank" ng-bind="item.DOCTITLE"></a>
+                            </td>
+                            <td ng-bind="item.CHNLNAME"></td>
+                            <td ng-bind="item.OPERTIME"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="page cls-paging">
+                    <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="false"></trs-pagenation-left>
+                    <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                    <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

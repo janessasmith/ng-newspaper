@@ -1,0 +1,7 @@
+<p>
+    共
+    <span ng-bind="pageCount.ITEMCOUNT"></span>
+    <span>条数据</span> 单页显示
+    <trs-single-select  selected-option="selectOption" callback="queryByPageSize()" options="pageCountJsons" ng-show="isSelectPagecount"></trs-single-select>
+    <span ng-bind="pageCount.PAGESIZE " ng-show="!isSelectPagecount"></span>
+</p>

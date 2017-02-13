@@ -1,0 +1,33 @@
+<!--内容-->
+<div class="management_result" >
+    <div class="result_box" ng-class="{last_result_box:($index+1)%3==0}" ng-repeat="account in accounts" 
+         ng-click="skip(account.ACCOUNTID);">
+        <div class="result_left">
+            <div class="result_picture">
+                <img class="result_photo" 
+                     ng-src="{{account.HEADPIC}}" 
+                    alt="" width="132" height="132"/>
+                <img class="result_icon" 
+                     ng-src="{{account.PLATFORM=='Sina'?'common/images/reslut_icon_wb_06.png':'common/images/result_icon-tx_10.png'}}" alt="" 
+                     width="52" height="52"/>
+            </div>
+            <p class="result_name">{{account.ACCOUNTNAME}}</p>
+        </div>
+        <div class="result_right">
+                <account-fans id="{{account.ACCOUNTID}}"></account-fans>
+            <div class="result_setting">
+               <div ng-controller="accountDelay" ng-show="account.PLATFORM">
+                    <span ng-show="account.PLATFORM=='Sina'&&activeDelay" ng-click="open('400',account.ACCOUNTID,$event,account.CLASSID,account.UNITID);">账号延期</span>
+                    <span ng-show="activeisDelay"  ng-click="isDelay(account.ACCOUNTID,$event);">取消延期</span>
+               </div>
+                <a class="result_cancel" ng-controller="accountDel" ng-click="open('400',$event,account.ACCOUNTID)"></a>
+            </div>
+        </div>
+    </div>
+    <!--添加-->
+    <div class="add_result_box" ng-controller="accountAdd">
+       <uib-alert style="position:absolute;width:388px;" ng-repeat="alert in alerts" type="{{alert.type}}" 
+                  close="closeAlert($index)" ng-show="active">{{alert.msg}}</uib-alert>
+        <a ng-click="open('600')"></a>
+    </div>
+</div>

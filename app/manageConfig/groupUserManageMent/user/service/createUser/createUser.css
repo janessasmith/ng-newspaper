@@ -1,0 +1,403 @@
+.createUserSubmit .clear {
+    clear: both;
+}
+
+.createUserSubmit .textAlign_l {
+    text-align: left;
+}
+
+.createUserSubmit .padding_8_0 {
+    padding: 8px 0;
+}
+
+.createUserSubmit .w250 {
+    width: 250px!important;
+}
+
+.userManageMent-createUser-window .modal-dialog .modal-content {
+    border: 0!important;
+}
+
+.createUserSubmit {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.createUserSubmit_wt {
+    width: 763px;
+    margin-left: -80px;
+}
+
+.createUserSubmit .submit {
+    border: 4px solid #dddddd;
+    background: #fff;
+}
+
+.createUserSubmit .submit .head {
+    height: 42px;
+}
+
+.createUserSubmit .submit .head span {
+    float: left;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.createUserSubmit .submit .head img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 12px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.createUserSubmit .submit .headline {
+    background: #f0f2f5;
+    height: 48px;
+    border-bottom: 1px solid #ccc;
+}
+
+.createUserSubmit .submit .headline ul.nav li {
+    float: left;
+    /* width: 90px; */
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 10px;
+    cursor: pointer;
+    background: #0095ce;
+    color: #fff;
+    margin-top: 18px;
+    border-radius: 4px 4px 0px 0px;
+    padding: 0px 25px;
+    font-weight: bold;
+}
+
+.createUserSubmit .submit .headline ul.nav li.active {
+    background: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    border-bottom: 0px;
+}
+
+
+/*1*/
+
+.createUserSubmit .submit .body .main {
+    padding: 10px;
+    font-size: 12px;
+}
+
+.createUserSubmit .submit .body .main .item {
+    line-height: 32px;
+    clear: both;
+}
+
+.createUserSubmit .submit .body .main .item span {
+    display: block;
+    float: left;
+    font-size: 12px;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.createUserSubmit .invalidate-input-box span.ng-scope {
+    left: 0px;
+}
+
+.createUserSubmit .submit .body .main .item span.tit {
+    width: 65px;
+}
+
+.createUserSubmit .submit .body .main .item span.color_r {
+    color: red;
+}
+
+.createUserSubmit .submit .body .main .item input {
+    width: 205px;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+.createUserSubmit .submit .body .main .item input.mb0 {
+    margin-bottom: 0px!important;
+}
+
+.createUserSubmit .submit .body .main .item .desc {
+    margin-left: 70px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.createUserSubmit .submit .body .main .item .desc p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 25px;
+}
+
+.createUserSubmit .submit .body .main .item .desc .pwdLight_tit {
+    margin-right: 60px;
+    margin-left: 0;
+}
+
+.createUserSubmit .submit .body .main .item .desc .pwdLight {
+    width: 170px;
+    height: 6px;
+    background: #ccc;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+.createUserSubmit .pwdLight_1 {
+    height: 6px;
+    width: 33.33%;
+    background: #ff5800;
+}
+
+.createUserSubmit .pwdLight_2 {
+    height: 6px;
+    width: 0%;
+    background: #ff5800;
+}
+
+.createUserSubmit .pwdLight_3 {
+    height: 6px;
+    width: 100%;
+    background: #ff5800;
+}
+
+.createUserSubmit .submit .body .main .part_1 {
+    padding: 10px 10px 0;
+}
+
+.createUserSubmit .submit .body .main .part_2 {
+    border: 1px solid #ccc;
+    margin: 0;
+    min-height: 480px;
+    padding-top: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.userManageMent-createUser-window .createUserSubmit .submit .body .main .isRequired {
+    border: 2px solid #a94442;
+}
+
+.createUserSubmit .w50 {
+    width: 50px;
+}
+
+.createUserSubmit .submit .body .main .part_2 table tr td.textAlign_l span {
+    padding: 0 10px;
+}
+
+.createUserSubmit .submit .body .main .part_2 .adddelBtn {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+
+.createUserSubmit .submit .body .main .part_2 .adddelBtn button {
+    height: 30px;
+    padding: 0 15px;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background: url("./editingCenter/app/images/b-m.jpg") repeat-x;
+    font-size: 12px;
+}
+
+.createUserSubmit .submit .body .main .part_2 .regular-checkbox + label {
+    background-color: #fff;
+    padding: 7px 8px 8px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0px;
+    vertical-align: -4px;
+    cursor: pointer;
+    border: 1px solid #AAB1BB;
+    margin-left: 10px;
+}
+
+.createUserSubmit .submit .body .main .part_2 table tbody .selected-row {
+    background: #fff!important;
+}
+
+
+/*3*/
+
+.createUserSubmit .submit .body .main .part_3 .groupDept_div {
+    width: 187px;
+    height: 555px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDept_head {
+    height: 28px;
+    background-color: #0095CE;
+    color: white;
+    line-height: 28px;
+    font-size: 13px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDeptTree {
+    width: 248px;
+    height: 525px;
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDeptTree treecontrol ul {
+    margin: 0 0 0 -10px;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDeptTree treecontrol li .tree-label span {
+    margin-left: -10px;
+    font-family: "微软雅黑", "Arial";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #666640;
+    text-align: left;
+    line-height: normal;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDeptTree treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    padding: 0px 20px 1px 10px;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDeptTree treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat!important;
+    vertical-align: -2px!important;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDeptTree treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDeptTree treecontrol.tree-light li .tree-selected span {
+    font-weight: bold;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDept_dialog_list {
+    width: 165px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDept_dialog_list_head {
+    height: 28px;
+    background-color: #ccc;
+    color: #000;
+    line-height: 28px;
+    font-size: 13px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDept_dialog_ul {
+    width: 163px;
+    height: 442px;
+    overflow-x: auto;
+    overflow-y: scroll;
+    font-family: "微软雅黑", "Arial";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #666640;
+    text-align: left;
+    line-height: normal;
+}
+
+
+/*
+.createUserSubmit .submit .body .main .part_3 .groupDept_dialog_ul ul li {
+    line-height: 25px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+*/
+
+.createUserSubmit .submit .body .main .part_3 .groupDept_dialog_ul ul li {
+    line-height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    white-space: nowrap;
+    color: #666640;
+    font-family: "微软雅黑", "Arial";
+    font-size: 12px;
+    max-width: 350px;
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDept_dialog_ul ul li.selected {
+    /*font-weight: bold;*/
+    color: white;
+    background-color: #0097D0;
+}
+
+.createUserSubmit .submit .body .main .part_3 .middle {
+    width: 54px;
+    height: 555px;
+    line-height: 555px;
+    float: left;
+    text-align: center;
+}
+
+.createUserSubmit .submit .body .main .part_3 .middle div {
+    margin-top: 20px;
+    cursor: pointer;
+    position: relative;
+    top: -80px;
+    height: 30px
+}
+
+.createUserSubmit .submit .body .main .part_3 .groupDept_div input {
+    height: 25px;
+    margin: 10px;
+    width: 90%;
+}
+
+
+/*foot*/
+
+.createUserSubmit .submit .body .foot {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.createUserSubmit .submit .body .foot button {
+    margin: 0 20px;
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.createUserSubmit .submit .body .foot button.cancel {
+    border: none;
+    background: #0095ce;
+}
+
+.createUserSubmit .submit .body .foot button.confirm {
+    border: none;
+    background: #00bd9b;
+}

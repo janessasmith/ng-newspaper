@@ -1,0 +1,118 @@
+<div class="myManuSubmit">
+    <div class="submit">
+        <div class="header">
+            <p>预留</p>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="content">
+            <!--   <div class="take-draft-top">
+                <div class="title-container">
+                    标题：
+                    <input type="text" class="form-control" value="{{selectDocsInfo.items[0].DOCTITLE}}" readonly />
+                    <input type="text" class="form-control" value="{{selectDocsInfo.items[1].DOCTITLE}}" readonly ng-if="selectDocsInfo.size>1" />
+                    <img src="./resourceCenter/images/i1.png" ng-show="selectDocsInfo.size>2" ng-class="{'active':isTitleMoreShow}" ng-click="isTitleMoreShow=!isTitleMoreShow" />
+                    <div class="title-absolute-container" ng-if="isTitleMoreShow && selectDocsInfo.size>2">
+                        <ul>
+                            <li ng-repeat="item in selectDocsInfo.items" ng-if="$index >= 2">
+                                <a>
+                                    {{item.DOCTITLE}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+            <ul class="nav gray_bg">
+                <li ng-repeat="media in mediasArray" ng-bind="media.mediaName" ng-click="setCurrMedia(media.mediaType)" ng-class="{'active':currMedia==media.mediaType}" ng-if="status.accessAuthority[media.mediaValue]==true"></li>
+            </ul>
+            <div class="con">
+                <div class="main_container main_container_iwo" ng-if="currMedia == 1">
+                    <trs-single-radio label="取稿到已收稿库" ischecked="selectChanel.ToMy.isShow" callback="changeRadioStatus()"></trs-single-radio>
+                </div>
+                <div class="main_container main_container_newspaper" ng-if="currMedia == 2&&status.accessAuthority.newspaper==true">
+                    <div class="take_draft_top_date">
+                        见报日期
+                        <input type="text" size="10" class="form-control timepicker" ng-model="PaperPubDate" placeholder="Date" data-autoclose="1" data-min-date="today" bs-datepicker date-format="yyyy-MM-dd" readonly="readonly">
+                    </div>
+                    <div class="take_draft_list_group">
+                        <div class="take_draft_media_list">
+                            <p>媒体列表</p>
+                            <ul>
+                                <li ng-repeat="item in NewspaperData" ng-bind="item.SITEDESC" ng-click="requestNewspaperDieCi(item.SITEID,$index)" ng-class="{'active':selectCollect.selectNewspaper===$index}"></li>
+                            </ul>
+                        </div>
+                        <div class="take_draft_dieCi_list">
+                            <p>叠次列表</p>
+                            <ul>
+                                <li ng-repeat="item in NewspaperDieCiData" ng-bind="item.CHNLDESC" ng-click="requestNewspaperCaiBian(selectCollect.websiteSite,item.CHANNELID,$index)" ng-class="{'active':selectCollect.selectDieCi===$index}"></li>
+                            </ul>
+                        </div>
+                        <div class="take_draft_caiBian_list">
+                            <p>采编版面列表</p>
+                            <ul>
+                                <li ng-repeat="item in NewspaperCaiBianData" ng-bind="item.CHNLDESC" ng-click="selectPaperItem(item,$index)" ng-class="{'active':selectCollect.selectCaiBian===$index}"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_container main_container_website" ng-show="currMedia == 3&&status.accessAuthority.website==true">
+                    <div class="take_draft_website_list">
+                        <p>网站列表：</p>
+                        <div>
+                            <ul>
+                                <li ng-repeat='item in websiteSiteData' ng-bind="item.SITEDESC" ng-click="requestWebsiteTree(item)" ng-class="{'active':selectCollect.websiteSite==item.SITEID}"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="take_draft_channel_tree">
+                        <div class="h33 suggestion">
+                            频道检索：
+                            <input type="text" placeholder="请输入关键词" ng-model="data.channelFilter" class="form-control" bs-options="state as state.SUGGESTION for state in getSuggestions($viewValue)" limit="30" bs-typeahead/>
+                        </div>
+                        <!--   <p>栏目树：</p> -->
+                        <div>
+                            <treecontrol selected-node="selectedNode" expanded-nodes="webExpandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="websiteTreeData.CHILDREN" options="treeOptions" on-selection="showSelected(node)">
+                                <trs-single-radio label="{{node.CHNLDESC ? node.CHNLDESC : node.SITEDESC}}" callback="chooseChannel(node)" ischecked="node.CHANNELID==slectedChannel.CHANNELID"></trs-single-radio>
+                            </treecontrol>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_container main_container_app" ng-if="currMedia == 4&&status.accessAuthority.app==true">
+                    <div class="take_draft_website_list">
+                        <p>APP列表：</p>
+                        <div>
+                            <ul>
+                                <li>浙江新闻</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="take_draft_channel_tree">
+                        <p>栏目树：</p>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="m_white_panel">
+                <ul class="m_edit_labels">
+                    <li ng-repeat="(key,value) in selectChanel" ng-if="value.isShow" ng-click="removeChannel(value)">
+                        {{value.label}}
+                        <img src="./editingCenter/app/images/b15.png" />
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <div class="reserve_date_group">
+                    预留时间：&nbsp;
+                    <div>
+                        <input type="text" value="1" ng-model="Delay" class="form-control" validator="required" name="groupName" ng-pattern="/^[1-9]\d*$/">
+                        <!-- <input type="text" class="form-control" ng-model="Delay"/> -->
+                    </div>
+                    &nbsp; 天
+                </div>
+                <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+                <button class="btn btn-primary btn_confirm" ng-click="sendInfo()" ng-show="!hasSelected()">确定</button>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise">
+    </div>

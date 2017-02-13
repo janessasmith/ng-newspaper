@@ -1,0 +1,55 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12">
+        <button class="btn btn-default btn-commen btn-commen-hover" ng-click="refresh()">
+            刷新
+        </button>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-8">
+        <custom-select options="status.timeArray" callback="searchWithKeyword('time',status.timeSelected)" selected-option="status.timeSelected"></custom-select>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="params.searchcontent" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+                    <button class="btn btn-default btn_edit_search" ng-click="fullTextSearch()" type="button">搜索</button>
+                  </span>
+        </div>
+    </div>
+</div>
+<div class="edit_table border_radius_5 manageCon-logMgr-securityLog">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-check">
+                    <!-- <trs-checkbox ischecked="data.items.length != 0 && data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox> -->
+                </th>
+                <th class="lcol-user">操作用户</th>
+                <th class="lcol-time">登录时间</th>
+                <th class="lcol-dept">部门</th>
+                <th class="lcol-ip">IP</th>
+                <th class="lcol-desc">登陆结果</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in data.items">
+                <td class="td-check">
+                    <!-- <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox> -->
+                    <span ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1"></span>
+                </td>
+                <td ng-bind="item.OPERATOR_INFO"></td>
+                <td ng-bind="item.OPERATOR_TIME"></td>
+                <td ng-bind="item.DEPARTMENT"></td>
+                <td ng-bind="item.OPERATOR_IP"></td>
+                <td ng-bind="item.OPERATE_DESC"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page log_page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" page="page" currpage="status.copyCurrPage"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

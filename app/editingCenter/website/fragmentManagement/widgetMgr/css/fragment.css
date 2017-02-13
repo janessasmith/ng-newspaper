@@ -1,0 +1,232 @@
+/*主页面左边导航树开始*/
+
+.pieceMgr-main-left {
+    padding-right: 0px;
+}
+
+.pieceMgr-main-left-stateL {
+    padding-right: 0px;
+}
+
+.pieceMgr-main-left-stateC {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.pieceMgr-main-left-stateR {
+    padding-left: 0px;
+}
+
+.pieceMgr-main-left-stateCh {
+    line-height: 30px;
+    text-align: center;
+}
+
+.pieceMgr-main-left-stateB {
+    border: 1px solid #797671;
+}
+
+.pieceMgr-main-left-stateB-active {
+    border: 1px solid #797671;
+    background-color: #00D0FF;
+}
+
+.pieceMgr-main-left-tab-parent {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+.pieceMgr-main-left-tab {
+    background-image: url("website/fragmentManagement/images/tab1_u724.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.pieceMgr-main-left-tab-active {
+    background-image: url("website/fragmentManagement/images/tab2_u720_selected.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.pieceMgr-main-left-tab-active a {
+    color: red;
+}
+
+.pieceMgr-main-left-myTabContent {
+    padding-right: 10px;
+}
+
+.pieceMgr-main-left-zjzx {
+    border: 1px solid #797671;
+    line-height: 36px;
+    text-align: center;
+}
+
+.pieceMgr-main-left-zjzxCh {
+    border: 1px solid #797671;
+    line-height: 36px;
+    text-align: center;
+    background-color: #CEEAFF;
+}
+
+.pieceMgr-main-left-zjzxList {
+    margin-top: 10px;
+}
+
+.pieceMgr-main-left-zjzxListC {
+    border: 1px solid #797671;
+    line-height: 36px;
+    text-align: center;
+    background-color: #00D0FF;
+}
+
+.pieceMgr-main-left-zjzxListC-active {
+    border: 1px solid #797671;
+    line-height: 36px;
+    text-align: center;
+    background-color: #00D0FF;
+    color: red;
+    cursor: pointer;
+}
+
+.pieceMgr-main-left-collapse {
+    border: 1px solid #797671;
+    margin-left: 0px;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pieceMgr-main-left-collapse a {
+    color: #333333;
+}
+
+.pieceMgr-main-left-collapseC {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/*主页面左边导航树结束*/
+
+
+/*主页面右边列表与搜索框开始*/
+
+.pieceMgr-main-right-head {
+    margin-top: 5px;
+    background-color: #F5F4F3;
+    height: 50px;
+}
+
+.pieceMgr-main-right-search {
+    line-height: 50px;
+}
+
+.pieceMgr-main-right-button {
+    text-align: center;
+    background-image: url("website/website/fragmentManagement/images/u723.png");
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    color: white;
+    cursor: pointer;
+}
+
+.pieceMgr-main-list {
+    cursor: pointer;
+}
+
+.pieceMgr-main-preview-img {
+    cursor: pointer;
+}
+
+.pieceMgr-main-list-table td {
+    text-align: center;
+}
+
+.pieceMgr-main-list-table th {
+    text-align: center;
+}
+
+.pieceMgr-input {
+    line-height: normal;
+}
+
+
+/*主页面右边列表与搜索框结束*/
+
+.sweet-alert.fragment h2 {
+    margin: 0px;
+    color: #66757F;
+    border-bottom: 1px solid #E1E8ED;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 18px
+}
+
+.sweet-alert.fragment p {
+    display: block;
+      text-align: left;
+  padding-left: 99px;
+    text-align: left;
+    color: #66757F;
+    font-weight: 400;
+    font-size: 16px;
+    overflow: hidden;
+    /*    background: #f1f2f4;*/
+    height: 147px;
+    line-height: 147px;
+}
+
+.sweet-alert.fragment button {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 0px;
+}
+
+.sweet-alert.fragment {
+    text-align: right;
+}
+
+.fragment .sa-button-container {
+    padding-bottom: 10px;
+    background: #f1f2f4!important;
+}
+
+.sweet-alert.fragment .sa-confirm-button-container {
+    display: inline-block;
+    position: relative;
+    text-align: right;
+    background: #f1f2f4;
+}
+
+.sweet-alert.fragment {
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    padding: 0px 0px 0px 0px;
+    height: 242px;
+}
+
+.sweet-alert.fragment .sa-icon {
+    float: left;
+    left: -12%;
+    top: 10px;
+}
+.sweet-alert.fragment button.cancel{background-color: #4496D2}

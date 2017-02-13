@@ -1,0 +1,18 @@
+<div class="ascription">
+    <div class="ascription_content">
+        <div class="ascription_search">
+            <!-- <input type="text" class="form-control edit_form_control" placeholder="请输入要搜索的文件/目录名" ng-model="status.search.NAME"> -->
+            <input type="text" class="form-control edit_form_control" placeholder="请输入要查找的归属人" ng-model="status.search.TRUENAME">
+        </div>
+        <ul>
+            <!-- <tr ng-repeat="item in data.items| filter:status.search:strict" ng-mouseenter="status.currHoverItem=item"> -->
+            <li ng-repeat="item in data.items| filter:status.search:strict">
+                <trs-checkbox ischecked="data.selectedArray.indexOf(item.USERID)>-1" callback="singleSelect(item)"></trs-checkbox><span ng-bind="item.TRUENAME"></span>
+            </li>
+        </ul>
+    </div>
+    <div class="ascription_footer">
+        <button class="ascription_footer_confirm" ng-click="confirm()">确定</button>
+        <button class="ascription_footer_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

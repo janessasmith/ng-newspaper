@@ -1,0 +1,1704 @@
+/*角色管理主体部分CSS开始*/
+
+.manage-left {
+    border: 1px solid #797979;
+    min-height: 780px;
+    font-family: "微软雅黑";
+    padding-left: 0px;
+    padding-right: 0px;
+    background: #0B2242;
+    overflow: auto;
+}
+
+.manage-left-head {
+    height: 49px;
+    line-height: 49px;
+    text-align: center;
+    color: #cccccc;
+    font-family: "Arial Negreta", "Arial";
+    font-weight: 700;
+    font-style: normal;
+    font-size: 24px;
+    border-bottom: 1px solid #cccccc;
+    font-size: 12px;
+}
+
+.manage-left-search {
+    height: 40px;
+    background: #4B5A71 none repeat scroll 0% 0%;
+}
+
+.manage-search {
+    border: 1px solid #99A0A8;
+    height: 28px;
+    border-radius: 4px;
+    line-height: 28px;
+    float: left;
+    width: 95%;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+.manage-search input {
+    border: none;
+    height: 26px;
+    border-radius: 4px;
+    line-height: 26px;
+}
+
+.manage-search .input_txt {
+    color: white;
+    float: left;
+    width: 86%;
+    padding-left: 5px
+}
+
+.manage-search .input_submit {
+    float: left;
+    width: 12%;
+    background: url("./editingCenter/app/images/sch.jpg") no-repeat 10px center;
+    background-size: 23px 22px;
+}
+
+.manage-search input:focus {
+    outline: none;
+}
+
+.manage-select {
+    color: white;
+    background: #717C8E;
+    width: 35%;
+    height: 26px;
+    color: white;
+    font-size: 12px;
+    float: left;
+    border: none;
+    cursor: pointer;
+}
+
+.manage-left-tree {
+    padding-top: 13px;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+.manage-left-tree ul {
+    margin-left: -10px;
+    font-family: '微软雅黑', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #B0D1F0;
+    text-align: left;
+    line-height: normal;
+}
+
+.treeitem:first-child {
+    /* overflow: auto*/
+}
+
+.manage-left .ztree li a {
+    color: #B0D1F0;
+    margin: 3px 0px;
+}
+
+.manage-left .ztree li {
+    margin: 2px 0px;
+}
+
+.ztree li span.button.noline_open {
+    background: url('./manageConfig/images/m-1.png') 0 center no-repeat;
+}
+
+.ztree li span.button.noline_close {
+    background: url('./manageConfig/images/m-2.png') 0 center no-repeat;
+}
+
+.manage-left .tree-selected {
+    background-color: #556680;
+    color: white;
+    padding: 0px;
+}
+
+.manage-left .tree-light li .tree-selected {
+    font-weight: normal;
+}
+
+.manage-main {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.manage-main .row {
+    margin-left: 0px;
+    margin-right: 0px
+}
+
+.manage-main-head {
+    height: 38px;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-bottom: 2px;
+}
+
+.manage-main-button {
+    width: 90px;
+    height: 26px;
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+    border: none;
+    color: white;
+    margin-left: 7px;
+    line-height: 26px;
+    border-radius: 4px;
+    float: left;
+    margin-top: 2px;
+}
+
+.manage-main-rightDivc2 select {
+    width: 122px;
+    padding-left: 10px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.manage-main-button-save {
+    margin-left: 450px;
+}
+
+.manage-main-leftSearch {
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.manage-main-leftDiv {
+    border: 1px solid #E1DFDD;
+    height: 616px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color: #333333;
+    text-align: left;
+    line-height: normal;
+    margin: 15px 15px 40px 15px;
+    overflow-y: auto;
+    /*padding-top: 6px;*/
+}
+
+.manage-main-right {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.manage-main-rightDiv {
+    border: 1px solid #e1dfdd;
+    min-height: 616px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+.manage-main-rightDiv .page p{
+    margin-top: 25px;
+}
+.manage-main-rightDiv-head {
+    padding-top: 5px;
+    height: 41px;
+    background: #f2f2f5;
+    line-height: 30px;
+}
+
+.manage-main-addRole {
+    padding-top: 5px;
+    margin-left: 200px;
+    cursor: pointer;
+    width: 23px;
+    height: 20px;
+}
+
+.manage-main-leftSearchIntput {
+    float: left;
+    margin-top: 5px;
+}
+
+.manage-main-rightDivc {
+    padding-right: 0px;
+}
+
+.manage-main-rightDivc select {
+    width: 120px;
+    height: 26px;
+    padding-left: 10px;
+    border: 1px solid #D0D0D2;
+}
+
+.manage-main-rightDiv-proS {
+    margin-left: 10px;
+    font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    color: #6C6D6F;
+    cursor: pointer;
+}
+
+.manage-main-rightDivc2 {
+    text-align: right;
+    padding-left: 0px;
+}
+
+.manage-main-rightDiv-poS {
+    font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    margin-left: 150px;
+    font-size: 14px;
+    color: #6C6D6F;
+    margin-right: 10px;
+    float: left;
+}
+
+.manage-main-rightDiv-left {
+    padding-right: 0px
+}
+
+.manage-main-rightDiv-leftDiv {
+    border: 1px solid #E1DFDD;
+    height: 544px;
+    margin-top: 15px;
+}
+
+.manage-main-rightDiv-rightDiv {
+    border: 1px solid #E1DFDD;
+    height: 544px;
+    margin-top: 15px;
+    overflow-y: auto;
+}
+
+.manage-main-rightDiv-rightDiv-ch {
+    padding-left: 10px
+}
+
+.manage-role-select {
+    cursor: pointer;
+    background-color: white;
+    color: #555;
+    line-height: 22px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.manage-role-select span {
+    display: block;
+    float: left;
+    width: 80%;
+    overflow: hidden;
+}
+
+.manage-role-selected span {
+    display: block;
+    float: left;
+    width: 80%;
+    overflow: hidden;
+    height: 22px
+}
+
+.manage-role-selected a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    color: #FFF;
+}
+
+.manage-role-select img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 16px;
+    height: 16px;
+    border: 0px none;
+}
+
+.manage-role-selected img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 16px;
+    height: 16px;
+    border: 0px none;
+}
+
+.manage-role-selected {
+    cursor: pointer;
+    background-color: #4696D3;
+    color: white;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 10px;
+}
+
+.manage-role-selectDiv {
+    width: 100%;
+}
+
+
+/*角色管理主体部分CSS结束*/
+
+
+/*创建角色部分开始*/
+
+.manage-createRole {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.manage-createRole-head {
+    height: 28px;
+    background-color: #f2f2f5;
+    /* 修改 */
+    text-align: center;
+    border-bottom: 1px solid #e1dfdd;
+    /* 修改 */
+    line-height: 28px;
+    /* 新增 */
+}
+
+.manage-createRole-head-span {
+    font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.manage-createRole-body {
+    height: 80px;
+    /* 修改 */
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color: #333333;
+    padding-left: 14px;
+    border-bottom: 1px solid #E1DFDD;
+    /* 修改 */
+}
+
+.manage-createRole-rolename-span {
+    float: left;
+}
+
+.manage-createRole-rolename {
+    margin-top: 15px;
+}
+
+.manage-createRole-group {
+    margin-top: 10px;
+}
+
+.manage-createRole-children {
+    width: 602px;
+    min-height: 460px;
+    border: 1px solid #E1DFDD;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+
+/*更改分组开始*/
+
+.manage-createRole-changeGroup {
+    min-height: 459px;
+    overflow: auto;
+    padding: 0 0;
+}
+
+.manage-createRole-changeGroup-head {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #E1DFDD;
+    /* 修改 */
+    text-align: center;
+    font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #F3F2F0;
+    border-right: 1px solid #E1DFDD;
+}
+
+.manage-createRole-changeGroup-chooseGroup {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    /* border-right: 1px solid #E1DFDD; */
+    /* 修改 */
+    background-color: #4696d3;
+    /* 修改 */
+    color: #fff;
+    /* 修改 */
+}
+
+.manage-createRole-changeGroup-chooseGroup-button {
+    min-height: 459px;
+    text-align: center;
+}
+
+.manage-createRole-changeGroup-chooseGroup-button-confirm {
+    margin-top: 150px;
+}
+
+.manage-createRole-changeGroup-chooseGroup-button-cancel {
+    margin-top: 50px;
+}
+
+
+/*更改分组结束*/
+
+
+/*选择角色开始*/
+
+.manage-createRole-chooseRole-head {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #D4D4D4;
+    text-align: center;
+    font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    background-color: #F3F2F0;
+}
+
+.manage-createRole-chooseRole-body {
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.manage-createRole-chooseRole-body-r {
+    padding-right: 15px;
+    height: 380px;
+}
+
+.margin-right {
+    left: 15px
+}
+
+.manage-createRole-chooseRole-body-left-head,
+.manage-createRole-chooseRole-body-right-head {
+    text-align: center;
+    border-right: 1px solid #4496D2;
+    background: #4496D2;
+    color: white;
+    border-top: none;
+    font-size: 14px;
+    line-height: 30px;
+    height: 30px;
+}
+
+.manage-createRole-chooseRole-body-left-list {
+    white-space: nowrap;
+}
+
+.manage-createRole-chooseRole-body-left-list .tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/m1-l.png") no-repeat 0 center !important;
+}
+
+.manage-createRole-chooseRole-body-left-list .tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/m2-l.png") no-repeat 0 center;
+}
+
+.manage-createRole-chooseRole-body-left-list {
+    height: 399px;
+    overflow-x: auto;
+    border: 1px solid #E1DFDD;
+    border-top: none;
+    padding-top: 10px;
+    border-left: none;
+    border-bottom: none;
+    overflow-y: auto;
+}
+
+.manage-createRole-chooseRole-body-left-list ul li.a7 {}
+
+.manage-createRole-chooseRole-botton-c {}
+
+.manage-createRole-chooseRole-botton-c button {
+    margin-top: 12px;
+    border-radius: 4px;
+    border: none;
+    width: 81px;
+    height: 28px;
+    padding: 0px;
+    line-height: 29px;
+    text-align: center;
+    color: white;
+    font-size: 12px
+}
+
+.manage-createRole-chooseRole-botton-c .submit {
+    background: #1ABAA0;
+    margin-left: 91px;
+}
+
+.manage-createRole-chooseRole-botton-c .cancel {
+    background: #4496D2;
+    margin-left: 46px;
+}
+
+.manage-createRole-chooseRole-body-right {
+    border: 1px solid #E1DFDD;
+    height: 380px;
+    overflow-y: auto;
+    border-top: none;
+    overflow-x: auto;
+}
+
+.manage-createRole-chooseRole-body-right-head {
+    text-align: center;
+}
+
+.manage-createRole-chooseRole-botton {
+    width: 30px;
+    height: 176px;
+    position: absolute;
+    top: 125px;
+    right: 152px;
+}
+
+.manage-createRole-chooseRole-botton div {
+    cursor: pointer;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #4496D2;
+    border-radius: 4px;
+}
+
+.manage-createRole-chooseRole-botton div.mgb30 {
+    margin-bottom: 40px
+}
+
+.manage-createRole-chooseRole-botton {
+    text-align: center;
+}
+
+
+/*选择角色结束*/
+
+
+/*创建角色部分结束*/
+
+
+/*权限分配部分开始*/
+
+.manage-authorityAssignment .modal-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    margin: auto
+}
+
+.manage-authorityAssignment .modal-dialog .modal-content {
+    width: 711px;
+    min-height: 378px;
+    background-color: #E0DED8;
+}
+
+.manage-authorityAssignment-modal {
+    width: 701px;
+    min-height: 368px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.manage-authorityAssignment-modal .moduleDiv {
+    float: left;
+    margin-right: 10px;
+}
+
+.manage-authorityAssignment-modal-head {
+    line-height: 40px;
+    height: 40px;
+}
+
+.manage-authorityAssignment-modal-head-title {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.manage-authorityAssignment-modal-head-module {
+    margin-left: 530px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.manage-authorityAssignment-modal-tab {
+    background-color: #F0F2F4;
+    width: 100%;
+    height: 44px;
+    padding-top: 5px;
+    padding-left: 40px;
+}
+
+.manage-authorityAssignment-modal-ul {
+    margin-left: -20px
+}
+
+.manage-authorityAssignment-modal-ul li {
+    float: left;
+    list-style: none;
+    width: 110px;
+    height: 32px;
+    border: 1px solid #E0DDD9;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px 4px 0px 0px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.manage-authorityAssignment-modal-ul-selected {
+    background-color: white;
+    color: black;
+}
+
+.manage-authorityAssignment-modal-ul-select {
+    background-color: #4496D2;
+    color: white;
+}
+
+.manage-authorityAssignment-modal-productList-title {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-bottom: 1px solid #E0DEDA;
+    margin-right: 20px;
+}
+
+.manage-authorityAssignment-modal-productList {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px
+}
+
+.manage-authorityAssignment-modal-site-title {
+    font-weight: bold;
+}
+
+.manage-authorityAssignment-modal-site-title-pointer {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.manage-authorityAssignment-modal-site-title span {
+    color: #231815
+}
+
+.manage-authorityAssignment-modal-site-title-channelUl {
+    padding-top: 15px;
+}
+
+.manage-authorityAssignment-modal-site-title-channelUl li {
+    float: left;
+    list-style: none;
+    height: 22px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 22px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 0 6px;
+}
+
+.manage-authorityAssignment-modal-site-title-channel {
+    margin-top: -10px;
+}
+
+.manage-authorityAssignment-modal-channel-finished {
+    background-color: #4496D2;
+    color: white;
+    border-radius: 4px;
+}
+
+.manage-main-rightDiv-leftDiv-default {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    color: #6e6e6e;
+}
+
+.manage-main-rightDiv-leftDiv-default span {
+    color: #6E6E6E;
+    font-weight: 700
+}
+
+.manage-main-rightDiv-leftDiv-default-none {
+    display: none;
+}
+
+.manage-main-rightDiv-leftDiv-treeLi {
+    line-height: 30px;
+    min-width: 350px;
+}
+
+.manage-main-rightDiv-leftDiv-title {
+    height: 36px;
+    line-height: 36px;
+    background-color: #4496D2;
+    position: relative;
+}
+
+.manage-main-rightDiv-leftDiv-treeDiv .nobold {
+    font-weight: normal;
+}
+
+.manage-main-rightDiv-leftDiv-title-right {
+    height: 36px;
+    line-height: 36px;
+    background-color: #0095CE;
+    text-align: center
+}
+
+.manage-main-rightDiv-leftDiv-titleSpan {
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.manage-main-rightDiv-leftDiv-titleSpanSite {
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.manage-main-rightDiv-leftDiv-set {
+    right: 0px;
+    color: #20CAEE;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 10px;
+    position: absolute;
+}
+
+.manage-main-rightDiv-leftDiv-icon {
+    width: 15px;
+    height: 15px
+}
+
+.manage-main-rightDiv-leftDiv-treeIcon {
+    display: none !important;
+}
+
+.manage-main-rightDiv-leftDiv-label {
+    font-size: 14px;
+}
+
+.manage-main-rightDiv-leftDiv-title-right {
+    text-align: center;
+}
+
+.manage-main-rightDiv-leftDiv-authority li {
+    line-height: 30px;
+    list-style: none;
+}
+
+.manage-main-rightDiv-leftDiv-authority li span {
+    cursor: pointer;
+}
+
+.manage-main-rightDiv-leftDiv-authority li span.selected {
+    font-weight: bold;
+}
+
+.manage-main-rightDiv-leftDiv-authorityChildrenLi {
+    float: left;
+    margin-right: 35px;
+}
+
+.manage-main-rightDiv-leftDiv-authority ul {
+    padding-left: 30px
+}
+
+.manage-main-rightDiv-leftDiv-treeDiv {
+    height: 500px;
+    overflow: auto;
+    font-size: 12px;
+}
+
+.manage-main-rightDiv-leftDiv-authority input {
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+}
+
+.selectTemplate {
+    position: relative;
+    float: left;
+}
+
+.manage-button-select {
+    width: 120px;
+    height: 28px;
+    line-height: 20px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.manage-button-select-icon {
+    float: right;
+}
+
+.clear {
+    clear: both;
+    font-size: 0;
+}
+
+
+/*权限分配部分结束*/
+
+
+/*角色管理添加用户开始*/
+
+.manage-roleManage-addUser .modal-dialog .modal-content {
+    width: 578px;
+    height: 457px;
+    background-color: #E0DED8;
+    top: 200px;
+    left: 170px;
+}
+
+.manage-roleManage-addUserDiv {
+    width: 569px;
+    height: 449px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.manage-roleManage-addUser-head {
+    height: 23px;
+    line-height: 23px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
+
+.manage-roleManage-addUserBody {
+    background-color: white;
+    height: 426px;
+}
+
+.manage-roleManage-addUser-group {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.manage-roleManage-addUser-groupDiv {
+    height: 426px;
+    border: 1px solid #EFEEEC;
+    overflow-y: auto;
+}
+
+.manage-roleManage-addUser-group-head {
+    height: 23px;
+    line-height: 23px;
+    background-color: #0095CE;
+    color: white;
+    font-size: 12px;
+    text-align: center
+}
+
+.manage-roleManage-addUser-chooseRole {
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+.manage-roleManage-addUser-chooseRoleDiv {
+    height: 426px;
+}
+
+.manage-roleManage-addUser-group-user {
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border-left: 1px solid #EFEEEC;
+    border-right: 1px solid #EFEEEC;
+    border-bottom: 1px solid #EFEEEC;
+    white-space: nowrap;
+}
+
+.manage-roleManage-addUser-group-button {
+    height: 40px;
+}
+
+.manage-roleManage-addUser-group-button button:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.group-button-left {
+    text-align: right;
+}
+
+.group-button-left button {
+    margin-top: 10px;
+    background: #1ABAA0;
+    width: 81px;
+    height: 28px;
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+}
+
+.group-button-right {
+    text-align: left;
+}
+
+.group-button-right button {
+    margin-top: 10px;
+    background: #4496D2;
+    width: 81px;
+    height: 28px;
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+}
+
+.manage-roleManage-addUser-group-tree {
+    white-space: nowrap;
+}
+
+.manage-roleManage-addUser-group-tree .tree-light li.tree-collapsed i.tree-branch-head,
+.manage-main-rightDiv-leftDiv-treeDiv .tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/m1-l.png") no-repeat 0 center !important;
+}
+
+.manage-roleManage-addUser-group-tree .tree-light li.tree-expanded i.tree-branch-head,
+.manage-main-rightDiv-leftDiv-treeDiv .tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/m2-l.png") no-repeat 0 center;
+}
+
+.manage-roleManage-addUser-group-userUl {
+    width: 100%;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    line-height: 15px;
+    margin-top: 5px;
+    white-space: nowrap;
+}
+
+.manage-roleManage-addUser-group-userUl li {
+    list-style: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.manage-roleManage-addUser-choose-buttons {
+    margin-top: 100px;
+    text-align: center;
+    padding-left: 15px;
+}
+
+.manage-roleManage-addUser-choose-button {
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: #4496D2;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.manage-button-select-icon {
+    positon: absolute;
+    left: 0px;
+}
+
+.manage-button-select-icon img {
+    width: 10px;
+    height: 10px;
+}
+
+.manage-button-select-ul {
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+    top: 22px;
+}
+
+selecttemplate {
+    position: relative;
+}
+
+.manage-button-select-ul div {
+    cursor: pointer;
+}
+
+.manage-button-select-text {
+    float: left;
+    width: 89px;
+    overflow: hidden;
+}
+
+.manage-button-select-text span {
+    cursor: pointer;
+}
+
+.manage-button-select-deleteImg {
+    cursor: pointer;
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+    margin-right: 4px;
+}
+
+.manage-button-select-div {
+    width: 118px;
+    height: 25px;
+    line-height: 25px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.manage-button-select-div:hover {
+    background-color: #4696D3;
+    color: white;
+}
+
+
+/*角色管理添加用户结束*/
+
+
+/*Maroon*/
+
+.role-btn-commen {
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0px;
+    font-size: 12px;
+    background: #f2f2f2;
+    border-radius: 4px;
+    border: 1px solid #ADADAD;
+    color: black;
+}
+
+.role-btn-selected {
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid #4496D2;
+    background-color: #4496D2;
+    color: white;
+}
+
+.manage-main-left {
+    padding: 0 0;
+}
+
+.input-group .role_form_control {
+    height: 32px;
+    line-height: 32px;
+    background: transparent url("./manageConfig/images/js2.png") no-repeat scroll 95% center;
+    padding-left: 10px;
+    width: 100%;
+    margin-left: 0px;
+    border-radius: 0 0 !important;
+    margin-right: 10px;
+    background-size: 22px 22px
+}
+
+.mr-15 {
+    margin-right: 15px;
+}
+
+.addUser-head-row {
+    height: 50px;
+    padding-top: 10px;
+}
+
+.addUser-head-row .adduserBtn button.btn-commen {
+    width: 80px;
+}
+
+.addUser-head-row .edit_input_group {
+    width: 200px;
+    margin-right: 0px;
+}
+
+.addUser-head-row .edit_input_group ul {
+    height: 220px;
+    overflow-y: auto;
+    width: 190px;
+}
+
+.addUser-head-row .edit_input_group input {
+    width: 130px;
+    float: left;
+}
+
+.addUser-head-row .edit_input_group span.input-group-btn {
+    float: left;
+    margin-left: 10px;
+}
+
+.addUser-tab {
+    line-height: 30px;
+    padding-left: 0px
+}
+
+.addUser-tab a {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+}
+
+.addUser-tab a.mr40 {
+    margin-right: 40px;
+}
+
+.addUser-tab a.cur {
+    color: #094874;
+    text-decoration: underline;
+}
+
+.addUser-tab span {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+}
+
+.addUser-tab span.mr40 {
+    margin-right: 40px;
+}
+
+.addUser-tab span.cur {
+    color: #094874;
+    text-decoration: underline;
+}
+
+.mlr-15 {
+    margin: 0 15px;
+}
+
+.role-name-input {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    width: 210px;
+}
+
+
+/* 新增 */
+
+.btn-commen-green {
+    background: #4496d2;
+    color: #fff;
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+}
+
+
+/* 新增 */
+
+.btn-commen-blue {
+    background: #C1C1C1;
+    color: #fff;
+    width: 90px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+}
+
+
+/* 新增 */
+
+.border-b3b {
+    border-color: #b3b0ab;
+}
+
+
+/* 新增 */
+
+.min-height-410 {
+    min-height: 410px;
+}
+
+.no-bor-r {
+    border-right: none;
+}
+
+.role-list-span {
+    padding-left: 10px;
+    cursor: pointer;
+    display: block;
+    color: #555;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.td_pointer {
+    cursor: pointer;
+}
+
+.addUser-btn:focus {
+    color: #333;
+}
+
+.role-search-img {
+    width: 32px;
+    cursor: pointer;
+}
+
+.role-search-img-not {
+    width: 32px;
+    cursor: not-allowed;
+}
+
+.save-role-btn {
+    float: right;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+
+/* .new-role-container .new-role-body .role-form{float: left; margin:16px 0 0 4px;}
+.new-role-container .new-role-body .role-form input{ font-size: 12px; width: 180px; height: 26px; line-height: 26px;}
+.new-role-container .new-role-body .role-form p{ margin:0px 0px;} */
+
+
+/*Maroon*/
+
+
+/* 新建角色弹框 */
+
+.new-role-window .modal-content {
+    width: 348px;
+    background: #ddd;
+    top: 132px;
+    margin: 0 auto;
+}
+
+.new-role-container {
+    width: 340px;
+    padding-bottom: 12px;
+    background: #fff;
+    margin: 2px 3px;
+    border-radius: 6px;
+}
+
+.new-role-container .new-role-head {
+    height: 40px;
+    line-height: 40px;
+}
+
+.new-role-container .new-role-head p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+}
+
+.new-role-container .new-role-body {
+    min-height: 115px;
+    padding-bottom: 4px;
+    background: #f0f2f5;
+    overflow: hidden;
+}
+
+.new-role-container .new-role-body p {
+    height: 30px;
+    line-height: 30px;
+    margin: 13px 0 0 20px;
+}
+
+.new-role-container .new-role-body p.passover {
+    padding: 0px;
+    margin-top: 5px;
+    margin-left: 76px;
+    height: auto;
+    font-size: 13px;
+    line-height: 20px;
+    margin-right: 20px;
+}
+
+.new-role-container .new-role-body p span {
+    font-size: 12px;
+    color: #333;
+}
+
+.new-role-container .new-role-body p span.c-666 {
+    color: #666;
+}
+
+.new-role-container .new-role-body p input {
+    width: 244px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    font-family: "";
+    color: #b4b4b4;
+    padding-left: 6px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.new-role-footer .new-role-btn {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-top: 12px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.new-role-footer .ml156 {
+    margin-left: 156px;
+}
+
+
+/* 新建角色弹框结束 */
+
+
+/*新增保存权限模板*/
+
+.manageSavePerTemp .modal-dialog .modal-content {
+    width: 513px;
+    height: 214px;
+    background-color: #f0f2f5;
+    top: 212px;
+    left: 288px;
+    border: 4px solid #DDD;
+    ;
+}
+
+.manageSavePerTemp .savePerhead {
+    overflow: hidden;
+    background: #fff;
+    height: 40px;
+}
+
+.manageSavePerTemp .savePerhead span {
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 18px;
+    float: left;
+    line-height: 40px;
+}
+
+.manageSavePerTemp .savePerhead img {
+    float: right;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    margin-right: 14px;
+    margin-top: 10px;
+}
+
+.manageSavePerTemp .content .con {
+    overflow: hidden;
+    margin-top: 38px;
+    margin-left: 39px;
+}
+
+.manageSavePerTemp .content .con p {
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    color: #333333;
+    font-size: 14px;
+    /*margin-top: 5px;*/
+}
+
+.manageSavePerTemp .content .con input {
+    width: 242px;
+    height: 28px;
+    float: left;
+    margin-left: 12px;
+}
+
+.manageSavePerTemp .content .templateFooter {
+    margin-top: 50px;
+    margin-left: 144px;
+    overflow: hidden;
+}
+
+.manageSavePerTemp .content .templateFooter button {
+    width: 80px;
+    height: 28px;
+    float: left;
+    padding: 0px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.manageSavePerTemp .content .templateFooter button.btn_green {
+    background: #1aba9f;
+}
+
+.manageSavePerTemp .content .templateFooter button.btn_blue {
+    background: #4496d2;
+    margin-left: 63px;
+}
+
+.manage-main-leftDiv .manage-role-select .roleDesc {
+    display: block;
+    float: left;
+    width: 80%;
+    height: 22px;
+    overflow: hidden;
+}
+
+.manage-main-leftDiv .manage-role-select img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 16px;
+    height: 16px;
+    border: 0;
+}
+
+.manage-createRole-children .notSelectedRole {
+    width: 100%;
+}
+
+
+/*fixed media screen*/
+
+@media screen and (min-width: 768px) and (max-width: 1236px) {
+    .manage-main-button {
+        width: 75px
+    }
+    .edit_input_left {
+        width: 80%;
+        float: left;
+        margin-right: 1px;
+        margin-left: 0px;
+    }
+    .input-group .role_form_control {
+        background: none;
+    }
+    .manage-main-rightDiv-poS {
+        margin-left: 115px
+    }
+}
+
+@media screen and (min-width: 1237px) and (max-width: 1260px) {
+    .edit_input_left {
+        width: 80%;
+        float: left;
+        margin-right: 1px;
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 1261px) and (max-width: 1365px) {
+    .edit_input_left {
+        width: 200px;
+        float: left;
+        margin-right: 1px;
+        margin-left: 0px;
+    }
+    .edit_input_right {
+        float: right;
+    }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1921px) {
+    .edit_input_left {
+        width: 85%;
+        float: left;
+        margin-right: 5px;
+        margin-left: 0px;
+    }
+    .edit_input_right {
+        float: right;
+    }
+}
+
+.manage_input_group {
+    margin-left: 14px;
+    width: 90%;
+}
+
+.manage-main-button {
+    width: 75px
+}
+
+.manage_right_head {
+    height: 55px;
+    background: #eff0f2;
+    padding-top: 13px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1173px) {
+    .manage-authorityAssignment .modal-dialog .modal-content {
+        left: 91px;
+    }
+}
+
+.form-control + .tooltip.top .tooltip-arrow {
+    border-top-color: #E53131;
+}
+
+.form-control + .tooltip.top .tooltip-inner {
+    background-color: #E53131;
+}
+
+.new-role-div {
+    height: 30px;
+    line-height: 30px;
+    margin: 13px 0 0 20px;
+}
+
+.new-role-div .role-form {
+    float: left;
+}
+
+.new-role-div .role-form .form-control {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    padding-left: 6px;
+    margin-left: 2px;
+}
+
+.new-role-div span {
+    float: left;
+    font-size: 12px;
+}
+
+.manage-createRole-body .invalidate-input-box span {
+    left: 60px;
+}
+
+.manageSavePerTemp .invalidate-input-box span {
+    left: 110px;
+}
+
+.content .con_tpl_p {
+    padding-top: 5px;
+}
+
+.new-role-div b {
+    float: left;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.new-role-body .form-control {
+    width: 80%;
+}
+
+.new-role-container .new-role-body p {
+    margin: 0px;
+}
+
+.new_role_body_p {
+    margin: 13px 0 0 20px!important;
+}
+
+.new-role-div .invalidate-input-box span {
+    left: 40px;
+}
+
+.new-role-body .invalidate-input-box span {
+    left: 50px;
+}
+
+.authorityAssignment-open-rotate {
+    transform: rotate(270deg);
+    -ms-transform: rotate(279deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    position: relative;
+    top: 0px;
+    left: -200px;
+}
+
+.authorityAssignment-open {
+    position: relative;
+    top: 0px;
+    left: -200px;
+}
+
+.authorityAssignment-open-rotate-BM {
+    transform: rotate(270deg);
+    -ms-transform: rotate(279deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    position: relative;
+    top: 0px;
+    left: -280px;
+}
+
+.authorityAssignment-open-BM {
+    position: relative;
+    top: 0px;
+    left: -280px;
+}
+
+.row .selectPagecount .page {
+    height: 70px;
+    padding-top: 0px;
+    position: static;
+}
+
+.row .selectPagecount .page .page_left {
+    margin-left: 30px;
+    margin-top: 24px;
+}
+
+.row .selectPagecount .page p.magrin-fixed20 {
+    margin-top: 28px;
+    margin-left: 30px;
+}
+
+.manage-main-rightDiv .selectPagecount .dropdown .dropdown-menu {
+   /* min-width: 80px!important;*/
+}

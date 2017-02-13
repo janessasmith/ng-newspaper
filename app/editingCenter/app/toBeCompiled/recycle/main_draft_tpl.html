@@ -1,0 +1,87 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="restore()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='restore'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['appsite.recyle.huanyuan']">
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='restore'&&data.selectedArray.length>0?'fg1-1.png':'fg1.png'}}" /></span> 还原
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="delete()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['appsite.recyle.huanyuan']">
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='delete'&&data.selectedArray.length>0?'fg2-1.png':'fg2.png'}}" /></span> 删除
+        </button>
+        <button class="btn btn-default btn-commen edit_right_head_btn_clearTrash opacity100" ng-click="clear()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='clear'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['appsite.recyle.clear']">
+            <span class="s_icon_clear"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='clear'?'fg3-1.png':'fg3.png'}}" /></span> 清空回收站
+        </button>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li class="active">废稿箱</li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid app-selectedTimeType">
+    <div class="col-md-5 app-selected">
+        <span class="s_onlyme">只看我的</span>
+        <trs-radio ckstatus="status.onlyMine" ckcallback="isOnlyMine()"></trs-radio>
+        <label for="checkbox_c1"></label>
+        <trs-time-select selected-option="data.selectedTimeType" options="data.timeTypeJsons" callback="queryDropDown('timeType',data.selectedTimeType.value)" fromdate="data.fromdate" untildate="data.untildate"></trs-time-select>
+    </div>
+    <div class="col-md-7">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键词搜索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+        </div>
+        <trs-single-select class="pull-right" callback="" selected-option="data.selectedClassify" options="data.classifyJsons"></trs-single-select>
+        <trs-single-select class="pull-right" ng-show="status.isESSearch" selected-option="data.sortType" callback="queryDropDown('', data.sortType.value)" options="data.sortTypeJsons"></trs-single-select>
+    </div>
+</div>
+<div class="edit_table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="td-check col-cbx">
+                    <trs-checkbox ischecked="data.selectedArray.length==data.items.length&&data.items.length>0" callback="selectAll()"></trs-checkbox>
+                </th>
+                <th>序号</th>
+                <th>标题</th>
+                <!-- <th>图示</th> -->
+                <th>原位置</th>
+                <th>删除人</th>
+                <th>删除时间</th>
+                <th class="hidden-operate">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <div cg-busy="loadingPromise"></div>
+            <tr ng-repeat="item in data.items">
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <td ng-bind="$index+1"></td>
+                <!--序号-->
+                <td class="ta-l"><a title="{{item.METADATAID}}" ui-sref="appPreview({channelid:status.channelId,chnldocid:item.CHNLDOCID,siteid:status.siteId,metadataid:item.METADATAID,platform:4,doctype:(item.DOCTYPEID-1)})" target="_blank">{{item.TITLE}}</a></td>
+                <!--标题-->
+                <td ng-bind="item.CHNLDESC"></td>
+                <!--原位置-->
+                <td ng-bind="item.OPERNAME"></td>
+                <!--删除人-->
+                <!-- <td ng-bind="item.OPERTIME | date : 'yyyy-MM-dd hh:mm'"></td> -->
+                <td ng-bind="item.OPERTIME" class="pointer" ng-click="showVersionTime(item)"></td>
+                <!--删除时间-->
+                <!--状态-->
+                <td class="hidden-operate">
+                    <!--操作-->
+                    <img src="./editingCenter/app/images/fg-r.png" ng-click="restore(item)" ng-if="status.btnRights['appsite.recyle.huanyuan']"> <a href="javascript:void(0)" ng-click="restore(item)" ng-if="status.btnRights['appsite.recyle.huanyuan']">还原</a>
+                    <img src="./editingCenter/app/images/fg-r2.png" ng-click="delete(item)" ng-if="status.btnRights['appsite.recyle.huanyuan']"> <a href="javascript:void(0)" ng-click="delete(item)" ng-if="status.btnRights['appsite.recyle.huanyuan']">
+                        删除
+                    </a>
+                    <!-- <img src="./editingCenter/app/images/r3.png"> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="data.copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+</div>

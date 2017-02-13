@@ -1,0 +1,36 @@
+<!--main-->
+    <div class="jk-main-con">
+        <!--运营排行-->
+        <div class="weibo-center-top">
+            <div class="weibo-account-yy lf">
+                <div ui-view="wbzk"></div>
+            </div>
+            <div class="weibo-league-table rt">
+                 <div ui-view="wbbd"></div>
+            </div>
+        </div>
+        <!--end 运营排行-->
+        <!--子报子刊微博综合监控入口-->
+        <div class="wb-rk-bk">
+           <div ui-view="rk"></div>
+        </div>
+        <!--end 子报子刊微博综合监控入口-->
+        <div class="wb-rd-div">
+            <!--最新微博-->
+            <div class="new-wb-bk lf">
+                <div ui-view="wbzx"></div>
+            </div>
+            <!--热点新闻-->
+            <div class="new-wb-bk rt">
+               <div ui-view="wbrd"></div>
+            </div>
+        </div>
+        <div class="wb-rd-div" style="margin-bottom: 20px;">
+            <!--集团微博运营综合状况-->
+            <div>
+               <div ui-view="wbyy"></div>
+            </div>
+        </div>
+    </div>
+<!--end main-->
+

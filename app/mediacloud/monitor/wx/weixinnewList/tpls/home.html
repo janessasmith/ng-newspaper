@@ -1,0 +1,32 @@
+<div class="jk-main-con">
+  <div class="my-sel-bk">
+    <div class="sel-bk-deal clearfix" ng-controller="unitCtrl">
+      <label>所在单位：</label>
+      <div class="bk-deal-list">
+        <div class="bk-deal-op">
+          <ul>
+            <li ng-repeat="unit in units" ui-sref="weixinnewList.list({unitName:unit.UnitName})" ui-sref-active="active">
+              {{unit.UnitName}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sel-bk-deal clearfix" ng-controller="classCtrl">
+      <label class="labelcss">所属类别：</label>
+      <div class="bk-deal-list">
+        <div class="bk-deal-op">
+          <ul>
+            <li ng-repeat="class in classs" ui-sref="weixinnewList.list({accountType:class.ClassName})" 
+                ui-sref-active="active">
+              {{class.ClassName}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end 多选-->
+  <div ui-view></div>
+  <!--end 左边-->
+</div>

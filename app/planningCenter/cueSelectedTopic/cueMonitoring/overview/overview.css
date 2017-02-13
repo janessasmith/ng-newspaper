@@ -1,0 +1,127 @@
+.overView .overflow_head .overView_input_group {
+    width: 60%;
+    z-index: 1;
+}
+
+.overView .overflow_head {
+    height: 48px;
+    background: #eff0f2;
+}
+
+.overView .overflow_head .input-group .overView_form_control {
+    float: none;
+    height: 30px;
+    line-height: 30px;
+    background: #fff url("./editingCenter/app/images/sch.jpg") no-repeat 10px center;
+    padding-left: 30px;
+    font-size: 12px;
+    font-family: "MicrosoftYahei";
+}
+
+.overView .overflow_head .input-group-btn:last-child > .btn {
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+.overView .edit_table table thead tr th.overView_width,
+.overView .edit_table table tbody tr td.overView_width {
+    text-align: left;
+}
+
+.overView .overviewHead {
+    float: left;
+    height: 40px;
+    overflow: hidden;
+}
+
+.overView .overviewHead input {
+    width: 240px;
+    margin-right: 10px;
+    text-indent: 10px;
+    height: 28px;
+    border-radius: 4px;
+    margin-top: 10px;
+    float: left;
+    background: url("./editingCenter/app/images/sch.jpg") no-repeat 5px center white;
+}
+
+.overView .overviewHead button {
+    height: 28px;
+    width: 74px;
+    border: 1px solid #dabddd;
+    text-align: center;
+    line-height: 28px;
+    float: left;
+    margin-top: 10px;
+}
+
+.overView table td a {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    width: 800px;
+    text-align: left;
+}
+
+.overView input.hisToryTime {
+    /* margin-top: 10px; */
+    height: 30px;
+    margin-left: 2px;
+    margin-right: 10px;
+    padding: 0px;
+    border-radius: 4px;
+    text-indent: 10px;
+    width: 164px;
+    background: white url("./editingCenter/app/toBeCompiled/images/t3.png") no-repeat 140px 5px;
+}
+
+.overView .edit_table .table {
+    table-layout: fixed;
+}
+
+.overView .edit_table .table tbody tr td.w56,
+.overView .edit_table .table thead tr th.w56 {
+    width: 56px;
+}
+
+.overView .edit_table .table tbody tr td.wtitle,
+.overView .edit_table .table thead tr th.wtitle {
+    width: 35%;
+}
+
+.overView .edit_table .table tbody tr td.w104,
+.overView .edit_table .table thead tr th.w104 {
+    width: 154px;
+}
+
+.overView .edit_table .table tbody tr td:nth-child(2) {
+    text-align: left;
+}
+
+.overView .edit_table .table tbody tr td.txtagl {
+    text-align: left;
+}
+
+.overView .dropdown .bth-fix {
+    height: 28px;
+}
+
+.plan-breadcrumb {
+    padding-top: 8px;
+    height: 58px;
+    margin-left: 15px;
+}
+
+.overView {
+    position: relative;
+}
+
+.overView .edit_table {
+    margin-top: 10px;
+    min-height: 90px;
+}
+
+.overView .edit_table .page {
+    bottom: 0px;
+}

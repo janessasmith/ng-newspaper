@@ -1,0 +1,112 @@
+<div class="row edit_folder_right_mid">
+    <span class="edit_folder_right_mid_name">文件库</span>
+    <a ng-click="returnFolder()" class="pointer" ng-class="{'edit_cloud_notAllowedReturn':params.ParentPathName == '/'}">返回上一级 </a>
+    <span>| {{data.currChnnl.CHNLDESC}}：</span>
+    <!-- <a class="cursorDefault" ng-bind="params.ParentPathName=='/'?'/根目录':'/根目录'+params.ParentPathName"></a> -->
+    <a class="pointer" ng-repeat="path in status.pathArray track by $index" ng-click="pathJump($index)" title="{{path}}">{{path|trsLimitTo:8}}/</a>
+</div>
+<div class="row edit_folder_right_head">
+    <div class="edit_folder_right_head_bts">
+        <button class="btn btn-default btn-commen opacity100 folder_w70" ng-mouseenter="status.batchOperateBtn['hoverStatus']='refresh'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-click="refresh()">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='refresh'?'i18-1.png':'i18.png'}}" />
+            </span> 刷新
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-click="deleteFolderFile()" ng-if="status.btnRights['websetchannel.file.shanchu']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/images/{{status.batchOperateBtn['hoverStatus']=='delete'?'wj3-1.png':'wj3.png'}}" />
+            </span> 批量删除
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-mouseenter="status.batchOperateBtn['hoverStatus']='upload'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-click="fileUpload()" ng-if="status.btnRights['websetchannel.file.shangchuan']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/images/{{status.batchOperateBtn['hoverStatus']=='upload'?'wj4-1.png':'wj4.png'}}" />
+            </span> 上传文件
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-mouseenter="status.batchOperateBtn['hoverStatus']='templateUpload'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-click="templateUpload()" ng-if="status.btnRights['websetchannel.file.shangchuantemplate']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/cloudIcon/{{status.batchOperateBtn['hoverStatus']=='templateUpload'?'wjk11-1.png':'wjk11.png'}}" />
+            </span> 上传模板
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-mouseenter="status.batchOperateBtn['hoverStatus']='newFolder'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-click="newFolder()" ng-if="status.btnRights['websetchannel.file.xinjianmulu']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/images/{{status.batchOperateBtn['hoverStatus']=='newFolder'?'wj6-1.png':'wj6.png'}}" />
+            </span> 新增目录
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-mouseenter="status.batchOperateBtn['hoverStatus']='newFile'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-click="newFile()" ng-if="status.btnRights['websetchannel.file.xinjianfile']">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/cloudIcon/{{status.batchOperateBtn['hoverStatus']=='newFile'?'wjk4-1.png':'wjk4.png'}}" />
+            </span> 新增文件
+        </button>
+    </div>
+    <div class="input-group edit_input_group mr15">
+        <input type="text" class="form-control edit_form_control" placeholder="请输入要搜索的文件/目录名" ng-model="status.search.NAME">
+    </div>
+</div>
+<div class="edit_folder_right_allfiles">
+    <span class="left ml10" ng-bind="!status.search.NAME?'全部文件':'搜索结果：“'+status.search.NAME+'”'">全部文件</span>
+    <span class="right mr10">{{status.count.file}}个目录,{{status.count.folder}}个文件</span>
+</div>
+<div class="edit_table edit_folder_table" ng-mouseleave="status.currHoverItem=''">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-check w90 txt_l">
+                    <trs-checkbox ischecked="data.items.length != 0 && data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox>全部
+                </th>
+                <th>名称</th>
+                <th class="xcol-newspaper-date">修改时间</th>
+                <th class="xcol-newspaper-releaseBuild">大小</th>
+                <!-- <th class="xcol-newspaper-operation hidden-operate">预览</th>
+                <th class="xcol-newspaper-picture">生成</th> -->
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr ng-repeat="item in data.items| filter:status.search:strict" ng-mouseenter="status.currHoverItem=item">
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <!--全选-->
+                <td class="folder_name_left">
+                    <img src="./editingCenter/website/images/cloudIcon/wjk7.png" alt="" ng-show="item.ISDIRECTORY=='true'" ng-click="nextFolder(item)">
+                    <img ng-src="./editingCenter/website/images/cloudIcon/{{differenceType(item)}}.png" alt="" ng-show="item.ISDIRECTORY=='false'" class="cursorDefault">
+                    <span ng-bind="item.NAME" ng-show="item.ISDIRECTORY=='true'" ng-click="nextFolder(item)" class="pointer"></span>
+                    <span ng-bind="item.NAME" ng-show="item.ISDIRECTORY=='false'"></span>
+                    <p class="folder_name_left_operation" ng-show="status.currHoverItem==item">
+                        <a ng-click="modifyFolderFile(item)" ng-if="status.btnRights['websetchannel.file.bianji']">
+                            <img src="./editingCenter/website/images/images/wj8.png">
+                            <span>改名</span>
+                        </a>
+                        <a ng-show="item.ISDIRECTORY=='false'&&status.canModify.indexOf(differenceType(item))>-1&&status.btnRights['websetchannel.file.xiugaineirong']" ng-click="modifyFileOnline(item)">
+                            <img src="./editingCenter/website/images/images/wj9.png">
+                            <span>修改</span>
+                        </a>
+                        <a ng-click="deleteFolderFile(item)" ng-if="status.btnRights['websetchannel.file.shanchu']">
+                            <img src="./editingCenter/website/images/images/wj10.png">
+                            <span>删除</span>
+                        </a>
+                    </p>
+                </td>
+                <!--名称-->
+                <td ng-bind="item.LASTMODIFYTIME"></td>
+                <!--修改时间-->
+                <td ng-bind="item.ISDIRECTORY=='true'?'-':filesizeDisplay(item.FILESIZE)"></td>
+                <!--大小-->
+                <!-- <td>
+                    <span ng-if="status.btnRights['websetchannel.file.yulan']" ng-click="preview(item)" class="cursorPointer">预览</span>
+                </td> -->
+                <!--预览-->
+                <!-- <td>
+                    <span ng-if="status.btnRights['websetchannel.file.shengcheng']" ng-click="release(item)" class="cursorPointer">生成</span>
+                </td> -->
+                <!--生成-->
+            </tr>
+        </tbody>
+    </table>
+    <!-- <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" new-pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        </span>
+        <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+    </div> -->
+    <div cg-busy="loadingPromise"></div>
+</div>

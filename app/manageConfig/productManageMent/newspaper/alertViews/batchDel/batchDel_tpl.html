@@ -1,0 +1,16 @@
+<div class="batchDel-container">
+    <div class="batchDel-head">
+        <p ng-bind="title"></p>
+        <p style="color:red">(如果有关联,则无法删除！)</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="batchDel-body">
+        <ul>
+            <li ng-repeat="delItem in delItems">{{delItem.CHNLDESC||delItem.SITEDESC}}</li>
+        </ul>
+    </div>
+    <div class="batchDel-footer">
+        <button class="new-role-btn btn_confirm" ng-click="delete()">确定</button>
+        <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

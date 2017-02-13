@@ -1,0 +1,51 @@
+<div class="createGroupSubmit">
+    <div class="submit">
+        <div class="head">
+            <span ng-bind="status.modalTitle"></span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="body">
+            <form class="createGroupSubmit-form" name="createGroupSubmitForm" novalidate>
+                <div class="main">
+                    <div class="h128">
+                        <div class="item">
+                            <span class="tit">上级组织：</span>
+                            <div class="invalidate-input-box">
+                                <span class="mb8" ng-bind="data.parentGroup.GNAME"></span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="tit">组织名称：</span>
+                            <div class="invalidate-input-box {{createGroupSubmitForm.GNAME.$invalid?'has-error':''}} left">
+                                <input type="text" name="GNAME" class="form-control" ng-model="data.currGroup.GNAME" validator="required" ng-readonly="!status.isCreate" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" />
+                            </div>
+                            <div class="unitMedia">
+                                <trs-checkbox ischecked="data.currGroup.ISUNIT==1" callback="isUnitGroup()"></trs-checkbox>
+                                <p class="left">独立媒体组织</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="tit">组织简称：</span>
+                            <div class="invalidate-input-box">
+                                <input type="text" class="form-control" ng-model="data.currGroup.GDESC" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <span class="tit">电子邮箱：</span>
+                            <div class="invalidate-input-box">
+                                <input type="email" class="form-control" ng-model="data.currGroup.EMAIL" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <div class="foot">
+                <div>
+                    <button class="confirm" ng-click="confirm()">确定</button>
+                    <button class="cancel" ng-click="cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

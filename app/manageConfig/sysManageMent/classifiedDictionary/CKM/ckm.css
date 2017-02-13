@@ -1,0 +1,134 @@
+/*
+    Create by Sumagang 2015-11-19
+*/
+.sys_ckm_middle {
+    border: 1px solid #D3D8DC;
+    min-height: 616px;
+    margin: -1px;
+    padding: 0px 10px;
+}
+
+.sys_ckm_bg {
+    background-color: #F7F8FC;
+    border: none;
+    color: #000000!important;
+}
+
+.sys_ckm_increase {
+    margin: 15px 7px;
+    padding: 5px 10px;
+    border: 1px dashed #88C8EE;
+    border-radius: 5px;
+}
+
+.sys_ckm_right .form-control {
+    width: 78%;
+    height: 30px;
+}
+
+.sys_ckm_right .controls textarea {
+    resize: none;
+    width: 79%;
+    min-height: 200px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.sys_ckm_middle .fotm_legend legend,
+.sys_ckm_right .fotm_legend legend {
+    margin-top: 20px;
+    border-bottom: none;
+    font-size: 14px;
+    color: #343434;
+    margin-bottom: 0px;
+}
+
+.sys_ckm_middle .fotm_legend button {
+    background: url(./manageConfig/sysManageMent/images/CKM_img1.jpg) no-repeat;
+}
+
+.sys_class_ckm_table {
+    overflow-y: auto;
+    width: 100%;
+    height: 500px;
+}
+
+.sys_ckm_right .form-horizontal .control-label {
+    padding: 5px 0px;
+    margin-right: 14px;
+    font-weight: normal;
+    color: #333333;
+}
+
+.sys_ckm_middle .sys_ckm_active {
+    background-color: #f1f2f6!important;
+    font-size: 14px;
+    height: 40px;
+    color: #323234!important;
+    font-weight: normal;
+}
+
+
+.sys_ckm_right .legend_servriceList {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.sys_ckm_right .list-group-item.active,
+.sys_ckm_right .list-group-item.active:hover,
+.sys_ckm_right .list-group-item.active:focus {
+    height: 40px;
+    border: none;
+}
+
+.sys_ckm_right .list-group .active {
+    background-color: #4496D2;
+}
+
+.sys_ckm_right .ckm_sava {
+    background-color: #4496D2;
+    border: none;
+}
+
+.sys_ckm_right .ckm_cancel {
+    background-color: #4496D2;
+    border: none;
+    margin-left: 10px;
+}
+
+.sys_ckm_right .ckm_buttons {
+    margin-top: 30px;
+}
+
+.ckm_btn {
+    float: right;
+    text-indent: 20px;
+    width: 78px;
+    height: 31px;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background: url(./manageConfig/sysManageMent/images/CKM_img1.jpg) no-repeat;
+}
+
+.sys_cl_cl_ckm_cursor {
+    cursor: pointer;
+    color: #666;
+}
+
+.sys_ckm_right .sys_ckm_new_servrice {
+    margin-bottom: 20px;
+}
+
+.sys_ckm_right .sys_cl_ckm_label {
+    margin: 20px 0px;
+}
+
+.sys_class_ckm_tipbox .invalidate-input-box span {
+    left: 80px;
+}
+
+.sys_ckm_middle .selectedIp {
+    background-color: #4496d2;
+    color: #fff;
+}

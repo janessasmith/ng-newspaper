@@ -1,0 +1,171 @@
+<div class="creation" trs-scroll-fix enable-fix="true" fix-top="47" fix-relative-element="[list='list']" fix-box-element=".creation-pos-el" fix-inc-width="30">
+    <tabset class="creation-pos-el m_nav_3 rt_wt close-to-right" style="background-color:white;">
+        <tab heading="主题延展">
+            <!--主题延伸 start-->
+            <div class="website_m_box_2_1" style="padding-left:10px;">
+                <!--   <div class="website_timeline_load_show_1 text-center ">
+                <img src="./editingCenter/website/images/images/newTab_1.png" />
+                显示上一批
+            </div>
+            -->
+                <div class="website_newTab_modular_theme_all" trs-scrollbar>
+                    <div class="website_newTab_modular" data-ng-repeat="item in status.subjectItems track by $index">
+                        <div class="website_newTab_tit">
+                            <a ng-click="windowOpen(item,status.indexname)" target="_black">
+                                <span data-ng-bind-html="item.DOCTITLE|trsStripBlank" title="{{item.DOCTITLE|trsStripBlank}}"></span>
+                            </a>
+                        </div>
+                        <div class="website_newTab_content">
+                            <!--img src="./editingCenter/website/images/images/newtab_img.jpg" /-->
+                            <div class="website_newTab_p">
+                                <a data-ng-bind-html="item.CONTENT|trsStripBlank|trsLimitTo:75" alt="item.CONTENT|trsStripBlank" target="_black"></a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="website_newTab_source_time" data-ng-init="item.DOCPUBTIME = createDate(item.DOCPUBTIME)">
+                            <div class="website_newTab_source">来源：{{item.SOURCE_SITE}}</div>
+                            <div class="website_newTab_time" data-ng-bind="item.DOCPUBTIME|date:'yyyy年MM月dd日 HH:mm'"></div>
+                        </div>
+                    </div>
+                </div>
+                <div data-ng-if="status.message.subjectHasNoMore" class="websist_normal">没有更多了...</div>
+                <div data-ng-if="!status.message.subjectHasNoMore" class="website_timeline_load_more_1 text-center" data-ng-click="getMoreSub()" cg-busy="loadingSubject">
+                    <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+                </div>
+            </div>
+            <!--主题延伸 end-->
+        </tab>
+        <!--  <tab heading="稿件背景">
+            <!--稿件背景 start
+        <div class="website_m_box_2_1">
+            <div class="website_newTab_modular_manuscript_all website_height_fixex" trs-scrollbar>
+                <div class="website_newTab_table">
+                    <table border="1" width="100%" align="center">
+                        <tr data-ng-if="status.backmeanu.selectedName">
+                            <th>人名</th>
+                            <td>
+                                <ul>
+                                    <li data-ng-repeat="item in status.backmeanu.params.name track by $index|limitTo:3" data-ng-class="{'website_newTab_table_borde':status.backmeanu.selectedName.indexOf(item)>
+                                        -1}" data-ng-click="updateSelectedItems(item,'selectedName')">
+                                        <a href="" data-ng-bind="item"></a>
+                                    </li>
+                                </ul>
+                                <span class="website_newTab_td_span_img " ng-show="status.selectedNameLen>
+                                    3">
+                                    <a href="" data-ng-click="showList()">
+                                        <img  src="./editingCenter/website/images/images/newTab_3.png"/ ng-class="{
+                                    'website_img_rota':status.isSelectedName==true
+                                    }"></a>
+                                </span>
+                                <ul ng-show="status.isSelectedName">
+                                    <li data-ng-repeat="item in status.backmeanu.params.name track by $index+2" data-ng-class="{'website_newTab_table_borde':status.backmeanu.selectedName.indexOf(item)>
+                                        -1}" data-ng-click="updateSelectedItems(item,'selectedName')" ng-if="$index>2">
+                                        <a href="" data-ng-bind="item"></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr data-ng-if="status.backmeanu.selectedPlace">
+                            <th>地名</th>
+                            <td>
+                                <ul>
+                                    <li data-ng-repeat="item in status.backmeanu.params.place |limitTo:3" data-ng-class="{'website_newTab_table_borde':status.backmeanu.selectedPlace.indexOf(item)>
+                                        -1}" data-ng-click="updateSelectedItems(item,'selectedPlace')">
+                                        <a href="" data-ng-bind="item"></a>
+                                    </li>
+                                </ul>
+                                <span class="website_newTab_td_span_img" ng-show="status.backmeanu.selectedPlaceLen>
+                                    3">
+                                    <a href="" class='website_detail_icon' ng-click=status.isSelectedPlace=!status.isSelectedPlace>
+                                        <img src="./editingCenter/website/images/images/newTab_3.png" ng-class="{
+                                    'website_img_rota':status.isSelectedPlace==true
+                                    }"></a>
+                                </span>
+                                <ul ng-show="status.isSelectedPlace">
+                                    <li data-ng-repeat="item in status.backmeanu.params.place" data-ng-class="{'website_newTab_table_borde':status.backmeanu.selectedPlace.indexOf(item)>
+                                        -1}" data-ng-click="updateSelectedItems(item,'selectedPlace')" ng-if="$index>2">
+                                        <a href="" data-ng-bind="item"></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr data-ng-if="status.backmeanu.selectedOrganization">
+                            <th>机构名</th>
+                            <td>
+                                <ul>
+                                    <li data-ng-repeat="item in status.backmeanu.params.organization|limitTo:3" data-ng-class="{'website_newTab_table_borde':status.backmeanu.selectedOrganization.indexOf(item)>
+                                        -1}" data-ng-click="updateSelectedItems(item,'selectedOrganization')">
+                                        <a href="" data-ng-bind="item"></a>
+                                    </li>
+                                </ul>
+                                <span class="website_newTab_td_span_img " ng-show="status.backmeanu.selectedOrganizationLen>
+                                    3">
+                                    <a href="" class="website_detail_icon">
+                                        <img src="./editingCenter/website/images/images/newTab_3.png"/  ng-class="{
+                                    'website_img_rota':status.isSelectedOrganization==true
+                                    }"  ng-click=status.isSelectedOrganization=!status.isSelectedOrganization ></a>
+                                </span>
+                                <ul ng-show="status.isSelectedOrganization">
+                                    <li data-ng-repeat="item in status.backmeanu.params.organization  track by $index" data-ng-class="{'website_newTab_table_borde':status.backmeanu.selectedOrganization.indexOf(item)>
+                                        -1}" data-ng-click="updateSelectedItems(item,'selectedOrganization')" ng-if="$index>2">
+                                        <a href="" data-ng-bind="item"></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr data-ng-if="status.backmeanu.selectedKeyWords">
+                            <th>关键词</th>
+                            <td>
+                                <ul>
+                                    <li data-ng-repeat="item in status.backmeanu.params.keyWords|limitTo:3" data-ng-class="{'website_newTab_table_borde':status.backmeanu.selectedKeyWords.indexOf(item)>
+                                        -1}" data-ng-click="updateSelectedItems(item,'selectedKeyWords')">
+                                        <a href="" data-ng-bind="item"></a>
+                                    </li>
+                                </ul>
+                                <span class="website_newTab_td_span_img " ng-show="status.backmeanu.selectedKeyWordsLen>
+                                    3">
+                                    <a href="" class="website_detail_icon">
+                                        <img src="./editingCenter/website/images/images/newTab_3.png"/  ng-class="{
+                                    'website_img_rota':status.isSelectedKeyWords==true
+                                    }"  ng-click=status.isSelectedKeyWords=!status.isSelectedKeyWords ></a>
+                                </span>
+                                <ul ng-show="status.isSelectedKeyWords">
+                                    <li data-ng-repeat="item in status.backmeanu.params.keyWords  track by $index" data-ng-class="{'website_newTab_table_borde':status.backmeanu.selectedKeyWords.indexOf(item)>
+                                        -1}" data-ng-click="updateSelectedItems(item,'selectedKeyWords')" ng-if="$index>2">
+                                        <a href="" data-ng-bind="item"></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="website_newTab_modular">
+                    <div class="website_newTab_modular" data-ng-repeat="item in status.backmeanu.items track by $index">
+                        <div class="website_newTab_tit">
+                            <a ng-click="windowOpen(item,status.indexname)" target="_black">
+                                <span data-ng-bind-html="item.DOCTITLE" title="{{item.DOCTITLE}}"></span>
+                            </a>
+                        </div>
+                        <div class="website_newTab_content">
+                            <!--img src="./editingCenter/website/images/images/newtab_img.jpg" /
+                            <div class="website_newTab_p">
+                                <a data-ng-bind-html="item.CONTENT|trsLimitTo:75" alt="item.CONTENT" target="_black"></a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="website_newTab_source_time" data-ng-init="item.DOCPUBTIME = createDate(item.DOCPUBTIME)">
+                            <div class="website_newTab_source">来源：{{item.SOURCE_SITE}}</div>
+                            <div class="website_newTab_time" data-ng-bind="item.DOCPUBTIME|date:'yyyy年MM月dd日 HH:mm'"></div>
+                        </div>
+                    </div>
+                    <div data-ng-if="status.message.backmeanuHasNoMore" class="websist_normal">没有更多了...</div>
+                    <div data-ng-if="!status.message.backmeanuHasNoMore" class="website_timeline_load_more_1 text-center website_timeline_mgl10" data-ng-click="getMoreBack()" cg-busy="Backmeanu">
+                        <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--稿件背景  
+        </tab> -->
+    </tabset>
+</div>

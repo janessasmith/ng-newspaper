@@ -1,0 +1,189 @@
+<div class="modal-header">
+    <span class="modal-title" ng-click="goto('qu')">取稿 </span><span>｜</span>
+    <span class="modal-title" ng-click="goto('qian')"> 签发 </span>
+    <span>｜</span>
+    <span class="modal-title" ng-click="goto('jian')"> 见稿 </span>
+    <span>｜</span>
+    <span class="modal-title" ng-click="goto('che')"> 撤稿 </span>
+    <!-- <span>｜</span>
+    <span class="modal-title" ng-click="goto('repeat')"> 重稿</span> -->
+    <i class="fa fa-lg fa-times-circle pull-right closeicon" ng-click="close()"></i>
+</div>
+<div class="modal-body">
+    <div class="row info-important">
+        <div class="col-sm-12">取、签、见、撤信息</div>
+    </div>
+    <div class="row info-title" id='qu'>
+        <div class="col-sm-2">
+            取稿人
+        </div>
+        <div class="col-sm-2">
+            取稿媒体
+        </div>
+        <div class="col-sm-3">
+            版面栏目
+        </div>
+        <div class="col-sm-3">
+            时间
+        </div>
+        <div class="col-sm-2">
+            操作
+        </div>
+    </div>
+    <div class="row info-details txt_c" ng-if="infos.QU.length<=0">暂无取稿信息</div>
+    <div class="row info-details " ng-repeat="info in infos.QU">
+        <div class="col-sm-2">
+            {{info.OPERUSER}}
+        </div>
+        <div class="col-sm-2">
+            {{info.MEDIANAME}}
+        </div>
+        <div class="col-sm-3">
+            {{info.CHNLNAME}}
+        </div>
+        <div class="col-sm-3">
+            {{info.OPERTIME}}
+        </div>
+        <div class="col-sm-2">
+            {{info.OPERNAME}}
+        </div>
+    </div>
+    <div class="row info-title" id='qian'>
+        <div class="col-sm-2">
+            签发人
+        </div>
+        <div class="col-sm-2">
+            签发媒体
+        </div>
+        <div class="col-sm-3">
+            版面栏目
+        </div>
+        <div class="col-sm-3">
+            时间
+        </div>
+        <div class="col-sm-2">
+            操作
+        </div>
+    </div>
+    <div class="row info-details txt_c" ng-if="infos.QIAN.length<=0">暂无签发信息</div>
+    <div class="row info-details " ng-repeat="info in infos.QIAN">
+        <div class="col-sm-2">
+            {{info.OPERUSER}}
+        </div>
+        <div class="col-sm-2">
+            {{info.MEDIANAME}}
+        </div>
+        <div class="col-sm-3">
+            {{info.CHNLNAME}}
+        </div>
+        <div class="col-sm-3">
+            {{info.OPERTIME}}
+        </div>
+        <div class="col-sm-2">
+            {{info.OPERNAME}}
+        </div>
+    </div>
+    <div class="row info-title" id='jian'>
+        <div class="col-sm-2">
+            组版人
+        </div>
+        <div class="col-sm-2">
+            见报媒体
+        </div>
+        <div class="col-sm-3">
+            版面栏目
+        </div>
+        <div class="col-sm-3">
+            时间
+        </div>
+        <div class="col-sm-2">
+            操作
+        </div>
+    </div>
+    <div class="row info-details txt_c" ng-if="infos.JIAN.length<=0">暂无见稿信息</div>
+    <div class="row info-details " ng-repeat="info in infos.JIAN">
+        <div class="col-sm-2">
+            {{info.OPERUSER}}
+        </div>
+        <div class="col-sm-2">
+            {{info.MEDIANAME}}
+        </div>
+        <div class="col-sm-3">
+            {{info.CHNLNAME}}
+        </div>
+        <div class="col-sm-3">
+            {{info.OPERTIME}}
+        </div>
+        <div class="col-sm-2">
+            {{info.OPERNAME}}
+        </div>
+    </div>
+    <div class="row info-title" id='che'>
+        <div class="col-sm-2">
+            撤稿人
+        </div>
+        <div class="col-sm-2">
+            撤稿媒体
+        </div>
+        <div class="col-sm-3">
+            版面栏目
+        </div>
+        <div class="col-sm-3">
+            时间
+        </div>
+        <div class="col-sm-2">
+            操作
+        </div>
+    </div>
+    <div class="row info-details txt_c" ng-if="infos.CHE.length<=0">无撤稿信息</div>
+    <div class="row info-details " ng-repeat="info in infos.CHE">
+        <div class="col-sm-2">
+            {{info.OPERUSER}}
+        </div>
+        <div class="col-sm-2">
+            {{info.MEDIANAME}}
+        </div>
+        <div class="col-sm-3">
+            {{info.CHNLNAME}}
+        </div>
+        <div class="col-sm-3">
+            {{info.OPERTIME}}
+        </div>
+        <div class="col-sm-2">
+            {{info.OPERNAME}}
+        </div>
+    </div>
+    <!-- <div class="row info-title" id='repeat'>
+        <div class="col-sm-2">
+            序号
+        </div>
+        <div class="col-sm-6 txt_c">
+            标题
+        </div>
+        <div class="col-sm-2">
+            发布媒体
+        </div>
+        <div class="col-sm-2">
+            版面栏目
+        </div>
+    </div> -->
+    <!-- <div class="row info-details info-important">
+        <div class="col-sm-12">重稿信息</div>
+    </div>
+    <div class="row info-details txt_c" ng-if="infos.CHONG.length<=0">无重稿信息</div>
+    <div class="row info-details " ng-repeat="info in infos.CHONG">
+        <div class="col-sm-2">
+            {{info.ID}}
+        </div>
+        <div class="col-sm-6 txt_c">
+            {{info.MEDIANAME}}
+        </div>
+        <div class="col-sm-2">
+            {{info.MEDIANAME}}
+        </div>
+        <div class="col-sm-2">
+            {{info.CHNLNAME}}
+        </div>
+    </div> -->
+</div>
+</div>

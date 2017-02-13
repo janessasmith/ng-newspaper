@@ -1,0 +1,15 @@
+{
+	"result": [{
+	"ObjectId":1,
+        "name":"重报", 
+        "wxid":"001",
+        "AppId":"0023",
+        "AppSecret":"令牌",
+        "description":"日报新闻办",
+        "wxType":"订阅号",
+        "wxheadImg":"",
+        "groupId":12,
+        "class":"政务",
+        "UnitName":"日报"
+        }]
+}

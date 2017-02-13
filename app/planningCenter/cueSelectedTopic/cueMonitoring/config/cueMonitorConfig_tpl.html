@@ -1,0 +1,27 @@
+<div class="cue-monitor-config-container" ng-click = "clickToCancelPanel()">
+    <div class="cue-monitor-config-head">
+        <p ng-bind="status.configTitle"></p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="cue-monitor-config-body">
+        <div style="position:relative;" ng-mouseleave="isShowSimSite=false">
+            <input type="text" class="form-control" ng-model="data.monitorSource" ng-change="searchSameSite()" placeholder="{{data.placeholder}}"/>
+            <ul class="similar-site" ng-if="status.isShowSimSitePanel">
+                <li ng-repeat="similarSite in data.similarSites">
+                    <span ng-bind="similarSite" ng-click="chooseSimSite(similarSite)"></span>
+                </li>
+            </ul>
+        </div>
+        <button ng-click="add()" ng-class="{'notAllowedCursor':status.isSameSite&&status.isAddDisabled}" ng-disabled="status.isSameSite&&status.isAddDisabled">添加</button>
+        <ul class="list">
+            <li ng-repeat="monitorItem in data.monitorItems track by $index">
+                <img src="./planningCenter/images/ch30.png" alt="close" ng-click="delete(monitorItem)" />
+                <span title="{{monitorItem}}">{{monitorItem}}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="cue-monitor-config-footer">
+        <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        <button class="new-role-btn btn_confirm" ng-click="saveOrUpdate()" ng-disabled="data.monitorItems.length===0" ng-class="{'unable-save':data.monitorItems.length===0}">保存</button>
+    </div>
+</div>

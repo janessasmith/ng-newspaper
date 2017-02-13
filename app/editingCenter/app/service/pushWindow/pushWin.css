@@ -1,0 +1,94 @@
+.edit-app-push-win-class .modal-content {
+    background: #F0F2F5;
+    width: 400px;
+    margin: 210px auto 0;
+}
+
+.edit-app-push-win-class .modal-content .head {
+    overflow: hidden;
+    height: 40px;
+    background: #fff;
+    line-height: 40px;
+}
+
+.edit-app-push-win-class .modal-content .head p {
+    float: left;
+    margin-left: 10px;
+    font-family: "Microsoft yahei";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.edit-app-push-win-class .modal-content .head img {
+    opacity: 1;
+    margin: 10px 10px 0 0;
+    filter: alpha(opacity=100);
+}
+
+.edit-app-push-win-class .modal-content .body {
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.edit-app-push-win-class .modal-content .body p:nth-child(1) {
+    margin: 20px 0 10px 20px;
+    color: #4496d2;
+    font-size: 15px;
+    font-family: "Microsoft yahei";
+    font-weight: bold;
+}
+
+.edit-app-push-win-class .modal-content .body p:nth-child(2) {
+    margin-left: 20px;
+    color: #666;
+    font-family: "microsoft yahei";
+    margin-right: 20px;
+    line-height: 24px;
+}
+
+.edit-app-push-win-class .modal-content .body p:nth-child(2) span {
+    margin-right: 6px;
+}
+
+.edit-app-push-win-class .modal-content .body div {
+    overflow: hidden;
+    font-family: "microsoft yahei";
+    color: #666;
+    margin:0 0 10px 20px;
+}
+
+.edit-app-push-win-class .modal-content .body div span {
+    margin-right: 6px;
+}
+
+.edit-app-push-win-class .modal-content .body div input {
+    cursor: pointer;
+    vertical-align: -2px;
+    margin-right: 4px;
+}
+
+.edit-app-push-win-class .modal-content .body div label {
+    margin-right: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.edit-app-push-win-class .modal-content .foot {
+    overflow: hidden;
+    padding: 10px 0;
+    background: #fff;
+}
+
+.edit-app-push-win-class .modal-content .foot button {
+    float: right;
+    width: 70px;
+    height: 30px;
+    border: none;
+    background: #4496d2;
+    color: #fff;
+    border-radius: 4px;
+    font-family: "microsoft yahei";
+    outline: none;
+    margin-right: 10px;
+    font-size: 13px;
+}

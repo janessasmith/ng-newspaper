@@ -1,0 +1,85 @@
+<div class="dp-navbar lf" ng-controller="homeManagementCtrl">
+    <div class="dp-nav-btn">
+        <a ng-show="dictateRightKeys.add" ui-sref="command.createDir({corpsId:''})">
+            <span class="new-dp-btn"></span>
+            <span class="new-dp-sp">新建指令</span>
+        </a>
+        <a ng-show="corpsRightKeys.add" ui-sref="command.createReport">
+            <span class="new-bd-btn"></span>
+            <span class="new-dp-sp">新建联合报道</span>
+        </a>
+    </div>
+    <!--导航-->
+    <trs-accordion>
+       <trs-accordion-group heading="我的指令" icon="dp-my" id="myinstruct" num="{{dirBacklogNums.totalNum}}">
+            <a ui-sref="command.myinstructBacklog.list({type:0})" ui-sref-active="ls-deal-cur" class="se-zl">
+              <span>待办指令</span>
+              <i class="backlog" ng-show="dirBacklogNums.dealWithNum>0">{{dirBacklogNums.dealWithNum}}</i>
+            </a>
+            <a ui-sref="command.myinstructFinish.list({type:0})"  ui-sref-active="ls-deal-cur" class="se-js" >
+              <span>已结束</span>
+            </a>
+            <a ui-sref="command.myinstructDrafts.list({type:0})"  ui-sref-active="ls-deal-cur" class="se-cg">
+              <span >草稿箱</span>
+              <i class="draft" ng-show="dirBacklogNums.draftNum>0">{{dirBacklogNums.draftNum}}</i>
+            </a>
+            <a ui-sref="command.myinstructMyLaunch.list({type:0})" ui-sref-active="ls-deal-cur" class="se-my">
+              <span>我发起的</span>
+            </a>
+            <a ui-sref="command.myinstructCheck.list({type:0})" ui-sref-active="ls-deal-cur" 
+               class="se-sh" ng-show="dictateRightKeys.sign">
+              <span>审核</span>
+              <i class="check" ng-show="dirBacklogNums.watingNum>0">{{dirBacklogNums.watingNum}}</i>
+            </a>
+            <a ng-show="dictateRightKeys.check" ui-sref="command.myinstructBrowse.list({type:0})" ui-sref-active="ls-deal-cur" 
+               class="se-fy" ng-show="dictateRightKeys.sign">
+              <span>指令翻阅</span>
+            </a>
+       </trs-accordion-group>
+       <trs-accordion-group heading="联合报道" icon="dp-bd" id="report" num="{{cropsDicateNum}}">
+            <a ui-sref="command.reportManagement" ui-sref-active="ls-deal-cur" class="se-sl">
+              <span>联合报道管理</span>
+            </a>
+            <a ng-repeat="reportContent in reportContents" 
+               ui-sref="command.reportDetailedview.reportViewMain({corpsId:reportContent.CORPSID})" 
+               ui-sref-active="ls-deal-cur" class="se-lb" ui-sref-opts="{reload:true}">
+              <span>{{reportContent.TITLE}}</span>
+              <i class="report" ng-show="reportContent.dealWithNum>0">{{reportContent.dealWithNum}}</i>
+            </a>
+       </trs-accordion-group>
+       <trs-accordion-group heading="事件统计" icon="dp-sj">
+          <!--   <a href="javascript:void(0);" class="se-sl" ><span>事件列表</span></a>
+            <a href="javascript:void(0);" class="se-fx" ><span>事件分析</span></a>
+            <a href="javascript:void(0);" class="se-jt" ><span>集团产出</span></a> -->
+       </trs-accordion-group>
+       <trs-accordion-group heading="报表分析" icon="dp-bb">
+        <!--     <a href="javascript:void(0);" class="se-tj" ><span>集团指令统计</span></a>
+            <a href="javascript:void(0);" class="se-rw" ><span>集团联合报道任务</span></a> -->
+       </trs-accordion-group>
+       <trs-accordion-group heading="设置" icon="dp-set">
+			<a ui-sref="command.setGroup" ui-sref-active="ls-deal-cur" class="se-my">
+              <span>自定义分组</span>
+          	</a>
+       </trs-accordion-group>
+    </trs-accordion>
+</div>
+<!--main-->             
+<div class="dp-container" menuhigh>
+    <div class="lh-bd-con">
+        <div ui-view ></div>
+    </div>
+</div>
+<!-- 二维码 -->
+<div class="cb-fix-box" ng-controller="QRcodeCtrl">
+    <span class="fix-box-icon" ng-click="determine();">二维码</span>
+    <div class="fix-box-bk" ng-show="QRcode">
+        <div class="fix-box-deal">
+            <img src="common/images/android.png"/>
+            <p class="android">android</p>
+        </div>
+        <div class="fix-box-deal">
+            <img src="common/images/ios.png"/>
+            <p class="ios">ios</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,227 @@
+<div class="websiteCabletPreview_nav">
+    <div class="box-fix-bt box-fix-top">
+        <div class="txt_r">
+            <button class="btn btn-primary" ng-click="edit()" ng-if="status.btnRights['app.daibian.bianji']||status.btnRights['app.daishen.bianji']">
+                <span class="s_icon">
+                    <img src="./editingCenter/newspaper/images/bj46-1.png"> 
+                </span>编辑
+            </button>
+            <button class="btn btn-primary" ng-click="creationAxis()" ng-if="status.docType<2">
+                <span class="s_icon">
+                    <img ng-src="./resourceCenter/images/z14-1.png" />
+                </span>创作轴
+            </button>
+            <button class="btn btn-primary wt120" ng-click="bigFace(data.item)" ng-if="status.docType=='0'&&status.bigFaceRights['appsite.trace.chakan']">
+                <span class="s_icon width-pic">
+                    <img src="./editingCenter/app/toBeCompiled/images/b9.png"> 
+                </span> <span ng-bind="status.bitFaceTit"></span>
+            </button>
+            <button class="btn btn-primary" ng-click="printBtn()" ng-if="status.docType!=2">
+                <span class="s_icon">
+                     <img ng-src="./editingCenter/app/images/zm15.png" /> 
+                </span> 打印
+            </button>
+            <button class="btn btn-primary" ng-click="preview()" ng-if="status.btnRights['app.daibian.yulan']||status.btnRights['app.daishen.yulan']||status.btnRights['app.yiqianfa.yulan']">
+                <span class="s_icon">
+                    <img src="./editingCenter/website/images/b104.png"> 
+                </span> 预览
+            </button>
+            <button class="btn btn-primary" ng-click="close()">
+                <span class="s_icon">
+                    <img src="./editingCenter/website/images/bclose.png"> 
+                </span> 关闭
+            </button>
+        </div>
+    </div>
+</div>
+<div class="websiteCabletPreview">
+    <!-- websiteCabletPreview_context s-->
+    <div class="websiteCabletPreview_context">
+        <div class="websiteCabletPreview_head" ng-if="status.docType=='0'">
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>来源：</b>
+                    <span>{{data.item.NEWSSOURCES}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>署名作者：</b>
+                    <span>{{data.item.SIGNATUREAUTHOR}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>供稿方：</b>
+                    <span>{{data.item.CONTRIBUTOR}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>供稿作者：</b>
+                    <span>{{data.item.TRUENAME}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>关键词：</b>
+                    <span>{{data.item.KEYWORDS}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>评论设置：</b>
+                    <span>{{status.commentset[data.item.COMMENTSET]}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>所属栏目：</b>
+                    <span>{{data.item.BELONGCHANNEL.name}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>创建时间：</b>
+                    <span>{{data.item.CRTIME}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-12">
+                    <b>摘要：</b>
+                    <span ng-bind-html="data.item.CONABSTRACT" title="{{data.item.CONABSTRACT}}" class="pointer"></span>
+                </p>
+            </div>
+        </div>
+        <div class="websiteCabletPreview_head" ng-if="status.docType=='1'">
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>署名作者：</b>
+                    <span>{{data.item.SIGNATUREAUTHOR}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>供稿方：</b>
+                    <span>{{data.item.CONTRIBUTOR}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>评论设置：</b>
+                    <span>{{status.commentset[data.item.COMMENTSET]}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>关键词：</b>
+                    <span>{{data.item.KEYWORDS}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>所属栏目：</b>
+                    <span>{{data.item.BELONGCHANNEL.name}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>创建时间：</b>
+                    <span>{{data.item.CRTIME}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-12">
+                    <b>摘要：</b>
+                    <span ng-bind-html="data.item.CONABSTRACT" title="{{data.item.CONABSTRACT}}" class="pointer"></span>
+                </p>
+            </div>
+        </div>
+        <div class="websiteCabletPreview_head" ng-if="status.docType=='2'">
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>关键词：</b>
+                    <span>{{data.item.KEYWORDS}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>创建时间：</b>
+                    <span>{{data.item.CRTIME}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-12">
+                    <b>摘要：</b>
+                    <span ng-bind-html="data.item.CONABSTRACT" title="{{data.item.CONABSTRACT}}" class="pointer"></span>
+                </p>
+            </div>
+        </div>
+        <div class="websiteCabletPreview_head" ng-if="status.docType=='3'">
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>所属栏目：</b>
+                    <span>{{data.item.BELONGCHANNEL.name}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>评论设置：</b>
+                    <span>{{status.commentset[data.item.COMMENTSET]}}</span>
+                </p>
+            </div>
+        </div>
+        <!-- websiteCabletPreview_context e-->
+    </div>
+    <div ng-if="status.docType=='0'">
+        <div class="appNewsPreview-body-con">
+            <h1>{{data.item.TITLE}}</h1>
+            <p class="time">{{data.item.CRTIME}}</p>
+            <p class="content" ng-bind-html="data.item.HTMLCONTENT | trsSce"  ng-hide="status.bitFaceTit=='关闭痕迹'"></p>
+        </div>
+    </div>
+    <div ng-if="status.docType=='1'" trs-add-to-create data="data">
+        <div class="appNewsPreview-body-con">
+            <h1>{{data.item.TITLE}}</h1>
+        </div>
+        <div class=" wt960 edit">
+            <div class="carousel-row">
+                <trs-slider slider-pic="data.item.DOC_PICTURELIST"></trs-slider>
+            </div>
+        </div>
+    </div>
+    <div ng-if="status.docType=='2'">
+        <div class="appNewsPreview-body-con">
+            <!-- <p class="title">{{data.item.LISTTITLE}}</p>
+            <p class="time">{{data.item.CRTIME}}</p> -->
+            <p class="content">{{data.item.CONTENT}}</p>
+        </div>
+    </div>
+    <div ng-if="status.docType=='3'">
+        <div class="appNewsPreview-body-con">
+            <h1>{{data.item.LISTTITLE}}</h1>
+            <p class="content"><a href="{{data.item.URL}}" target="_blank">{{data.item.URL}}</a></p>
+        </div>
+    </div>
+    <div class="websiteCabletPreview_content bigFace">
+        <trs-big-face></trs-big-face>
+    </div>
+    <div class="appNewsPreview-footer">
+        <div class="row appNewsPreview-footer-row appNewsPreview_footBottom_border" ng-if="status.docType=='0'">
+            <div class="col-md-offset-1 col-md-5">
+                <p class="p-tit">题图：</p>
+                <img src="{{data.item.FIGURE[0].PERPICURL}}" ng-if="data.item.FIGURE[0].PERPICURL" />
+            </div>
+           <!--  <div class="col-md-5">
+                <p class="p-tit">相关新闻：</p>
+                <p class="p-con">{{data.item.CONABSTRACT}}</p>
+            </div> -->
+        </div>
+        <div class="row appNewsPreview-footer-row appNewsPreview_footBottom_border" ng-if="status.docType=='2'">
+            <div class="col-md-offset-1 col-md-5">
+                <p class="p-tit">题图：</p>
+                <img src="{{data.item.FIGURE[0].PERPICURL}}" ng-if="data.item.FIGURE[0].PERPICURL" />
+            </div>
+        </div>
+        <div class="row appNewsPreview-footer-row">
+            <div>
+                <p class="p_list_style"><b>列表样式：</b><span>{{status.listStyle[data.item.LISTSTYLE]}}</span></p>
+                <p class="p_list_style"><b>列表标题：</b><span>{{data.item.LISTTITLE}}</span></p>
+                <p class="p_list_style" ng-if="status.docType=='2'"><b>显示设置：</b><span>{{status.displayset[data.item.DISPLAYSET]}}</span></p>
+                <p class="p_list_style"><b>标签：</b><span>{{data.item.LABEL}}</span></p>
+                <p class="p_list_style"><b>焦点图标题：</b><span>{{data.item.FOCUSIMGTITLE}}</span></p>
+            </div>
+            <div class="imageCon">
+                <div class="listImg">
+                    <p class="left">列表配图：</p>
+                    <div ng-repeat="LISTPIC in data.item.LISTPICS">
+                        <img src="{{LISTPIC.PERPICURL}}" />
+                    </div>
+                </div>
+                <div class="focusImg">
+                    <p class="left">焦点图：</p>
+                    <img src="{{data.item.FOCUSIMAGE[0].PERPICURL}}" ng-if="data.item.FOCUSIMAGE[0].PERPICURL" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

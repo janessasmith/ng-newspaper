@@ -1,0 +1,138 @@
+.manageConfig-privilegedAssignment-window .modal-content {
+    width: 795px;
+    overflow: hidden;
+    margin: 0 auto;
+    top: 206px;
+    border: 4px solid #e2e0d8;
+    background: #f1f2f4;
+}
+
+.manageConfig-privilegedAssignment-window .modal-dialog {
+    top: -200px;
+}
+
+.manageConfig-privilegedAssignment-window .toBeCompiled-share-content {
+    overflow: hidden;
+}
+
+.manageConfig-privilegedAssignment-window .toBeCompiled-share-content .button {
+    margin-top: 370px;
+}
+
+.manageConfig-powerRole-window .modal-content {
+    width: 510px;
+    overflow: hidden;
+    margin: 0 auto;
+    top: 206px;
+    border: 4px solid #e2e0d8;
+    background: #f1f2f4;
+}
+
+.manageConfig-powerRole-window .modal-dialog {
+    top: -200px;
+}
+
+.manageConfig-powerRole-window .toBeCompiled-share-content {
+    overflow: hidden;
+}
+
+.manageConfig-powerRole-window .toBeCompiled-share-content .button {
+    margin: 0;
+    float: right;
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+
+.manageConfig-powerRole-window .toBeCompiled-share-content .button .btn_confirm {
+    margin: 0;
+}
+
+.manageConfig-powerRole-window .toBeCompiled-share-head,
+.manageConfig-powerRole-window .toBeCompiled-share-body {
+    width: 510px;
+}
+
+.manageConfig-powerRole-window .toBeCompiled-share-body .toBeCompiled-share-content .con .conR .body .left .left-div .body .list ul {
+    padding-left: 0;
+}
+
+.manageConfig-powerRole-window .toBeCompiled-share-body .toBeCompiled-share-content .con .conR .body .left .left-div .body ul li {
+    padding-left: 10px;
+}
+
+.toBeCompiled-share-content .topicpanel .con {
+    padding-top: 0;
+}
+
+.toBeCompiled-share-content .topicbar {
+    background-color: #F7F7F7;
+    margin: 0;
+    cursor: pointer;
+}
+
+.createTaskModal .con {
+    width: 480px;
+}
+
+.createInfoModal .con {
+    width: 480px;
+}
+
+.createInfoModal .content-height {
+    height: 300px;
+}
+
+.input-group-addon.glyphicon {
+    top: 0px;
+    color: #ccc;
+}
+
+.form-control-feedback {
+    width: 65px;
+    color: #ccc;
+}
+
+.toBeCompiled-share-body.info-contain {
+    margin-top: 14px;
+    margin-left: 6px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+}
+
+.select-item-by-tree .toBeCompiled-share-body {
+    overflow-y: auto;
+}
+
+.select-item-by-tree .toBeCompiled-share-content .con .conR .body .suggestion ul {
+    height: 220px;
+    overflow-y: auto;
+    width: 200px;
+}
+
+.shareIcon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 40px auto;
+    font-size: 18px;
+    background: #4496D2;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.createTopicmodal .toBeCompiled-share-content {
+    max-height: none
+}
+
+.createTopicmodal .main .middle {
+    padding-top: 40px !important;
+}
+
+.createTopicmodal .formtext {
+    float: left;
+    line-height: 34px;
+}
+

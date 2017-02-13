@@ -1,0 +1,25 @@
+<div class="head">
+    <p>推送通知</p>
+    <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" alt="" ng-click="close()" class="close">
+</div>
+<div class="body">
+    <p>通知信息</p>
+    <p><span>内容:</span><span ng-bind="item[0].TITLE"></span></p>
+    <div>
+        <span>消息保留时间:</span>
+        <input type="radio" value="hour" name="time" id="hour" ng-checked="expiration==3600" ng-click="chooseExpiration('hour')">
+        <label for="hour"> 1小时</label>
+        <input type="radio" value="day" name="time" id="day" ng-checked="expiration==86400" ng-click="chooseExpiration('day')">
+        <label for="day">24小时</label>
+    </div>
+    <div>
+    	<input type="radio" value="dev" name="ios" id="dev" ng-click="chooseEnv('dev')" ng-checked="prod=='dev'">
+    	<label for="dev">ios开发环境</label>
+    	<input type="radio" value="prod" name="ios" id="prod" ng-click="chooseEnv('prod')" ng-checked="prod=='prod'">
+    	<label for="prod">ios生产环境</label>
+    </div>
+</div>
+<div class="foot">
+    <button ng-click="close()">取消</button>
+    <button ng-click="confirm()">确定</button>
+</div>

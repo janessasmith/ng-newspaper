@@ -1,0 +1,102 @@
+<div>
+    <div trs-scroll-fix class="row edit_right_head">
+        <div class="col-md-8">
+            <button ng-show="status.selectedGroupStatus.value==0" class="btn btn-default btn-commen" ng-click="newGroup()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='new'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights[data.rootGroupoID].add">
+                <span class="s_icon1"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='new'?'b1-1.png':'b1.png'}}" /></span> 新建组织
+            </button>
+            <!--  <button ng-show="status.selectedGroupStatus.value==0" class="btn btn-default btn-commen" ng-click="deleteGroup()" ng-disabled="data.selectedArray.length<1" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['delete']">
+                <span class="s_icon1"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='delete'?'fg2-1.png':'fg2.png'}}" /></span> 删除组织
+            </button> -->
+            <!-- <button ng-show="status.selectedGroupStatus.value==0" class="btn btn-default btn-commen" ng-click="moveGroup()" ng-disabled="data.selectedArray.length<1" ng-mouseenter="status.batchOperateBtn['hoverStatus']='move'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['move']">
+                <span class="s_icon1"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='move'?'b2-1.png':'b2.png'}}" /></span> 移动组织
+            </button> -->
+            <!--  <button ng-show="status.selectedGroupStatus.value==0" class="btn btn-default btn-commen" ng-click="hiddenGroup()" ng-disabled="data.selectedArray.length<1" ng-mouseenter="status.batchOperateBtn['hoverStatus']='hidden'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['hidden']">
+                <span class="s_icon1"><img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='hidden'?'i39-1.png':'i39.png'}}" /></span> 隐藏组织
+            </button> -->
+            <!--   <button ng-show="status.selectedGroupStatus.value==2" class="btn btn-default btn-commen" ng-click="restoreGroup()" ng-disabled="data.selectedArray.length<1" ng-mouseenter="status.batchOperateBtn['hoverStatus']='qiyong'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-if="status.btnRights['qiyong']">
+                <span class="s_icon1"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='qiyong'?'fg1-1.png':'fg1.png'}}" /></span> 还原组织
+            </button> -->
+            <!--<button class="btn btn-default btn-commen" ng-click="importGroupDrafts()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='import'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+                <span class="s_icon1"><img ng-src="./manageConfig/images/{{status.batchOperateBtn['hoverStatus']=='import'?'gb2-1.png':'gb2.png'}}" /></span> 导入组织
+            </button>-->
+        </div>
+        <div class="col-md-4">
+            <ol class="breadcrumb pull-right edit_breadcrumb">
+                <li><a>组织用户管理</a></li>
+                <li>></li>
+                <li><a>组织管理</a></li>
+                <li>></li>
+                <li class="active" ng-bind="data.currGroup.GNAME"></li>
+            </ol>
+        </div>
+    </div>
+    <div class="row edit_right_mid">
+        <div class="col-md-8">
+            <span class="s_onlyme">管理当前组织用户:</span>
+            <a class="cursorPointer" ng-click="gotoGroupUsersList()"><img src="./manageConfig/images/user-manage-icon1.png" alt="" /></a>
+            <trs-single-select selected-option="status.selectedGroupStatus" callback="queryDropDown()" options=" status.groupStatus"></trs-single-select>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group edit_input_group">
+                <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="data.keywords" ng-keypress="groupNameSearch($event)">
+                <span class="input-group-btn">
+                        <button class="btn btn-default btn_edit_search" type="button" ng-click="groupNameSearch()">搜索</button>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="edit_table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                   <!--  <th class="td-check col-cbx">
+                        <trs-checkbox ischecked="groupDatas.length>0&&data.selectedArray.length==groupDatas.length" callback="selectAll()"></trs-checkbox>
+                    </th> -->
+                    <th class="td-number col-index">序号</th>
+                    <th>组织名称</th>
+                    <th class="xcol-usergroup-jump"></th>
+                    <th>组织简称</th>
+                    <th>组织邮箱</th>
+                    <th class="xcol-usergroup-cruser">创建人</th>
+                    <th class="xcol-usergroup-crtime">创建时间</th>
+                    <th class="xcol-usergroup-group-operation">操作</th>
+                    <th class="xcol-usergroup-adjustOrder">调整顺序</th>
+                </tr>
+            </thead>
+            <tbody dnd-list="in groups" dnd-allowed-types="['itemsType']" dnd-external-sources="false" dnd-dragover="dragoverCallback(event, index, external, type)" dnd-drop="dropCallback(event, index, item, external, type, 'itemsType')">
+                <tr ng-init="initBtnRights(item)" ng-repeat="item in groups" dnd-dragstart="dragStart(event,item,$index)" dnd-type="'itemsType'" dnd-effect-allowed="move" dnd-draggable="item" dnd-moved="groups.splice($index, 1)" draggable="true">
+                  <!--   <td class="td-check">
+                        <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                    </td> -->
+                    <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1"></td>
+                    <td class="ta-l">{{item.GNAME}}<span ng-if="item.STATUS==2" class="group_yin">隐</span></td>
+                    <td>
+                        <!-- <img src="./manageConfig/images/left_right_arrow.png" alt="changeicon"> -->
+                        <img ng-click="gotoUsersList(item)" src="./manageConfig/images/gotoUserList.png" alt="changeicon">
+                    </td>
+                    <td ng-bind="item.GDESC" class="ta-l"></td>
+                    <td ng-bind="item.EMAIL"></td>
+                    <td ng-bind="item.CRUSER"></td>
+                    <td ng-bind="item.CRTIME | date:'yy-MM-dd HH:mm'"></td>
+                    <td class="user-td-img user-td-img_fl">
+                        <img ng-click="showGroupDetail(item)" src="./manageConfig/images/user-manage-icon3.png" title="组织信息" ng-if="status.btnRights[item.GROUPID].watch">
+                        <img ng-click="editGroupDetail(item)" src="./manageConfig/images/user-manage-icon6.png" title="编辑组织" ng-if="status.btnRights[item.GROUPID].edit">
+                        <button ng-if="status.btnRights[item.GROUPID].delete||status.btnRights[item.GROUPID].move||status.btnRights[item.GROUPID].hidden||status.btnRights[item.GROUPID].qiyong" type="button" class="editing-bth" data-placement="bottom" data-auto-close="1" data-template-url="./components/service/sweetalert/view/groupBtn_tpl.html" data-animation="am-flip-x" bs-popover title="其他操作"></button>
+                    </td>
+                    <td class="user-td-img">
+                        <a href="javascript:void(0);" ng-click="sortGroup(item)" class="a-adjust">调整到</a>
+                    </td>
+                </tr>
+                <tr class="dndPlaceholder drag_place_list">
+                    <td colspan="9"><i>选定位置后松开鼠标</i></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+            <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+            <trs-pagenation-right callback="jumpToPage()" currpage="data.copyCurrPage" page="page"></trs-pagenation-right>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

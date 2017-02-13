@@ -1,0 +1,121 @@
+<form name="replyForm" novalidate>
+    <div class='live'>
+        <div class="header">
+            <p ng-if="data.isCreate">发布回复</p>
+            <p ng-if="!data.isCreate">修改回复</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+        </div>
+        <div class="main">
+            <div class="children">
+                <p class="w90">直播分类</p>
+                <div class="con">
+                    <p>大事件</p>
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">主持人</p>
+                <div class="con">
+                    <trs-single-select selected-option="data.selectedHoster" callback="selectHoster()" options="data.hosters"></trs-single-select>
+                </div>
+            </div>
+            <div class="children" style="height:66px;">
+                <p class="w90">直播内容</p>
+                <div class="con">
+                    <div class="invalidate-input-box {{replyForm.Content.$invalid?'has-error':''}}">
+                        <textarea class="form-control" name="Content" ng-model="reply.CONTENT" maxlength-error-message="长度不能超过500个字符！" validator="required,maxlength=500" ng-mouseenter="isShowTips_REMARKS=true" ng-mouseleave="isShowTips_REMARKS=false" is-show-tips="isShowTips_REMARKS" style=""> </textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="children" style="height:auto;overflow:hidden">
+                <p class="w90">回复图片</p>
+                <div class="con">
+                    <div class='conOfImg' ng-repeat="img in data.imgList">
+                        <img ng-src="{{img.imgSrc}}" alt="" class="thumbnail">
+                        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="delete" ng-click="deleteImg(img)">
+                        <div ng-show="img.loading" class="loading">
+                            <img src="./editingCenter/newspaper/images/loading3.gif" />
+                        </div>
+                    </div>
+                    <button ng-model="imgFiles" class='uploadButton' ngf-select="chooseImg($file,$newFiles)" ngf-validate="{pattern: '.jpg,.png,.gif,.jpeg,.bmp,.svg'}" multiple="false" accept="image/*">浏览</button>
+                </div>
+            </div>
+            <div class="children" style="height:auto;overflow:hidden" ng-if="data.isCreate==true">
+                <!--新建-->
+                <p class="w90">音频视频</p>
+                <div class="con" style="margin-left:9px;">
+                    <div ng-if="!data.videoFile">
+                        <img class="audiovideo" ng-model="data.videoFile" ngf-select="chooseVideo($file,$newFiles)" ngf-pattern=".mp3,.mp4,.rmvb,.flv,.avi" src="./editingCenter/app/toBeCompiled/images/b14.png" accept="audio/mp4, video/mp4,audio/mpeg,video/rmvb,vido/flv,video/avi">
+                        <p class="cue">
+                            <span>支持格式：</span>
+                            <span>.mp3,.mp4,.flv,.rmvb,.avi</span>
+                        </p>
+                    </div>
+                    <div class="video" ng-if="data.videoFile">
+                        <!--videoFile对象存在时展现-->
+                        <div ng-if="!data.isUploadingVideo">
+                            <video controls ngf-src="data.videoFile" ng-if="data.videoOrAudio=='video'"></video>
+                            <div class="left" ng-if="data.videoOrAudio=='audio'">
+                                <audio controls ngf-src="data.videoFile"></audio>
+                            </div>
+                            <button class='uploadButton' ng-click="deleteVideo()" style="margin-left:5px;">删除</button>
+                            <button class="uploadButton" ng-click="uploadVideo()" ng-if="reply.VIDEOURL==''&&reply.MUSICURL==''">上传</button>
+                            <!--当VIDEOURL和MUSICURL都为空时才有上传功能-->
+                        </div>
+                        <div class="default" ng-if="data.isUploadingVideo">
+                            <span><img src="./editingCenter/website/images/video.gif" alt="请稍等，正在转码..."></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="children" style="height:auto;overflow:hidden" ng-if="data.isCreate==false">
+                <!--编辑-->
+                <p class="w90">音频视频</p>
+                <div class="con" style="margin-left:9px;">
+                    <div ng-if="!data.videoFile">
+                        <img class="audiovideo" ng-model="data.videoFile" ngf-select="chooseVideo($file,$newFiles)"  ngf-validate="{pattern: '.mp3,.mp4,.rmvb,.flv,.avi'}" src="./editingCenter/app/toBeCompiled/images/b14.png" accept="audio/mp4, video/mp4,audio/mpeg,video/rmvb,vido/flv,video/avi">
+                        <p class="cue">
+                            <span>支持格式：</span>
+                            <span>.mp3,.mp4,.flv,.rmvb,.avi</span>
+                        </p>
+                    </div>
+                    <div class="video" ng-if="data.videoFile">
+                        <div ng-if="!data.isUploadingVideo">
+                            <video controls ngf-src="reply.VIDEOURL || data.videoFile" ng-if="data.videoOrAudio=='video'"></video>
+                            <div class="left" ng-if="data.videoOrAudio=='audio'">
+                                <audio controls ngf-src="reply.MUSICURL||data.videoFile"></audio>
+                            </div>
+                            <button class='uploadButton' ng-click="deleteVideo()" style="margin-left:5px;">删除</button>
+                            <button class="uploadButton" ng-click="uploadVideo()" ng-if="reply.VIDEOURL==''&&reply.MUSICURL==''">上传</button>
+                        </div>
+                        <div class="default" ng-if="data.isUploadingVideo">
+                            <span><img src="./editingCenter/website/images/video.gif" alt="请稍等，正在转码..."></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">属性</p>
+                <div class="con">
+                    <trs-checkbox ischecked="reply.ISSHOW==1" callback="reply.ISSHOW=reply.ISSHOW==0?1:0"></trs-checkbox>是否显示
+                </div>
+            </div>
+            <div class="children">
+                <p class="w90">发布时间</p>
+                <div class="con">
+                    <div class="timeGroup">
+                        <input type="text" size="10" class="form-control" ng-model="reply.INSERTTIME" placeholder="Date" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgDate">
+                    </div>
+                    <div class="timeGroup ml20">
+                        <input type="text" size="8" class="form-control" ng-model="reply.INSERTTIME" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" placeholder="Time" bs-timepicker readonly="readonly">
+                        <img src="./editingCenter/app/toBeCompiled/images/t1.png" class="imgTime">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="submit btn btn-default" ng-click="confirm()" ng-disabled="data.isUploadingVideo">提交保存</button>
+            <p class="uploadInfo" ng-if="data.isUploadingVideo">{{status.promptInfo[data.videoOrAudio]}}正在上传并转码中，请勿保存</p>
+        </div>
+    </div>
+</form>

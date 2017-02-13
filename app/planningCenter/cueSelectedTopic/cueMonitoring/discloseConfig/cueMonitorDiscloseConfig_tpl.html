@@ -1,0 +1,18 @@
+<div class="cue-monitor-disclose-config-container">
+    <div class="cue-monitor-disclose-config-head">
+        <p ng-bind="title"></p>
+        <!-- <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()"> -->
+    </div>
+    <div class="cue-monitor-disclose-config-body">
+       <ul>
+           <li ng-repeat="item in items">
+               <trs-checkbox ischecked="item.SELECTED=='1'" callback="selectItem(item)"></trs-checkbox>
+               <span ng-bind="item.ACCOUNT"></span>
+           </li>
+       </ul>
+    </div>
+    <div class="cue-monitor-disclose-config-footer">   
+        <button ng-click="save()" class="btn_confirm">保存</button>
+        <button ng-click="cancel()" class="btn_cancel">取消</button>
+    </div>
+</div>

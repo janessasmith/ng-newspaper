@@ -1,0 +1,85 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12 col-lg-12 mb10">
+        <button class="btn btn-default btn-commen opacity100" ng-click="goBcak()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='back'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='back'?'i61-1.png':'i61.png'}}"/>
+            </span> 返回
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="addReply()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='add'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" style="width:100px;">
+            <span class="s_icon" style="padding-right:2px;margin-left:0px">
+                <img ng-src="./manageConfig/groupUserManageMent/images/{{status.batchOperateBtn['hoverStatus']=='add'?'addUser-1.png':'addUser.png'}}"/>
+            </span> 添加回复
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="deleteReply()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon" style="padding-right:0px;margin-left:0px;">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='delete'?'fg2-1.png':'fg2.png'}}" />
+            </span> 批量删除
+        </button>
+    </div>
+</div>
+<div class="row edit_right_mid">
+</div>
+<div class="edit_table border_radius_5">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-check w90 txt_l">
+                    <trs-checkbox ischecked="data.items.length != 0 && data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox>
+                </th>
+                <th class="td-number">编号</th>
+                <th>内容</th>
+                <th class="xcol-newspaper-date">图片</th>
+                <th class="xcol-newspaper-releaseBuild">音视频</th>
+                <th class="xcol-newspaper-words">主持人</th>
+                <th class="xcol-newspaper-type">显示</th>
+                <th class="xcol-newspaper-date">创建时间</th>
+                <th class="xcol-newspaper-operation" style="width:100px;">修改</th>
+                <th class="xcol-operation" style="width:66px;">删除</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr ng-repeat="item in data.items" style="height:30px;">
+                <!--单选框-->
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <!--编号-->
+                <td class="xcol-newspaper-id" ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1"></td>
+                <!-- 内容 -->
+                <td class="website_table_draftPublish pointer">
+                    <a title="{{item.CONTENT}}" href="javascript:void(0)" ng-bind="item.CONTENT | truncate:100:'...'"></a>
+                </td>
+                <!--图片-->
+                <td>
+                    <a href="{{img}}" target="_blank" ng-repeat="img in item.PICURL | before:4"> <img ng-src="{{img}}" style="width:30px;height:30px;margin:5px 0px 5px 5px;"></a>
+                </td>
+                <!--音视频-->
+                <td>
+                    <a href="{{item.VIDEOURL||item.MUSICURL}}" ng-if="item.VIDEOURL!=''||item.MUSICURL!=''" target="_blank">
+                        <img ng-src="{{item.VIDEOPICURL||'./resourceCenter/images/z6.png'}}" alt="" style="width:30px;height:30px;border:none">
+                    </a>
+                </td>
+                <!--直播分类-->
+                <td ng-bind="item.COMPERENAME"></td>
+                <!--是否显示-->
+                <td ng-show="item.ISSHOW==0">不显示</td>
+                <td ng-show="item.ISSHOW==1">显示</td>
+                <td ng-bind="item.INSERTTIME"></td>
+                <!--修改-->
+                <td class="hidden-operate">
+                    <a class="operate" target="_blank" ng-click="editReply(item)" style="width:100%; margin:0 auto;"><img src="./resourceCenter/images/edit.png">编辑</a>
+                </td>
+                <!--删除-->
+                <td>
+                    <a class="operate" ng-click="deleteReply(item)" style="width:100%; margin:0 auto;"><img src="./editingCenter/app/images/fg-r2.png">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" page="page" currpage="data.copyCurrPage"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

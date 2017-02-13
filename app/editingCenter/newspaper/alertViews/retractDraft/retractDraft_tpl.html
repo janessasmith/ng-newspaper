@@ -1,0 +1,73 @@
+<div class="shangban-container">
+    <div class="shangban-head">
+        <p ng-bind="title"></p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="shangban-body">
+        <p class="choosed-manu">已选稿件(<span ng-bind="choosedManuCount"></span>)</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>新闻标题</th>
+                    <th>关联</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>33</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>33</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>33</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>33</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>33</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>33</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>22</td>
+                    <td>33</td>
+                    <td>44</td>
+                </tr>
+            </tbody>
+        </table>
+       <!--  <div class="date">
+            <p></p>
+            <input type="text" class="form-control" />
+        </div> -->
+        <p class="opinion" ng-bind="opinionTit">撤稿原因</p>
+        <textarea></textarea>
+        <div class="btns-wrap">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_confirm">确定</button>
+        </div>
+    </div>
+</div>

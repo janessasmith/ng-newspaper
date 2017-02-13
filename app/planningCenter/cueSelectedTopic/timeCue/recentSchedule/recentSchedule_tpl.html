@@ -1,0 +1,42 @@
+<div class="calendar schedule">
+    <div class="calendar_head">
+        <b>日历</b>
+    </div>
+    <div class="calendar_content">
+        <div class="calendar_content_left col-md-6">
+            <div class="mt10 calendarHead mb10">
+                <trs-single-select selected-option="dropDown.selectedYearDefault" callback="gotoSelectedTime()" options="dropDown.selectedYear" class="left"></trs-single-select>
+                <trs-single-select selected-option="dropDown.selectedMonthDefault" callback="gotoSelectedTime()" options="dropDown.selectedMonth" class="left"></trs-single-select>
+                <button ng-click="gotoToday()" class="backtoToday">返回今天</button>
+                <hr class="line" />
+                <button ng-click="createNewCalandar()" class="backtoToday">新建日程</button>
+            </div>
+            <div ui-calendar="uiConfig.calendar" ng-model="data.eventSources" class="Almanac" calendar="myCalendar"></div>
+        </div>
+        <div class="calendar_content_right col-md-6 fix_height450">
+            <tabset justified="true">
+                <tab heading="近期日程" ng-click="custom()">
+                    <table class="table table-striped mt10 custom-table data-table">
+                        <tbody>
+                            <tr ng-repeat="customItem in data.custom.customItems track by $index">
+                                <td>
+                                    <custom-title tit="customItem.TITLE" content="customItem.CONTENT" before-date="customItem.BEFOREDATE | date:'yyyy-MM-dd'" end-date="customItem.ENDDATE | date:'yyyy-MM-dd'" callback="getCaledarModal(customItem)"></custom-title>
+                                </td>
+                                <td class="xcol-date from">{{customItem.BEFOREDATE | date:"yyyy-MM-dd"}}</td>
+                                <td class="xcol-date to">&nbsp&nbsp至&nbsp&nbsp{{customItem.ENDDATE | date:"yyyy-MM-dd"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="recent-policy-page left">
+                        <trs-pagenationwith-pagecount total-num="data.custom.page.ITEMCOUNT" page-size="data.custom.page.PAGESIZE" page-count="data.custom.page.PAGECOUNT">
+                        </trs-pagenationwith-pagecount>
+                        <pagination total-items="data.custom.page.ITEMCOUNT" ng-change="custopmPageChanged()" ng-model="data.custom.page.CURRPAGE" max-size="1" class="pagination-sm page_left" boundary-links="true" items-per-page="data.custom.page.PAGESIZE" rotate="false" num-pages="data.custom.page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页">
+                        </pagination>
+                        <a href="" target="_blank" class="more" ui-sref="plancueOverview({serviceid:'customremind',modelid:'search',time:status.curTime})" ng-if="data.custom.customItems.length>0">更多</a>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

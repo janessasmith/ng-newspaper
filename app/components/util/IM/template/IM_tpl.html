@@ -1,0 +1,158 @@
+<div class="IM_bg">
+    <div cg-busy="loadingPromise"></div>
+    <div class="IM_chatBox">
+        <div class="IM_chatLeft">
+            <div class="IM_chat01_title">
+                <div class="IM_chat01_title_head">
+                    <a class="IM_chat01_title_tx" href=""><img ng-src="{{data.IMInfo.USER.USERHEAD?('/wcm/app/system/read_image.jsp?FileName='+data.IMInfo.USER.USERHEAD):'./components/util/IM/images/2013.jpg'}}"></a>
+                    <a class="IM_chat01_title_nr" href="" ng-bind="data.IMInfo.USER.NICKNAME||data.IMInfo.USER.TRUENAME"></a>
+                    <a class="IM_chat01_title_txl" href="" ng-click="status.dropOut=!status.dropOut">
+                        <img src="./components/util/IM/images/tx1.png">
+                    </a>
+                    <div class="dropOut" ng-if="status.dropOut">
+                        <ol>
+                            <li>
+                                <img src="./components/util/IM/images/tx19.png">
+                                <span class="dropOut_span">关闭声音</span>
+                            </li>
+                            <li>
+                                <img src="./components/util/IM/images/tx20.png">
+                                <span class="dropOut_span">意见反馈</span>
+                            </li>
+                            <li>
+                                <img src="./components/util/IM/images/tx21.png">
+                                <span class="dropOut_span" ui-sref="editctr.iWo.personalManuscript">退出</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="input-group edit_input_group IM_input_select">
+                    <input type="text" class="form-control edit_form_control" placeholder="搜索" ng-model="data.searchUserName" bs-options="allUser as allUser.TRUENAME for allUser in searchAllUser($viewValue)" template="./components/util/IM/template/IM_search_tpl.html" bs-typeahead>
+                </div>
+            </div>
+            <div class="IM_chat01_content">
+                <tabset justified="true" class="IM_chat01_content_nav">
+                    <tab ng-repeat="tab in tabs" class="IM_chat01_content_{{tab.currName}}" active="tab.active">
+                        <ul class="content_news_hover" ng-show="tab.currName=='news'">
+                            <li ng-repeat="item in data.friendList" ng-click="talkTo(item)" ng-class="{'IM_selected':(status.currTalkTo==item)}" ng-mouseenter="status.deleteTalk.deleteIcon=true;status.deleteTalk.curMouseEnter=item" ng-mouseleave="status.deleteTalk.deleteIcon=false;status.deleteTalk.curMouseEnter=''">
+                                <a href="javascript:void(0);">
+                                    <img ng-src="{{icon}}" ng-init="icon=showIcon(item)">
+                                    <span class="tab_currName_bubble" ng-show="rankUp(item)"></span>
+                                </a>
+                                <a href="javascript:;" class="IM_chat01_name" title="{{item.FRIENDTRUENAME||item.name||item.TRUENAME}}" ng-bind="item.FRIENDTRUENAME||item.name||item.TRUENAME"></a>
+                                <span class="IM_chat01_delete" ng-show="status.deleteTalk.curMouseEnter==item&&status.deleteTalk.deleteIcon==true&&item.FRIENDID" ng-click="deleteTalk(item,$event)"><img ng-src="{{status.deleteTalk.onDeleteIcon?'./components/util/IM/images/tx29-on.png':'./components/util/IM/images/tx29-over.png'}}" ng-mouseenter="status.deleteTalk.onDeleteIcon=true" ng-mouseleave="status.deleteTalk.onDeleteIcon=false"></span>
+                            </li>
+                            <!--  <li ng-repeat="group in data.talkGroupList" ng-click="talkToGroup(group)" ng-class="{'IM_selected':(status.currTalkTo.groupId==group.groupId)}">
+                                <a href="javascript:void(0);">
+                                    <img src="./components/util/IM/images/2013.jpg">
+                                    <span class="tab_currName_bubble" ng-show="status.unReadMessageIcon[item.FRIENDID]"></span>
+                                </a>
+                                <a href="javascript:;" class="IM_chat01_name" ng-bind="group.name"></a>
+                                <span class="IM_chat01_delete glyphicon glyphicon-remove" ng-show="status.currTalkTo.groupId==group.groupId"></span>
+                            </li> -->
+                        </ul>
+                        <!-- <ul class="content_news_hover" ng-show="tab.currName=='news'&&data.searchUserName!=''">
+                            <li ng-repeat="item in data.allUserList | fuzzyBy:'TRUENAME':data.searchUserName" ng-click="talkTo(item,'true')" ng-class="{'IM_selected':(status.currTalkTo.FRIENDID==item.USERID)}">
+                                <a href="javascript:void(0);">
+                                    <img ng-src="{{item.USERHEAD?('/wcm/app/system/read_image.jsp?FileName='+item.USERHEAD):'./components/util/IM/images/2013.jpg'}}">
+                                    <span class="tab_currName_bubble" ng-show="status.unReadMessageIcon[item.USERID]"></span>
+                                </a>
+                                <a href="javascript:;" class="IM_chat01_name" ng-bind="item.TRUENAME"></a>
+                            </li>
+                            <li ng-repeat="group in data.talkGroupList | fuzzy:data.searchUserName" ng-click="talkToGroup(group,'true')" ng-class="{'IM_selected':(status.currTalkTo.groupId==group.groupId)}">
+                                <a href="javascript:void(0);">
+                                    <img src="./components/util/IM/images/2013.jpg">
+                                    <span class="tab_currName_bubble" ng-show="status.unReadMessageIcon[item.FRIENDID]"></span>
+                                </a>
+                                <a href="javascript:;" class="IM_chat01_name" ng-bind="group.name"></a>
+                            </li>
+                        </ul> -->
+                        <treecontrol ng-show="tab.currName=='address'" expanded-nodes="status.expandedNodes" on-node-toggle="nodeToggle(node)" class="tree-light" tree-model="data.groups" options="status.treeOptions" on-selection="selectNode(node)"><span title="{{node.GNAME}}" href="javascript:void(0)">{{node.GNAME}}</span></treecontrol>
+                        <ul class="content_address_hover" ng-show="tab.currName=='address'">
+                            <li ng-repeat="item in data.users" ng-click="saveFriend(item)" ng-dblclick="backToFriends(item)">
+                                <a href="javascript:;">
+                                    <img ng-src="{{item.USERHEAD?('/wcm/app/system/read_image.jsp?FileName='+item.USERHEAD):'./components/util/IM/images/2016.jpg'}}"></a>
+                                <!-- <img ng-src="{{item.USERHEAD?('/wcm/app/system/read_image.jsp?FileName='+item.USERHEAD):'./components/util/IM/images/tx-28.jpg'}}"-->
+                                <a href="javascript:;" class="IM_chat01_name" ng-bind="item.TRUENAME"></a>
+                            </li>
+                        </ul>
+                    </tab>
+                </tabset>
+            </div>
+        </div>
+        <div class="IM_chatRight">
+            <span><audio id="im_ring" src="./components/util/IM/images/ring.mp3"></audio></span>
+            <div class="IM_chat02_title">
+                <button type="button" class="IM_groupMembersBtn" data-placement="bottom" data-auto-close="1" data-template-url="./components/util/IM/template/popTemplate/groupMembers_tpl.html" data-animation="slide-top" bs-popover>
+                    <span><a href="javascript:;" ng-bind="status.currTalkTo.FRIENDTRUENAME||status.currTalkTo.TRUENAME"></a></span>
+                    <span ng-if="!status.isSingleTalk" class="IM_chatRight_add_group"><a href="javascript:;" ng-bind="status.currTalkTo.name"></a></span>
+                    <img ng-show="status.currTalkTo" class="pointer" src="./editingCenter/app/images/xl.png">
+                </button>
+                <!-- <div class="Group" ng-show="status.dowmIcon">
+                    <div class="Group_Information">
+                        <ul>
+                            <li ng-repeat="member in data.groupMembers"><img src="./components/util/IM/images/2015.jpg" ng-click="createTalkGroup()"> <b ng-bind="member.nickName||member.member"></b></li>
+                        </ul>
+                        <div class="Group_Information_img" ng-click="inviteJoinGroup()"><img src="./components/util/IM/images/tx23.png" alt=""></div>
+                    </div>
+                </div> -->
+                <!--  <div class="IM_chatRight_add">
+                   <span ng-click="showGroup($event,true)"><img src="./components/util/IM/images/tx22.png" alt=""></span>
+                   <ul class="IM_chatRight_add_ul" ng-show="status.downGroup" ng-click="showGroup($event)">
+                       <li><a ng-click="discussionGroup()">创建讨论组</a></li>
+                   </ul>
+               </div> -->
+            </div>
+            <div class="IM_chat02_content">
+                <div class="IM_message_box">
+                    <div class="IM_message IM_clearfix" ng-repeat="item in data.messageList|orderBy:HISTORCALTIME:true" ng-class="{'IM_right_message':item.TRANSMITS===data.IMInfo.USER.USERID}">
+                        <div class="IM_wrap-ri">
+                            <div clsss="IM_clearfix"><span ng-bind="getTime(item)"></span></div>
+                        </div>
+                        <div class="IM_wrap-chat">
+                            <div class="IM_user-logo"><img ng-src="{{data.IMInfo.USER.USERHEAD?('/wcm/app/system/read_image.jsp?FileName='+item.AVATAR):'./components/util/IM/images/2013.jpg'}}"></div>
+                            <div class="IM_wrap-text IM_wrap_send">
+                                <div class="IM_wrap_send_arrow"></div>
+                                <h5 class="IM_clearfix" ng-bind="item.FRIENDTRUENAME"></h5>
+                                <div ng-bind-html="replaceUnified(item.HISTORICALNEWS)|trsSce" ng-if="item.NEWSTYPE=='1'"></div>
+                                <div ng-if="item.NEWSTYPE=='4'">
+                                    <img imtype="msg_attach_src" ng-src="{{item.MSGFILEURL}}" style="max-width:150px; max-height:200px;">
+                                </div>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notSelected" ng-if="!status.currTalkTo">
+                    <img src="./components/util/IM/images/tx-31.png">
+                    <p>未选择聊天</p>
+                </div>
+            </div>
+            <div class="IM_chat03" ng-if="status.currTalkTo">
+                <div class="IM_chat03_title IM_expressionContainer">
+                    <button type="button" class="IM_expressionPack_btn" data-placement="top" data-auto-close="1" data-template-url="./components/util/IM/template/popTemplate/IM_expressionPack_tpl.html" data-animation="slide-bottom" bs-popover>
+                        <a class="IM_chat03_title_btn" href="javascript:;">
+                            <img src="./components/util/IM/images/tx12.png">
+                        </a>
+                    </button>
+                    <a class="IM_chat03_title_btn" href="javascript:;" title="选择图片" ngf-select="upload($file,4)" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">
+                        <img src="./components/util/IM/images/tx13.png">
+                    </a>
+                    <!-- 
+                    <a class="IM_chat03_title_btn" href="javascript:;" title="选择附件">
+                        <img src="./components/util/IM/images/tx14.png">
+                    </a>
+                    <a class="IM_chat03_title_btn" href="javascript:;" title="选择附件">
+                        <img src="./components/util/IM/images/tx15.png">..
+                    </a> -->
+                </div>
+                <div class="IM_chat03_content">
+                    <pre trs-contenteditable id="editArea" contenteditable="true" ng-model="status.content" ng-keydown="newLine($event)" ng-keypress="sendIt($event)" style="height: 108px"></pre>
+                </div>
+                <div class="IM_chat03_bar">
+                    <span>按下Ctrl+Enter换行</span>
+                    <button class="btn" ng-click="sendMessage()">发送</button>
+                </div>
+            </div>
+        </div>
+    </div>

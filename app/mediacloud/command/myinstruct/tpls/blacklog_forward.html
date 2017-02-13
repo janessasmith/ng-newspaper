@@ -1,0 +1,111 @@
+<div class="dp-rt-main no-pd" style="margin-top: 0;" ng-controller="blacklogforwardCtrl">
+    <div class="cg-ls-top">
+        <div class="zf-deal-tit lf">转发</div>
+    </div>
+    <form class="w5c-form" method="post" id="iconForm" name="iconForm" 
+          enctype="multipart/form-data" w5c-form-validate="vm.validateOptions" 
+          novalidate>
+    <div class="cg-xq-main">
+        <div class="cg-xq-deal">
+            <div class="cg-xq-bk">
+                <label>指令标题：</label>
+                <div class="xq-bk-rt">
+                    <input type="text" class="form-control" name="heading" required ng-model="params.title" />
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>指令内容：</label>
+                <div class="xq-bk-rt no-pd">
+                    <div id="editor" style="margin-bottom:1.25rem" config="config" class="ueditor" 
+                         ng-model="params.content" ></div>
+                    <input name="content" type="hidden" ng-model="params.content" required />     
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <div class="add-file">
+                    <a href="javascript:void(0);" class="load-btn" myuplode-directive > <span></span>上传附件</a>
+                    <input  name="wxHeadImg-browser-btn" name="upload" 
+                            type="file" id="t_file" style="display:none"/>
+                      <div class="fileList" style="padding: 4px 0px 0px 126px;" deletefile>
+                        <div ng-repeat="file in dataList.files" id="" >
+                            <a ng-href="{{file.filePath}}" class="fname">{{file.fileName}}</a>
+                            <span class="delete" ></span>
+                        </div>     
+                    </div>                                                
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>接收人：</label>
+                <div class="xq-bk-rt rw-js-pe">
+                    <input name="userIds" type="text" class="form-control" ng-model="names" required readonly/>
+                    <a href="javascript:void(0);" class="add-per-btn rt" ng-click="open_cp('1000',$event);"></a>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>指令类型：</label>
+                <div class="add-file">
+                    <div>
+                       <select ng-model="dirType" class="form-control" ng-options="dirType.name for dirType in dirTypes">
+                           
+                       </select>
+                    </div>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>期望完成时间：</label>
+                <div class="add-file">
+                    <div class="zl-xq-bk clearfix">
+                    <input type="text" uib-datepicker-popup="{{format}}" ng-model="params.overTime" 
+                           min-date="minStartTime" is-open="status.opened" show-weeks="false" 
+                           show-button-bar="false" on-open-focus="false" readonly="readonly"/>                                 
+                    <span class="dt-sel-btn" ng-click="open($event)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>密级指令：</label>
+                <div class="add-file">
+                    <div class="cg-check-box lf" id="addFile">
+                        <input type="checkbox" ng-model="params.isSecret"
+                               ng-true-value="1" ng-false-value="0" ng-checked="params.isSecret==0? false:true" >
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="cg-xq-bk">
+                <label>通知方式：</label>
+                <div class="add-file">
+                    <div class="sel-form-box lf">
+                        <div class="cg-check-box lf" id="selFormWx">
+                            <input type="checkbox" name="tzfs" ng-model="wx" 
+                                   ng-true-value="1" ng-false-value="''" >
+                        </div>
+                        <span class="all-check-sp">微信</span>
+                    </div>
+                    <div class="sel-form-box lf">
+                        <div class="cg-check-box lf" id="selFormWb">
+                            <input type="checkbox" name="tzfs" ng-model="app"
+                                   ng-true-value="2" ng-false-value="''">
+                        </div>
+                        <span class="all-check-sp">APP</span>
+                    </div>
+                    <div class="sel-form-box lf">
+                        <div class="cg-check-box lf" id="selFormMe">
+                            <input type="checkbox" name="tzfs" ng-model="dx"
+                                   ng-true-value="3" ng-false-value="''">
+                        </div>
+                        <span class="all-check-sp">短信</span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="cg-xq-btn">
+        <div class="xq-btn-deal rw-btn-dl">
+            <button href="javascript:void();" class="btn-re-pb" 
+                   w5c-form-submit="sendDir();">发送</button>
+            <button href="javascript:void();" class="btn-cancel" 
+                    ng-click="cancelDir();">取消</button>
+        </div>
+    </div>
+    </form>
+</div>

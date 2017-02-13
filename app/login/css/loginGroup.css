@@ -1,0 +1,95 @@
+.login-group-modal .modal-dialog {
+    width: 460px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /*height: 520px;*/
+    height: 50%;
+}
+
+.login-group-modal .modal-content {
+    background-color: #F0F2F5;
+}
+
+.login-group-modal .man_produ_modify_inner {
+    margin: 10px;
+}
+
+.login-group-modal .man_produ_column_modify {
+    background: #fff;
+    margin: 10px auto;
+}
+
+.login-group-modal .man_produ_modify_footer {
+    padding-left: 0;
+    background: transparent;
+    height: 30px;
+}
+
+.login-group-modal .man_produ_modify_footer_cancel {
+    margin-right: 0;
+}
+
+.login-group-modal .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.login-group-modal .man_produ_modify_footer button:first-child {
+    background: #bbb;
+}
+
+.login-group-modal .edit_table {
+    height: 39px;
+}
+
+.login-group-modal .edit_table table {
+    margin-bottom: 0;
+}
+
+.login-group-modal .cancel_signed_table_container {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.login-group-modal .cancel_signed_table_container.edit_table {
+    min-height: 0;
+}
+
+.login-group-modal .processRecording-main-table {
+    width: 100%;
+    height: 260px;
+    overflow-y: scroll;
+}
+
+.login-group-modal table {
+    font-size: 12px;
+}
+.login-group-modal .cancel_signed_table_container>table th:nth-child(1),
+.login-group-modal .processRecording-main-table>table td:nth-child(1) {
+    width: 154px;
+}
+
+.login-group-modal .cancel_signed_table_container>table th:nth-child(2) {
+    width: 286px;
+}
+
+.login-group-modal .processRecording-main-table>table td:nth-child(2) {
+    width: 267px;
+}
+
+.login-group-modal .processRecording-main-table>table tr.select-group-active,
+.login-group-modal .processRecording-main-table>table tr:hover {
+    background: #4496d2;
+    cursor: pointer;
+}
+
+.login-group-modal .processRecording-main-table>table tr.select-group-active>td,
+.login-group-modal .processRecording-main-table>table tr:hover>td {
+    color: #fff;
+}

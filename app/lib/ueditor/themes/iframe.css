@@ -1,0 +1,9 @@
+/*可以在这里添加你自己的css*/
+body {
+	 background-color:#fff; 
+}
+/*table.trs_uetab{ border: none; width: 100%;}
+.trs_uetab tr{ border: none;}
+.trs_uetab td{ border: none;}
+.trs_uetab .bg{ border-bottom:1px solid #ccc;}*/
+.bodynew p{ background: #fff url(../trs_extend/images/bg_ue_03.png) no-repeat bottom; padding: 5px 10px;}

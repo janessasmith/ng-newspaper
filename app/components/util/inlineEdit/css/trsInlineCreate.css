@@ -1,0 +1,10 @@
+.trsInlineCreate {
+    cursor: pointer;
+    display: none;
+    z-index:9999;
+    position: absolute;
+}
+
+.drag-el-active{
+	border:2px dashed blue;
+}

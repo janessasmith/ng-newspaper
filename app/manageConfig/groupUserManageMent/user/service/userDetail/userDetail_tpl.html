@@ -1,0 +1,61 @@
+<div class="userDetail">
+    <div class="submit">
+        <div class="head">
+            <span ng-bind="data.modalTitle"></span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="body">
+                <div class="main">
+                    <table class="table table-bordered">
+                        <tbody ng-repeat="userDetail in data.userDetails">
+                            <tr>
+                                <th>用户名</th>
+                                <td ng-bind="userDetail.USERNAME"></td>
+                            </tr>
+                            <tr>
+                                <th>昵称</th>
+                                <td ng-bind="userDetail.NICKNAME"></td>
+                            </tr>
+                            <tr>
+                                <th>真实姓名</th>
+                                <td ng-bind="userDetail.TRUENAME"></td>
+                            </tr>
+                            <tr>
+                                <th>邮箱</th>
+                                <td ng-bind="userDetail.EMAIL"></td>
+                            </tr>
+                            <tr>
+                                <th>电话</th>
+                                <td ng-bind="userDetail.TEL"></td>
+                            </tr>
+                            <tr>
+                                <th>手机号</th>
+                                <td ng-bind="userDetail.MOBILE"></td>
+                            </tr>
+                            <tr>
+                                <th>地址</th>
+                                <td ng-bind="userDetail.ADDRESS"></td>
+                            </tr>
+                            <tr>
+                                <th>所属组织</th>
+                                <td><span ng-repeat="groupPath in data.groupPaths" ng-bind="groupPath.GROUPPATHS"></span></td>
+                            </tr>
+                            <tr>
+                                <th>所属角色</th>
+                                <td><span ng-repeat="roleData in data.roleDatas" ng-bind="roleData.ROLEDESC"></span></td>
+                            </tr>
+                            <tr>
+                                <th>当前状态</th>
+                                <td ng-bind="userStatus[userDetail.STATUS]"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <div class="foot">
+                <div>
+                    <button class="cancel" ng-click="cancel()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

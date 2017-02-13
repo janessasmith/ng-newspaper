@@ -1,0 +1,74 @@
+<div class="manCon-sys-souCenClassifyMgr manCon-sys-souCenClassifyMgr">
+    <div trs-scroll-fix class="row edit_right_head proManMent_pmm_head">
+        <div class="col-md-8 col-lg-9"></div>
+        <div class="col-md-4 col-lg-3">
+            <form name="searchForm" novalidate>
+                <div class="input-group edit_input_group invalidate-input-box">
+                    <input name="searchWord" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,spechar" type="text" ng-model="searchWord" class="form-control manCon-sys-souCenClassifyMgr-form-search mr10" placeholder="请输入关键字" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                    <b class="input-group-btn">
+                        <button validation-submit="searchForm" class="btn btn-default btn_edit_search mt5" ng-click="search()" type="button">搜索</button>
+                    </b>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="manCon-sys-souCenClassifyMgr-container">
+        <div class="manCon-sys-souCenClassifyMgr-item-out left" ng-repeat="item in status.data.sites">
+            <div class="manCon-sys-souCenClassifyMgr-item-default text-center" ng-class="{'manCon-sys-souCenClassifyMgr-item-active':item.SITEID == status.data.selectedSite.SITEID}">
+                <span ng-bind="item.SITEDESC | trsLimitTo:10"></span>
+                <a title="{{item.SITEDESC}}" class="manCon-sys-souCenClassifyMgr-router" ui-sref="manageconfig.sysmanage.soucenclassifymgr.channelmgr" ng-if="item.SITEID == status.data.selectedSite.SITEID"></a>
+                <a title="{{item.SITEDESC}}" class="manCon-sys-souCenClassifyMgr-router"  ng-if="item.SITEID != status.data.selectedSite.SITEID">
+                </a>
+            </div>
+            <div class="manCon-sys-souCenClassifyMgr-item-btn-group" ng-if="item.SITEID == status.data.selectedSite.SITEID">
+                <a>
+                    <img src="./manageConfig/productManageMent/images/i3.png" ng-click="deleteViews()"/>
+                </a>
+                <a>
+                    <img src="./manageConfig/productManageMent/images/i4.png" ng-click="modifyViews()"/>
+                </a>
+            </div>
+        </div>
+        <div class="manCon-sys-souCenClassifyMgr-item-out left">
+            <div class="manCon-sys-souCenClassifyMgr-item-default text-center" ng-class="{'manCon-sys-souCenClassifyMgr-item-active':item.SITEID == status.data.selectedSite.SITEID}">
+                <span>假的站点2</span>
+                <a title="{{item.SITEDESC}}" class="manCon-sys-souCenClassifyMgr-router"  ui-sref="manageconfig.sysmanage.soucenclassifymgr.channelmgr" ng-if="item.SITEID == status.data.selectedSite.SITEID"></a>
+                <a title="{{item.SITEDESC}}" class="manCon-sys-souCenClassifyMgr-router" ng-if="item.SITEID != status.data.selectedSite.SITEID">
+                </a>
+            </div>
+            <div class="manCon-sys-souCenClassifyMgr-item-btn-group">
+                <a>
+                    <img src="./manageConfig/productManageMent/images/i3.png" ng-click="deleteViews()"/>
+                </a>
+                <a>
+                    <img src="./manageConfig/productManageMent/images/i4.png" ng-click="modifyViews()"/>
+                </a>
+            </div>
+        </div>
+        <div class="manCon-sys-souCenClassifyMgr-item-out left">
+            <div class="manCon-sys-souCenClassifyMgr-item-default text-center">
+                <span>假的站点</span>
+                <a title="{{item.SITEDESC}}" class="manCon-sys-souCenClassifyMgr-router"  ui-sref="manageconfig.sysmanage.soucenclassifymgr.channelmgr" ng-if="item.SITEID == status.data.selectedSite.SITEID"></a>
+                <a title="{{item.SITEDESC}}" class="manCon-sys-souCenClassifyMgr-router" ng-if="item.SITEID != status.data.selectedSite.SITEID">
+                </a>
+            </div>
+            <div class="manCon-sys-souCenClassifyMgr-item-btn-group">
+                <a>
+                    <img src="./manageConfig/productManageMent/images/i3.png" ng-click="deleteViews()"/>
+                </a>
+                <a>
+                    <img src="./manageConfig/productManageMent/images/i4.png" ng-click="modifyViews()"/>
+                </a>
+            </div>
+        </div>
+        <div class="manCon-sys-souCenClassifyMgr-add-item left text-center" ng-click="addViews()">
+            <img src="./manageConfig/productManageMent/images/gl09.png" /> &nbsp;&nbsp; 新增渠道
+        </div>
+    </div>
+    <div class="manCon-sys-souCenClassifyMgr-recycle">
+        <a ui-sref="manageconfig.sysmanage.soucenclassifymgr.recyclebin">
+            <img src="./manageConfig/productManageMent/images/i7.png" />
+            <span>回收站</span>
+        </a>
+    </div>
+</div>

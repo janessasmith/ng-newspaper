@@ -1,0 +1,12 @@
+<div class="btn-group" dropdown>
+    <button type="button" class="btn btn-default bth-fix" dropdown-toggle keyboard-nav>
+    <span class="btn-fix-title" value="{{selectedOption[valuekey?valuekey:'value']}}" >{{label|| selectedOption[namekey?namekey:'name']}}
+        </span><span class="caret"></span>
+    
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+        <li role="menuitem" ng-repeat="option in options track by $index" ng-click="setSelected(option)">
+            <a class="dropdown-menu-item" title="{{option[namekey?namekey:'name']}}" ng-bind="option[namekey?namekey:'name']" value="{{option[valuekey?valuekey:'value']}}"></a>
+        </li>
+    </ul>
+</div>

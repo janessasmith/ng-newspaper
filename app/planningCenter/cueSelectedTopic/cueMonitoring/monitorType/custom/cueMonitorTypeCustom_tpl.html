@@ -1,0 +1,65 @@
+<div class="cue-monitor-type-custom-container">
+    <div class="cue-monitor-type-custom-body">
+        <div class="cue-monitor-type-custom-wrap">
+        	<p>栏目名称:</p>
+        	<div>
+        		<input type="text" class="form-control w392" ng-model="columnName">
+        	</div>
+        </div>
+        <div class="cue-monitor-type-custom-wrap">
+        	<p>标题:</p>
+			<div>
+				<p>包含以下完整的关键词:</p>
+				<input type="text" class="form-control" ng-model="titFullKeyword" ng-keypress="titFullAdd(ev)">
+				<img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/add.png" alt="" ng-click="titFullAdd()">
+				<ul>
+                    <li ng-repeat="titFull in titFulls track by $index">
+                        <span ng-bind="titFull"></span>
+                        <img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/close.png" alt="" ng-click="titFullDelete($index)">
+                    </li>
+                </ul>
+			</div>
+        	<div>
+				<p>包含以下任意一个关键词:</p>
+				<input type="text" class="form-control" ng-model="titAnyKeyword" ng-keypress="titAnyAdd(ev)">
+				<img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/add.png" alt="" ng-click="titAnyAdd()">
+                <ul>
+                    <li ng-repeat="titAny in titAnys track by $index">
+                        <span ng-bind="titAny"></span>
+                        <img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/close.png" alt="" ng-click="titAnyDelete($index)">
+                    </li>
+                </ul>
+			</div>
+        </div>
+        <div class="bor-btm"></div>
+        <div class="cue-monitor-type-custom-wrap">
+        	<p>正文:</p>
+			<div>
+				<p>包含以下完整的关键词:</p>
+				<input type="text" class="form-control" ng-model="contentFullKeyword" ng-keypress="contentFullAdd(ev)">
+				<img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/add.png" alt="" ng-click="contentFullAdd()">
+				<ul>
+                    <li ng-repeat="contentFull in contentFulls track by $index">
+                        <span ng-bind="contentFull"></span>
+                        <img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/close.png" alt="" ng-click="contentFullDelete($index)">
+                    </li>
+                </ul>
+			</div>
+        	<div>
+				<p>包含以下任意一个关键词:</p>
+				<input type="text" class="form-control" ng-model="contentAnyKeyword" ng-keypress="contentAnyAdd(ev)">
+				<img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/add.png" alt="" ng-click="contentAnyAdd()">
+                <ul>
+                    <li ng-repeat="contentAny in contentAnys track by $index">
+                        <span ng-bind="contentAny"></span>
+                        <img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/close.png" alt="" ng-click="contentAnyDelete($index)">
+                    </li>
+                </ul>
+			</div>
+        </div>
+    </div>
+    <div class="cue-monitor-type-custom-footer">
+        <button class="new-role-btn btn_confirm" ng-click="next()">下一步</button>
+        <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

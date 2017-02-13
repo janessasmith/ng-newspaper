@@ -1,0 +1,107 @@
+<div class="toBeCompiled-share-container">
+    <div class="toBeCompiled-share-head">
+        <p>共享</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+    </div>
+    <div class="toBeCompiled-share-body">
+        <div class="toBeCompiled-share-content">
+            <div class='title'>
+                <div class="coalesce">
+                    <div class="ctitle">
+                        <span>稿件分类：</span>
+                    </div>
+                    <div class="item">
+                        <span ng-click="selectMClass(item)" ng-repeat="item in mClassification" class="{{mClassSelected[item.METACATEGORYID]!=undefined?'selected':''}}" ng-bind="item.CDESC"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="coalesce classification">
+                <span class="stitle">共享范围：</span>
+                <span ng-click="selectRange(unifiedFeeds)" class="{{selectedRange==unifiedFeeds?'selected':''}}">统一供稿</span>
+                <span ng-click="selectRange(shareRange[1])" ng-bind="shareRange[1].RANGENAME" class="{{selectedRange==shareRange[1]?'selected':''}}"></span>
+                <span ng-click="selectRange(shareRange[0])" ng-bind="shareRange[0].RANGENAME" class="{{selectedRange==shareRange[0]?'selected':''}}"></span>
+                <span ng-click="selectRange(otherShare)" class="{{selectedRange==otherShare?'selected':''}}">其他共享&nbsp;&nbsp;<!-- <img ng-show="selectedRange!=otherShare" src="./editingCenter/app/images/lt2.png" /><img ng-show="selectedRange==otherShare" src="./editingCenter/app/images/lt3.png" /> --><img ng-src="./editingCenter/app/images/{{selectedRange==otherShare?'ad7.png':'lt2.png'}}" /></span>
+            </div>
+            <div class="shareRecord">
+                <div class="commonShare_title">常用共享：
+                </div>
+                <div class="mainRecord">
+                    <span ng-repeat="item in shareTemplateList | limitTo:limitRecordNum" ng-click="selectTemplate(item)" class="record {{item.SHARETEMPLATEID == selectedTemplate.SHARETEMPLATEID&&selectedRange==otherShare?'selected':''}}"><span ng-bind="item.SHARETEMPLATENAME"></span><span ng-click="deleteTemplate(item)" class="deleteRecord {{item.SHARETEMPLATEID == selectedTemplate.SHARETEMPLATEID&&selectedRange==otherShare?'selected':''}}">X</span></span>
+                </div>
+                <button ng-show="shareTemplateList.length>6" data-placement="bottom" ng-click="limitRecordNum=limitRecordNum==6?200:6" class="selected">
+                    <span class="more">更多</span><img ng-show="limitRecordNum==6" src="./editingCenter/app/images/lt3-1.png"><img ng-show="limitRecordNum==200" src="./editingCenter/app/images/lt3-2.png">
+                </button>
+            </div>
+            <div class="con slide-down" ng-show="selectedRange==otherShare" ng-class="{hide:selectedRange!=otherShare}">
+                <div class="conL left">
+                    <div class="header">
+                        <p>集团部门列表</p>
+                    </div>
+                    <div class="cont" style="width:210px; overflow-x: auto; height: 330px;">
+                        <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" on-node-toggle="showToggle(node)" class="tree-light" tree-model="treedata" options="treeOptions" on-selection="showSelected(node)"><span title="{{node.GNAME}}" href="javascript:void(0)">{{node.GNAME}}</span></treecontrol>
+                    </div>
+                </div>
+                <div class="middle">
+                    <img src="./editingCenter/app/images/jt-l.png">
+                </div>
+                <div class="conR right">
+                    <div class="body">
+                        <div class="main">
+                            <div class="left">
+                                <div class="left-div">
+                                    <div class="head">
+                                        <p>选择列表</p>
+                                    </div>
+                                    <div class="body">
+                                        <input type="text" ng-model="searchWordLeft" placeholder="请输入关键字">
+                                        <div class="list">
+                                            <div class="head">
+                                                <p>部门及人员列表</p>
+                                            </div>
+                                            <ul>
+                                                <li ng-show="selectedUser.indexOf(user.ID)<0" ng-dblclick="directlyToRight(user)" ng-click="user.selected!=true?user.selected=true:user.selected=false" class="{{user.selected==true?'selected':''}}" ng-repeat="user in userDatas|filter:myFilter"><span title="{{user.USERNAME!=undefined?user.USERNAME:user.GNAME}}" ng-bind="user.USERNAME!=undefined?user.USERNAME:user.GNAME"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                <img src="./manageConfig/roleManageMent/images/js4.png" ng-click="toRight()" />
+                                <img src="./manageConfig/roleManageMent/images/js5.png" ng-click="toLeft()" />
+                                <img ng-click="selectedAll()" src="./manageConfig/roleManageMent/images/js6.png" ng-click="selectedAll()">
+                                <img ng-click="itemsSd=[];selectedUser=[];" src="./manageConfig/roleManageMent/images/js7.png">
+                            </div>
+                            <div class="left right">
+                                <div class="left-div">
+                                    <div class="head">
+                                        <span>选择列表</span>
+                                        <span ng-click="saveAsTemplate()" class="savetemplate">保存为常用</span>
+                                    </div>
+                                    <div class="body">
+                                        <div class="suggestion">
+                                            <input type="text" watch-options='true' ng-model="searchWord" bs-options="user as user.SUGGESTION||user.GNAME for user in getSuggestions($viewValue)" placeholder="请输入关键字" bs-typeahead limit="30">
+                                        </div>
+                                        <div class="list">
+                                            <div class="head">
+                                                <p>已选</p>
+                                            </div>
+                                            <ul>
+                                                <li ng-dblclick="directlyToLeft(item)" ng-click="item.selected!=true?item.selected=true:item.selected=false" class="{{item.selected==true?'selected':''}}" ng-repeat="item in itemsSd"><span title="{{item.DESC}}" ng-bind="item.DESC"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pb20">
+            <div class="mt20 footer_button">
+                <button ng-click="shareSubmit()" class="share-btn ml136 btn_confirm">确定</button>
+                <button ng-click="close()" class="share-btn ml20 btn_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

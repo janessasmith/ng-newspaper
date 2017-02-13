@@ -1,0 +1,443 @@
+.myManuscript-submit .modal-dialog {
+    width: 652px;
+}
+
+.myManuscript-submit .modal-content {
+    position: relative;
+    background-color: #fff;
+}
+
+.myManuSubmit .submit {
+    width: 650px;
+    border: 4px solid #dddddd;
+}
+
+.myManuSubmit .submit .header {
+    height: 42px;
+}
+
+.myManuSubmit .submit .header p {
+    float: left;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.myManuSubmit .submit .header img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 12px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.myManuSubmit .submit .content {
+    position: relative;
+}
+
+.myManuSubmit .submit .content .headline {
+    background: #f0f2f5;
+}
+
+.myManuSubmit .submit .content .headline p {
+    font-size: 12px;
+    color: #333333;
+    float: left;
+    margin: 13px 0px 0px 18px;
+}
+
+.myManuSubmit .submit .content .headline .selectedList {
+    float: left;
+    width: 550px;
+    height: auto;
+}
+
+.myManuSubmit .submit .content .headline .selectedList span {
+    font-size: 12px;
+    color: #666666;
+    line-height: 44px;
+    margin-right: 15px;
+}
+
+.myManuSubmit a:hover {
+    text-decoration: none;
+}
+
+.myManuSubmit .submit .content .headline img {
+    position: absolute;
+    right: 14px;
+    top: 22px;
+    cursor: pointer;
+}
+
+.myManuSubmit .submit .content ul.moreList {
+    position: absolute;
+    top: 40px;
+    right: 14px;
+    overflow: hidden;
+    width: 315px;
+    background: #fff;
+    padding: 0px;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    z-index: 999;
+}
+
+.myManuSubmit .submit .content ul.moreList li {
+    line-height: 30px;
+    height: 30px;
+    list-style: none;
+    background: url(./editingCenter/iWo/images/limark.jpg) no-repeat 0%;
+    padding-left: 15px;
+    margin-left: 20px;
+}
+
+.myManuSubmit .submit .content ul.moreList li a {
+    font-size: 12px;
+    color: #666666;
+    text-decoration: none;
+}
+
+.myManuSubmit .submit .content ul.nav {}
+
+.myManuSubmit .submit .content ul.nav li {
+    float: left;
+    width: 90px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 10px;
+    cursor: pointer;
+    background: #4496d2;
+    color: #fff;
+}
+
+.myManuSubmit .submit .content ul.nav li.active {
+    background: #fff;
+    color: #000;
+}
+
+.myManuSubmit .submit .content .con {
+    overflow: hidden;
+    min-height: 390px;
+}
+
+.myManuSubmit .submit .content .con .conLeft {
+    width: 330px;
+    float: left;
+    margin-left: 14px;
+    margin-top: 10px;
+}
+
+.myManuSubmit .submit .content .con .conLeft p.newsP {
+    font-size: 14px;
+    height: 30px;
+    background: #f1f2f6;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.myManuSubmit .submit .content .con div.newspaperSite {
+    width: 160px;
+    margin-right: 10px;
+    overflow-y: auto;
+    border: 1px solid #d5d4d4;
+}
+
+.myManuSubmit .submit .content .con div.newspaperDieci {
+    width: 160px;
+    overflow-y: auto;
+    border: 1px solid #d5d4d4;
+}
+
+.myManuSubmit .submit .content .con .conLeft div.timeGroup {
+    height: 28px;
+}
+
+.myManuSubmit .submit .content .con .conLeft .websiteList {
+    border: 1px solid #d5d4d4;
+}
+
+.myManuSubmit .submit .content .con .conLeft .appList {
+    border: 1px solid #d5d4d4;
+}
+
+.myManuSubmit .submit .content .con .conLeft div {
+    height: 348px;
+}
+
+.myManuSubmit .submit .content .con .conLeft div ul {
+    overflow: hidden;
+    padding: 0px;
+}
+
+.myManuSubmit .submit .content .con .conLeft div ul li {
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    text-indent: 10px;
+}
+
+.myManuSubmit .submit .content .con .conLeft div ul li.active {
+    background: #4496d2;
+    color: #fff;
+}
+
+.myManuSubmit .submit .content .con .conRight {
+    float: left;
+    margin-left: 12px;
+    width: 275px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.myManuSubmit .submit .content .con .conRight p.newsP {
+    font-size: 14px;
+    height: 30px;
+    background: #f1f2f6;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.myManuSubmit .submit .content .con .conRight .over {
+    overflow: hidden;
+}
+
+.myManuSubmit .submit .content .con .conRight .channelTree {
+    /*height: 316px;*/
+    overflow-y: auto;
+    border: 1px solid #d5d4d4;
+}
+
+.myManuSubmit .submit .content .con .conRight .channelTree .treeDiv {
+    padding-left: 30px;
+}
+
+.myManuSubmit .tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/j-x.png") no-repeat 0 center;
+}
+
+.myManuSubmit .tree-light li.tree-collapsed i.tree-branch-head {
+    padding: 1px 10px;
+    background: url("./manageConfig/roleManageMent/images/j-r.png") no-repeat 0 center !important
+}
+
+.myManuSubmit .submit .content .sitedescUp {
+    background: url("./manageConfig/roleManageMent/images/j-x.png") #f0f2f5 no-repeat 10px 10px;
+    height: 30px;
+    font-size: 12px;
+    color: #666666;
+    text-indent: 28px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.myManuSubmit .submit .content .sitedescDown {
+    background: url("./manageConfig/roleManageMent/images/j-r.png") #f0f2f5 no-repeat 10px 10px;
+    height: 30px;
+    font-size: 12px;
+    color: #666666;
+    text-indent: 28px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.myManuSubmit .channelTree ul.newsPaperlist {
+    overflow: hidden;
+}
+
+div.channelTree ul.newsPaperlist li {
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    text-indent: 10px;
+}
+
+div.channelTree ul.newsPaperlist li.active {
+    background: #4496d2;
+    color: #fff;
+}
+
+.myManuSubmit .submit .trackCon {
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.myManuSubmit .trackCon .track {
+    height: 30px;
+    border: 1px solid #cccccc;
+    width: auto;
+    float: left;
+    margin-left: 12px;
+    position: relative;
+    padding: 0 20px 0 10px;
+    margin-bottom: 10px;
+}
+
+.myManuSubmit .trackCon .track p {
+    line-height: 30px;
+    font-size: 12px;
+    color: #444444;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.myManuSubmit .trackCon .track p i {
+    margin: 0px 5px;
+}
+
+.myManuSubmit .trackCon .track img {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border: 0;
+    cursor: pointer;
+}
+
+.myManuSubmit .submit .footer {
+    height: 60px;
+    background: #f0f2f5;
+}
+
+.myManuSubmit .submit .footer button {
+    width: 80px;
+    height: 28px;
+    background: #4496d2;
+    float: right;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    padding: 0px;
+    margin-top: 15px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.myManuSubmit .timeGroup {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.myManuSubmit .timeGroup input.form-control {
+    padding: 0px;
+    height: 28px;
+}
+
+.myManuSubmit .timeGroup img.imgOne {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: none;
+    top: 6px;
+    right: 10px;
+}
+
+.myManuscript-submit .timeGroup span.dateTitle {
+    font-size: 14px;
+    color: #666666;
+    float: left;
+    line-height: 28px;
+}
+
+.myManuscript-submit .timeGroup input.form-control {
+    width: 164px;
+    background: url("./editingCenter/app/toBeCompiled/images/t3.png") no-repeat 140px 5px;
+}
+
+.submitBr {
+    border: 1px solid #d5d4d4;
+}
+
+.myManuscript-submit .channelTree li .tree-label span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /*width: 210px;*/
+    overflow: hidden;
+}
+
+.myManuscript-submit treecontrol li {
+    padding: 0px 0px 0px 10px;
+}
+
+.myManuSubmit .conRight input.form-control {
+    width: 70%;
+    height: 28px;
+    float: right;
+    line-height: 26px;
+    padding: 0px;
+    text-indent: 12px;
+    -ms-border: 1px solid red;
+    /*padding-top:0px;*/
+}
+
+.myManuSubmit .timeGroup .datepicker thead {
+    height: 32px;
+}
+
+.myManuSubmit .timeGroup .datepicker tr.text-center {
+    height: 32px;
+}
+
+.myManuSubmit .submit .content .con .conLeft .siteCon .submitWeb_list {
+    height: 350px;
+    overflow-y: auto;
+}
+
+
+/**新增微信样式**/
+
+.myManuSubmit .weixin {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.myManuSubmit .weixin .header {
+    height: 40px;
+    margin-top: 10px;
+}
+.myManuSubmit .submit .weixin .header p{
+    font-size: 14px;
+    font-weight: normal;
+    margin:7px 0px 0px 0px;
+}
+.myManuSubmit .weixin .header div.h33 input {
+    width: 85%;
+    height: 28px;
+    float: right;
+    margin-top: 8px;
+}
+
+.myManuSubmit .weixin .con {
+    overflow: hidden;
+    height: 348px;
+    border: 1px solid #ddd;
+}
+
+.myManuSubmit .weixin .con ul {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.myManuSubmit .weixin .con ul li {
+    padding-left: 15px;
+    min-height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.myManuSubmit .weixin .con ul li.active,.myManuSubmit .weixin .con ul li:hover{
+    background: #4496d2;
+    color: #fff;
+}

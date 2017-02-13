@@ -1,0 +1,60 @@
+.create_move .modal-dialog {
+    width: 238px;
+    margin-top: 235px;
+}
+
+.create_move {
+    border: 1px solid rgb(57, 139, 202);
+    font-family: "微软雅黑";
+    font-size: 12px;
+}
+
+.create_move .modal-content {
+    border: none;
+    padding-bottom: 20px;
+}
+
+.create_move .check_move {
+    margin: 20px 0px 0px 40px;
+    width: 180px;
+    overflow: hidden;
+}
+
+.create_move .check_move p {
+    line-height: 1px;
+    margin-bottom: 5px;
+    color: #3C3C3C
+}
+
+.create_move .button_move {
+    margin: 10px 0px 0px 40px;
+    width: 180px;
+    overflow: hidden;
+}
+
+.create_move .check_move p input {
+    margin-right: 15px;
+    position: relative;
+}
+
+.create_move .button_move button {
+    border: none;
+    color: white;
+    width: 79px;
+    height: 28px;
+    background: #4496D2;
+    border-radius: 4px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.create_move treecontrol.tree-light li.tree-leaf i.tree-leaf-head {
+    background: none;
+}
+
+.create_move .check_move .tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/m1-l.png") no-repeat 0 center;
+}
+.create_move .check_move .tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/m2-l.png") no-repeat 0 center !important;
+}

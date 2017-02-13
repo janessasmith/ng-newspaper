@@ -1,0 +1,71 @@
+[   
+    {
+       "roleName": "重庆晨报",
+       "roleId": "role1",
+       "type":"组织",
+       "headImg":"common/images/new-pic.jpg",
+       "children": [
+       {
+           "roleName": "subUser1",
+           "roleId": "role11",
+           "type":"组织1",
+           "headImg":"common/images/new-pic.jpg",
+           "children": []
+       }, 
+       {
+           "roleName": "subUser2",
+           "roleId": "role12",
+           "type":"组织2",
+           "headImg":"common/images/new-pic.jpg",
+           "children": [{
+               "roleName": "subUser2-1",
+               "roleId": "role121",
+               "type":"组织3",
+               "headImg":"common/images/new-pic.jpg",
+               "children": [{
+                   "roleName": "subUser2-1-1",
+                   "roleId": "role1211",
+                   "type":"组织4",
+                   "headImg":"common/images/new-pic.jpg",
+                   "children": []
+               }, {
+                   "roleName": "subUser2-1-2",
+                   "roleId": "role1212",
+                   "type":"组织5",
+                   "headImg":"common/images/new-pic.jpg",
+                   "children": []
+               }]
+           }]
+       }]
+   },
+   {
+       "roleName": "重庆时报",
+       "roleId": "role2",
+       "type":"组织6",
+       "headImg":"common/images/new-pic.jpg",
+       "children": [
+            {
+               "roleName": "subUser1",
+               "roleId": "role11",
+               "type":"组织7",
+               "headImg":"common/images/new-pic.jpg",
+               "children": []
+           }
+       ]
+   },
+   {
+       "roleName": "重庆晚报",
+       "roleId": "role3",
+       "type":"组织8",
+       "headImg":"common/images/new-pic.jpg",
+       "children": [
+            {
+           "roleName": "subUser1",
+           "roleId": "role11",
+           "type":"组织9",
+           "headImg":"common/images/new-pic.jpg",
+           "children": []
+            }
+       ]
+   }
+]

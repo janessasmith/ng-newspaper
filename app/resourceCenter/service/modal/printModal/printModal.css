@@ -1,0 +1,81 @@
+.resource_printModal .modal-dialog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.resource_printModal .modal-content {
+    border-radius: 5px;
+    border: 3px solid #DDDDDD;
+    width: 360px;
+    height: 206px;
+    margin: auto;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.resource_printModal {}
+
+.resource_printModal_head {
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.resource_printModal_head span {
+    float: left;
+    font-weight: bold;
+}
+
+.resource_printModal_head img {
+    float: right;
+    margin: 10px 0;
+}
+
+.resource_printModal_con {
+    padding: 10px;
+    height: 160px;
+    background-color: #F0F2F5;
+}
+
+.resource_printModal_con_con {
+    height: 100px;
+}
+
+.resource_printModal_con_con span {
+    float: left;
+    margin-top: 6px;
+}
+
+.resource_printModal_con_con input {
+    float: left;
+    width: 215px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 5px;
+    border: 1px solid #D2D2D2;
+}
+
+.resource_printModal_con_btn {
+    text-align: right;
+    padding-right: 15px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.resource_printModal_con_btn .print_btn {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}

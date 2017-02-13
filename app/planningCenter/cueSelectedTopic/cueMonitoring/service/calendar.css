@@ -1,0 +1,277 @@
+.calendarModal {
+    overflow: hidden;
+}
+
+.calendarModal .modal-dialog {
+    width: 540px;
+    margin-top: 200px;
+}
+
+.calendarModal .stickc {
+    width: 100%;
+    background: #f0f2f4;
+    border: 2px solid #E0DED9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.calendarModal .stickc .head {
+    height: 42px;
+    background: #fff;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 42px;
+}
+
+.calendarModal .stickc .head img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 12px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.calendarModal .stickc .main {
+    min-height: 240px;
+    font-size: 12px;
+    background-color: #fff;
+    margin: 5px;
+    border: 1px solid #d4d0cb;
+    overflow-y: auto;
+}
+
+.calendarModal .stickc .main .children {
+    height: 41px;
+    position: relative;
+    padding-top: 10px;
+    margin-left: 12px;
+}
+
+.calendarModal .main .children input.timepicker {
+    width: 128px;
+    height: 24px;
+    border-radius: 4px;
+    padding: 0px;
+    background: #fff url("./editingCenter/app/toBeCompiled/images/t3.png") no-repeat 103px 3px;
+}
+
+.stickc .main .children .date {
+    float: left;
+    margin-right: 8px;
+    cursor: pointer;
+    padding-top: 5px;
+    position: relative;
+}
+
+.stickc .main .children .date img {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.stickc .main .children .stickTime {
+    float: left;
+    margin-right: 5px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #666;
+}
+
+.stickc .main .children .title {
+    width: 498px;
+    height: 30px;
+    color: #000;
+    text-indent: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 0px;
+}
+
+.stickc .main .children textarea {
+    height: 122px;
+    width: 498px;
+    color: #000;
+    font-size: 14px;
+    resize: none;
+    border-radius: 4px;
+}
+
+.stickc .invalidate-input-box span.ng-scope {
+    left: -6px;
+}
+
+.stickc .bottom button {
+    width: 80px;
+    height: 28px;
+    text-align: center;
+    color: #fff;
+    background: #0095ce;
+    font-size: 12px;
+    line-height: 28px;
+    float: right;
+    margin-right: 10px;
+    padding: 0px;
+    border: none;
+    margin-top: 6px;
+    border: 1px solid #0095ce;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.modal-content .stickc .bottom .left {
+    float: left;
+    margin-left: 6px;
+}
+
+div.fc-content-skeleton tr td a {
+    border: none;
+}
+
+
+/*div.fc-content-skeleton .fc-content{
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    width: 100%;
+    overflow: hidden;
+}*/
+
+.fc-event-container span {
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+    height: 15px;
+    word-break: break-all;
+    cursor: pointer;
+}
+
+.fc-widget-header th {
+    background: #f2f5f5;
+    border: none;
+    margin-left: 12px;
+    margin-right: 6px;
+}
+
+
+/**
+ * 
+ */
+
+.stickc p.choosed-manu {
+    height: 42px;
+    line-height: 42px;
+    color: #444;
+    font-weight: bold;
+    margin-left: 14px;
+    margin-bottom: 0px;
+}
+
+.stickc .list-wrap {
+    width: 502px;
+    /* height: 222px;*/
+    margin: 0 auto;
+    border-top: 1px solid #d3d7da;
+    border-left: 1px solid #d3d7da;
+    border-right: 1px solid #d3d7da;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.stickc .list-wrap .list-header {
+    background: #f0f2f5;
+    border-bottom: none;
+    height: 41px;
+    line-height: 41px;
+    background: #f0f2f5;
+    border-bottom: 1px solid #d3d7da;
+}
+
+.stickc .list-wrap .list-header span {
+    display: inline-block;
+    float: left;
+    border-right: 1px solid #d3d7da;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.stickc .list-wrap .list-header span:nth-child(1) {
+    width: 236px;
+}
+
+.stickc .list-wrap .list-header span:nth-child(2) {
+    width: 105px;
+}
+
+.stickc .list-wrap .list-header span:nth-child(3) {
+    width: 105px;
+}
+
+.stickc .list-wrap .list-header span:nth-child(4) {
+    width: 54px;
+    border-right: none;
+}
+
+.stickc .list-wrap .list-body {
+    /*  height: 180px;*/
+    overflow-y: auto;
+}
+
+.stickc .list-wrap .list-body p {
+    height: 37px;
+    line-height: 37px;
+    overflow: hidden;
+    border-bottom: 1px solid #d3d7da;
+    margin-bottom: 0px;
+}
+
+.stickc .list-wrap .list-body p span {
+    float: left;
+    text-align: center;
+    border-right: 1px solid #d3d7da;
+    color: #666460;
+}
+
+.stickc .list-wrap .list-body p span img {
+    cursor: pointer;
+}
+
+.stickc .list-wrap .list-body p span:nth-child(1) {
+    width: 236px;
+}
+
+.stickc .list-wrap .list-body p span:nth-child(2) {
+    width: 105px;
+}
+
+.stickc .list-wrap .list-body p span:nth-child(3) {
+    width: 105px;
+}
+
+.stickc .list-wrap .list-body p span:nth-child(4) {
+    width: 54px;
+    border-right: none;
+    cursor: pointer;
+}
+
+.stickc .list-wrap .list-body p span.cur {
+    background: #4595d2;
+    color: #fff;
+}
+
+.stickc .list-wrap .list-body p span a {
+    color: #666460;
+}
+
+.calendar a.fc-more {
+    color: #000;
+}
+
+.calendar a.fc-more:hover {
+    text-decoration: none;
+}

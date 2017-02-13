@@ -1,0 +1,88 @@
+<div>
+    <div class="popup-title">
+        <p>新增</p>
+        <a class="popup-close" ng-click="cancel();"></a>
+    </div>
+    <form method="post" class="form-horizontal w5c-form" w5c-form-validate="vm.validateOptions" novalidate id="iconForm" name="iconForm" enctype="multipart/form-data">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">公众号名称:</label>
+            <div class="col-xs-4">
+                <input name="username" ng-model="account.name" ng-model="account.name" maxlength="20" class="form-control" required placeholder="输入公众号名称" />
+            </div>
+            <span class="hint"> </span>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">公众号类型:</label>
+            <div class="col-xs-4">
+                <select class="form-control" required ng-model="Type" ng-options="Type.wxType for Type in Types">
+                </select>
+            </div>
+            <span class="hint"></span>
+        </div>
+        <!--  <div class="form-group">
+                    <label class="col-sm-2 control-label">所属单位:</label>
+                    <div class="col-xs-4">       
+                        <select  class="form-control" name="unit" ng-model="Unit" required
+                              ng-options="Unit.UnitName for Unit in Units" >
+                            <option value="">-- 请选择 --</option>
+                        </select>
+                    </div>
+                    <span class="hint"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">所属类别:</label>
+                    <div class="col-xs-4">
+                       <select class="form-control" name="type" ng-model="Class" required
+                              ng-options="Class.ClassName for Class in Classs">
+                            <option value="">-- 请选择 --</option>
+                        </select>
+                    </div>
+                    <span class="hint"></span>
+                </div> -->
+        <div class="form-group">
+            <label class="col-sm-2 control-label">账号原始ID:</label>
+            <div class="col-xs-4">
+                <input class="form-control" type="text" name="wxid" required ng-model="account.wxid" />
+            </div>
+            <span class="hint"></span>
+            <span class="notes">公众号原始ID，创建之后不允许修改。</span>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">APPID:</label>
+            <div class="col-xs-4">
+                <input class="form-control" type="text" name="AppId" required ng-model="account.AppId" />
+            </div>
+            <span class="hint"></span>
+            <span class="notes">服务号和认证后的订阅号必须有，普通订阅号可以没有。</span>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">APPSECRET:</label>
+            <div class="col-xs-4">
+                <input class="form-control" type="text" name="AppSecret" required ng-model="account.AppSecret" />
+            </div>
+            <span class="hint"></span>
+            <span class="notes">服务号和认证后的订阅号必须有，普通订阅号可以没有。</span>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">公众号头像:</label>
+            <div class="col-xs-7">
+                <input type="hidden" value="" id="output" />
+                <input name="img_name" ng-model="imgName" class="form-control" id="f_file" type="text" required placeholder="请上传头像" />
+            </div>
+            <span class="hint"> </span>
+            <a class="choose-btn" href="javascript:void(0)">选择封面</a>
+            <input name="wxHeadImg-browser-btn" name="upload" type="file" id="t_file" style="display:none" uplode-directive />
+        </div>
+        <!--图片预览-->
+        <img id="uploadImg" class="showimg" src="" width="80" height="80" style="display:none;" />
+        <div class="popup-btn">
+            <div class="edit-btn-bg">
+                <!-- 表单通过规则 -->
+                <button style="float:left" class="popup-btn-confirm" w5c-form-submit="vm.ok();">
+                    保存</button>
+                <a href="javascript:void(0);" class="popup-btn-cancel" ng-click="cancel();">取消</a>
+            </div>
+        </div>
+    </form>
+</div>

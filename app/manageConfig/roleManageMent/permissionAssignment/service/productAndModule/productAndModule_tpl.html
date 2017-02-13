@@ -1,0 +1,82 @@
+<div class="manage-authorityAssignment-modal">
+    <div class="manage-authorityAssignment-modal-head">
+        <span class="manage-authorityAssignment-modal-head-title">产品列表</span>
+        <a ui-sref="manageconfig.rolemanage.permissionassignment.modulepermission" ui-sref-opts="{reload:'manageconfig.rolemanage.permissionassignment.modulepermission'}" class="manage-authorityAssignment-modal-head-module">
+            <span ng-if="status.isSystemUser">模块权限</span>
+        </a>
+        <img ng-click="cancel()" style="cursor:pointer;position:absolute;top:10px;right:10px" src="./manageConfig/images/cls.jpg"></div>
+    <div class="manage-authorityAssignment-modal-tab">
+        <div>
+            <ul class="manage-authorityAssignment-modal-ul">
+                <!-- <li ng-mouseover="selectPMTab('planningCenter','策划中心')" class="{{status.selectedModule=='planningCenter'?'manage-authorityAssignment-modal-ul-selected':'manage-authorityAssignment-modal-ul-select'}}">策划中心</li> -->
+                <li ng-mouseover="selectPMTab('editingCenter','采编中心')" class="{{status.selectedModule=='editingCenter'?'manage-authorityAssignment-modal-ul-selected':'manage-authorityAssignment-modal-ul-select'}}">采编中心</li>
+                <li ng-mouseover="selectPMTab('resourceCenter','资源中心')" class="{{status.selectedModule=='resourceCenter'?'manage-authorityAssignment-modal-ul-selected':'manage-authorityAssignment-modal-ul-select'}}">资源中心</li>
+                <!-- <li ng-mouseover="selectPMTab('visualCenter','可视化中心')" class="{{status.selectedModule=='visualCenter'?'manage-authorityAssignment-modal-ul-selected':'manage-authorityAssignment-modal-ul-select'}}">可视化中心</li> -->
+                <!-- <li ng-mouseover="selectPMTab('operationCenter','运营中心')" class="{{status.selectedModule=='operationCenter'?'manage-authorityAssignment-modal-ul-selected':'manage-authorityAssignment-modal-ul-select'}}">运营中心</li> -->
+                <li ng-mouseover="selectPMTab('manageConfig','配置管理')" class="{{status.selectedModule=='manageConfig'?'manage-authorityAssignment-modal-ul-selected':'manage-authorityAssignment-modal-ul-select'}}">管理配置</li>
+            </ul>
+        </div>
+    </div>
+    <div ng-show="status.selectedModule=='planningCenter'">
+        <div class="manage-authorityAssignment-modal-productList-title">
+            <span>产品列表</span>
+        </div>
+        <div class="row manage-authorityAssignment-modal-productList" ng-repeat="media in data.plCenterMedias">
+            <div class="manage-authorityAssignment-modal-site-title-pointer">
+                <span ng-bind="media.MODALNAME"></span>
+            </div>
+            <div class="manage-authorityAssignment-modal-site-title-channel">
+                <ul class="manage-authorityAssignment-modal-site-title-channelUl">
+                    <li ng-click="selectPlCenterNode(children)" ng-repeat="children in media.CHILDREN" class="{{children.RIGHTVALUE!=''?'manage-authorityAssignment-modal-channel-finished':''}}" ng-bind="children.MODALNAME"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--采编中心-->
+    <div ng-show="status.selectedModule=='editingCenter'">
+        <div class="manage-authorityAssignment-modal-productList-title">
+            <span>功能权限</span>
+        </div>
+        <div class="row manage-authorityAssignment-modal-productList">
+            <div class="manage-authorityAssignment-modal-site-title-channel">
+                <ul class="manage-authorityAssignment-modal-site-title-channelUl">
+                    <li ng-click="privilegedAccess()" class="manage-authorityAssignment-modal-channel-finished">
+                        特权取稿
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="manage-authorityAssignment-modal-productList-title">
+            <span>产品列表</span>
+        </div>
+        <div class="row manage-authorityAssignment-modal-productList" ng-repeat="media in data.medias" ng-if="media.MEDIATYPE!=5">
+            <div ng-click="setIwoPermission(media)" class="{{media.CLASSIFY=='iwo'?'manage-authorityAssignment-modal-site-title-pointer':'manage-authorityAssignment-modal-site-title'}}">
+                <span ng-bind="media.MEDIANAME"></span>
+            </div>
+            <div class="manage-authorityAssignment-modal-site-title-channel">
+                <ul class="manage-authorityAssignment-modal-site-title-channelUl">
+                    <li ng-click="setEditingCenterPermission(children.SITEID,children.PRODUCTNAME,media.MEDIATYPE,media.CLASSIFY,children.CHANNELID)" ng-repeat="children in media.CHILDREN" class="{{children.RIGHTVALUE!=''?'manage-authorityAssignment-modal-channel-finished':''}}" ng-bind="children.PRODUCTNAME"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--采编中心-->
+    <!--管理配置-->
+    <div ng-show="status.selectedModule=='manageConfig'">
+        <div class="row manage-authorityAssignment-modal-productList moduleDiv" ng-repeat="module in data.manageConfig">
+            <div ng-click="chooseModule(module)" class="manage-authorityAssignment-modal-site-title-pointer">
+                <span ng-bind="module.NAME"></span>
+            </div>
+        </div>
+    </div>
+    <!--管理配置-->
+    <!--资源中心-->
+    <div ng-show="status.selectedModule=='resourceCenter'">
+        <div class="row manage-authorityAssignment-modal-productList moduleDiv" ng-repeat="module in data.resourceCenter">
+            <div ng-click="resChooseModule(module)" class="manage-authorityAssignment-modal-site-title-pointer">
+                <span ng-bind="module.moduleName"></span>
+            </div>
+        </div>
+    </div>
+    <!--资源中心-->
+</div>

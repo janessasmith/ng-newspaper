@@ -1,0 +1,78 @@
+<div class="sysMgr_sensitive_word">
+    <div class="row edit_right_mid">
+        <div class="col-md-6 edit_right_head">
+            <button class="btn btn-default btn-commen" ng-click="addViews()">
+                <span class="s_icon"><img src="./manageConfig/productManageMent/images/gl19-1.png"/></span> 添加
+            </button>
+            <button class="btn btn-default btn-commen" ng-click="batchAddViews()">
+                <span class="s_icon pmm-four-word-btn-icon"><img src="./manageConfig/productManageMent/images/gl20-1.png"/></span> 批量添加
+            </button>
+            <button class="btn btn-default btn-commen" ng-click="importViews()">
+                <span class="s_icon"><img src="./manageConfig/productManageMent/images/gl21-1.png"/></span> 导入
+            </button>
+            <button class="btn btn-default btn-commen" ng-click="deleteViews(selectedArray)" ng-disabled="selectedArray.length==0">
+                <span class="s_icon"><img src="./manageConfig/productManageMent/images/gl22-1.png"/></span> 删除
+            </button>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group edit_input_group mr15">
+                <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="keywords" ng-keypress="search($event)">
+                <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="search()">搜索</button>
+          </span>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-12">
+        <div class="edit_table">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="td-check">
+                            <trs-checkbox ischecked="selectedArray.length==items.length" callback="selectAll()"></trs-checkbox>
+                        </th>
+                        <th class="td-number">全选</th>
+                        <th>敏感词</th>
+                        <th>替换词</th>
+                        <th>敏感级别</th>
+                        <th>添加人</th>
+                        <th>添加时间</th>
+                        <th class="hidden-operate">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items">
+                        <td class="td-check">
+                            <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                        </td>
+                        <!--全选-->
+                        <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td>
+                        <!--序号-->
+                        <td ng-bind="item.SENSITIVEWORDS" class="sensitiveWord_td"></td>
+                        <!--敏感词-->
+                        <td ng-bind="item.SUBSTITUTEWORDS" class="subsitituteWord_td"></td>
+                        <!--替换词-->
+                        <td ng-bind="item.SENSITIVELEVELDESC"></td>
+                        <!--敏感级别-->
+                        <td ng-bind="item.TRUENAME"></td>
+                        <!--添加人-->
+                        <td ng-bind="item.CRTIME"></td>
+                        <!--添加时间-->
+                        <td class="hidden-operate">
+                            <!--操作-->
+                            <img src="./manageConfig/productManageMent/images/gl23.png" ng-click="modifyViews(item)">
+                            <a href="javascript:void(0)" ng-click="modifyViews(item)">修改</a>
+                            <img src="./editingCenter/app/images/fg-r2.png" ng-click="delete(item)">
+                            <a href="javascript:void(0)" ng-click="deleteViews(item)">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="page">
+                <trs-pagenation-left page-count="page" callback="selectPageNum()"  is-select-pagecount="true"></trs-pagenation-left>
+                <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                <trs-pagenation-right callback="jumpToPage()" currpage="copyCurrPage" page="page"></trs-pagenation-right>
+            </div>
+        </div>
+    </div>
+</div>

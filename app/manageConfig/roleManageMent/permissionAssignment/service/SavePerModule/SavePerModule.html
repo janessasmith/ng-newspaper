@@ -1,0 +1,22 @@
+<div>
+    <form name="tempForm" novalidate>
+        <div class="savePerhead">
+            <span>模板名称</span>
+            <img ng-click="cancel()" style="cursor:pointer" src="./manageConfig/images/cls.jpg">
+        </div>
+        <div class="content invalidate-input-box">
+            <div class="con {{tempForm.temp.$invalid?'has-error':''}}">
+                <p class="con_tpl_p">模板名称:</p>
+                <input placeholder="请输入模板名称" maxlength-error-message="长度不能超过50个字符！" class="form-control" validator="maxlength=50,required" name="temp" ng-model="templateName" type="text" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+            </div>
+            <div class="templateFooter">
+                <button validation-submit="tempForm" class="btn btn_green btn_confirm" ng-click="savePer()">
+                    保存
+                </button>
+                <button class="btn btn_blue btn_cancel" ng-click="cancel()">
+                    取消
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

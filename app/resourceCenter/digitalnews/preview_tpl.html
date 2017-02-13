@@ -1,0 +1,73 @@
+<!-- <div class="row edit_right_mid">
+    <div class="col-md-12">
+        <custom-select label="时间范围" options="data.timeArray" callback="searchWithKeyword('time',data.selectedTime)" selected-option="data.selectedTime"></custom-select> -->
+<!--  <trs-single-select selected-option="time.curValue" options="time.data" label="时间范围" callback="searchWithKeyword()"></trs-single-select> -->
+<!-- <div class="m_search pull-right"> -->
+<!-- <trs-input-suggest keyword="filterKeyWord" channelname="{{basicParams.channelName}}" typename="{{basicParams.typeName}}" curel="data.suggestResult" callback="getSuggestResult(data.suggestResult)"></trs-input-suggest>
+            <button class="btn btn-default btn-commen" type="button" ng-click="searchWithKeyword('keywords',filterKeyWord)">检索</button>
+            <button class="btn btn-default btn-commen" type="button" ui-sref="retrieval({channelName:'xhsg'})">高级检索</button> -->
+<!--         </div>
+    </div>
+</div> -->
+<!-- <div class="row mc-padding-bottom-xs">
+    <div class="col-md-1 text-right mc-padding-0">
+        <span ng-show="data.suggestContentList.length">当前检索：</span>
+    </div>
+    <div class="col-md-7 mc-padding-0">
+        <ul class="u_color_list word_in">
+            <li class="bkg-{{item.type}} cursor" ng-repeat="item in data.suggestContentList" ng-click="removeItem($index,data.suggestContentList)" data-ng-bind-html="item.dictname"></li>
+        </ul>
+    </div>
+    <div class="col-md-4 text-right mc-padding-0"> -->
+<!--         <ul class="u_color_list">
+            <li><i class="bkg-area"></i>地域</li>
+            <li><i class="bkg-zyzxfield"></i>领域</li> -->
+<!-- <li><i class="bkg-warning"></i>关键词</li> -->
+<!--             <li><i class="bkg-account"></i>账号</li>
+        </ul>
+    </div>
+</div> -->
+<!-- <div class="row plr10">
+    <div class="col-md-1 text-right mc-padding-0">
+        热门标签：
+    </div>
+    <div class="col-md-11 mc-padding-0">
+        <ul class="u_word_list">
+            <li>党建</li>
+            <li>杭州</li>
+            <li>建德</li>
+            <li>经济</li>
+            <li>宁波</li>
+            <li>普陀</li>
+            <li>瑞安</li>
+            <li>台州</li>
+            <li>天气</li>
+            <li>突发</li>
+            <li>温岭</li>
+            <li>文化</li>
+            <li>仙居</li>
+        </ul>
+    </div>
+</div> -->
+<div class="row edit_right_mid">
+    <div class="col-md-12">
+        <trs-time-select label="时间范围" selected-option="data.selectedTime" options="data.timeArray" callback="searchWithKeyword('time',data.selectedTime)" fromdate="data.startTime" untildate="data.endTime"></trs-time-select>
+    </div>
+</div>
+<div class="resourceCenter-digital-previewContent">
+    <ul class="digital-preview-container">
+        <li ng-repeat="item in data.items" ng-show="item.JPPATH">
+            <img ng-src="{{item.JPPATH}}" ng-click="toPreviewDetail(item)" alt="">
+            <p>
+                <span ng-bind="item.ZB_SOURCE_SITE"></span>
+                <span ng-bind="item.DOCPUBTIME| limitTo:10"></span>
+            </p>
+        </li>
+    </ul>
+    <div cg-busy="loadingPromise "></div>
+    <div class="page cls-paging ">
+        <trs-pagenation-left page-count="page " callback="selectPageNum() " is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT " ng-change="pageChanged() " ng-model="page.CURRPAGE " max-size="6 " class="pagination-sm page_left " boundary-links="true " items-per-page="page.PAGESIZE " rotate="false " num-pages="page.PAGECOUNT " first-text="首页 " previous-text="上一页 " next-text="下一页 " last-text="末页 "></pagination>
+        <!-- <trs-pagenation-right callback="jumpToPage() " currpage="status.copyCurrPage " page="page "></trs-pagenation-right> -->
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+    "shareRecord": [{
+        "RECORD": "时政融合圈"
+    }, {
+        "RECORD": "浙江日报"
+    }, {
+        "RECORD": "浙江新闻"
+    }, {
+        "RECORD": "浙江在线"
+    }],
+    "coalesce": [{
+        "COALESCE": "时政融合圈"
+    }, {
+        "COALESCE": "浙江日报"
+    }],
+    "subject": [{
+        "SUBJECT": "时政融合圈"
+    }, {
+        "SUBJECT": "浙江日报"
+    }, {
+        "SUBJECT": "浙江新闻"
+    }, {
+        "SUBJECT": "浙江在线"
+    }]
+}

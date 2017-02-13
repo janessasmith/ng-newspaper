@@ -1,0 +1,29 @@
+<div class="weibo-tit wb-league-tit">微信影响力榜单</div>
+<div class="wb-league-deal" ng-controller="wxseniorityCtr">
+    <div class="league-deal-top">
+        <div style="width:213px;height:28px;float: left;overflow: hidden;position: relative;">
+            <div style="position: absolute;" change num="1" ele="phChange" width="213">
+                <a href="" class="lg-sel-btn lg-sel-cur" checked="lg-sel-cur" ng-click="getContent();">全部</a>
+                <a href="" ng-repeat="class in classs" class="lg-sel-btn" checked="lg-sel-cur" 
+                ng-click="getContent(class.ClassName);">{{class.ClassName}}</a>
+            </div>             
+        </div>
+        <div style="float: right;">
+            <a href class="wb-go-btn" id="phChange"></a>
+        </div>  
+    </div>
+    <div class="league-deal-list" style="height: 470px;">
+        <a href ui-sref="weixinRank.list" class="wb-add-btn"></a>
+        <ul class="league-deal-ul">
+            <li ng-repeat="content in contents">
+                <span class="league-num {{($index+1)>3?'':'league-num-red'}} ">{{$index+1}}</span>
+                <a href>
+                    <span class="wb-gf-img">
+                        <img ng-src="{{content.headPicUrl}}" alt=""/>                
+                    </span>
+                    <span class="wb-gf-name">{{content.name}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

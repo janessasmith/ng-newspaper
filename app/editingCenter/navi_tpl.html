@@ -1,0 +1,33 @@
+<div class="editctr-Nav">
+    <div class="nav_website">
+        <ul class="nav_website_con">
+            <li ng-class="{'navcurrTab':status.currNavi==''}" ui-sref="editctr.iWo.personalManuscript" ng-click="status.currNavi=''">
+                <img class="nv_img" ng-src="./editingCenter/images/{{status.currNavi==''?'nv1.png':'nv1-1.png'}}">
+                <span>我的</span>
+            </li>
+            <li ng-class="{'navcurrTab':status.currNavi!=''}">
+                <img class="nv_img" ng-src="./editingCenter/images/{{status.currNavi!=''?'nv2.png':'nv2-2.png'}}" ng-click="status.productsListShow=!status.productsListShow"><span ng-bind="status.currProduct.name">当前产品</span>
+                <div class="website_dropDown" ng-if="status.productsListShow">
+                    <ol>
+                        <li ng-click="setCurrProduct(product)" ng-repeat="product in data.products" ng-bind="product.name" ng-if="status.currProduct!==product">产品名称</li>
+                    </ol>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div ng-class="status.currNavi==''?'currNavi_currNavi':'currNavi_webSite'">
+        <div class="span1"></div>
+        <div class="webSite" trs-scrollbar-navi>
+            <ul class="website_chanel mCustomScrollbar">
+                <li ng-repeat="site in data[status.currProduct.router].sites" ng-click="setCurrSite(site)" on-finish-render ng-class="{'selectedNavi':site==status.currNavi}">
+                    <!-- <span class="span1"></span> -->
+                    <span class="span2" ng-bind="site.SITEDESC"></span>
+                    <span class="span3"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="website_arrow" ng-mouseover="siteScroll()">
+            >>
+        </div>
+    </div>
+</div>

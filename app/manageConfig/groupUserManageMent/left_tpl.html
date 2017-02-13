@@ -1,0 +1,44 @@
+<groupManage ng-show="status.listPattern==1">
+    <div class="search">
+        <input placeholder="请输入关键词" type="text" class="form-control usertext" ng-model="status.searchGroup" bs-options="group as group.GNAME for group in getSuggestions($viewValue)" bs-typeahead limit="30">
+        <!--<trs-single-select callback="" options="status.searchOptions" selected-option="status.searchSelected"></trs-single-select>-->
+        <button class="searchbutton" ng-click="goUserStatusList()">用户管理</button>
+    </div>
+    <div class="manage-left-tree">
+        <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="data.treeData" options="status.treeOptions" on-selection="showSelected(node)">
+            <span ng-bind='node.GNAME||node.GDESC'></span>
+        </treecontrol>
+    </div>
+</groupManage>
+<userManage ng-show="status.listPattern==2">
+    <accordion class="iwo_accordion iwo_accordion_new" close-others="false">
+        <accordion-group class="iwo_accordion iwo_accordion_new" is-open="status.userStatusOpen">
+            <accordion-heading>
+                <i class="manageConfig_list_headImg"><img ng-src="./manageConfig/groupUserManageMent/images/yhgl.png" /></i>
+                <a>用户管理</a>
+            </accordion-heading>
+            <ul>
+                <li ng-click="godifferenceStatusUser('open')" ng-class="{'active':status.currStatus=='open'}">
+                    <i><img ng-src="./manageConfig/groupUserManageMent/images/{{'open'==status.currStatus?'ykt-1.png':'ykt.png'}}" /></i>
+                    <a>已开通</a>
+                </li>
+                <li ng-click="godifferenceStatusUser('disable')" ng-class="{'active':status.currStatus=='disable'}">
+                    <i><img ng-src="./manageConfig/groupUserManageMent/images/{{'disable'==status.currStatus?'yty-1.png':'yty.png'}}" /></i>
+                    <a>已停用</a>
+                </li>
+                <li ng-click="godifferenceStatusUser('delete')" ng-class="{'active':status.currStatus=='delete'}">
+                    <i><img ng-src="./manageConfig/groupUserManageMent/images/{{'delete'==status.currStatus?'ysc-1.png':'ysc.png'}}" /></i>
+                    <a>已删除</a>
+                </li>
+                <li ng-click="godifferenceStatusUser('undistributed')" ng-class="{'active':status.currStatus=='undistributed'}">
+                    <i><img ng-src="./manageConfig/groupUserManageMent/images/{{'undistributed'==status.currStatus?'wfp-1.png':'wfp.png'}}" /></i>
+                    <a>未分配</a>
+                </li>
+            </ul>
+        </accordion-group>
+        <div class="iWo-left-div cursorPointer" ng-click="goGroupManageList()">
+            <i class="manageConfig_list_headImg"><img ng-src="./manageConfig/groupUserManageMent/images/zzgl.png" /></i>
+            <a class="ml0">组织管理</a>
+        </div>
+    </accordion>
+</userManage>

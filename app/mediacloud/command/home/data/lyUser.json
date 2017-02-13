@@ -1,0 +1,44 @@
+{
+    "field":"领域",
+    "data":[ 
+            {
+                "fieldname":"记者",
+                "groupid":"1",
+                "memberscounts":"2",
+                    "members":[
+                             {
+                            "orderbyindex": 1,
+                            "userId": "1",
+                            "userStatus": "0",
+                            "job": "记者",
+                            "userName": "张一",
+                            "headImg": "common/images/new-pic.jpg"
+                            },
+                            {
+                            "orderbyindex": 2,
+                            "userId": "2",
+                            "userStatus": "0",
+                            "job": "记者",
+                            "userName": "张二·",
+                            "headImg": "common/images/new-pic.jpg"
+                            }
+                     ]
+            },
+            {
+                "fieldname":"编辑",
+                "groupid":"2",
+                "memberscounts":"1",
+                     "members":[
+                            {
+                            "orderbyindex": 3,
+                            "userId": "3",
+                            "userStatus": "0",
+                            "job": "记者",
+                            "userName": "张三",
+                            "headImg": "common/images/new-pic.jpg"
+                        	}
+                            ]
+            }
+
+            ]
+}

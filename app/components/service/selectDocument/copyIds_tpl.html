@@ -1,0 +1,13 @@
+<div class="toBeCompiled-review-container copyIds">
+    <div class="toBeCompiled-review-head">
+        <p>复制文档id</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="toBeCompiled-review-body invalidate-input-box">
+        <textarea ng-bind="ids" readonly="true" class="form-control"></textarea>
+    </div>
+    <div class="toBeCompiled-review-footer">
+        <button class="new-role-btn ml324 btn_confirm" clip-click="copyIds()" clip-copy="ids">点击复制</button>
+        <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

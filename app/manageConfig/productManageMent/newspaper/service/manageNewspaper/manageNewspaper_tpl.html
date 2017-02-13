@@ -1,0 +1,66 @@
+<form name="manageNewsform" novalidate>
+    <div class="news" ondblclick="return false;" onselectstart="return false" onselect='false' style="-moz-user-select:none;">
+        <div class="header">
+            <p>报纸管理-<span ng-bind="paperTtile"></span></p>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="main">
+            <div class="children invalidate-input-box {{manageNewsform.name.$invalid?'has-error':''}}">
+                <p>报纸名称：</p>
+                <input class="form-control" type="text" name="name" ng-model="newspaper.SITEDESC" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+            </div>
+            <div class="children invalidate-input-box {{manageNewsform.abbreviation.$invalid?'has-error':''}}">
+                <p>报纸简称：</p>
+                <input class="form-control" type="text" name="abbreviation" ng-model="newspaper.SITENAME" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+            </div>
+            <div class="children invalidate-input-box {{manageNewsform.mail.$invalid?'has-error':''}}">
+                <p>电子邮箱：</p>
+                <input class="form-control" type="text" name="mail" ng-model="newspaper.WEBHTTP" axlength-error-message="长度不能超过200个字符！" validator="maxlength=200,email" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+            </div>
+            <div class="children">
+                <p class="mt2">审核模式：</p>
+                <trs-single-radio ng-repeat="pattern in partterns" label="{{pattern.desc}}" group="'partterns'" ischecked="pattern.value==newspaper.ISDUOJISHEN" callback="selectPattern(pattern)"></trs-single-radio>
+            </div>
+            <!-- <div class="children">
+                <p class="mt2">照排版面：</p>
+                <trs-single-radio ng-repeat="appearance in appearances" label="{{appearance.desc}}" group="'appearances'" ischecked="appearance.value==newspaper.ISZHAOPAI" callback="selectAppearance(appearance)"></trs-single-radio>
+            </div> -->
+            <div class="children">
+                <p class="mt2">照排类型：</p>
+                <trs-single-radio ng-repeat="genre in genres" label="{{genre.desc}}" group="'genres'" ischecked="genre.value==newspaper.DATAPATH" callback="selectGenre(genre)"></trs-single-radio>
+            </div>
+            <div class="children">
+                <p class="mt2 lineH20">是否显示在发稿单列表：</p>
+                <trs-checkbox ischecked="newspaper.DISPLAYFGDLIST=='1'" label="参见考核" callback="isSelectedCheckbox('DISPLAYFGDLIST')"></trs-checkbox>
+            </div>
+            <div class="children invalidate-input-box {{manageNewsform.limitAuthor.$invalid?'has-error':''}}">
+                <p class="mt2">是否限制数量作者和编辑：</p>
+                <input class="form-control w128" type="text" name="limitAuthor" ng-model="newspaper.LIMITEDAENUMBER" validator="number" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                <p class="mt2 textIndent">0表示不限制</p>
+            </div>
+            <div class="children invalidate-input-box {{manageNewsform.draftTime.$invalid?'has-error':''}}">
+                <p class="mt2">不允许重复取稿时间：</p>
+                <input class="form-control w128 ml30" type="text" name="draftTime" ng-model="newspaper.REPEATUSETIME" validator="number" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                <p class="mt2 textIndent">天</p>
+            </div>
+            <div class="children">
+                <p class="mt2 lineH20">是否检查稿件属性：</p>
+                <trs-checkbox ischecked="newspaper.CHECKFGDATTRIBUTE=='1'" label="" callback="isSelectedCheckbox('CHECKFGDATTRIBUTE')"></trs-checkbox>
+            </div>
+            <div class="children">
+                <p class="mt2 lineH20">是否显示叠次：</p>
+                <trs-checkbox ischecked="newspaper.INCLUDEDIECI=='1'" label="" callback="isSelectedCheckbox('INCLUDEDIECI')"></trs-checkbox>
+            </div>
+            <div class="children">
+                <p class="mt2 lineH20">排重时间：</p>
+                <input class="form-control w128" type="text" name="limitAuthor" ng-model="newspaper.CKMSIMDAYRANGE" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                <p class="mt2 textIndent">天</p>
+            </div>
+            <div class="footer">
+                <button class="confirm btn_confirm" ng-click="confirm()">确定</button>
+                <button class="cancel btn_cancel" ng-click="close()">取消</button>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

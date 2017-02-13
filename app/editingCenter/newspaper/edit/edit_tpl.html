@@ -1,0 +1,170 @@
+<form name="newsForm" novalidate class="edit-newspaper-edit">
+    <div class="row_news plr20">
+        <tabset class="subject-tab">
+            <tab ng-click="goto('docInfo')" heading="稿件信息"></tab>
+            <tab ng-click="goto('paramInfo')" heading="属性信息"></tab>
+            <tab ng-click="goto('sendDoc')" heading="发稿单"></tab>
+            <tab ng-click="goto('atlasProgress')" heading="流程版本"></tab>
+        </tabset>
+        <div class="ht43" id="docInfo">
+        </div>
+        <div>
+            <div class="edit-news-title">
+                稿件信息
+            </div>
+            <div class="row mc-padding-top-xs">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="newspaper-edit-information">
+                        <div class="newspaper-edit-img-container">
+                            <span>上传图片：</span>
+                            <div class="newspaper-edit-img-btn">
+                                <img src="./editingCenter/app/images/b5a.png">上传图片
+                            </div>
+                        </div>
+                        <div>
+                            <input class="form-control" type="text" placeholder="点击此处输入文章标题..." ng-model="status.data.meataInfo.TITLE" />
+                        </div>
+                        <div>
+                            <input class="form-control" type="text" placeholder="点击此处输入作者姓名..." ng-model="status.data.meataInfo.TRUENAME" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt20">
+            <div class="m_box_item">
+                <div class="col-md-8 mc-padding-horizontal-0">
+                    <ueditor>
+                    </ueditor>
+                </div>
+                <div class="col-md-4">
+                    <tabset class="m_nav_3 rt_wt">
+                        <tab heading="创作轴" active="true">
+                            <div class="m_box_2 ">
+                                <trs-timeline class="content_timeline">
+                                    <timegroup tick="timelineTestData.day">
+                                        <timeitem tick="timelineTestData.time">
+                                            2015年10月21日，英国，习近平冒雨参加帝国理工学院。参观中习近平为校长撑伞。
+                                        </timeitem>
+                                        <timeitem tick="timelineTestData.time">
+                                            <img src="http://up.henan.china.cn/2015/1022/1445525540172.png" alt="">
+                                        </timeitem>
+                                        <timeitem tick="timelineTestData.time">
+                                            2015年10月21日，英国，习近平冒雨参加帝国理工学院。参观中习近平为校长撑伞。
+                                        </timeitem>
+                                    </timegroup>
+                                </trs-timeline>
+                                <div class="timeline_load_more text-center">
+                                    点击展开更多
+                                </div>
+                            </div>
+                        </tab>
+                        <tab heading="主题延展"></tab>
+                        <tab heading="稿件背景"></tab>
+                    </tabset>
+                </div>
+            </div>
+        </div>
+        <div class="mt20 edit-newspaper-edit-remarks" id="paramInfo">
+            <div class="edit-news-title">
+                属性信息
+            </div>
+            <div class="">
+                <div class="m_box_item mt10">
+                    <div class="col-sm-1 text-right w90">稿件体裁：</div>
+                    <div class="col-sm-10">
+                        <div>
+                            <trs-single-select selected-option="" callback="" options=""></trs-single-select>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item mt20">
+                    <div class="col-sm-1 text-right w90">稿件来源：</div>
+                    <div class="col-sm-10">
+                        <div>
+                            <input type="text" class="form-control" value="本报记者稿" ng-model="status.data.meataInfo.DOCSOURCE" />
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item mt20">
+                    <div class="col-sm-1 text-right w90">备注：</div>
+                    <div class="col-sm-7 invalidate-input-box {{newsForm.REMARK.$invalid&&newsForm.REMARK.$dirty?'has-error':''}}">
+                        <div class="">
+                            <textarea class="form-control" ng-model="status.data.meataInfo.REMARKS"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mtb20" id="sendDoc">
+            <div class="edit-news-title blueborder">
+                <p class="pull-left">发稿单</p>
+                <label class="edit-news-checkbox">
+                    <trs-checkbox ischecked="list.ISNOPAYMENT==='1'" label="不发稿费" callback="updateCKSelection(list)"></trs-checkbox>
+            </div>
+            <div class="m_box_item mt20 ml15">
+                稿件体裁：
+                <trs-single-select selected-option="list.DOCGENRE" options="DOCGENRE"></trs-single-select>
+            </div>
+        </div>
+        
+            <!-- <editor-dir meta-data-id="{{list.METADATAID}}" editor-json="list.FGD_EDITINFO" show-all-tips="showAllTips" editor-form="newsForm"></editor-dir>
+        <editor-auth-dir author="list.FGD_AUTHINFO"></editor-auth-dir> -->
+       <editor-dir meta-data-id="{{status.data.meataInfo.METADATAID}}" editor-json="status.data.meataInfo.FGD_EDITINFO"></editor-dir>
+        <editor-auth-dir author="status.data.meataInfo.FGD_AUTHINFO" class="last_item_mb"></editor-auth-dir>
+        <div class='timeline' id="atlasProgress">
+            <div class="subject-title mt20">流程版本</div>
+            <tabset class="m_nav_3 mt20">
+                <tab heading="流程版本">
+                    <div class="m_box_2">
+                        <trs-timeline title="'流程版本'">
+                            <timegroup tick="item.day" ng-repeat="item in versionTime">
+                                <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                                    <a class="w60">{{n.value.OPERNAME}}</a>
+                                    <a class="w88">{{n.value.STATUSNAME}}-{{n.value.CHANNELNAME}}</a>
+                                    <a class="w54">{{n.value.CRUSER}}</a>
+                                    <a class="exttype">{{n.value.EXTTYPE}}</a>
+                                </timeitem>
+                            </timegroup>
+                        </trs-timeline>
+                    </div>
+                </tab>
+                <tab heading="操作日志">
+                    <div class="m_box_2">
+                        <trs-timeline title="'操作日志'">
+                            <p class="logTitle" ng-bind="operationLogTitle"></p>
+                            <timegroup tick="item.day" ng-repeat="item in operationLog">
+                                <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                                    <a class="w60">{{n.value.OPERDESC}}</a>
+                                    <a class="w88">{{n.value.STATE}}-{{n.value.CHANNELNAME}}</a>
+                                    <a class="w54">{{n.value.OPTUSER}}</a>
+                                    <a class="exttype" ng-if="n.value.OPINION!==''">{{n.value.OPERDESC}}意见</a>
+                                </timeitem>
+                            </timegroup>
+                        </trs-timeline>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+    <div class="Iw-box-fix box-fix-bt">
+        <div class="txt_r">
+            <button class="btn btn-primary">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/iWo/images/csave.png"></span> 保存
+            </button>
+            <button class="btn btn-primary">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/app/images/sending.png"></span> 保存并上版
+            </button>
+            <button class="btn btn-primary">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/app/images/sending.png"></span> 预览
+            </button>
+            <button class="btn btn-primary">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/iWo/images/cclose.png"></span> 关闭
+            </button>
+        </div>
+    </div>
+</form>

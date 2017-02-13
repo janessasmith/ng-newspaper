@@ -1,0 +1,57 @@
+<div trs-scroll-fix class="row edit_right_head proManMent_pmm_head">
+    <div class="col-md-6 pmm-column-localstate">
+        <div class="input-group edit_input_group manage">
+            <ol class="breadcrumb pull-right edit_breadcrumb">
+                <li>
+                    <p>当前位置：</p>
+                    <span ng-click="positionToSite(data.siteMsg)">{{data.siteMsg.SITEDESC}}</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-6 pmm_website_site">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control manage-pmm-form-search mr10" placeholder="请输入关键字搜索" ng-model="searchChlName">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search mt5" type="button" ng-click="searchChannelByName()">搜索</button>
+          </span>
+        </div>
+    </div>
+</div>
+<div class="manage-pmm-container">
+    <div class="manage-pmm-channel-container">
+        <div class="pmm-channel-item-out left" ng-repeat="websiteItem in websiteItems" ng-mouseenter="getInSelectedChl(websiteItem)">
+            <div class="pmm-channel-item-default text-center" ng-click="" ng-class="{'selectedChannel-active':selectedChannel==websiteItem}">
+                <!-- <a ui-sref="manageconfig.productmanage.website.column({channel:websiteItem.CHANNELID})" ng-bind="websiteItem.CHNLDESC">
+                </a> -->
+                <a href="javascript:void(0)" ng-click="clickChnlDirected(websiteItem)" ng-bind="websiteItem.CHNLDESC">
+                </a>
+            </div>
+            <div class="pmm-channel-item-icon-group" ng-show="selectedChannel==websiteItem">
+                <a ng-if="status.right.channel.delete" ng-click="delete(websiteItem)" title="删除频道">
+                    <img src="./manageConfig/productManageMent/images/gl58.png" />
+                </a>
+                <a ng-if="status.right.channel.preview" ng-click="preview(websiteItem)" title="预览频道">
+                    <img src="./manageConfig/productManageMent/images/i11.png" />
+                </a>
+                <a ng-if="status.right.channel.publish" ng-click="publish(websiteItem)" title="发布频道">
+                    <img src="./manageConfig/productManageMent/images/gl60.png" />
+                </a>
+                <a ng-if="status.right.channel.edit" ng-click="modify(websiteItem)" title="修改频道">
+                    <img src="./manageConfig/productManageMent/images/gl61.png" />
+                </a>
+            </div>
+        </div>
+        <div ng-if="status.right.channel.add" class="pmm-channel-item-out left">
+            <div class="pmm-channel-add-item text-center" ng-click="add()">
+                <img src="./manageConfig/productManageMent/images/gl09.png" />
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="status.right.channel.delete" class="manage-pmm-recycle">
+    <a ui-sref="manageconfig.productmanage.app.channel.recyclebin">
+        <img src="./manageConfig/productManageMent/images/i7.png" />
+        <span>回收站</span>
+    </a>
+</div>

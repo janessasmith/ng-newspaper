@@ -1,0 +1,54 @@
+.editCen-website-signed-pushBar .modal-dialog {
+    width: 400px;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.editCen-website-signed-pushBar img {
+    cursor: pointer;
+}
+
+.editCen-website-signed-pushBar .man_produ_modify {
+    padding-bottom: 2px;
+}
+
+.editCen-website-signed-pushBar .man_produ_modify_inner {
+    background: #fff;
+    margin: 10px;
+    padding-top: 20px;
+    line-height: 45px;
+    color: #777;
+    font-size: 12px;
+}
+
+.editCen-website-signed-pushBar .man_produ_modify_footer {
+    background: transparent;
+    padding-left: 177px;
+}
+
+.editCen-website-signed-pushBar .man_produ_modify_footer_cancel {
+    margin-right: 0;
+}
+
+.editCen-website-signed-pushBar .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.editCen-website-signed-pushBar .man_produ_column_modify {
+    padding-left: 4%;
+}
+
+.editCen-website-signed-pushBar .man_produ_column_modify>p {
+    display: inline-block;
+    width: 33%;
+    padding-left: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

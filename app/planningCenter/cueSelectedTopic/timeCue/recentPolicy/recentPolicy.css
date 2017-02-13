@@ -1,0 +1,121 @@
+.recentPolicy {
+    padding: 10px 5px;
+    border: 1px solid #CFCFCF;
+    border-top: transparent;
+}
+
+.recentPolicy .recentPolicy_table {
+    border-radius: 5px;
+    border: 1px solid #a6b2c0;
+}
+
+.recentPolicy .clue_calendar_button .clue_calendar_btn_success {
+    width: 90px;
+    line-height: 26px;
+    background: #2f98d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #2f98d2;
+}
+
+.recentPolicy .clue_calendar_button .clue_calendar_btn {
+    width: 90px;
+    line-height: 26px;
+    color: #545454;
+    text-align: center;
+    border: 1px solid #CFCFCF;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    background: #fbfbfb;
+}
+
+.recentPolicy .clue_calendar_button {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.clue_calendar_button .button_weibo {
+    color: #fff;
+    border: 1px solid #2f98d2;
+    background-color: #2f98d2;
+}
+
+.clue_calendar_button .button_number {
+    color: #343434;
+    border: 1px solid #e4e4e4;
+    background-color: #fbfbfb;
+}
+
+.clue_calendar_button .monitor_input_group {
+    float: right;
+    width: 40%;
+}
+
+.clue_calendar_button .monitor_form_control {
+    float: none;
+    height: 30px;
+    background: url("./editingCenter/app/images/sch.jpg") no-repeat 10px center;
+    padding-left: 30px;
+    font-size: 14px;
+    font-family: "Helvetica Neue', Helvetica, Arial, sans-serif";
+    width: 76%;
+    float: left;
+    border-radius: 5px!important;
+}
+
+.clue_calendar_button .input_group_btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    top: 0px;
+    right: 0px;
+    left: 10px;
+    float: left;
+}
+
+.clue_calendar_button .input_group_btn .btn_monitor_search {
+    width: 60px;
+    height: 30px;
+    padding: 0px;
+    color: #65635f;
+    background: url("./editingCenter/app/images/b-m.jpg") repeat-x;
+    /*line-height: 28px;*/
+    border-radius: 5px;
+}
+
+.recentPolicy .policy_check {
+    width: 70px;
+}
+
+.recentPolicy .policy_source {
+    width: 120px;
+}
+
+.recentPolicy .policy_time {
+    width: 170px;
+}
+
+.recentPolicy .policy_read {
+    width: 90px;
+}
+
+.recentPolicy .policy_annex {
+    width: 90px;
+}
+
+.recentPolicy .recent-policy tbody tr td:nth-child(1) {
+    text-align: center;
+}
+
+.pagination > .active > a {
+    z-index: 1;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}

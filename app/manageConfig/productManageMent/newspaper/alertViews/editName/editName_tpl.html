@@ -1,0 +1,48 @@
+<form name="ZPLayoutForm" novalidate>
+    <div class="man_produ_newpress">
+        <div class="man_produ_newpress_head">
+            <p ng-show="params.ChannelId">采编版面管理-编辑</p>
+            <p ng-show="!params.ChannelId">版面管理-新建版面</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_newpress_content pt16">
+            <div class="man_produ_newpress_con_form man_produ_newspaper11">
+                <p class="ZPLayout-title">报纸名称：</p>
+                <span class="newOrder-content-title" ng-bind="paper.SITEDESC"></span>
+            </div>
+            <div class="man_produ_newpress_con_form invalidate-input-box {{ZPLayoutForm.layoutName.$invalid?'has-error':''}}">
+                <p class="ZPLayout-title">版面名称：</p>
+                <input class="form-control zpLayput-form-control" type="text" name="layoutName" ng-model="selectedItem.ChnlDesc" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-style="{color:list.TITLECOLOR}" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA">
+            </div>
+            <div class="man_produ_newpress_con_form invalidate-input-box {{ZPLayoutForm.shortTitle.$invalid?'has-error':''}}">
+                <p class="ZPLayout-title">简称：</p>
+                <input class="form-control zpLayput-form-control" type="text" name="shortTitle" ng-model="selectedItem.SimpleName" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-style="{color:list.TITLECOLOR}" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" is-show-tips="isShowTipsB">
+            </div>
+            <div class="man_produ_newpress_con_form_dieci" ng-show="params.ChannelId">
+                <p class="ZPLayout-title">叠次：</p>
+                <p class="ZPLayout-DieciName" ng-bind="selectedItem.dieciName"></p>
+            </div>
+            <div class="man_produ_newpress_con_form" ng-show="!params.ChannelId">
+                <p class="ZPLayout-title">叠次：</p>
+                <trs-single-select selected-option="dieciDroplistSelected" callback="getDieciData()" options="dieciDroplistJson"></trs-single-select>
+            </div>
+            <div class="man_produ_newpress_con_form">
+                <b>权限分配：</b>
+                <img class="priviliage" ng-click="distribAuthority()" src="./manageConfig/productManageMent/images/pl2.png">
+                <ul>
+                    <li ng-repeat="role in roles" ng-bind="role.ROLEDESC | trsLimitTo:15"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="man_produ_newpress_footer" ng-show="params.ChannelId">
+            <button class="news-role-btn-success man_produ_newpress_footer_cancel btn_confirm" ng-click="save()">确定</button>
+            <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+        <div class="man_produ_newpress_footer man_produ_newpress_footer2" ng-show="!params.ChannelId">
+            <button class="news-role-btn-success btn_confirm" ng-click="save()">保存</button>
+            <button class="news-role-btn man_produ_newpress_footer_sava" ng-click="saveNew()">保存并新建</button>
+            <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

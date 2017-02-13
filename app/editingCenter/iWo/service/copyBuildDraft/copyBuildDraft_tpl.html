@@ -1,0 +1,35 @@
+<form name="cBDForm" novalidate>
+    <div cg-busy="loadingPromise"></div>
+    <div class="copyBuildDraft">
+        <div class="main">
+            <div class="head">
+                <span>复制建新稿</span>
+                <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+            </div>
+            <div class="body copyBuildDraft_body" ng-repeat="draft in draftArray">
+                <div class="sep"></div>
+                <div class="title">
+                    <span>目标：</span><span ng-bind="draft.OLDTITLE"></span>
+                </div>
+                <div class="text invalidate-input-box" ng-class={ 'has-error':cBDForm[ 'title_'+{{$index}}].$invalid}>
+                    <b class="copyBuildDraft_body_copy_b">复制稿：<input type="text" name="title_{{$index}}" ng-model="draft.TITLE" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200,required"  ng-blur="showError(true)" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA" class="form-control itext"></b>
+                </div>
+                <!-- <div class="value">
+                    <div class="title">
+                        提交渠道：
+                    </div>
+                    <div>
+                        <ul>
+                            <li ng-repeat="item in MEDIATYPES">
+                                <span class="input"><input ng-model="draft.MEDIATYPES" ng-checked="$index==draft.MEDIATYPES" type="radio" value="{{$index}}" name="channel_{{$parent.$index}}"></span><span ng-bind="item"></span></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+            <div class="bottom">
+                <button validation-submit="cBDForm" ng-click="confirm()" ng-disabled="!status.openBtn" class="btn_confirm">确定复制</button>
+                <button ng-click="cancel()" class="btn_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

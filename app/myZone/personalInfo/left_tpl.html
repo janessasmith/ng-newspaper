@@ -1,0 +1,22 @@
+<div class="container-fluid editing-list myzone-left-list">
+    <accordion ng-init="selectThisNav='info'" class="iwo_accordion" close-others="false">
+        <accordion-group is-disabled="true" class="{{selectThisNav=='info'?'iWo-left-accordion-active':''}}">
+            <accordion-heading>
+                <i><img ng-src="./myZone/images/{{selectThisNav=='info'?'gr1-1.png':'gr1.png'}}" alt=""/></i>
+                <a class="ml0" ui-sref="myzone.personalinfo.info" ng-click="selectNav('info')">个人信息</a>
+            </accordion-heading>
+        </accordion-group>
+        <accordion-group is-disabled="true" class="{{selectThisNav=='changePwd'?'iWo-left-accordion-active':''}}">>
+            <accordion-heading>
+                <i><img ng-src="./myZone/images/{{selectThisNav=='changePwd'?'gr2-1.png':'gr2.png'}}" alt=""/></i>
+                <a class="ml0" ui-sref="myzone.personalinfo.changepwd" ng-click="selectNav('changePwd')">修改密码</a>
+            </accordion-heading>
+        </accordion-group>
+        <!--<accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':selectThisNav=='personalSetting'}">>-->
+        <!--<accordion-heading>-->
+        <!--<i><img ng-src="./myZone/images/gr3.png" alt=""/></i>-->
+        <!--<a class="ml0" ui-sref="myzone.personalinfo.persetting" ng-click="selectNav('personalSetting')">个人设置</a>-->
+        <!--</accordion-heading>-->
+        <!--</accordion-group>-->
+    </accordion>
+</div>

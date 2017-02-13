@@ -1,0 +1,7 @@
+.scroll-fix-active {
+    z-index: 1000;
+}
+
+.modal-open .scroll-fix-active {
+    margin-left: 3px!important;
+}

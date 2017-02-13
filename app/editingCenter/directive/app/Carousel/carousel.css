@@ -1,0 +1,116 @@
+/**
+*  Module:图集幻灯片
+*
+* Description：Ly
+* createTime:2015/11/30
+*/
+
+.edit {
+    width: 1090px;
+    min-height: 650px;
+    margin: 0 auto;
+}
+
+.edit .carousel-row {
+    width: 770px;
+    margin: 0 auto;
+    margin-top: 30px;
+    min-height: 650px;
+}
+
+.edit .carousel-inner {
+    /*    min-height: 780px;*/
+}
+
+.edit .carousel-con {
+    min-height: 515px;
+}
+
+.edit .carousel-list {}
+
+.edit .carousel-list img {
+    /*line-height: 465px;*/
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.edit .carousel-breviary {
+    height: 100px;
+    overflow: hidden;
+    /*margin-top: 30px;*/
+    /*    position: absolute;
+    bottom: 177px;
+    left: -100px;*/
+    width: 990px;
+    position: relative;
+    left: -85px
+}
+
+.edit .carousel-img {
+    width: 770px;
+    height: 465px;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 465px;
+}
+
+.edit .carousel-breviary p,
+.edit .carousel-breviary li {
+    width: 140px;
+    height: 100px;
+    float: left;
+    margin-right: 15px;
+    overflow: hidden;
+    line-height: 0px;
+    text-align: center;
+}
+
+.edit .carousel-breviary p img,
+.edit .carousel-breviary li img {
+    height: 100px
+}
+
+.edit .carousel-control {
+    height: 465px
+}
+
+.edit .carousel-num {
+    width: 70px;
+    float: left
+}
+
+.edit .carousel-list-row {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 99;
+    line-height: 30px;
+    bottom: 0px
+}
+
+.edit .ft-red {
+    font-size: 16px;
+    font-weight: 700;
+    color: red;
+    margin-right: 3px
+}
+
+.edit .mgl3 {
+    margin-left: 3px
+}
+
+.edit .carousel-list-detail {
+    margin-left: 70px;
+    text-align: left;
+}
+
+.edit .carousel-list-detail p {}
+
+.edit .carousel-list-row p {
+    line-height: 30px
+}
+
+.edit ol.carousel-breviary li.active {
+    border: 2px solid #0095ce
+}

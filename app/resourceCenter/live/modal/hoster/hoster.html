@@ -1,0 +1,88 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12 col-lg-12 mb10">
+        <button class="btn btn-default btn-commen opacity100" ng-click="goBcak()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='back'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='back'?'i61-1.png':'i61.png'}}"/>
+            </span> 返回
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="addHoster()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='hoster'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" style="width:100px;">
+            <span class="s_icon" style="padding-right:2px;margin-left:0px">
+                <img ng-src="./manageConfig/groupUserManageMent/images/{{status.batchOperateBtn['hoverStatus']=='hoster'?'addUser-1.png':'addUser.png'}}"/>
+            </span> 添加主持人
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="deltetHoster()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon" style="padding-right:0px;margin-left:0px;">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='delete'?'fg2-1.png':'fg2.png'}}" />
+            </span> 批量删除
+        </button>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-12">
+        <div class="input-group edit_input_group mr15">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="data.hosterFilter" ng-keypress="hosterFilter()">
+            <span class="input-group-btn">
+                <button class="btn btn-default btn_edit_search" type="button" ng-click="hosterFilter()">搜索</button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="edit_table border_radius_5">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-check col-cbx" style="width:25px;">
+                    <trs-checkbox ischecked="data.items.length != 0 && data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox>
+                </th>
+                <th class="td-number col-index" style="text-align:center">编号</th>
+                <th class="xcol-type">类别</th>
+                <th class="xcol-newspaper-releaseBuild">主持人姓名</th>
+                <!-- <th class="xcol-newspaper-releaseBuild">主持人简介</th> -->
+                <th class="xcol-picture">主持人头像</th>
+                <th class="xcol-lastDate">添加时间</th>
+                <th class="xcol-operation" style="width:100px;">修改</th>
+                <th class="xcol-operation">删除</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr ng-repeat="item in data.items" style="height:30px;">
+                <!--单选框-->
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <!--编号-->
+                <td class="xcol-newspaper-id" ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1">
+                </td>
+                <!-- 类别 -->
+                <td ng-if="item.COMPERETYPE==1">主持人</td>
+                <td ng-if="item.COMPERETYPE==0">嘉宾</td>
+                <!--主持人姓名-->
+                <td class="website_table_draftPublish" style="text-align:center">
+                    <a href="javascript:void(0)" title="{{item.COMPERENAME}}" ng-bind="item.COMPERENAME|truncate:20:'...'"></a>
+                </td>
+                <!--主持人简介-->
+                <!--  <td ng-bind="item.CONTENT|truncate:50:'...'" title="{{item.CONTENT}}"></td> -->
+                <!--主持人头像-->
+                <td>
+                    <img ng-src="{{item.HEADPICURL}}" alt="" style="width:50px;height:50px;margin:10px 0px; border:2px solid #d9d9d9;border-radius:25px;" ng-if="item.HEADPICURL">
+                </td>
+                <!--添加时间-->
+                <td ng-bind="item.INSERTTIME"></td>
+                <!--修改-->
+                <td class="hidden-operate">
+                    <a class="operate" target="_blank" ng-click="editHoster(item)" style="width:100%; margin:0 auto;"><img src="./resourceCenter/images/edit.png">修改</a>
+                </td>
+                <!--删除-->
+                <td class="hidden-operate">
+                    <a class="operate" target="_blank" ng-click="deltetHoster(item)" style="width:100%; margin:0 auto;"><img src="./editingCenter/app/images/fg-r2.png">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" page="page" currpage="data.copyCurrPage"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

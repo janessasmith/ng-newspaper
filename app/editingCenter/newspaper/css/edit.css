@@ -1,0 +1,93 @@
+.edit-newspaper-edit .newspaper-edit-information {
+    text-align: center;
+    margin: 20px auto 0 auto;
+}
+
+.edit-newspaper-edit .newspaper-edit-information > div >input {
+    margin: 20px auto 0 auto;
+    width: 915px;
+}
+
+.edit-newspaper-edit .newspaper-edit-img-container {
+    width: 560px;
+    height: 300px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    margin: 0 auto;
+    line-height: 300px;
+    text-align: center;
+}
+
+.edit-newspaper-edit .newspaper-edit-img-container .newspaper-edit-img-btn {
+    display: inline;
+    padding: 6px 8px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f9f9f9));
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.edit-newspaper-edit .edit-newspaper-edit-remarks input {
+    width: 430px;
+}
+
+.edit-newspaper-edit .edit-newspaper-edit-remarks textarea {
+    width: 430px;
+    height: 150px;
+    max-width: 430px;
+    max-height: 150px;
+    resize: none;
+}
+
+.edit-newspaper-edit .edit-newspaper-edit-remarks .dropdown .dropdown-menu,
+.edit-newspaper-edit .edit-newspaper-edit-remarks .dropdown .bth-fix {
+    width: 430px;
+}
+
+.edit-newspaper-edit .edit-newspaper-edit-remarks .dropdown .bth-fix {
+    height: 35px;
+}
+
+.vertical_align_middle {
+    vertical-align: middle!important;
+}
+
+/*.editing-list .newspaper_active .panel-default .panel-title:hover {
+    background-color: #1c83d2 !important;
+}*/
+
+.edit_table .edit_news_today a img {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+
+ul.subject-tab {
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    height: 49px;
+    line-height: 50px;
+    border-left: 1px solid #ddd;
+}
+
+ul.subject-tab li {
+    float: left;
+    width: 125px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    color: #434343;
+    cursor: pointer;
+    border-right: 1px solid #ccc;
+    list-style: none;
+}
+
+ul.subject-tab li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+ul.subject-tab li a.active {
+    background: rgb(26, 186, 160);
+    color: #fff;
+}

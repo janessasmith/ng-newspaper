@@ -1,0 +1,17 @@
+<div class="man_produ_newpress">
+    <div class="man_produ_newOrder_head">
+        <p>您确认批量删除以下叠次:</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        <span>(如果有关联，则无法删除！)</span>
+    </div>
+    <div class="batchDelete_conctent_bg"></div>
+    <div class="man_produ_batchDelete_conctent">
+        <div class="man_produ_batchDelete_con_form" ng-repeat="item in datas">
+            <span class="newpress_con_form_text">{{item.CHNLDESC}}</span>
+        </div>
+    </div>
+    <div class="man_produ_newpress_footer">
+        <button class="news-role-btn-success man_produ_newpress_footer_cancel btn_confirm" ng-click="delete()">确定</button>
+        <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

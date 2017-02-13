@@ -1,0 +1,22 @@
+<!--新增信息类型页-->
+<div class="modal-header">
+    <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+    <p class="modal-title"><i class="fa fa-map-marker text-primary"></i> 新增类型</p>
+</div>
+<div class="modal-body mc-padding-0">
+    <div >
+        <div class="row  mc-padding-top-xs">
+            <div class="col-sm-2 txt_r">
+                <label><em class="font_red">*</em>类型名:</label>
+            </div>
+            <div class="col-sm-10">
+                <tags-input ng-model="types" text="typesStr" add-on-enter="false" add-on-blur="true" paste-split-pattern="[,]" replace-spaces-with-dashes="true" enable-editing-last-tag="true" spellcheck="false" display-property="name" min-length="1" max-length="20" placeholder="请输入类型名，多个类型用逗号分开">
+                </tags-input>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary btn_confirm" ng-click="submit()">确定</button>
+        <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+    </div>
+</div>

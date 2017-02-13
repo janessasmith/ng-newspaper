@@ -1,0 +1,112 @@
+.myZone_pro_info_modify {
+    padding-top: 20px;
+}
+.myZone_pro_info_modify .myZone_modify_info_title,
+.myZone_pro_info_modify .myZone_modify_info_main {
+    border-right: 1px solid #dfdfdf;
+}
+.myZone_pro_info_modify .myZone_modify_info_title {
+    background: #E6F4FF;
+    border-bottom: 1px solid #3E85BA;
+    color: #3E85BA;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+}
+.myZone_pro_info_modify .myZone_modify_info_main {
+    width: 100%;
+    border-right: 1px solid #ddd;
+}
+.myZone_pro_info_modify .modify_pro_info_main_row {
+    border-bottom: 1px solid #dfdfdf;
+}
+.myZone_pro_info_modify .modify_pro_info_main_row.modify_pro_info_place_row{
+    height: 102px;
+}
+.myZone_pro_info_modify .modify_pro_info_main_row.modify_pro_info_remarks_row{
+    height: 181px;
+}
+.myZone_pro_info_modify .modify_pro_info_main_row > p,
+.myZone_pro_info_modify .modify_pro_info_main_row > div {
+    display: inline-block;
+    height: 100%;
+}
+.myZone_pro_info_modify .modify_pro_info_main_row > p {
+    background: #f1f2f6;
+    font-weight: bold;
+    width: 12%;
+    margin: 0;
+    text-align: right;
+    border-right: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
+    padding-right: 20px;
+    line-height: 50px;
+}
+.myZone_pro_info_modify .modify_pro_info_main_row > div {
+    width: 37%;
+    vertical-align: top;
+    padding: 10px 20px 0 20px;
+}
+.myZone_pro_info_modify .modify_pro_info_main_row input[type="text"] {
+    height: 30px;
+}
+.myZone_pro_info_modify .modify_pro_info_remarks {
+    display: block;
+    line-height: 20px;
+    margin-top: 10px;
+}
+.myZone_pro_info_modify textarea{
+    width: 100%;
+    max-width: 100%;
+    height: 154px;
+    max-height: 154px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: none;
+    display: inline-block;
+    padding: 10px;
+}
+.myZone_pro_info_modify .btn-group.dropdown,
+.myZone_pro_info_modify .dropdown .bth-fix {
+    width: 100%;
+    height: 30px;
+}
+.myZone_pro_info_modify .dropdown .dropdown-menu {
+    width: 100%;
+}
+.myZone_pro_info_modify .dropdown .btn-fix-title {
+    width: 90%;
+}
+.myZone_pro_info_modify .proInfoModify_footer_btn_group {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+.myZone_pro_info_modify .proInfoModify_save_btn {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    background: #4496d2;
+    font-size: 16px;
+    border-radius: 4px;
+}
+@media screen and (max-width: 1366px) {
+    .myZone_pro_info_modify .modify_pro_info_main_row > p {
+        padding-right: 0;
+        font-size: 12px;
+    }
+    .myZone_pro_info_modify .modify_pro_info_remarks {
+        font-size: 12px;
+    }
+}
+.myZone_pro_info_modify .modify_pro_info_main_row.modify_pro_info_remarks_row > div {
+    /*width: 87%;*/
+}
+.myZone_pro_info_modify .modify_pro_info_main_row .modify_pro_info_operTime {
+    padding-top: 15px;
+}

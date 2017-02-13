@@ -1,0 +1,28 @@
+<div class="cg-ls-top">
+    <ul class="i-started-top">
+        <li class="i-start-cur" checked="i-start-cur" ng-click="exGetBrowseList(1);">
+            <a href="javascript:;">已完成</a>
+        </li>
+        <li checked="i-start-cur" ng-click="exGetBrowseList(2);">
+            <a href="javascript:;">未完成</a>
+        </li>
+    </ul>
+</div>
+<div class="cg-main-ls" style="overflow:inherit">
+    <ul>
+        <li ng-repeat="content in contents" ng-class="{'blue-bac':($index+1)%2==0}">
+            <a href="javascript:void(0);" class="cg-ls-tit lf sp-blue" 
+               ui-sref="command.myinstructBrowse_details({dictateId:content.DICTATEID})"  >{{content.TITLE}}</a>
+            <span style="float:right;text-align: center;width: 70px;">{{content.CRUSER}}</span>
+            <div class="my-rz-ts rt">
+                <a href="javascript:;" class="my-cz-rz lf" ng-controller="mylaunchjournalReadlCtrl" 
+             ng-click="open('400',$event,content.DICTATEID);"><i></i><span>操作日志</span></a>
+            </div>
+        </li>
+    </ul>
+    <div class="hd-page-bk">
+        <a href ng-click="reduce();" class="log-page hd-pg-pre"></a>
+        <div class="hd-pg-num"><span>{{pageInfo.pageIndex}}</span>-<span>{{pageInfo.pageCount}}</span></div>
+        <a href ng-click="add();" class="log-page hd-pg-next"></a>
+    </div>
+</div>

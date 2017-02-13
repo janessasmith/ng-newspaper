@@ -1,0 +1,20 @@
+.edit_right_head .input-group .edit_form_control {
+    background: #fff url("./editingCenter/app/images/sch.jpg") no-repeat 10px center;
+}
+
+.edit_table_mt20 {
+    margin-top: 20px;
+}
+
+.edit_right_head_width .btn-commen {
+    width: 105px;
+}
+
+.edit_right_head .s_operating_record_img {
+    margin-left: 0px;
+}
+
+/*.edit_right_head_btn_commen {
+    width: 105px!important;
+}
+*/

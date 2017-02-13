@@ -1,0 +1,35 @@
+<div class="man_produ_modify">
+    <div class="man_produ_modify_head">
+        <p>选择组织</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+    </div>
+    <div class="man_produ_modify_inner">
+        <div class="man_produ_column_modify">
+            <div class="edit_table cancel_signed_table_container">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>组织名称</th>
+                            <th>组织路径</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="processRecording-main-table">
+                    <table class="table table-striped table-bordered">
+                        <tbody>
+                            <tr ng-class="{'select-group-active':item.GROUPID==status.selectedGroup.GROUPID}" ng-repeat="item in data.groupArray" ng-click="selectGroup(item)" ng-dblclick="directLogin(item)">
+                                <td ng-bind="item.GROUPNAME"></td>
+                               <!--  <td>{{item==status.selectedGroup}}</td> -->
+                                <td ng-bind="item.GROUPPATH"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="man_produ_modify_footer">
+            <button class="news-role-btn right" ng-click="cancel()">取消</button>
+            <button class="news-role-btn right" ng-click="confirm()">确定</button>
+        </div>
+    </div>
+</div>

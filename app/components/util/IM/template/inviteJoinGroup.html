@@ -1,0 +1,43 @@
+<form name="imJoinGroupForm" novalidate class="IM_joinGroup_form">
+    <div class="invalidate-input-box" ng-if="!data.isGroup">
+        <input type="text" class="form-control" name="groupName" maxlength-error-message="长度不能超过200个字数！" validator="maxlength=200,required,spechar" ng-mouseenter="groupName=true" ng-mouseleave="groupName=false" is-show-tips="groupName" ng-model="status.groupName">
+    </div>
+    <div class="add_edit_group">
+        <div class="add_edit_group_left">
+            <div class="input-group edit_input_group IM_input_select">
+                <input type="text" class="form-control edit_form_control" placeholder="搜索" ng-model="data.searchUserName">
+            </div>
+            <ul class="group_left_con" ng-show="data.searchUserName==''">
+                <li ng-repeat="friend in data.friendList" ng-click="inviteJoinGroup(friend)" ng-class="{'IM_selected':status.currTalkTo == friend}">
+                    <img class="con_icon" ng-src="{{friend.FRIENDHEAD?('/wcm/app/system/read_image.jsp?FileName='+friend.FRIENDHEAD):'./components/util/IM/images/2013.jpg'}}">
+                    <span ng-bind="friend.FRIENDTRUENAME"></span>
+                    <img class="con_hook" ng-src="./components/util/IM/images/{{hasInGroup(friend)?'tx25-1.png':'tx25.png'}}">
+                </li>
+            </ul>
+            <ul class="group_left_con" ng-show="data.searchUserName!=''">
+                <li ng-repeat="friend in data.friendList|fuzzy:data.searchUserName" ng-click="inviteJoinGroup(friend,'true')" ng-class="{'IM_selected':status.currTalkTo == friend}">
+                    <img class="con_icon" ng-src="{{friend.FRIENDHEAD?('/wcm/app/system/read_image.jsp?FileName='+friend.FRIENDHEAD):'./components/util/IM/images/2013.jpg'}}">
+                    <span ng-bind="friend.FRIENDTRUENAME"></span>
+                    <img class="con_hook" ng-src="./components/util/IM/images/{{hasInGroup(friend)?'tx25-1.png':'tx25.png'}}">
+                </li>
+            </ul>
+        </div>
+        <div class="add_edit_group_right">
+            <div class="group_right_head">
+                <span>请勾选需要添加的联系人</span>
+                <img ng-click="cancel()" src="./components/util/IM/images/tx24.png">
+            </div>
+            <ul class="group_right_con">
+                <li ng-repeat="selFriend in data.selectedFriends">
+                    <img class="con_icon" ng-src="{{selFriend.FRIENDHEAD?('/wcm/app/system/read_image.jsp?FileName='+selFriend.FRIENDHEAD):'./components/util/IM/images/2013.jpg'}}">
+                    <span ng-bind="selFriend.FRIENDTRUENAME"></span>
+                    <img class="con_delete" src="./components/util/IM/images/tx26.png" alt="" ng-click="removeSelectedUser(selFriend)">
+                </li>
+            </ul>
+            <div class="group_right_button">
+                <button class="group_btn_confirm" ng-click="submmit()">确定</button>
+                <button ng-click="cancel()" class="group_btn_cancel">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

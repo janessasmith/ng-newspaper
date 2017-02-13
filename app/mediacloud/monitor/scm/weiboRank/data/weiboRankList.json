@@ -1,0 +1,18 @@
+{
+    "data": [
+        {
+            "accountName": "华龙网财经在线",
+            "accountType": "财经",
+            "accountUnit": "华龙网",
+            "weiboId": "45asd",
+            "score": 23,
+            "ordernum": 15
+        }
+    ],
+    "pageInfo": {
+        "totalNum": 3,
+        "pageIndex": 1,
+        "pageSize": 2,
+        "pageCount": 2
+    }
+}

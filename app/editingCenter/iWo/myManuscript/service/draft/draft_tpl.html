@@ -1,0 +1,49 @@
+<div class="myManuscript">
+    <div class="draft">
+        <div class="head">
+            <span>{{status.title}}</span>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="middle" ng-if="records.length>0">
+            <span class="span-title">最近{{status.title}}人：</span>
+            <div class="content"><a ng-class="user.selected" ng-click="chooseUser(user)" ng-repeat="user in records | limitTo:recordNum" href="javascript:void(0)" title="{{user.OPERUSER}}"><span class="user" ng-bind="user.OPERUSER | trsLimitTo:5"></span></a>
+                <div class="moreContent" ng-show="showMore==true">
+                    <a ng-class="user.selected" ng-if="$index>5" ng-click="chooseUser(user)" ng-repeat="user in records" href="javascript:void(0)" title="{{user.OPERUSER}}"><span class="user" ng-bind="user.OPERUSER | trsLimitTo:5"></span></a>
+                </div>
+            </div>
+            <!-- <img class="down" data-placement="bottom" data-auto-close="1" ng-show="records.length>6" src="./editingCenter/app/images/lt2.png" data-template-url="./editingCenter/iWo/myManuscript/service/draft/dropDown/dropDown_tpl.html" data-animation="am-flip-x" bs-popover/> -->
+            <img class="down" ng-click="showMore=showMore==true?false:true" ng-show="records.length>6" ng-src="./editingCenter/app/images/{{showMore!=true?'lt2.png':'lt3.png'}}" />
+            <!-- <div ng-show="showMore==true" ng-include="'./editingCenter/iWo/myManuscript/service/draft/dropDown/dropDown_tpl.html'">
+            </div> -->
+        </div>
+        <div class="body">
+            <div class="main">
+                <div class="left over">
+                    <div class="head">
+                        <span>媒体列表</span>
+                    </div>
+                    <div class="myManuscript-draft-leftTree cont br0">
+                        <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" on-node-toggle="showToggle(node)" class="tree-light" tree-model="treedata" options="treeOptions" on-selection="showSelected(node)"><span title="{{node.GNAME}}" ng-bind="node.GNAME"></span></treecontrol>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="head">
+                        <span>选择列表</span>
+                    </div>
+                    <div class="input form-group">
+                        <input type="text" ng-model="searchWord" class="form-control" placeholder="请输入关键字" bs-options="user as user.SUGGESTION for user in getSuggestions($viewValue)" bs-typeahead limit="30">
+                    </div>
+                    <ul>
+                        <li ng-click="chooseUser(user)" ng-class="user.selected" ng-repeat="user in users">
+                            <span ng-bind="user.USERNAME"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom">
+                <button class="btn_confirm" ng-click="confirm()">确定</button>
+                <button class="btn_cancel" ng-click="close()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

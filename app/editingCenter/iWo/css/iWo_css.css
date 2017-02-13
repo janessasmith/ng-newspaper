@@ -1,0 +1,841 @@
+/* 融合待编 */
+
+.standby-draft-table .panel-bar .panel-default > .panel-heading {
+    background: #ededed;
+    border-bottom: none;
+}
+
+.fusion-Pending-title a .standby-draft-panel-title-name {
+    color: #666;
+}
+
+.fusionPending-standby-draft-panel-title-rotate {
+    transform: rotate(270deg);
+    -ms-transform: rotate(279deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    position: relative;
+    /*top: -3px;*/
+}
+
+.standby-draft-table .fusion-pending .panel-default > .panel-heading {
+    background: #edeff1;
+    border-bottom: none;
+}
+
+.standby-draft-table .fusion-pending .standby-draft-panel-title .standby-draft-panel-title-name {
+    color: #666;
+}
+
+.information-tip-box {
+    position: relative;
+}
+
+.information-tip {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: relative;
+    right: 0px;
+    top: -12px;
+    color: #fff;
+    font-size: 5px;
+    text-align: center;
+    line-height: 18px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.information-tip span {
+    font-size: 14px;
+}
+
+.information-tip-margin {
+    /*margin-bottom: 15px;*/
+    margin-bottom: 12px;
+}
+
+.pointer {
+    cursor: pointer;
+    position: relative;
+}
+
+.pointer img {
+    position: relative;
+    top: -20px;
+    left: -10px;
+}
+
+.paper-load-more {
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.fresh-position-style {
+    position: relative;
+    top: -30px;
+    left: 95%;
+    height: 0px;
+}
+
+.content-container-box {
+    overflow: hidden;
+}
+
+
+/* 左边列表样式 */
+
+.iwo_accordion .panel-default > .panel-heading {
+    background: #466385;
+    /* height: 40px; */
+    line-height: 40px;
+    border-bottom: 1px solid #30455A;
+    ;
+}
+
+.iwo_accordion .panel-default > .panel-heading:hover {
+    background-color: #4f6f95;
+}
+
+.iwo_accordion .panel-group {
+    min-height: 701px
+}
+
+.website_accordion .panel-group {
+    min-height: 544px;
+}
+
+.iwo_accordion .panel-default > .panel-heading .panel-title {
+    font-size: 15px;
+    font-family: "Microsoft Yahei";
+    padding-left: 10px;
+}
+
+.iwo_accordion .panel-default > .panel-heading .panel-title a {
+    color: #fff;
+    display: block;
+    margin-left: 6px;
+    width: 98%;
+}
+
+.iwo_accordion .panel-default > .panel-heading .panel-title a:hover,
+.iwo_accordion .panel-default > .panel-heading .panel-title a:focus,
+.iwo_accordion .panel-default > .panel-heading .panel-title a.active {
+    text-decoration: none;
+}
+
+.iwo_accordion .panel-default > .panel-heading .panel-title a img {
+    vertical-align: -7px;
+}
+
+.iwo_accordion .panel-default > .panel-heading .panel-title a img.fixed_align {
+    vertical-align: -2px;
+}
+
+.iwo_accordion .panel-default > .panel-heading .active {
+    /* background: url("./editingCenter/app/images/l12.png") no-repeat 100% center; */
+}
+
+.iwo_accordion .panel-body ul {
+    background: #3f5974;
+    height: auto;
+    margin-bottom: 0px;
+    margin-left: -40px;
+}
+
+.iwo_accordion .panel-body ul li {
+    height: 40px;
+    line-height: 40px;
+    list-style: none;
+    color: #fff;
+    width: 100%;
+    border-bottom: 1px solid #25395a;
+    position: relative;
+    padding-left: 17.85%;
+    cursor: pointer;
+    font-family: "Microsoft Yahei";
+}
+
+.iwo_accordion .panel-body ul li i {
+    float: left;
+    height: 40px;
+    /*width: 16%;*/
+    width: 24%;
+    text-align: right;
+}
+
+.iwo_accordion .panel-body ul li a {
+    display: inline-block;
+    padding: 0 0;
+    /*width: 81%;
+    text-align: left;*/
+    width: 74%;
+    text-align: left;
+    float: right;
+}
+
+.iwo_accordion .panel-body ul li a:focus,
+.iwo_accordion .panel-body ul li a:hover {
+    text-decoration: none;
+}
+
+.iwo_accordion .panel-body ul li span {
+    height: 22px;
+    line-height: 22px;
+    min-width: 32px;
+    background: #fff;
+    border-radius: 11px;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    font-size: 10px;
+    color: #211b1f;
+    text-align: center;
+}
+
+input[type="checkbox"].manuscript-checkbox {
+    float: left;
+    margin-top: 8px;
+    margin-right: -10px;
+    cursor: pointer;
+}
+
+.mr14 {
+    margin-right: 14px;
+}
+
+.ht43 {
+    height: 43px;
+}
+
+.editing-list .iWo-left-accordion-active .panel-heading,
+.editing-list .fix_back_hover .panel-heading:hover,
+.editing-list .editing-nav-newspaper_hover .panel-heading:hover,
+.editing-list .editing-nav-newspaper_hover .iWo-left-accordion-active .panel-heading .panel-title {
+    /* background: url("./editingCenter/app/images/l12.png") no-repeat scroll 101% center; */
+    background-color: #1c83d2!important;
+}
+
+
+/*@media screen and (max-width: 1024px) {
+    .iwo_accordion .panel-body ul li a{
+        width: 77%;
+    }
+    .iwo_accordion .panel-default > .panel-heading .panel-title a{
+        width: 70%;
+    }
+}*/
+
+.iwo_accordion .panel-default > .panel-heading .panel-title a.ml0 {
+    margin-left: 0px;
+    font-size: 15px !important;
+}
+
+.iwo_accordion .panel-default > .panel-heading .panel-title a i {
+    display: block;
+    float: left;
+    width: 13%;
+}
+
+.sourceJson {
+    float: left
+}
+
+.sourceJson .dropdown .bth-fix {
+    width: 240px;
+    height: 34px
+}
+
+.sourceJson .dropdown .btn-fix-title {
+    width: 200px
+}
+
+.sourceJson .dropdown .dropdown-menu {
+    min-width: 240px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.row_news .m_nav_3.rt_wt {
+    width: 372px;
+}
+
+.websiteOrIwo_timeLine_head_row_news .m_nav_3.rt_wt {
+    width: 97%!important;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.m_box.no_border {
+    border: none;
+}
+
+.auto_wt.wordNum {
+    width: auto;
+    margin-left: 0;
+}
+
+.content_timeline.m_timeline .time_item_cnt img {
+    display: block;
+    width: 100%;
+}
+
+.content_timeline.m_timeline .time_item_cnt a {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "微软雅黑";
+    color: #494949;
+}
+
+.timeline_load_more {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+    background-color: #fafafa;
+}
+
+.last_item_mb>div {
+    margin-bottom: 20px;
+}
+
+.iwo_operate {
+    cursor: pointer;
+}
+
+.m_box.box_bg {
+    background-color: #fafafa;
+}
+
+.iWo-logo-hidden {
+    visibility: hidden;
+}
+
+.atals .textarea-mid {
+    width: 100%;
+    height: 200px;
+    resize: none;
+    font-size: 15px;
+}
+
+.iwo_accordion_new .iWo-left-div:hover {
+    background-color: #4f6f95;
+}
+
+.iWo-left-div {
+    background: #466385;
+    line-height: 40px;
+    border-bottom: 1px solid #30455A;
+    color: #fff;
+    padding-left: 10px;
+    height: 40px;
+}
+
+.iWo-left-div i {
+    display: block;
+    float: left;
+    width: 16%;
+    padding-left: 6px;
+}
+
+.iWo-left-div a {
+    float: left;
+    width: 81%;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Microsoft Yahei";
+}
+
+.iWo-left-div a:hover,
+.iWo-left-div a:focus {
+    text-decoration: none;
+}
+
+.iWo-left-accordion-active {
+    /* background: url("./editingCenter/app/images/l12.png") no-repeat scroll 101% center !important; */
+    background-color: #1c83d2 !important;
+}
+
+.subject-tab {
+    z-index: 1000;
+}
+
+.iwokeywords .subject-list-style {
+    margin: 0;
+}
+
+.iwotable .td_textarea {
+    margin-top: 13px !important;
+}
+
+
+/*关键词*/
+
+tags-input .tags {
+    border-color: #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+tags-input .host {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.edit_table .edit_table_orgposit {
+    text-align: left;
+}
+
+.iwokeywords .subject-list-style tags-input .tags .input {
+    padding-left: 10px;
+}
+
+.m_box tags-input .tags .input {
+    width: 204px !important;
+}
+
+.m_box_item tags-input .tags .input {
+    padding-left: 10px;
+}
+
+.edit_table .timing-signed-icon {
+    position: relative;
+    top: 0px;
+    cursor: default;
+    left: 10px;
+    width: 20px;
+}
+
+.edit_table table thead tr th .regular-checkbox + label {
+    border: 2px solid #7a7a82;
+    border-radius: 5px;
+    /*margin-left: 8px;*/
+}
+
+.edit_table table tbody tr td .regular-checkbox + label {
+    border: 1px solid #aab1bb;
+    border-radius: 5px;
+    /*margin-left: 8px;*/
+}
+
+.edit_table table thead tr th .regular-checkbox:checked + label:after,
+.edit_table table tbody tr td .regular-checkbox:checked + label:after {
+    background: url("./editingCenter/iWo/images/check_marks_black.png") no-repeat!important;
+}
+
+table tbody tr td.td-number {
+    position: relative;
+}
+
+.edit_table table thead tr th.td-number {
+    text-align: left;
+}
+
+table tbody tr td.td-number .office_icon_group {
+    position: absolute;
+    top: 7px;
+    right: 0;
+    text-align: right;
+    width: 68px;
+}
+
+table tbody tr td.td-number .office_icon_group img {
+    cursor: default;
+}
+
+table tbody tr td.td-number .office_icon_group_addImgIcon {
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+}
+
+table tbody tr td.td-number .office_icon_group_addImgIcon img {
+    cursor: default;
+}
+
+.edit_table table thead tr th.td-check {
+    padding-left: 19px;
+}
+
+.edit_right_head .edit_right_head_btn_clearTrash,
+.edit_right_head .edit_right_head_btn_clearTrash:focus {
+    width: 100px;
+}
+
+.edit_right_mid.edit_newDocSite_top_right_mid {
+    height: auto;
+}
+
+.pointer .edit_iwo_unread_icon {
+    position: absolute;
+    top: 0;
+    width: 23px;
+    height: 21px;
+    border: none;
+}
+
+.errorTips {
+    display: block;
+    background: #e74955;
+    color: #FFF;
+    position: absolute;
+    top: -33px;
+    text-align: center;
+    min-width: 140px;
+    border-radius: 16px;
+    line-height: 28px;
+}
+
+.errorTips {
+    display: block;
+    background: #e74955;
+    color: #FFF;
+    position: absolute;
+    top: -33px;
+    text-align: center;
+    min-width: 140px;
+    border-radius: 16px;
+    line-height: 28px;
+}
+
+.errorTips p {
+    margin-bottom: 0px !important;
+    color: #fff !important;
+    text-align: center !important;
+    font-size: 12px !important;
+    float: none!important;
+    line-height: 28px!important;
+}
+
+.errorTips i {
+    content: "";
+    background: url("./editingCenter/app/toBeCompiled/images/sjx.png") no-repeat;
+    display: block;
+    width: 10px;
+    height: 7px;
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.edit_table .Almanac thead {
+    background: none
+}
+
+.isORINGIN {
+    height: 34px;
+    line-height: 34px;
+}
+
+.isORINGIN_cursor {
+    cursor: pointer;
+}
+
+.fadeout {
+    -webkit-animation-name: am-fade;
+    animation-name: am-fade;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+
+/* Fade */
+
+@-webkit-keyframes am-fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes am-fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+td.edit-icon-td {
+    width: 60px;
+    padding: 4px 0 0 0!important;
+}
+
+
+/*iwo融合待编、融合审签*/
+
+.fresh-position-stylenew {
+    position: relative;
+    float: right;
+    top: -30px;
+    right: 5%;
+    height: 0px;
+}
+
+.checkNewsManu-row > div.col-md-12 {
+    line-height: 20px;
+}
+
+.copy-darft-a a {
+    color: #4C4C4C;
+    font-size: 12px
+}
+
+.copy-darft-row {
+    padding: 10px;
+    margin: 15px 0px;
+}
+
+.iwo-preview-tl {
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    padding-bottom: 18px;
+    font-weight: bold;
+}
+
+.fusion-Pending.standby-draft-table .fusion-pending .panel-default > .panel-heading {
+    border-bottom: 2px solid #fff;
+}
+
+.iwo-get-keywords {
+    float: left;
+    line-height: 34px;
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+.iwo-get-abstract {
+    float: left;
+    margin-top: 125px;
+    cursor: pointer;
+}
+
+.col-md-2 .not-allowed {
+    cursor: not-allowed;
+}
+
+.iwo-get-iabstract {
+    float: left;
+    margin-top: 125px;
+    cursor: pointer;
+}
+
+.standby-draft-unread-head .fixde-width-margin {
+    width: 510px;
+    margin: 0 auto;
+}
+
+
+/*个人稿库列表、稿件档案、废稿箱*/
+
+.edit_table table thead tr th.td_title_pct50,
+.edit_table table tbody tr td.td_title_pct50 {
+    width: 50%;
+}
+
+
+/*iwo 特权取稿*/
+
+.edit_table table thead tr th.td_title_pct48,
+.edit_table table tbody tr td.td_title_pct48 {
+    width: 48%;
+}
+
+
+/*iwo 已收稿库*/
+
+.edit_table table thead tr th.td_title_pct38,
+.edit_table table tbody tr td.td_title_pct38 {
+    width: 38%;
+}
+
+
+/*iwo 已收稿库、稿件收藏*/
+
+.edit_table table thead tr th.td_title_pct36,
+.edit_table table tbody tr td.td_title_pct36 {
+    width: 36%;
+}
+
+
+/*iwo 融合审签网站*/
+
+.edit_table table thead tr th.td_title_pct40,
+.edit_table table tbody tr td.td_title_pct40 {
+    width: 40%;
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1280px) {
+    /*iwo 网站创建时间*/
+    .websiteCabletPreview_head .websiteCabletPreview_head_rank p span {
+        width: 65%!important;
+    }
+    /*个人稿库列表、稿件档案、特权取稿、废稿箱*/
+    .edit_table table thead tr th.td_title_pct50,
+    .edit_table table tbody tr td.td_title_pct50 {
+        width: 40%;
+    }
+    /*iwo 已收稿库、稿件收藏*/
+    .edit_table table thead tr th.td_title_pct36,
+    .edit_table table tbody tr td.td_title_pct36 {
+        width: 25%;
+    }
+    /*iwo融合审签*/
+    .edit_table table thead tr th.td_title_pct40,
+    .edit_table table tbody tr td.td_title_pct40 {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1364px) and (max-width: 1440px) {
+    .website_accordion .panel-group {
+        min-height: 105px!important;
+        background: #466385;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1681px) {
+    .iwo_accordion .panel-group {
+        min-height: 810px!important;
+    }
+    .website_accordion .panel-group {
+        min-height: 145px!important;
+        background: #466385;
+    }
+}
+
+
+/**datePicker hover修改**/
+
+.datepicker.dropdown-menu tbody button:hover {
+    background: #eee;
+}
+
+.editing-list .iwo_accordion .iWo-left-li-active {
+    background-color: #1c83d2;
+}
+
+.editing-list ul li:hover {
+    background-color: #4f6f95;
+}
+
+.editing-list .iwo_accordion_new .panel-open .font_color {
+    color: #36b6ff !important;
+}
+
+.mc-padding-xs .txt_c .draftImg,
+.standby-draft-panel-body .draftImg {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+
+
+/*提取关键字、提取摘要*/
+
+.iwo_get_keywords_btn,
+.iwo_get_iabstract_btn {
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 0px;
+}
+
+
+/*.iwo_get_iabstract_btn {
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 0px;
+}*/
+
+.xcol-newspaper-bigPicture.edit-icon-td.newspaper-icon-td div {
+    display: inline-block;
+}
+
+
+/*是否原创*/
+
+.edit_wOriginal {
+    margin-top: -3px;
+}
+
+.edit_wOriginal_p {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.edit_preview_fix-font {
+    color: #444;
+    line-height: 36px;
+    font-family: "Microsoft Yahei";
+    font-size: 18px;
+}
+
+.iwo-preview-attachfile {
+    width: 1000px;
+    margin: 100px auto 0;
+}
+
+.iwo-preview-attachfile ul {
+    overflow: hidden;
+}
+
+.iwo-preview-attachfile ul li {
+    float: left;
+    margin-right: 8px;
+    width: 150px;
+    list-style-type: none;
+    text-align: center;
+    height: 170px;
+}
+
+.iwo-preview-attachfile ul li a {
+    display: block;
+}
+
+.iwo-preview-attachfile ul li a:hover{
+    text-decoration: none;
+}
+
+.iwo-preview-attachfile ul li a img {
+    width: 85px;
+    height: 92px;
+}
+
+.iwo-preview-attachfile ul li a span {
+    width: 150px;
+    display: block;
+    line-height: 24px;
+    word-wrap: break-word;
+    height: 72px;
+    overflow: hidden;
+}

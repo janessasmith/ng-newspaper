@@ -1,0 +1,62 @@
+.productManageMent-website-column-modify .modal-dialog {
+    width: 685px;
+}
+
+.productManageMent-website-column-modify img {
+    cursor: pointer;
+}
+
+.productManageMent-website-column-modify .man_produ_modify {
+    padding-bottom: 2px;
+}
+
+.productManageMent-website-column-modify .man_produ_modify_inner {
+    background: #fff;
+    margin: 10px;
+    padding-top: 20px;
+    line-height: 45px;
+    color: #777;
+    font-size: 12px;
+}
+
+.productManageMent-website-column-modify .man_produ_column_modify span {
+    display: inline-block;
+    width: 18%;
+    height: 100%;
+    line-height: 100%;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.productManageMent-website-column-modify .man_produ_column_modify .man_produ_sensitive_text {
+    width: 240px;
+    height: 30px;
+    display: inline-block;
+    font-size: 12px;
+    color: #777;
+}
+
+.productManageMent-website-column-modify .man_produ_column_modify select {
+    width: 100%;
+    border-color: #ddd;
+    color: #aaa;
+}
+
+.productManageMent-website-column-modify .man_produ_modify_footer {
+    background: transparent;
+    padding-left: 450px;
+}
+
+.productManageMent-website-column-modify .man_produ_modify_footer_cancel {
+    margin-right: 0;
+}
+
+.productManageMent-website-column-modify .man_produ_modify_footer button {
+    width: 80px;
+    height: 30px;
+}
+
+.productManageMent-website-column-modify .man_produ_column_modify .singleSlected button span.btn-fix-title {
+    width: 74%;
+    text-align: left;
+}

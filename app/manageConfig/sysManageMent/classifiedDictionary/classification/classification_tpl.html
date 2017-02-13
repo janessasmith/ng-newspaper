@@ -1,0 +1,126 @@
+<div>
+    <div class="system-manage-main-left">
+        <div class="system-manage-main-left-bar">
+            <button style="display:none;" ng-show="url=='area'||url=='field'" class="btn btn-default system-manage-main-left-btn-1"><i class="system-manage-back-icon"></i>导入模板</button>
+            <button ng-show="url=='area'||url=='field'" class="btn btn-default system-manage-main-left-btn-2" ng-click="SynchronousData()"><i class="system-manage-file-icon"></i>同步分类</button>
+            <form class="navbar-form navbar-right" role="search" style="margin:0px;line-height:25px;padding:0px;">
+                <div class="form-group">
+                    <input type="text" ng-model="searchWord" class="form-control system-manage-main-left-input" placeholder="请输入检索词">
+                </div>
+                <button ng-click="search()" type="submit" class="btn btn-default line-height  system-manage-main-left-btn-3">
+                    <i class="system-manage-search-icon"></i>查找</button>
+            </form>
+        </div>
+        <div class="system-manage-main-left-content">
+            <div class="system-manage-main-left-content-title">
+                <i ng-show="tree.display" ng-click="tree.display=false" class="system-manage-main-left-content-title-icon1"></i>
+                <i ng-show="!tree.display" ng-click="tree.display=true" class="system-manage-main-left-content-title-icon3"></i>
+                <i class="system-manage-main-left-content-title-icon2"></i>
+                <span ng-click="selectRoot()" class="system-manage-main-left-content-title-p" ng-bind="module"></span>
+            </div>
+            <div class="sys_manage_main_left_content_con">
+                <div ng-show="tree.display" class="system-manage-main-left-content-treecontrol">
+                <treecontrol selected-node="selectedNode" expanded-nodes="expanded" class="tree-light " on-node-toggle="showToggle(node)" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node,$parentNode)">
+                    <a href="javascript:void(0)" title="{{node.dictName}}"><span>{{node.dictName}}</span></a>
+                </treecontrol>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+    <form name="folderForm" novalidate>
+        <div class="system-manage-main-right" ng-show="switch.folder">
+            <div class="system-manage-main-right-bar">
+                <button ng-click="createFileOrFolder('file')" ng-show="isRoot!=true" class="btn btn-default system-manage-main-left-btn-4"><i class="system_manage_newfolder"></i>新建文件</button>
+                <button ng-show="isRoot!=true" ng-click="deleteNode()" class="btn btn-default system-manage-main-left-btn-4"><i class="system-manage-delete-icon"></i>删除文件夹</button>
+                <button ng-click="createFileOrFolder('folder')" class="btn btn-default system-manage-main-left-btn-4"><i class="system_manage_newfile"></i>新建文件夹</button>
+            </div>
+            <div class="system-manage-main-right-input" style="font-size:14px;">
+                <div class="input-group invalidate-input-box">
+                    <input type="text" ng-readonly="isRoot==true?true:false" name="dictName" validator="maxlength=25,required" maxlength-error-message="长度不能超过25个字符！" ng-model="folder.dictName" class="form-control" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA">
+                    <div class="input-group-btn" style="display: none;">
+                        <span>排序</span>
+                        <select name="selectAge" class="sys_class_classtion_dropbox">
+                            <option ng-repeat="item in parentNode.CHILDREN" value="1">{{$index+1}}</option>
+                        </select>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+            </div>
+            <div class="system-manage-main-right-content invalidate-input-box">
+                <h5>说明：</h5>
+                <div class="system-manage-main-right-content-main {{folderForm.instruction.$invalid&&folderForm.instruction.$dirty?'has-error':''}}">
+                    <textarea validator="maxlength=500" maxlength-error-message="长度不能超过500个字符！" ng-readonly="isRoot==true?true:false" class="form-control" name="instruction" readonly="{{isRoot}}" ng-model="folder.instruction" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" is-show-tips="isShowTipsB">
+                    </textarea>
+                </div>
+                <nav>
+                    <div class="system-manage-save-btn">
+                        <p><a href="#" class="btn btn-primary" ng-show="isRoot!=true" style="font-size:12px;" validation-submit="folderForm" ng-click="saveClassficationData('folder')">保存</a></p>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </form>
+    <form name="createForm" novalidate>
+        <div class="system-manage-main-right" ng-show="switch.create">
+            <div class="system-manage-main-right-bar">
+                <span>父节点名称：</span><span ng-bind="folder.dictName"></span>
+            </div>
+            <div class="system-manage-main-right-input" style="font-size:14px;">
+                <div class="input-group invalidate-input-box {{createForm.dictName.$invalid?'has-error':''}}">
+                    <input type="text" name="dictName" ng-model="dictName" class="form-control" validator="maxlength=25,required" maxlength-error-message="长度不能超过25个字符！" placeholder="请输入名称" ng-mouseenter="isShowTipsC=true" ng-mouseleave="isShowTipsC=false" is-show-tips="isShowTipsC">
+                    <div class="input-group-btn" style="display: none;">
+                        <span>排序</span>
+                        <select name="selectAge" class="sys_class_classtion_dropbox">
+                            <option ng-repeat="item in selectedNode.CHILDREN" value="1">{{$index+1}}</option>
+                        </select>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+            </div>
+            <div class="system-manage-main-right-content invalidate-input-box">
+                <h5>说明：</h5>
+                <div class="system-manage-main-right-content-main">
+                    <textarea validator="maxlength=500" maxlength-error-message="长度不能超过500个字符！" class="form-control" name="instruction" ng-model="instruction" ng-mouseenter="isShowTipsD=true" ng-mouseleave="isShowTipsD=false" is-show-tips="isShowTipsD">
+                    </textarea>
+                </div>
+                <nav>
+                    <div class="system-manage-save-btn">
+                        <p><a href="#" class="btn btn-primary" style="font-size:12px;" validation-submit="createForm" ng-click="saveCreate()">保存</a></p>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </form>
+    <form name="fileForm" novalidate>
+        <div class="system-manage-main-right" ng-show="switch.file">
+            <div class="system-manage-main-right-bar">
+                <button ng-click="deleteNode()" class="btn btn-default system-manage-main-left-btn-4"><i class="system-manage-delete-icon"></i>删除文件</button>
+            </div>
+            <div class="system-manage-main-right-input" style="font-size:14px;">
+                <div class="input-group invalidate-input-box">
+                    <input name="dictName" type="text" maxlength-error-message="长度不能超过25个字符！" class="form-control" validator="maxlength=25,required" ng-model="file.dictName" ng-mouseenter="isShowTipsE=true" ng-mouseleave="isShowTipsE=false" is-show-tips="isShowTipsE">
+                    <div class="input-group-btn" style="display: none;">
+                        <span>排序</span>
+                        <select name="selectAge" class="sys_class_classtion_dropbox">
+                            <option ng-repeat="item in parentNode.CHILDREN" value="1">{{$index+1}}</option>
+                        </select>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+            </div>
+            <div class="system-manage-main-right-content invalidate-input-box">
+                <h5>说明：</h5>
+                <div class="system-manage-main-right-content-main">
+                    <textarea maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" class="form-control" name="instruction" ng-model="file.instruction" ng-mouseenter="isShowTipsF=true" ng-mouseleave="isShowTipsF=false" is-show-tips="isShowTipsF">
+                    </textarea>
+                </div>
+                <nav>
+                    <div class="system-manage-save-btn">
+                        <p><a href="#" validation-submit="fileForm" class="btn btn-primary btn_confirm" ng-click="saveClassficationData('file')" style="font-size:12px;">保存</a></p>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </form>
+</div>

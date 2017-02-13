@@ -1,0 +1,60 @@
+<div class="container-fluid weibo-list">
+    <div ng-click="chooseDropdown($event)" class="editing-pos">
+        <div class="editing-list-zjxw site_btn">
+            <img src="./editingCenter/app/images/w33.png" class="editing_list_zjxw_img" />
+            <span href="" title="{{status.selectedChnl.ACCOUNTNAME}}">{{status.selectedChnl.ACCOUNTNAME | trsLimitTo:12}}</span>
+            <img ng-src="./editingCenter/app/toBeCompiled/images/plus.png" style="width: 26px;height: 26px;position: absolute;top: 4px;left: 4px;z-index: 10;" ng-click="bindWeibo($event)">
+        </div>
+        <div ng-if="status.channels.length>1">
+            <img src="./editingCenter/app/images/l5-1.png" class='edit_mark' ng-show="!status.weibo.isdownPicShow">
+            <img src="./editingCenter/app/images/l5-2.png" class='edit_mark' ng-show="status.weibo.isdownPicShow"></div>
+        <div ng-show="status.weibo.isdownPicShow" class="editing-Sites_fa">
+            <div class="editing-Sites" ng-repeat="channel in status.channels" ng-click="setWeiboSelected(channel)">
+                <span title="{{channel.ACCOUNTNAME}}"> {{channel.ACCOUNTNAME|trsLimitTo:12}}</span>
+                <img src="./editingCenter/app/images/l8.png" ng-show="channel == status.selectedChnl">
+            </div>
+        </div>
+    </div>
+    <ul class="weiboLists">
+        <li ng-class="{'weibo-left-active':'tobecompiled'==status.selectedItem}" ng-if="status.weiboAccessAuthority['DAIBIAN']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'tobecompiled'==status.selectedItem?'wb3.png':'wb3-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('tobecompiled')" ui-sref-opts="{reload:'editctr.weibo.tobecompiled'}">待编</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'pending'==status.selectedItem}" ng-if="status.weiboAccessAuthority['DAISHEN']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'pending'==status.selectedItem?'wb4.png':'wb4-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('pending')" ui-sref-opts="{reload:'editctr.weibo.pending'}">待审</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'signed'==status.selectedItem}" ng-if="status.weiboAccessAuthority['YIQIANFA']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'signed'==status.selectedItem?'wb5.png':'wb5-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('signed')" ui-sref-opts="{reload:'editctr.weibo.signed'}">已签发</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'timingsigned'==status.selectedItem}" ng-if="status.weiboAccessAuthority['DINGSHIQIANFA']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'timingsigned'==status.selectedItem?'wb5.png':'wb5-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('timingsigned')" ui-sref-opts="{reload:'editctr.weibo.timingsigned'}">定时签发</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'myweibo'==status.selectedItem}" ng-if="status.weiboAccessAuthority['WODEWEIBO']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'myweibo'==status.selectedItem?'wb6.png':'wb6-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('myweibo')" ui-sref-opts="{reload:'editctr.weibo.myweibo'}">我的微博</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'attention'==status.selectedItem}" ng-if="status.weiboAccessAuthority['GUANZHUDEWEIBO']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'attention'==status.selectedItem?'wb7.png':'wb7-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('attention')" ui-sref-opts="{reload:'editctr.weibo.attention'}">关注的微博</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'comment'==status.selectedItem}" ng-if="status.weiboAccessAuthority['SHOUDAODEPINGLUN']=='true'||status.weiboAccessAuthority['FACHUDEPINGLUN']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'comment'==status.selectedItem?'wb9.png':'wb9-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('comment')" ui-sref-opts="{reload:'editctr.weibo.comment'}">评论</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'collect'==status.selectedItem}" ng-if="status.weiboAccessAuthority['SHOUCANG']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'collect'==status.selectedItem?'wb8.png':'wb8-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('collect')" ui-sref-opts="{reload:'editctr.weibo.collect'}">收藏</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'me'==status.selectedItem}" ng-if="status.weiboAccessAuthority['ATWODEWEIBO']=='true'||status.weiboAccessAuthority['ATWODEPINGLUN']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'me'==status.selectedItem?'wb21.png':'wb21-1.png'}}"></i>
+            <a ng-click="setWeiBoSelectedItem('me')" ui-sref-opts="{reload:'editctr.weibo.me'}">@我</a>
+        </li>
+        <li ng-class="{'weibo-left-active':'me'==status.selectedItem}" ng-if="status.weiboAccessAuthority['ATWODEWEIBO']=='true'||status.weiboAccessAuthority['ATWODEPINGLUN']=='true'">
+            <i><img ng-src="./editingCenter/weibo/images/{{'me'==status.selectedItem?'binding_wb_logo_03.png':'binding_wb_logo_03.png'}}" style="width: 30px;height: 30px;margin-left: -4px;"></i>
+            <a ng-click="unbindWeibo()" ui-sref-opts="{reload:'editctr.weibo.me'}">解绑微博</a>
+        </li>
+    </ul>
+</div>

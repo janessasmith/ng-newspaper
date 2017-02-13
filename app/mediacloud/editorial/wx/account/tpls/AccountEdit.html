@@ -1,0 +1,98 @@
+ <div>
+            <div class="popup-title">
+                <p>编辑</p>
+                <a class="popup-close" ng-click="cancel();"></a>
+            </div>
+
+            <form method="post" class="form-horizontal w5c-form" 
+                     w5c-form-validate="vm.validateOptions" novalidate 
+                     id="iconForm" name="iconForm" enctype="multipart/form-data">
+               
+                    <div class="form-group">
+                         <label class="col-sm-2 control-label">公众号名称:</label>
+                        <div class="col-xs-4">
+                            <input class="form-control" type="text" name="username" ng-model="account.name" required /> 
+                        </div>
+                        <span class="hint"></span> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">公众号类型:</label>
+                        <div class="col-xs-4">                     
+                            <select class="form-control" ng-model="Type" 
+                                ng-options="Type.wxType for Type in Types"> 
+                            </select>
+                        </div>
+                        <span class="hint"></span>
+                    </div>
+
+                    <div class="form-group">
+                       <label class="col-sm-2 control-label">所属单位:</label>
+                        <div class="col-xs-4">
+                            <select  class="form-control" ng-model="Unit" 
+                                ng-options="Unit.UnitName for Unit in Units">
+                            </select>
+                        </div>
+                        <span class="hint"></span>
+                    </div>
+
+                    <div class="form-group">
+                       <label class="col-sm-2 control-label">所属类别:</label>
+                        <div class="col-xs-4">     
+                           <select class="form-control" ng-model="Class"  
+                                 ng-options="Class.ClassName for Class in Classs"> 
+                            </select>
+                        </div>
+                        <span class="hint"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">公众号原始ID:</label>
+                        <div class="col-xs-4">
+                            <input class="form-control" type="text" name="wxid" ng-model="account.wxid" disabled/>      
+                        </div>
+                        <span class="notes">已锁定！</span> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">APPID:</label>
+                        <div class="col-xs-4">
+                            <input class="form-control" type="text" name="AppId" ng-model="account.appId"/> 
+                        </div>
+                        <span class="notes">服务号和认证后的订阅号必须有，普通订阅号可以没有。</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">APPSECRET:</label>
+                        <div class="col-xs-4">
+                            <input class="form-control" type="text"  name="AppSecret" ng-model="account.appSecret"/>
+                        </div>
+                        <span class="notes">服务号和认证后的订阅号必须有，普通订阅号可以没有。</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">公众号头像:</label>
+                         <div class="col-xs-7">
+                            <input type="hidden" value="" id="output"/>
+                            <input  class="form-control" id="f_file" type="text" />            
+                        </div>
+                        <a class="choose-btn" href="javascript:void(0)">选择封面</a>
+                        <input  name="wxHeadImg-browser-btn" name="upload" type="file" 
+                              onchange="f_file.value=this.value" id="t_file" style="display:none"  uplode-directive /> 
+                    </div>
+                    <!--图片预览-->
+                    <img name="showimg" id="uploadImg" class="showimg"
+                              src="../../scm/file/read_image.jsp?FileName={{account.wxHeadImg}}" width="80" height="80"/>
+             
+                <div class="popup-btn">
+                    <div class="edit-btn-bg">
+                        <!-- 表单通过规则 -->
+                        <button style="float:left" class="popup-btn-confirm" 
+                                 w5c-form-submit="vm.ok();">保存</button>  
+                        <a class="popup-btn-cancel" ng-click="cancel();">取消</a>
+                    </div>
+                </div>
+     </form>
+</div>
+
+

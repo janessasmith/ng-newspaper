@@ -1,0 +1,9 @@
+<div ng-show="checkBox" class="editor-check-box">
+	<div class="main">
+		<img src="./editingCenter/app/images/l122.png">
+		<ul>
+			<li ng-show="metaDataId!=''" class="{{chooseType_1?'editor-check-box-selected':''}}" ng-mouseenter="chooseType_1=true" ng-mouseleave="chooseType_1=false" ng-click="editFlow()">编辑流</li>
+			<li class="{{chooseType_2?'editor-check-box-selected':''}}" ng-mouseenter="chooseType_2=true" ng-mouseleave="chooseType_2=false" ng-click="other()">其他人员</li>
+		</ul>
+	</div>
+</div>

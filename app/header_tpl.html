@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-12 edit-header">
+        <div class="col-sm-4 editing-header-fixed" id="header">
+            <img src="./yarbImages/logo.png" class="img-responsive" style="height:72px; float:left;">
+            <!-- <div trs-warning-tone is-play="isUnreadIconShow"></div> -->
+        </div>
+        <div class="col-sm-8">
+            <nav class="navbar-right">
+                <div class="container">
+                    <div class="edit-use">
+                        <p>
+                            <trs-login-user user="data.user.TRUENAME||user.USERNAME" img="headPic"></trs-login-user>
+                            <!-- <a ui-sref="myzone.personalinfo"><img src="./editingCenter/app/images/user_icon.png" class="edi_usr">{{data.user.TRUENAME||user.USERNAME}}欢迎你！ </a> -->
+                        </p>
+                        <p ng-click="logout()" class="cursorPointer" title="退出登录"><img src="../editingCenter/app/images/tb-7.png" class="edit_exit"></p>
+                        <p ng-if="status.basicAccess['manageconfig']" class="cur">
+                            <a target="_blank" ui-sref="manageconfig.rolemanage" alt="管理配置" title="管理配置">
+                                <img src="./editingCenter/app/images/t-b6.png" width="29">
+                            </a>
+                        </p>
+                    </div>
+                    <!-- <div class="right">
+                        <p ng-click="setMediaCloud('weibo')" class="pointer">
+                            <a style="text-decoration:none;" class="xy-logo">微博平台</a>
+                        </p>
+                    </div> -->
+                    <div class="right">
+                        <p ng-click="setMediaCloud('weixin')" class="pointer">
+                            <a style="text-decoration:none;" class="xy-logo">微信平台</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li ng-if="status.basicAccess['plan']" class="icon_message icon_state" ng-class="{'icon_message_active':headTab['plan']||headTab['plancueOverview']||headTab['monitoroverview']}"><a ui-sref="plan.timecue.monitor" ui-sref-opts="{reload: true}">策划中心</a></li> -->
+
+                        <li ng-if="status.basicAccess['perform']" class="icon_message icon_state" ng-class="{'icon_message_active':headTab['perform']}">
+                            <a ui-sref="perform" ui-sref-opts="{reload: true}">绩效考核</a>
+                        </li>
+
+                        <li ng-if="status.basicAccess['editctr']" class="icon_newspeper icon_state pos-rlt" ng-class="{'icon_newspeper_active':headTab['editctr']}">
+                            <a ui-sref="editctr.iWo.personalManuscript" ui-sref-opts="{reload: true}">采编中心</a>
+                            <i class="unread-icon pos-abs header-unread-icon-pos" ng-if="isUnreadIconShow"></i>
+                        </li>
+
+                        <li ng-if="status.basicAccess['resourcectrl']" class="icon_network icon_state" ng-class="{'icon_network_active':headTab['resourcectrl']||headTab['retrieval']}">
+                            <a href="javascript:void(0)" ng-click="goToResourceCenter()"><!-- <a ui-sref="resourcectrl.share" ui-sref-opts="{reload: true}"> -->资源中心</a>
+                        </li>
+                        <!-- <li ng-if="status.basicAccess['visualizationcenter']" class="icon_computer icon_state" ng-class="{'icon_computer_active':headTab['visualizationcenter']}"><a ui-sref="visualizationcenter" ui-sref-opts="{reload: true}">可视化中心</a></li>
+                        <li ng-if="status.basicAccess['operatecenter']"  class="icon_setting icon_state" ng-class="{'icon_setting_active':headTab['operatecenter']}">
+                            <a ui-sref="operatecenter" ui-sref-opts="{reload: true}">运营中心</a> -->
+                        <!-- <a href="javascript:void(0)">运营中心</a></li> -->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

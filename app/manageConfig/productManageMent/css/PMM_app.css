@@ -1,0 +1,79 @@
+.manage-pmm-before-search{
+    margin: -4px 3px 0 0;
+}
+.manage-pmm-app-container{
+    width: 98%;
+    min-height: inherit;
+    border: 1px solid #a7b3c1;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    overflow: hidden;
+}
+.pmm-app-item-out{
+    margin: 8px 10px;
+}
+.pmm-app-item-out,
+.pmm-app-item-default {
+    min-width: 115px;
+}
+.pmm-app-item-icon-group{
+    width: 0;
+    height: 23px;
+    overflow: hidden;
+    margin-top: -3px;
+    white-space:nowrap;
+}
+.pmm-app-btn-show{
+    width: 100%;
+}
+.pmm-app-item-icon-group img{
+    cursor: pointer;
+    margin-left: 3px;
+}
+.pmm-app-item-default,
+.pmm-app-item-active,
+.pmm-app-add-item{
+    min-width: 100px;
+    padding: 0 10px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #b4b4b4;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.pmm-app-item-default{
+    background: #fff;
+}
+.pmm-app-item-active{
+    color: #fff;
+    background: #2f98d2;
+}
+
+.pmm-app-add-item {
+    font-size: 2.5em;
+}
+@keyframes slideLeftOut {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes slideLeftIn {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+.pmm-app-item-icon-group.pmm-app-btn-show-add{
+    animation:slideLeftOut 0.3s  both ease-in;
+}
+.pmm-app-item-icon-group.pmm-app-btn-show-remove{
+    animation:slideLeftIn 0.2s  both ease-in;
+}

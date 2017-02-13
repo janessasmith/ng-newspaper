@@ -1,0 +1,15 @@
+<div class="editing-operate-lst">
+    <ul>
+        <a href="javascript:void(0)" ng-click="singleRetraction(item.RECID)">撤稿</a>
+        <a href="" ng-click="rank()">排序</a>
+        <a href="" ng-click="fixed(item)" ng-show="item.GDORDER ? false:true" class="ng-hide">固定位置</a>
+        <a href="" ng-click="cancelFixed(item)" ng-show="item.GDORDER ? true:false">取消固定</a>
+        <a href="" ng-show="item.HIDDEN == '0'?false:true" ng-click="reshow(item.RECID)">恢复显示</a>
+        <a href="" ng-show="item.HIDDEN == '1'?false:true" ng-click="hide(item)" class="ng-hide">隐藏</a>
+        <a href="">评论管理</a>
+        <a href="javascript:void(0)" ng-click="singleShare(item.CHNLDOCID,item.METADATAID)">共享</a>
+        <a href="" ng-click="move()">移动</a>
+        <a href="">外发</a>
+        <a href="javascript:void(0)" ng-click="singleCollect(item)">收藏</a>
+    </ul>
+</div>

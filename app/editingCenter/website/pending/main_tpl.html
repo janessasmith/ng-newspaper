@@ -1,0 +1,177 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <div class="btn-group" role="group" ng-if="data.btnRights['web.daishen.qianfa']">
+            <button type="button" class="btn btn-default dropdown-toggle btn-commen opacity100" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='sign'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='sign'&&data.selectedArray.length>0?'b5-1.png':'b5.png'}}" />
+                </span> 签发
+                <span class="pulldown_icon"></span>
+            </button>
+            <ul class="dropdown-menu edit_dropdown_menu" ng-show="data.selectedArray.length>0">
+                <li><a href="javascript:void(0)" ng-click="directSigned()">直接签发</a></li>
+                <li><a href="javascript:void(0)" ng-click="multitermTiimeSigned()">定时签发</a></li>
+            </ul>
+        </div>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-if="data.btnRights['web.daishen.tuigao']" ng-click="rejectionDraft()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='rejection'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='rejection'&&data.selectedArray.length>0?'zm38-1.png':'zm38.png'}}"/>
+            </span> 撤稿
+        </button>
+        <button ng-click="shareDraft()" class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-if="data.btnRights['web.daishen.gongxiang']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='share'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='share'&&data.selectedArray.length>0?'b6-1.png':'b6.png'}}" />
+            </span> 共享
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="draftlist()" ng-disabled="data.selectedArray.length==0" ng-if="data.btnRights['web.daishen.fagaodan']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='draftlist'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='draftlist'&&data.selectedArray.length>0?'i39-1.png':'i39.png'}}" />
+            </span> 发稿单
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length==0" ng-click="outSending()" ng-if="data.btnRights['web.daishen.waifa']&&status.btnLength<9" ng-mouseenter="status.batchOperateBtn['hoverStatus']='outSending'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='outSending'&&data.selectedArray.length>0?'i20-1.png':'i20.png'}}" />
+            </span> 邮件外发
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length==0" ng-click="collectDraft()" ng-if="data.btnRights['web.daishen.shoucang']&&status.btnLength<9" ng-mouseenter="status.batchOperateBtn['hoverStatus']='collect'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='collect'&&data.selectedArray.length>0?'zm12-1.png':'zm12.png'}}" />
+            </span> 收藏
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length==0" ng-click="moveDraft()" ng-if="data.btnRights['web.daishen.yidong']&&status.btnLength<9" ng-mouseenter="status.batchOperateBtn['hoverStatus']='move'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-show="data.getChannelDetail.HASCHILDREN==0||status.onlyCurChannel">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='move'&&data.selectedArray.length>0?'b2-1.png':'b2.png'}}" />
+            </span> 移动
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length==0" ng-click="copyDraft()" ng-if="data.btnRights['web.daishen.fuzhi']&&status.btnLength<9" ng-mouseenter="status.batchOperateBtn['hoverStatus']='copy'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='copy'&&data.selectedArray.length>0?'b3-1.png':'b3.png'}}" />
+            </span> 复制
+        </button>
+        <button class="btn btn-default btn-commen hidden-operate opacity100" ng-disabled="data.selectedArray.length==0" ng-click="quote()" ng-if="data.btnRights['web.daishen.yidong']&&status.btnLength<9" ng-mouseenter="status.batchOperateBtn['hoverStatus']='quote'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/{{status.batchOperateBtn['hoverStatus']=='quote'&&data.selectedArray.length>0?'yy-1.png':'yy.png'}}" />
+            </span> 引用
+        </button>
+        <div class="btn-group" role="group" ng-if="status.btnLength>=9">
+            <button type="button" class="btn btn-default dropdown-toggle btn-commen opacity100" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-disabled="data.selectedArray.length==0" ng-mouseenter="batchOperateBtn['hoverStatus']='more'" ng-mouseleave="batchOperateBtn['hoverStatus']=''">
+                <span class="s_icon"><img ng-src="./editingCenter/app/images/{{batchOperateBtn['hoverStatus']=='more'&&data.selectedArray.length>0?'b8-1.png':'b8.png'}}" /></span> 更多
+                <span class="pulldown_icon"></span>
+            </button>
+            <ul class="dropdown-menu edit_dropdown_menu" ng-show="data.selectedArray.length>0">
+                <li ng-if="data.btnRights['web.daishen.waifa']"><a ng-click="outSending()">邮件外发</a></li>
+                <li ng-if="data.btnRights['web.daishen.shoucang']"><a ng-click="collectDraft()">收藏</a></li>
+                <li ng-if="data.btnRights['web.daishen.yinyong']"><a ng-click="quote()">引用</a></li>
+                <li ng-if="data.btnRights['web.daishen.yidong']" ng-show="data.getChannelDetail.HASCHILDREN==0||status.onlyCurChannel"><a ng-click="moveDraft()">移动</a></li>
+                <li ng-if="data.btnRights['web.daishen.fuzhi']"><a ng-click="copyDraft()">复制</a></li>
+                <li>
+                    <a ng-click="exportDraft()">导出</a>
+                </li>
+                <li><a ng-click="printBtn()">打印</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <trs-nav-location is-all-route="isAllRoute"></trs-nav-location>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <!-- <div class="col-md-6"> -->
+    <span class="s_onlyme">只看我的</span>
+    <trs-radio ckstatus="params.isOnlyMine" ckcallback="isOnlyMine()"></trs-radio>
+    <span class="s_onlyme ml0">只看当前栏目</span>
+    <trs-radio ckstatus="params.IsCurrentChnl" ckcallback="isOnlyCurChannel()"></trs-radio>
+    <trs-single-select ng-class="{'edit_website_width':status.isESSearch}" selected-option="data.dropDown.allTypeSelected" callback="queryByDropdown('DocType',data.dropDown.allTypeSelected)" options="data.dropDown.allType"></trs-single-select>
+    <!-- <trs-single-select selected-option="data.dropDown.timeTypeSelected" callback="queryByDropdown('timeType',data.dropDown.timeTypeSelected)" ng-class="{'edit_website_width':status.isESSearch}" options="data.dropDown.timeType"></trs-single-select> -->
+    <!-- 自定义时间 -->
+    <trs-time-select selected-option="data.dropDown.timeTypeSelected" callback="queryByDropdown('timeType',data.dropDown.timeTypeSelected)" ng-class="{'edit_website_width':status.isESSearch}" options="data.dropDown.timeType" fromdate="data.fromdate" untildate="data.untildate"></trs-time-select>
+    <!-- 排序方式 -->
+    <trs-single-select ng-class="{'edit_website_width':status.isESSearch}" ng-show="status.isESSearch" selected-option="sortType" callback="queryByDropdown('', sortType.value)" options="sortTypeJsons"></trs-single-select>
+    <!-- </div>
+    <div class="col-md-6"> -->
+    <div class="input-group edit_input_group mr15">
+        <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+        <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+    </div>
+    <trs-single-select ng-class="{'edit_website_width':status.isESSearch}" selected-option="data.dropDown.websiteAllSelected" callback="queryByiWoAll()" options="data.dropDown.websiteAll" class="pull-right"></trs-single-select>
+    <!-- </div> -->
+</div>
+<div class="edit_table border_radius_5">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-check w90 txt_l">
+                    <trs-checkbox ischecked="data.items.length != 0 && data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox>
+                </th>
+                <!-- <th class="td-number">序号</th> -->
+                <th class="xcol-newspaper-id">稿件ID</th>
+                <th>标题</th>
+                <!-- <th>图示</th> -->
+                <th class="xcol-newspaper-type">类型</th>
+                <th class="xcol-newspaper-column">栏目</th>
+                <th class="xcol-newspaper-releaseBuild">操作人</th>
+                <th class="xcol-newspaper-date pointer" ng-click="timeOrder('CRTIME')" ng-show="status.isCrTime=='OPERTIME'">最后版本时间▼</th>
+                <th class="xcol-newspaper-date pointer" ng-click="timeOrder('OPERTIME')" ng-show="status.isCrTime=='CRTIME'">创建时间▼</th>
+                <!-- <th class="xcol-newspaper-words">点击量</th> -->
+                <th class="xcol-newspaper-operation">操作</th>
+                <th class="xcol-newspaper-picture">图示</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr ng-repeat="item in data.items">
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                    <span ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1"></span>
+                </td>
+                <!-- <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td> -->
+                <td class="xcol-newspaper-id" ng-bind="item.METADATAID"></td>
+                <td class="website_table_draftPublish">
+                    <img src="./editingCenter/website/images/draftPreeview.png" ng-click="draftPublish(item)" ng-if="data.btnRights['web.daishen.yulan']" title="预览">
+                    <a ui-sref="websitePreviewAll({channelid:data.id.channelid,chnldocid:item.CHNLDOCID,siteid:data.id.siteid,metadataid:item.METADATAID,platform:1,typeid:item.DOCTYPEID})" target="_blank">{{item.TITLE}}</a>
+                    <span ng-if="item.OutLinePics" class="website-title-picIcon">图</span>
+                </td>
+                <!--标题-->
+                <td ng-bind="item.DOCTYPE"></td>
+                <!--类型-->
+                <td>
+                    <a href="javascript:void(0)" title="{{item.CHNLDESC}}" ng-bind="item.CHNLDESC|trsLimitTo:20"></a>
+                </td>
+                <!--栏目-->
+                <td ng-bind="item.TRUENAME"></td>
+                <!--操作人-->
+                <td ng-bind="item.OPERTIME" ng-click="showVersionTime(item)" class="pointer" ng-show="status.isCrTime=='OPERTIME'"></td>
+                <td ng-bind="item.CRTIME" ng-click="showVersionTime(item)" class="pointer" ng-show="status.isCrTime=='CRTIME'"></td>
+                <!--流程版本时间-->
+                <!-- <td ng-bind="item.DOCSTATUSNAME"></td> -->
+                <!--状态-->
+                <!-- <td ng-bind="item.HITS"></td> -->
+                <!-- 点击量 -->
+                <td class="hidden-operate">
+                    <!--操作-->
+                    <a ng-click="isLockEdit(item)" ng-if="data.btnRights['web.daishen.bianji']" title="编辑">
+                        <img src="./editingCenter/app/images/r1.png">
+                    </a>
+                    <!-- <a href="javascript:void(0)" ng-click="directSigned(item)" ng-if="data.btnRights['web.daishen.qianfa']" title="签发">
+                        <img src="./editingCenter/app/images/r2.png"> 
+                    </a>
+                    <span class="pos-top-neg4"> 
+                   <button type="button" class="editing-bth" data-placement="bottom"   data-template-url="./editingCenter/website/pending/alertViews/linkChoose/linkChoose.html" data-auto-close="1" data-animation="am-flip-x" bs-popover ></button>
+                    </span> -->
+                </td>
+                <td class="edit-icon-td">
+                    <trs-thumb item="item" transform="editingCenterAllThumb"></trs-thumb>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        </span>
+        <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

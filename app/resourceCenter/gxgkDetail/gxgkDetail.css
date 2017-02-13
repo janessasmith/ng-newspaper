@@ -1,0 +1,77 @@
+.res-ctr-gxgk-top ul li span:nth-child(1) {
+    width: 27%;
+}
+
+.res-ctr-gxgk-top ul li span:nth-child(2) {
+    width: 71%;
+}
+
+.res-ctr-gxgk-top ul li.abstractli {
+    width: 62%;
+}
+
+.res-ctr-gxgk-top ul li.abstractli span:nth-child(1) {
+    width: 13.5%;
+    margin-right: 1%;
+}
+
+.res-ctr-gxgk-top ul li.abstractli span:nth-child(2) {
+    width: 85.5%;
+}
+
+.res-ctr-detail-wrap .prev-arrow {
+    position: fixed;
+    top: 300px;
+    width: 40px;
+    left: 40px;
+    cursor: pointer;
+}
+
+.res-ctr-detail-wrap .next-arrow {
+    position: fixed;
+    top: 300px;
+    width: 36px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.pos-rlt {
+    position: relative;
+}
+
+.pos-t-74 {
+    top: 74px;
+}
+
+.res-ctr-detail-wrap .gxgkDetails_HTMLCONTENT {
+    padding-left: 90px;
+    margin-left: 15px;
+    word-break: break-word;
+    width: 100%;
+    display: block;
+}
+
+.gxgk-attachfile{
+    width: 1150px;
+    margin:30px auto;
+}
+.gxgk-attachfile ul{
+    overflow:hidden;
+}
+.gxgk-attachfile ul li{
+    float: left;
+    margin-right: 20px;
+}
+.gxgk-attachfile ul li a{
+    display: block;
+    width: 100px;
+}
+
+.gxgk-attachfile ul li a img{
+    display: block;
+}
+
+.gxgk-attachfile ul li a span{
+    display: block;
+    word-break:break-word;
+}

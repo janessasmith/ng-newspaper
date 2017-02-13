@@ -1,0 +1,89 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <button ng-if="status.isAdministrator" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="newPress()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='newPress'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" >
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='newPress'?'b1-1.png':'b1.png'}}" /></span> 新建报纸
+        </button>
+        <button ng-if="status.isAdministrator" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="pressRank()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='pressRank'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" >
+            <span class="s_icon"><img ng-src="./manageConfig/productManageMent/images/{{status.batchOperateBtn['hoverStatus']=='pressRank'?'new1-1.png':'new1.png'}}" /></span> 报纸排序
+        </button>
+        <button class="btn btn-default btn-commen edit_right_head_btn_commen" ng-disabled="selectedArray.length<1" ng-click="batchDelete()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='batchDelete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" >
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='batchDelete'?'fg3-1.png':'fg3.png'}}" /></span> 批量删除
+        </button>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li>
+                <span>产品管理</span>
+                <span>报纸管理</span>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-6">
+        <trs-single-select selected-option="newspaperManageStateSelected" callback="queryByPaperType()" options="newspaperManageState"></trs-single-select>
+    </div>
+    <div class="col-md-6">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字" ng-model="keywords">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="searchPaper()">搜索</button>
+          </span>
+        </div>
+    </div>
+</div>
+<div class="row col-md-12">
+    <div class="edit_table">
+        <table class="table table-striped">
+            <thead>
+                <tr nowrap="nowrap">
+                    <th class="td-check">
+                        <trs-checkbox ischecked="selectedArray.length==items.length&&items.length>0" callback="selectAll()"></trs-checkbox>
+                    </th>
+                    <th class="td-number" nowrap="nowrap">序号</th>
+                    <th nowrap="nowrap">报纸名称</th>
+                    <th nowrap="nowrap">报纸简称</th>
+                    <th nowrap="nowrap">创建人</th>
+                    <th nowrap="nowrap">创建时间</th>
+                    <th nowrap="nowrap">管理</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items" ng-init="getSiteRights(item)" nowrap="nowrap">
+                    <td class="td-check">
+                        <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                    </td>
+                    <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number" nowrap="nowrap"></td>
+                    <td ng-bind="item.SITEDESC" class="pointer" ng-click="manageNewspaper(item)"></td>
+                    <td ng-bind="item.SITENAME"></td>
+                    <td ng-bind="item.TRUENAME" class="pointer" nowrap="nowrap"></td>
+                    <td ng-bind="item.CRTIME" nowrap="nowrap"></td>
+                    <td class="iwo_operate" nowrap="nowrap">
+                        <div class="iwo_operate_div_all">
+                            <div class="iwo_operate_div_2 mr5">
+                                <a ng-if="status.rights[item.SITEID].paper.zbpz" ui-sref="manageconfig.productmanage.newspaper.allocation({paper:item.SITEID})">
+                                    <img src="./manageConfig/productManageMent/images/n1.png"> 组版配置
+                                </a>
+                                <img ng-if="status.rights[item.SITEID].dieci!=undefined" src="./manageConfig/productManageMent/images/n2.png">
+                                <a ng-if="status.rights[item.SITEID].dieci!=undefined" ui-sref="manageconfig.productmanage.newspaper.newspaperOrder({paper:item.SITEID})">叠次</a>
+                                <img ng-if="status.rights[item.SITEID].caibianbanmian!=undefined" src="./manageConfig/productManageMent/images/n3.png">
+                                <a ng-if="status.rights[item.SITEID].caibianbanmian!=undefined" ng-click="goEditLayout(item)">采编版面</a>
+                            </div>
+                            <div class="iwo_operate_div_2">
+                                <img ng-if="status.rights[item.SITEID].zhaopaibanmian!=undefined" src="./manageConfig/productManageMent/images/n4.png">
+                                <a ng-if="status.rights[item.SITEID].zhaopaibanmian!=undefined" ng-click="goZPLayout(item)" ng-class="{'notcur':item.ISZHAOPAI==0}">照排版面</a>
+                                <span ng-if="item.STATUS!='0'&&status.rights[item.SITEID].paper.tingyong" ng-click="stopOrStart(item)"><img src="./manageConfig/productManageMent/images/n5.png" >
+                                <a target="_blank">启用</a></span>
+                                <span ng-if="item.STATUS=='0'&&status.rights[item.SITEID].paper.tingyong" ng-click="stopOrStart(item)"><img src="./manageConfig/productManageMent/images/n5_1.png" >
+                                <a  target="_blank" >停用</a></span>
+                                <img ng-if="status.rights[item.SITEID].paper.shanchu" src="./manageConfig/productManageMent/images/n6.png" ng-click="deleteViews(item.SITEID)">
+                                <a ng-if="status.rights[item.SITEID].paper.shanchu" target="_blank" ng-click="deleteViews(item)">删除</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div cg-busy="loadingPromise"></div>
+    </div>
+</div>

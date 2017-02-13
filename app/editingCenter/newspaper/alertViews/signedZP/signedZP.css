@@ -1,0 +1,122 @@
+.newspaper_signedZP .modal-dialog {
+    width: 408px;
+    border-radius: 5px;
+}
+
+.newspaper_signedZP .modal-backdrop.in {
+    opacity: 0;
+}
+
+.newspaper_signedZP .modal-dialog .modal-content {
+    width: 400px;
+    height: 228px;
+    background: #fff;
+}
+
+.signedZP-container {}
+
+.signedZP-container .signedZP-header {
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+
+.signedZP-container .signedZP-header p {
+    float: left;
+    margin-left: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.signedZP-container .signedZP-header img {
+    float: right;
+    margin: 12px 12px 0 0;
+    cursor: pointer;
+}
+
+.signedZP-container .signedZP-body {
+    height: 124px;
+    background: #f0f2f5;
+    text-align: center;
+    overflow: hidden;
+}
+
+.signedZP-container .signedZP-body p {
+    color: #333;
+    line-height: 34px;
+}
+.signedZP-container .signedZP-body .info{
+    overflow:hidden;
+    border-bottom:1px #ccc dashed;
+    margin-bottom: 10px;
+}
+.signedZP-container .signedZP-body .head{
+    overflow:hidden;
+}
+.signedZP-container .signedZP-body .head span{
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    line-height: 22px;
+}
+.signedZP-container .signedZP-body .head trs-checkbox{
+    margin-top: 12px;
+    float: left;
+    margin-left: 15px;
+}
+.signedZP-container .signedZP-body .head p{
+    width: 72%;
+    float: left;
+    margin-left: 0px;
+    padding-top: 4px;
+    text-align:left;
+    line-height: 34px;
+}
+.signedZP-container .signedZP-body th{
+    border:none;
+    background:#eceef0;
+    text-indent: 2em;
+    text-align: left;
+}
+.signedZP-container .signedZP-body table{
+    margin-bottom: 0px;
+}
+.signedZP-container .signedZP-body table tr td{
+    text-align: left;
+    background: #fff;
+    text-indent: 2em;
+}
+.signedZP-container .signedZP-body table tr:hover{
+    background: #fff!important;
+}
+.signedZP-container .signedZP-body p:nth-child(1) {
+    margin-top: 30px;
+}
+
+.signedZP-container .signedZP-body p:nth-child(1) span {
+    color: #ff0000;
+}
+
+.signedZP-container .signed-footer {}
+
+.signedZP-container .signed-footer button {
+    width: 80px;
+    height: 28px;
+    line-height: 28px;
+    border: none;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    font-weight: "MicsoftYahei";
+    margin-top: 12px;
+    border-radius: 4px;
+    background: #4496d2;
+}
+
+.signedZP-container .signed-footer button:nth-child(1) {
+    margin-left: 88px;
+}
+
+.signedZP-container .signed-footer button:nth-child(2) {
+    margin-left: 50px;
+}

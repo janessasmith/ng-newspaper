@@ -1,0 +1,30 @@
+[{
+    "ID": "area_001",
+    "CONTENT": "content",
+    "DICTNUM": "001",
+    "ORDERNUM": "1",
+    "TYPE": "dir",
+    "DICTNAME": "china",
+    "SECTION": "area",
+    "HASCHILDREN": "true",
+    "CHILDREN": [{
+        "ID": "area_001001",
+        "CONTENT": "shanghai",
+        "DICTNUM": "001001",
+        "ORDERNUM": "1",
+        "TYPE": "dir",
+        "DICTNAME": "shanghai",
+        "SECTION": "area",
+        "HASCHILDREN": "true",
+        "CHILDREN": [{
+            "ID": "area_001001002",
+            "CONTENT": "ThisIsContent",
+            "DICTNUM": "001001002",
+            "ORDERNUM": "2",
+            "TYPE": "file",
+            "DICTNAME": "thisIsDictName",
+            "SECTION": "area",
+            "HASCHILDREN": "false"
+        }]
+    }]
+}]

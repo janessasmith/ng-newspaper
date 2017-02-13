@@ -1,0 +1,18 @@
+<!-- <div class="timeCue_nav">
+    <tabset justified="true">
+        <tab heading="爆料监控" ui-sref="plan.timecue.monitor"></tab>
+        <tab heading="近期政策" ui-sref="plan.timecue.policy"></tab>
+        <tab heading="近期预警" ui-sref="plan.timecue.warnings"></tab>
+        <tab heading="历史今天" ui-sref="plan.timecue.history"></tab>
+        <tab heading="近期日程" ui-sref="plan.timecue.schedule"></tab>
+    </tabset>
+</div> -->
+<div class="timeCue_nav">
+    <ul class="">
+        <a ui-sref="plan.timecue.monitor" ui-sref-opts="{reload: 'plan.timecue.monitor'}"><li class="timeCue_nav_state" ng-class="{'timeCue_nav_state_active':timeCueNavTab['monitor']}">爆料监控</li></a>
+        <a ui-sref="plan.timecue.policy" ui-sref-opts="{reload: 'plan.timecue.policy'}"><li class="timeCue_nav_state" ng-class="{'timeCue_nav_state_active':timeCueNavTab['policy']}">近期政策</li></a>
+        <a ui-sref="plan.timecue.warnings" ui-sref-opts="{reload: 'plan.timecue.warnings'}"><li class="timeCue_nav_state" ng-class="{'timeCue_nav_state_active':timeCueNavTab['warnings']}">近期预警</li></a>
+        <a ui-sref="plan.timecue.history" ui-sref-opts="{reload: 'plan.timecue.history'}"><li class="timeCue_nav_state" ng-class="{'timeCue_nav_state_active':timeCueNavTab['history']}">历史今天</li></a>
+        <a ui-sref="plan.timecue.schedule" ui-sref-opts="{reload: 'plan.timecue.schedule'}"><li class="timeCue_nav_state" ng-class="{'timeCue_nav_state_active':timeCueNavTab['schedule']}">近期日程</li></a>
+    </ul>
+</div>

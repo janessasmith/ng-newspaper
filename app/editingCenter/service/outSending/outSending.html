@@ -1,0 +1,38 @@
+<div class="man_produ_modify">
+    <div class="man_produ_modify_head">
+        <p>邮件外发</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+    </div>
+    <div class="edit_outSending_main">
+        <div class="outSending_top_btn_group">
+            <div ng-show="!isEdit" ng-click="enterEdit()">通讯录</div>
+            <div ng-show="isEdit" ng-click="quitEdit()">返回</div>
+            <div ng-show="isEdit" ng-click="addNewEmail()">增加</div>
+        </div>
+        <div class="outSending_middle_desc">
+            <i></i>个人通讯录
+        </div>
+        <div class="outSending_middle_main">
+            <table>
+                <tbody>
+                    <tr ng-repeat="item in emailList">
+                        <td width="15%"  class="text-left">
+                            <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)" ng-show="!isEdit"></trs-checkbox>
+                            <img src="./editingCenter/newspaper/images/i1.png" ng-show="isEdit" ng-click="deleteEmail(item)"/>
+                        </td>
+                        <td  width="40%" class="text-left" ng-bind="item.EMAIL" title="{{item.EMAIL}}">
+                        </td>
+                        <td  width="45%" class="text-left pl10" ng-bind="item.EMAILDESC" title="{{item.EMAILDESC}}">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="man_produ_modify_footer">
+            <button class="news-role-btn right btn_cancel" ng-click="cancel()">取消</button>
+            <button class="news-role-btn man_produ_modify_footer_cancel right btn_confirm" ng-click="editConfirm()" ng-show="isEdit">确定</button>
+            <button class="news-role-btn man_produ_modify_footer_cancel right btn_confirm" ng-click="outSendingConfirm()" ng-show="!isEdit">确定</button>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

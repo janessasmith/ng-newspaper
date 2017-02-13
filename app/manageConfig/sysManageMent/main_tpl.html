@@ -1,0 +1,92 @@
+<div class="row manageConfig-sysMgr">
+    <div class="col-sm-2 manage-sys-left">
+        <div class="manage-system-left">
+            <div ng-if="configureAccess.system.email" class="system-list">
+                <div class="system-title" ng-click="setSelectedOption('emailset','邮件设置')">
+                    <a ui-sref="manageconfig.sysmanage.emailconfig" ng-class="{'activefocus':'emailset'==optionSelected}">邮件设置</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.sms" class="system-list" ng-click="setSelectedOption('messagegatewayset','短信网关设置')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.smsgatewayconfig" ng-class="{'activefocus':'messagegatewayset'==optionSelected}">短信网关设置</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.stopword" class="system-list" ng-click="setSelectedOption('sensitivewordsset','敏感词管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.sensitiveword" ng-class="{'activefocus':'sensitivewordsset'==optionSelected}">敏感词设置</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.source" class="system-list" ng-click="setSelectedOption('sourcemanagement','来源管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.sourcemanage" ng-class="{'activefocus':'sourcemanagement'==optionSelected}">来源管理</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.schedule" class="system-list" ng-click="setSelectedOption('scheduling','计划调度类型管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.plandispatch" ng-class="{'activefocus':'scheduling'==optionSelected}">计划调度</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.hotword" class="system-list" ng-click="setSelectedOption('hotwordmanagement','热词分类管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.hotwordsmanage" ng-class="{'activefocus':'hotwordmanagement'==optionSelected}">热词管理</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.status" class="system-list" ng-click="setSelectedOption('statemanagement','状态管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.statusmanage" ng-class="{'activefocus':'statemanagement'==optionSelected}">状态管理</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.pubishparser" class="system-list" ng-click="setSelectedOption('releasecomponentmanagement','发布组件管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.releasecomponentmanage" ng-class="{'activefocus':'releasecomponentmanagement'==optionSelected}">发布组件管理</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.smstemplate" class="system-list" ng-click="setSelectedOption('SMStemplatesettings','短信模板管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.smstempconfig" ng-class="{'activefocus':'SMStemplatesettings'==optionSelected}">短信模板设置</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.emailtemplate" class="system-list" ng-click="setSelectedOption('emailmoduleset','邮件模板管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.emailtempconfig" ng-class="{'activefocus':'emailmoduleset'==optionSelected}">邮件模板设置</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.others" class="system-list" ng-click="setSelectedOption('otherset','其他配置')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.otherconfiguration" ng-class="{'activefocus':'otherset'==optionSelected}">其他配置</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.field" class="system-list" ng-click="setSelectedOption('systemfield','系统字段')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.systemfield" ng-class="{'activefocus':'systemfield'==optionSelected}">系统字段</a>
+                </div>
+            </div>
+            <div ng-if="configureAccess.system.classify" class="system-list" ng-click="setSelectedOption('classifieddictionary','分类词典')">
+                <div class="system-title">
+                    <a href="" ng-class="{'activefocus':'classifieddictionary'==optionSelected}" ui-sref="manageconfig.sysmanage.classifieddictionary">分类词典</a>
+                </div>
+            </div>
+            <div class="system-list" ng-if="configureAccess.system.classify" ng-click="setSelectedOption('soucenclassifymgr','资源中心分类管理')">
+                <div class="system-title">
+                    <a ui-sref="manageconfig.sysmanage.soucenclassifymgr" ng-class="{'activefocus':'soucenclassifymgr'==optionSelected}">资源中心分类管理</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-10 manage-main">
+        <div class="row" ng-show="optionSelected != 'soucenclassifymgr'">
+            <div class="col-sm-12 manage-main-left">
+                <div class="manage_right_head">
+                    <span class="title-name" ng-bind="titleName"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 manage-main-left" style="padding-right:26px;">
+                <div ui-view="main">
+                </div>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<form novalidate name="infoForm" >
+    <div class="toBeCompiled-review-container">
+        <div class="toBeCompiled-review-head">
+            <p ng-bind="title"></p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+        </div>
+        <div class="toBeCompiled-review-body pl0 invalidate-input-box {{infoForm.$invalid&&infoForm.$dirty?'has-error':''}}">
+            <textarea placeholder='{{placeholder}}' name="content" ng-model="content"  maxlength-error-message="长度不能超过300个字符！" validator="maxlength=300" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" class="form-control textarea_width_472"></textarea>
+        </div>
+        <div class="toBeCompiled-review-footer">
+            <button class="new-role-btn ml343 btn_confirm" ng-click="confirm()">确定</button>
+            <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,133 @@
+.myZone-main {
+    width: 100%;
+    min-height: 1100px;
+}
+
+.myZone-main .manuscript {
+    float: left;
+    width: 49%;
+    min-width: 660px;
+    background: #f4f4f4;
+}
+
+
+/*.myZone-main .myZone-my-draft-library {*/
+
+
+/*margin-top: 15px;*/
+
+
+/*}*/
+
+.myZone-main .myZone-my-draft-library.manuscript .manuscript-head {
+    height: 50px;
+    border: 1px solid #ddd;
+    border-bottom: 7px solid #e5e5e5;
+    background: #f1f1f1;
+}
+
+.myZone-main .myZone-my-draft-library.manuscript .manuscript-content {
+    margin: 10px auto 5px auto;
+    width: 98%;
+    border: 1px solid #C7C7C7;
+    background: #fff;
+}
+
+.myZone-main .manuscript .manuscript-content.pb_10 {
+    padding-bottom: 10px;
+}
+
+.myZone-main .manuscript .manuscript-content.pb_15 {
+    padding-bottom: 15px;
+}
+
+.myZone-main .manuscript .manuscript-content.pb_20 {
+    padding-bottom: 20px;
+}
+
+.myZone-main .manuscript .manuscript-content .nav-tabs {
+    padding-left: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.myZone-main .manuscript .manuscript-content .nav-tabs.nav-justified > li {
+    width: 12%;
+    height: 44px;
+}
+
+.myZone-main .manuscript .manuscript-content .nav-tabs.nav-justified > li > a {
+    margin: 10px 10px 0 0;
+    height: 27px;
+    line-height: 27px;
+    color: #000;
+    border: 1px solid #C7C7C7;
+    background-color: #EFF0F4;
+    font-family: "黑体";
+    font-size: 16px;
+}
+
+.myZone-main .manuscript .manuscript-content .nav-tabs > li.active > a,
+.myZone-main .manuscript .manuscript-content .nav-tabs > li.active > a:hover,
+.myZone-main .manuscript .manuscript-content .nav-tabs > li.active > a:focus {
+    height: 34px;
+    color: #000;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+.myZone-main .manuscript .manuscript-content .nav > li > a {
+    padding: 0px;
+}
+
+.myZone-main .myZone-my-draft-library.manuscript .manuscript-content .table > thead {
+    color: #fff;
+    background-color: #4496D2;
+}
+
+.myZone-main .myZone-my-draft-library.manuscript .manuscript-content .table > thead > tr > th,
+.myZone-main .myZone-my-draft-library.manuscript .manuscript-content .table > tbody > tr > td {
+    border-top: none;
+    border-bottom: none;
+}
+
+.myZone-main .myZone-my-draft-library.manuscript .manuscript-content .table > tbody > tr > td.td_50 {
+    text-align: left;
+}
+
+.myZone-main .myZone-my-draft-library.manuscript .manuscript-content .table > tbody > tr > td.td_50 a {
+    padding-left: 20px;
+    background: url("./myZone/images/my1.png") no-repeat 10px center;
+}
+
+
+/*.myZone-main .myZone-my-draft-library .calendar {*/
+
+
+/*float: right;*/
+
+
+/*width: 49%;*/
+
+
+/*}*/
+
+.myzone-left-list .iwo_accordion .panel-group {
+    background: #3f5974;
+}
+
+/*.myzone-personalInfo-left .myzone-left-list {
+    height: 100%;
+    background: #466385;
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+}
+
+.myzone-personalInfo-left {
+    overflow: hidden;
+}
+
+*/
+/*.myzone-personalInfo-index .editing-left-fixed {
+    overflow: hidden;
+}
+*/

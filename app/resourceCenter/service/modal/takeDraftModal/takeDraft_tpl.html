@@ -1,0 +1,142 @@
+<div class="myManuSubmit">
+    <div class="submit">
+        <div class="header">
+            <p>取稿</p>
+            <img ng-click="close()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="content">
+            <ul class="nav gray_bg">
+                <li ng-repeat="media in status.mediasArray" ng-bind="media.mediaName" ng-click="setCurrMedia(media)" ng-class="{'active':status.selectedMedia==media}" ng-if="status.accessAuthority[media.mediaValue]==true"></li>
+            </ul>
+            <div class="con">
+                <div class="main_container main_container_iwo" ng-show="status.selectedMedia.mediaValue=='iwo'">
+                    <trs-single-radio label="取稿到已收稿库" ischecked="data.result.toMy" callback="changeRadioStatus()"></trs-single-radio>
+                </div>
+                <div class="main_container main_container_newspaper" ng-show="status.selectedMedia.mediaValue=='newspaper'&&status.accessAuthority.newspaper==true">
+                    <div class="take_draft_top_date">
+                        见报日期
+                        <input type="text" size="10" class="form-control timepicker" ng-model="data.newspaper.PaperPubDate" placeholder="Date" data-autoclose="1" data-min-date="today" bs-datepicker date-format="yyyy-MM-dd" readonly="readonly">
+                    </div>
+                    <div class="take_draft_list_group">
+                        <div class="take_draft_media_list">
+                            <div cg-busy="loadingPromise"></div>
+                            <p>媒体列表</p>
+                            <ul>
+                                <li ng-repeat="item in data.newspaper.paper.items" ng-bind="item.SITEDESC" ng-click="queryNewspaperDieci(item)" ng-class="{'active':item==data.newspaper.paper.selectedItem}"></li>
+                            </ul>
+                        </div>
+                        <div class="take_draft_dieCi_list">
+                            <p>叠次列表</p>
+                            <ul>
+                                <li ng-repeat="item in data.newspaper.paper.selectedItem.CHILDREN" ng-bind="item.CHNLDESC" ng-click="queryNewspaperBanmian(item)" ng-class="{'active':item==data.newspaper.dieci.selectedItem}"></li>
+                            </ul>
+                        </div>
+                        <div class="take_draft_caiBian_list">
+                            <p>采编版面列表</p>
+                            <ul>
+                                <li ng-repeat="item in data.newspaper.dieci.selectedItem.CHILDREN" ng-bind="item.CHNLDESC" ng-click="setNewspaperBanmianStatus(item)" ng-class="{'active':(item==data.newspaper.banmian.selectedItem)&&determineItemInSelectedChnl(data.newspaper.paper.selectedItem.SITEID)}"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_container main_container_website" ng-show="status.selectedMedia.mediaValue=='website'&&status.accessAuthority.website==true">
+                    <div class="take_draft_website_list">
+                        <p>网站列表：</p>
+                        <div>
+                            <div cg-busy="loadingWebsites"></div>
+                            <ul>
+                                <li ng-repeat='item in data.website.items' ng-bind="item.SITEDESC | trsLimitTo:10" title="{{item.SITEDESC}}" ng-click="setSelectedWebsite(item)" ng-class="{'active':item== data.website.selectedItem}"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="take_draft_channel_tree">
+                        <div class="h33 suggestion">
+                            频道检索：
+                            <input type="text" placeholder="请输入关键词" ng-model="data.webChannelFilter" class="form-control" bs-options="state as state.SUGGESTION for state in getWebSuggestions($viewValue)" limit="30" bs-typeahead/>
+                        </div>
+                        <!-- <p>栏目树：</p> -->
+                        <div>
+                            <treecontrol selected-node="data.website.selectedNode" expanded-nodes="webExpandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="data.website.selectedItem.TREE.CHILDREN" options="websiteTreeOptions" on-selection="addSiteToSelectedChnl(node,'Web')">
+                                <trs-single-radio label="" title="" ng-if="node.CHANNELID != undefined" callback="data.website.selectedNode=node" ischecked="data.website.selectedNode == node"></trs-single-radio>
+                                <span ng-bind="node.SITEDESC||node.CHNLDESC"></span>
+                            </treecontrol>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_container main_container_app" ng-show="status.selectedMedia.mediaValue=='app'&&status.accessAuthority.app==true">
+                    <div class="take_draft_website_list">
+                        <p>APP列表：</p>
+                        <div>
+                            <ul>
+                                <li ng-class="{'active':data.app.selectedItem==item}" ng-repeat="item in data.app.items" ng-bind="item.SITEDESC|truncate:10:'...'" ng-click="setAppSelectedItem(item)"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="take_draft_channel_tree">
+                        <div class="h33 suggestion">
+                            频道检索：
+                            <input type="text" placeholder="请输入关键词" ng-model="data.appChannelFilter" class="form-control" bs-options="state as state.SUGGESTION for state in getAppSuggestions($viewValue)" limit="30" bs-typeahead/>
+                        </div>
+                       <!--  <p>栏目树：</p> -->
+                        <div>
+                            <div>
+                                <treecontrol selected-node="data.app.selectedNode" expanded-nodes="webExpandedTest" class="tree-light" on-node-toggle="showToggle(node)" tree-model="data.app.selectedItem.TREE.CHILDREN" options="websiteTreeOptions" on-selection="addSiteToSelectedChnl(node,'App')">
+                                    <!--   <span ng-bind='node.NAME ? node.NAME : node.ZONE_NAME' ng-if="node.ZONE_COLUMNS != undefined"></span> -->
+                                    <trs-single-radio label="{{node.CHNLDESC}}" callback="data.app.selectedNode=node" ischecked="(node == data.app.selectedNode)"></trs-single-radio>
+                                </treecontrol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div lass="main_container main_container_weixin" ng-show="status.selectedMedia.mediaValue=='weixin'&&status.accessAuthority.weixin==true">
+                    <div class="take_draft_weixin_list">
+                        <div class="header">
+                            <!-- <p>微信列表：</p> -->
+                            <div class="h33 suggestion">
+                                <p class="left">微信检索：</p>
+                                <input type="text" placeholder="请输入关键词" ng-model="data.weixinFilter" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="con">
+                            <div cg-busy="loadingWebsites"></div>
+                            <ul>
+                                <li ng-repeat='item in data.weixin.items|fuzzy:data.weixinFilter' ng-bind="item.CHNLDESC | trsLimitTo:10" title="{{item.CHNLDESC}}" ng-click="setSelectedWeixin(item)" ng-class="{'active':item== data.weixin.selectedItem}"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div lass="main_container main_container_weixin" ng-show="status.selectedMedia.mediaValue=='weibo'&&status.accessAuthority.weibo==true">
+                    <div class="take_draft_weixin_list">
+                        <div class="header">
+                            <!-- <p>微信列表：</p> -->
+                            <div class="h33 suggestion">
+                                <p class="left">微博检索：</p>
+                                <input type="text" placeholder="请输入关键词" ng-model="data.weiboFilter" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="con">
+                            <div cg-busy="loadingWebsites"></div>
+                            <ul>
+                                <li ng-repeat='item in data.weibo.items|fuzzy:data.weiboFilter' ng-bind="item.ACCOUNTNAME | trsLimitTo:10" title="{{item.ACCOUNTNAME}}" ng-click="setSelectedWeibo(item)" ng-class="{'active':item== data.weibo.selectedItem}"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m_white_panel">
+                <ul class="m_edit_labels">
+                    <li ng-repeat="item in data.selectedChannel">
+                        {{item.value}}
+                        <img src="./editingCenter/app/images/b15.png" ng-click="removeIwoChanel($index)" />
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+                <button class="btn btn-primary btn_confirm" ng-click="editLater()" ng-disabled="data.selectedChannel.length===0">确定</button>
+                <button class="btn btn-primary btn_confirm" ng-click="editNow()" ng-if="data.isOnlyOne&&data.selectedChannel.length==1&&data.selectedChannel[0].type!='Weibo'">直接编辑</button>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

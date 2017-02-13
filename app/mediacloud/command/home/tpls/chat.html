@@ -1,0 +1,171 @@
+<div class="gt-deal-box" style="display:none">
+    <div class="jz-ls-bk lf" style="margin-right: 10px;float: right;">
+        <div class="tx-db-top">
+            <ul>
+                <li checked="dp-tx-cur">
+                    <a href="javascript:;" class="dp-db-xx" >待办消息</a>
+                </li>
+                <li checked="dp-tx-cur" class="dp-tx-cur">
+                    <a href="javascript:;" class="dp-js-tx">即时通讯</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tx-db-deal">
+            <!--待办消息-->
+            <div class="dp-tx-deal db-ym" style="display:none; ">
+                <div class="jz-ls-div">
+                    <div class="jz-search-box">
+                        <input type="text" ng-model="title">
+                        <a href="javascript:;" class="search-btn rt" ng-click="getdbUserList(title)"></a>
+                    </div>
+                    <div class="js-tx-ls">
+                        <div class="jz-ls-deal">
+                            <a class="th-deal-bk pl20" move="db-bk" ng-repeat="dbUser in dbUsers">
+                                <div class="th-deal-pc lf">
+                                    <img ng-src="{{dbUser.userImg}}">
+                                </div>
+                                <div class="th-deal-sp">
+                                    <p class="sp-name">
+                                        <span>{{dbUser.userName}}</span>
+                                        <span class="db-dt-sp">剩余{{dbUser.ONLYDAY}}天</span>
+                                    </p>
+                                    <p class="sp-sta" ui-sref="command.blacklog_details({dictateId:dbUser.DICTATEID})">{{dbUser.TITLE}}</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--即时通讯-->
+            <div class="dp-tx-deal tx-ym">
+                <div class="js-tx-tb" ng-controller="toolbarCtrl">
+                    <ul>
+                        <li><a href="javascript:;" class="js-tx-ls "></a></li>
+                        <li><a href="javascript:;" class="js-tx-hh js-tx-cur"></a></li>
+                        <li class="no-br" ng-click="open_cp('1000',$event);">
+                            <a href="javascript:;" class="js-tx-tj"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="jz-ls-div">
+                    <div class="jz-search-box">
+                        <input type="text" ng-keyup="searchChatUsert($event)" ng-model="searchname">
+                        <a href ng-click="searchChatUser();" class="searuser search-btn rt"></a>
+                    </div>
+                    <div class="js-tx-ls">
+                        <!-- 搜索列表-->
+                        <div class="jz-ls-deal ls-ss" >
+                         <div ng-repeat="serName in SerNames" style="border-bottom:1px solid #e4e8ee">
+                            <a href ng-click="openMessage(serName.userid,1);" class="th-deal-bk pl20">
+                            <div class="th-deal-pc lf">
+                                <img src="{{serName.headImg}}">
+                            </div>
+                            <div class="th-deal-sp">
+                                <p class="sp-name">{{serName.userName}}</p>
+                                <p class="sp-sta">{{serName.job}}</p>
+                            </div>
+                            </a>
+                        </div> 
+                        </div>
+                        <!--历史消息-->
+                        <div class="jz-ls-deal ls-xx" style="display: none;">
+                          
+                        </div>
+                        <!--沟通分组-->
+                        <div class="jz-ls-deal gt-fz">
+                            <!--组织机构-->
+                            <div class="ls-ft-deal">
+                                <div class="ls-ft-tit" open-menu>
+                                    <label>组织机构</label>
+                                    <span class="ft-op" style="display: none;"></span>
+                                    <span class="ft-cl"></span>
+                                </div>
+                                <div class="ls-se-deal menu-ml" style="display: none;">
+                                <div class="tree_div" ng-controller="Light">
+                                    <treecontrol class="tree-light"
+                                     tree-model="treedata"
+                                     on-selection="showSelected(node)">
+                                        <a href="javascript:void(0);" ng-hide="node.type==1" class=" tree_a th-deal-bk" 
+                                        ng-click="openMessage(node.roleId,1);" >
+                                            <div class="th-deal-pc lf">
+                                                <img ng-src="{{node.headImg}}">
+                                            </div>
+                                            <div class="th-deal-sp">
+                                                <p class="sp-name">{{node.roleName}}</p>
+                                                <p class="sp-sta">{{node.job}}</p>
+                                            </div>
+                                        </a>
+                                        <a ng-show="node.type==1" class="tree_title">
+                                            {{node.roleName}}
+                                        </a>  
+                                    </treecontrol>
+                                </div>
+                                     <!-- <div
+                                          data-angular-treeview="true"
+                                          data-tree-id="mytree"
+                                          data-tree-model="txUsers"
+                                          data-node-id="roleId"
+                                          data-node-img="headImg"
+                                          data-node-label="roleName"
+                                          data-node-type="type"
+                                          data-node-job="job"
+                                          data-node-children="children" >
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!--领域-->
+                            <div class="ls-ft-deal">
+                                <div class="ls-ft-tit" open-menu>
+                                    <label>领域</label>
+                                    <span class="ft-op" style="display: none;"></span>
+                                    <span class="ft-cl"></span>
+                                </div>
+                                <div class="ls-se-deal" style="display: none;">
+                                    <div ng-repeat="lyUser in lyUsers">
+                                        <div class="ls-se-tit" ly-menu-open>
+                                            <span class="se-op" style="display: none;"></span>
+                                            <span class="se-cl"></span>
+                                            <label>{{lyUser.fieldname}}</label>
+                                        </div>
+                                        <div class="ls-th-deal" style="display: none;">
+                                            <a href="javascript:void(0);" class="th-deal-bk" ng-repeat="member in lyUser.members" ng-click="openMessage(member.userId,1);">
+                                                <div class="th-deal-pc lf">
+                                                    <img ng-src="{{member.headImg}}">
+                                                </div>
+                                                <div class="th-deal-sp">
+                                                    <p class="sp-name">{{member.userName}}</p>
+                                                    <p class="sp-sta">{{member.job}}</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--自定义分组-->
+                            <div class="ls-ft-deal">
+                                <div class="ls-ft-tit" open-menu>
+                                    <label>指挥调度</label>
+                                    <span class="ft-op" style="display: none;"></span>
+                                    <span class="ft-cl"></span>
+                                </div>
+                                <div class="ls-se-deal" style="display: none;">
+                                    <div class="df-fz-bk" ng-repeat="fzUser in fzUsers" ng-click="openMessage(fzUser.groupid,2);">
+                                        <img src="common/images/dp-main-icon123.png"/>
+                                        <div class="df-fz-rt">
+                                            <div class="fz-rt-name"><p>
+                                                {{fzUser.groupname}}<span>({{fzUser.memberscounts}})</span>
+                                            </p>
+                                                <!-- <span class="ct-dt">12:20</span> -->
+                                            </div>
+                                            <!-- <p class="fz-nr">戴佳:重报指挥调度重报指挥调度重报指挥调度重报指挥调度</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

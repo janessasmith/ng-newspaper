@@ -1,0 +1,454 @@
+<form name="newsForm" novalidate>
+    <div class="row_news websiteOrIwo_timeLine_head_row_news plr20  pb46">
+        <ul class="subject-tab">
+            <li>
+                <a du-smooth-scroll du-scrollspy offset="40" duration="2000" href="#section-1">稿件信息</a>
+            </li>
+            <li>
+                <a du-smooth-scroll du-scrollspy offset="60" duration="2000" href="#section-2">属性信息</a>
+            </li>
+            <li>
+                <a du-smooth-scroll du-scrollspy offset="60" duration="2000" href="#section-3">发稿单</a>
+            </li>
+            <li ng-if="status.hasTimeline">
+                <a du-smooth-scroll du-scrollspy duration="2000" offset="60" href="#section-4">流程版本</a>
+            </li>
+        </ul>
+        <!--稿件信息开始-->
+        <div class="web-tobecompiled-news" id="section-1">
+            <div class="ht43"></div>
+            <!--禁止form回车触发button请勿删除-->
+            <button style="display:none"></button>
+            <div class="edit-news-title" style="margin:0 15px;">
+                稿件信息
+            </div>
+            <div class="col-md-12 mtb15 invalidate-input-box">
+                <p class="website-docinfo-tit">文章肩题：</p>
+                <input type="text" class="form-control md_lng w640 mr16 fs14 ml8 " ng-model="list.LEADTITLE" name="articleTitle" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200" ng-mouseenter="isShowTipsT=true" ng-mouseleave="isShowTips=falseT" is-show-tips="isShowTipsT">
+            </div>
+            <div class="col-md-12  mb15 invalidate-input-box web-tobecompiled-news-tit {{newsForm.Title.$invalid?'has-error':''}}">
+                <p class="website-docinfo-tit">
+                    <!-- <i class="web-toBeCompiled-star">*</i> -->标题：</p>
+                <textarea class="edit-news-textare-h70 form-control md_lng w640 mr16 fs14 ml8" name="Title" ng-model="list.TITLE" placeholder="请输入标题" maxlength-error-message="长度不能超过200个字数！" validator="maxlength=200" ng-style="{color:list.TITLECOLOR}" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA"></textarea>
+                <trs-color-picker col-obj="list.TITLECOLOR" class="color_pos"></trs-color-picker>
+                <img class="timepicker-img " src="./editingCenter/website/images/images/w31.png" alt="" /> 已输入
+                <trs-word-num num-obj="{{list.TITLE}}" class="font_red"></trs-word-num>
+                字数
+                <i class="manuinfo-hide" ng-click="subTitleHide()" ng-show="status.hideOrMoreText">隐藏</i>
+                <i class="manuinfo-hide" ng-click="subTitleShow()" ng-show="!status.hideOrMoreText">更多</i>
+            </div>
+            <div class="col-md-12 mb15 invalidate-input-box {{newsForm.indexTitle.$invalid&&newsForm.indexTitle.$dirty?'has-error':''}}" ng-show="status.isSubTitleShow">
+                <p class="website-docinfo-tit">首页标题：</p>
+                <input type="text" class="left form-control md_lng w640 mr16 fs14 ml8" ng-model="list.HOMETITLE" name="indexTitle" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" is-show-tips="isShowTipsB">
+                <div class="isORINGIN left" ng-if="status.chnldocid">
+                    <!-- 是否原创: -->
+                    <!-- <img class="edit_wOriginal" ng-if="list.ORIGINAL === '0'" src="./editingCenter/iWo/images/or.png"> -->
+                    <p class="edit_wOriginal_p" ng-if="list.ORIGINAL === '1'">原创：已声明</p>
+                    <input type="text" style="display:none" name="isOriginal" ng-model="list.ORIGINAL" />
+                </div>
+            </div>
+            <!--   <div class="col-md-12 mb15 invalidate-input-box" ng-show="status.isSubTitleShow">
+                <p class="website-docinfo-tit">移动标题：</p>
+                <input type="text" class="form-control md_lng w640 mr16 fs14 ml8" ng-model="list.MOVETITLE" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200,spechar" name="moveTitle" ng-mouseenter="isShowTipsC=true" ng-mouseleave="isShowTipsC=false" is-show-tips="isShowTipsC">
+            </div> -->
+            <div class="col-md-12 mb15 invalidate-input-box">
+                <p class="website-docinfo-tit">文章副题：</p>
+                <input type="text" class="form-control md_lng w640 mr16 fs14 ml8" ng-model="list.SUBTITLE" name="articleSubTitle" maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200" ng-mouseenter="isShowTipsR=true" ng-mouseleave="isShowTips=falseR" is-show-tips="isShowTipsR">
+            </div>
+            <div class="clear"></div>
+            <div class="m_box_item website-content-valid-error">
+                <div class="invalidate-input-box">
+                    <div class="bigFaceDetail col-md-6 col-sm-6 bigFace">
+                        <div class="bigFaceBorder">
+                            <trs-big-face rel-el=".bigFaceDetailLeft"></trs-big-face>
+                        </div>
+                    </div>
+                    <div ng-mouseenter="isShowTips_CONTENT=true" ng-mouseleave="isShowTips_CONTENT=false" class="bigFaceDetailLeft col-md-9 col-sm-8 mc-padding-horizontal-0 {{newsForm.content.$invalid?'content-error':''}}">
+                        <!--未绑定-->
+                        <ueditorLocation>
+                        </ueditorLocation>
+                    </div>
+                    <div class="col-md-3 col-sm-4 bigFaceDetailRigth">
+                        <support-creation content="status.supportk.content"></support-creation>
+                    </div>
+                </div>
+                <input type="text" class="ueditorReplace" is-show-tips="isShowTips_CONTENT" validator="required" name="content" ng-model="list.HTMLCONTENT" />
+            </div>
+            <div class="more-content row">
+                <div class="col-sm-1">
+                    <p>内容扩展</p>
+                </div>
+                <div class="col-sm-11 mlNeg15">
+                    <img src="./editingCenter/website/images/images/w32.png" alt="" ng-click="contentExpansion()" />
+                </div>
+            </div>
+        </div>
+        <!--稿件信息结束-->
+        <!--属性信息开始-->
+        <div class="mt15" id="section-2">
+            <div class="edit-news-title">
+                属性信息
+            </div>
+            <div class="m_box bg-fafafa">
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">栏目：</div>
+                    <div class="col-sm-11">
+                        <img src="./editingCenter/website/images/images/w29.png" alt="" ng-click="chooseChannel()" class="channel-choose-icon" ng-class="{'cursorDefault':status.position==2}" />
+                        <!-- <ul class="channel-choose-ul">
+                            <li ng-repeat="channel in channels">
+                                {{channlael.channelName}}
+                            </li>
+                        </ul> -->
+                        <p ng-bind="CHANNEL" class="channel-choose-content pointer" ng-click="chooseChannel()" ng-class="{'cursorDefault':status.position==2}"></p>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">专题设置：</div>
+                    <div class="col-sm-11">
+                        <button ng-click="chooseTag()" class="iwo_get_keywords_btn">选择标签</button>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">模版设置：</div>
+                    <div class="col-sm-11">
+                        <trs-single-select class="website-newDoc-templateDropDown" selected-option="list.TEMPNAME" options="templateJson" callback="websiteTemplateFn()"></trs-single-select>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">原标题：</div>
+                    <div class="col-sm-11 invalidate-input-box">
+                        <input class="form-control w732" type="text" ng-model="list.ORIGINALTITLE" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50" name="OriginalName" ng-mouseenter="isShowTipsD=true" ng-mouseleave="isShowTipsD=false" is-show-tips="isShowTipsD">
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">原地址：</div>
+                    <div class="col-sm-11 invalidate-input-box">
+                        <input class="form-control w732" type="text" ng-model="list.ORIGINALADDRESS" validator="maxlength=500,url" name="OriginalAdd" ng-mouseenter="isShowTipsE=true" ng-mouseleave="isShowTipsE=false" is-show-tips="isShowTipsE">
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">稿源：</div>
+                    <div class="col-sm-11 suggestion">
+                        <input placeholder="请查询稿源" type="text" watch-options='true' ng-model="list.DOCSOURCENAME" bs-options="state.SRCNAME for state in getNewSources($viewValue)" bs-typeahead class="form-control draftSource w352" limit="30" min-length="0">
+                        <!-- <input class="form-control w357 pull-left mr20" type="text" ng-model="SrcName" placeholder="新增稿源,点击增加">
+                        <button class="pull-left mr20 news-add-btn" ng-click="saveReleaseSource()">增加</button> -->
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">作者：</div>
+                    <div class="col-sm-11 invalidate-input-box">
+                        <input class="form-control w613" type="text" ng-model="list.AUTHOR" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50" name="author" ng-mouseenter="isShowTipsF=true" ng-mouseleave="isShowTipsF=false" is-show-tips="isShowTipsF">
+                    </div>
+                </div>
+                <div class="m_box_item ">
+                    <div class="col-sm-1 txt_r ">稿件归属人：</div>
+                    <div class="col-sm-11 invalidate-input-box ">
+                        <button ng-click="chooseAscription()" class="iwo_get_keywords_btn">选择归属人</button>
+                    </div>
+                </div>
+                <!--   <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">标签：</div>
+                    <div class="col-sm-11 invalidate-input-box">
+                        <input class="form-control w613" type="text" ng-model="list.ATTRIBUTIONLABEL" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,spechar" name="attributionlabel" ng-mouseenter="isShowTipsF=true" ng-mouseleave="isShowTipsF=false" is-show-tips="isShowTipsF">
+                    </div>
+                </div> -->
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">责任编辑：</div>
+                    <div class="col-sm-11 invalidate-input-box">
+                        <input class="form-control w613" type="text" ng-model="list.EDITORTRUENAME" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50" name="flowEdit" ng-mouseenter="isShowTipsI=true" ng-mouseleave="isShowTipsI=false" is-show-tips="isShowTipsI">
+                    </div>
+                </div>
+                <div class="subject-list-style mt0 mb10">
+                    <div class="subject-item iwonews-item">
+                        <div class="col-md-1 pdfix">
+                            <div class="txt-style">关键词：</div>
+                        </div>
+                        <div class="col-md-11 website-news-keyword website-keywords-input-lengthen">
+                            <span class="errorTips" ng-show="isShowKeywordTips"><p class="validation-invalid">{{keywordsTips}}</p><i></i></span>
+                            <tags-input ng-model="data.KEYWORDS" text="KEYWORDTEXT" add-on-space="true" add-on-enter="false" add-on-blur="true" ng-mouseenter="enter()" ng-mouseleave="leave()" add-on-comma="false" add-on-paste="true" paste-split-pattern="[;]" replace-spaces-with-dashes="false" enable-editing-last-tag="true" spellcheck="false" display-property="name" template="tag-template" min-length="1" max-length="20" placeholder="请输入关键词，以空格完成输入" allowed-tags-pattern="" on-invalid-tag="invalidTag($tag)" on-tag-adding="checkTag($tag)">
+                            </tags-input>
+                            <!-- <button ng-click="getKeywordsOrAbstract('keywords')" class="iwo-get-keywords iwo_get_keywords_btn">提取关键词</button>
+                            <button ng-click="clearAllKeywords()" class="iwo-get-keywords iwo_get_keywords_btn">清除所有关键词</button> -->
+                            <script type="text/ng-template" id="tag-template">
+                                <div style="float: left; padding-left: 2px">
+                                    <span>{{$getDisplayText()}}</span>
+                                    <a class="remove-button" ng-click="$removeTag()">&times;</a>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">摘要：</div>
+                    <div class="col-sm-7 invalidate-input-box {{newsForm.ConAbstract.$invalid&&newsForm.ConAbstract.$dirty?'has-error':''}}">
+                        <textarea ng-model="list.ABSTRACT" name="ConAbstract" class="form-control edit-news-textarea" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-mouseenter="isShowTipsG=true" ng-mouseleave="isShowTipsG=false" is-show-tips="isShowTipsG"></textarea>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="abstractWordLength"><span>您已输入<span ng-bind="list.ABSTRACT==undefined?0:list.ABSTRACT.length"></span>个字符</span>
+                        </span>
+                        <!-- <button ng-click="getKeywordsOrAbstract('abstract')" class="iwo-get-abstract iwo_get_iabstract_btn">提取摘要</button> -->
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">备注：</div>
+                    <div class="col-sm-7 invalidate-input-box {{newsForm.Remark.$invalid&&newsForm.Remark.$dirty?'has-error':''}}">
+                        <textarea ng-model="list.REMARKS" name="Remark" class="form-control edit-news-textarea" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-mouseenter="isShowTipsG=true" ng-mouseleave="isShowTipsG=false" is-show-tips="isShowTipsG"></textarea>
+                    </div>
+                    <div class="col-sm-2 mt140">
+                        <!-- <a href="" class="web-news-extract-abstract">提取摘要</a> -->
+                    </div>
+                </div>
+                <div class="m_box_item websiteaudiovideo">
+                    <div class="col-sm-1 txt_r">音频视频：</div>
+                    <div class="col-sm-11 invalidate-input-box">
+                        <ul class="audiovideo">
+                            <li ng-init="getAudioVideoPlayer(item)" ng-repeat="item in status.audioVideoidsArray">
+                                <video ng-if="item.value.streamsMap.l!=undefined" controls="controls" ng-src="{{item.value.streamsMap.l.httpURL}}"></video>
+                                <div ng-if="item.value.err!=undefined" class="default">
+                                    <span><img src="./editingCenter/website/images/video.gif" alt="请稍等，正在转码..."></span>
+                                </div>
+                                <div class="toolbar">
+                                    <label ng-click="deleteAudioVideo(item)">删除</label>
+                                    <label ng-click="downloadAudioVideo(item.id)" ng-if="item.value.streamsMap.l.httpURL!=undefined">下载</label>
+                                </div>
+                            </li>
+                            <li class="edit-UploadMasProgress" ng-if="status.uploadMasNow">
+                                <div>
+                                    <p ng-style="{'width':status.uploadMasProgress}"></p>
+                                </div>
+                                <span ng-bind="status.uploadMasProgress"></span>
+                            </li>
+                        </ul>
+                        <div>
+                            <!--  <img class="audiovideo" ng-model="status.tempAppendix" ngf-select="chooseFile()" ngf-validate="{pattern: '.mp3,.mp4,.rmvb,.flv,.avi'}" src="./editingCenter/app/toBeCompiled/images/b14.png" ng-click="uploadAudioVideo()" /> -->
+                            <div class="edit-UploadMasBtn" trs-Mas-upload call-back="uploadMasCallBack" extensions="status.masUploadExtensions" mime-types="status.masUploadMimeTypes" multiple="false">
+                            </div>
+                            <p class="cue"><span>支持格式：</span>
+                                <span>.mp3,.mp4,.flv,.rmvb,.avi</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">音视频地址：</div>
+                    <div class="col-sm-11 invalidate-input-box">
+                        <input type="text" name="videoUrl" placeholder="http://开头" ng-model="list.AUDIOVIDEOURL" validator="maxlength=500,url" ng-mouseenter="isShowTipsV=true" ng-mouseleave="isShowTipsV=false" is-show-tips="isShowTipsV" class="form-control w352">
+                    </div>
+                </div>
+                <!-- <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">音频视频：</div>
+                    <div class="col-sm-11 invalidate-input-box">
+                        <input class="form-control w613 audiovideo" type="url" name="audiovideo" ng-model="list.AUDIOVIDEO" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=500,url" ng-mouseenter="isShowTipsH=true" ng-mouseleave="isShowTipsH=false" is-show-tips="isShowTipsH" placeholder="http://开头">
+                        <img class="audiovideo" src="./editingCenter/app/toBeCompiled/images/b14.png" ng-click="uploadAudioVideo()" />
+                    </div>
+                </div> -->
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">签发时间：</div>
+                    <div class="col-sm-11">
+                        <div class="timing-calendar">
+                            <div class="timeGroup">
+                                <input type="text" size="10" class="form-control" ng-model="list.ISSUETIME" data-autoclose="1" placeholder="Date" data-min-date="" bs-datepicker readonly="readonly">
+                                <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="news-imgOne">
+                            </div>
+                            <div class="timeGroup ml20">
+                                <input type="text" size="8" class="form-control" ng-model="list.ISSUETIME" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" placeholder="Time" bs-timepicker readonly="readonly">
+                                <img src="./editingCenter/app/toBeCompiled/images/t1.png" class="news-imgTwo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">相关新闻：</div>
+                    <div class="col-sm-11">
+                        <a class="iwo-get-keywords iwo_get_keywords_btn" ng-click="visualChooseWindow()">可视化选择</a>
+                        <a href="" class="iwo-get-keywords iwo_get_keywords_btn" ng-click="queryRelatedNewsByKeyWords()">匹配关联稿件</a>
+                        <a href="" class="iwo-get-keywords iwo_get_keywords_btn" ng-click="cleanRelatedNews()">清空关联稿件</a>
+                        <ul class="website-news-visual-selected">
+                            <li ng-repeat="relNewsSelectedItem in data.relNewsSelectedItems">
+                                <span ng-bind="relNewsSelectedItem.METADATAID">:</span>
+                                <span ng-bind="relNewsSelectedItem.TITLE"></span>
+                                <span ng-click="relNesDelete(relNewsSelectedItem)">删除</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--   <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">相关图片：</div>
+                    <div class="col-sm-11">
+                        <div class="list-style-img introduce-img" style="margin-right:20px;">
+                            <div class="fa_upload form-control" ng-repeat="READINGPIC in list.READINGPICS track by $index" style="margin-left:10px;">
+                                <trs-upload-full file-name="list.READINGPICS[$index].APPFILE" file-desc="list.READINGPICS[$index].APPDESC" return-file="list.READINGPICS[$index].PERPICURL" callback="deleteImgContainer(READINGPIC,list.READINGPICS)"></trs-upload-full>
+                            </div>
+                            <button class="div_btn btn btn-default" ng-click="addUploaderImg(list.READINGPICS,'相关图片')"></button>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">导读图片：</div>
+                    <div class="col-sm-11">
+                        <div class="list-style-img introduce-img" style="margin-right:20px;">
+                            <div class="fa_upload form-control" ng-repeat="OUTLINEPIC in list.OUTLINEPICS track by $index" style="margin-left:10px;">
+                                <trs-upload-full file-name="list.OUTLINEPICS[$index].APPFILE" file-desc="list.OUTLINEPICS[$index].APPDESC" return-file="list.OUTLINEPICS[$index].PERPICURL" callback="deleteImgContainer(OUTLINEPIC,list.OUTLINEPICS)"></trs-upload-full>
+                            </div>
+                            <button class="div_btn btn btn-default" ng-click="addUploaderImg(list.OUTLINEPICS,'概览图片')"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item pd10">
+                    <div class="col-sm-1 txt_r">新闻附件：</div>
+                    <div class="col-sm-11">
+                        <div class="website-file-upload">
+                            <div class="website-file-upload-icon"></div>
+                            <div class="website-file-upload-button" ngf-select ng-model="status.files" ngf-multiple="true" ngf-keep="'distinct'" ngf-change="selectFiles($files, $file, $newFiles)" multiple></div>
+                        </div>
+                        <table class="table table-striped table-bordered file-uploader-table" ng-if="status.showFiles.length>0 || list.ATTACHFILE.length>0">
+                            <thead>
+                                <tr>
+                                    <th width="30%">附件名称</th>
+                                    <th width="30%">附件描述</th>
+                                    <th width="20%">操作</th>
+                                    <th width="20%">状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 附件上传和待上传的列表 -->
+                                <tr ng-repeat="file in status.showFiles">
+                                    <td>
+                                        <div class="invalidate-input-box">
+                                            <input type="text" ng-model="file.SRCFILE" name="filename" class="form-control" maxlength-error-message="长度不能超过200个字数！" validator="maxlength=200,required" ng-mouseenter="$index=true" ng-mouseleave="$index=false" is-show-tips="$index">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="invalidate-input-box">
+                                            <input type="text" ng-model="file.APPDESC" name="filedesc" class="form-control" maxlength-error-message="长度不能超过200个字数！" validator="maxlength=200,required" ng-mouseenter="$index=true" ng-mouseleave="$index=false" is-show-tips="$index">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-xs" ng-click="removeCurFile(file,$index)">
+                                            <span class="glyphicon glyphicon-trash"></span> 移除
+                                        </button>
+                                    </td>
+                                    <td class="multiImgsUploader">
+                                        <img ng-if="file.FILEINFO=='上传成功'" src="./manageConfig/productManageMent/images/n5.png" />
+                                        <img ng-if="file.FILEINFO!=='上传成功'&&file.FILEINFO!=='等待上传'&&file.FILEINFO!=='上传中'" src="./planningCenter/images/gl50.png" />
+                                        <img ng-if="file.FILEINFO=='等待上传'" src="./editingCenter/website/images/wait.png" />
+                                        <img ng-if="file.FILEINFO=='上传中'" src="./editingCenter/newspaper/images/loading2.gif" />
+                                        <span ng-bind="file.FILEINFO" class="text"></span>
+                                        <!-- <div class="progress file-progress" ng-show="!file.PERPICURL">
+                                            <span class="percentage" ng-style="{'width':file.progressPercentage}"></span>
+                                        </div> -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <button type="submit" class="btn btn-success btn-xs website-upload-btn" ng-click="fileSubmit()" ng-disabled="status.isUploaderFile==false">
+                                            <span class="glyphicon glyphicon-upload"></span> 上传
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--属性信息结束-->
+        <!--发稿单开始-->
+        <div class="row mtb20 mlr0" id="section-3">
+            <div class="edit-news-title">
+                <p class="pull-left">发稿单</p>
+                <label class="edit-news-checkbox">
+                    <!-- <input ng-model="list.ISNOPAYMENT" ng-true-value="'1'" ng-false-value="'0'" type="checkbox"> -->
+                    <trs-checkbox ng-model="list.ISNOPAYMENT" ischecked="list.ISNOPAYMENT==='1'" callback="draftPayment()"></trs-checkbox>
+                    不发稿费
+                </label>
+            </div>
+            <!-- <div style="background:#fafafa; overflow:hidden;border: 1px solid #d6d6d6;margin-top: 20px;padding-bottom: 20px;"> -->
+            <div class="m_box_item mt20 ml15">
+                <p class="left newP">稿件体裁：</p>
+                <trs-single-select options="docgenre" selected-option="list.DOCGENRE"></trs-single-select>
+            </div>
+            <editor>
+            </editor>
+            <!-- </div> -->
+        </div>
+        <!--发稿单结束-->
+        <!--流程版本开始-->
+        <div class='timeline' ng-if="status.hasTimeline" id="section-4">
+            <div class="subject-title mt20">流程版本</div>
+            <tabset class="m_nav_3 mt20">
+                <tab heading="操作日志">
+                    <div class="m_box_2">
+                        <trs-timeline title="'操作日志'">
+                            <p ng-bind="data.version.operationLogTitle" class="logTitle"></p>
+                            <div ng-repeat="(key, value) in data.version.group">
+                                <h3 ng-class="{'operateLog':$index%2==0}">{{key}}</h3>
+                                <timegroup tick="item.day" ng-repeat="item in data.version.operationLog[key]">
+                                    <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                                        <a class="minw45">{{n.value.OPERATION}}</a>
+                                        <a class="minw80 pointer" ng-bind="n.value.USERNAME" title="{{n.value.OPERUSERNAME}}"></a>
+                                        <a class="minw88" title="{{n.value.ATTRIBUTE}}" ng-bind="n.value.DESUSERNAME||n.value.ATTRIBUTE"></a>
+                                        <a title="{{n.value.OPINION}}" class="exttype" ng-if="n.value.OPINION!==''">{{n.value.OPERATION}}意见</a>
+                                    </timeitem>
+                                </timegroup>
+                            </div>
+                        </trs-timeline>
+                    </div>
+                    <div class="websist_normal" ng-if="page.CURRPAGE>=page.PAGECOUNT">没有更多了...</div>
+                    <div data-ng-if="page.CURRPAGE<page.PAGECOUNT" cg-busy="loadingPromise" class="website_timeline_load_more_2 text-center" ng-click="getLoadMore()">
+                        <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+                    </div>
+                </tab>
+                <tab heading="流程版本">
+                    <div class="m_box_2">
+                        <trs-timeline title="'流程版本'">
+                            <timegroup tick="item.day" ng-repeat="item in data.version.versionTime">
+                                <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                                    <a class="minw45">{{n.value.OPERATION}}</a>
+                                    <a class="minw80" title="{{n.value.OPERSTATEDESC|trsLimitTo:12}}">{{n.value.OPERSTATEDESC}}</a>
+                                    <a class="minw88">{{n.value.CRUSER}}</a>
+                                    <a class="exttype" target="_blank" ui-sref="editingCenterPersonalVersionTime({objectversionid:n.value.OBJECTVERSIONID})">{{n.value.EXTTYPE}}</a>
+                                </timeitem>
+                            </timegroup>
+                        </trs-timeline>
+                    </div>
+                </tab>
+                <tab heading="评审意见">
+                    <div class="m_box_2 edit_versionTime_comment">
+                        <trs-timeline title="'评审意见'">
+                            <timegroup tick="item.day" ng-repeat="item in data.comment.comment">
+                                <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times">
+                                    <a class="minw80 comment_name" ng-bind="n.value.TRUENAME"></a>
+                                    <a ng-bind="n.value.COMMENT" ng-if="n.value.COMMTYPE==1" class="comment_content"></a>
+                                    <audio preload controls ng-src="{{trustUrl(data.comment.voiceObj[n.value.COMMENT])}}" ng-if="n.value.COMMTYPE==2"></audio>
+                                    <!-- <span ng-bind="n.value.DURATION+' 秒'" class="comment_duration" ng-if="n.value.COMMTYPE==2"></span> -->
+                                </timeitem>
+                            </timegroup>
+                        </trs-timeline>
+                    </div>
+                    <div class="websist_normal" ng-if="!data.comment.hasMore">没有更多了...</div>
+                    <div data-ng-if="data.comment.hasMore" cg-busy="loadingPromise" class="website_timeline_load_more_2 text-center" ng-click="getLoadMoreComment()">
+                        <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+        <!--流程版本结束-->
+        <!--操作按钮开始-->
+        <div class="Iw-box-fix box-fix-bt">
+            <div class="txt_r">
+                <button class="btn btn-primary" ng-click="bigFace(list)" ng-if="status.bigFaceRights['website.trace.chakan']&&status.isHasBigFace==true">
+                    <span class="s_icon">
+                    <img ng-src="./editingCenter/app/toBeCompiled/images/b9.png" /> 
+                </span>
+                    <span class="bitFaceTit" ng-bind="status.bitFaceTit" ng-click=""></span>
+                </button>
+                <button class="btn btn-primary" ng-repeat="btn in arrayBtn track by $index" ng-click="handleBtnClick(btn.OPERFUN)" ng-disabled="!status.openBtn">
+                    <span class="s_icon">
+                    <img ng-src="./editingCenter/website/images/b{{btn.RIGHTINDEX}}.png"></span> {{btn.OPERDESC}}
+                </button>
+            </div>
+        </div>
+        <!--操作按钮结束-->
+    </div>
+</form>
+<div cg-busy="loadingPromise"></div>

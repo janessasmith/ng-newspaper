@@ -1,0 +1,50 @@
+.resSearchDetailWinClass {}
+
+.resSearchDetailWinClass .modal-content {
+    max-height: 600px;
+    overflow-y: auto;
+    border: 4px solid #ddd;
+}
+
+.resSearchDetailWinClass .modal-content .title {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    font-family: "Microsoft Yahei";
+    margin-top: 20px;
+    clear: both;
+}
+
+.resSearchDetailWinClass .modal-content .load-wrap{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.resSearchDetailWinClass .modal-content .close{
+	float: right;
+	cursor:pointer;
+	margin:10px 10px 0 0;
+	opacity: 1;
+}
+.resSearchDetailWinClass .modal-content .time {
+    text-align: center;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.resSearchDetailWinClass .modal-content .pic {
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+.resSearchDetailWinClass .modal-content .content {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 28px;
+    color: #555;
+    text-indent: 2em;
+    margin-bottom: 20px;
+    margin-top:20px;
+}

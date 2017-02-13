@@ -1,0 +1,73 @@
+<div class="wechat">
+    <div class="calendar_head">
+        <b>微信文章排行榜</b>
+    </div>
+    <div class="calendar_content rankList-bar">
+        <div class="calendar_content_right ranking_content_right col-md-12">
+            <tabset justified="true">
+                <tab heading="{{rankingTitle.name}}" ng-repeat="rankingTitle in status.rankingTitle" ng-click="weChatTitletab(rankingTitle)">
+                    <tabset class="head_sub_nav">
+                        <tab heading="{{rankingTabList.DICTNAME}}" ng-repeat="rankingTabList in data.rankingTabListNum" ng-click="weChatRanklistTab(rankingTabList)"></tab>
+                    </tabset>
+                    <div class="calendar_con">
+                        <div class="plan_table">
+                            <div class="plan_table_header">
+                                <p class="w50">排名</p>
+                                <p class="b30">标题</p>
+                                <p class="b10">公众号</p>
+                               <!--  <p class="w80">排名变化</p> -->
+                                <p class="w90">阅读数</p>
+                                <p class="w100">阅读曲线</p>
+                                <p class="w90">点赞数</p>
+                                <p class="w170">时间</p>
+                                <p class="w37">上榜时长</p>
+                            </div>
+                            <div class="plan_table_detail" ng-repeat="item in data.ranklistLists |limitTo:10">
+                                <p ng-bind="$index+1" class="w50"></p>
+                                <!--排名-->
+                                <a ng-bind="item.TITLE|trsLimitTo:25" title="{{item.TITLE}}" class="b30 iwo_operate tx_hide" href="{{item.URLNAME}}" target="_blank"></a>
+                                <!--标题-->
+                                <p ng-bind="item.DOCAUTHOR|trsLimitTo:10" class=" b10 tx_hide" title="{{item.DOCAUTHOR}}"> </p>
+                                <!--媒体-->
+                               <!--  <p class="w80">
+                                    <span class="mgr5" ng-show="item.RANK_DIRECTION==1"><img src="./planningCenter/images/ch18.png"></span>
+                                    <span class="mgr5" ng-show="item.RANK_DIRECTION==-1"><img src="./planningCenter/images/ch19.png"></span>
+                                    <span class="mgr5" ng-show="item.RANK_DIRECTION==0"><img src="./planningCenter/images/hcc20.png" width="20"></span>
+                                    <span class="mgr5" ng-show="item.RANK_DIRECTION=='new'">
+                                             <img src="./planningCenter/images/new.png" width="32" height="12">
+                                         </span>
+                                    <span ng-bind='item.RANK_CHANGE'></span>
+                                </p> -->
+                                <!--排名变化-->
+                                <p ng-bind="item.RDCOUNT" class="w90"></p>
+                                <!--阅读数-->
+                                <p class="w100 people-list" ng-class="{'plan_acitve_height':status.readCurve==item}">
+                                    <img src="./planningCenter/images/ch42.png" class="pieceMgr-main-list" data-template-url="./planningCenter/cueSelectedTopic/rankingList/directive/rankingLine/planBigMapRankList.html" data-animation="am-flip-x" data-auto-close="1" data-placement="bottom" bs-popover>
+                                    <!--                                     <span class="bigMapRanklist" ng-if='status.readCurve==item'>
+                                        <rank-line option-obj="item" my-style="status.initBigRankingwidth" is-tool=true></rank-line>
+                                    </span> -->
+                                </p>
+                                <!--阅读曲线-->
+                                <p ng-bind="item.PRCOUNT" class="w90"></p>
+                                <!--点赞数-->
+                                <p ng-bind="item.DOCTIME" class="w170"></p>
+                                <!--时间-->
+                                <p ng-bind="item.DURATION" ng-class="{'w170':status.rankingTabs=='腾讯'}" class="w37"></p>
+                                <div class="clear"></div>
+                            </div>
+                            <!-- <div ng-if="status.sinaStatus.channel=='推荐'" class="page_fix">
+                                <div class="page bottom_10">
+                                    <trs-pagenation-left total-num="page.ITEMCOUNT" page-count="page" pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+                                    <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.startpage" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                                    <trs-pagenation-right callback="jumpToPage()" currpage="status.jumpToPageNum" page="page"></trs-pagenation-right>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+    <div class="clear"></div>
+</div>

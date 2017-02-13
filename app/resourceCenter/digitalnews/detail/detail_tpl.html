@@ -1,0 +1,109 @@
+<div class="row resouCen-digitalDetail-head">
+    <div class="col-md-12">
+        <img src="./editingCenter/app/images/logo2.png" />
+    </div>
+</div>
+<div class="row edit_right_head resouCen-digitalDetail-btnGroup">
+    <div class="col-md-12 col-lg-12">
+        <button class="btn btn-default btn-commen opacity100" ng-click="openTakeDraftModal()" ng-disabled="!status.isShowDetail&&data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='openTakeDraftModal'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='openTakeDraftModal'?'z56-1.png':'z56.png'}}"/>
+            </span> 取稿
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="CreationAxis()" ng-disabled="!status.isShowDetail&&data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='CreationAxis'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='CreationAxis'?'z14-1.png':'z14.png'}}"/>
+            </span> 创作轴
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="openReserveDraftModal()" ng-disabled="!status.isShowDetail&&data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='openReserveDraftModal'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='openReserveDraftModal'?'z15-1.png':'z15.png'}}" />
+            </span> 预留
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="collect()" ng-disabled="!status.isShowDetail&&data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='collect'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='collect'?'z16-1.png':'z16.png'}}" />
+            </span> 收藏
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="printbtn()" ng-disabled="!status.isShowDetail&&data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='printbtn'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='printbtn'?'z17-1.png':'z17.png'}}" />
+            </span> 打印
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="!status.isShowDetail&&data.selectedArray.length==0" ng-click="export()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='export'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='export'?'z55-1.png':'z55.png'}}" />
+            </span> 导出
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="download()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='download'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-disabled="!data.pdfPath">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/{{status.batchOperateBtn['hoverStatus']=='download'?'dp05.png':'dp05-1.png'}}" />
+            </span> 下载
+        </button>
+    </div>
+</div>
+<div class="resouCen-digitalDetail" ng-class="{'active':status.isShowDetail}">
+    <div class="forArchives" id="js_forArchives">
+        <div class="forArchives_right col-md-12">
+            <div class="row forarchives_presspage">
+                <div class="digitalDetail_banmian">
+                    <input class="form-control" ng-model="data.banmianName" ng-class="{'hideName':!status.hasData}" readonly/>
+                    <div>
+                        <trs-single-select selected-option="data.dropDown.selectedBanmian" callback="searchWithKeyword('bc',data.dropDown.selectedBanmian.BC)" options="data.dropDown.banciList" ng-show="status.hasData"></trs-single-select>
+                        <div class="timeGroup">
+                            <input type="text" size="10" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" ng-model="status.docPubtime" bs-datepicker placeholder="Date" data-autoclose="1" readonly data-date-format="yyyy-MM-dd" data-max-date="today">
+                            <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+                        </div>
+                    </div>
+                </div>
+                <div class="forarchives_presspage_left" ng-show="status.hasData">
+                    <div class="left_Img">
+                        <div align="center" class="img_center">
+                            <img id="Img_a_image" class="Img_a_image" ng-src="{{data.imgUrl}}">
+                            <canvas id="Img_a_canvas" class="Img_a_canvas" height="478" width="300"></canvas>
+                            <img class="Img_a" usemap="#PagePicMap1" name="_Img" border="0" id="Img_a" ng-src="{data.imgUrl}}">
+                        </div>
+                        <map name="PagePicMap1" id="pagePicMap1">
+                            <area ng-repeat="item in data.items track by $index" shape="polygon" class="newsPaper js_detail" coords="{{item.ZB}}" alt="{{item.DOCTITLE}}" id="PagePicMap1_{{item.ZB_GUID}}" ng-click="checkDetail(item,$index)">
+                        </map>
+                    </div>
+                </div>
+                <div class="edit_table forarchives_presspage_right" ng-show="status.hasData&&!status.isShowDetail">
+                    <table class="table table-striped data-table black-box">
+                        <tbody id="js_tbody">
+                            <tr ng-repeat="item in data.items track by $index">
+                                <td class="td-check">
+                                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)>-1" callback="selectDoc(item)"></trs-checkbox>
+                                </td>
+                                <td>
+                                    <a value="item.ZB_GUID" class="js_detail newsPaper cursorP" shape="polygon" coords="{{item.ZB}}" ng-bind="item.DOCTITLE" ng-click="checkDetail(item,$index)"></a>
+                                    <span class="text-warning gai cursorPointer" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,0)">取</span>
+                                    <span class="text-success gai cursorPointer" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,1)">签</span>
+                                    <span class="text-primary gai cursorPointer" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,2)">见</span>
+                                    <span class="text-danger gai cursorPointer" ng-click="viewBigDataInfo(item.ZB_GUID)" ng-show="showOperFlag(item.ZB_GUID,3)">撤</span>
+                                    <span class="text-info gai cursorPointer" ng-click="viewBigDataInfo(item.ZB_GUID,true)" ng-show="showOperFlag(item.ZB_GUID,4)">重</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="digitalDetail-content" ng-show="status.hasData&&status.isShowDetail">
+                    <span ng-click="returnToList()" class="digitalDetail_wordOperate">[返回稿件列表]</span>
+                    <span ng-click="jumpToDraft(true)" class="digitalDetail_wordOperate" ng-class="{'noClick':data.currIndex==data.items.length-1}">[下一篇]</span>
+                    <span ng-click="jumpToDraft(false)" class="digitalDetail_wordOperate" ng-class="{'noClick':data.currIndex==0}">[上一篇]</span>
+                    <span ng-click="jumpToBanmian(true)" class="digitalDetail_wordOperate" ng-class="{'noClick':data.dropDown.banciList.indexOf(data.dropDown.selectedBanmian)==data.dropDown.banciList.length-1}">[下一版]</span>
+                    <span ng-click="jumpToBanmian(false)" class="digitalDetail_wordOperate" ng-class="{'noClick':data.dropDown.banciList.indexOf(data.dropDown.selectedBanmian)==0}">[上一版]</span>
+                    <p ng-bind="data.detail.DOCTITLE" class="digitalDetail_title"></p>
+                    <p ng-bind="data.detail.FB" class="digitalDetail_FB"></p>
+                    <p ng-bind="data.detail.YB" class="digitalDetail_YB"></p>
+                    <p ng-bind="data.detail.DOCAUTHOR" ng-if="data.detail.DOCAUTHOR" class="digitalDetail_author"></p>
+                    <div ng-bind-html="data.detail.CONTENT|trsSce" class="digitalDetail_main"></div>
+                </div>
+                <div class="digitalDetail-noData" ng-show="!status.hasData">
+                    所选日期没有报纸
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div cg-busy="loadingPromise"></div>

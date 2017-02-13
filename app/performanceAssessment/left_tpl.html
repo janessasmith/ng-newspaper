@@ -1,0 +1,14 @@
+<div class="container-fluid editing-list">
+    <accordion class="iwo_accordion iwo_accordion_new" close-others="true">
+        <accordion-group ng-repeat="item in data.newspapers" ng-click="openSecondNav(item,$index)" is-open="item.isOpen">
+            <accordion-heading>
+                <a href="javascript:;">{{item.SITEDESC}}</a>
+            </accordion-heading>
+            <ul>
+                <li ng-repeat="channel in item.channels" ng-class="{'pe-left-li-active':status.selectedChannel==channel }" ng-click="chooseChannels(channel)">
+                    <a ui-sref="perform.newspaper({PaperId:channel.SITEID,BanMianId:channel.CHANNELID})">{{channel.CHNLDESC}}</a>
+                </li>
+            </ul>
+        </accordion-group>
+    </accordion>
+</div>

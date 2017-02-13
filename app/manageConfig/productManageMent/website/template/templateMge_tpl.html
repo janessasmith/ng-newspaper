@@ -1,0 +1,104 @@
+<div class="row">
+    <!-- <div class="col-md-2 manage-main template_mge_tpl">
+         <div class="template_mge_tpl_dt">
+            <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" on-node-toggle="showToggle(node)" class="tree-light" tree-model="inittree" options="treeOptions" on-selection="showSelected(node)">
+                <span ng-bind="node.CHNLDESC || node.SITEDESC"></span>
+            </treecontrol>
+        </div> 
+    </div> -->
+    <div class="col-md-12 man_web_temp_padding">
+        <div trs-scroll-fix class="row edit_right_head">
+            <div class="col-md-12 col-lg-12">
+                <button ng-if="status.params.isRecycle=='0'&&status.right.template.add" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="newTemplate()">
+                    <span class="s_icon"><img src="./editingCenter/app/images/b1.png" /></span> 新建模板
+                </button>
+                <button ng-if="!status.isSite&&status.params.isRecycle=='0'&&status.right.template.addvisual" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="visualizeNew()">
+                    <span class="s_icon"><img src="./editingCenter/website/images/q41.png" style="position: relative;left: 4px;"/></span>可视化新建
+                </button>
+                <div class="btn-group" role="group">
+                    <button ng-if="status.params.isRecycle=='0'&&status.right.template.export" class="btn btn-default dropdown-toggle btn-commen edit_right_head_btn_commen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="s_icon"><img src="./manageConfig/productManageMent/images/zm14.png" /></span> 导出模板
+                        <!-- <span class="pulldown_icon"></span> -->
+                    </button>
+                    <ul class="dropdown-menu edit_dropdown_menu">
+                        <li><a ng-click="exportSelectedTemplate()">导出选中模板</a></li>
+                        <li><a ng-click="exportAllTemplate()">导出所有模板</a></li>
+                    </ul>
+                </div>
+                <button ng-if="status.params.isRecycle=='0'&&status.right.template.import" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="importTemplate()">
+                    <span class="s_icon"><img src="./manageConfig/productManageMent/images/gl21-1.png" /></span> 导入模板
+                </button>
+                <button ng-if="status.params.isRecycle=='0'&&status.right.template.synchronize" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="syncTemplate()">
+                    <span class="s_icon"><img src="./editingCenter/iWo/images/i41.png" /></span> 同步模板
+                </button>
+                <button ng-if="status.params.isRecycle=='0'&&status.right.template.restore" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="deleteTemplate()">
+                    <span class="s_icon"><img src="./editingCenter/app/images/fg2.png" /></span> 删除模板
+                </button>
+                <button ng-if="status.params.isRecycle=='-1'&&status.right.template.delete" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="restoreTemplate()">
+                    <span class="s_icon"><img src="./editingCenter/app/images/fg2.png" /></span> 还原模板
+                </button>
+                <button ng-show="status.params.isRecycle=='-1'&&status.right.template.restore" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="thoroughDeleteTemplate()">
+                    <span class="s_icon"><img src="./editingCenter/app/images/fg2.png" /></span> 删除模板
+                </button>
+            </div>
+        </div>
+        <div class="row edit_right_mid">
+            <div class="col-md-6 man_web_temp_padding">
+                <button ng-if="status.right.template.restore" class="man_web_temp_recycle btn-default" ng-click="switchList()">
+                    <span ng-bind="status.params.isRecycle==='-1'?'返回管理模板':'管理模板回收站'"></span></button>
+                <trs-single-select selected-option="data.selectedTempType" callback="queryByDropdown('FILTERTYPE',data.selectedTempType.value)" options="data.tempTypeArray"></trs-single-select>
+            </div>
+            <div class="col-md-6 man_web_temp_padding">
+                <div class="input-group edit_input_group">
+                    <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="status.params.TempName">
+                    <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+                </div>
+            </div>
+        </div>
+        <div class="row col-md-12 templateMge-content-table man_web_temp_padding">
+            <div class="edit_table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="td-check">
+                                <trs-checkbox ischecked="data.selectedArray.length==data.items.length && data.selectedArray.length!=0" callback="selectAll()"></trs-checkbox>
+                            </th>
+                            <th class="td-number">序号</th>
+                            <th>模板名称</th>
+                            <th>类型</th>
+                            <th>最后修改人</th>
+                            <th>最后修改时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in data.items">
+                            <td class="td-check">
+                                <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                            </td>
+                            <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td>
+                            <td class="ta-l cursorPointer" ng-click="editTemplate(item)">
+                                {{item.TEMPNAME}}&nbsp;&nbsp;<img src="./manageConfig/productManageMent/images/gl38-1.png" alt="" ng-show="item.VISUAL==status.visualiTemp">
+                            </td>
+                            <td ng-bind="item.TEMPTYPENAME"></td>
+                            <td ng-bind="item.TRUENAME" class="pointer"></td>
+                            <td ng-bind="item.LASTMODIFIEDTIME"></td>
+                            <td class="iwo_operate">
+                                <a ng-click="checkTemplate(item)" ng-show="item.VISUAL!=status.visualiTemp">查看</a>
+                                <a href="javascript:void(0)" class="prohibit-Check-temp" ng-show="item.VISUAL==status.visualiTemp">查看</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div cg-busy="loadingPromise"></div>
+                <div class="page">
+                    <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+                    <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                    <trs-pagenation-right callback="jumpToPage()" currpage="copyCurrPage" page="page"></trs-pagenation-right>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

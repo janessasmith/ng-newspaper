@@ -1,0 +1,77 @@
+<form name="batchGenerateForm" novalidate>
+    <div class="mgbottom">
+        <div trs-scroll-fix class="row edit_right_head">
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-4">
+                <ol class="breadcrumb pull-right edit_breadcrumb">
+                    <li class="active" ng-bind="channelName"></li>>
+                    <li class="active">批量生成新闻</li>
+                </ol>
+            </div>
+        </div>
+        <div class="batchGeneratingNews row">
+            <div class="col-md-3 left">
+                <div class="head">
+                    <img ng-show="showTree!=true" ng-click="showTree=true" src="./editingCenter/app/images/m1-1-0.png">
+                    <img class="open" ng-show="showTree==true" ng-click="showTree=false" src="./editingCenter/app/images/m2-2-0.png"><span ng-bind="siteDesc"></span>
+                </div>
+                <div ng-show="showTree==true" class="tree">
+                    <treecontrol selected-node="selectedNode" expanded-nodes="" on-node-toggle="showToggle(node)" class="tree-light" tree-model="dataForTheTree" options="treeOptions" on-selection="selectNode(node)" ><span title="{{node.CHNLDESC}}">{{node.CHNLDESC}}</span></treecontrol>
+                </div>
+            </div>
+            <div class="col-md-9 myRight">
+                <div class="select" ng-if="selectedNode">
+                    <span class="reserve_word">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;模板：</span>
+                    <trs-single-select options="templateJson" callback="genParams.TempId = websiteTemplate.value" selected-option="websiteTemplate"></trs-single-select>
+                </div>
+                <div class="select">
+                    <span class="invalidate-input-box">
+                    <span class="reserve_word">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作者：</span>
+                    <input ng-model="userName" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50" name="author" type="input" class="form-control text" ng-mouseenter="isShowTips_CrUser=true" ng-mouseleave="isShowTips_CrUser=false" is-show-tips="isShowTips_CrUser" bs-options="user as user.SUGGESTION for user in getSuggestions($viewValue)" bs-typeahead limit="30">
+                    </span>
+                </div>
+                <div class="select">
+                    <span class="reserve_word">签发日期：</span>
+                    <div class="date">
+                        <div class="date_c">
+                            <input class="form-control" type="text" placement="bottom" size="10" ng-model="genParams.StartDocPubTime" placeholder="开始日期" data-autoclose="1" bs-datepicker readonly="readonly">
+                            <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="dateImg">
+                        </div>
+                        <div class="time_c">
+                            <input class="form-control" type="text" placeholder="时间" placement="bottom" ng-model="genParams.StartDocPubTime" size="8" class="" ng-model="genParams.StartDocPubTime" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" bs-timepicker readonly="readonly">
+                            <img class="dateImg" src="./editingCenter/app/toBeCompiled/images/t1.png">
+                        </div>
+                    </div>
+                    <span class="reserve_word">&nbsp;&nbsp;至&nbsp;&nbsp;</span>
+                    <div class="date">
+                        <div class="date_c">
+                            <input class="form-control" type="text" placement="bottom" size="10" ng-model="genParams.EndDocPubTime" placeholder="结束日期" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                            <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="dateImg">
+                        </div>
+                        <div class="time_c">
+                            <input class="form-control" type="text" placeholder="时间" placement="bottom" size="8" ng-model="genParams.EndDocPubTime" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" bs-timepicker readonly="readonly">
+                            <img class="dateImg" src="./editingCenter/app/toBeCompiled/images/t1.png">
+                        </div>
+                        <button ng-click="cleanTime()" class="iwo-get-keywords iwo_get_keywords_btn">不选择时间</button>
+                    </div>
+                </div>
+                <div class="select">
+                    <span class="invalidate-input-box">
+                    <span class="reserve_word">&nbsp;&nbsp;&nbsp;ID范围：</span>
+                    <input name="startid" ng-model="genParams.BeginDocId" maxlength-error-message="长度不能超过10个字符！" validator="maxlength=10,number" type="text" class="form-control text" ng-mouseenter="isShowTips_BeginDocId=true" ng-mouseleave="isShowTips_BeginDocId=false" is-show-tips="isShowTips_BeginDocId">
+                    </span> <span class="invalidate-input-box"><span class="reserve_word">&nbsp;&nbsp;至&nbsp;&nbsp;</span>
+                    <input name="endid" ng-model="genParams.EndDocId" maxlength-error-message="长度不能超过10个字符！" validator="maxlength=10,number" type="input" ng-model="" class="form-control text" ng-mouseenter="isShowTips_EndDocId=true" ng-mouseleave="isShowTips_EndDocId=false" is-show-tips="isShowTips_EndDocId">
+                    </span>
+                </div>
+                <div class="selectNoBorder">
+                    <span>递归生成：</span>
+                    <trs-single-radio ng-repeat="item in recuGens" ischecked="item.value == (genParams.Recursion==true?1:0)" label="{{item.desc}}" group="'recuGens'" callback="genParams.Recursion = item.value === 0 ? false : true;"></trs-single-radio>
+                </div>
+            </div>
+        </div>
+        <div class="batchGeneratingNews-bottom">
+            <button validation-submit="batchGenerateForm" ng-click="confirm()" class="confirm btn" ng-disabled="!selectedNode">确定</button>
+        </div>
+    </div>
+</form>

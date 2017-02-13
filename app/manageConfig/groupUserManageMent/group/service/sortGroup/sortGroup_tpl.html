@@ -1,0 +1,27 @@
+<div class="sortGroupSubmit">
+    <div class="submit">
+        <div class="head">
+            <span ng-bind="data.modalTitle"></span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="body">
+            <form class="sortGroupSubmit-form" name="sortGroupSubmitForm" novalidate>
+                <div class="main">
+                    <div class="item">
+                        <div class="tit">将组织【{{data.GName}}】调整至</div>
+                        <div class="invalidate-input-box">
+                            <input type="text" class="form-control mb0" ng-model="data.NewOrder" validator="required,number" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" />
+                        </div><span class="tit">（总数为{{data.itemcount}}）</span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <div class="foot">
+                <div>
+                    <button class="confirm" ng-click="confirm()">确定</button>
+                    <button class="cancel" ng-click="cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

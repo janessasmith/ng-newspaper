@@ -1,0 +1,230 @@
+<div class="row" id="searchPanel">
+    <ul class="m_nav_4 list-inline">
+        <li ng-class="{'active':item==status.curSearchType}" ng-repeat="item in data.searchValueList" ng-bind="item.dictName" ng-click="setSearchType(item)"></li>
+    </ul>
+</div>
+<div class="row">
+    <div class="col-md-4 mc-padding-0">
+        <div class="row mc-margin-xs">
+             <div class="col-xs-12 mc-margin-bottom-xs">
+               <strong>检索条件</strong>
+            </div>
+            <div class="col-xs-12">
+                关键词位置：
+                <input type="radio" name="searchContentType" value="full" ng-model="params.keywords.search_range">
+                检索标题和内容
+                <input type="radio" name="searchContentType" value="title" ng-model="params.keywords.search_range">
+                仅检索标题
+            </div>
+        </div>
+        <div class="row mc-margin-xs">
+            <div class="col-xs-12 mc-padding-right-0">
+                <p>包含以下<strong>全部</strong>的关键词,多个关键词请用空格隔开</p>
+                <!-- <tags-input ng-model="params.keywords.keyword_and" add-on-blur="true" add-on-space="true" add-on-enter="false" ng-focus="focus()" ng-blur="blur()" min-length="1" add-on-comma="false" add-on-paste="true" replace-spaces-with-dashes="true" paste-split-pattern="[,;|]" enable-editing-last-tag="true" spellcheck="false" display-property="name" placeholder="输入空格确定添加关键词" template="tag-template"> -->
+                <input type="text" class="form-control" ng-model="params.keywords.keyword_and">
+                <script type="text/ng-template" id="tag-template">
+                    <div style="float: left; padding-left: 2px">
+                        <span>{{$getDisplayText()}}</span>
+                        <a class="remove-button" ng-click="$removeTag()">&times;</a>
+                    </div>
+                </script>
+            </div>
+        </div>
+        <div class="row mc-margin-xs">
+            <div class="col-xs-12 mc-padding-right-0">
+                <p>包含以下<strong>任意一个</strong>关键词,多个关键词请用空格隔开</p>
+                <input type="text" class="form-control" ng-model="params.keywords.keyword_or">
+                <!-- <tags-input ng-model="params.keywords.keyword_or" add-on-blur="true" add-on-space="true" add-on-enter="false" ng-focus="focus()" ng-blur="blur()" min-length="1" add-on-comma="false" add-on-paste="true" replace-spaces-with-dashes="true" paste-split-pattern="[,;|]" enable-editing-last-tag="true" spellcheck="false" display-property="name" placeholder="输入空格确定添加关键词" template="tag-template"> -->
+            </div>
+        </div>
+        <div class="row mc-margin-xs">
+            <div class="col-xs-12 mc-padding-right-0">
+                <p><strong>不包含</strong>以下关键词，多个关键词请用空格隔开</p>
+                <!-- <tags-input ng-model="params.keywords.keyword_not" add-on-blur="true" add-on-space="true" add-on-enter="false" ng-focus="focus()" ng-blur="blur()" min-length="1" add-on-comma="false" add-on-paste="true" replace-spaces-with-dashes="true" paste-split-pattern="[,;|]" enable-editing-last-tag="true" spellcheck="false" display-property="name" placeholder="输入空格确定添加关键词" template="tag-template"> -->
+                <input type="text" class="form-control" ng-model="params.keywords.keyword_not">
+            </div>
+        </div>
+        <div class="row mc-margin-xs">
+            <div class="col-xs-3 isORINGIN">
+                作者：
+            </div>
+            <dic class="col-xs-9 mc-padding-right-0">
+                <!-- <tags-input ng-model="params.keywords.author" add-on-blur="true" add-on-space="true" add-on-enter="false" ng-focus="focus()" ng-blur="blur()" min-length="1" add-on-comma="false" add-on-paste="true" replace-spaces-with-dashes="true" paste-split-pattern="[,;|]" enable-editing-last-tag="true" spellcheck="false" display-property="name" placeholder="输入空格确定添加关键词" template="tag-template"> -->
+                <input type="text" class="form-control" ng-model="params.keywords.author">
+            </dic>
+        </div>
+        <div class="row mc-margin-xs">
+            <div class="col-xs-3 isORINGIN">
+                地域范围：
+            </div>
+            <dic class="col-xs-9 mc-padding-right-0">
+                <!-- <trs-area-select area="data.area" select-area-text="status.areaText"></trs-area-select> -->
+                <trs-single-select label="全部国家" options="data.area.country" callback="loadSubArea(status.area.country,1)" selected-option="status.area.country"></trs-single-select>
+                <trs-single-select label="全部省份" options="data.area.province" callback="loadSubArea(status.area.province,2)" selected-option="status.area.province" ng-show="data.area.province.length>1"></trs-single-select>
+                <trs-single-select class="f_inline mt10" label="全部城市" options="data.area.city" callback="loadSubArea(status.area.city,3)" selected-option="status.area.city" ng-show="data.area.city.length>1"></trs-single-select>
+                <trs-single-select class="f_inline mt10" label="全部区/县" options="data.area.town" selected-option="status.area.town" ng-show="data.area.town.length>1"></trs-single-select>
+            </dic>
+        </div>
+        <div class="row mc-margin-xs">
+            <div class="col-xs-3 isORINGIN">
+                时间区间：
+            </div>
+            <dic class="col-xs-9 mc-padding-right-0">
+                 <custom-select label="选择时间" class="isORINGIN" options="data.timeArray" selected-option="data.selectedTime" callback="searchWithTime(data.selectedTime)"></custom-select>
+            </dic>
+        </div>
+        <div class="row mc-margin-xs">
+            <div class="col-xs-3 isORINGIN">
+                稿件ID:
+            </div>
+            <dic class="col-xs-9 mc-padding-right-0">
+                <input type="text" class="form-control" ng-model="params.keywords.guid">
+            </dic>
+        </div>
+        <div class="row mc-margin-xs">
+            <div class="col-xs-12 text-center">
+                <button class="btn btn-primary" ng-click="empty()">清空</button>
+                <button class="btn btn-primary" ng-click="search()">检索</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 mc-padding-0">
+        <div class="mc-margin-xs">
+            <div class="col-xs-12 mc-margin-bottom-xs">
+               <strong>检索范围</strong>
+            </div>
+            <div class="col-xs-12 mc-margin-bottom-xs">
+                <input type="radio" value="all" name="channelType" ng-model="status.searchType">全部来源
+            </div>
+            <div class="col-xs-12 mc-margin-bottom-xs">
+                <input type="radio" value="any" name="channelType" ng-model="status.searchType">
+                选择来源
+                <span class="red mc-margin-left-xs" ng-if="status.showWarningMsg">请选择来源</span>
+            </div>
+        </div>
+        <div class="mc-margin-xs">
+            <div class="col-xs-9">
+                <ul class="m_nav_5 list-inline">
+                    <li ng-repeat="nav in data.channelList" ng-bind="nav.dictName" ng-class="{'active':nav == status.curSearchChannel}" ng-click="setSearchChannel(nav)"></li>
+                </ul>
+                <div class="m_box_2 clearfix">
+                    <!-- 新华社稿 -->
+                    <div class="fixed_ht" ng-show="status.curSearchChannel.ename =='xhsg'">
+                        <div class="wrap_2">
+                            <span class="cursorPointer text-info" ng-click="selectAll()">全选</span>
+                            <span class="cursorPointer text-info" ng-click="deleteAll()">清空</span>
+                        </div>
+                        <!-- <ul class="m_list_2 mt10">
+                            <li ng-repeat="word in data.filterList" ng-bind="word"></li>
+                        </ul> -->
+                        <ul class="m_list_3 mt10">
+                            <li ng-repeat="item in data.searchList.xhsg" ng-hide="item.id=='navigation_001014'||item.id=='navigation_001015'">
+                                <trs-checkbox ischecked="checkChecked(item)" callback="selectDoc(item)"></trs-checkbox>
+                                <span data-ng-bind-html="item.dictName"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 数字报 -->
+                    <div class="fixed_ht" style="position: relative;" ng-show="status.curSearchChannel.ename =='szb'">
+                        <trs-checkbox label="选择全部数字报" ischecked="status.all[status.curSearchChannel.ename]" callback="setAll(status.curSearchChannel.ename)"></trs-checkbox>
+                        <br>
+                        <div class="m_toggle_list mt10" ng-repeat="group in data.searchList.szb" ng-hide="group.id == 'navigation_005001'">
+                            <div class="tit" ng-class="{'active':group == status.curOpenTreeItem}" ng-click="loadChildren(group)">
+                                <strong>{{group.dictName}}</strong>
+                            </div>
+                            <ul ng-show="group == status.curOpenTreeItem">
+                                <li style="width: 100%">
+                                    <span>
+                                        <span class="cursorPointer text-info" ng-click="selectGroupAll(group)">全选</span>
+                                        <span class="cursorPointer text-info" ng-click="deleteGroupAll(group)">清空</span>
+                                    </span>
+                                </li>
+                                <li ng-repeat="item in group.children">
+                                    <trs-checkbox ischecked="checkChecked(item)" callback="selectDoc(item)"></trs-checkbox>
+                                    <span data-ng-bind-html="item.dictName" ng-class="{'font_gray':status.all[status.curSearchChannel.ename]}"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 网站 app 微信-->
+                    <div class="fixed_ht" ng-show="status.curSearchChannel.ename !='szb'&&status.curSearchChannel.ename !='xhsg'&&status.curSearchChannel.ename !='jtcpg'">
+                        <trs-checkbox ischecked="status.all[status.curSearchChannel.ename]" callback="setAll(status.curSearchChannel.ename)"></trs-checkbox>
+                        <span>选择全部{{status.curSearchChannel.dictName}}</span>
+                        <div class="input-group mb10 mt10">
+                            <input type="text" class="form-control" ng-model="internetKeyword" aria-describedby="basic-addon2" ng-keypress="searchKeyPress($event)">
+                            <span class="input-group-addon" ng-click="searchWithKeyword()">搜索</span>
+                        </div>
+                        <div class="wrap_2">
+                            <span class="cursorPointer text-info" ng-click="selectAll()">全选</span>
+                            <span class="cursorPointer text-info" ng-click="deleteAll()">清空</span>
+                        </div>
+                        <ul class="m_list_3 mt10">
+                            <li ng-repeat="item in data.searchList.internet">
+                                <trs-checkbox ischecked="checkChecked(item)" callback="selectDoc(item)"></trs-checkbox>
+                                <span data-ng-bind-html="item.DICTNAME"></span>
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <pagination total-items="internetPage.ITEMCOUNT" ng-change="pageChanged(true)" ng-model="internetPage.CURRPAGE" max-size="3" class="page_style" boundary-links="true" items-per-page="internetPage.PAGESIZE" rotate="false" num-pages="internetPage.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+                        </div>
+                    </div>
+                     <!-- 集团成品库 -->
+                    <div class="fixed_ht" style="position: relative;" ng-show="status.curSearchChannel.ename =='jtcpg'">
+                        <trs-checkbox label="选择全部集团成品稿" ischecked="status.all[status.curSearchChannel.ename]" callback="setAll(status.curSearchChannel.ename)"></trs-checkbox>
+                        <br>
+                        <div class="m_toggle_list mt10" ng-repeat="group in data.searchList.jtcpg">
+                            <div class="tit" ng-class="{'active':group == status.curOpenTreeItem}" ng-hide="group.dictName=='微博'" ng-click="loadChildren(group)">
+                                <strong>{{group.dictName}}</strong>
+                            </div>
+                            <ul ng-show="group == status.curOpenTreeItem">
+                                <li style="width: 100%">
+                                    <span>
+                                        <span class="cursorPointer text-info" ng-click="selectGroupAll(group)">全选</span>
+                                        <span class="cursorPointer text-info" ng-click="deleteGroupAll(group)">清空</span>
+                                    </span>
+                                </li>
+                                <li ng-repeat="item in group.children">
+                                    <trs-checkbox ischecked="checkChecked(item)" callback="selectDoc(item)"></trs-checkbox>
+                                    <span data-ng-bind-html="item.dictName" ng-class="{'font_gray':status.all[status.curSearchChannel.ename]}"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3 mc-padding-0 border_box">
+                <ul class="m_nav_5">
+                    <li>{{status.curSearchChannel.dictName}}已选：</li>
+                </ul>
+                <ul class="select_list">
+                    <li ng-repeat="item in data.selectedArray[status.curSearchChannel.ename]"  ng-hide="item.id=='navigation_001014'||item.id=='navigation_001015'">
+                        {{item.dictName||item.DICTID}}
+                        <span class="glyphicon glyphicon-remove cursorPointer pull-right mc-margin-right-xs" aria-hidden="true" ng-click="removeChecked(item)"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row search_list" id="searchResult">
+    <div class="col-md-12" >
+        <div class="m_box_3" ng-repeat="item in items track by $index">
+            <a ng-href="#/resourcedetail?guid={{item.ZB_GUID}}&channel=iwo&service=iwo&indexname={{page.indexName}}" target="_blank">
+                <h4 class="tit" data-ng-bind-html="item.DOCTITLE" ></h4>
+            </a>
+            <p data-ng-bind-html="item.CONTENT">
+            </p>
+            <div class="bm">
+                <span class="source" ng-bind="item.ZB_SOURCE_SITE">
+                </span>
+                <span class="dete" ng-bind="item.DOCPUBTIME">
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page resourcectrl allsearch" ng-show="items.length">
+<trs-pagenation-left page-count="page" callback="selectPageNum()" pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+<pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+</div>
+<trs-go-top></trs-go-top>

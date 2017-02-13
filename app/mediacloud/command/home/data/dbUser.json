@@ -1,0 +1,54 @@
+{
+    "result": [
+        {
+            "DICTATEID": "1",
+            "TITLE": "郑州男子一个月内离四次婚 知情者称与分房有关。",
+            "ISSECRET": "0",
+            "ONLYDAY": "1",
+            "userName":"张一",
+            "userImg":"common/images/new-pic.jpg"
+        },
+        {
+            "DICTATEID": "2",
+            "TITLE": "郑州男子一个月内离四次婚 知情者称与分房有关。",
+            "ISSECRET": "0",
+            "ONLYDAY": "2",
+            "userName":"张二",
+            "userImg":"common/images/new-pic.jpg"
+        },
+        {
+            "DICTATEID": "3",
+            "TITLE": "郑州男子一个月内离四次婚 知情者称与分房有关。",
+            "ISSECRET": "0",
+            "ONLYDAY": "3",
+            "userName":"张三",
+            "userImg":"common/images/new-pic.jpg"
+        },
+        {
+            "DICTATEID": "4",
+            "TITLE": "郑州男子一个月内离四次婚 知情者称与分房有关。",
+            "ISSECRET": "0",
+            "ONLYDAY": "4",
+            "userName":"张四",
+            "userImg":"common/images/new-pic.jpg"
+        },
+        {
+            "DICTATEID": "5",
+            "TITLE": "郑州男子一个月内离四次婚 知情者称与分房有关。",
+            "ISSECRET": "0",
+            "ONLYDAY": "5",
+            "userName":"张五",
+            "userImg":"common/images/new-pic.jpg"
+        },
+        {
+            "DICTATEID": "6",
+            "TITLE": "郑州男子一个月内离四次婚 知情者称与分房有关。",
+            "ISSECRET": "0",
+            "ONLYDAY": "6",
+            "userName":"张六",
+            "userImg":"common/images/new-pic.jpg"
+        }
+    ]
+    
+ 
+}

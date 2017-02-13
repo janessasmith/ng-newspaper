@@ -1,0 +1,26 @@
+<div class="manage-createRole-children">
+	<div class="row">
+		<div class="col-sm-6 manage-createRole-changeGroup">
+			<div class="manage-createRole-changeGroup-head">
+				<span>分组选择</span>
+			</div>
+			<div class="manage-createRole-changeGroup-chooseGroup">
+				<span>请选择角色分组</span>
+			</div>
+			<div  class="manage-createRole-chooseRole-body-left-list">
+				<!-- <ui class="panel-body ztree">
+					<trs-tree id="changeGroup" conf="changeGroupConf" json-obj="changeGroupjson"></trs-tree>
+				</ui> -->
+				<treecontrol selected-node="selectedNodeCopy" expanded-nodes="expandedChangeGroup" class="tree-light" tree-model="dataForTheTree" options="cGtreeOptions" on-node-toggle="cShowToggle(node)" on-selection="cGshowSelected(node)">{{node.GNAME}}</treecontrol>
+			</div>
+		</div>
+		<div class="col-sm-6 manage-createRole-changeGroup-chooseGroup-button">
+			<div class="manage-createRole-changeGroup-chooseGroup-button-confirm">
+				<button ng-click="confirm()" class="btn-commen-green">确定</button>
+			</div>
+			<div class="manage-createRole-changeGroup-chooseGroup-button-cancel">
+				<button ng-click="cancel()"  class="btn-commen-blue">取消</button>
+			</div>
+		</div>
+	</div>
+</div>

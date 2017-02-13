@@ -1,0 +1,30 @@
+<div class="multiImgsUploader-container">
+    <div class="multiImgsUploader-head">
+        <p>上传图片</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()" ng-show="!status.lockBtn">
+    </div>
+</div>
+<div class="multiImgsUploader-body">
+    <div class="uploadCon">
+        <div class="file-item thumbnail oneImage">
+            <div class="upload_div wu-example" ng-repeat="file in data.uploadImgs track by $index">
+                <img ng-src="{{file.src}}">
+                <div class="progress" ng-show="status.lockBtn">
+                    <span class="text" ng-bind="data.progress[file.id]"></span>
+                    <span class="percentage" ng-style="{'width':data.progress[file.id]}"></span>
+                </div>
+               <!--  <div class="delete" ng-show="data.selectedImg==file">
+                    <img src="./editingCenter/app/images/fg2-1.png" ng-click="deleteUploadFile(file)">
+                </div> -->
+            </div>
+            <div class="uploadBtn" trs-upload auto="false" filetype="images" add-btn="true" call-back="callBack" src="/wcm/openapi/uploadImage">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="multiImgsUploader-footer">
+    <button class="btn btn-default gray" ng-click="close()" ng-disabled="status.lockBtn">取消</button>
+    <button class="btn btn-default blue" ng-click="finish()" ng-disabled="status.lockBtn">完成</button>
+</div>
+</div>
+<div cg-busy="loadingPromise"></div>

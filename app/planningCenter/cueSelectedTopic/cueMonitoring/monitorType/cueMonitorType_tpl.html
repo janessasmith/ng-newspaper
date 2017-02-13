@@ -1,0 +1,42 @@
+<div class="cue-monitor-type-container">
+    <div class="cue-monitor-type-head">
+        <p>监控类型</p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="cue-monitor-type-body">
+        <div class="cue-monitor-type-wrap">
+            <button ng-click="showConfig('website','网站监控配置','网站监控')" ng-class="{'disabled':status.isExisted['website']}" ng-disabled="status.isExisted['website']">
+                <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['website']=='website'?'jt1.png':'jt1-1.png'}}" alt="网站">
+                <span>网站</span>
+            </button>
+            <button ng-click="showConfig('weixin','微信监控配置','微信监控')" ng-class="{'disabled':status.isExisted.weixin}"  ng-disabled="status.isExisted['weixin']">
+                <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['weixin']=='weixin'?'jt2.png':'jt2-1.png'}}" alt="微信">
+                <span>微信</span>
+            </button>
+        </div>
+        <div class="cue-monitor-type-wrap">
+            <button ng-click="showConfig('weibo','微博监控配置','微博监控')" ng-class="{'disabled':status.isExisted.weibo}" ng-disabled="status.isExisted['weibo']">
+                <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['weibo']=='weibo'?'jt3.png':'jt3-1.png'}}"  alt="微博">
+                <span>微博</span>
+            </button>
+            <button ng-click="showConfig('app','APP监控配置','APP监控')" ng-class="{'disabled':status.isExisted.app}" ng-disabled="status.isExisted['app']">
+                <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['app']=='app'?'jt4.png':'jt4-1.png'}}"  alt="APP">
+                <span>APP</span>
+            </button>
+        </div>
+        <div class="cue-monitor-type-wrap">
+            <button ng-click="showConfig('epaper','纸媒监控配置','纸媒监控')" ng-class="{'disabled':status.isExisted.epaper}" ng-disabled="status.isExisted['epaper']">
+                <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['epaper']=='epaper'?'jt5.png':'jt5-1.png'}}"  alt="纸媒">
+                <span>纸媒</span>
+            </button>
+            <button ng-click="showConfig('discuz','论坛监控配置','论坛监控')" ng-class="{'disabled':status.isExisted.discuz}" ng-disabled="status.isExisted['discuz']">
+                <img ng-src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/{{status.isExisted['discuz']=='discuz'?'jt6.png':'jt6-1.png'}}"  alt="论坛">
+                <span>论坛</span>
+            </button>
+        </div>
+        <div ng-click="showCustom()" class="cue-monitor-type-custom">
+            <img src="./planningCenter/cueSelectedTopic/cueMonitoring/monitorType/images/jt7-1.png" alt="自定义">
+            <span>自定义</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="edit_more_tab_list" ng-class="{'edit_more_tab_list_out':status.more.isMoreTabListShow}">
+    <ul class="list-group">
+        <!-- <li ng-repeat="item in status.more.moreTabList" class="list-group-item"  ng-click="setMoreTabShow(item)" ng-bind="item.name" ></li> -->
+        <li class="list-group-item" ng-if="status.authority[item.id].isAccessAuthority" ng-repeat="item in status.more.moreTabList" ng-click="setMoreTabRouter(item.id)" ng-show="status.isThisTabShow != item.id" ng-bind="item.name"></li>
+    </ul>
+    <img src="./editingCenter/app/images/1_03.png">
+</div>

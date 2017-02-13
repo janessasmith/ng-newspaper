@@ -1,0 +1,119 @@
+.website_fra_new .modal-content {
+    margin: 0 auto;
+    width: 1000px;
+    height: auto;
+    top: 80px;
+}
+
+.website_fra_new .modal-dialog {
+    width:1000px !important;
+}
+
+.fragmentationMge .edit_right_mid {
+    height: 28px !important;
+    padding-top: 0px !important;
+    background-color: #EFF0F2;
+}
+
+.fragmentationMge .edit_right_head {
+    margin-bottom: 20px;
+}
+
+.fragmentationMge .widgetrecyclebin {
+    width: 150px !important;
+}
+
+.website_fra_new_head {
+    height: 43px;
+    line-height: 43px;
+    background: #4595d2;
+}
+
+.website_fra_new_head img {
+    padding-left: 10px;
+}
+
+.website_fra_new_head .website_fra_new_head_span {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.website_fra_new_content {
+    margin: 0 auto;
+    width: 89%;
+}
+
+.website_fra_new_content .website_fra_new_content_newFragment {
+    margin: 15px 0px;
+    line-height: 35px;
+    position: relative;
+}
+
+.website_fra_new_content_newFragment b {
+    font-weight: normal;
+    float: left;
+}
+
+.website_fra_new_content .invalidate-input-box span {
+    left: 70px;
+}
+
+.website_fra_new_content .textarea {
+    position: relative;
+}
+
+.website_fra_new_content .textarea textarea {
+    height: 280px;
+}
+
+.website_fra_new_content .website_fra_new_content_newFragment input {
+    height: 35px;
+    text-indent: 10px;
+    width: 200px;
+    color: #666;
+    font-size: 12px;
+    border-radius: 4px;
+    box-shadow: none!important;
+}
+
+.website_fra_new_content textarea {
+    resize: none;
+}
+
+.website_fra_new_footer {
+    margin: 0 auto;
+    width: 30%;
+    height: 76px;
+    line-height: 76px;
+}
+
+.website_fra_new_footer .news-role-btn {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.website_fra_new_footer .news-role-btn-success {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #1aba9f;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.man_produ_modify_footer_cancel {
+    margin-right: 60px;
+}

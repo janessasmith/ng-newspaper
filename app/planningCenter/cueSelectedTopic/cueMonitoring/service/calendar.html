@@ -1,0 +1,62 @@
+<form name="calendarForm" novalidate>
+    <div class="stickc" ondblclick="return false;" onselectstart="return false" onselect='false' style="-moz-user-select:none;">
+        <div class="head">
+            <span>日程管理</span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="main">
+            <div class="list-wrap" ng-show="data.items.length>0">
+                <div class="list-header">
+                    <span>标题</span>
+                    <span>开始时间</span>
+                    <span>结束时间</span>
+                    <span>操作</span>
+                </div>
+                <div class="list-body">
+                    <p ng-repeat="item in data.items">
+                        <span ng-bind="item.TITLE|trsLimitTo:18" class="pointer" ng-class="{'cur':item===data.selectedArray}" ng-click="selectItem(item)"></span>
+                        <span>
+                                <a ng-bind="item.BEFOREDATE | date:'yyyy-MM-dd'"></a>
+                        </span>
+                        <span>
+                            <a ng-bind="item.ENDDATE | date: 'yyyy-MM-dd'"></a>
+                        </span>
+                        <span ng-click="deleteCalendar(item)">
+                                <img src="./editingCenter/newspaper/images/i1.png">
+                                删除
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="children">
+                <span class="stickTime ">持续时间：</span>
+                <div class="date ">
+                    <input type="text " size="10 " class="form-control timepicker" ng-model="status.stickStartTime " date-date-format="yyyy-MM-dd " data-autoclose="1 " bs-datepicker readonly="readonly">
+                  <!--   <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne"> -->
+                </div>
+                <span class="stickTime">至</span>
+                <div class="date">
+                    <input type="text " size="10 " class="form-control timepicker" ng-model="status.stickEndTime " date-date-format="yyyy-MM-dd " data-autoclose="1 " bs-datepicker readonly="readonly">
+                   <!--  <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne"> -->
+                </div>
+            </div>
+            <div class="children invalidate-input-box {{calendarForm.TITLE.$invalid?'has-error':''}}">
+                <input type="text" placeholder="请输入标题" class="title form-control" ng-model="data.title" name="TITLE" maxlength-error-message="长度不能超过50个字数！" validator="maxlength=50,required" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA">
+            </div>
+            <div class="children invalidate-input-box {{newsForm.ABSTRACT.$invalid&&newsForm.CONTENT.$dirty?'has-error':''}}" style="height: 122px;">
+                <textarea class="form-control" placeholder="输入文章内容 " ng-model="data.content" name="CONTENT" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips"></textarea>
+            </div>
+            <div class="bottom mt20">
+               <!--  <button ng-click="create()" class="btn-commen btn left btn_confirm" ng-disabled="data.title==''">
+                    新建
+                </button> -->
+                <button ng-click="cancel() " class="btn-commen btn btn_cancel">
+                    取消
+                </button>
+                <button ng-click="save() " class="btn-commen btn">
+                    {{status.btnName}}
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

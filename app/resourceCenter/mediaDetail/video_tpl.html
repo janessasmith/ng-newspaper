@@ -1,0 +1,185 @@
+<div class="container-fluit res-ctr-detail">
+    <div class="operate-btns">
+        <button class="btn btn-primary" ng-click="openTakeDraftModal()">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/z56-1.png" />
+            </span>取稿
+        </button>
+        <!-- <button class="btn btn-primary" ng-click="creationAxis()">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/z14-1.png" />
+            </span>创作轴
+        </button> -->
+        <button class="btn btn-primary" ng-click="collect()">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/z16-1.png" />
+            </span>收藏
+        </button>
+        <!-- <button class="btn btn-primary" ng-click="printBtn()">
+            <span class="s_icon">
+                     <img ng-src="./editingCenter/app/images/zm15-1.png" /> 
+                </span> 打印
+        </button> -->
+        <button class="btn btn-primary" ng-click="close()">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/newspaper/images/c161.png" />
+            </span>关闭
+        </button>
+    </div>
+    <div class="res-ctr-detail-wrap">
+        <div class="res-ctr-con-tit-rel ">
+            <ul>
+                <li>
+                    <span>来源：</span>
+                    <span ng-bind="mediaDetail.PRODUCTTYPE"></span>
+                </li>
+                <li>
+                    <span>作者：</span>
+                    <span ng-bind="mediaDetail.TRUENAME"></span>
+                </li>
+                <li>
+                    <span>关键字：</span>
+                    <span title="{{mediaDetail.KEYWORDS | trsSemicolonToBlank}}" ng-bind="mediaDetail.KEYWORDS | trsSemicolonToBlank"></span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <span>发布时间：</span>
+                    <span ng-bind="mediaDetail.CRTIME"></span>
+                </li>
+                <!-- <li ng-class="{'areali':!status.isExtraFieldsShow}">
+                    <span>地域：</span>
+                    <span class="area" ng-bind-html="mediaDetail.ZB_AREA_LIST_CN || mediaDetail.AREA"></span>
+                </li> -->
+            </ul>
+            <!-- <ul>
+                <li class="urlli" ng-if="status.isExtraFieldsShow">
+                    <span>源地址：</span>
+                    <span ng-bind="mediaDetail.PUBURL"></span>
+                </li>
+            </ul> -->
+        </div>
+        <div class="res-ctr-con" style="margin-top:20px;">
+            <!-- 音视频标题 -->
+            <p class="res-ctr-con-tit" ng-bind="mediaDetail.TITLE"></p>
+            <!-- 音视频 -->
+            <div class="videogular-container">
+                <videogular vg-theme="config.theme.url">
+                    <!--视频开始(vg-native-controls="true":代表默认的播放组件)-->
+                    <vg-media vg-src="config.sources" vg-tracks="config.tracks">
+                    </vg-media>
+                    <!--视频结束-->
+                    <!--通过vg-controls自定义播放组件开始-->
+                    <vg-controls vg-autohide="config.plugins.controls.autoHide" vg-autohide-time="config.plugins.controls.autoHideTime">
+                        <!--播放/暂停按钮开始-->
+                        <vg-play-pause-button></vg-play-pause-button>
+                        <!--播放/暂停按钮结束-->
+                        <!--播放时间组件开始(有三种时间可选：currentTime、timeLeft、totalTime,分别代表当前播放时间、剩余播放时间和播放总时长，可以通过ng的过滤器来处理数据)-->
+                        <vg-time-display>{{currentTime | date:"mm:ss":"+0000"}}</vg-time-display>
+                        <!--播放时间组件结束-->
+                        <!--播放进度条开始-->
+                        <vg-scrub-bar>
+                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        </vg-scrub-bar>
+                        <!--播放进度条结束-->
+                        <vg-time-display>{{timeLeft | date:"mm:ss":"+0000"}}</vg-time-display>
+                        <vg-time-display>{{totalTime | date:"mm:ss":"+0000"}}</vg-time-display>
+                        <!--播放音量组件开始-->
+                        <vg-volume>
+                            <vg-mute-button></vg-mute-button>
+                            <vg-volume-bar></vg-volume-bar>
+                        </vg-volume>
+                        <!--播放音量组件结束-->
+                        <!--播放速度组件开始-->
+                        <vg-playback-button></vg-playback-button>
+                        <!--播放速度组件结束-->
+                        <!--全屏按钮开始-->
+                        <vg-fullscreen-button></vg-fullscreen-button>
+                        <!--全屏按钮结束-->
+                    </vg-controls>
+                    <!--通过vg-controls自定义播放组件结束-->
+                    <!--视频缓冲组件开始-->
+                    <vg-buffering></vg-buffering>
+                    <!--视频缓冲组件结束-->
+                    <!--覆盖层的播放按钮组件开始-->
+                    <vg-overlay-play></vg-overlay-play>
+                    <!--覆盖层的播放按钮组件结束-->
+                    <!--播放暂停或者结束时显示图片组件开始-->
+                    <vg-poster vg-url='config.plugins.poster'></vg-poster>
+                    <!--播放暂停或者结束时显示图片组件结束-->
+                </videogular>
+            </div>
+            <!-- <video width="320" height="240" controls="controls" preload="auto">
+                <source ng-src="{{mediaurl}}" type="video/mp4"></source>
+            </video> -->
+            <!-- 缩略图效果(可以左右切换) -->
+            <trs-thumb-scroll sources="thumbs" callback="selectThumb()" selected-item="activeItem" visible-size="5"></trs-thumb-scroll>
+        </div>
+        <div class="res-detail-process-view">
+            <p class="res-detail-process-view-tit">流程查看</p>
+            <div class="res-detail-process-view-con">
+                <p class="res-detail-process-view-sub-tit">取、签、见、撤信息</p>
+                <div class="res-detail-process-view-head">
+                    <div>取稿人</div>
+                    <div>取稿媒体</div>
+                    <div>版面栏目</div>
+                    <div>时间</div>
+                    <div>操作</div>
+                </div>
+                <p ng-if="qqjccInfos.QU.length == 0" class="no-result-tit">暂无相关信息</p>
+                <div class="res-detail-process-view-body" ng-repeat="info in qqjccInfos.QU">
+                    <span ng-bind="info.OPERUSER"></span>
+                    <span ng-bind="info.MEDIANAME"></span>
+                    <span ng-bind="info.CHNLNAME"></span>
+                    <span ng-bind="info.OPERTIME"></span>
+                    <span ng-bind="info.OPERNAME"></span>
+                </div>
+                <div class="res-detail-process-view-head">
+                    <div>签发人</div>
+                    <div>签发媒体</div>
+                    <div>版面栏目</div>
+                    <div>时间</div>
+                    <div>操作</div>
+                </div>
+                <p ng-if="qqjccInfos.QIAN.length == 0" class="no-result-tit">暂无相关信息</p>
+                <div class="res-detail-process-view-body" ng-repeat="info in qqjccInfos.QIAN">
+                    <span ng-bind="info.OPERUSER"></span>
+                    <span ng-bind="info.MEDIANAME"></span>
+                    <span ng-bind="info.CHNLNAME"></span>
+                    <span ng-bind="info.OPERTIME"></span>
+                    <span ng-bind="info.OPERNAME"></span>
+                </div>
+                <div class="res-detail-process-view-head">
+                    <div>组版人</div>
+                    <div>见报媒体</div>
+                    <div>版面栏目</div>
+                    <div>时间</div>
+                    <div>操作</div>
+                </div>
+                <p ng-if="qqjccInfos.JIAN.length == 0" class="no-result-tit">暂无相关信息</p>
+                <div class="res-detail-process-view-body" ng-repeat="info in qqjccInfos.JIAN">
+                    <span ng-bind="info.OPERUSER"></span>
+                    <span ng-bind="info.MEDIANAME"></span>
+                    <span ng-bind="info.CHNLNAME"></span>
+                    <span ng-bind="info.OPERTIME"></span>
+                    <span ng-bind="info.OPERNAME"></span>
+                </div>
+                <div class="res-detail-process-view-head">
+                    <div>撤稿人</div>
+                    <div>撤稿媒体</div>
+                    <div>版面栏目</div>
+                    <div>时间</div>
+                    <div>操作</div>
+                </div>
+                <p ng-if="qqjccInfos.CHE.length == 0" class="no-result-tit">暂无相关信息</p>
+                <div class="res-detail-process-view-body" ng-repeat="info in qqjccInfos.CHE">
+                    <span ng-bind="info.OPERUSER"></span>
+                    <span ng-bind="info.MEDIANAME"></span>
+                    <span ng-bind="info.CHNLNAME"></span>
+                    <span ng-bind="info.OPERTIME"></span>
+                    <span ng-bind="info.OPERNAME"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

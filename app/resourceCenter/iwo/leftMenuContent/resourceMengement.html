@@ -1,0 +1,149 @@
+<div class="mc-padding-xs">
+    <button class="btn btn-primary" ng-click="createModal()">新建分组</button>
+</div>
+<div class="cardPanel mc-padding-xs">
+    <ul class="list-group dir" ng-if="groups.length==0">
+        <li class="list-group-item">
+            <div>暂无分组</div>
+        </li>
+    </ul>
+    <ul class="list-group dir" ng-if="groups.length>0">
+        <li class="list-group-item title">分组名称</li>
+        <li class="list-group-item clickable" ng-repeat="group in groups track by group.orderNum" ng-click="viewGroup(group)" ng-class="{'selected':selectGroupId==group.id}">
+            <div class="pull-right">
+                <span ng-click="edit(group,$event)">重命名</span>｜
+                <span ng-click="deleteGroup(group,$event)">删除</span>
+            </div>
+            {{group.title}} </li>
+    </ul>
+    <div class="rightpanel">
+        <div class="resourcespanel">
+            <ul class="list-group resources txt_c" ng-if="groups.length==0 || resources.length==0">
+                <li class="list-group-item">
+                    <div>暂无订阅</div>
+                </li>
+            </ul>
+            <ul class="list-group resources txt_c" ng-if="groups.length>0 && resources.length>0">
+                <li class="list-group-item title">
+                    <div class="col-sm-3 title-header">订阅名称</div>
+                    <div class="col-sm-2 title-header">添加时间</div>
+                    <div class="col-sm-4 title-header">位置</div>
+                    <div class="col-sm-3 title-header">操作</div>
+                </li>
+                <li class="list-group-item" ng-repeat="item in resources" ng-hide="item.isdeleted">
+                    <div class="col-sm-3 txt_l">
+                        <span>{{item.title}}</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <span> {{item.createDate | date:'yyyy-MM-dd'}}</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <span ng-click="upMove(item,$index,$event)" class=" clickable">
+                                <i class="arrowicon arrowicon-up"></i>上移</span>
+                        <span ng-click="downMove(item,$index,$event)" class=" clickable">
+                                <i class="arrowicon arrowicon-down"></i>下移</span>
+                        <span ng-click="upTopMove(item,$index,$event)" class=" clickable">
+                                <i class="arrowicon arrowicon-up-top"></i>置顶</span>
+                        <span ng-click="downBottomMove(item,$index,$event)" class=" clickable">
+                                <i class="arrowicon arrowicon-down-bottom"></i>置底</span>
+                        <span dropdown class="clickable" ng-show="groups.length>1">
+                                <span dropdown-toggle>
+                                 <i class="arrowicon arrowicon-move"></i>移动到
+                              </span>
+                        <ul dropdown-menu class="dropdown-menu">
+                            <li ng-repeat="choice in groups" ng-show="choice.id != selectGroupId">
+                                <a ng-click="moveitemtoGroup(item,choice)">{{choice.title}}</a>
+                            </li>
+                        </ul>
+                        </span>
+                    </div>
+                    <div class="col-sm-3">
+                        <span ui-sref="retrieval.subscribe({channelType:item.channelType,sourceId:item.id,parentId:selectGroupId,title:item.title,typename:''})" class="clickable">编辑</span>｜
+                        <span ng-click="renameSource(item,$event)" class="clickable">重命名</span>｜
+                        <span ng-click="deleteSource(item,$event)" class="clickable">删除</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- <div class="row subscript-header">
+            <div class="col-sm-1 header-title"></div>
+            <div class="col-sm-5 header-title">组名</div>
+            <div class="col-sm-2 header-title">创建时间</div>
+            <div class="col-sm-2 header-title">位置</div>
+            <div class="col-sm-2 header-title">操作</div>
+        </div>
+        <accordion close-others="false" ng-repeat="group in groups track by group.orderNum">
+            <accordion-group>
+                <accordion-heading>
+                    <div class="row" ng-click="fold = !fold">
+                        <div class="col-sm-1"> <img src="./editingCenter/newspaper/images/np02.png" ng-class="{'standby-draft-panel-title-rotate':!!fold}" class="draftImg"></div>
+                        <div class="col-sm-4" ng-show="group.edit">
+                            <input class="form-control" type="text" ng-model="group.tempTitle" />
+                        </div>
+                        <div class="col-sm-4" ng-show="!group.edit">
+                            <span>{{group.title}}</span>
+                        </div>
+                        <div class="col-sm-2"> <span>{{group.createDate | date:'yyyy-MM-dd'}}</span></div>
+                        <div class="col-sm-3 clickable">
+                            <span ng-click="upTopMove(group,$event)" class=" clickable">
+                                <i class="mctexticon mcicon-up-top-arrow"></i>置顶</span>
+                            <span ng-click="upMove(group,$event)" class=" clickable">
+                                <i class="mctexticon mcicon-up-arrow"></i>上移</span>
+                            <span ng-click="downMove(group,$event)" class=" clickable">
+                                <i class="mctexticon mcicon-down-arrow"></i>下移</span>
+                            <span ng-click="downBottomMove(group,$event)" class=" clickable">
+                                <i class="mctexticon mcicon-down-bottom-arrow"></i>置底</span>
+                        </div>
+                        <div class="col-sm-2" ng-show="group.edit">
+                            <span ng-click="save(group,$event)">保存</span>｜
+                            <span ng-click="cancel(group,$event)">取消</span>
+                        </div>
+                        <div class="col-sm-2" ng-show="!group.edit">
+                            <span ng-click="edit(group,$event)">重命名</span>｜
+                            <span ng-click="deleteGroup(group,$event)">删除</span>
+                        </div>
+                    </div>
+                </accordion-heading>
+                <div class="panel-collapse collapse in subscript-striped">
+                    <div class="row" ng-repeat="item in group.resourceGroup">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4" ng-show="item.edit">
+                            <input class="form-control" type="text" ng-model="item.tempTitle" />
+                        </div>
+                        <div class="col-sm-4" ng-show="!item.edit">
+                            <span>{{item.title}}</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span> {{item.createDate | date:'yyyy-MM-dd'}}</span>
+                        </div>
+                        <div class="col-sm-3">
+                            <span ng-click="upTopMove(item,$event)" class=" clickable">
+                                <i class="mctexticon mcicon-up-top-arrow"></i>置顶</span>
+                            <span ng-click="upMove(item,$event)" class=" clickable">
+                                <i class="mctexticon mcicon-up-arrow"></i>上移</span>
+                            <span ng-click="downMove(item,$event)" class=" clickable">
+                                <i class="mctexticon mcicon-down-arrow"></i>下移</span>
+                            <span ng-click="downBottomMove(item,$event)" class=" clickable">
+                                <i class="mctexticon mcicon-down-bottom-arrow"></i>置底</span>
+                            <span dropdown class="clickable cursorPointer" ng-show="groups.length>1">
+                                <span dropdown-toggle>
+                                 <img src="./resourceCenter/images/move.png" style="width:17px;height:16px">移动到
+                              </span>
+                            <ul dropdown-menu class="dropdown-menu">
+                                <li ng-repeat="choice in groups" ng-show="choice.id != group.id">
+                                    <a ng-click="moveitemtoGroup(item,choice)">{{choice.title}}</a>
+                                </li>
+                            </ul>
+                            </span>
+                        </div>
+                        <div class="col-sm-2"> 
+                            <span ng-click="deleteSource(item,$event)" class="clickable">删除</span>
+                        </div> 
+                    </div>
+                </div>
+            </accordion-group>
+        </accordion>
+    </div> -->
+</div>

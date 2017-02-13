@@ -1,0 +1,484 @@
+.plan_accordion {}
+
+.plan_accordion .panel-body ul {
+    background-color: #3f5974;
+}
+
+.editing-list .plan_accordion ul li:hover {
+    background-color: #4f6f95;
+}
+
+.plan_accordion .background_style:hover {
+    background-color: #3f5974 !important;
+}
+
+.plan_head .plan_accordion .background_style .selectedItem {
+    margin-left: 40px;
+}
+
+.plan_head .nav-tabs.nav-justified {
+    display: none;
+}
+
+.plan_accordion .font_color {
+    color: #36b6ff !important;
+}
+
+.plan-main-left {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.calendar {
+    /*    min-height: 544px;*/
+    border: 3px solid #dddddd;
+    border-radius: 3px;
+    /*overflow: hidden;*/
+    /*  margin-bottom: 10px;
+    padding-bottom: 10px;*/
+}
+
+.calendar_overflow {
+    overflow: hidden;
+}
+
+.calendar_head,
+.tipOff_head {
+    height: 48px;
+    line-height: 48px;
+    background-color: #f1f2f6;
+}
+
+.calendar_head b,
+.tipOff_head b {
+    padding-left: 15px;
+    color: #333333;
+    font-size: 16px;
+}
+
+.calendar_content {
+    min-height: 528px;
+    /*overflow: hidden;*/
+}
+
+.calendar_content_left {
+    min-height: 496px;
+}
+
+.calendar_content_right {
+    margin: 10px 0 14px 0px;
+    padding-right: 0px;
+}
+
+.calendar_content_right .nav-tabs {
+    border-bottom: 1px solid #cecece;
+    border-left: 1px solid #cecece;
+    margin-left: 1px;
+}
+
+.tipOff_content .nav-tabs,
+.clue_newspaper_content .nav-tabs {
+    border-bottom: 1px solid #cecece;
+}
+
+.calendar_content_right .nav-tabs > li,
+.tipOff_content .nav-tabs > li,
+.clue_newspaper_content .nav-tabs > li {
+    border-top: 1px solid #cecece;
+    border-right: 1px solid #cecece;
+}
+
+.calendar_content_right .nav-tabs > li {
+    width: 25%;
+    height: 42px;
+}
+
+.tipOff_content .nav-tabs > li {
+    width: 12%;
+}
+
+.calendar_content_right .nav-tabs.nav-justified > li > a,
+.tipOff_content .nav-tabs.nav-justified > li > a,
+.clue_newspaper_content .nav-tabs.nav-justified > li > a {
+    color: #545454;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Microsoft Yahei";
+}
+
+.calendar_content_right .nav-tabs.nav-justified > li > a:hover,
+.calendar_content_right .nav-tabs.nav-justified > li > a:focus,
+.tipOff_content .nav-tabs.nav-justified > li > a:hover,
+.tipOff_content .nav-tabs.nav-justified > li > a:focus,
+.clue_newspaper_content .nav-tabs.nav-justified > li > a:hover,
+.clue_newspaper_content .nav-tabs.nav-justified > li > a:focus {
+    height: 40px;
+}
+
+.calendar_content_right table > tbody > tr > td,
+.tipOff_content table > tbody > tr > td,
+.tipOff_content table > thead > tr > th,
+.clue_newspaper_content table > tbody > tr > td,
+.clue_newspaper_content table > thead > tr > th {
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
+}
+
+.calendar_content_right table > tbody > tr > td,
+.calendar_content_right table > thead > tr > th,
+.tipOff_content table > tbody > tr > td,
+.tipOff_content table > thead > tr > th,
+.clue_newspaper_content table > tbody > tr > td,
+.clue_newspaper_content table > thead > tr > th {
+    border-top: none;
+    border-bottom: none;
+}
+
+.calendar_content_right .nav-tabs > li.active,
+.calendar_content_right .nav-tabs > li.active > a,
+.calendar_content_right .nav-tabs > li.active > a:hover,
+.calendar_content_right .nav-tabs > li.active > a:focus {
+    color: #2f98d2;
+    border-top: 2px solid #2f98d2;
+    border-bottom: 1px solid #fff;
+    /*     height: 40px;*/
+    line-height: 20px;
+}
+
+.calendar_content_right .nav-tabs > li.active > a,
+.tipOff_content .nav-tabs > li.active > a,
+.clue_newspaper_content .nav-tabs > li.active > a {
+    margin-top: -2px!important;
+}
+
+.calendar_content_right .table-striped > tbody > tr:nth-of-type(2n),
+.tipOff_content .table-striped > tbody > tr:nth-of-type(2n),
+.clue_newspaper_content .table-striped > tbody > tr:nth-of-type(2n) {
+    background-color: #f8f9fb;
+}
+
+.calendar_content_right .tab-content table > thead,
+.tipOff_content .tab-content table > thead,
+.clue_newspaper_content .tab-content table > thead {
+    background-color: #f8f9fb;
+}
+
+.calendar_content_right .td_50,
+.tipOff_content .td_50,
+.clue_newspaper_content .td_50 {
+    /*width: 50%;*/
+    text-align: left;
+    position: relative;
+}
+
+.calendar_content_right .w-76 {
+    /*width: 76%;*/
+}
+
+.calendar_content_right .w-76 a {
+    display: block;
+    /*width: 360px;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tipOff_content .td_50 a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.calendar_content_right .td_50 a {
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tipOff {
+    margin-top: 10px;
+    min-height: 470px;
+    border: 3px solid #dddddd;
+    border-radius: 3px;
+}
+
+.tipOff_content {
+    min-height: 422px;
+}
+
+.tipOff_content table {
+    margin-bottom: 0px;
+}
+
+.tipOff_content .nav-tabs > li.active,
+.tipOff_content .nav-tabs > li.active > a,
+.tipOff_content .nav-tabs > li.active > a:hover,
+.tipOff_content .nav-tabs > li.active > a:focus,
+.clue_newspaper_content .nav-tabs > li.active,
+.clue_newspaper_content .nav-tabs > li.active > a,
+.clue_newspaper_content .nav-tabs > li.active > a:hover,
+.clue_newspaper_content .nav-tabs > li.active > a:focus {
+    color: #2f98d2;
+    border-top: 2px solid #2f98d2;
+    border-bottom: 1px solid #fff;
+    height: 40px;
+    line-height: 20px;
+}
+
+.mt10 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.tipOff_content_footer {
+    padding-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
+
+.tipOff_content_footer span {
+    font-size: 14px;
+    color: #2d9ad3;
+}
+
+.tipOff_content_footer a:hover,
+.tipOff_content_footer a:focus {
+    text-decoration: none;
+}
+
+.clue_thrid {
+    padding-top: 10px;
+    clear: both;
+}
+
+.clue_newspaper,
+.clue_website {
+    float: left;
+    width: 49.5%;
+    height: 670px;
+    border: 3px solid #dddddd;
+    border-radius: 3px;
+}
+
+.clue_website {
+    float: right!important;
+}
+
+.clue_pull_right {
+    float: right;
+    margin: 15px 10px 0 0;
+    cursor: pointer;
+}
+
+.clue_calendar_border .nav-tabs > li {
+    border-left: none;
+    border-right: none;
+}
+
+.clue_calendar_button {
+    margin-top: 15px;
+}
+
+.clue_calendar_btn_success {
+    width: 90px;
+    line-height: 28px;
+    background: #21bca2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+button {
+    outline: none;
+}
+
+.clue_calendar_btn {
+    width: 90px;
+    line-height: 26px;
+    background: #fff;
+    color: #545454;
+    text-align: center;
+    border: 1px solid #545454;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.clue_calendar_table_img {
+    margin-right: 10px;
+    margin-top: -2px;
+}
+
+.plan-active {
+    /* background: url("./editingCenter/app/images/l12.png") no-repeat scroll 101% center; */
+    background-color: #1c83d2!important;
+}
+
+.clue_newspaper_content table > tbody > tr > td.td_color {
+    color: #44ae9a;
+}
+
+.recent-policy-page p {
+    margin-left: 10px;
+}
+
+.recent-policy-page .page_left li a {
+    z-index: 1;
+    /* padding: 0px;
+    width: 42px;
+    height: 28px;
+    font-size: 10px;
+    -webkit-transform: scale(0.9);*/
+}
+
+.rankList-bar {
+    padding-right: 15px;
+}
+
+.rankList-bar .calendar_content_right .nav-tabs {
+    border-left: none;
+}
+
+.rankList-bar .calendar_content_right .nav-tabs > li {
+    width: auto;
+    text-align: center;
+    border: none;
+    font-family: "微软雅黑";
+}
+
+.rankList-bar .calendar_content_right .nav-tabs > li.active {
+    border-left: 1px solid #cecece;
+    border-right: 1px solid #cecece;
+    background-color: #fff;
+}
+
+.rankList-bar .calendar_content_right .head_sub_nav ul {
+    height: 30px;
+    margin: 5px 0px;
+    border: none;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.rankList-bar .calendar_content_right .head_sub_nav ul li {
+    height: 22px;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.rankList-bar .calendar_content_right .head_sub_nav ul li a {
+    color: #000;
+}
+
+.rankList-bar .calendar_content_right .head_sub_nav ul li a.active,
+.rankList-bar .calendar_content_right .head_sub_nav ul li a,
+.rankList-bar .calendar_content_right .head_sub_nav ul li a.active:hover {
+    font-size: 12px;
+    padding: 1px 10px;
+    height: 23px;
+    line-height: 18px;
+}
+
+.rankList-bar .calendar_content_right .head_sub_nav > .nav-tabs li.active a {
+    font-size: 12px;
+    color: #fff;
+    background-color: #1ABA9F;
+    border-top: none;
+}
+
+.rankList-bar .calendar_content_right .head_sub_nav .nav-tabs > li.active {
+    border: none;
+    margin-top: 7px;
+}
+
+.calendar_content_right .head_sub_nav ul {
+    border: none;
+}
+
+.planningCenter-right-main {
+    padding-top: 15px;
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1280px) {
+    .calendar_content_right .w-76 a {
+        /*width: 76%;*/
+    }
+    /*爆料监控 96068*/
+    .tipOff_content .td_50 a {
+        /*width: 420px;*/
+    }
+    /*网站监控 热度*/
+    .cue-monitor-table tbody tr td a {
+        width: 160px!important;
+    }
+}
+
+.btn-commen .fa {
+    color: #4395D1;
+}
+
+.btn-commen:hover .fa,
+.btn-commen.active .fa {
+    color: #fff;
+}
+
+.plancenter-create-topic .modal-footer button {
+    width: 80px;
+    height: 28px;
+    background: #4496d2;
+    float: right;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    padding: 0px;
+    margin-top: 15px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.ovfl-hdn {
+    overflow: hidden;
+}
+
+.xcol-hotvalue {
+    width: 70px;
+}
+
+.xcol-trend {
+    width: 70px;
+}
+
+.cue-monitor-table .xcol-date {
+    width: 130px!important;
+}
+
+.cue-monitor-table .xcol-source {
+    width: 120px!important;
+}
+
+.plan_head .ml0 {
+    font-size: 15px;
+}
+
+.iwo_accordion .secondmenu {
+    margin-right: 5px;
+    line-height: 40px;
+}
+
+.iwo_accordion .panel-body .thirdmenu i {
+    width: 30%;
+}
+
+.iwo_accordion .panel-body .thirdmenu a {
+    width: 65%;
+}

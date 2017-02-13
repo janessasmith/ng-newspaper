@@ -1,0 +1,100 @@
+<form name="rejectForm" novalidate>
+    <div class="newspaper_rejection_container" ng-class="{'active':status.isManusCorrShow}">
+        <div class="newspaper_rejection_tl">
+            <p>退稿</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+        </div>
+        <div class="newspaper_rejection_row">
+            <div class="newspaper_rejection_left">
+                <div class="newspaper_rejection_tl_num">
+                    已选稿件({{data.items.length}})
+                </div>
+                <div class="list-wrap">
+                    <div class="list-header">
+                        <span>序号</span>
+                        <span>新闻标题</span>
+                        <span>关联</span>
+                        <span>操作</span>
+                    </div>
+                    <div class="list-body">
+                        <div ng-repeat="item in data.items |unique:'METADATAID'">
+                            <p>
+                                <span ng-bind="$index+1"></span>
+                                <a title="{{item.TITLE}}" ng-bind="item.TITLE|trsLimitTo:30"></a>
+                                <span>
+                                    <img src="./editingCenter/newspaper/images/u108.png" class="edit_newspaperView_relation_icon" ng-click="ManusCorrToggle(item)" ng-show="item.RELATEDOCS > 1">
+                                 </span>
+                                <span ng-click="singleDel(item)">
+                                <img src="./editingCenter/newspaper/images/i1.png">
+                                    删除
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="newspaper_rejection_detail_checkbox">
+                    <trs-single-radio label="退回经手人" ischecked="status.selectedType==0" callback="selectrejectionType(0)" ng-if="data.items.length<2"></trs-single-radio>
+                    <trs-single-radio label="退回其他人" ischecked="status.selectedType==1" callback="selectrejectionType(1)"></trs-single-radio>
+                    <trs-single-radio label="退回原稿库" ischecked="status.selectedType==2" callback="selectrejectionType(2)"></trs-single-radio>
+                </div>
+                <div class="newspaper_rejection_detail_is_person_handle" ng-show="status.selectedType==0&&data.items.length==1">
+                    <ul>
+                        <li ng-repeat="editInfo in editInfos" ng-class="{'active':editInfo==status.selectedUser}" ng-click="getEditInfo(editInfo)">
+                            <span ng-bind="editInfo.GROUPPATH"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="newspaper_rejection_detail_is-other-people" ng-show="status.selectedType==1">
+                    <div class="is-other-people_user">
+                        <div class="userName">
+                            <p>用户名:</p>
+                            <input type="text" watch-options='true' ng-model="searchWord" bs-options="user as user.SUGGESTION for user in getSuggestions($viewValue)" bs-typeahead limit="30">
+                        </div>
+                        <div class="treeCon">
+                            <div class="treeDept">
+                                <div class="treeDeptTitle">媒体列表</div>
+                                <treecontrol selected-node="selectedNode" expanded-nodes="expandedTest" on-node-toggle="showToggle(node)" class="tree-light" tree-model="treedata" options="status.treeOptions" on-selection="showSelected(node)">
+                                    <a title="{{node.GNAME}}" href="javascript:void(0)">{{node.GNAME}}</a>
+                                </treecontrol>
+                            </div>
+                            <div class="treePersonnel">
+                                <div class="treePersonnelTitle">人员列表</div>
+                                <p ng-repeat="user in users" ng-bind="user.USERNAME" ng-click="userSelect(user)" ng-class="{'active':status.selectedUser==user}"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="is-other-people-choose">
+                        <div class="is-other-people-choose-group"></div>
+                        <div class="is-other-people-choose-user"></div>
+                    </div>
+                </div>
+                <div class="newspaper_rejection_detail_reject-darft">
+                    <div class="newspaper_rejection_tl_num">
+                        退稿原因
+                    </div>
+                    <div class="invalidate-input-box {{rejectForm.reason.$invalid?'has-error':''}} visible">
+                        <textarea class="form-control mt0" ng-model="data.opinion" placeholder="请输入退稿原因" name="reason" maxlength-error-message="长度不能超过300个字符！" validator="maxlength=300" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="newspaper_rejection_right" ng-show="status.isManusCorrShow">
+                <div>
+                    <p>与所选稿件相关联的稿件</p>
+                    <div class="has_no_draft" ng-show="status.hasNoManusCorr">
+                        无关联稿件
+                    </div>
+                    <trs-checkbox ischecked="data.selectedArray.length==data.relationDraft.length" callback="selectAll()" class="ml10"></trs-checkbox>全选
+                    <ul>
+                        <li ng-repeat="item in data.relationDraft" class="notcur" ng-if="status.draftFrom[item.DOCSTATUS]=='已签稿'" title="{{item.TITLE}}">{{item.TITLE|truncate:18:"..."}}({{status.draftFrom[item.DOCSTATUS]}})</li>
+                        <li ng-repeat="item in data.relationDraft" ng-click="addRelationDraft(item)" class="pointer" ng-class="{cur:status.currItem==item}" ng-if="status.draftFrom[item.DOCSTATUS]!='已签稿'" title="{{item.TITLE}}">{{item.TITLE|truncate:18:"..."}}({{status.draftFrom[item.DOCSTATUS]}})</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="toBeCompiled-review-footer">
+            <button class="new-role-btn btn btn-primary btn_confirm" ng-click="confirm()">确定</button>
+            <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+    <div class="busy" cg-busy="loadingPromise"></div>
+</form>

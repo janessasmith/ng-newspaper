@@ -1,0 +1,13 @@
+<div class="wb-rk-bk">
+    <div class="wb-rk-top">
+        <div class="wb-rk-tit">{{accounts[0].unitName}}</div>
+    </div>
+    <div class="wb-rk-deal">
+        <div class="wb-rk-ls" ng-repeat="account in accounts">
+            <a ui-sref="weiboList.list({accountId:account.accountId})">
+                <img ng-src="{{account.accountPic}}" alt="{{account.accountName}}"/>
+            </a>
+        </div>
+    </div>
+    <a href="javascript:;" class="wb-rk-arrow" account-num></a>
+</div>

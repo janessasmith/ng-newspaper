@@ -1,0 +1,40 @@
+.cb-custom-window .toBeCompiled-darft-list div{
+	width: 400px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.cb-custom-window .toBeCompiled-darft-list div span{
+	font-family: "Microsoft Yahei";
+}
+
+.cb-custom-window .modal-dialog{
+	margin-top: 226px;
+}
+
+.cb-custom-window .toBeCompiled-darft-list div input{
+	width: 300px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    font-family: "Microsoft Yahei";
+}
+.cb-custom-window .toBeCompiled-darft-list{
+	min-height: 90px;
+}
+.cb-custom-window .toBeCompiled-directSign-footer{
+	background: #fff;
+	padding:15px 0;
+}
+
+.cb-custom-window .toBeCompiled-directSign-footer .ml400{
+	margin-left: 400px !important;
+}
+
+.cb-custom-window .btn-delete{
+	background: #ed6363 !important;
+}
+
+.cursor-disabled{
+	cursor: not-allowed !important;
+}

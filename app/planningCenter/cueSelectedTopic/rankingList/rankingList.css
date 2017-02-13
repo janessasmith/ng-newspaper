@@ -1,0 +1,398 @@
+.colorCard {
+    font-family: "微软雅黑";
+}
+
+.colorCard_lg,
+.colorCard_lg a {
+    width: 318px;
+    height: 169px;
+}
+
+.colorCard_x_lg,
+.colorCard_x_lg a {
+    width: 316px;
+    height: 84px;
+}
+
+.colorCard_x_ms,
+.colorCard_x_ms a {
+    width: 158px;
+    height: 84px;
+}
+
+.colorCard_y_lg,
+.colorCard_y_lg a {
+    width: 160px;
+    height: 170px;
+}
+
+.colorCard_lg,
+.colorCard_x_lg,
+.colorCard_x_ms,
+.colorCard_y_lg {
+    float: left;
+    border: 1px solid white;
+}
+
+.colorCard_lg a,
+.colorCard_x_lg a,
+.colorCard_x_ms a,
+.colorCard_y_lg a {
+    display: table-cell;
+    color: white;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.colorCard_lg p,
+.colorCard_x_lg p,
+.colorCard_x_ms p,
+.colorCard_y_lg p {
+    font-size: 24px;
+    margin: 0px;
+}
+
+.colorCard_lg span,
+.colorCard_x_lg span,
+.colorCard_x_ms span,
+.colorCard_y_lg span {
+    font-size: 18px
+}
+
+.colorCard .blue {
+    background: #58b5e1;
+}
+
+.colorCard .orange {
+    background: #f7774a
+}
+
+.colorCard .more_yellow {
+    background: #f0b93a
+}
+
+.colorCard .yellow {
+    background: #ffea5d
+}
+
+.colorCard .green {
+    background: #6eb33e
+}
+
+.colorCard .purple {
+    background: #c066a4
+}
+
+.colorCard .red {
+    background: #e95724
+}
+
+.colorCard .reseda {
+    background: #92cf68
+}
+
+.colorCard .ft36 {
+    font-size: 36px!important;
+}
+
+.add_padding_15 {
+    padding: 15px;
+}
+
+.hot_search_time {
+    width: 97%;
+    height: 50px;
+    background: url("./planningCenter/images/eva.png");
+    position: relative;
+    overflow: hidden;
+    margin: 16px auto 0px;
+}
+
+.hot_search_time .hot_sarch_list {
+    width: 13.333%;
+    float: left;
+    height: 50px;
+    text-align: center;
+}
+
+.hot_search_time .hot_sarch_list a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.hot_search_time .hot_sarch_list a img {}
+
+.hot_search_time .hot_sarch_list a span {
+    display: block;
+    height: 50px;
+    background: url(./planningCenter/images/ch8.png) no-repeat center bottom;
+}
+
+.hot_search_time .hot_sarch_list a span.active {
+    background: url(./planningCenter/images/ch8-1.png) no-repeat center bottom;
+    color: #2f98d3;
+}
+
+.search_refersh {
+    float: right;
+    margin-top: 14px;
+    width: 22px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.calendar_content span.search_hover_span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    word-break: break-all;
+    background: rgb(0, 0, 0);
+    opacity: 0.7;
+}
+
+.calendar_content .mt0 {
+    margin-top: 0px
+}
+
+.calendar .mheight420 {
+    min-height: 420px
+}
+
+.calendar_content .ranking-sina-title {
+    position: absolute;
+    right: 0px;
+    top: 4px
+}
+
+.calendar_content .ranking-sina-title .ranking-sina-title-img {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+}
+
+.calendar_content .ranking-sina-title p {
+    float: left;
+    margin: 0px;
+    height: 23px;
+    width: 70px;
+    font-size: 12px;
+    text-align: center;
+    background: #2B95D0;
+    color: white;
+    line-height: 23px;
+    margin-right: 10px
+}
+
+.calendar_content .ranking-sina-title p:last-child {
+    margin-right: 0px
+}
+
+.calendar_content .bigMapRanklist {
+    width: 1000px;
+    height: 240px;
+    border: 1px solid #ccc;
+    display: block;
+    position: relative;
+    background: white;
+    top: -11px;
+    left: -668px;
+    z-index: 999;
+    margin-left: -20px;
+}
+
+.calendar_content .small-map-pos {
+    position: relative;
+    cursor: pointer;
+    left: 0px;
+}
+
+.calendar_content .plan_table {
+    border: 1px solid #ccc;
+    font-family: "微软雅黑"
+}
+
+.calendar_content .plan_table_header {
+    text-align: center;
+    height: 37px;
+    background-color: #f8f9fb;
+    border-bottom: 2px solid #CFCFCF;
+    line-height: 37px;
+    overflow: hidden;
+}
+
+.calendar_content .plan_table_header p,
+.calendar_content .plan_table_detail p {
+    float: left;
+    margin: 0px;
+    text-align: center;
+}
+
+.calendar_content .plan_table_detail p a {
+    color: #000
+}
+
+.calendar_content .plan_table .w50 {
+    width: 50px
+}
+
+.calendar_content .plan_table .b30 {
+    width: 35%;
+    height: 51px;
+    color: #000;
+    font-size: 14px;
+    text-align: left;
+    float: left;
+    text-decoration: none;
+}
+
+.calendar_content .plan_table .tx_hide {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.calendar_content .plan_table .b45 {
+    width: 45%;
+    height: 51px;
+    color: #000;
+    font-size: 14px;
+    text-align: left;
+    float: left;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.calendar_content .plan_table a:hover {
+    text-decoration: none;
+}
+
+.calendar_content .plan_table .w170 {
+    width: 15%!important;
+    height: 51px
+}
+
+.calendar_content .plan_table .w80 {
+    width: 8%;
+    height: 51px
+}
+
+.calendar_content .plan_table .b10 {
+    width: 15%;
+    height: 51px;
+}
+
+.calendar_content .plan_table .b20 {
+    width: 20%;
+    position: relative;
+}
+
+.calendar_content .plan_table .w65 {
+    width: 5%;
+    height: 51px
+}
+
+.calendar_content .plan_table .w100 {
+    width: 10%;
+    position: relative;
+}
+
+.calendar_content .plan_table .w37 {
+    width: 6%;
+    height: 51px
+}
+
+.calendar_content .plan_table_detail {
+    line-height: 51px;
+}
+
+.calendar_content .plan_table_detail:nth-child(2n+1) {
+    background: #f8f9fb
+}
+
+.calendar_content .plan_acitve_height {
+    height: 300px
+}
+
+.calendar .init-big-ranking-width {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 240px;
+    width: 100%
+}
+
+.absolute {
+    position: absolute;
+}
+
+.left_643 {
+    left: -634px!important;
+}
+
+.left_732 {
+    left: -732px!important;
+}
+
+.calendar_content .bigMapRanklist >div>div {
+    position: absolute!important;
+}
+
+.calendar_content p.sina_click_active {
+    background: red;
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1681px) {
+    .ranking_content_right .edit_table {
+        min-height: 543px;
+    }
+}
+
+.calendar .white {
+    background-color: white!important;
+    z-index: 999;
+    border: 1px solid #ccc
+}
+
+.calendar .door-list {}
+
+.wechat .people-list .white {
+    left: -575px!important;
+}
+
+.calendar .door-list .white {
+    left: -675px!important;
+}
+
+.calendar .people-list .white {
+    left: -780px;
+    top: -240px!important;
+}
+
+.calendar .people-list >.pieceMgr-main-list>div {
+    left: -730px!important;
+}
+
+.ht140 {
+    height: 140px
+}
+
+.calendar .page_fix {
+    height: 70px;
+    position: relative;
+}
+
+/*.wechat .b30 {
+    width: 28%!important
+}*/
+
+.wechat .b10 {
+    width: 10%!important;
+}

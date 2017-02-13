@@ -1,0 +1,55 @@
+<div class="cue-monitor-type-custom-first">
+    <div class="cue-monitor-type-custom-first-wrap">
+        <b>稿源:</b>
+        <div>
+        	<p style="height:26px;"></p>
+            <ul>
+            	<li ng-click="chooseSource('web')" ng-class="{'cur':selectedItem.web}">网站</li>
+            	<li ng-click="chooseSource('weixin')" ng-class="{'cur':selectedItem.weixin}">微信</li>
+            	<li ng-click="chooseSource('app')" ng-class="{'cur':selectedItem.app}">APP</li>
+            	<li ng-click="chooseSource('weibo')" ng-class="{'cur':selectedItem.weibo}">微博</li>
+            	<li ng-click="chooseSource('digitalPaper')" ng-class="{'cur':selectedItem.digitalPaper}">数字报</li>
+            </ul>
+        </div>
+    </div>
+    <div class="cue-monitor-type-custom-first-wrap">
+        <b>二级分类:</b>
+        <div>
+            <p>全部</p>
+            <ul>
+            	<li ng-repeat="secondItem in secondItems">
+            		<span ng-bind="secondItem.dictName" ng-click="chooseSecondClass(secondItem)" ng-class="{'cur':secondItem==secondCurItem}"></span>
+            	</li>
+            </ul>
+        </div>
+    </div>
+    <div class="cue-monitor-type-custom-first-wrap">
+        <b>三级分类:</b>
+        <div>
+            <p>全部</p>
+            <ul>
+            	<li ng-repeat="thirdItem in thirdItems">
+            		<span ng-bind="thirdItem.dictName" ng-click="chooseThirdClass(thirdItem)" ng-class="{'cur':thirdItem==thirdCurItem}"></span>
+            	</li>
+            </ul>
+        </div>
+    </div>
+    <div class="cue-monitor-type-custom-first-box">
+        <b ng-bind="sourceType" ng-init="'站点名称'"></b>
+        <p>全部</p>
+        <p>选择<span ng-bind="sourceType" ng-init="'站点名称'"></span></p>
+        <div>
+            <ul>
+                <li>
+                    <input type="checkbox">
+                    <span>公众号</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="cue-monitor-type-custom-first-footer">
+        <button class="new-role-btn btn_confirm" ng-click="next()">下一步</button> 
+        <button class="new-role-btn btn_confirm" ng-click="pre()">上一步</button>
+        <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

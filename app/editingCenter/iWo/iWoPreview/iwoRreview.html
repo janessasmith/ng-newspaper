@@ -1,0 +1,170 @@
+<div class="websiteCabletPreview_nav">
+    <div class="box-fix-bt box-fix-top">
+        <div class="txt_r">
+            <!-- -->
+            <button class="btn btn-primary" ng-click="edit()" ng-if="status.btnRights['iwo.personal.bianji']||status.btnRights['iwo.received.bianji']">
+                <span class="s_icon">
+                <img src="./editingCenter/newspaper/images/bj46-1.png" />
+            </span> 编辑
+            </button>
+            <button class="btn btn-primary" ng-click="creationAxis()">
+                <span class="s_icon">
+                    <img ng-src="./resourceCenter/images/z14-1.png" />
+                </span>创作轴
+            </button>
+            <button class="btn btn-primary" ng-click="bigFace(data.item)" ng-if="status.bigFaceRigths['iwo.trace.chakan']&&!status.isCollectDraft">
+                <span class="s_icon">
+                    <img ng-src="./editingCenter/app/toBeCompiled/images/b9.png" /> 
+                </span><span class="bitFaceTit" ng-bind="status.bitFaceTit" ng-click=""></span>
+            </button>
+            <!-- <button class="btn btn-primary" ng-click="submit()" ng-if="status.btnRights['iwo.personal.tijiao']||status.btnRights['iwo.received.tijiao']">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/i38-1.png" />
+            </span> 提交
+            </button>
+            <button ng-click="draft()" class="btn btn-primary" ng-if="status.btnRights['iwo.personal.chuangao']||status.btnRights['iwo.received.chuangao']">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/i40-1.png" />
+            </span> 传稿
+            </button>
+            <button ng-click="batchShare()" class="btn btn-primary" ng-if="status.btnRights['iwo.personal.gongxiang']||status.btnRights['iwo.received.gongxiang']">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/c5.png"/>
+            </span> 共享
+            </button>
+            <button class="btn btn-primary" ng-click="batchCopyBuildDraft()" ng-if="status.btnRights['iwo.docrecord.fuzhijianxingao']">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/b3-1.png" />
+            </span>复制建新稿
+            </button>
+            <button class="btn btn-primary" ng-click="invoke()" ng-if="status.btnRights['iwo.specialrightfordoc.diaoyong']">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/i42-1.png" />
+            </span>调用
+            </button>
+            <button class="btn btn-primary" ng-click="copy()" ng-if="status.btnRights['iwo.collect.copy']">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/i20-1.png" />
+            </span>复制
+            </button>
+            <button class="btn btn-primary" ng-click="restroe()" ng-if="status.btnRights['iwo.waste.huanyuan']">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/fg1-1.png" />
+            </span>还原
+            </button>
+            <button class="btn btn-primary" ng-click="deleteDraft()" ng-if="status.btnRights['iwo.waste.delete']">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/fg2-1.png" />
+            </span>删除
+            </button>
+            <button class="btn btn-primary" ng-click="showVersionTime()">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/website/images/q42-1.png" />
+            </span>流程版本
+            </button> -->
+            <button class="btn btn-primary" ng-click="printBtn()" ng-if="!status.isCollectDraft">
+                <span class="s_icon">
+                     <img ng-src="./editingCenter/app/images/zm15.png" /> 
+                </span> 打印
+            </button>
+            <button class="btn btn-primary" ng-click="close()">
+                <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/cclose.png" />
+            </span>关闭
+            </button>
+        </div>
+    </div>
+</div>
+<div class="websiteCabletPreview">
+    <!-- websiteCabletPreview_context s-->
+    <div class="websiteCabletPreview_context">
+        <div class="websiteCabletPreview_head">
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>来源：</b>
+                    <span class="ml27">{{data.item.NEWSSOURCES||data.item.DOCSOURCENAME||data.item.DOCSOURCE}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>作者：</b>
+                    <span>{{data.item.SIGNATUREAUTHOR||data.item.AUTHOR}}</span>
+                </p>
+                <p class="col-md-4">
+                    <b>关键字：</b>
+                    <span>{{data.item.KEYWORDS}}</span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-4">
+                    <b>创建时间：</b>
+                    <span>{{data.item.CRTIME}}</span>
+                </p>
+                <p class="col-md-4" ng-if="data.item.SRCURL!=''">
+                    <b>文档链接：</b>
+                    <span>{{data.item.SRCURL}}</span>
+                </p>
+                <p class="col-md-8" title="{{data.item.ABSTRACT}}" class="pointer">
+                    <b>摘要：</b>
+                    <span ng-bind-html="data.item.ABSTRACT" ng-class="{'text-overflow-elps':status.initBtn}" class="pointer"></span>
+                </p>
+            </div>
+            <div class="websiteCabletPreview_head_rank">
+                <p class="col-md-12">
+                    <b>备注：</b>
+                    <span ng-bind="data.item.REMARKS" title="{{data.item.REMARKS}}" class="pointer"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="websiteCabletPreview_head_rank">
+        <img src="./editingCenter/website/images/cablet1.jpg" alt="Top" ng-click="status.initBtn=!status.initBtn" ng-class="{'website_img_rota':status.initBtn==true}" class="pos">
+    </div> -->
+    <div class="websiteCabletPreview_content" ng-if="status.docType=='1'" trs-add-to-create data="data">
+        <h4>{{data.item.LEADTITLE}}</h4>
+        <h1>{{data.item.TITLE}}</h1>
+        <h4>{{data.item.SUBTITLE}}</h4>
+        <!--<p ng-bind = "data.htmlContent"></p>-->
+        <!-- <h4>{{item.CRTIME}}</h4>
+        <span class="content_img"><img src="./editingCenter/website/images/cablet2.jpg"></span> -->
+        <div class="TRS_ueditor edit_preview_fix-font newsImgStyle" ng-bind-html="data.htmlContent||data.item.CONTENT" ng-hide="status.bitFaceTit=='关闭痕迹'"></div>
+    </div>
+    <div class="websiteCabletPreview_content" ng-if="status.docType=='2'  ||status.docType =='4'" trs-add-to-create data="data">
+        <h4>{{data.item.LEADTITLE}}</h4>
+        <h1>{{data.item.TITLE}}</h1>
+        <h4>{{data.item.SUBTITLE}}</h4>
+        <div class=" wt960 edit">
+            <div class="carousel-row">
+                <trs-slider slider-pic="data.item.DOC_PICTURELIST"></trs-slider>
+            </div>
+        </div>
+        <p ng-show="data.item.HTMLCONTENT!=''">
+            <span class="websiteCabletPreview_nav_atlas_shows">图集说明:</span>
+            <span ng-bind-html="data.item.HTMLCONTENT" class="websiteCabletPreview_nav_item_CONTENT TRS_ueditor"></span>
+            <!-- 眉山图集总图说也支持查看痕迹 -->
+            <span class="TRS_ueditor" ng-bind-html="data.HTMLCONTENT|trsSce" ng-hide="status.bitFaceTit=='关闭痕迹'"></span>
+        </p>
+    </div>
+    <p class="websiteCabletPreview_content bigFace websiteAtlasPreview_content">
+        <trs-big-face></trs-big-face>
+    </p>
+    <!-- <div class="copy-darft-row" ng-if="!status.isCollectDraft">
+        <h4 class="iwo-preview-tl">复制稿</h4>
+        <p ng-repeat="darft in data.copyDarft" class="copy-darft-a">
+            <img ng-src="./editingCenter/iWo/iWoPreview/images/ti-{{darft.MEDIATYPEID}}.png" />
+            <a target="_blank" ui-sref="iwopreview({chnldocid:darft.chnldocid,metadataid:darft.METADATAID,modalname:'iwo.received',type:item.DOCTYPEID})" ng-bind="darft.TITLE"></a>
+        </p>
+    </div> -->
+    <div class="iwo-preview-attachfile" ng-if="data.item.ATTACHFILE.length>0">
+        <h4>新闻附件：</h4>
+        <ul>
+            <li ng-repeat="attachfile in data.item.ATTACHFILE || data.item.SPECIALFILE">
+                <!-- href="{{attachfile.SRCPICURL}}" ng-click="downloadAttachfile(attachfile)" -->
+                <a href="{{attachfile.SRCPICURL}}" download style="cursor:pointer;">
+                    <img ng-src="./editingCenter/website/images/{{data.typeOfAttachmentArr[$index]}}.png" alt="">
+                    <span ng-bind="attachfile.SRCFILE |truncate:28:'...' " title="{{attachfile.SRCFILE}}"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <trs-go-top></trs-go-top>
+    <div cg-busy="loadingPromise"></div>
+</div>

@@ -1,0 +1,30 @@
+<form name="addConfigForm" novalidate>
+    <div class="parameterConfig-add">
+        <div class="parameterConfig-add_tl">
+            <span>{{title}}配置项</span>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+        </div>
+        <div class="parameterConfig-add_row">
+            <div>
+                <div class="name invalidate-input-box">
+                    <b class="title">名称：</b>
+                    <input type="text" maxlength-error-message="长度不能超过100个字符！" validator="maxlength=100,required" placeholder="请输入名称" class="form-control text" name="CKEY" ng-model="newConfig.CKEY" ng-mouseenter="isShowTips_title=true" ng-mouseleave="isShowTips_title=false" is-show-tips="isShowTips_title">
+                </div>
+                <div class="content invalidate-input-box">
+                    <b class="title">内容：</b>
+                    <input type="text" maxlength-error-message="长度不能超过300个字符！" validator="maxlength=300,required" placeholder="请输入内容" class="form-control text" placeholder="请输入内容" name="CVALUE" class="form-control text" ng-model="newConfig.CVALUE" ng-mouseenter="isShowTips_content=true" ng-mouseleave="isShowTips_content=false" is-show-tips="isShowTips_content">
+                </div>
+                <div class="distribute invalidate-input-box">
+                    <b class="title">描述：</b>
+                    <textarea name="CDESC" maxlength-error-message="长度不能超过300个字符！" validator="maxlength=300" placeholder="请输入描述" class="form-control  textarea" ng-model="newConfig.CDESC" ng-mouseenter="isShowTips_distribute=true" ng-mouseleave="isShowTips_distribute=false" is-show-tips="isShowTips_distribute">
+                    </textarea>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="man_produ_modify_footer">
+            <button class="news-role-btn btn_confirm" validation-submit="addConfigForm" ng-click="addConfig()">确定</button>
+            <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</form>

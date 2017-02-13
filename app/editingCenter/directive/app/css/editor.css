@@ -1,0 +1,191 @@
+.editor-label {
+    float: left;
+    margin-left: 22px;
+    margin-top: 10px;
+}
+
+.editor-ul {
+    margin-left: 95px;
+    padding-left: 0px !important;
+}
+
+.editor-author-ul {
+    margin-left: 95px;
+}
+
+.editor-ul .create {
+    cursor: pointer;
+    display: inline-block;
+    height: 42px;
+    line-height: 40px;
+    overflow: hidden;
+    min-width: 72px;
+    border-bottom-color: #fff;
+    color: #000;
+    font-weight: bold;
+    width: 112px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: 65px center;
+    background-color: #fff;
+    margin-right: 5px;
+    position: relative;
+}
+
+.editor-ul .active {
+    border-bottom: 0px;
+}
+
+.editor-author-cUl li {
+    position: relative;
+}
+
+.edit-ChooseType {
+    position: relative;
+}
+
+.editor-check-box {
+    width: 120px;
+    background-color: #00AE86;
+    border-radius: 4px;
+    position: absolute;
+    top: 33px;
+    left: -45px;
+    z-index: 100;
+    padding-bottom: 2px;
+}
+
+.editor-check-box .main {
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 116px;
+    background-color: white;
+    position: relative;
+}
+
+.editor-check-box .main img {
+    position: absolute;
+    top: -5px;
+    left: 48px;
+    width: 13px;
+}
+
+.editor-check-box .main ul {
+    list-style: none;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.editor-check-box .main ul li {
+    width: 100px;
+    text-align: center;
+    color: #666460;
+    margin-top: 5px;
+    border: none;
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    font-weight: normal;
+}
+
+.editor-check-box-selected {
+    background-color: #F0F2F4;
+}
+
+.editor_window .main .editflow.editflow_height {
+    height: 390px;
+}
+
+.editor_window .main .body .middle_right {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.editor_window .main .body .middle_right div {
+    margin-top: 30px;
+}
+
+.m_labels_2 li.actived {
+    border: 1px solid #ddd;
+    border-bottom-color: #fff;
+    height: 44px;
+}
+
+.m_labels_2 {
+    padding-left: 10px;
+    list-style: none;
+}
+
+.m_labels_2 li {
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+    height: 44px;
+    line-height: 42px;
+    min-width: 72px;
+    border: 1px solid #ddd;
+    color: #000;
+    font-weight: bold;
+    width: 112px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: 65px center;
+    margin-right: 5px;
+    position: relative;
+}
+
+.m_labels_2 li span.fgduser {
+    display: block;
+    background-color: #B1B1E1;
+}
+
+.m_labels_2 li span.actived {
+    display: block;
+    background-color: #fff;
+}
+
+.m_labels_2 li span {
+    display: block;
+    background-color: #eee;
+}
+
+.m_labels_2 li span.delete {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    line-height: normal;
+}
+
+.icon_add {
+    margin-top: -10px !important;
+    min-width: 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    position: relative;
+    border: none !important;
+    margin-top: 11px;
+    cursor: pointer;
+    /*    background: url(./editingCenter/app/images/b14.png) no-repeat;
+  margin-left: 4px;
+    float: none; 
+    border: none;
+    padding-left: 0px;*/
+}
+
+.jt_active {
+    background-color: #eee;
+    margin: 1px 0px
+}
+
+ul.templateUl li.suggestion {
+    background: #f5f5f5 !important;
+    cursor: pointer;
+    width: 200%;
+}
+ul.templateUl li{
+    cursor: pointer;
+}
+ul.templateUl li:hover {
+    background: none !important;
+}

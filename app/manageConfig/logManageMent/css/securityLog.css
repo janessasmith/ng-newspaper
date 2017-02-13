@@ -1,0 +1,27 @@
+.manageCon-logMgr-securityLog {
+    position: relative;
+}
+
+.manageCon-logMgr-securityLog td {
+    word-break: break-all;
+}
+
+.manageCon-logMgr-securityLog th.lcol-time {
+    width: 155px;
+}
+
+.manageCon-logMgr-securityLog th.td-check {
+    width: 60px;
+}
+
+.manageCon-logMgr-securityLog th.lcol-user {
+    width: 200px;
+}
+
+.manageCon-logMgr-securityLog th.lcol-ip {
+    width: 130px;
+}
+
+.manageCon-logMgr-securityLog th.lcol-desc {
+    width: 130px;
+}

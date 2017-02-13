@@ -1,0 +1,27 @@
+table tbody tr td.today-draft-td-img {
+    position: relative;
+}
+
+table tbody tr td.today-draft-td-img .image-container {
+	position: absolute;
+	z-index: 1000;
+    background: #fff;
+    text-align: center;
+    width: 460px;
+    height: 320px;
+    border: 6px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+table tbody tr td.today-draft-td-img .image-container img {
+    width: 100%;
+    max-width: 450px;
+    max-height: 302px;
+}
+
+table tbody tr td.today-draft-td-img .show-preview-pic-btn {
+    background: none;
+    border: none;
+    outline: none;
+}

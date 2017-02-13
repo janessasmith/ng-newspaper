@@ -1,0 +1,137 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12 col-lg-12">
+        <button class="btn btn-default btn-commen" ng-mouseenter="status.batchOperateBtn.hoverStatus='take'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''" ng-click="takeDraft()" ng-disabled="data.selectedArray.length == 0 ">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'take'?'z56-1.png':'z56.png'}}" /></span> 取稿
+        </button>
+        <!-- <button class="btn btn-default btn-commen" ng-mouseenter="status.batchOperateBtn.hoverStatus='creation'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''" ng-click="creation()" ng-disabled="data.selectedArray.length == 0 ">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'creation'?'z14-1.png':'z14.png'}}" /></span> 创作轴
+        </button> -->
+        <button class="btn btn-default btn-commen" ng-click="openReserveDraftModal()" ng-mouseenter="status.batchOperateBtn.hoverStatus='reserve'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''" ng-click="reserve()" ng-disabled="data.selectedArray.length == 0 ">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'reserve'?'z15-1.png':'z15.png'}}" /></span> 预留
+        </button>
+        <button class="btn btn-default btn-commen" ng-mouseenter="status.batchOperateBtn.hoverStatus='collect'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''" ng-click="collect()" ng-disabled="data.selectedArray.length == 0 ">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'collect'?'z16-1.png':'z16.png'}}" /></span> 收藏
+        </button>
+        <!-- <button class="btn btn-default btn-commen" ng-mouseenter="status.batchOperateBtn.hoverStatus='print'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''" ng-click="print()" ng-disabled="data.selectedArray.length == 0 ">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'print'?'z17-1.png':'z17.png'}}" /></span> 打印
+        </button> -->
+        <button class="btn btn-default btn-commen" ng-mouseenter="status.batchOperateBtn.hoverStatus='export'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''" ng-click="export()" ng-disabled="data.selectedArray.length == 0 ">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'export'?'z55-1.png':'z55.png'}}" /></span> 导出
+        </button>
+        <button class="btn btn-default btn-commen" ng-mouseenter="status.batchOperateBtn.hoverStatus='delete'" ng-mouseleave="status.batchOperateBtn.hoverStatus=''" ng-click="delete()" ng-disabled="data.selectedArray.length == 0 ">
+            <span class="s_icon"><img ng-src="./resourceCenter/images/{{status.batchOperateBtn.hoverStatus == 'delete'?'z18-1.png':'z18.png'}}" /></span> 删除
+        </button>
+    </div>
+</div>
+<!-- <div class="row mb10">
+    <div class="col-md-12 text-center mc-padding-xs manuscript-copycreate">
+        <span class="font_red font_color666">有<span class="more-data">8</span>条新稿件更新
+            <img src="./resourceCenter/images/z19.png" alt="刷新">
+        </span>
+    </div>
+</div> -->
+<div class="row mb10 mt10">
+    <div class="col-md-12">
+        <trs-single-select selected-option="time.curValue" options="time.data" callback="queryItemsByDropDown('ShareTime',time.curValue.value)"></trs-single-select>
+        <trs-single-select selected-option="type.curValue" options="type.data" callback="queryItemsByDropDown('mediaType',type.curValue.value)"></trs-single-select>
+        <!-- <trs-single-select selected-option="list.videoType" options="videoType"></trs-single-select>
+        <trs-single-select selected-option="list.infoLevel"></trs-single-select>
+        <trs-single-select selected-option="list.definitionLevel" options="definitionLevel"></trs-single-select>
+        <trs-single-select selected-option="list.sourceWebsite" options="sourceWebsite"></trs-single-select> -->
+        <!-- <div class="m_search pull-right">
+            <input type="text" class="form-control" placeholder="请输入关键字搜索">
+            <button class="btn btn-default btn-commen" type="button">检索</button>
+            <button class="btn btn-default btn-commen" type="button" ui-sref="retrieval">高级检索</button>
+        </div> -->
+    </div>
+</div>
+<!-- <div class="row plr10">
+    <div class="col-md-1 text-right mc-padding-0">
+        最近搜索词：
+    </div>
+    <div class="col-md-7 mc-padding-0">
+        <ul class="u_color_list word_in">
+            <li class="bkg-danger">西湖</li>
+            <li class="bkg-info">科技</li>
+            <li class="bkg-warning">媒体</li>
+        </ul>
+    </div>
+    <div class="col-md-4 text-right mc-padding-0">
+        <ul class="u_color_list">
+            <li><i class="bkg-danger"></i>地域</li>
+            <li><i class="bkg-info"></i>领域</li>
+            <li><i class="bkg-warning"></i>关键词</li>
+            <li><i class="bkg-success"></i>账号</li>
+        </ul>
+    </div>
+</div>
+<div class="row plr10">
+    <div class="col-md-1 text-right mc-padding-0">
+        热门标签：
+    </div>
+    <div class="col-md-11 mc-padding-0">
+        <ul class="u_word_list">
+            <li>党建</li>
+            <li>杭州</li>
+            <li>建德</li>
+            <li>经济</li>
+            <li>宁波</li>
+            <li>普陀</li>
+            <li>瑞安</li>
+            <li>台州</li>
+            <li>天气</li>
+            <li>突发</li>
+            <li>温岭</li>
+            <li>文化</li>
+            <li>仙居</li>
+        </ul>
+    </div>
+</div> -->
+<div class="col-md-12 mc-padding-0 clearfix">
+    <div>
+        <div ng-repeat="item in data.items">
+            <div class="m_img_box">
+                <trs-checkbox ischecked="data.selectedArray.indexOf(item)>-1" callback="selectDoc(item)" style="position:absolute; top:10px; left:10px; "></trs-checkbox>
+                <span class="op_ico">
+                    <img ng-src="./resourceCenter/images/{{item.MEDIATYPE=='A'?'z64.png':'z64-1.png'}}" alt="">
+                </span>
+                <a ui-sref='mediaDetail({metadataid:item.METADATAID})' target="_blank" class="img">
+                    <img ng-src="{{item.MEDIATYPE=='A'?'./resourceCenter/images/music-bg.gif':item.THUMBPICURL}}" alt="">
+                </a>
+                <a ui-sref='mediaDetail({metadataid:item.METADATAID})' target="_blank" class="desp">
+                    <span>编号：{{item.MASID}}</span>
+                    <span>作者：{{item.SHAREUSRTRUENAME}}</span>
+                    <span>时间：{{item.SHARETIME}}</span>
+                    <!-- <span>分类：{{item.classify}}</span> -->
+                </a>
+                <a ui-sref='mediaDetail({metadataid:item.METADATAID})' target="_blank" class="tit">
+                    <span>{{item.TITLE}}</span>
+                </a>
+                <div style="padding-left:4px; height:20px;">
+                    <span class="cb-qu" ng-click="viewBigDataInfo(item.METADATAID)" ng-show="showOperFlag(item.METADATAID,0)" style="font-size:12px; cursor:pointer;">取</span>
+                    <span class="cb-qian" ng-click="viewBigDataInfo(item.METADATAID)" ng-show="showOperFlag(item.METADATAID,1)" style="font-size:12px; cursor:pointer;">签</span>
+                    <span class="cb-jian" ng-click="viewBigDataInfo(item.METADATAID)" ng-show="showOperFlag(item.METADATAID,2)" style="font-size:12px; cursor:pointer;">见</span>
+                    <span class="cb-ce" ng-click="viewBigDataInfo(item.METADATAID)" ng-show="showOperFlag(item.METADATAID,3)" style="font-size:12px; cursor:pointer;">撤</span>
+                    <span class="cb-chong" ng-click="viewBigDataInfo(item.METADATAID,true)" ng-show="showOperFlag(item.METADATAID,4)" style="font-size:12px; cursor:pointer;">重</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page cls-paging" ng-if="!status.isFirstLoad" style="position:static; clear:both;">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+    </div>
+</div>
+<!-- <div class="col-md-12">
+    <div class="page cls-paging">
+        <p>
+            共<span ng-bind="page.ITEMCOUNT"></span><span>篇稿件</span> 单页显示 <span ng-bind="page.PAGESIZE"></span><span>
+       </p>
+           <pagination total-items="totalItems" ng-change="pageChanged()" ng-model="currentPage" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="perPage" rotate="false" num-pages="pageNum"  first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页" ></pagination></span>  
+        <p class="magrin-fixed20">
+         到第
+            <input type="type" ng-model="pages" class="page_go">页
+            <button type="button" class="btn btn-info btn_jump" ng-click="jumpToPage(pages)">跳转</button>
+         </p>
+    </div>
+</div> -->

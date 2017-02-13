@@ -1,0 +1,69 @@
+<div class="weibo-news-list" ng-controller="weiboNewlistCtrl">
+    <div class="news-list-top">
+        <div class="lf">
+        <input type="text" class="search lf" placeholder="请输入关键词" ng-model="keyWord"/>
+            <div class="news-search-dt lf" >
+                <label class="labelcss">统计时间：</label>
+                <div class="sel-dt-box lf">
+                    <input type="text" uib-datepicker-popup="{{format}}" ng-model="startTime" 
+                    max-date="maxStartTime" min-date="minStartTime" is-open="status.opened" show-weeks="false" 
+                   show-button-bar="false" on-open-focus="false"/>
+                    <p class="sel-dt-icon" ng-click="open($event)"></p>
+                </div>
+                    <span class="sel-dt-sp lf">至</span>
+                <div class="sel-dt-box lf">
+                    <input type="text" uib-datepicker-popup="{{format}}" ng-model="endTime" 
+                    min-date="minEndTime" max-date="maxEndTime" is-open="status1.opened" show-weeks="false" 
+                   show-button-bar="false" on-open-focus="false"/>
+                    <p class="sel-dt-icon" ng-click="open1($event)"></p>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="news-search-btn rt" ng-click="getWeibonewlist();">搜索</a>
+    </div>
+    <!--end 左边-->
+    <div class="wb-league-deal" >
+        <div class="weibo-list-px">
+            <div class="list-px-deal rt">
+                <a href="javascript:;" ng-class="{'list-px-cur':orderType==1,'':orderType==2}"  
+                   desc-dir ng-click="timeHotList(1);" >按时间排序</a>
+                <a href="javascript:;"  desc-dir ng-click="timeHotList(2);" 
+                   ng-class="{'list-px-cur':orderType==2,'':orderType==1}" >按热度排序</a> 
+            </div>
+        </div>
+        <div class="news-list-bk" >
+            <div class="my_mdscon"  ng-repeat="account in accounts">
+                <a href target="_blank" class="my_mdsl lf">
+                    <img ng-src="{{account.headPicUrl}}">
+                </a>
+                <div class="my_mdsm my_hisdsm">
+                    <p class="my_hish">
+                        <span class="my_hcolor">{{account.accountName}}</span>
+                        <a href>{{account.accountUnit}}</a>
+                    </p>
+                    <p class="my-hish-tit"><a href target="_blank">{{account.content}}</p>
+                    <div class="zf_imgb">
+                        <!--显示图片区域-->
+                    </div>
+                    <div class="my_mdsr">
+                        <p class="my_mdsr_dt lf"><span class="my_mdate">{{account.crtime}}</span><span>社会新闻</span><span> > </span><span>{{account.source}}</span></p>
+                    </div>
+                    <div class="news-list-ft clearfix">
+                        <ul  class="ls-us-opt lf">
+                            <li class="new-read">{{account.readNum}}</li>
+                            <li class="new-up">{{account.likesNum}}</li>
+                            <li class="new-replay">{{account.commentNum}}</li>
+                            <li class="new-trans no-br">{{account.forwardNum}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hd-page-bk">
+            <a href class="log-page hd-pg-pre" ng-click="up();"></a>
+            <div class="hd-pg-num">{{paginationConf.pageIndex}}-{{pageInfo.pageCount}}</div>
+            <a href class="log-page hd-pg-next" ng-click="next(pageInfo.pageCount);"></a>
+        </div>
+    </div>
+                        <!--微信条件搜索列表-->                
+</div>

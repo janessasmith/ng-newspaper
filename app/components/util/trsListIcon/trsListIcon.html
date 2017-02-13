@@ -1,0 +1,13 @@
+<button ng-if="item.VIDEOLOGO==status.icon.noVideo&&item.AUDIOLOGO==status.icon.noAudio&&item.PICSLOGO!=status.icon.noPic" type="button" class="show-td-icon-btn" data-trigger="hover" data-placement="left" data-template-url="./components/util/trsListIcon/template/listIconMain_tpl.html" bs-popover>
+    <img ng-src="{{item.METALOGOURL.PICSLOGO2}}" class="edit-list-icon">
+</button>
+<button ng-if="item.VIDEOLOGO==status.icon.noVideo&&item.AUDIOLOGO!=status.icon.noAudio" type="button" class="show-td-icon-btn" data-placement="left" data-trigger="click" data-template-url="./components/util/trsListIcon/template/listIconMain_tpl.html" bs-popover>
+    <img src="./editingCenter/iWo/images/edit_audio.png" class="edit-list-icon">
+</button>
+<button ng-if="item.VIDEOLOGO!=status.icon.noVideo" type="button" data-trigger="click" class="show-td-icon-btn" data-placement="left" data-template-url="./components/util/trsListIcon/template/listIconMain_tpl.html" bs-popover>
+    <img ng-src="{{item.METALOGOURL.VIDEOLOGO2}}" class="edit-list-icon">
+</button>
+<!-- 资源中心列表图示 -->
+<button ng-if="item.doctype=='2'" type="button" class="show-td-icon-btn" data-trigger="hover" data-placement="left" data-template-url="./components/util/trsListIcon/template/listIconMain_tpl.html" bs-popover>
+    <img ng-src="{{item.imgurl[0].urlS}}" class="edit-list-icon">
+</button>

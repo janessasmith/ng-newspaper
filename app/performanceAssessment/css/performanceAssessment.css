@@ -1,0 +1,47 @@
+.btn-peOpt {
+    height: 30px;
+    line-height: 28px;
+    padding: 0 20px;
+    font-size: 12px;
+	background: url("./editingCenter/app/images/b-m.jpg") repeat-x; 
+    color: #666;
+    vertical-align: middle;
+}
+
+.btn-peOpt:hover {
+    background: url("./editingCenter/app/images/b-m1.jpg") repeat-x;
+    color: #fff;
+    border: 1px solid #4696D3;
+    color: white!important;
+}
+
+.perform-num {
+	width: 50px;
+}
+.perform-author {
+	width: 90px;
+}
+.perform-cpscore {
+	width: 90px;
+}
+.perform-zpscore {
+	width: 90px;
+}
+.perform-remarks {
+	width: 170px;
+}
+.perform-opt {
+	width: 100px;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.pe-left-li-active {
+	background-color: #1c83d2;
+}

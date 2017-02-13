@@ -1,0 +1,233 @@
+.myManuscript-rejection .modal-dialog {
+    width: 631px;
+}
+
+.myManuscript-rejection .modal-content {
+    position: relative;
+    top: 60px;
+    background-color: #E1DFDA;
+}
+
+.myManuscript-rejection .rejection {
+    width: 622px;
+    margin-left: 3px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.myManuscript-rejection .rejection .head {
+    height: 39px;
+    line-height: 39px;
+    font-weight: bold;
+}
+
+.myManuscript-rejection .rejection .head p {
+    float: left;
+    padding: 0px;
+    margin: 0px 0px 0px 18px;
+    line-height: 39px;
+    font-size: 14px;
+    color: #343535;
+}
+
+.myManuscript-rejection .rejection .head img {
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.myManuscript-rejection .rejection .middleFirst {
+    overflow: hidden;
+    background: #f0f2f4;
+}
+
+.myManuscript-rejection .rejection .middleFirst p.title {
+    font-size: 12px;
+    color: #343535;
+    float: left;
+    padding: 0px;
+    margin: 12px 0px 0px 15px;
+}
+
+.myManuscript-rejection .rejection .middleFirst p.number {
+    font-size: 14px;
+    color: #343535;
+    padding: 0px;
+    margin: 12px 0px 0px 15px;
+}
+
+.myManuscript-rejection .rejection .middleFirst div.pack {
+    overflow: hidden;
+}
+
+
+.myManuscript-rejection .rejection .middleFirst div.radio ul {
+    list-style: none;
+    font-size: 12px;
+    color: #666460;
+    height: 30px;
+    line-height: 30px;
+    padding-bottom: 100px;
+}
+
+.myManuscript-rejection .rejection .middleFirst div.radio ul li {
+    position: relative;
+    margin-left: 15px;
+}
+
+.myManuscript-rejection .rejection .middleFirst div.radio ul li input {
+    bottom: 8px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.myManuscript-rejection .rejection .main {
+    padding: 0 20px;
+}
+
+.myManuscript-rejection .rejection .main .brokerage {
+    margin-top: 20px;
+}
+
+.myManuscript-rejection .rejection .main .brokerage .list {
+    border: 1px solid #D6D2CD;
+    width: 582px;
+    height: 98px;
+    overflow: auto;
+    margin-top: 20px;
+}
+
+.myManuscript-rejection .rejection .main .brokerage .reason {
+    width: 582px;
+    height: 98px;
+    border: 1px solid #D6D2CD;
+}
+
+.myManuscript-rejection .rejection .main .brokerage .wastetitle {
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.myManuscript-rejection .rejection .main .brokerage .list ul {
+    padding-left: 0px;
+}
+
+.myManuscript-rejection .rejection .main .brokerage .list ul li {
+    padding-left: 10px;
+    font-size: 12px;
+    color: #666460;
+    /*height: 30px;*/
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.myManuscript-rejection .rejection .main .brokerage .list ul li.selected {
+    background-color: #0097D0;
+    color: white;
+}
+
+.myManuscript-rejection .rejection .main .wasteDraft {
+    margin-top: 20px;
+}
+
+.myManuscript-rejection .rejection .main .wasteDraft .reason {
+    width: 582px;
+    height: 255px;
+    border: 1px solid #D6D2CD;
+    margin-top: 20px;
+}
+
+.myManuscript-rejection .rejection .bottom {
+    padding: 20px;
+    text-align: right;
+}
+
+.myManuscript-rejection .rejection .bottom button {
+    width: 80px;
+    height: 28px;
+    font-size: 12px;
+    color: white;
+    background-color: #0095CE;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.myManuscript-rejection .radio label,
+.checkbox label {
+    min-height: 12px;
+}
+
+.myManuscript-rejection .rejection .selectedList {
+    float: left;
+    width: 528px;
+    height: auto;
+    margin-left: 6px;
+}
+
+.myManuscript-rejection .rejection .selectedList .lotTitle {
+    font-size: 12px;
+    color: #666666;
+    line-height: 40px;
+    margin-right: 15px;
+}
+
+.myManuscript-rejection .rejection .pack ul.moreList {
+    position: absolute;
+    top: 80px;
+    right: 14px;
+    overflow: hidden;
+    width: 315px;
+    background: #fff;
+    padding: 0px;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    z-index: 999;
+}
+
+.myManuscript-rejection .rejection .pack ul.moreList li {
+    line-height: 30px;
+    height: 30px;
+    list-style: none;
+    background: url(./editingCenter/iWo/images/limark.jpg) no-repeat 0%;
+    padding-left: 15px;
+    margin-left: 20px;
+    color: #888888;
+    font-size: 13px;
+}
+
+.myManuscript-rejection .rejection .pack ul.moreList li.active {
+    background: #fff;
+    color: #000;
+}
+
+.myManuscript-rejection .rejection .pack img {
+    position: absolute;
+    right: 14px;
+    top: 60px;
+    cursor: pointer;
+}
+
+.myManuscript-rejection .rejection .pack img.active {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.myManuscript-rejection .rejection .bottom>div {
+    float: left;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    color: #333;
+    cursor: pointer;
+}

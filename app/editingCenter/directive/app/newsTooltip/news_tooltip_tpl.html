@@ -1,0 +1,18 @@
+<div class="news-tooltip-wrap">
+    <div class="news-tooltip-header">
+        <ul>
+            <li class="w134">姓名</li>
+            <li class="w226">部门/联系地址</li>
+            <li class="w148">报刊/邮编</li>
+        </ul>
+    </div>
+    <div class="news-tooltip-body">
+        <ul>
+            <li ng-repeat="info in infos">
+                <b class="w128" ng-bind="info.name"></b>
+                <b class="w220" ng-bind="info.address"></b>
+                <b class="w126" ng-bind="info.press"></b>
+            </li>
+        </ul>
+    </div>
+</div>

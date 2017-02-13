@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+    <p class="modal-title">信息查看页</p>
+</div>
+<div class="modal-body mc-padding-xs ">
+    <div></div>
+    <div class="reportdetail">
+        <div class="row">
+            <div class="col-sm-6  ">
+                <label>类型:</label> {{info.INFOTYPE}}
+            </div>
+            <div class="col-sm-6  ">
+                <label>发布时间:</label> {{info.PUBDATE}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6  ">
+                <label>创建人:</label> {{info.CRUSERNAME}}
+            </div>
+            <div class="col-sm-6  ">
+                <label>创建时间:</label> {{info.CRTIME}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <label>接受人:</label> {{info.CRTIME}}
+            </div>
+        </div>
+    </div>
+    <div class="reportcontent  mc-padding">
+        <h4 class="txt_c"> {{info.TITLE}}</h4>{{info.CONTENT}}
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="close()">确定</button>
+</div>

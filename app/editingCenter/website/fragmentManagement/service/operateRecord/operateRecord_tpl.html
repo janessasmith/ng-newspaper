@@ -1,0 +1,58 @@
+<div class="operateRecord">
+    <div class="head">
+        <span>查看浙江在线首页的操作记录</span>
+        <img src="./editingCenter/website/fragmentManagement/images/cls.jpg" ng-click="cancel()" />
+    </div>
+    <div class="search">
+        <span>用户名：</span>
+        <input type="text" ng-model="OPERATEUSER" class="form-control username" />
+        <div class="date">
+            <!--   <trs-date-time-picker time-obj="startTime" position="top-right" language="zh-CN"></trs-date-time-picker> -->
+            <input type="text" size="10" class="form-control" ng-change="startTime=changeTime(startTime)" ng-model="startTime" date-date-format="yyyy-MM-dd" data-autoclose="1" bs-datepicker readonly="readonly" data-container=".operateRecord">
+            <img class="date" src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+        </div>
+        <div class="time">
+            <input type="text" size="8" class="form-control" ng-change="startTime=changeTime(startTime)" ng-model="startTime" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" bs-timepicker readonly="readonly" data-container=".operateRecord">
+            <img class="time" src="./editingCenter/app/toBeCompiled/images/t1.png">
+        </div>
+        <span class="to">~</span>
+        <div class="date">
+            <!--  <trs-date-time-picker time-obj="endTime" position="top-right" language="zh-CN"></trs-date-time-picker> -->
+            <input type="text" size="10" class="form-control" ng-change="endTime=changeTime(endTime)" ng-model="endTime" date-date-format="yyyy-MM-dd" data-autoclose="1" bs-datepicker readonly="readonly" data-container=".operateRecord">
+            <img class="date" src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+        </div>
+        <div class="time">
+            <input type="text" size="8" class="form-control" ng-change="endTime=changeTime(endTime)" ng-model="endTime" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" bs-timepicker readonly="readonly" data-container=".operateRecord">
+            <img class="time" src="./editingCenter/app/toBeCompiled/images/t1.png">
+        </div>
+        <button class="searchbutton" ng-click="search()">搜索</button>
+    </div>
+    <div class="main">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th width="480px">
+                        操作记录
+                    </th>
+                    <th>
+                        操作时间
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items">
+                    <td class="record">
+                        <span ng-bind="item.OPERATEUSERNAME"></span> 对
+                        <span ng-bind="item.WIDGETNAME"></span> 执行了
+                        <span title="{{item.OPERATETYPE}}" ng-bind="item.OPERATETYPE | trsLimitTo:5"></span> 操作
+                    </td>
+                    <td ng-bind="item.OPERATETIME">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bottom">
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+    </div>
+</div>

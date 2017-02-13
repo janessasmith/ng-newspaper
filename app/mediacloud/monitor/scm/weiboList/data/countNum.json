@@ -1,0 +1,12 @@
+{
+	"result":[
+	{"acNum":12,"acName":"发博数"},
+	{"acNum":23,"acName":"转发数"},
+	{"acNum":67,"acName":"评论数"},
+	{"acNum":56,"acName":"被转发数"},
+	{"acNum":77,"acName":"被评论数"},
+	{"acNum":98,"acName":"被点赞数"},
+	{"acNum":25,"acName":"互动粉丝数"},
+	{"acNum":34,"acName":"博文阅读数"}
+	]
+}

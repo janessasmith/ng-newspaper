@@ -1,0 +1,52 @@
+<div>
+    <div trs-scroll-fix class="row edit_right_head">
+        <div class="col-md-8">
+        </div>
+        <div class="col-md-4">
+            <ol class="breadcrumb pull-right edit_breadcrumb">
+                <li class="active" ng-bind="channelName"></li>>
+                <li class="active">新闻批量转移</li>
+            </ol>
+        </div>
+    </div>
+    <div class="batchMoveNews">
+        <div class="main">
+            <div class="left">
+                <div class="head">
+                    <span>移出栏目</span>
+                </div>
+                <div class="body">
+                    <div class="bodyhead">
+                        <img ng-show="showLeftTree!=true" ng-click="showLeftTree=true" src="./editingCenter/app/images/m1-1-0.png">
+                        <img class="open" ng-show="showLeftTree==true" ng-click="showLeftTree=false" src="./editingCenter/app/images/m2-2-0.png"><span ng-bind="siteLeftDesc"></span>
+                    </div>
+                    <div class="tree" ng-show="showLeftTree">
+                        <treecontrol selected-node="LeftNode" expanded-nodes="" on-node-toggle="showToggle(node)" class="tree-light" tree-model="leftTree" options="treeOptions" on-selection="showLeftSelected(node)"><span title="{{node.CHNLDESC}}">{{node.CHNLDESC}}</span></treecontrol>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="head">
+                    <span>移入栏目</span>
+                </div>
+                <div class="body">
+                    <div class="bodyhead">
+                        <img ng-show="showRightTree!=true" ng-click="showRightTree=true" src="./editingCenter/app/images/m1-1-0.png">
+                        <img class="open" ng-show="showRightTree==true" ng-click="showRightTree=false" src="./editingCenter/app/images/m2-2-0.png"><span ng-bind="siteRightDesc"></span>
+                    </div>
+                    <div class="tree" ng-show="showRightTree">
+                        <treecontrol selected-node="rightNode" expanded-nodes="" on-node-toggle="showToggle(node)" class="tree-light" tree-model="rightTree" options="treeOptions" on-selection="showRightSelected(node)"><span title="{{node.CHNLDESC}}">{{node.CHNLDESC}}</span></treecontrol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recuMove">
+            <span>递归移动：</span>
+            <trs-single-radio ng-repeat="item in recuGens" ischecked="item.value == selectedRecuGen" label="{{item.desc}}" group="'recuGens'" callback="updateSelection(item)"></trs-single-radio>
+        </div>
+        <div class="batchMoveNews-bottom">
+            <button ng-click="confirm()" ng-disabled="status.isBusy">确定</button>
+        </div>
+        <div class="busy" cg-busy="loadingPromise"></div>
+    </div>
+</div>

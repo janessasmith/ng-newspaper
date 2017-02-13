@@ -1,0 +1,25 @@
+<div class="toBeCompiled-draftlist-container">
+    <div class="subject-title">
+        <p>发稿单</p>
+        <trs-checkbox ischecked="status.data.list.ISNOPAYMENT==1" label="不发稿费" callback="updateCKSelection(ischecked)"></trs-checkbox>
+        <!--   <p class="ml10">不发稿费</p> -->
+    </div>
+    <div class="toBeCompiled-draftlist-content">
+        <div class="row mt_20">
+            <div class="m_box_item mb0 gjtc_select_outer mpl">
+                <p class="left newP">稿件体裁：</p>
+                <!--  <trs-single-select selected-option="status.data.list.DOCGENRE" options="status.data.docgenres"></trs-single-select> -->
+                <p ng-bind="status.data.list.DOCGENRE"></p>
+            </div>
+        </div>
+        <form name="draftForm" disabled="disabled">
+            <editor-dir meta-data-id="{{metaDataId}}" editor-json="status.data.list.FGD_EDITINFO" formdisabled="false"></editor-dir>
+            <editor-auth-dir author="status.data.list.FGD_AUTHINFO" formdisabled="false"></editor-auth-dir>
+        </form>
+    </div>
+    <!--  <iframe ng-src="{{targetUrl}}" data-ng-show="false" width="100" height="100"></iframe> -->
+    <!-- <div class="toBeCompiled-draftlist-footer">
+       <button class="draftlist-btn" ng-click="cancel()">取消</button>
+        <button class="draftlist-btn btn_confirm" ng-click="confirm()">确定</button>
+    </div> -->
+</div>

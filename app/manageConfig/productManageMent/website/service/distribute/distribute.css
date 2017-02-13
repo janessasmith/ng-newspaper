@@ -1,0 +1,70 @@
+.distribute-add .modal-dialog {
+    width: 365px;
+    top: 130px
+}
+
+.distribute-add .modal-content {
+    border: 3px solid #ccc;
+    background: #E8E9ED;
+}
+
+.distribute-add .distribute-add_tl {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    background: white;
+}
+
+.distribute-add .distribute-add_tl p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 18px;
+    float: left;
+}
+
+.distribute-add .distribute-add_tl img {
+    cursor: pointer;
+    float: right;
+    margin-right: 11px;
+    margin-top: 7px;
+}
+
+.distribute-add .input_url {
+    float: left
+}
+
+.distribute-add_row {
+    padding-top: 15px;
+    background: white;
+    overflow-y: auto;
+    margin: 10px auto 0;
+    background: white;
+    border: 1px solid #D2D1D2;
+    width: 345px;
+}
+
+.distribute-detail {
+    margin-bottom: 10px;
+    height: 30px
+}
+
+.distribute-add .distribute-detail-left {
+    margin-right: 10px;
+    float: left;
+    width: 75px;
+    text-align: right;
+    line-height: 30px;
+    font-size: 12px
+}
+
+.distribute-add .man_produ_modify_footer {
+    padding-left: 200px;
+    height: 44px;
+    line-height: 44px
+}
+
+.distribute-add .form-control {
+    width: 220px;
+    height: 30px
+}

@@ -1,0 +1,266 @@
+.customMonitor {
+    margin-top: -15px;
+    color: #333333;
+    overflow: hidden;
+}
+
+.customMonitor .custom-wrap {
+    width: 300px!important;
+    z-index: 3;
+}
+
+.customMonitor_nav {
+    height: 54px;
+    background: #eff0f2;
+    padding-top: 13px;
+}
+
+.edit_breadcrumb li {
+    list-style-type: none;
+}
+
+
+/*监控管理*/
+
+.customMonitor_con {
+    margin-top: 10px;
+}
+
+.customMonitor_con_addMonitor,
+.customMonitor_con_myMonitor {
+    clear: both;
+}
+
+.customMonitor_con_addMonitor .addMonitor_head,
+.customMonitor_con_myMonitor .myMonitor_head {
+    height: 43px;
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #f4f4f6;
+}
+
+.customMonitor_con_addMonitor .addMonitor_head span,
+.customMonitor_con_myMonitor .myMonitor_head span {
+    min-width: 115px;
+    margin: 0 10px;
+    padding: 9px 13px;
+    line-height: 47px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-bottom: none;
+    border-top: 4px solid #2f98d2;
+}
+
+
+/*监控管理 添加监控*/
+
+.customMonitor_con_addMonitor .addMonitor_content {
+    min-height: 60px;
+    padding: 0 10px 10px;
+}
+
+.customMonitor_con_addMonitor .addMonitor_content button {
+    margin: 10px 10px 0 0;
+}
+
+
+/*我的监控*/
+
+.customMonitor_con_myMonitor .myMonitor_head {
+    height: 43px;
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #f4f4f6;
+}
+
+.customMonitor_con_myMonitor .myMonitor_head b {
+    font-weight: normal;
+}
+
+.customMonitor_con_myMonitor .myMonitor_head i {
+    color: #dbdbdb;
+}
+
+.customMonitor_con_myMonitor .myMonitor_head b.selected {
+    color: #e01c0c!important;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con {}
+
+.customMonitor_con_myMonitor .myMonitor_con_left,
+.customMonitor_con_myMonitor .myMonitor_con_right {
+    float: left;
+    width: 100%;
+}
+
+.customMonitor_con_myMonitor .myMonitor_head_right {
+    float: right;
+    position: relative;
+    top: 12px;
+    right: 10px;
+}
+
+.customMonitor_con_myMonitor .myMonitor_head_right b {
+    cursor: pointer;
+}
+
+
+/*我的监控左边*/
+
+
+/*.customMonitor_con_myMonitor .myMonitor_con_left {
+    border-right: 1px solid #DBDBDB;
+}*/
+
+.customMonitor_con_myMonitor .myMonitor_con_left_top,
+.customMonitor_con_myMonitor .myMonitor_con_right_top {
+    padding: 0 10px;
+    height: 43px;
+    line-height: 43px;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_top_left,
+.customMonitor_con_myMonitor .myMonitor_con_right_top_left {
+    float: left;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_top_left b,
+.customMonitor_con_myMonitor .myMonitor_con_right_top_left b {
+    font-size: 15px;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_top_right,
+.customMonitor_con_myMonitor .myMonitor_con_right_top_right {
+    float: right;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_top_right a,
+.customMonitor_con_myMonitor .myMonitor_con_right_top_right a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_top_right a img,
+.customMonitor_con_myMonitor .myMonitor_con_right_top_right a img {
+    padding: 0 5px;
+}
+
+
+/*我的监控左边表格*/
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom {
+    margin-right: 10px;
+    border: 4px solid #dddddd;
+    border-radius: 5px;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .nav-tabs.nav-justified,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .nav-tabs.nav-justified {
+    padding-top: 5px;
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #F1F2F6;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom table,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom table {
+    margin-top: 10px;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom table thead,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom table thead {
+    background-color: #EDEDED;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .table > thead > tr > th,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .table > thead > tr > th {
+    border-bottom: none;
+}
+
+.cm-number {
+    width: 60px;
+}
+
+.cm-hot {
+    width: 60px;
+}
+
+.cm-source {
+    width: 100px;
+}
+
+.cm-datetime {
+    width: 90px;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .cm-left,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .cm-left {
+    text-align: left;
+    position: relative;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .cm-left div.title,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .cm-left div.title {
+    height: 20px;
+    overflow: hidden;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .nav-tabs.nav-justified > li,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .nav-tabs.nav-justified > li {
+    width: 100px;
+    height: 36px;
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    background-color: #2f98d2;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .nav-tabs > li.active,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .nav-tabs > li.active {
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    background-color: #fff;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .nav-tabs.nav-justified > li.active > a,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .nav-tabs.nav-justified > li.active > a {
+    color: #333;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    border-radius: 5px 5px 0 0;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .nav-tabs.nav-justified > li > a,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .nav-tabs.nav-justified > li > a {
+    padding: 0px;
+    line-height: 36px;
+    color: #fff;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .nav-tabs.nav-justified > li > a:hover,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .nav-tabs.nav-justified > li > a:hover {
+    background-color: inherit!important;
+    border-radius: 6px;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_left_bottom .page,
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom .page {
+    position: relative;
+    padding-top: 0px;
+    bottom: 0px;
+    left: -50px;
+}
+
+.customMonitor_con_myMonitor .page_left {
+    margin-left: 400px;
+}
+
+.customMonitor_con_myMonitor .myMonitor_con_right_bottom {
+    margin-left: 10px;
+    border: 4px solid #dddddd;
+    border-radius: 5px;
+}
+
+.customMonitor_con_myMonitor .table tbody tr td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}

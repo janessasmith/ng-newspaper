@@ -1,0 +1,55 @@
+<div class="row mtb20">
+    <label class="editor-label">编辑信息：</label>
+    <ul class="nav nav-tabs m_nav_2 editor-ul" ng-class="{'w68pen':path=='iwonews'||path=='newspapertext'||path=='websitenews'}">
+        <li>
+            <ul class="m_labels_2">
+                <li ng-repeat="editor in editorJson" ng-show="editorJson[0].ID!=''" ng-click="select(editor)" ng-class="{'actived':editor.ID==selected.ID&&editor.DEPT == editor.DEPT}">
+                    <span ng-class="{'actived':editor.ID==selected.ID&&editor.DEPT == editor.DEPT}" ng-click="showEditor($index)" ng-bind="editor.USERNAME"></span>
+                    <span ng-class="{'actived':editor.ID==selected.ID&&editor.DEPT == editor.DEPT}" class="delete" ng-click="deleteEditor($index)">
+                        X
+                    </span>
+                </li>
+                <!-- <li ng-click="checkBox!==true?checkBox=true:checkBox=false">
+                    <span>新建</span>
+                </li> -->
+                <li ng-click="checkBox!==true?checkBox=true:checkBox=false" class="icon_add edit-ChooseType" style="margin-left:6px;">
+                    <img src="./editingCenter/app/images/b14.png" />
+                    <div ng-include="'./editingCenter/directive/app/views/selectBox_tpl.html'"></div>
+                </li>
+            </ul>
+            <!-- <li class="create active" ng-click="checkBox!==true?checkBox=true:checkBox=false"><a href="">新建</a></li> -->
+        </li>
+    </ul>
+    <table class="m_form">
+        <tbody>
+            <tr>
+                <td class="txt_r">姓名：</td>
+                <td class="invalidate-input-box pos-top-f24 {{newsForm.fgdUserName.$invalid&&newsForm.fgdUserName.$dirty?'has-error':''}}">
+                    <input disabled="true" ng-model="editorJson[editIndex].USERNAME" name="fgdUserName" type="text" class="form-control sm_lng" maxlength-error-message="不能超过20个字符！" validator="maxlength=20,spechar">
+                </td>
+                <td class="txt_r">单位：</td>
+                <td class="invalidate-input-box pos-top-f24 {{newsForm.fgdCompany.$invalid&&newsForm.fgdCompany.$dirty?'has-error':''}}">
+                    <input disabled="true" ng-model="editorJson[editIndex].COMPANY" name="fgdCompany" type="text" class="form-control sm_lng" maxlength-error-message="不能超过200个字符！" validator="maxlength=200,spechar">
+                </td>
+                <td class="txt_r">职务：</td>
+                <td class="invalidate-input-box pos-top-f24 {{newsForm.fgdPost.$invalid&&newsForm.fgdPost.$dirty?'has-error':''}}">
+                    <input disabled="true" type="text" ng-model="editorJson[editIndex].POST" name="fgdPost" class="form-control sm_lng" maxlength-error-message="不能超过100个字符！" validator="maxlength=100,spechar">
+                </td>
+            </tr>
+            <tr>
+                <td class="txt_r">类别：</td>
+                <td class="invalidate-input-box pos-top-f24 {{newsForm.fgdCategory.$invalid&&newsForm.fgdCategory.$dirty?'has-error':''}}">
+                    <input disabled="true" ng-model="editorJson[editIndex].CATEGORY" name="fgdCategory" type="text" class="form-control sm_lng" maxlength-error-message="不能超过50个字符！" validator="maxlength=50,spechar">
+                </td>
+                <td class="txt_r">部门：</td>
+                <td class="invalidate-input-box pos-top-f24 {{newsForm.fgdDept.$invalid&&newsForm.fgdDept.$dirty?'has-error':''}}">
+                    <input disabled="true" type="text" ng-model="editorJson[editIndex].DEPT" name="fgdDept" class="form-control sm_lng" maxlength-error-message="不能超过50个字符！" validator="maxlength=50,spechar">
+                </td>
+                <td class="txt_r">报刊：</td>
+                <td class="invalidate-input-box pos-top-f24 {{newsForm.fgdPress.$invalid&&newsForm.fgdPress.$dirty?'has-error':''}}">
+                    <input disabled="true" type="text" ng-model="editorJson[editIndex].PRESS" name="fgdPress" class="form-control sm_lng" maxlength-error-message="不能超过50个字符！" validator="maxlength=50,spechar">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

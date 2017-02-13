@@ -1,0 +1,89 @@
+.myManuscript-outSending .modal-dialog {
+    width: 425px;
+}
+
+.myManuscript-outSending .modal-content {
+    position: relative;
+    top: 35px;
+    background-color: #E1DFDA;
+}
+
+
+.myManuscript .outSending {
+    overflow: auto;
+    width: 417px;
+    margin-left: 3px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: white;
+    height: auto;
+}
+
+.myManuscript .outSending .head {
+    height: 39px;
+    line-height: 39px;
+    font-weight: bold;
+	background-color: #fff;
+}
+
+.myManuscript .outSending .head span {
+    margin-left: 15px;
+	width:90%;
+}
+
+.myManuscript .outSending .head img {
+    cursor: pointer;
+	margin-left:300px;
+}
+
+.myManuscript .outSending .body {
+	background-color: #F0F2F5;
+}
+
+.myManuscript .outSending .body .main {
+    width: 100%;
+	height:400px;
+}
+.myManuscript .outSending .body .main .content{
+	padding:10px;
+}
+.myManuscript .outSending .body .main .content .headbar{
+	width:100%;
+	height:60px;
+	padding:15px;
+	background-color: #fff;
+}
+
+.myManuscript .outSending .body .main .content .titlebar{
+	width:100%;
+	height:35px;
+	line-height:35px;
+}
+.myManuscript .outSending .body .main .content .titlebar span{
+	font-weight: bold;
+}
+.myManuscript .outSending .body .main .content .contentbody{
+    height:280px;
+	padding:8px;
+	overflow-y:auto;
+	background-color: #fff;
+}
+.myManuscript .outSending .body .main .content .contentbody ul li{
+	list-style:none;
+}
+.myManuscript .outSending .body .bottom {
+    height: 39px;
+    padding-left: 250px;
+}
+
+.myManuscript .outSending .body .bottom button {
+    width: 73px;
+    height: 25px;
+    background-color: #0095CE;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+}
+.myManuscript .outSending .body .content .headbar .margin-right-btn{
+	margin-right:15px;
+}

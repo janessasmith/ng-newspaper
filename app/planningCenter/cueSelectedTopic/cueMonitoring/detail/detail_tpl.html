@@ -1,0 +1,20 @@
+<div ng-if="status.serviceid!='portallist'">
+    <div class="plan-detail-header">
+        <p class="tit" ng-bind="data.planDetail.CODEDESC" ng-if="data.planDetail.CODEDESC"></p>
+        <p class="tit" ng-bind="data.planDetail.SITENAME" ng-if="data.planDetail.SITENAME"></p>
+        <p class="time" ng-bind="data.planDetail.CREATEDDATE | date:'yyyy-MM-dd hh:mm:ss'" ng-if="data.planDetail.CREATEDDATE"></p>
+        <p class="time" ng-bind="data.planDetail.CREATEDAT | date:'yyyy-MM-dd hh:mm:ss'" ng-if="data.planDetail.CREATEDAT"></p>
+    </div>
+    <div class="plan-detail-body">
+        <p class="content" ng-bind-html="data.planDetail.COMMENTS | trsSce" ng-if="data.planDetail.COMMENTS"></p>
+        <p class="content" ng-bind-html="data.planDetail.STATUSCONTENT | trsSce" ng-if="data.planDetail.STATUSCONTENT"></p>
+    </div>
+</div>
+<div ng-if="status.serviceid=='portallist'">
+    <div class="plan-detail-header">
+        <p class="tit" ng-bind="data.rankingDetail.URLTITLE"></p>
+    </div>
+    <div class="plan-detail-body">
+        <p class="content" ng-bind-html="data.rankingDetail.CONTENT|trsSce"></p>
+    </div>
+</div>

@@ -1,0 +1,937 @@
+.IM_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px 0;
+    min-height: 680px;
+    background: url('./components/util/IM/images/tx-bg.png') no-repeat;
+}
+
+.IM_chatBox {
+    width: 800px;
+    height: 620px;
+    margin: 0px auto;
+    position: relative;
+    vertical-align: middle;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+}
+
+.IM_chatLeft {
+    float: left;
+    width: 238px;
+    height: 620px;
+    background: #466385;
+}
+
+.IM_chat01_title {
+    height: 110px;
+    padding: 0 10px;
+}
+
+.IM_chat02_title {
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    border-bottom: 1px solid #D6D6D6;
+}
+
+.IM_chat01_title_head {
+    height: 75px;
+    line-height: 75px;
+}
+
+.IM_chat01_title_head a,
+.IM_chat01_title_head a:hover {
+    display: inline-block;
+    color: #EFEEEC;
+    text-decoration: none;
+}
+
+.IM_chat01_title_head .IM_chat01_title_tx img,
+.IM_chat01_content ul li img,
+.IM_user-logo img,
+.IM_user_right-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.IM_chat01_title_head .IM_chat01_title_tx {
+    float: left;
+    cursor: default;
+}
+
+.IM_chat01_title_head .IM_chat01_title_nr {
+    float: left;
+    padding: 0px 10px;
+    font-size: 16px;
+    cursor: default;
+}
+
+.IM_chat01_title_head .IM_chat01_title_txl {
+    float: right;
+}
+
+.IM_chatLeft .IM_chat01_title .edit_input_group {
+    float: left;
+    width: 100%;
+    z-index: 999;
+    /*background: #354D67;*/
+}
+
+.IM_chatLeft .IM_chat01_title .input-group .edit_form_control {
+    padding-left: 24px;
+    width: 100%;
+    background: url("./components/util/IM/images/tx3.png") 5px center #354067 no-repeat;
+    border-color: #354067;
+    color: #fff;
+}
+
+.IM_chatLeft .IM_chat01_title .IM_input_select ul {
+    height: 220px;
+    overflow-y: auto;
+}
+
+.IM_chat01_content_news {
+    background: url("./components/util/IM/images/tx5.png") #466385 center no-repeat;
+}
+
+.IM_chat01_content_address {
+    background: url("./components/util/IM/images/tx6-1.png") #466385 center no-repeat;
+}
+
+.IM_chat01_content .nav-tabs.nav-justified {
+    width: 221px;
+    border-bottom: 0;
+    position: absolute;
+    z-index: 12;
+}
+
+.IM_chat01_content .nav-tabs.nav-justified > li {
+    width: 50%!important;
+}
+
+.IM_chat01_content .tab-content {
+    position: relative;
+    z-index: 11;
+    top: 39px;
+}
+
+.IM_chat01_content_nav ul li a:hover {
+    background: none!important;
+}
+
+.IM_chat01_content_nav ul li.active a {
+    color: #36b6ff;
+}
+
+.IM_chat01_content_nav ul li.active:nth-child(1) {
+    background: url("./components/util/IM/images/tx5-1.png") #466385 center no-repeat;
+}
+
+.IM_chat01_content_nav ul li.active:nth-child(2) {
+    background: url("./components/util/IM/images/tx6.png") #466385 center no-repeat;
+}
+
+.IM_chat01_content_nav .tab-pane li {
+    border-top: 1px solid #374F69;
+}
+
+.IM_chat01_content_nav .tab-pane {
+    overflow-x: hidden;
+    height: 471px;
+}
+
+.IM_chat01_content_nav treecontrol li {
+    border-top: 1px solid #374F69;
+}
+
+.IM_chat01_content_nav treecontrol li .tree-label span {
+    color: #ddd;
+}
+
+.IM_chat01_content_nav treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/j-r.png") no-repeat 0 center !important;
+}
+
+.IM_chat01_content_nav treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./manageConfig/roleManageMent/images/j-x.png") no-repeat 0 center;
+}
+
+.IM_chat01_content ul {
+    padding-left: 0px;
+}
+
+.IM_chat01_content ul li {
+    padding: 10px;
+    text-align: left;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.IM_chat01_content ul li.IM_choosed {
+    background: #4E6C90;
+}
+
+.IM_chat01_content ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.IM_chat02_title a,
+.IM_chat03_title a,
+.IM_wrap-text h5,
+.IM_wrap-text div {
+    color: #000;
+    text-decoration: none;
+}
+
+.IM_wrap-text div {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.IM_chat01_content ul li a.IM_chat01_name {
+    padding-left: 10px;
+    width: 130px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.IM_chat01_content ul li span.IM_chat01_delete {
+    float: right;
+    position: relative;
+    top: 7px;
+}
+
+.IM_chat01_content ul li span.IM_chat01_delete img {
+    width: 24px;
+    height: 24px;
+}
+
+.IM_chatRight {
+    width: 562px;
+    height: 620px;
+    float: right;
+    background: #F5F5F5;
+}
+
+.IM_chat02_content {
+    height: 400px;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+.IM_message_box {}
+
+.IM_message,
+.IM_right_message {
+    min-height: 50px;
+    text-align: left;
+}
+
+.IM_right_message {
+    padding-right: 10px;
+}
+
+.IM_user-logo,
+.IM_wrap-text {
+    float: left;
+    padding-left: 10px;
+}
+
+.IM_wrap-text {
+    width: 88%;
+}
+
+.IM_wrap-text h5 {
+    margin-top: 0px;
+}
+
+.IM_wrap-ri {
+    margin: 5px 10px 5px 0;
+    text-align: right;
+    text-align: center;
+}
+
+.IM_chat03 {
+    height: 180px;
+}
+
+.IM_chat03_content {
+    height: 108px;
+}
+
+.IM_chat03_title {
+    height: 38px;
+    line-height: 38px;
+    padding-right: 10px;
+    text-align: right;
+    border-top: 1px solid #D6D6D6;
+}
+
+.IM_chat03_content textarea {
+    border: medium none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    resize: none;
+    color: #000;
+}
+
+.IM_chat03_bar {
+    float: right;
+    margin-top: 5px;
+}
+
+.IM_chat03_bar span {
+    color: #919191;
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 12px;
+    padding-top: 4px;
+}
+
+.IM_chat03_bar button {
+    width: 80px;
+    height: 24px;
+    background: #FFF;
+    float: right;
+    color: #000;
+    text-align: center;
+    line-height: 24px;
+    padding: 0px;
+    margin-right: 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid #E1E1E1;
+}
+
+.IM_chat03_title .IM_chat03_title_btn {
+    float: left;
+    padding-left: 10px;
+}
+
+.IM_chat03_title .IM_chat03_title_btn img {
+    padding: 0 10px;
+}
+
+.IM_clearfix span {
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+    color: #919191;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.IM_right_message .IM_user-logo {
+    float: right;
+}
+
+
+/*气泡*/
+
+.IM_message .IM_wrap_send {
+    position: relative;
+    width: auto;
+    max-width: 75%;
+    min-height: 35px;
+    background: #ffffff;
+    border-radius: 5px;
+    margin: auto auto auto 18px;
+    padding: 0px 10px 10px;
+}
+
+.IM_message .IM_wrap_send .IM_wrap_send_arrow {
+    position: absolute;
+    margin-left: -26px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border: 8px solid;
+    border-color: #F5F5F5 #ffffff #F5F5F5 #F5F5F5;
+}
+
+.IM_right_message .IM_wrap_send {
+    position: relative;
+    float: right;
+    width: auto;
+    max-width: 75%;
+    min-height: 35px;
+    background: #4496d2;
+    border-radius: 5px;
+    margin: auto 18px auto auto;
+    padding: 0px 10px 10px;
+}
+
+.IM_right_message .IM_wrap_send .IM_wrap_send_arrow {
+    position: absolute;
+    top: 5px;
+    right: -16px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border: 8px solid;
+    border-color: #F5F5F5 #F5F5F5 #F5F5F5 #4496d2;
+}
+
+.IM_right_message .IM_wrap_send div {
+    color: #fff;
+}
+
+.treecontrol {}
+
+.IM_chatRight_add {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 9;
+}
+
+.IM_chatRight_add span {
+    width: 80px;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.IM_chatRight_add span img {
+    cursor: pointer;
+}
+
+.IM_chatRight_add .IM_chatRight_add_ul {
+    background: #608cb0;
+    border-radius: 5px;
+    position: relative;
+    top: -8px;
+}
+
+.IM_chatRight_add .IM_chatRight_add_ul li {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+}
+
+.IM_chatRight_add .IM_chatRight_add_ul li a {
+    display: inline-block;
+    color: #fff;
+}
+
+.IM_chatRight_add .IM_chatRight_add_ul li a:hover {
+    color: #000;
+}
+
+.IM_chatRight_add .IM_chatRight_add_ul li:hover {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.discussionGroup-rotate {
+    transform: rotate(180deg) !important;
+    -webkit-transform: rotate(180deg) !important;
+    position: relative;
+    top: 0px;
+    left: 5px;
+}
+
+
+/*聊天信息*/
+
+.IM_chatRight .IM_chat02_title button.IM_groupMembersBtn {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.IM_chatRight .IM_chat02_title div.Group {
+    margin: 0;
+}
+
+.IM_chatRight .IM_chat02_title .Group_Information {
+    max-height: 214px;
+    overflow-y: auto;
+}
+
+.Group {
+    position: relative;
+    top: -5px;
+    z-index: 99;
+    width: 350px;
+    margin: 0 auto;
+    background: white;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 4px solid #dddddd;
+}
+
+.Group_head {
+    background: #F5F5F5;
+    color: #666;
+    height: 40px;
+    line-height: 40px;
+}
+
+.Group_Information {
+    padding: 8px 5px;
+    overflow: hidden;
+}
+
+.Group_Information ul {
+    margin-top: 5px;
+}
+
+.Group_Information ul li {
+    float: left;
+    width: 20%;
+    color: #000;
+    min-height: 76px;
+}
+
+.Group_Information ul li img {
+    width: 50px;
+    height: 50px;
+}
+
+.Group_Information ul li b {
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    font-weight: normal;
+    text-align: center;
+    font-size: 12px;
+}
+
+.Group_Information .Group_Information_img {
+    width: 66px;
+    float: left;
+}
+
+.Group_Information .Group_Information_img img {
+    position: relative;
+    float: left;
+    left: 10px;
+    cursor: pointer;
+}
+
+.IM_chatRight_add_group img {
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.IM_input_select .dropdown-menu {
+    width: 100%;
+}
+
+.IM_selected {
+    background-color: #4E6C90;
+    color: white !important;
+}
+
+.IM_chat01_content ul li.tree-selected,
+.IM_chat01_content .content_news_hover li:hover,
+.IM_chat01_content .content_address_hover li:hover {
+    background-color: #4E6C90!important;
+    font-weight: normal;
+}
+
+.content_news_hover {
+    height: 471px;
+    overflow: auto;
+}
+
+.tab_currName_bubble {
+    float: left;
+    position: relative;
+    width: 8px;
+    height: 8px;
+    color: #fff;
+    background-color: red;
+    border-radius: 37px;
+    text-align: center;
+    font-size: 12px;
+    vertical-align: middle;
+    margin: -4px;
+}
+
+
+/*退出弹框*/
+
+.dropOut {
+    position: absolute;
+    top: 60px;
+    left: 88px;
+    width: 140px;
+    height: 150px;
+    background: #fff;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.dropOut ol {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.dropOut ol li {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #F1F1F1;
+    cursor: pointer;
+}
+
+.dropOut ol li:hover {
+    background-color: #D9DCE1;
+}
+
+.dropOut ol li:last-child {
+    border-bottom: transparent;
+}
+
+.dropOut ol li .dropOut_span {
+    display: inline-block;
+    padding-left: 10px;
+    width: 90px;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+}
+
+.dropOut ol li .dropOut_span:hover {
+    color: #fff;
+}
+
+
+/*添加讨论组样式*/
+
+.discussionGrou .modal-content {
+    border-radius: 5px 5px 0 0;
+}
+
+.discussionGrou .IM_joinGroup_form >.invalidate-input-box {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.add_edit_group {
+    margin: 0 auto;
+    /*width: 588px;
+    height: 484px;
+    border: 1px solid #D2D2D2;
+    border-radius: 5px;*/
+}
+
+.add_edit_group_left {
+    float: left;
+    width: 50%;
+    height: 482px;
+    background-color: #F6F6F6;
+    border-radius: 0 0 0 5px;
+}
+
+.add_edit_group_left .edit_input_group {
+    float: none!important;
+    width: 290px;
+    height: 40px;
+    padding: 7px 10px 0 10px;
+}
+
+.add_edit_group_left .edit_input_group.input-group .edit_form_control {
+    width: 100%!important;
+    height: 22px;
+    font-size: 13px;
+    background: url("./components/util/IM/images/tx-27.png") no-repeat 10px center;
+}
+
+.edit_form_control {
+    background: #354D67;
+}
+
+.group_left_con {
+    height: 441px;
+    overflow: auto;
+}
+
+.group_left_con li .con_hook,
+.group_right_con li .con_delete {
+    float: right;
+    padding-top: 10px;
+    cursor: default;
+}
+
+.group_right_con li .con_delete {
+    cursor: pointer;
+}
+
+.group_left_con li,
+.group_right_con li {
+    font-size: 13px;
+    color: #5E5E5E;
+    padding: 10px;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.group_left_con li:last-child,
+.group_right_con li:last-child {
+    border-bottom: transparent;
+}
+
+.group_left_con li .con_icon,
+.group_right_con li .con_icon {
+    width: 36px;
+    height: 36px;
+}
+
+.group_left_con li span,
+.group_right_con li span {
+    cursor: Default;
+}
+
+.add_edit_group_right {
+    background-color: #fff;
+    float: right;
+    width: 50%;
+    height: 482px;
+    border-radius: 0 0 5px 0;
+}
+
+.group_right_head {
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    color: #7A7A7A;
+}
+
+.group_right_head span {
+    cursor: default;
+}
+
+.group_right_head img {
+    float: right;
+    margin: 13px 15px 0 0;
+    cursor: pointer;
+}
+
+.group_right_con {
+    height: 392px;
+    overflow: auto;
+}
+
+.group_right_button {
+    height: 50px;
+    padding: 10px 10px 0 0;
+    text-align: right;
+}
+
+.group_right_button button {
+    width: 60px;
+    height: 28px;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    padding: 0px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.group_right_button .group_btn_confirm {
+    color: #fff;
+    margin-right: 50px;
+    border: 1px solid #3DCE3D;
+    background-color: #3DCE3D;
+}
+
+.group_right_button .group_btn_cancel {
+    color: #606060;
+    border: 1px solid #E5E5E5;
+    background-color: #fff;
+}
+
+
+/*踢除群组成员样式*/
+
+.IMDeleteGroupMember .modal-dialog {
+    width: 300px;
+}
+
+.IMDeleteGroupMember .modal-content {
+    height: 462px;
+}
+
+.IMDeleteGroupMember div.deleteGoupMember_head {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    color: #666;
+}
+
+.IMDeleteGroupMember div.deleteGoupMember_head >img {
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.IMDeleteGroupMember ul.deleteGoupMember_content {
+    width: 100%;
+    height: 355px;
+    overflow-y: auto;
+    background: #f6f6f6;
+}
+
+.IMDeleteGroupMember ul.deleteGoupMember_content li {
+    padding: 10px;
+    border-bottom: 1px solid #efefef;
+    width: 100%;
+}
+
+.IMDeleteGroupMember div.deleteGoupMember_footer {
+    height: 60px;
+    padding: 18px 20px 0 0;
+    text-align: right;
+}
+
+.IMDeleteGroupMember .group_btn_confirm {
+    color: #fff;
+    margin-right: 10px;
+    border: 1px solid #3DCE3D;
+    background-color: #3DCE3D;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.IMDeleteGroupMember .group_btn_cancel {
+    color: #606060;
+    border: 1px solid #E5E5E5;
+    background-color: #fff;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.IMDeleteGroupMember .group_btn_quit {
+    color: #fff;
+    margin-right: 10px;
+    border: none;
+    background-color: #E34944;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.IMDeleteGroupMember .con_delete {
+    float: right;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.IMDeleteGroupMember .deleteGoupMember_headImg {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+
+/*表情包样式*/
+
+.IM_expressionContainer {
+    line-height: 20px;
+    text-align: left;
+}
+
+.IM_expressionPack_btn {
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.IM_expressionPack_btn .IM_chat03_title_btn {
+    padding-left: 0px!important;
+}
+
+.IM_expressionPack_btn .IM_chat03_title_btn img {
+    padding: 0px;
+    vertical-align: inherit;
+}
+
+.IM_expressionPack {
+    position: absolute;
+    left: 250px!important;
+    top: 220px!important;
+    border: 1px solid #D6D6D6;
+    width: 292px;
+    height: 221px;
+    background: #fff;
+}
+
+.IM_expressionPack .IM_expressionPack_firstAngle {
+    display: block;
+    border-width: 8px;
+    position: absolute;
+    bottom: -17px;
+    left: 8px;
+    border-style: solid dashed dashed;
+    border-color: #D6D6D6 transparent transparent;
+    font-size: 0;
+    line-height: 0;
+}
+
+.IM_expressionPack .IM_expressionPack_twoAngle {
+    display: block;
+    border-width: 8px;
+    position: absolute;
+    bottom: -16px;
+    left: 8px;
+    border-style: solid dashed dashed;
+    border-color: #FFF transparent transparent;
+    font-size: 0;
+    line-height: 0;
+}
+
+.IM_expressionPack .expressionPack_container {
+    width: 290px;
+    overflow-y: scroll;
+    height: 219px;
+}
+
+.IM_expressionPack .expressionPack_container .container_emojiesOut {
+    cursor: pointer;
+    padding: 0 2px 0 4px;
+    text-align: left;
+    border-right: 1px solid #D6D6D6;
+    border-bottom: 1px solid #D6D6D6;
+}
+
+.IM_chat03_content pre {
+    text-align: left;
+    outline: none;
+    border: none;
+}
+
+.IM_chat02_content .notSelected {
+    margin-top: 130px;
+}
+
+.IM_chat02_content .notSelected p {
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 13px;
+}

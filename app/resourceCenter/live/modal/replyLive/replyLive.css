@@ -1,0 +1,249 @@
+.resource-replyLive .modal-dialog {
+    width: 700px;
+    height: 400px;
+}
+
+.resource-replyLive .modal-content {
+    position: relative;
+    background: #f1f2f4;
+}
+
+.resource-replyLive .modal-content .live {
+    width: 698px;
+    border: 4px solid #dddddd;
+}
+
+.resource-replyLive .modal-content .header {
+    height: 40px;
+    background: #fff;
+}
+
+.resource-replyLive .modal-content .header p {
+    float: left;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.resource-replyLive .modal-content .header img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 12px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.resource-replyLive .modal-content .main {
+    /*overflow: hidden;*/
+}
+
+.resource-replyLive .modal-content .main .children {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.resource-replyLive .modal-content .main .children p {
+    float: left;
+    font-size: 12px;
+    color: #666460;
+    margin: 0px;
+    text-indent: 38px;
+}
+
+.resource-replyLive .modal-content .main .children .con p {
+    text-indent: 0px;
+    font-size: 14px;
+}
+
+.resource-replyLive .modal-content .main .children .dropdown .bth-fix {
+    width: 530px;
+}
+.resource-replyLive .modal-content .main .children .con .video {
+    width: 500px;
+    overflow:hidden;
+    padding-top: 10px;
+   /* margin-left: 10px;*/
+}
+.resource-replyLive .modal-content .main .children .con .video video{
+    width: 300px;
+    float: left;
+}
+.resource-replyLive .modal-content .main .children .con .audio{
+    float: left;
+    width: 300px;
+}
+.resource-replyLive .modal-content .main .children .con {
+    float: left;
+    margin-left: 15px;
+    width: 80%;
+    position: relative;
+    font-size: 12px;
+}
+
+.resource-replyLive .modal-content .main .children .con input {
+    width: 530px;
+    height: 28px;
+    /* border: 1px solid #d0cdc7; */
+    text-indent: 10px;
+    font-size: 12px;
+    color: #666460;
+    line-height: 28px;
+    padding: 0px;
+    float: left;
+}
+
+.resource-replyLive .modal-content .main .children .con .uploadButton {
+    width: 80px;
+    height: 30px;
+    border-radius: 4px;
+    background: #8495b1;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+   /* margin-left: 5px;*/
+    border: none;
+}
+
+.conOfImg {
+    position: relative;
+    float: left;
+    overflow: hidden;
+}
+
+.resource-replyLive .modal-content .main .children .con .thumbnail {
+    width: 50px;
+    height: 50px;
+    border: none;
+    /*margin-left: 8px;*/
+    margin-right: 10px;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+.resource-replyLive .modal-content .main .children .con .delete {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 2px;
+    left: 32px;
+    cursor: pointer;
+}
+
+.resource-replyLive .modal-content .main .children .con img.audiovideo {
+    position: relative;
+    margin-left: 5px;
+    top: 5px;
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+}
+
+.resource-replyLive .modal-content .main .children .con p.cue {
+    display: inline-block;
+    top: 5px;
+    position: relative;
+}
+
+.resource-replyLive .modal-content .main .children .con textarea {
+    height: 65px;
+    width: 530px;
+    resize: none;
+}
+
+.resource-replyLive .modal-content .main .children .con .timeGroup {
+    float: left;
+    width: 130px;
+}
+
+.resource-replyLive .modal-content .main .children .con .timeGroup input {
+    width: 128px;
+    height: 33px;
+    border: 1px solid #cecece;
+    border-radius: 3px 3px;
+    padding: 0px;
+    text-indent: 10px;
+}
+
+.resource-replyLive .modal-content .main .children .con .timeGroup input.form-control[readonly] {
+    background: #fff;
+}
+
+.resource-replyLive .modal-content .main .children .con .timeGroup img {
+    width: 15px;
+    height: 15px;
+    border: 0;
+    position: absolute;
+    top: 50px;
+    left: 106px;
+}
+
+.resource-replyLive .modal-content .main .children .con .timeGroup img.imgDate {
+    left: 106px;
+    top: 10px;
+}
+
+.resource-replyLive .modal-content .main .children .con .timeGroup img.imgTime {
+    left: 252px;
+    top: 10px;
+}
+
+.resource-replyLive .modal-content .footer {
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.resource-replyLive .modal-content .footer button.submit {
+    width: 114px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    background: #28a3df;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+    padding: 0px;
+    margin-left: 510px;
+}
+
+.resource-replyLive .modal-content trs-single-radio span {
+    padding-top: 0px;
+    line-height: 27px;
+}
+
+.resource-replyLive .dropdown ul.dropdown-menu li {
+    width: 530px;
+}
+.resource-replyLive .children div.loading{
+    width: 100%;
+    position: absolute;
+    top:0px;
+    left:-4px;
+    height: 100%;
+}
+.resource-replyLive .children div.loading img{
+    width: 19px;
+    height: 19px;
+    border: none;
+    margin:18px auto;
+    display: block;
+}
+.resource-replyLive div.default {
+    width: 300px;
+    height: 170px;
+    border: 1px solid gainsboro;
+}
+.resource-replyLive .footer p.uploadInfo
+{
+    float: right;
+    color: red;
+    margin-right: 62px;
+    margin-top: 10px;
+}

@@ -1,0 +1,24 @@
+{
+    "result": [
+        {
+            "userId":"11",
+            "userName":"张yi",
+            "userHead":"common/images/new-pic.jpg" 
+        },
+        {
+            "userId":"11",
+            "userName":"张er",
+            "userHead":"common/images/new-pic.jpg" 
+        },
+        {
+            "userId":"11",
+            "userName":"张san",
+            "userHead":"common/images/new-pic.jpg" 
+        },
+        {
+            "userId":"11",
+            "userName":"张si",
+            "userHead":"common/images/new-pic.jpg" 
+        }
+    ]
+}

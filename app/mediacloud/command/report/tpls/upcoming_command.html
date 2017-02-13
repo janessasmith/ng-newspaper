@@ -1,0 +1,61 @@
+<div class="dp-rt-main no-pd" style="margin-top: 0;" ng-controller="upcomingCommandShowCtrl">
+    <div class="cg-ls-top white-bac">
+        <div class="cg-deal-tit cy-zl-tit lf">查阅任务</div>
+    </div>
+    <div class="cy-zl-con">
+        <div class="cy-zl-main mycy-zl-main">
+            <div class="box-shadow-bk cy-zl-bk mycy-zl-bk">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    	<tr>
+                            <th>发送人：</th>
+                            <td>{{contents.CRUSER}}</td>
+                        </tr>
+                         <tr>
+                            <th>发送人电话：</th>
+                            <td>{{contents.TEL}}</td>
+                        </tr>
+                        <tr>
+                            <th>指令标题：</th>
+                            <td>{{contents.TITLE}}</td>
+                        </tr>
+                        <tr>
+                            <th>指令内容：</th>
+                            <td style="padding:0">
+                                <textarea class="table-pre" readonly>{{contents.CONTENT}}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>指令类型：</th>
+                            <td>{{type}}</td>
+                        </tr>
+                        <tr>
+                            <th>附件相关：</th>
+                            <td ng-show="contents.files==''">无</td>
+                            <td ng-show="contents.files!=''">
+                                <span ng-repeat="file in files">
+                                    <a ng-href="{{file.filePath}}">{{file.fileName}}</a>&nbsp&nbsp
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>期望完成时间：</th>
+                            <td>{{contents.OVERTIME}}</td>
+                        </tr>
+                        <tr>
+                            <th>密级指令：</th>
+                            <td><span class="mj-zl-yes">{{isSecret}}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="cg-xq-btn">
+        <div class="cy-zl-btn mycy-zl-btn">
+            <a href="javascript:;" class="re-dy">打印</a>
+            <a ui-sref="command.myinstructBlacklog_forward({dictateId:dictateId})" class="re-zf">转发</a>
+            <a href="javascript:;" ng-click="task(contents.CORPSID);" class="re-wc">完成</a>
+        </div>
+    </div>
+</div>

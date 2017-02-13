@@ -1,0 +1,22 @@
+<div class="editor_window">
+	<div class="main">
+		<div class="head">
+			<span>编辑选择</span>
+			<img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+		</div>
+		<div class="editflow editflow_height">
+			<ul>
+				<li ng-click="editor.selected!=true?editor.selected=true:editor.selected=false" class="{{editor.selected==true?'selected':''}}" ng-repeat="editor in editors" ng-bind="editor.GROUPPATH">
+				</li>
+			</ul>
+		</div>
+		<div class="buttom">
+			<button class="btn_confirm" ng-click="confirm()">
+				确定
+			</button>
+			<button class="btn_cancel" ng-click="cancel()">
+				取消
+			</button>
+		</div>
+	</div>
+</div>

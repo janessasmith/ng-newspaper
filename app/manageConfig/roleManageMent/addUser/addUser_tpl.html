@@ -1,0 +1,59 @@
+<div class="row addUser-head-row">
+    <div class="col-md-4 adduserBtn">
+        <button ng-if="$parent.roleData.ROLEID==='1'||!!$parent.status.operatingAuthority.adduser" class="btn btn-default btn-commen addUser-btn" ng-click="addUser()">添加用户</button>
+        <button ng-if="$parent.roleData.ROLEID==='1'||!!$parent.status.operatingAuthority.deleteuser" class="btn btn-default btn-commen addUser-btn" ng-click="deleteUser()" ng-disabled="selectedArray.length<1?true:false">移除用户</button>
+        <button class="btn btn-default btn-commen addUser-btn" ng-click="moveUser()" ng-disabled="selectedArray.length<1?true:false">移动用户</button>
+    </div>
+    <div class="col-md-8">
+        <ul class="addUser-tab left w62pen">
+            <a ng-bind="roleData.ROLEDESC | trsLimitTo:12" class="mr40 cur span_replace" title="{{roleData.ROLEDESC}}"></a>
+            <span class="span_replace">角色下的用户列表</span>
+        </ul>
+        <div class="input-group edit_input_group mr15">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键词" ng-model="searchUserName" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+                <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="edit_table mlr-15 border-b3b">
+    <table class="table table-striped mb0">
+        <thead>
+            <tr>
+                <th class="td-check col-cbx">
+                    <trs-checkbox ischecked="selectedArray.length==items.length&&items.length!=0" callback="selectAll()"></trs-checkbox>
+                </th>
+                <th>序号</th>
+                <th>用户名</th>
+                <th>当前状态</th>
+                <th>真实姓名</th>
+                <th>所在组织</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td class="td-check">
+                    <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <td> {{(page.CURRPAGE-1)*page.PAGESIZE+$index+1}}</td>
+                <td ng-bind="item.USERNAME"></td>
+                <td ng-bind="item.STATUSNAME"></td>
+                <td ng-bind="item.TRUENAME"></td>
+                <td ng-bind="item.DEPTPATH |truncate:22:'...'" title="{{item.DEPTPATH}}" class="pointer"></td>
+                <td ng-if="$parent.roleData.ROLEID==='1'||!!$parent.status.operatingAuthority.deleteuser" ng-click="deleteItem(item.USERID)" class="td_pointer">
+                    <img src="./editingCenter/app/images/fg-r2.png" alt="delete"> 删除
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="selectPagecount">
+    <div class="page">
+        <trs-pagenation-left page-count="page" is-select-pagecount="true" callback="selectPageNum()"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="3" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        </span>
+        <trs-pagenation-right callback="jumpToPage()" currpage="copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+</div>

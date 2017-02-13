@@ -1,0 +1,26 @@
+<!-- <img class="getmultilevelMenuImg {{seclevchnl.leveClass}}" ng-click="getNextLevel(seclevchnl,'thirdchnl')" ng-show="seclevchnl.HASCHILDREN==='true'" ng-src="{{seclevchnl.leveSrc || './editingCenter/app/images/ej5.png'}}" data-auto-close="1" > -->
+<span class="arrowBtn" ng-class="seclevchnl.arrowBtn"  ng-click="getNextLevel(seclevchnl,status.website.selectedPlatform,'chnl1')" ng-show="seclevchnl.HASCHILDREN==='true'"></span>
+<div class="subLevelMenu" ng-class="seclevchnl.show" >
+    <div class="menuContent1">
+        <div class="children" ng-repeat="menu in status.website.subLevelMenu[status.website.selectedPlatform].chnl1.DATA">
+            <img ng-src="./editingCenter/website/images/{{menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl2.CHANNELID&&status.website.preview.chnl2[$index]=='false'?'i54.png':'i54-1.png'}}" ng-click="websiteChannelPreview(menu)" class="multipreview">
+            <a ng-click="hideNextLevel(menu,status.website.selectedPlatform,'chnl2',seclevchnl,$event)" ng-bind="menu.CHNLDESC" ui-sref="editctr.website.{{status.isUiSref}}({channelid:menu.CHANNELID,siteid:menu.SITEID})" ng-class="{'panel-body-hasChild':menu.HASCHILDREN=='true','selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl2.CHANNELID&&menu.HASCHILDREN=='true','selectedchnlHasnoChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl2.CHANNELID&&menu.HASCHILDREN=='false'}" href="javascript:void(0)" ng-mouseenter="status.website.preview.chnl2[$index]='true'" ng-mouseleave="status.website.preview.chnl2[$index]='false'"></a>
+            <i ng-click="getNextLevel(menu,status.website.selectedPlatform,'chnl2')" ng-show="menu.HASCHILDREN=='true'" ng-class="{'selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl2.CHANNELID}"></i>
+        </div>
+    </div>
+    <div class="menuContent2" ng-if="status.website.subLevelMenu[status.website.selectedPlatform]['chnl2'].DATA">
+        <div class="children" ng-repeat="menu in status.website.subLevelMenu[status.website.selectedPlatform].chnl2.DATA">
+            <img ng-src="./editingCenter/website/images/{{menu.CHANNELID==status.website.websiteSelectChl.chnl3.CHANNELID&&status.website.preview.chnl3[$index]=='false'?'i54.png':'i54-1.png'}}" ng-click="websiteChannelPreview(menu)" class="multipreview">
+            <a ng-click="hideNextLevel(menu,status.website.selectedPlatform,'chnl3',seclevchnl,$event)" ng-bind="menu.CHNLDESC" ui-sref="editctr.website.{{status.isUiSref}}({channelid:menu.CHANNELID,siteid:menu.SITEID})" href="javascript:void(0)" ng-class="{'panel-body-hasChild':menu.HASCHILDREN=='true','selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl3.CHANNELID&&menu.HASCHILDREN=='true','selectedchnlHasnoChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl3.CHANNELID&&menu.HASCHILDREN=='false'}" ng-mouseenter="status.website.preview.chnl3[$index]='true'" ng-mouseleave="status.website.preview.chnl3[$index]='false'"></a>
+            <i ng-click="getNextLevel(menu,status.website.selectedPlatform,'chnl3')" ng-show="menu.HASCHILDREN=='true'" ng-class="{'selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl3.CHANNELID}"></i>
+        </div>
+    </div>
+     
+    <div class="menuContent3" ng-if="status.website.subLevelMenu[status.website.selectedPlatform]['chnl3'].DATA">
+        <div class="children" ng-repeat="menu in status.website.subLevelMenu[status.website.selectedPlatform].chnl3.DATA">
+            <img ng-src="./editingCenter/website/images/{{menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl4.CHANNELID&&status.website.preview.chnl4[$index]=='false'?'i54.png':'i54-1.png'}}" ng-click="websiteChannelPreview(menu)" class="multipreview">
+            <a ng-click="hideNextLevel(menu,status.website.selectedPlatform,'chnl4',seclevchnl,$event)" ng-bind="menu.CHNLDESC" ui-sref="editctr.website.{{status.isUiSref}}({channelid:menu.CHANNELID,siteid:menu.SITEID})" href="javascript:void(0)" ng-class="{'panel-body-hasChild':menu.HASCHILDREN=='true','selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl4.CHANNELID&&menu.HASCHILDREN=='true','selectedchnlHasnoChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl4.CHANNELID&&menu.HASCHILDREN=='false'}" ng-mouseenter="status.website.preview.chnl4[$index]='true'" ng-mouseleave="status.website.preview.chnl4[$index]='false'"></a>
+            <i ng-click="getNextLevel(menu,'chnl4',seclevchnl)" ng-show="menu.HASCHILDREN=='true'" ng-class="{'selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl[status.website.selectedPlatform].chnl4.CHANNELID}"></i>
+        </div>
+    </div>
+</div>

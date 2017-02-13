@@ -1,0 +1,51 @@
+.man-sys-emailConfig {
+    /*margin-left: 10px;*/
+}
+
+.man-sys-emailConfig div.emailConfig-row {
+    margin-top: 20px;
+}
+
+.man-sys-emailConfig p.emailConfig-title {
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 115px;
+}
+
+.man-sys-emailConfig div.emailConfig-footer {
+    text-align: center;
+    padding: 75px 0;
+}
+
+.man-sys-emailConfig div.emailConfig-footer button {
+    height: 30px;
+    width: 95px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f9f9f9));
+    font-size: 12px;
+    color: #666;
+}
+
+.man-sys-emailConfig div.emailConfig-footer button:hover {
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#ffffff));
+}
+
+.man-sys-emailConfig p.emailConfig-title,
+.man-sys-emailConfig div.emailConfig-main {
+    display: inline-block;
+    color: #666;
+    vertical-align: top;
+}
+
+.man-sys-emailConfig div.emailConfig-main input.form-control {
+    width: 325px;
+    height: 32px;
+}
+
+.man-sys-emailConfig div.emailConfig-main textarea.form-control {
+    width: 325px;
+    height: 108px;
+    resize: none;
+}

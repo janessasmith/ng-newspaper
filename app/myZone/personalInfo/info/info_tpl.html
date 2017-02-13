@@ -1,0 +1,66 @@
+<div class="myZone_preson_info">
+    <div class="myZone_headPortrait">
+        <img ng-src="{{headPic}}" alt="">
+    </div>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>用户名：</th>
+                <td ng-bind="info.TRUENAME"></td>
+                <th>用户ID：</th>
+                <td ng-bind="info.USERNAME"></td>
+            </tr>
+            <tr>
+                <th>员工号：</th>
+                <td ng-bind="info.USERNUM"></td>
+                <th>办公电话：</th>
+                <td ng-bind="info.TELEPHONE"></td>
+            </tr>
+            <tr>
+                <th>办公传真：</th>
+                <td ng-bind="info.FAX"></td>
+                <th>手机号码：</th>
+                <td ng-bind="info.MOBILE"></td>
+            </tr>
+            <tr>
+                <th>虚拟网号：</th>
+                <td ng-bind="info.MOBILESUB"></td>
+                <th>宅电：</th>
+                <td ng-bind="info.HOMETEL"></td>
+            </tr>
+            <tr>
+                <th>办公地点：</th>
+                <td ng-bind="info.OFFICE"></td>
+                <th>性别：</th>
+                <td ng-bind="info.SEX"></td>
+            </tr>
+            <tr>
+                <th>通信地址：</th>
+                <td ng-bind="info.ADDRESS"></td>
+                <th>邮箱地址：</th>
+                <td ng-bind="info.EMAIL"></td>
+            </tr>
+            <tr>
+                <th>开户银行:</th>
+                <td ng-bind="info.BANKACCOUNT"></td>
+                <th>银行卡号：</th>
+                <td ng-bind="info.BANKCARDNUMBER"></td>
+            </tr>
+            <tr>
+                <th>所属组织:</th>
+                <td ng-bind="info.DEPT"></td>
+                <th>最后确认时间：</th>
+                <td ng-bind="info.OPERTIME"></td>
+            </tr>
+            <tr>
+                <th>身份证号码:</th>
+                <td ng-bind="info.FGDSFZ"></td>
+                <th>备注：</th>
+                <td ng-bind="info.REMARK"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="myZone_preson_info_button">
+    	<button class="myZone_preson_info_editbutton" ng-click="stateGoModify()">修&nbsp;&nbsp;改</button>
+    </div>
+</div>

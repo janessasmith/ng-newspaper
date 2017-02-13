@@ -1,0 +1,37 @@
+<!-- 新华社稿打印列表的模板 -->
+<div class="trsPrintDate_container">
+    <div class="trsPrintDate_header">
+        <div>
+            {{params.sourceName}}目录打印
+        </div>
+        <div>
+            日期：{{params.date}}
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="trsPrintDate_main">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="trsPrintDate-table-num">序号</th>
+                    <th class="trsPrintDate-table-title">标题</th>
+                    <th class="trsPrintDate-table-count">字数</th>
+                    <th class="trsPrintDate-table-time">入库时间</th>
+                    <th class="trsPrintDate-table-info">稿件信息</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in params.draftList">
+                    <td class="trsPrintDate-table-num">{{$index+1}}</td>
+                    <td class="trsPrintDate-table-title" ng-bind="item.DOCTITLE"></td>
+                    <td class="trsPrintDate-table-count" ng-bind="item.TXS"></td>
+                    <td class="trsPrintDate-table-time" ng-bind="item.DOCPUBTIME"></td>
+                    <td class="trsPrintDate-table-info">
+                        <p ng-repeat="info in item.QULIST" ng-bind="info.SUGGESTION"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="page-break-before:always;"></div>
+    </div>
+</div>

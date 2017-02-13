@@ -1,0 +1,40 @@
+<div class="jk-main-container">
+    <div class="jk-main-con">
+        <div class="lf">
+            <!--分类导航-->
+            <div ng-controller="wxNavigationCtrl" class="my-sel-bk" ui-view="wbNavigation">
+                <div class="sel-bk-deal clearfix">
+                    <label>所在单位：</label>
+                    <div class="bk-deal-list">
+                        <div class="bk-deal-op">
+                            <ul>
+                                <li ng-repeat="unit in units" 
+                                    ui-sref="weiboRank.list({unitName:unit.UnitName})" ui-sref-active="active">
+                                    {{unit.UnitName}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sel-bk-deal clearfix">
+                    <label>所属类别：</label>
+                    <div class="bk-deal-list">
+                        <div class="bk-deal-op">
+                            <ul>
+                                <li ng-repeat="class in classs"
+                                   ui-sref="weiboRank.list({accountType:class.ClassName})" ui-sref-active="active">
+                                    {{class.ClassName}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--内容列表-->
+            <div class="weibo-news-list1">
+                <div ui-view ></div>
+            </div>
+
+        </div>
+    </div>
+</div>

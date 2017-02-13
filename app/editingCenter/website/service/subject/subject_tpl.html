@@ -1,0 +1,27 @@
+<form name="subjectForm" novalidate>
+    <div class="subject">
+        <div class="subject_content">
+            <div class="subject_content_noItem" ng-if="data.items.length===0">
+                您没有关注任何专题
+            </div>
+            <div class="subjectName" ng-repeat="item in data.items">
+                <div class="subjectName_head">
+                    <span>{{$index+1}} </span>
+                    <span>&nbsp;{{item.TITLE}}</span>
+                    <button ng-click="cancelFollow(item)">取消关注</button>
+                </div>
+                <div class="subjectName_content">
+                    <ul>
+                        <li ng-repeat="tag in item.SPECIALTAGS">
+                            <trs-checkbox ischecked="data.selectedArray.indexOf(tag.SPECAILTAGID)>-1" callback="singleSelect(tag)"></trs-checkbox><span ng-bind="tag.TAGNAME"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="subject_footer">
+            <button class="subject_footer_confirm" ng-click="confirm()">确定</button>
+            <button class="subject_footer_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</form>

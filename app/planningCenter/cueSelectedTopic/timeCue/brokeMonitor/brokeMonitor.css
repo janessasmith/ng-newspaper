@@ -1,0 +1,179 @@
+.monitor {
+    border: 1px solid #CFCFCF;
+    border-top: transparent;
+    overflow: hidden;
+}
+
+.monitor_button {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    border-bottom: 1px solid #CFCFCF;
+}
+
+.monitor_button button {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.monitor_button .button_weibo {
+    color: #fff;
+    border: 1px solid #2f98d2;
+    background-color: #2f98d2;
+}
+
+.monitor_button .button_number {
+    color: #343434;
+    border: 1px solid #e4e4e4;
+    background-color: #fbfbfb;
+}
+
+.monitor_button .monitor_input_group {
+    float: right;
+    width: 40%;
+}
+
+.monitor_button .monitor_form_control {
+    margin-top: 10px;
+    float: none;
+    height: 30px;
+    background: url("./editingCenter/app/images/sch.jpg") no-repeat 10px center;
+    padding-left: 30px;
+    font-size: 14px;
+    font-family: "Helvetica Neue', Helvetica, Arial, sans-serif";
+    width: 76%;
+    float: left;
+    border-radius: 5px!important;
+}
+
+.monitor_button .input_group_btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    top: 0px;
+    right: 0px;
+    left: 10px;
+    float: left;
+}
+
+.monitor_button .input_group_btn .btn_monitor_search {
+    width: 60px;
+    color: #65635f;
+    background: url("./editingCenter/app/images/b-m.jpg") repeat-x;
+    line-height: 28px;
+    border-radius: 5px;
+}
+
+.monitor_weibo_left {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #CFCFCF;
+    min-height: 1000px;
+}
+
+.monitor_weibo_left .monitor_weibo:last-child {
+    border-bottom: transparent;
+}
+
+.monitor_weibo_left .monitor_weibo {
+    position: relative;
+    padding: 10px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #CFCFCF;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_icon {
+    float: left;
+    width: 65px;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 30px;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_con {
+    float: left;
+    width: 90%;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_con li {
+    min-height: 28px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_con li .btn_View {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 88px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    padding: 0px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #fff;
+    border: 1px solid #2f98d2;
+    background-color: #2f98d2;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_con li button.btn_View a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_con li:first-child {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_con li:nth-child(3) {
+    padding: 10px 0;
+    line-height: 22px;
+}
+
+.monitor_weibo_left .monitor_weibo .monitor_con li:last-child img {
+    width: 120px;
+    height: 90px;
+}
+
+.monitor_weibo_right {
+    /*border-left: 1px solid #CFCFCF;*/
+}
+
+.monitor_weibo_right .minHeight500 {
+    min-height: 500px;
+}
+
+.monitor_weibo_right .weibo_right_head {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.monitor_weibo_right .weibo_right_con {
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.monitor_weibo_right .weibo_right_con li {
+    float: left;
+    width: 50%;
+    line-height: 30px;
+}
+
+.monitor_weibo_right .weibo_right_save {
+    text-align: center;
+    padding: 10px;
+}
+

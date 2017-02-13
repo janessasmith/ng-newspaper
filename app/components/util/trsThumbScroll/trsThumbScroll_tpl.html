@@ -1,0 +1,12 @@
+<div class="thumb-scroll">
+    <img src="./editingCenter/newspaper/images/11_03.gif" alt="" ng-click="prev()" class="prev" ng-if="sources.length>visibleSize">
+    <div class="thumb-container">
+        <div class="thumb-wrap">
+            <div ng-repeat="source in sources">
+                <img ng-src="{{source.PIC}}" ng-click="selectSource(source)" ng-class="{'active':selectedItem == source}">
+                <span>{{$index}}</span>
+            </div>
+        </div>
+    </div>
+    <img src="./editingCenter/newspaper/images/11_05.png" alt="" ng-click="next()" class="next" ng-if="sources.length>visibleSize">
+</div>

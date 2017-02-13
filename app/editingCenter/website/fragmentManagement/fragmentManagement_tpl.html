@@ -1,0 +1,65 @@
+<div trs-scroll-fix class="row edit_right_head edit_right_head_width">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen" ng-click="visualEditing()" ng-if="status.btnRights['website.widget.bianji']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='visualEditing'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon s_operating_record_img">
+                <img ng-src="./editingCenter/website/images/{{status.batchOperateBtn['hoverStatus']=='visualEditing'?'q41-1.png':'q41.png'}}" />
+            </span> 可视化编辑
+        </button>
+        <div class="btn-group hidden-operate" role="group">
+            <button type="button" ng-click="operateRecord()" class="btn btn-default dropdown-toggle btn-commen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseenter="status.batchOperateBtn['hoverStatus']='operateRecord'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+                <span class="s_icon"><img ng-src="./editingCenter/website/images/{{status.batchOperateBtn['hoverStatus']=='operateRecord'?'q42-1.png':'q42.png'}}" /></span> 操作记录
+            </button>
+        </div>
+    </div>
+    <form name="searchWidget" novalidate>
+        <div class="col-md-4 col-lg-3">
+            <div class="input-group edit_input_group">
+                <input type="text" class="form-control edit_form_control" ng-model="widgetDesc" placeholder="请输入关键字搜索">
+                <span class="input-group-btn">
+                <button  class="btn btn-default btn_edit_search" ng-click="searchWidgets()">搜索</button>
+            </span>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="edit_table edit_table_mt20 border_radius_5">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-number">序号</th>
+                <th>页面名称</th>
+                <th class="xcol-preview">预览</th>
+                <!-- <th class="hidden-operate xcol-newspaper-releaseBuild">状态</th> -->
+                <th class="xcol-newspaper-releaseBuild">创建人</th>
+                <th class="xcol-newspaper-date">最近更新时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td ng-bind="$index+1"></td>
+                <!--序号-->
+                <td ng-bind="item.TEMPDESC" class="ta-l pointer" ng-click="queryWidgetTemplates(item)" ng-if="status.btnRights['website.widget.bianji']"></td>
+                <td ng-bind="item.TEMPDESC" class="ta-l" ng-if="!status.btnRights['website.widget.bianji']"></td>
+                <!--页面名称-->
+                <td>
+                    <img ng-if="status.btnRights['website.widget.fabu']" ng-click="preview(item)" src="./editingCenter/website/images/w26.png" class="oper-icon" title="预览">
+                    <img ng-if="status.btnRights['website.widget.fabu']" ng-click="publish(item)" src="./editingCenter/website/images/w28.png" class="oper-icon" title="发布">
+                    <img ng-click="historyVersion(item)" src="./editingCenter/website/images/w27.png" class="oper-icon" itle="历史版本">
+                </td>
+                <!--预览-->
+                <!-- <td ng-bind="item.STATUS"></td> -->
+                <!--状态-->
+                <td ng-bind="item.CRUSER"></td>
+                <!--创建人-->
+                <td ng-bind="item.CRTIME  | limitTo:16"></td>
+                <!--最近更新时间-->
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="false"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

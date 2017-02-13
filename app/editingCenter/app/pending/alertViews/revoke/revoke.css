@@ -1,0 +1,52 @@
+.edit_toBeCompiled_revoke {
+    border: 1px solid #dddddd;
+    height: 241px;
+    width: 503px;
+    margin: 20px;
+}
+
+.edit_revoke_thead {
+    height: 43px;
+    line-height: 43px;
+}
+
+.edit_revoke_thead span {
+    padding-left: 25px;
+}
+
+.edit_revoke_thead_images1{
+    float:right;
+    padding-right:15px;
+    padding-top:13px;
+}
+.edit_revoke_content {
+    width: 501px;
+    height: 134px;
+    background-color: #F1F2F6;
+}
+
+.edit_revoke_input_width {
+    width: 452px;
+    height: 105px;
+    margin: 10px 25px;
+    resize: none;
+    padding:5px;
+}
+
+.edit_revoke_bottom {
+    float: right;
+    margin: 10px;
+    padding-right: 15px;
+}
+
+.btn-success {
+    background-color: #1aba9e;
+    width: 80px;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #4496d2;
+    width: 90px;
+    color: #fff;
+}

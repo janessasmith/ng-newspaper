@@ -1,0 +1,23 @@
+{
+
+	"id": "line2",
+	"type": "stacked",
+	"date": ["01-01", "01-02", "01-03", "01-04", "01-05"],
+	"type": {
+		"data": ["转发","评论"],
+		"x": "right"
+	},
+	"symbol": ["emptyCircle"],
+	"data": [{
+		"name": "转发",
+		"type": "line",
+		"stack": "日转发数",
+		"data": [55, 67, 45, 89, 135]
+	}, {
+		"name": "评论",
+		"type": "line",
+		"stack": "日评论数",
+		"data": [68, 120, 77, 92, 110]
+	}],
+	"color": ["blue", "red"]
+}

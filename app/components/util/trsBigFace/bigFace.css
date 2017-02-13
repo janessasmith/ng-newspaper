@@ -1,0 +1,374 @@
+.bigFace tr td:nth-child(1) {
+    background-color: #F0F2F5;
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkNewsManu-body-con .bigFace span {
+    font-size: 16px;
+}
+
+.bigFace tr td:nth-child(2) {
+    font-size: 12px;
+    text-align: left;
+}
+
+.bigFace {
+    margin-bottom: 0;
+    padding-top: 15px;
+    position: relative;
+}
+
+.bigFaceUser {
+    width: 93%;
+    height: 35px;
+    text-indent: 0;
+    position: absolute;
+    top: -27px;
+    z-index: 99;
+    left: 0px;
+}
+
+.bigFaceUser ul {
+    padding: 0;
+    margin: 0;
+}
+
+.bigFaceDetail .bigFaceUser {
+    top: 6px;
+    left: 31px;
+}
+
+.bigFaceUser ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+.bigFaceUser ul li span {
+    width: 15px;
+    height: 16px;
+    display: block;
+    margin-right: 3px;
+    float: left;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.bigFaceUser ul li label {
+    float: left;
+    padding-right: 7px;
+    line-height: 16px;
+}
+
+.bigFaceDetail {
+    display: none;
+    padding: 0 6px 0 13px !important;
+}
+
+.bigFaceDetail .bigFaceBorder {
+    border: 1px solid #D4D4D4;
+    border-radius: 6px;
+    padding: 56px 10px 0 16px !important;
+    height: 572px;
+    overflow-x: auto;
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+.bigFaceDetail span.ng-scope {
+    background-color: #fff !important;
+}
+
+.bigFaceDetail .bigFaceUser {}
+
+.bigFace span.ng-scope {
+    position: static !important;
+    border-radius: 0 !important;
+    min-width: auto !important;
+    text-align: left !important;
+    display: inline !important;
+}
+
+.bigFace span {
+    color: #000;
+    font-size: 18px;line-height: 36px;
+}
+
+.bigFace .color0 {
+    color: rgb(10, 144, 205) !important;
+    text-decoration: underline;
+}
+
+.bigFace .color1 {
+    color: rgb(227, 169, 230)!important;
+}
+
+.bigFace .color2 {
+    color: rgb(209, 29, 190)!important;
+}
+
+.bigFace .color3 {
+    color: #0baa60!important;
+}
+
+.bigFace .color4 {
+    color: rgb(161, 228, 110)!important;
+}
+
+.bigFace .color5 {
+    color: rgb(149, 114, 231)!important;
+}
+
+.bigFace .color6 {
+    color: rgb(46, 100, 233)!important;
+}
+
+.bigFace .color7 {
+    color: rgb(238, 238, 35)!important;
+}
+
+.bigFace .color8 {
+    color: rgb(238, 109, 8)!important;
+}
+
+.bigFace .color9 {
+    color: rgb(193, 199, 31)!important;
+}
+
+.bigFace .color10 {
+    color: rgb(173, 197, 168)!important;
+}
+
+.bigFace .color11 {
+    color: rgb(96, 223, 174)!important;
+}
+
+.bigFace .color12 {
+    color: rgb(249, 186, 237)!important;
+}
+
+.bigFace .color13 {
+    color: rgb(99, 210, 155)!important;
+}
+
+.bigFace .color14 {
+    color: rgb(207, 105, 252)!important;
+}
+
+.bigFace .color15 {
+    color: rgb(254, 13, 87)!important;
+}
+
+.bigFace .color16 {
+    color: rgb(92, 254, 237)!important;
+}
+
+.bigFace .color17 {
+    color: rgb(40, 215, 133)!important;
+}
+
+.bigFace .color18 {
+    color: rgb(41, 201, 218)!important;
+}
+
+.bigFace .color19 {
+    color: rgb(207, 147, 225)!important;
+}
+
+.bigFace .color20 {
+    color: rgb(73, 241, 17)!important;
+}
+
+.bigFace .color21 {
+    color: rgb(57, 107, 242)!important;
+}
+
+.bigFace .color22 {
+    color: rgb(212, 183, 206)!important;
+}
+
+.bigFace .color23 {
+    color: rgb(6, 193, 248)!important;
+}
+
+.bigFace .color24 {
+    color: rgb(128, 252, 34)!important;
+}
+
+.bigFace .color25 {
+    color: rgb(245, 117, 144)!important;
+}
+
+.bigFace .color26 {
+    color: rgb(222, 142, 18)!important;
+}
+
+.bigFace li .color0 {
+    background-color: rgb(10, 144, 205);
+}
+
+.bigFace li .color1 {
+    background-color: rgb(227, 169, 230);
+}
+
+.bigFace li .color2 {
+    background-color: rgb(209, 29, 190);
+}
+
+.bigFace li .color3 {
+    background-color: #0baa60;
+}
+
+.bigFace li .color4 {
+    background-color: rgb(161, 228, 110);
+}
+
+.bigFace li .color5 {
+    background-color: rgb(149, 114, 231);
+}
+
+.bigFace li .color6 {
+    background-color: rgb(46, 100, 233);
+}
+
+.bigFace li .color7 {
+    background-color: rgb(238, 238, 35);
+}
+
+.bigFace li .color8 {
+    background-color: rgb(238, 109, 8);
+}
+
+.bigFace li .color9 {
+    background-color: rgb(193, 199, 31);
+}
+
+.bigFace li .color10 {
+    background-color: rgb(173, 197, 168);
+}
+
+.bigFace li .color11 {
+    background-color: rgb(96, 223, 174);
+}
+
+.bigFace li .color12 {
+    background-color: rgb(249, 186, 237);
+}
+
+.bigFace li .color13 {
+    background-color: rgb(99, 210, 155);
+}
+
+.bigFace li .color14 {
+    background-color: rgb(207, 105, 252);
+}
+
+.bigFace li .color15 {
+    background-color: rgb(254, 13, 87);
+}
+
+.bigFace li .color16 {
+    background-color: rgb(92, 254, 237);
+}
+
+.bigFace li .color17 {
+    background-color: rgb(40, 215, 133);
+}
+
+.bigFace li .color18 {
+    background-color: rgb(41, 201, 218);
+}
+
+.bigFace li .color19 {
+    background-color: rgb(207, 147, 225);
+}
+
+.bigFace li .color20 {
+    background-color: rgb(73, 241, 17);
+}
+
+.bigFace li .color21 {
+    background-color: rgb(57, 107, 242);
+}
+
+.bigFace li .color22 {
+    background-color: rgb(212, 183, 206);
+}
+
+.bigFace li .color23 {
+    background-color: rgb(6, 193, 248);
+}
+
+.bigFace li .color24 {
+    background-color: rgb(128, 252, 34);
+}
+
+.bigFace li .color25 {
+    background-color: rgb(245, 117, 144);
+}
+
+.bigFace li .color26 {
+    background-color: rgb(222, 142, 18);
+}
+
+.bigFace .color27 {}
+
+.bigFace .color28 {}
+
+.bigFace .color29 {}
+
+.bigFace .color30 {}
+
+.bigFace .color31 {}
+
+.bigFace .color32 {}
+
+.bigFace .color33 {}
+
+.bigFace .color34 {}
+
+.bigFace .color35 {}
+
+.bigFace .color36 {}
+
+.bigFace .color37 {}
+
+.bigFace .color38 {}
+
+.bigFace .color39 {}
+
+.bigFace .color40 {}
+
+.bigFace .color41 {}
+
+.bigFace .color42 {}
+
+.bigFace .color43 {}
+
+.bigFace .color44 {}
+
+.bigFace .color45 {}
+
+.bigFace .color46 {}
+
+.bigFace .color47 {}
+
+.bigFace .color48 {}
+
+.bigFace .color49 {}
+
+.bigFace .color50 {}
+
+.bigFace .color51 {}
+
+.bigFace .color52 {}
+
+.bigFace .color53 {}
+
+.bigFace .color54 {}
+
+.bigFace .color55 {}

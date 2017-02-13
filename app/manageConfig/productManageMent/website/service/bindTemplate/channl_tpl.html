@@ -1,0 +1,29 @@
+<div class="man_produ_modify">
+    <div class="man_produ_modify_head">
+        <p>选择模板</p>
+        <input type="text" class="form-control template-view-top-search" placeholder="模板关键词" ng-model="filterTemp" />
+    </div>
+    <div class="man_produ_column_modify_template">
+        <div class="template_chose_group">
+            <div class="singleRadioCon" ng-repeat="overviewTemp in overviewTemps | filter:{TEMPNAME:filterTemp} | orderBy:overviewTemp.TEMPID">
+                <trs-single-radio label="{{overviewTemp.TEMPNAME|trsLimitTo:16}}" group="'overviewTemps'" ischecked="overviewTemp.TEMPID==selectedOverviewTemp.TEMPID" callback="selectOverviewTempFn(overviewTemp)" title="{{overviewTemp.TEMPNAME}}"></trs-single-radio>
+            </div>
+        </div>
+        <div class="template_chose_footer">
+            <trs-checkbox ischecked="selectedOverviewTemp.TEMPID=='0'" callback="selectNotemp()" label="不选择任何模板"></trs-checkbox>
+        </div>
+    </div>
+    <div class="templatePage">
+        <div class="left">
+            <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="false"></trs-pagenation-left>
+        </div>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <div class="right">
+            <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+        </div>
+    </div>
+    <div class="man_produ_delete_footer">
+        <button class="news-role-btn btn_confirm" ng-click="confirm()">确定</button>
+        <button class="news-role-btn modify_template_footer_confirm btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

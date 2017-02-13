@@ -1,0 +1,56 @@
+.new-zp-layout-window .modal-content{
+    margin: 0px auto;
+    width: 479px;
+    border: 4px solid #DDD;
+    top: 130px;
+}
+
+.man_produ_newpress_footer .man_produ_newpress_footer_save {
+    width: 80px !important;
+    vertical-align: middle;
+}
+
+.pt16 {
+    padding-top: 16px;
+}
+
+.ZPLayout-title {
+    width: 25%;
+    float: left;
+    text-align: right;
+    margin-bottom: 0px;
+    line-height: 28px;
+}
+
+.man_produ_newpress_content .invalidate-input-box span {
+    left: 118px !important;
+    top: -25px;
+}
+
+.man_produ_newpress_con_form .dropdown .bth-fix {
+    width: 244px;
+}
+
+.man_produ_newpress_con_form .dropdown .btn-fix-title {
+    text-align: left;
+    width: 220px;
+}
+
+.man_produ_newpress_con_form .dropdown .dropdown-menu {
+    width: 244px;
+}
+
+.pl12 {
+    padding-left: 12px;
+}
+
+.zpLayput-form-control {
+    height: 28px;
+    line-height: 28px;
+    padding-left: 12px;
+}
+
+
+.man_produ_newspaper11{
+    height: 40px;
+}

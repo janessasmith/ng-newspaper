@@ -1,0 +1,23 @@
+<form name="ModifyOrderInfoForm" novalidate>
+    <div class="man_produ_newpress">
+        <div class="man_produ_newpress_head">
+            <p>叠次管理-编辑叠次</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_newpress_content pt16">
+            <div class="man_produ_newpress_con_form">
+                <p class="ZPLayout-title">报纸名称：</p>
+                <span class="newOrder-content-title" ng-bind="paper.SITENAME"></span>
+            </div>
+            <div class="man_produ_newpress_con_form invalidate-input-box {{ModifyOrderInfoForm.layoutName.$invalid?'has-error':''}}">
+                <p class="ZPLayout-title">名称：</p>
+                <input class="form-control zpLayput-form-control" type="text" name="layoutName" ng-model="DieCi.CHNLNAME" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20,required" ng-style="{color:list.TITLECOLOR}" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA">
+            </div>
+        </div>
+        <div class="man_produ_newpress_footer">
+            <button class="news-role-btn-success man_produ_newpress_footer_cancel btn_confirm" validation-submit="ModifyOrderInfoForm" ng-click="save()">确定</button>
+            <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

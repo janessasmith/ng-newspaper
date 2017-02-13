@@ -1,0 +1,65 @@
+
+<div class="dp-rt-main no-pd" style="margin-top: 0;" ng-controller="commandShowCtrl">
+    <div class="cg-ls-top white-bac">
+        <div class="cg-deal-tit cy-zl-tit lf">查阅指令</div>
+    </div>
+    <div class="cy-zl-con">
+       <!--  <a href="javascript:;" class="cy-zl-opt cy-zl-left"></a>
+        <a href="javascript:;" class="cy-zl-opt cy-zl-right"></a> -->
+        <div class="cy-zl-main">
+        <div class="box-shadow-bk cy-zl-bk">
+            <table cellspacing="0" cellpadding="0" >
+                <tbody>
+                <tr>
+                    <th>发送人：</th>
+                    <td>{{commandShowContent.CRUSER}}</td>
+                </tr>
+                 <tr>
+                    <th>发送人电话：</th>
+                    <td>{{commandShowContent.TEL}}</td>
+                </tr>
+                <tr>
+                    <th>指令标题：</th>
+                    <td>{{commandShowContent.TITLE}}</td>
+                </tr>
+                <tr>
+                    <th>指令内容：</th>
+                    <td style="padding:0">
+                        <textarea class="table-pre" readonly>{{commandShowContent.CONTENT}}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>指令类型：</th>
+                    <td ng-show="commandShowContent.TYPE==1">采访任务</td>
+                    <td ng-show="commandShowContent.TYPE==2">通知</td>
+                </tr>
+                <tr>
+                    <th>附件相关：</th>
+                    <td ng-show="commandShowContent.files==''">无</td>
+                    <td ng-show="commandShowContent.files!=''">
+                        <a ng-repeat="file in commandShowContent.files" ng-href="{{file.filePath}}" id="{{file.fileId}}">
+                        {{file.fileName}}</a></td>
+                </tr>
+                 <tr>
+                      <th>创建时间：</th>
+                      <td>{{commandShowContent.CRTIME}}</td>
+                </tr>
+                <tr>
+                    <th>期望完成时间：</th>
+                    <td>{{commandShowContent.OVERTIME}}</td>
+                </tr>
+                <tr>
+                    <th>密级指令：</th>
+                    <td ng-show="commandShowContent.ISSECRET==0"><span class="mj-zl-yes">不是</span></td>
+                    <td ng-show="commandShowContent.ISSECRET==1"><span class="mj-zl-yes">是</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="cg-xq-btn">
+        <div class="cy-zl-btn finishcy-zl-btn">
+            <a href="javascript:;" class="re-dy end">打印</a>
+        </div>
+    </div>
+</div>

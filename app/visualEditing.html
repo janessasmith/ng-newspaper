@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="pieceMgr.visualEditingApp">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>可视化编辑</title>
+    <link rel="stylesheet" href="./lib/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="./lib/webuploader/webuploader.css" />
+    <link rel="stylesheet" href="./lib/spectrum/spectrum.css">
+    <link rel="stylesheet" href="./lib/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="./lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-colorpicker/colorpicker.css">
+    <link rel="stylesheet" type="text/css" href="./lib/angular-tree-control/tree-control.css">
+    <link rel="stylesheet" type="text/css" href="./lib/angular-tree-control/tree-control-attribute.css">
+    <link rel="stylesheet" type="text/css" href="./lib/angular-busy/angular-busy.min.css">
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="stylesheet" href="./editingCenter/website/fragmentManagement/visualEditing/css/visualEditing.css?v=20151218152703" />
+</head>
+
+<body>
+    <div class='oneImage_popup visualEditing_body widget' ng-controller="visualEditingCtrl">
+        <div class="modal-header oneImage_popup_header sp-header">
+            <button type="button" class="close" style="margin-top: 9px" ng-click="cancel()">
+            </button>
+            <h4 class="modal-title" id="myModalLabel" style="line-height: 44px;">
+                编辑碎片
+            </h4>
+        </div>
+        <div class="oneImage_popup_fa visualEditing_main sp-body">
+            <div class='oneImage_son visualEditing_main_son'>
+                <div class="modal-body oneImage_popup_content">
+                    <form name="fragementForm" novalidate>
+                        <all>
+                        </all>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer sp-footer" style="background:#fff">
+            <!-- <trs-date-time-picker json-obj="pubtime"></trs-date-time-picker> -->
+            <div class="dsfb">
+                <input class='publish' type="checkbox" ng-checked='datepickerToggle' ng-click="datapkerClk()">
+                <span>定时发布:</span>
+                <trs-date-time-picker json-obj="pubtime" language="zh-CN" position="top-left" weekstart="6" todaybtn="linked" available="datepickerToggle"></trs-date-time-picker>
+                <div class='calendar'>
+                    <img src="./editingCenter/website/fragmentManagement/images/calendar .jpg" alt="">
+                </div>
+            </div>
+            <button class="btn operate" type="button" ng-click="save(1)">保存</button>
+            <button class="btn operate" type="button" ng-click="save(2)">保存并发布</button>
+            <button class="btn operate" type="button" ng-click="preview()">预览</button>
+            <button class="btn last_btn operate btn_cancel" type="button" ng-click="cancel()">取消</button>
+        </div>
+        <div cg-busy="loadingPromise"></div>
+    </div>
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./editingCenter/website/fragmentManagement/visualEditing/js/layer.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/angular-ui-router/angular-ui-router.js"></script>
+    <script src="./lib/bootstrap/bootstrap.js"></script>
+    <script src="./lib/webuploader/webuploader.js"></script>
+    <script src="./lib/bootstrap-colorpicker/bootstrap-colorpicker.js"></script>
+    <script src="./lib/spectrum/spectrum.js"></script>
+    <script src="./lib/tinycolor/tinycolor.js"></script>
+    <script src="./lib/angular-strap/angular-strap.js"></script>
+    <script src="./lib/angular-strap/angular-strap.tpl.js"></script>
+    <script src="./i18n/local_zh.js"></script>
+    <script src="./lib/angular-validation/angular-validation.js"></script>
+    <script src="./lib/angular-validation/angular-validation-rule.js"></script>
+    <script src="./lib/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="./lib/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+    <script src="./lib/sweetalert/sweetalert.min.js"></script>
+    <script src="./lib/ngSweetAlert/SweetAlert.js"></script>
+    <script src="./lib/angular-tree-control/angular-tree-control.js"></script>
+    <script src="./lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="./lib/angular-sanitize/angular-sanitize.js"></script>
+    <script src="./lib/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+    <script src="./lib/zeroclipboard/ZeroClipboard.js"></script>
+    <script src="./lib/ng-clip/ngClip.js"></script>
+    <script src="./lib/angular-filter/angular-filter.min.js"></script>
+    <script src="./lib/angular-busy/angular-busy.min.js"></script>
+    <script src="./editingCenter/website/fragmentManagement/visualEditing/js/visualEditing.js?v=11111121111111"></script>
+</body>
+
+</html>

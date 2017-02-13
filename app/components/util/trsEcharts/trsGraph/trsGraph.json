@@ -1,0 +1,75 @@
+{
+        "categories": [{
+            "name": "记者A"
+        }, {
+            "name": "记者B"
+            
+        }, {
+            "name": "记者C"
+        }],
+        "links": [{
+            "id": "0",
+            "source": "1",
+            "target": "0"
+        }, {
+            "id": "1",
+            "source": "2",
+            "target": "0"
+        }, {
+            "id": "2",
+            "source": "3",
+            "target": "2"
+        }],
+        "data": [{
+            "attributes": {
+                "modularity_class": 0
+            },
+            "category": 0,
+            "draggable": true,
+            "id": "0",
+            "label": {
+                "normal": {
+                    "formatter": "Myriel"
+                }
+            },
+            "name": "发稿量",
+            "symbolSize": 30,  
+            "value": 10,
+            "x": null,
+            "y": null
+        }, {
+            "attributes": {
+                "modularity_class": 0
+            },
+            "category": 2,
+            "draggable": true,
+            "id": "1",
+            "label": {
+                "normal": {
+                    "formatter": "Myriel"
+                }
+            },
+            "name": "Myriel",
+            "symbolSize": 10,
+            "value": 10,
+            "x": null,
+            "y": null
+        }, {
+            "attributes": {
+                "modularity_class": 0
+            },
+            "category": 1,
+            "draggable": true,
+            "id": "2",
+            "label": {
+                "normal": {
+                    "formatter": "Myriel"
+                }
+            },
+            "name": "Myriel",
+            "symbolSize": 10,
+            "value": 11110,
+            "x": null,
+            "y": null
+        }]
+    }

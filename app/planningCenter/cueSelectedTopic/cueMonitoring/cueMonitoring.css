@@ -1,0 +1,333 @@
+
+.cue-monitor-table tbody tr td:nth-child(1) {
+    position: relative;
+    text-align: left;
+}
+
+.cue-monitor-table tbody tr td:nth-child(1) div.outer {
+    position: absolute;
+    width: 446px;
+    background: #dddbd6;
+    z-index: 1;
+    top: 50px;
+    border-radius: 4px;
+    left: 30px;
+}
+
+.cue-monitor-table tbody tr td:nth-child(1) div.outer div.inner {
+    width: 440px;
+    background: #fff;
+    margin: 3px auto 3px;
+    border-radius: 4px;
+}
+
+.cue-monitor-table tbody tr td:nth-child(1) div.outer div.inner p {
+    font-size: 12px;
+    line-height: 26px;
+    margin: 0 auto;
+    padding: 0px 15px 6px 15px;
+}
+
+.cue-monitor-table tbody tr td:nth-child(1) div.outer div.inner b {
+    color: #000;
+    display: block;
+    line-height: 20px;
+    padding: 8px 15px;
+    width: 440px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.cue-monitor-table tbody tr td a {
+    display: block;
+    /*width: 258px;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cue-monitor-table tbody tr td a.w300 {
+    /*width: 300px;*/
+}
+
+.calendar .calendar_content_left .dropdown .bth-fix {
+    width: 80px;
+}
+
+.calendar .calendar_content_left .dropdown .dropdown-menu {
+    min-width: 80px;
+}
+
+.clue_plus {
+    float: left;
+    width: 49.5%;
+    height: 700px;
+    line-height: 700px;
+    text-align: center!important;
+}
+
+.recent-policy tbody tr td a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.recent-policy tbody tr td:nth-child(1) {
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer {
+    position: absolute;
+    width: 450px;
+    background: #ddd;
+    z-index: 10;
+    left: 83px;
+    top: 35px;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner {
+    width: 442px;
+    margin: 4px auto;
+    background: #fff;
+    border-radius: 4px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-head {
+    height: 31px;
+    overflow: hidden;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-head img {
+    float: right;
+    margin: 6px 9px 0 0;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body {
+    width: 430px;
+    border: 1px solid #d0cfcf;
+    margin: 0 auto;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-top {
+    height: 37px;
+    border-bottom: 1px solid #d0cfcf;
+    background: #f0f2f5;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-top p {
+    line-height: 37px;
+    height: 37px;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-top p span {
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-top p span:nth-child(1) {
+    width: 312px;
+    border-right: 1px solid #d0cfcf;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-top p span:nth-child(2) {
+    width: 116px;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-bottom {
+    /*height: 180px;
+    overflow-y: auto;*/
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-bottom ul {}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-bottom ul li {
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+    color: #666;
+    list-style: none;
+    border-bottom: 1px solid #d0cfcf;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-bottom ul li a {
+    width: 312px;
+    border-right: 1px solid #d0cfcf;
+    float: left;
+    padding-left: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 20px;
+}
+
+.recent-policy tbody tr td:nth-child(1) .outer .inner .inner-body .inner-body-bottom ul li span {
+    width: 110px;
+    float: left;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.tipOff_content .tab-content {
+    position: inherit;
+}
+
+.clue_newspaper_content .table {
+    margin-bottom: 10px;
+}
+
+.clue_newspaper_content .nav-tabs.nav-justified > li {
+    z-index: inherit;
+    width: 24%;
+}
+
+.plan-monitor-odd {
+    margin-right: 1%;
+}
+
+.plan-monitor-odd .tab-content{
+    z-index: 12
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.clue-config-close {
+    float: right;
+    margin: 15px 10px 0 0;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.monitor-wrap {
+    /*overflow: hidden;*/
+    margin-top: 10px;
+}
+
+.tab-content .tab-pane a.more:hover {
+    text-decoration: none;
+}
+
+.fc td.selectedDay {
+    background: #ffee99;
+}
+
+.planningCenterPage {
+    margin-left: 10px;
+    font-size: 13px;
+    line-height: 28px;
+}
+
+.calendarColor0 {
+    background: #92CF68;
+    cursor: pointer;
+}
+
+.calendarColor1 {
+    background: #F0B93A;
+    cursor: pointer;
+}
+
+.calendarColor2 {
+    background: #58B5E1;
+    cursor: pointer;
+}
+
+.calendarColor3 {
+    background: #EF4B52;
+    cursor: pointer;
+}
+
+.calendarColor4 {
+    background: #54E3BE;
+    cursor: pointer;
+}
+
+.calendar .calendar_content_left i {
+    color: #e4e4e4;
+}
+
+.calendar_content hr.line {
+    float: right;
+    background: #e4e4e4;
+    height: 24px;
+    width: 1px;
+    margin: 0px 6px 0px 6px;
+}
+
+.calendar .calendarHead {
+    height: 24px;
+}
+
+.calendar .calendarHead button.backtoToday {
+    width: 80px;
+    height: 24px;
+    border: 1px solid #e4e4e4;
+    background: #fbfbfb;
+    font-size: 12px;
+    color: #53534f;
+    text-align: center;
+    line-height: 20px;
+    float: right;
+}
+
+.calendar .calendarHead button.backtoToday:focus {
+    outline: none;
+}
+
+.calendar .calendarHead .dropdown .bth-fix {
+    height: 24px;
+    line-height: 22px;
+}
+
+.calendar .calendarHead .dropdown {
+    margin-right: 6px;
+}
+
+.custom-table {
+    table-layout: fixed;
+}
+
+.custom-table tbody tr td:nth-child(1) {
+    text-align: left;
+    position: relative;
+    cursor: pointer;
+}
+
+.custom-table tbody tr td:nth-child(1) a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+.custom-table tbody tr td:nth-child(2) {
+    width: 100px;
+}
+
+.w600 {
+    width: 600px !important;
+}
+
+.fix_height450 .tab-content > .tab-pane {
+    min-height: 450px;
+    position: relative;
+}
+td.xcol-date.from.ng-binding {
+    text-align: right;
+    padding: 0;
+}
+td.xcol-date.to.ng-binding {
+    padding: 0px;
+    text-align: left;
+}

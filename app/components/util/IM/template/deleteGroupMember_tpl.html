@@ -1,0 +1,16 @@
+<div class="deleteGoupMember_head">
+    <span>请选择要踢除的成员</span>
+    <img ng-click="cancel()" src="./components/util/IM/images/tx24.png">
+</div>
+<ul class="deleteGoupMember_content">
+    <li ng-repeat="friend in data.currMembers">
+        <img ng-src="{{data.head[friend.member]}}" alt="" class="deleteGoupMember_headImg">
+        <span ng-bind="friend.nickName"></span>
+        <img class="con_delete" src="./components/util/IM/images/tx26.png" alt="" ng-click="deleteMember(friend)" ng-hide="friend.member==data.user.USERID">
+    </li>
+</ul>
+<div class="deleteGoupMember_footer">
+	<button class="group_btn_quit" ng-click="quitGroup()">退出</button>
+    <button class="group_btn_confirm" ng-click="confirm()">确定</button>
+    <button class="group_btn_cancel" ng-click="cancel()">取消</button>
+</div>

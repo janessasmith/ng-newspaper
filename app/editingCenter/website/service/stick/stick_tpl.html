@@ -1,0 +1,41 @@
+<div class="stick">
+    <div class="head">
+        <span>置顶</span>
+    </div>
+    <div class="main">
+        <div class="children top">
+            <span>设置置顶位置：</span>
+            <trs-single-select selected-option="positionNum" callback="getNum()" options="positionNums"></trs-single-select>
+        </div>
+        <div class="children">
+            <span class="stickTime">设置起始时间：</span>
+            <div class="date">
+                <input type="text" size="10" class="form-control" ng-model="stickStartTime" date-date-format="yyyy-MM-dd" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                <img class="date" src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+            </div>
+            <div class="time">
+                <input type="text" size="8" class="form-control" ng-model="stickStartTime" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" bs-timepicker readonly="readonly">
+                <img class="time" src="./editingCenter/app/toBeCompiled/images/t1.png">
+            </div>
+        </div>
+        <div class="children">
+            <span class="stickTime">设置结束时间：</span>
+            <div class="date">
+                <input type="text" size="10" class="form-control" ng-model="stickEndTime" date-date-format="yyyy-MM-dd" data-autoclose="1" data-min-date="today" bs-datepicker readonly="readonly">
+                <img class="date" src="./editingCenter/app/toBeCompiled/images/t3.png" class="imgOne">
+            </div>
+            <div class="time">
+                <input type="text" size="8" class="form-control" ng-model="stickEndTime" data-time-format="HH:mm" data-autoclose="1" data-minute-step="1" bs-timepicker readonly="readonly">
+                <img class="time" src="./editingCenter/app/toBeCompiled/images/t1.png">
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <button ng-click="confirm()" class="btn_confirm">
+            确定
+        </button>
+        <button ng-click="cancel()" class="btn_cancel">
+            取消
+        </button>
+    </div>
+</div>

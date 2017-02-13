@@ -1,0 +1,31 @@
+<div class="sortUsersSubmit">
+    <div class="submit">
+        <div class="head">
+            <span ng-bind="data.modalTitle"></span>
+            <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+        </div>
+        <div class="body">
+            <form class="sortUsersSubmit-form" name="sortUsersSubmitForm" novalidate>
+                <div class="main">
+                    <div class="item">
+                        <span class="tit">让用户[<font>{{data.userName}}</font>]处于<a ng-show="data.group.GNAME!=null">组织【{{data.group.GNAME}}】</a></span>
+                        <trs-single-select selected-option="status.sortOptionSelected" callback="queryByDropdown('name',status.sortOptionSelected)" options="status.sortOptions"></trs-single-select>
+                    </div>
+                    <div class="item" ng-if="data.NewOrderType==-1">
+                        <div class="tit">调整至</div>
+                        <div class="invalidate-input-box">
+                            <input type="text" name="pwd" class="form-control mb0" ng-model="data.NewOrder" validator="required,number" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips" />
+                        </div><span class="tit">（总数为{{data.itemcount}}）</span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </form>
+            <div class="foot">
+                <div>
+                    <button class="confirm" ng-click="confirm()">确定</button>
+                    <button class="cancel" ng-click="cancel()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

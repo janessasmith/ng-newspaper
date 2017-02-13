@@ -1,0 +1,91 @@
+.cue-monitor-more-container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.monitor-more-head {
+    height: 55px;
+    background: #eff0f2;
+    padding-top: 12px;
+    /*border-top: 1px solid #ccc;*/
+    margin: 0px 0px 14px;
+    padding-left: 15px;
+}
+
+.monitor-more-head p.line-height {
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.monitor-more-head img.img_mr {
+    margin-right: 5px;
+    vertical-align: -7px;
+}
+
+.monitor-more-head .search-wrap {
+    position: relative;
+    float: left;
+    height: 34px;
+    margin-right: 20px;
+}
+
+.monitor-more-head .search-wrap input[type="text"] {
+    width: 324px;
+    height: 34px;
+    line-height: 32px;
+    border: 1px solid #d3d7da;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 13px;
+    font-family: "Microsoft Yahei";
+    color: #666;
+    padding-left: 34px;
+}
+
+.monitor-more-head .search-wrap i {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    background: url("./editingCenter/app/images/sch.jpg") no-repeat;
+}
+
+.monitor-more-head .cMore_btn {
+    width: 76px;
+    height: 34px;
+    line-height: 32px;
+    border: 1px solid #d3d7d8;
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    margin-left: 10px;
+    font-family: "Microsoft Yahei";
+    color: #666;
+    background-color: #fff;
+}
+
+.table > tbody > tr > td {
+    border-top: none;
+}
+
+.ml15 {
+    margin-left: 15px;
+}
+
+.cue-monitor-more-container .table > tbody > tr > td > a {
+    display: block;
+    width: 850px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.monitoroverview .edit_table {
+    margin-top: 10px;
+    min-height: 90px;
+}
+
+.monitoroverview .edit_table .page {
+    bottom: 0px;
+}

@@ -1,0 +1,52 @@
+<div style="overflow: auto;">
+    <div class="frame_title">
+        <p>绑定微博帐号 </p>
+        <a class="frame_cancel" ng-click="cancel()"></a>
+    </div>
+   <div ng-show="select"> 
+    <p class="binding_tip1"><label style="color:red;">第一步：</label> 设置账号所属单位以及分类。 </p>
+    <div class="select">
+        <div style="min-height: 35px;">
+            <label style="float: left;margin-top:5px; ">所属单位：</label>
+            <div >
+                <ul style="overflow: auto;">
+                    <li ng-repeat="unit in units" >
+                        <span id="{{unit.UnitId}}" activate-unit  ng-style="{color:UnitId==unit.UnitId?'red':''}">{{unit.UnitName}}</span>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+        <div >
+            <label style="float: left;margin-top:5px;">所属分类：</label>
+            <div >
+               <ul style="overflow: auto;">
+                 <li ng-repeat="class in classs" >
+                    <span id="{{class.ClassId}}" activate-class 
+                 ng-style="{color:ClassId==class.ClassId?'red':''}">{{class.ClassName}}</span>
+                 </li>
+               </ul>     
+            </div>
+        </div>
+    </div>
+    
+    <div class="delete_btn1">
+        <a class="delete_btn_confirm" ng-click="next();">下一步</a>
+        <a class="delete_btn_delete" ng-click="cancel()">取消</a>
+    </div>
+
+  </div>  
+    <div class="account_binding_cont clearfix" ng-show="add">
+        <span class="binding_tip1"><label>第二步：</label>绑定微博账号。 </span>
+
+        <p class="binding_tip2">
+            提示：在授权之前，请确认您要添加的帐号已经退出其他相关服务，如邮箱、微博、博客等。您在授权绑定帐号过程中，请允许【您的浏览器】弹出窗口，否则可能无法完成帐号绑定。</p>
+
+        <div class="binding_btn_box">
+            <a href="/wcm/rb/sina_authorized.jsp?ClassId={{cid}}&UnitId={{uid}}" class="binding_btn1" target="_blank">
+                <img src="common/images/binding_wb_logo_03.png" alt="" width="41" height="41"/>新浪微博授权</a>
+            <a href="/wcm/rb/tencent_authorized.jsp?ClassId={{cid}}&UnitId={{uid}}" class="binding_btn2" target="_blank">
+                <img src="common/images/biding_tx_logo_05.png" width="41" height="41" alt=""/>腾讯微博授权
+            </a>
+        </div>
+    </div>
+</div>

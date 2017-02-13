@@ -1,0 +1,248 @@
+.multiimages_popup_title {
+    background-color: #f0f2f5;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.multiimages_drag_lst {
+    list-style: none;
+    margin: 0 10px 10px;
+    padding: 0;
+}
+
+.multiimages_drag_lst li {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.wordNum.multiImages_wordnum {
+    float: right;
+    margin-right: -39px;
+    margin-top: -28px;
+}
+
+
+/*表格*/
+
+.multiimages_tb td.multtd {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.multiimages_tb td.txt_r {
+    min-width: 55px;
+}
+
+.multiimages_tb td:last-child textarea {
+    height: 100px !important;
+}
+
+.multiimages_tb td:last-child span.ng-scope {
+    position: absolute;
+}
+
+.multiimages_tb td .date {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    z-index: 10;
+}
+
+.multiimages_tb td .date input {
+    background-color: white;
+    width: 120px;
+}
+
+.multiimages_tb td .date img {
+    position: absolute;
+    right: 0px;
+    top: 8px;
+}
+
+.multiimages_tb td .time {
+    position: relative;
+}
+
+.multiimages_tb td .time input {
+    background-color: white;
+    width: 70px;
+}
+
+.multiimages_tb td .time img {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+}
+
+.multiImages_btns {
+    padding: 10px 10px 0;
+    text-align: right;
+}
+
+.multiImages_btn {
+    padding: 0px;
+    width: 80px;
+    height: 26px;
+    background: #2484BA;
+    color: #fff;
+    font-size: 14px;
+}
+
+.multiImages_ipt {
+    position: relative;
+    height: 32px;
+}
+
+.multiImages_ipt i {
+    font-style: normal;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.multiImages_ipt .sel_tit {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    z-index: 2;
+}
+
+.multiImages_ipt input[type='text'] {
+    /*padding-left: 30px;*/
+}
+
+.multiImages_ipt .sp-replacer {
+    position: absolute;
+    right: -25px;
+    top: 5px;
+}
+
+.multiImages_ipt .sp-replacer {
+    width: 18px;
+    height: 18px;
+    border: 0;
+    padding: 0px;
+}
+
+.multiImages_ipt .sp-preview-inner {
+    background: none;
+}
+
+.multiImages_ipt .sp-preview,
+.sp-alpha,
+.sp-thumb-el {
+    width: 18px;
+    height: 18px;
+    border: 0;
+}
+
+.multiImages_ipt .sp-preview-inner {
+    background: url(editingCenter/website/fragmentManagement/images/colorpic.jpg) no-repeat;
+}
+
+.multiImages_iconlist {
+    position: absolute;
+    z-index: 3;
+}
+
+.m_upload {
+    position: relative;
+}
+
+.m_upload img {
+    width: 190px;
+    height: 145px;
+}
+
+.m_upload .tools {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+
+.m_upload:hover .tools {
+    display: block;
+}
+
+.m_upload .tools span {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.m_upload .tools span.upload {
+    background: url(editingCenter/website/fragmentManagement/images/uploaderBtn.png) no-repeat;
+}
+
+.m_upload .tools span.imgs {
+    background: url(editingCenter/website/fragmentManagement/images/cangku.png) no-repeat;
+}
+
+.m_upload .tools span.link {
+    background: url(editingCenter/website/fragmentManagement/images/imageLink.png) no-repeat;
+}
+
+.i_close {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background: url(editingCenter/website/fragmentManagement/images/del.jpg) no-repeat;
+}
+
+.i_toggle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background: url(editingCenter/website/fragmentManagement/images/rt.jpg) no-repeat;
+    cursor: pointer;
+}
+
+.i_toggle.close {
+    background: url(editingCenter/website/fragmentManagement/images/bm.jpg) no-repeat;
+}
+
+
+/*其他*/
+
+.f_clear {
+    clear: both;
+}
+
+.oneImage_popup_main .webuploader-pick {
+    background-color: transparent;
+    opacity: 0;
+}
+
+.multiimages_tb .invalidate-input-box span {
+    top: -24px;
+}
+
+.multiImages_invalidate .invalidate-input-box span {
+    top: -34px;
+}
+
+.mimgTmpl_link .invalidate-input-box span {
+    top: -16px;
+}
+
+
+
+@media screen  and (min-width: 1367px) and (max-width: 1680px) {
+    .visualEditing_body .multiimages_drag_lst{
+        max-height:650px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1366px){
+    .visualEditing_body .multiimages_drag_lst{
+        max-height:400px;
+    }
+}
+

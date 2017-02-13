@@ -1,0 +1,36 @@
+{
+    "seriesData1": [{
+        "value": 679,
+        "name": "未发布稿件"
+    }, {
+        "value": 1548,
+        "name": "发布稿件"
+    }],
+    "seriesData2": [{
+        "value": 335,
+        "name": "钱江晚报"
+
+    }, {
+        "value": 310,
+        "name": "浙江日报"
+
+    }, {
+        "value": 234,
+        "name": "温州日报"
+    }, {
+        "value": 135,
+        "name": "边锋"
+    }, {
+        "value": 1048,
+        "name": "等风来公众微信账号"
+    }, {
+        "value": 251,
+        "name": "浙江日报手机APP"
+    }, {
+        "value": 147,
+        "name": "钱江晚报微博"
+    }, {
+        "value": 102,
+        "name": "其他"
+    }]
+}

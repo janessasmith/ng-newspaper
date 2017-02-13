@@ -1,0 +1,25 @@
+.trs-picture-preview-class .modal-dialog {
+    margin-top: 150px;
+    width: 660px;
+}
+
+.trs-picture-preview-class .modal-dialog .modal-content {
+    padding: 0 30px 30px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.trs-picture-preview-class .modal-dialog .modal-content div {
+    overflow: hidden;
+    height: 30px;
+}
+
+.trs-picture-preview-class .modal-dialog .modal-content img.close-img {
+    float: right;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.trs-picture-preview-class .modal-dialog .modal-content img.preview-pic {
+    max-width: 600px;
+}

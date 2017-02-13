@@ -1,0 +1,102 @@
+<div ng-show="pagestatus== 'details'">
+    <!--勾选精选确认页-->
+    <div class="modal-header">
+        <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+        <p class="modal-title"><i class="fa fa-map-marker text-primary"></i> 报题细览页</p>
+    </div>
+    <div class="modal-body mc-padding-0">
+        <div class="reportdetail">
+            <div class="row">
+                <div class="col-sm-2 txt_r">
+                    <label>报题内容:</label>
+                </div>
+                <div class="col-sm-6" ng-hide="editing">{{report.CONTENT}}</div>
+                <div class="col-sm-6" ng-show="editing">
+                    <textarea class="basic-textarea" ng-show="editing"ng-model="content"></textarea>
+                </div>
+                <div class="col-sm-4 txt_r">
+                    <button class="btn btn-default btn-trs" ng-hide="editing" ng-click="editReport()">
+                        <i class="fa fa-edit"></i> 编辑
+                    </button>
+                    <button class="btn btn-primary btn_confirm" ng-show="editing" ng-click="saveReport()">保存</button>
+                    <button class="btn btn-default btn-trs" ng-hide="editing" ng-click="modifyStatus('reply')">
+                        <i class="fa fa-plus"></i> 补充
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="reportdetail" ng-repeat="reply in replies track by $index">
+            <div class="row">
+                <div class="col-sm-2 txt_r">
+                    <label>补充人:</label>
+                </div>
+                <div class="col-sm-2">{{reply.CRUSER}}</div>
+                <div class="col-sm-1 txt_r">
+                    <label>时间:</label>
+                </div>
+                <div class="col-sm-3">{{reply.CRTIME}}</div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2 txt_r">
+                    <label>补充{{$index+1}} :</label>
+                </div>
+                <div class="col-sm-6">{{reply.ADDCONTENT}}</div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2 txt_r">
+                    <label>附件:</label>
+                </div>
+                <div class="col-sm-6">{{reply.ADDCONTENT}}</div>
+                <div class="col-sm-4 txt_r">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary btn_confirm" ng-click="submit()">确定</button>
+        <button class="btn btn-primary btn_cancel" ng-click="close()">取消</button>
+    </div>
+</div>
+<div ng-show="pagestatus== 'reply'">
+    <!--勾选精选确认页-->
+    <div class="modal-header">
+        <i class="fa fa-lg fa-times-circle closeicon" ng-click="close()"></i>
+        <h4 class="modal-title"><i class="fa fa-map-marker text-primary"></i> 填报补充</h4>
+    </div>
+    <div class="modal-body mc-padding-xs">
+        <div class="row">
+            <div class="col-sm-2">
+                <label>报题内容：</label>
+            </div>
+            <div class="col-sm-10"><span>{{report.CONTENT}}</span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>内容补充：</label>
+            </div>
+            <div class="col-sm-10">
+                <textarea class="basic-textarea" ng-model="addContent"></textarea>
+                <span class="uploadFile clickable" ngf-select="upload($files)" multiple="multiple">
+                <i class="fa fa-paperclip"></i>附件上传
+            </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-10">
+                <span class="clickable" ng-repeat="file in files">
+                <i class="fa fa-file"></i>
+            </span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary btn_confirm" ng-click="replyReport()">提交</button>
+        <button class="btn btn-primary btn_cancel" ng-click="modifyStatus('details')">取消</button>
+    </div>
+</div>

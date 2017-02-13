@@ -1,0 +1,167 @@
+.batchGeneratingNews {
+    height: 400px;
+    border-bottom: 1px solid #E6E5E4;
+}
+
+.batchGeneratingNews .left {
+    height: 380px;
+    border: 1px solid #E6E5E4;
+    margin-left: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: auto;
+}
+
+.batchGeneratingNews .left .head {
+    height: 32px;
+    line-height: 32px;
+    background-color: #0095CE;
+    color: white;
+    font-size: 12px;
+    padding-left: 16px;
+}
+
+.batchGeneratingNews .left .head img {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.batchGeneratingNews .left .head img.open {
+    margin-right: 8px
+}
+
+.batchGeneratingNews .left .tree {
+    padding-top: 10px;
+}
+
+.batchGeneratingNews .myRight {
+    width: 74%;
+    font-size: 12px
+}
+
+.batchGeneratingNews .myRight .select {
+    height: 70px;
+    border-bottom: 1px dashed #E6E5E4;
+    padding-top: 20px;
+}
+
+.batchGeneratingNews .myRight .select ul {
+    height: 180px;
+    overflow-y: auto;
+}
+.batchGeneratingNews .select .dropdown .bth-fix{
+    width: 200px;
+}
+.batchGeneratingNews .select .dropdown ul{
+    width: 200px;
+}
+.batchGeneratingNews .myRight .select .date .form-control {
+    height: 30px;
+}
+
+.batchGeneratingNews .myRight .select .date .date_c {
+    float: left;
+    position: relative;
+    width: 100px;
+}
+
+.batchGeneratingNews .myRight .select img.dateImg {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+}
+
+.batchGeneratingNews .myRight .select .date .date_c .form-control {
+    width: 100px;
+}
+
+.batchGeneratingNews .myRight .select .date .time_c {
+    position: relative;
+    float: left;
+    width: 80px;
+    margin-left: 10px;
+}
+
+.batchGeneratingNews .myRight .select .date .time_c .timepicker {}
+
+.batchGeneratingNews .myRight .select .date .time_c .form-control {
+    width: 80px;
+}
+
+.batchGeneratingNews .myRight .select .startDate {
+    float: left;
+    position: relative;
+}
+
+.batchGeneratingNews .myRight .select .startDate img {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+}
+
+.batchGeneratingNews .myRight .select .endDate {
+    float: left;
+    position: relative;
+}
+
+.batchGeneratingNews .myRight .select .endDate img {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+}
+
+.batchGeneratingNews .myRight .select .text {
+    height: 30px;
+    width: 165px;
+    float: left;
+}
+
+.batchGeneratingNews .myRight .select .reserve_word {
+    float: left;
+    padding-top: 5px;
+}
+
+.batchGeneratingNews .myRight .selectNoBorder {
+    padding-top: 20px;
+    height: 70px;
+}
+
+.batchGeneratingNews .myRight .selectNoBorder span {
+    margin-right: 10px;
+}
+
+.batchGeneratingNews .myRight .selectNoBorder label {
+    cursor: pointer;
+}
+
+.batchGeneratingNews treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.batchGeneratingNews treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.batchGeneratingNews-bottom {
+    width: 100%;
+    position: relative;
+}
+
+.batchGeneratingNews-bottom button.confirm {
+    position: absolute;
+    left: 450px;
+    top: 20px;
+    width: 83px;
+    height: 33px;
+    font-size: 12px;
+    background-color: #0095CE;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.mgbottom {
+    margin-bottom: 250px;
+}

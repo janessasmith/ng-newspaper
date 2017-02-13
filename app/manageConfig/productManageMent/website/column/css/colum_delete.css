@@ -1,0 +1,33 @@
+.productManageMent-website-column-delete .modal-dialog{
+    width: 400px;
+}
+.productManageMent-website-column-delete .man_produ_column_delete{
+    background: #F0F2F5;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+.productManageMent-website-column-delete .man_produ_column_delete input{
+    width: 250px;
+    height: 30px;
+    display: inline-block;
+}
+.productManageMent-website-column-delete .man_produ_delete_footer{
+    background: #fff;
+    padding: 10px 10px 10px 200px;
+}
+.productManageMent-website-column-delete .man_produ_delete_footer .man_produ_delete_footer_cancel{
+    margin-right: 0;
+    background: #1aba9f;
+}
+.productManageMent-website-column-delete .man_produ_delete_footer button{
+    width: 80px;
+    height: 30px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}

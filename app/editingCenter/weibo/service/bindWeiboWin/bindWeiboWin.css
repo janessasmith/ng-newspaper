@@ -1,0 +1,144 @@
+.editctrBindWeiboClass .modal-dialog{
+	margin-top: 150px;
+}
+
+.editctrBindWeiboClass .header {
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+
+.editctrBindWeiboClass .header p {
+    float: left;
+    margin-left: 10px;
+    font-family: "microsoft yahei";
+    font-weight: bold;
+}
+
+.editctrBindWeiboClass .header img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.editctrBindWeiboClass .body {
+    background: #f0f2f5;
+    padding: 20px 30px;
+}
+
+.editctrBindWeiboClass .body>div:nth-child(1) {
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+
+.editctrBindWeiboClass .body>div:nth-child(2) {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.editctrBindWeiboClass .body>div:nth-child(3) {
+    overflow: hidden;
+}
+
+.editctrBindWeiboClass .body>div:nth-child(1) p,
+.editctrBindWeiboClass .body>div:nth-child(2) p,
+.editctrBindWeiboClass .body>div:nth-child(3) p {
+    margin-bottom: 0px;
+    font-family: "microsoft yahei";
+    float: left;
+}
+
+.editctrBindWeiboClass .body>div:nth-child(1) p:nth-child(1) {
+    color: #f45448;
+    margin-right: 10px;
+}
+
+.editctrBindWeiboClass .body p.tips{
+	color: #f45448;
+    margin-bottom: 0px;
+    line-height: 24px;
+    font-family: "microsoft yahei";
+}
+
+.editctrBindWeiboClass .body div.unit,.editctrBindWeiboClass .body div.classify{
+	width: auto;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    background: #f5f5f5;
+    color: #37A;
+    min-width: 80px;
+    margin:0 6px 6px 0;
+    text-align: center;
+    cursor: pointer;
+    font-family: "microsoft yahei";
+}
+
+.editctrBindWeiboClass .body div.selected{
+	color: #f45448;
+}
+
+.editctrBindWeiboClass .footer {
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.editctrBindWeiboClass .footer button {
+    float: right;
+    margin-right: 20px;
+    width: 80px;
+    height: 32px;
+    text-align: center;
+    background: #4496d2;
+    color: #fff;
+    font-family: "microsoft yahei";
+    border: none;
+    border-radius: 4px;
+}
+
+.editctrBindWeiboClass .footer a {
+    display: inline-block;
+    height: 41px;
+    width: 160px;
+    margin-right: 20px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 41px;
+	font-family: "microsoft yahei";
+}
+
+.editctrBindWeiboClass .footer a:hover{
+	text-decoration: none;
+}
+
+.editctrBindWeiboClass .footer a.binding_btn1 {
+    background: #f45448;
+}
+
+.editctrBindWeiboClass .footer a.binding_btn2 {
+    background: #4391e1;
+}
+
+.editctrBindWeiboClass .footer a img {
+    display: block;
+    float: left;
+    margin-right: 6px;
+}
+
+.editctrBindWeiboClass .footer a.binding_btn1 img{
+	background: #de4337;
+}
+
+.editctrBindWeiboClass .footer a.binding_btn2 img{
+	background:#367fca;
+}
+
+.ta-center{
+	text-align: center;
+}
+
+.ml70{
+	margin-left: 70px;
+}

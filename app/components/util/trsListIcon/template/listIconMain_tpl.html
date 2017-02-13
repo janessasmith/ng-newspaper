@@ -1,0 +1,17 @@
+<div class="trs-list-icon-main">
+	<!-- 图片 -->
+    <div class="trs-list-icon-img-main" ng-if="!item.VIDEOLOGO&&!item.AUDIOLOGO&&(item.PICSLOGO||item.imgurl.length)">
+        <!-- 采编中心 -->
+        <img ng-if="!item.doctype" ng-src="{{item.METALOGOURL.PICSLOGO}}" alt="">
+        <!-- 资源中心 -->
+        <img ng-if="item.doctype" ng-src="{{item.imgurl[0].urlM}}" alt="">
+    </div>
+    <!-- 音频 -->
+    <div class="trs-list-icon-audio-main" ng-if="!item.VIDEOLOGO&&item.AUDIOLOGO">
+        <iframe src="{{status.url.audioUrl}}"></iframe>
+    </div>
+    <!-- 视频 -->
+    <div class="trs-list-icon-video-main" ng-if="item.VIDEOLOGO">
+        <iframe src="{{status.url.videoUrl}}"></iframe>
+    </div>
+</div>

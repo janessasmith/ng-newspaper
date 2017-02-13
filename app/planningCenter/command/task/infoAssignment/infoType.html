@@ -1,0 +1,40 @@
+<div class="edit_right_mid">
+    <button class="btn btn-default btn-commen" ui-sref="plan.messageassign">
+        <span class="s_icon"><i class="fa fa-chevron-left"></i></span> 返回
+    </button>
+    <button class="btn btn-default btn-commen" ng-click="createNewinfoType()">
+        <span class="s_icon"><i class="fa fa-plus"></i></span> 添加
+    </button>
+    <button class="btn btn-default btn-commen" ng-click="deleteInfoType()">
+        <span class="s_icon"><i class="fa fa-trash"></i></span> 删除
+    </button>
+</div>
+<div class="edit_table infoAssignment">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="td_infoAssignment td_infoAssignment_width">
+                    <trs-checkbox ischecked="vm.isAllchecked" callback="toggleAllcheck(vm.isAllchecked)"></trs-checkbox>
+                </th>
+                <th class=" ">类型</th>
+                <th class=" ">添加人</th>
+                <th class=" ">添加时间</th>
+                <th class=" ">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="infotype in vm.infoTypes">
+                <td class="td_infoAssignment td_infoAssignment_width">
+                    <trs-checkbox ischecked="infotype.ischecked" callback="toggleInfoType(infotype)"></trs-checkbox>
+                </td> 
+                <td>
+                    {{infotype.VALUE}}
+                </td>
+                <td>{{infotype.CRUSER}}</td>
+                <td>{{infotype.CRTIME }}</td>
+                <td><span class="text-success clickable"><i class="fa fa-pencil"></i></span>
+                    <span class="text-danger clickable" ng-click="deleteInfoTypeById(infotype.INFORTYPEID)"><i class="fa fa-trash"></i></span> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

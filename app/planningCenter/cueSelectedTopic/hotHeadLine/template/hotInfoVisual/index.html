@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>热点信息可视化</title>
+    <link rel="stylesheet" href="index.css?v=20160325185626">
+    <link rel="stylesheet" href="lib/lyz.calendar.css">
+    <script src="lib/jquery-2.1.3.min.js"></script>
+    <script src="lib/echarts-all.js?v=css20160315185621"></script>
+    <script src="lib/lyz.calendar.min.js"></script>
+    <script src="lib/jqPaginator.min.js"></script>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <div class="hot-item">
+            <div class="title">
+                <span>全国</span><span>热点分布</span>
+            </div>
+            <div class="content">
+                <div id="quanGuoCategory" class="category">
+                </div>
+                <div>
+                    <div class="map">
+                        <div class="map-container" id="quanGuoMapContainer"></div>
+                    </div>
+                    <div class="province-list">
+                        <div class="province-list-title">
+                            <span class="quanGuoCurTime"></span>
+                            <span>地域统计</span>
+                        </div>
+                        <div class="province-list-content">
+                            <div class="province-list-item">
+                                <div>
+                                    <span>排序</span>
+                                </div>
+                                <div>
+                                    <span>地域</span>
+                                </div>
+                                <div>
+                                    <span>热度值</span>
+                                </div>
+                            </div>
+                            <div id="quanGuoProvinceListItems" style="display: inline-block;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-list">
+                        <div class="top">
+                            <div class="title">
+                                <span>全国热点信息</span>
+                            </div>
+                            <div class="right quanGuoDateTimePicker_right">
+                                <div class="scope">
+                                    <span class="quanGuoArea">全国</span>
+                                </div>
+                                <div class="date-btn">
+                                    <span><</span>
+                                </div>
+                                <input type="text" class="date quanGuoDateTimePicker_width" id="quanGuoDateTimePicker">
+                                <div class="date-btn">
+                                    <span>></span>
+                                </div>
+                            </div>
+                            <div id="quanGuoTimeBtn" class="time-btn"></div>
+                        </div>
+                        <div class="news-top">
+                            <div class="news-area hotInfoVisual_head_bt">
+                                <span id="quanGuoNewsAreaName">全国热点</span>
+                            </div>
+                            <div class="hotInfoVisual_head_rd">热值</div>
+                        </div>
+                        <div id="quanGuoNewsContainer" class="news-container"></div>
+                        <div class="news-page">
+                            <div id="quanGuoNewsPage" style="display: inline-block;"></div>
+                        </div>
+                    </div>
+                    <div class="tendency-chart">
+                        <div class="tendency-chart-title">
+                            <!-- <span class="quanGuoCurTime"></span> -->
+                            <span class="quanGuoArea">全国</span><span>热点近一周TOP3趋势图</span>
+                        </div>
+                        <div class="tendency-chart-maxvalue">
+                            <span id="tendencyChartMaxvalue" style="display:none;"></span>
+                            <span class="tendency-chart-maxvalue-line"></span>
+                        </div>
+                        <div id="quanGuoTendencyChartContainer" class="tendency-chart-container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hot-item zj">
+            <div class="title">
+                <span>浙江省</span><span>热点分布</span>
+            </div>
+            <div class="content">
+                <div id="zheJiangCategory" class="category">
+                </div>
+                <div>
+                    <div class="map">
+                        <div class="map-container" id="zheJiangMapContainer" style="height: 600px;"></div>
+                    </div>
+                    <div class="province-list">
+                        <div class="province-list-title">
+                            <span class="quanGuoCurTime"></span>
+                            <span>地域统计</span>
+                        </div>
+                        <div class="province-list-content">
+                            <div class="province-list-item">
+                                <div>
+                                    <span>排序</span>
+                                </div>
+                                <div>
+                                    <span>地域</span>
+                                </div>
+                                <div>
+                                    <span>热度值</span>
+                                </div>
+                            </div>
+                            <div id="zheJiangProvinceListItems" style="display: inline-block;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-list">
+                        <div class="top">
+                            <div class="title">
+                                <span style="margin-left:-10px!important;">浙江省热点信息</span>
+                            </div>
+                            <div class="right">
+                                <div class="scope">
+                                    <span class="zheJiangArea">浙江省</span>
+                                </div>
+                                <div class="date-btn">
+                                    <span><</span>
+                                </div>
+                                <input type="text" class="date quanGuoDateTimePicker_input" id="zheJiangDateTimePicker">
+                                <div class="date-btn">
+                                    <span>></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="zheJiangTimeBtn" class="time-btn"></div> -->
+                        <div class="news-top">
+                            <div id="zheJiangNewsAreaName" class="news-area hotInfoVisual_head_bt">
+                                <!-- <span id="zheJiangNewsAreaName">浙江热点</span> -->
+                                
+                            </div>
+                            <div class="hotInfoVisual_head_rd">热值</div>
+                            <!-- <div id="zheJiangTimeBtn" class="time-btn"></div> -->
+                        </div>
+                        <div id="zheJiangNewsContainer" class="news-container"></div>
+                        <div class="news-page">
+                            <div id="zheJiangNewsPage" style="display: inline-block;"></div>
+                        </div>
+                    </div>
+                    <div class="tendency-chart">
+                        <div class="tendency-chart-title">
+                            <!-- <span class="zheJiangCurTime"></span> -->
+                            <span class="zheJiangArea">浙江省</span><span>热点近一周TOP3趋势图</span>
+                        </div>
+                        <div class="tendency-chart-maxvalue">
+                            <span id="tendencyChartMaxvalue" style="display:none;"></span>
+                            <span class="tendency-chart-maxvalue-line"></span>
+                        </div>
+                        <div id="zheJiangTendencyChartContainer" class="tendency-chart-container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hot-item" style="display:none;">
+            <div class="title">
+                <span>杭州市</span><span>热点分布</span>
+            </div>
+            <div class="content">
+                <div>
+                    <div class="map">
+                        <div class="map-container" id="hangZhouMapContainer" style="height: 600px;"></div>
+                    </div>
+                    <div class="news-list">
+                        <div class="top">
+                            <div class="title">
+                                <span class="hangZhouArea">杭州市</span><span>热点信息</span>
+                            </div>
+                            <div class="right">
+                                <div class="scope">
+                                    <span class="hangZhouArea">杭州市</span>
+                                </div>
+                                <div class="date-btn">
+                                    <span><</span>
+                                </div>
+                                <input type="text" class="date" id="hangZhouDateTimePicker">
+                                <div class="date-btn">
+                                    <span>></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="hangZhouTimeBtn" class="time-btn"></div> -->
+                        <div class="news-top">
+                            <div class="news-area">
+                                <span id="hangZhouNewsAreaName">杭州热点</span>
+                            </div>
+                            <!-- <div id="hangZhouTimeBtn" class="time-btn"></div> -->
+                        </div>
+                        <div id="hangZhouNewsContainer" class="news-container"></div>
+                        <div class="news-page">
+                            <div id="hangZhouNewsPage" style="display: inline-block;"></div>
+                        </div>
+                    </div>
+                    <div class="tendency-chart">
+                        <div class="tendency-chart-title">
+                            <!-- <span class="hangZhouCurTime"></span> -->
+                            <span class="hangZhouArea">杭州市</span><span>热点近一周TOP3趋势图</span>
+                        </div>
+                        <div class="tendency-chart-maxvalue">
+                            <span id="tendencyChartMaxvalue" style="display:none;"></span>
+                            <span class="tendency-chart-maxvalue-line"></span>
+                        </div>
+                        <div id="hangZhouTendencyChartContainer" class="tendency-chart-container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/init.js?v=20160325185626"></script>
+    <script src="js/core/map.js?v=20160325185626"></script>
+    <script src="js/core/chart.js?v=20160325185626"></script>
+    <script src="js/startup.js?v=20160325185626"></script>
+</body>
+
+</html>

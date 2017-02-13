@@ -1,0 +1,38 @@
+<div class="m_input_suggest">
+	<input type="text" class="form-control" placeholder="请输入关键字搜索" ng-model="keyword" ng-change="getSuggestion()" ng-blur="hideSuggestion()" ng-focus="getSuggestion()">
+	<div class="m_suggest_list" ng-show="suggestShow" ng-mouseleave="hideSuggestion()">
+		<dl ng-if="suggestData['zyzxfield'].length">
+			<dt>
+				<b>主题</b>
+				<img src="./resourceCenter/images/z23.png" alt="">
+			</dt>
+			<dd ng-repeat="item in suggestData['zyzxfield']" ng-click="goSuggestion(item)" data-ng-bind-html="item.dictname"></dd>
+		</dl>
+		<dl ng-if="suggestData['area'].length">
+			<dt>
+				<b>地域</b>
+				<img src="./resourceCenter/images/z24.png" alt="">
+			</dt>
+			<dd ng-repeat="item in suggestData['area']" ng-click="goSuggestion(item)" data-ng-bind-html="item.dictname"></dd>
+		</dl>
+		<dl ng-if="suggestData['account'].length" ng-switch on="suggestData['account'][0].dicttype">
+			<dt ng-switch-when="weixin">
+				<b>微信号</b>
+				<img src="./resourceCenter/images/z25.png" alt="">
+			</dt>
+			<dt ng-switch-when="website">
+				<b>网站</b>
+				<img src="./resourceCenter/images/z7-3.png" alt="">
+			</dt>
+			<dt ng-switch-when="app">
+				<b>APP</b>
+				<img src="./resourceCenter/images/z8-3.png" alt="">
+			</dt>
+			<dt ng-switch-when="szb">
+				<b>数字报</b>
+				<img src="./resourceCenter/images/z11-3.png" alt="">
+			</dt>
+			<dd ng-repeat="item in suggestData['account']" ng-click="goSuggestion(item)" data-ng-bind-html="item.dictname"></dd>
+		</dl>
+	</div>
+</div>

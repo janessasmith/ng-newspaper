@@ -1,0 +1,16 @@
+<div class="toBeCompiled-directSign-container">
+    <div class="toBeCompiled-title-head">
+        <p ng-bind="title"></p>
+    </div>
+    <div class="toBeCompiled-title-head">
+        <p>选择置顶位：
+            <select ng-model="selectedPosition">
+                <option ng-repeat="droplist in dropLists" ng-bind="droplist" value="{{droplist}}" ng-disabled="forbArray.indexOf(droplist)>-1"></option>
+            </select>
+        </p>
+    </div>
+    <div class="toBeCompiled-directSign-footer">
+        <button class="new-role-btn ml140 btn_confirm" ng-click="isConfirm()" ng-disabled="selectedPosition=='-1'">确定</button>
+        <button class="button-cancel new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

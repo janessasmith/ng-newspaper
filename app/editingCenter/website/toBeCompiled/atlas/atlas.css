@@ -1,0 +1,63 @@
+.atals .m_box_item .col-sm-10 textarea.textarea {
+    width: 577px;
+    height: 230px
+}
+.atals .iwoAbstractWordCount{
+    color: red;
+}
+.atals .mt10 {
+    margin-top: 10px
+}
+
+.atals input.audiovideo {
+    float: left;
+}
+
+.atals img.audiovideo {
+    position: relative;
+    top: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.atals .pd-fix {
+    padding-left: 6px
+}
+
+.mpl {
+    margin-left: -11px;
+}
+
+.newBtnUpload {
+    width: 33px;
+    height: 36px;
+    padding: 0;
+    background: rgba(21, 21, 21, 0.51) url("./editingCenter/app/toBeCompiled/images/b43-1.png") no-repeat scroll center 3px;
+    border: none;
+    color: #fff;
+    line-height: 48px;
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    right: 30px;
+    top: 65px;
+}
+
+.iwoatlas-item {
+    overflow: visible !important;
+    min-height: 40px
+}
+
+.atals .ht200 {
+    height: 200px!important;
+}
+
+.atals .abstractWordLength {
+    position: relative;
+    top: -200px;
+    color: red;
+}
+
+.websiteatlas{
+    
+}

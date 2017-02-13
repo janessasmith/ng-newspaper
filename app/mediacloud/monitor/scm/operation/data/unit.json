@@ -1,0 +1,15 @@
+{
+	"result": [{
+		"UnitId": 1,
+		"UnitName": "重庆日报",
+		"UnitPic": "/images"
+	}, {
+		"UnitId": 2,
+		"UnitName": "重庆晨报",
+		"UnitPic": "/images"
+	}, {
+		"UnitId": 3,
+		"UnitName": "重庆商报",
+		"UnitPic": "/images"
+	}]
+}

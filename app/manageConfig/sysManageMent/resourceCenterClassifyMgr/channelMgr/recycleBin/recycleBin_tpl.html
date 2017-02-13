@@ -1,0 +1,54 @@
+<div class="manCon-sys-souCenClassifyMgr-chnnlMgr">
+    <div class="manCon-sys-souCen-chnnl-container mc-padding-top">
+        <div class="sys-souCen-chnnlMgr-item-out left" ng-repeat="websiteItem in websiteItems" ng-mouseenter="getInSelectedChl(websiteItem)">
+            <div class="sys-souCen-chnnlMgr-item-default text-center" ng-click="" ng-class="{'selectedChannel-active':selectedChannel==websiteItem}">
+                <a ui-sref="manageconfig.productmanage.website.column({channel:websiteItem.CHANNELID})" ng-bind="websiteItem.CHNLDESC">
+                </a>
+            </div>
+            <div class="sys-souCen-chnnlMgr-item-icon-group" ng-show="selectedChannel==websiteItem">
+                <a ng-click="deleteViews()">
+                    <img src="./manageConfig/productManageMent/images/gl58.png" />
+                </a>
+                <a ng-click="reductionViews()">
+                    <img src="./manageConfig/productManageMent/images/gl63.png" />
+                </a>
+            </div>
+        </div>
+        <div class="sys-souCen-chnnlMgr-item-out left">
+            <div class="sys-souCen-chnnlMgr-item-default text-center selectedChannel-active">
+                <a>
+                    这是假的1
+                </a>
+            </div>
+            <div class="sys-souCen-chnnlMgr-item-icon-group">
+                <a ng-click="deleteViews()">
+                    <img src="./manageConfig/productManageMent/images/gl58.png" />
+                </a>
+                <a ng-click="reductionViews()">
+                    <img src="./manageConfig/productManageMent/images/gl63.png" />
+                </a>
+            </div>
+        </div>
+        <div class="sys-souCen-chnnlMgr-item-out left">
+            <div class="sys-souCen-chnnlMgr-item-default text-center">
+                <a>
+                    这是假的2
+                </a>
+            </div>
+            <div class="sys-souCen-chnnlMgr-item-icon-group">
+                <a ng-click="deleteViews()">
+                    <img src="./manageConfig/productManageMent/images/gl58.png" />
+                </a>
+                <a ng-click="reductionViews()">
+                    <img src="./manageConfig/productManageMent/images/gl63.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="manCon-sys-souCenClassifyMgr-recycle">
+        <a ui-sref="manageconfig.sysmanage.soucenclassifymgr.channelmgr">
+            <img src="./manageConfig/productManageMent/images/i8.png" />
+            <span>返回列表</span>
+        </a>
+    </div>
+</div>

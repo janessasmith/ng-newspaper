@@ -1,0 +1,114 @@
+.visualEditing_main_son {
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    padding-left: 70px;
+}
+
+.visualEditing_main_son .multidoc-modal-body {
+    min-height: 100px;
+    height: auto;
+}
+
+.visualEditing_body .calendar {
+    left: 270px;
+    top: 3px;
+}
+
+.visualEditing_body button.operate {
+    background-color: #0095ce;
+    color: white;
+}
+
+.visualEditing_body .modal-footer {
+    margin-top: 0px !important;
+}
+
+.visualEditing_main_son .oneImage_son .modal-body {
+    height: initial;
+}
+
+.visualEditing_body .multiimages_popup_title {
+    text-align: left
+}
+
+.visualEditing_body .dsfb{
+    display: none;
+}
+
+.visualEditing_body .multiimages_drag_lst{
+    position: absolute;
+    left: 0px;
+    top: 70px;
+    bottom: 70px;
+    right:10px;
+}
+
+.visualEditing_body .modal-footer{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+html,body{
+	margin: 0px;
+	padding:0px;
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.visualEditing_body{	
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.visualEditing_main {
+    text-align: center;
+}
+
+.visualEditing_body .sp-header{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 40px;
+	right: 20px;
+}
+.visualEditing_body .sp-body{
+	position: absolute;
+	left: 0px;
+	top: 40px;
+	right: 20px;
+	bottom:64px;
+	overflow:auto;
+}
+
+.visualEditing_body .oneImage_popup_fa.sp-body{
+	width:auto;
+}
+
+.visualEditing_body .sp-footer{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: 64px;
+	right: 20px;
+}
+
+form[name='fragementForm']  .btn-info,  form[name='fragementForm']  .btn-default {
+   border-color: transparent;
+}
+
+form[name='fragementForm']   .btn-default.disabled, form[name='fragementForm']   .btn-default[disabled]{
+	border-color:transparent;
+}
+
+.visualEditing_body  .btn-info,  .visualEditing_body   .btn-default {
+   border-color: transparent;
+}
+
+.visualEditing_body   .btn-default.disabled, .visualEditing_body    .btn-default[disabled]{
+	border-color:transparent;
+}

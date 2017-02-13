@@ -1,0 +1,45 @@
+<div class="history">
+    <div class="history_left col-md-8">
+        <div class="history_button">
+            <button class="history_primary">历史事件</button>
+            <!--<button ng-click="status.whichTabShow='celebrity_birthday'" class="{{status.whichTabShow=='celebrity_birthday'?'history_primary':'history_default'}}">名人生日</button>
+            <button ng-click="status.whichTabShow='celebrity_beath'" class="{{status.whichTabShow=='celebrity_beath'?'history_primary':'history_default'}}">名人去世</button>-->
+        </div>
+        <div class="history_today">
+            <div class="history_main" ng-repeat="historyToday in data.items">
+                <span class="history_year" ng-bind="historyToday.HISTORYDATE | date:'yyyy年'"></span>
+                <p class="history_con" ng-bind="historyToday.CONTENT"></p>
+            </div>
+        </div>
+    </div>
+    <div class="historyToday_right col-md-4">
+        <!-- <div class="mt10 calendarHead mb10">
+            <trs-single-select selected-option="dropDown.selectedMonthDefault" callback="gotoSelectedMonth()" options="dropDown.selectedMonth" class="left"></trs-single-select>
+            <trs-single-select selected-option="dropDown.selectedDayDefault" callback="" options="dropDown.newSelectedDays" class="left"></trs-single-select>
+            <button ng-click="searchByMonthAndDay()" class="searchDateBtn">查询</button>
+            <div class="clearBoth"></div>
+        </div> -->
+        <div class="mt10 calendarHead mb10">
+            <div class="date_c">
+                <input type="text" class="form-control" ng-model="genParams.StartDocPubTime" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="{{data.min_date}}" data-max-date="{{data.max_date}}" data-autoclose="1" bs-datepicker>
+             <!--    <input type="text" class="form-control" ng-model="genParams.StartDocPubTime" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="{{data.min_date}}" data-max-date="2016-07-04" data-autoclose="1" bs-datepicker> -->
+                <!--  <input class="form-control" type="text" placement="bottom" size="10" ng-model="genParams.StartDocPubTime" placeholder="选择日期" data-autoclose="1" bs-datepicker readonly="readonly" data-min-date="{{data.min_date}}" data-max-date="2016-12-31" data-date-format="yyyy-MM-dd"> -->
+                <!-- <img src="./editingCenter/app/toBeCompiled/images/t3.png" class="dateImg"> -->
+            </div>
+            <button ng-click="searchByDate()" class="searchDateBtn">查询</button>
+            <div class="clearBoth"></div>
+        </div>
+        <div class="today_infos">
+            <span class="" ng-bind="data.yearMonthWeek"></span>
+            <h2 ng-bind="params.day"></h2>
+            <span class="" ng-bind="data.today_Lunar"></span>
+        </div>
+        <div ui-calendar="uiConfig.calendar" ng-model="data.eventSources" class="Almanac" calendar="myCalendar"></div>
+    </div>
+</div>
+<div class="page timeCue_page">
+    <trs-pagenation-left total-num="page.ITEMCOUNT" page-count="page" pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+    <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+    <!-- <trs-pagenation-right callback="jumpToPage()" currpage="status.jumpToPageNum" page="page"></trs-pagenation-right> -->
+</div>
+<div cg-busy="loadingPromise"></div>

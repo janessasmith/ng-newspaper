@@ -1,0 +1,87 @@
+<div class="toBeCompiled-share-container select-item-by-tree">
+    <div class="toBeCompiled-share-head">
+        <p ng-bind="title"></p>
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="close()">
+    </div>
+    <div class="toBeCompiled-share-body">
+        <div class="toBeCompiled-share-content">
+            <div class="con">
+                <div class="conL left">
+                    <div class="header">
+                        <p>组织列表</p>
+                    </div>
+                    <div class="cont cont_">
+                        <treecontrol selected-node="selectedNodePA" expanded-nodes="expandedPA" on-node-toggle="showToggle(node)" class="tree-light" tree-model="treedataPA" options="treePAOptions" on-selection="showSelected(node)"><span title="{{node.GNAME}}" ng-bind="node.GNAME"></span></treecontrol>
+                    </div>
+                </div>
+                <div class="middle">
+                    <img src="./editingCenter/app/images/jt-l.png">
+                </div>
+                <div class="conR right">
+                    <div class="body">
+                        <div class="main">
+                            <div class="left">
+                                <div class="left-div">
+                                    <div class="head">
+                                        <p>未分配角色</p>
+                                    </div>
+                                    <div class="body">
+                                        <input type="text" ng-model="searchWordLeft" class="form-control" placeholder="输入关键词" />
+                                        <div class="list">
+                                            <div class="head">
+                                                <p>角色列表</p>
+                                            </div>
+                                            <ul>
+                                                <li ng-show="selectedRole.indexOf(role.ROLEID)<0" ng-dblclick="directlyToRight(role)" ng-class="role.selected" ng-click="chooseUserName('toChoose',role)" ng-repeat="role in roleDatas | filter:myFilter"><span title="{{role.ROLEDESC!=undefined?role.ROLEDESC:role.ROLEDESC}}" ng-bind="role.ROLEDESC!=undefined?role.ROLEDESC:role.ROLEDESC"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                <div ng-click="toRight()" class="share-to-right-btn">
+                                    <img src="./manageConfig/roleManageMent/images/js4.png" />
+                                </div>
+                                <div ng-click="toLeft()" class="share-to-left-btn">
+                                    <img src="./manageConfig/roleManageMent/images/js5.png" />
+                                </div>
+                                <div>
+                                    <img ng-click="selectedAll()" src="./manageConfig/roleManageMent/images/js6.png">
+                                </div>
+                                <div>
+                                    <img ng-click="itemsSd=[];selectedRole=[];" src="./manageConfig/roleManageMent/images/js7.png">
+                                </div>
+                            </div>
+                            <div class="left right">
+                                <div class="left-div">
+                                    <div class="head">
+                                        <p>已分配角色</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="suggestion">
+                                            <input type="text" ng-model="searchWord" class="form-control" placeholder="输入关键词" bs-options="role as role.ROLENAME for role in getSuggestions($viewValue)" bs-typeahead limit: "30">
+                                        </div>
+                                        <div class="list">
+                                            <div class="head">
+                                                <p>已分配</p>
+                                            </div>
+                                            <ul>
+                                                <li ng-dblclick="directlyToLeft(item)" ng-class="item.selected" ng-click="chooseUserName('cancelChoose',item)" ng-repeat="item in itemsSd"><span title="{{item.ROLEDESC}}" ng-bind="item.ROLEDESC"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pb20">
+                <div class="row mt20 button">
+                    <button ng-click="submit()" class="share-btn ml136 btn_confirm">确定</button>
+                    <button ng-click="close()" class="share-btn ml20 btn_cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

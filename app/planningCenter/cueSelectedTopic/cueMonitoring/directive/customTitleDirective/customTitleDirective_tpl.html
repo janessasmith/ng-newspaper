@@ -1,0 +1,8 @@
+<div ng-mouseenter="customMouseenter($event)" class="custom-wrap-outer" ng-click="customListClick()" ng-mouseleave="customMouseleave()">
+    <a target="_blank" ng-bind="tit"></a>
+    <div class="custom-wrap" ng-show="isCustomShow" ng-style="curposition">
+        <h6 ng-bind="tit"></h6>
+        <p><span ng-bind="beforeDate"></span><span>至</span><span ng-bind="endDate"></span></p>
+        <p ng-bind="content"></p>
+    </div>
+</div>

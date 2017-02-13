@@ -1,0 +1,24 @@
+<div class="sy-bk-opa"></div>
+<div class="sy-bk-deal">
+    <div class="zx-wb-icon">
+        <div class="wb-icon-opa"></div>
+        <div class="wb-bk-img">
+            <img src="common/images/xt-sy-icon02.png" alt=""/>                    
+        </div>
+    </div>
+    <h3 class="sy-wx-tit">微信</h3>
+    <div class="rw-wx-div">
+        <div class="yy-gl-btn wx-yy-gl">
+            <a href ui-sref="wxoperation" class="wx-yf-cur" checked="wx-yf-cur">运营分析</a>
+            <a ui-sref="wxaccount.list" checked="wx-yf-cur">账号管理</a>
+        </div>
+        <div class="wx-ft-pc">
+            <div class="wx-ft-bk" ng-repeat="content in contents">
+                <span class="{{content.ISSIGN=='true'?'identifier':''}}"></span>
+                <a href="/wcm/app/wx/wx.html?wxId={{content.wxid}}&nodeId={{content.channelId}}">
+                    <img ng-src="{{content.wxHeadImg}}" alt="{{content.name}}"/>                    
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

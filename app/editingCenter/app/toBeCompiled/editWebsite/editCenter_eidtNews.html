@@ -1,0 +1,375 @@
+<form name="newsForm" novalidate>
+    <div class="row_news plr20">
+        <tabset class="subject-tab">
+            <tab ng-click="goto('listInfo')" heading="列表信息"></tab>
+            <tab ng-click="goto('docInfo')" heading="稿件信息"></tab>
+            <tab ng-click="goto('paramInfo')" heading="属性信息"></tab>
+            <tab ng-click="goto('sendDoc')" heading="发稿单"></tab>
+            <tab ng-click="goto('flowVer')" heading="流程版本"></tab>
+        </tabset>
+        <!-- 列表信息 -->
+        <div class="web-attr-info mt40" id="listInfo">
+            <div class="web-attr-info-tit">
+                <p>列表信息</p>
+            </div>
+            <div class="clearfix mt20">
+                <div class="row">
+                    <div class="col-md-1 pr0 txt_r">
+                        <p>列表样式：</p>
+                    </div>
+                    <div class="col-md-11">
+                        <label>
+                            <input type="radio" name="comment"> 图文
+                        </label>
+                        <label>
+                            <input type="radio" name="comment"> 多图
+                        </label>
+                        <label>
+                            <input type="radio" name="comment"> 文字
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-11 col-md-push-1">
+                        <div class="news_input_check">
+                            <input sepical-char-check char="list.ListTitle" ng-class="{true:'text-error list-text',false:'list-text'}[newsForm.ListTitle.$invalid&&newsForm.ListTitle.$dirty]" type="text" name="ListTitle" ng-model="list.ListTitle" required placeholder="请输入标题" ng-maxlength="50" class="form-control" >    
+                        </div>
+                        <ul class="m_img_lst list-img-ul">
+                            <li class="img_box">
+                                <img src="http://img3.3lian.com/2013/s1/20/d/57.jpg" alt="">
+                                <div class="op_btns">
+                                    <div class="u_upload_hide">
+                                        <input type="file">
+                                    </div>
+                                    <span class="upload"></span>
+                                    <span class="delete"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1 pr0 txt_r">
+                        <p>标签：</p>
+                    </div>
+                    <div class="col-md-11 clearfix web-list-info-con">
+                        <div class="list-style-tab">
+                            <p class="active">无</p>
+                            <p>突发</p>
+                            <p>独家</p>
+                            <p>专题</p>
+                            <p>图集</p>
+                            <p>视频</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1 pr0 txt_r">
+                        <p>焦点图:</p>
+                    </div>
+                    <div class="col-md-11">
+                        <label>
+                            <input type="checkbox"> 栏目焦点图
+                        </label>
+                    <br>
+                        <div class="news_input_check">
+                            <input sepical-char-check char="list.ListTitle" ng-class="{true:'text-error list-text',false:'list-text'}[newsForm.ListTitle.$invalid&&newsForm.ListTitle.$dirty]" type="text" name="ListTitle" ng-model="list.ListTitle" required placeholder="请输入标题" ng-maxlength="50" class="form-control">
+                        </div>
+                        <ul class="m_img_lst list-img-ul">
+                            <li class="img_box">
+                                <img src="http://img3.3lian.com/2013/s1/20/d/57.jpg" alt="">
+                                <div class="op_btns">
+                                    <div class="u_upload_hide">
+                                        <input type="file">
+                                    </div>
+                                    <span class="upload"></span>
+                                    <span class="delete"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 稿件信息 -->
+        <div class="row" id="docInfo">
+            <div class="web-attr-info-tit" style="margin:0 15px;">
+                <p>稿件信息</p>
+            </div>
+            <div class="col-md-12 mtb15 {{newsForm.Title.$invalid&&newsForm.Title.$dirty?'has-error':''}}">
+                <input type="text" class="form-control md_lng w640 mr16" name="Title" ng-model="list.Title" required placeholder="请输入标题" ng-maxlength="200">已输入
+                <trs-word-num num-obj="{{list.Title}}" class="font_red"></trs-word-num>字数
+            </div>
+            <div class="col-md-9">
+                <tabset class="m_nav_3">
+                    <tab heading="常规">
+                        <div class="m_box_2">11</div>
+                    </tab>
+                    <tab heading="插件">
+                        <div class="m_box_2">33</div>
+                    </tab>
+                </tabset>
+            </div>
+            <div class="col-md-3 pl0">
+                <tabset class="m_nav_3">
+                    <tab heading="我的素材">
+                        <div class="m_box_2">
+                            <trs-timeline>
+                                <timegroup tick="'今天'">
+                                    <timeitem tick="'15:30'">
+                                        <ul class="flow_ver">
+                                            <li>签发</li>
+                                            <li>待编平台——头条频道</li>
+                                            <li>某某</li>
+                                            <li><a href="">流程版本</a></li>
+                                        </ul>
+                                    </timeitem>
+                                </timegroup>
+                            </trs-timeline>
+                        </div>
+                    </tab>
+                    <tab heading="主题延展">
+                        <div class="m_box_2">33</div>
+                    </tab>
+                    <tab heading="稿件背景">
+                        <div class="m_box_2">33</div>
+                    </tab>
+                </tabset>
+            </div>
+        </div>
+        <!-- 属性信息 -->
+        <div class="row plr20" id="paramInfo">
+            <div class="web-attr-info-tit">
+                <p>属性信息</p>
+            </div>
+            <div class="m_box">
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">新闻来源：</div>
+                    <div class="col-sm-11 {{newsForm.NewsSources.$invalid&&newsForm.NewsSources.$dirty?'has-error':''}}">
+                        <input type="text" name="NewsSources" ng-maxlength="50" ng-model="list.NewsSources" class="form-control md_lng">
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">署名作者：</div>
+                    <div class="col-sm-11 {{newsForm.SignatureAuthor.$invalid&&newsForm.SignatureAuthor.$dirty?'has-error':''}}">
+                        <input type="text" name="SignatureAuthor" ng-maxlength="50"  ng-model="list.SignatureAuthor" class="form-control md_lng w640 mr16">
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">供稿方：</div>
+                    <div class="col-sm-11">
+                        <select class="edit-news-select">
+                            <option>请选择</option>
+                        </select>
+                        <select class="edit-news-select">
+                            <option>请选择</option>
+                        </select>
+                        <select class="edit-news-select">
+                            <option>请选择</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">供稿作者：</div>
+                    <div class="col-sm-11 {{newsForm.Keywords.$invalid&&newsForm.Keywords.$dirty?'has-error':''}}">
+                        <input ng-model="list.author" ng-maxlength="200" name="author" type="text" class="form-control md_lng">
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">关键词：</div>
+                    <div class="col-sm-11 {{newsForm.Keywords.$invalid&&newsForm.Keywords.$dirty?'has-error':''}}">
+                        <input ng-model="list.Keywords" ng-maxlength="200" name="Keywords" type="text" class="form-control md_lng">
+                        <a href="">提取关键字</a>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">摘要：</div>
+                    <div class="col-sm-6 {{newsForm.ConAbstract.$invalid&&newsForm.ConAbstract.$dirty?'has-error':''}}">
+                        <textarea ng-model="list.ConAbstract" name="ConAbstract" ng-maxlength="500" class="form-control edit-news-textarea"></textarea>
+                    </div>
+                    <div class="col-sm-1 mt140">
+                        <a href="">提取摘要</a>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">题图：</div>
+                    <div class="col-md-1">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">题图
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="img_box fixed_size">
+                            <img src="http://img3.3lian.com/2013/s1/20/d/57.jpg" alt="">
+                            <div class="op_btns">
+                                <div class="u_upload_hide">
+                                    <input type="file">
+                                </div>
+                                <span class="upload"></span>
+                                <span class="delete"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">评论设置：</div>
+                    <div class="col-sm-11 edit-news-radio">
+                        <label>
+                            <input type="radio" name="comment"> 先审后发
+                        </label>
+                        <label>
+                            <input type="radio" name="comment"> 先发后审
+                        </label>
+                        <label>
+                            <input type="radio" name="comment"> 关闭
+                        </label>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">所属栏目：</div>
+                    <div class="col-sm-11">
+                        <input type="text" value="无" class="form-control md_lng">
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">相关新闻：</div>
+                    <div class="col-sm-11">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">关联相关新闻
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">分组名称：</div>
+                    <div class="col-sm-11">
+                        <div class="checkbox">
+                            <input type="text" value="" class="form-control md_lng">
+                        </div>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">新闻列表：</div>
+                    <div class="col-sm-11">
+                        <input type="text" value="" placeholder="输入关键字进行搜索，可关联多篇" class="form-control md_lng">
+                        <p><a href="">删除</a><span>106877一无人超市现身杭州；</span></p>
+                    </div>
+                </div>
+                <div class="m_box_item">
+                    <div class="col-sm-1 txt_r">相关官员：</div>
+                    <div class="col-sm-11">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox">关联相关官员
+                            </label>
+                        </div>
+                        <p>
+                            <input type="text" value="" placeholder="输入关键字进行搜索，可关联多篇" class="form-control md_lng">可关联多个
+                        </p>
+                        <p><a href="">删除</a><span>夏宝龙——浙江省委书记</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 发稿单 -->
+        <div class="row mtb20" id="sendDoc">
+            <div class="web-attr-info-tit">
+                <p class="pull-left">发稿单</p>
+                <label class="edit-news-checkbox">
+                    <input type="checkbox">不发稿费
+                </label>
+            </div>
+            <div class="m_box_item mt20 ml15">
+                稿件体裁：
+                <select class="edit-news-select w200">
+                    <option>无体裁</option>
+                </select>
+            </div>
+        </div>
+        <!-- 编辑信息 -->
+        <editor-dir editor-json="list.fgd_editinfo" show-all-tips="showAllTips" editor-form="newsForm"></editor-dir>
+        <!-- 作者信息 -->
+         <editor-auth-dir editor-json="list.fgd_authinfo" show-all-tips="showAllTips" editor-form="newsForm"></editor-auth-dir>
+        <!-- 流程版本 -->
+        <div class="row plr20" id="flowVer">
+            <div class="web-attr-info-tit mtb20">
+                <p>流程版本</p>
+            </div>
+            <tabset class="m_nav_3 mt20">
+                    <tab heading="流程版本">
+                        <div class="m_box_2">
+                            <trs-timeline title="'流程版本'">
+                                <timegroup tick="'今天'">
+                                    <timeitem tick="'15:30'">
+                                        <ul class="flow_ver">
+                                            <li>签发</li>
+                                            <li>待编平台——头条频道</li>
+                                            <li>某某</li>
+                                            <li><a href="">流程版本</a></li>
+                                        </ul>
+                                    </timeitem>
+                                </timegroup>
+                                <timegroup tick="'昨天'">
+                                    <timeitem tick="'15:30'">
+                                        <ul class="flow_ver">
+                                            <li>送审</li>
+                                            <li>待编平台——头条频道</li>
+                                            <li>某某</li>
+                                            <li><a href="">流程版本</a></li>
+                                        </ul>
+                                    </timeitem>
+                                    <timeitem tick="'5:30'">
+                                        <ul class="flow_ver">
+                                            <li>编辑</li>
+                                            <li>待编平台——头条频道</li>
+                                            <li>某某</li>
+                                            <li><a href="">流程版本</a></li>
+                                        </ul>
+                                    </timeitem>
+                                </timegroup>
+                                <timegroup tick="'15年10/13'">
+                                    <timeitem tick="'9:30'">
+                                        <ul class="flow_ver">
+                                            <li>新建</li>
+                                            <li>待编平台——头条频道</li>
+                                            <li>某某</li>
+                                            <li><a href="">流程版本</a></li>
+                                        </ul>
+                                    </timeitem>
+                                </timegroup>
+                            </trs-timeline>
+                        </div>
+                    </tab>
+                    <tab heading="操作日志">
+                        <div class="m_box_2">33</div>
+                    </tab>
+                </tabset>
+        </div>
+    </div>
+    <!-- 操作按钮 -->
+    <div class="Iw-box-fix pt_10 box-fix-bt">
+        <div class="txt_r">
+            <button class="btn btn-primary" ng-click="save()">
+                <span class="s_icon"><img src="./editingCenter/app/toBeCompiled/images/b20.png"></span> 保存
+            </button>
+            <button class="btn btn-primary">
+                <span class="s_icon"><img src="./editingCenter/app/toBeCompiled/images/b21.png"></span> 保存并送审
+            </button>
+            <button class="btn btn-primary">
+                <span class="s_icon"><img src="./editingCenter/app/toBeCompiled/images/b22.png"></span> 直接签发
+            </button>
+            <button class="btn btn-primary">
+                <span class="s_icon"><img src="./editingCenter/app/toBeCompiled/images/b23.png"></span> 定时签发
+            </button>
+            <button class="btn btn-primary">
+                <span class="s_icon"><img src="./editingCenter/app/toBeCompiled/images/b24.png"></span> 预览
+            </button>
+            <button class="btn btn-primary">
+                <span class="s_icon"><img src="./editingCenter/app/toBeCompiled/images/b25.png"></span> 关闭
+            </button>
+        </div>
+    </div>
+</form>

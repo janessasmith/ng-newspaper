@@ -1,0 +1,66 @@
+.create_widget .widget_title{
+	text-align: center;
+	background-color: #91c7ff;
+	color: #333;
+}
+.widget_title h4{
+	margin: 0;
+	font-size: 14px;
+}
+.create_widget .widget_footer{
+	padding: 15px;
+	text-align: right;
+}
+.create_widget .rows{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.create_widget .row_1{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.row_1 textarea,.row_1 input[type='text']{
+	padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.row_1 input[type='text']{
+	width: 60%;
+}
+.row_1 textarea{
+	width: 100%;
+	height: 150px;
+	overflow-y:auto; 
+}
+/*little buttons*/
+.u_back_btn{
+	display: block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: -5px;
+	cursor: pointer;
+	border-radius: 3px;
+	font-weight: bold;
+	background-color: #eff1f5;
+}
+.u_back_btn:hover{
+	background-color: #fff;
+	text-decoration: none;
+}
+.u_back_btn:hover{
+	background-color: #fff;
+}
+.u_btn_gray{
+	background-color: #f3f3f3;
+	border:1px solid #c7c7c7;
+	color: #000;
+}
+.u_btn_gray:hover{
+	background-color: #fff;
+}
+.fonts_size{
+	display: inline;
+	float: none;
+}

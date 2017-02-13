@@ -1,0 +1,12 @@
+{
+	"result": [{
+		"ClassId": 1,
+		"ClassName": "政务"
+	}, {
+		"ClassId": 2,
+		"ClassName": "娱乐"
+	}, {
+		"ClassId": 3,
+		"ClassName": "媒体"
+	}]
+}

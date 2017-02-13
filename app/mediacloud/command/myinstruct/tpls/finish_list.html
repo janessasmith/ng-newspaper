@@ -1,0 +1,24 @@
+<ul>
+    <li ng-repeat="finishContent in finishContents" id="finish{{$index}}"  ng-class="{'blue-bac':($index+1)%2==0}">
+        <div class="cg-check-box lf dis-check-box" ng-controller="remindCtrl"
+             ng-click="open('400',$event,finishContent.DICTATEID,$index);">
+             <input type="checkbox" selectbox class="selectbox" />
+        </div>
+        <a  href class="cg-ls-tit lf" ui-sref="command.myinstructCommandShow({DICTATEID:finishContent.DICTATEID,issecret:finishContent.ISSECRET})"  >
+            {{finishContent.TITLE}}
+            <span >(发送人：{{finishContent.CRUSER}})</span>
+        </a>
+        <b ng-show="{{finishContent.ISSECRET}}==1"></b>
+        <div class="my-rz-ts rt">
+            <a href="javascript:;" class="my-cz-rz lf" ng-controller="journalReadlCtrl" 
+             ng-click="open('400',$event,finishContent.DICTATEID);">
+                <i></i><span>操作日志</span>
+            </a>
+        </div>
+    </li>
+</ul>
+<div class="hd-page-bk">
+    <a href ng-click="reduce();" class="log-page hd-pg-pre"></a>
+    <div class="hd-pg-num"><span>{{pageInfo.pageIndex}}</span>-<span>{{pageInfo.pageCount}}</span></div>
+    <a href ng-click="add();" class="log-page hd-pg-next"></a>
+</div>

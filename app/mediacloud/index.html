@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>微博监控运营</title>
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./common/public.css">
+    <link rel="stylesheet" type="text/css" href="./common/monitor.css">
+    <link rel="stylesheet" type="text/css" href="./common/editorial.css">
+    <link rel="stylesheet" type="text/css" href="./monitor/scm/operation/css/operation.css">
+    <link rel="stylesheet" type="text/css" href="./lib/jquery/jquery.mCustomScrollbar.css">
+    <!--微博监控新闻列表-->
+    <link rel="stylesheet" href="./monitor/scm/weibonewList/css/weibonewList.css"/>
+    <!--微博账号排行-->
+    <link rel="stylesheet" href="./monitor/scm/weiboRank/css/weiboRank.css"/>
+    <!--微博列表-->
+    <link rel="stylesheet" href="./monitor/scm/weiboList/css/weiboList.css"/>
+    <!--微信账号排行-->
+    <link rel="stylesheet" href="./monitor/wx/weixinRank/css/weixinRank.css"/>
+    <!--微信新闻列表-->
+    <link rel="stylesheet" href="./monitor/wx/weixinnewList/css/weixinnewList.css"/>
+     <!--弹出框样式-->
+    <link rel="stylesheet" href="./commons/css/dialog.css"/>
+</head>
+<body class="body-app">
+    <!--header-->
+<div class="dp-header">
+        <a href="javascript:void(0)" class="cb-logo lf">
+            <img src="./common/images/logo.png" style="height:64px;" />
+            <!-- <span>报业集团</span> -->
+        </a>
+        <a href="javascript:;" class="xy-logo lf">新媒体云平台</a>
+        <!-- <div class="dp-head-opt rt clearfix">
+            <div class="head-user-account lf" ng-controller="headPortraitCtrl">
+                <div class="user-pic lf boxF">
+                    <div class="boxS">
+                        <img class="boxT" ng-src="{{userInfo.headImg}}"/>
+                    </div>
+                </div>
+                <span class="user-name" ng-bind="userName"></span>
+            </div>
+        </div> -->
+</div>
+<!--end 头部-->
+<div ui-view ></div>
+<script data-main="bootstrap.js" src="./lib/require/require.js"></script>
+<script src="./lib/echarts/echarts-all.js"></script>
+</body>
+</html>

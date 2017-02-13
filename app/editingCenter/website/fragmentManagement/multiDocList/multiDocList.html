@@ -1,0 +1,38 @@
+<div>
+    <div align="left">
+    </div>
+    <div class="modal-dialog oneImage_popup" role="document" style="top:0px;">
+        <div align="left">
+        </div>
+        <div class="modal-content oneImage_popup_main">
+            <div align="left">
+            </div>
+            <div class="modal-header oneImage_popup_header sp-header">
+                <div align="left">
+                    <button type="button" class="close" style="margin-top: 9px;" ng-click="closeUp()">
+                        <span aria-hidden="true"></span></button>
+                </div>
+                <h4 class="modal-title" id="gridSystemModalLabel">编辑碎片-头条新闻</h4>
+            </div>
+            <div class="oneImage_popup_fa sp-body">
+                <div class="oneImage_son">
+                    <div class="modal-body oneImage_popup_content" style="margin-top:0">
+                        <div class="multiImages_btns">
+                            <button class="btn multiImages_btn" ng-click="addItem()">手工导入</button>
+                            <button class="btn multiImages_btn" ng-click="contentSel()">选择文章</button>
+                        </div>
+                        <ul id="dragList2" class="multiimages_drag_lst" style="margin-top:15px;max-height:400px;overflow:auto;">
+                            <form name="fragementForm" novalidate>
+                            <expander ver="multiDocList/createDocItem" ng-repeat="item in list track by $index"></expander>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer sp-footer" style="margin-bottom:15px;">
+                <button class="btn mybtn btn_confirm" ng-disabled="list.length==0" type="button" validation-submit="fragementForm" ng-click="confirm()">确定</button>
+                <button class="btn last_btn mybtn btn_cancel" type="button" ng-click="closeUp()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

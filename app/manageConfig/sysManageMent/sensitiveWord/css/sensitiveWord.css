@@ -1,0 +1,16 @@
+.sysMgr_sensitive_word .edit_right_head{
+    background: none;
+    padding: 0 0 0 15px;
+}
+.sysMgr_sensitive_word table tbody tr td.sensitiveWord_td,
+.sysMgr_sensitive_word table tbody tr td.subsitituteWord_td {
+    text-align: left;
+    word-break: break-all;
+    width: 20%;
+}
+/*.sysMgr_sensitive_word table tbody tr td.sensitiveWord_td{*/
+    /*width: 20%;*/
+/*}*/
+/*.sysMgr_sensitive_word table tbody tr td.subsitituteWord_td{*/
+    /*width: 20%;*/
+/*}*/

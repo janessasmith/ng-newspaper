@@ -1,0 +1,34 @@
+<form name="websiteSensitiveAddForm" novalidate>
+    <div class="man_produ_modify">
+        <div class="man_produ_modify_head">
+            <p>添加敏感词</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1"
+                 ng-click="cancel()"/>
+        </div>
+        <div class="man_produ_sensitive_add">
+            <div>
+                <span class="sensitive_add_span">敏感词：</span>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control man_produ_sensitive_text" ng-model="sensitiveWord" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,required,allchar"  ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" name="senword" is-show-tips="isShowTipsA"/>
+                </div>
+            </div>
+            <div>
+                <span class="sensitive_add_span">替换词：</span>
+                <div class="invalidate-input-box">
+                    <input type="text" class="form-control man_produ_sensitive_text" ng-model='substituteWord' maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50"  ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" name="replaceword" is-show-tips="isShowTipsB"/>
+                </div>
+                <img src="./manageConfig/productManageMent/images/av1.png"/>
+                可以为空
+            </div>
+            <div>
+                <span class="sensitive_add_span">敏感级别：</span>
+                <trs-single-select selected-option="sensitiveLevel" callback="choseLevel()" options="sensitiveLevelJsons"></trs-single-select>
+                （一般：用替换词替换；严重：直接去除）
+            </div>
+        </div>
+        <div class="man_produ_modify_footer">
+            <button class="news-role-btn-success man_produ_modify_footer_cancel btn_cancel" ng-click="cancel()">取消</button>
+            <button class="news-role-btn btn_confirm" ng-click="confirm()">确定</button>
+        </div>
+    </div>
+</form>

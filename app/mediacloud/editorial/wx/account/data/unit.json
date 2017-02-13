@@ -1,0 +1,16 @@
+{
+	"result": [{
+		
+		"UnitName": "重庆日报",
+		"value":0
+		
+	}, {
+		
+		"UnitName": "重庆晨报",
+		"value":1
+	}, {
+		
+		"UnitName": "重庆商报",
+		"value":2
+	}]
+}

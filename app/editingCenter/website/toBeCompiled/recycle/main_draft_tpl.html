@@ -1,0 +1,102 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8">
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="restore()" ng-if="status.btnRights['website.recyclemgr.delete']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='restore'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='restore'&&data.selectedArray.length>0?'fg1-1.png':'fg1.png'}}" />
+            </span> 还原
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="deleteItem()" ng-if="status.btnRights['website.recyclemgr.delete']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='delete'&&data.selectedArray.length>0?'fg2-1.png':'fg2.png'}}" />
+            </span> 删除
+        </button>
+        <button class="btn btn-default btn-commen" ng-click="clearTrash()" ng-if="status.btnRights['website.recyclemgr.clear']" ng-mouseenter="status.batchOperateBtn['hoverStatus']='clear'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon_clear">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='clear'?'fg3-1.png':'fg3.png'}}" />
+            </span> 清空回收站
+        </button>
+    </div>
+    <div class="col-md-4">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li class="active" ng-bind="data.channelName"></li>>
+            <li class="active">废稿箱</li>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid edit_right_mid_margin_top0">
+    <div class="edit_mid_received_left">
+        <span class="s_onlyme">只看我的</span>
+        <trs-radio ckstatus="status.onlyMine" ckcallback="isOnlyMine()"></trs-radio>
+        <label for="checkbox_c1"></label>
+        <trs-single-select selected-option="data.docType" callback="queryByDropdown('DocType',data.docType.value)" options="data.docTypeJsons"></trs-single-select>
+        <!-- <trs-single-select selected-option="data.timeType" callback="queryByDropdown('timeType',data.timeType.value)" options="data.timeTypeJsons"></trs-single-select> -->
+        <!-- 自定义时间 -->
+        <trs-time-select selected-option="data.timeType" callback="queryByDropdown('timeType',data.timeType.value)" options="data.timeTypeJsons" fromdate="data.fromdate" untildate="data.untildate"></trs-time-select>
+        <!-- 排序方式 -->
+        <trs-single-select ng-show="status.isESSearch" selected-option="sortType" callback="queryByDropdown('', sortType.value)" options="sortTypeJsons"></trs-single-select>
+    </div>
+    <div class="edit_mid_received_right">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" data-ng-click="fullTextSearch()">搜索</button>
+          </span>
+        </div>
+        <trs-single-select selected-option="data.iWoAllSelected" callback="queryByiWoAll()" options="data.iWoAll" class="pull-right"></trs-single-select>
+    </div>
+</div>
+<div class="edit_table border_radius_5 website_timeSign_pd">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-check col-cbx">
+                    <trs-checkbox ischecked="data.selectedArray.length==data.items.length&&data.items.length>0" callback="selectAll()"></trs-checkbox>
+                </th>
+                <th class="td-number col-index" style="text-align: center;">序号</th>
+                <th>标题</th>
+                <th class="xcol-newspaper-type">类型</th>
+                <th>栏目</th>
+                <th class="xcol-newspaper-emp">原位置</th>
+                <th class="xcol-newspaper-releaseBuild">删除人</th>
+                <th class="xcol-newspaper-date">删除时间</th>
+                <th class="xcol-newspaper-operation hidden-operate">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in data.items">
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <td ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></td>
+                <!--序号-->
+                <td class="ta-l"><a title="{{item.METADATAID}}" ui-sref="websitePreviewAll({channelid:channelid,chnldocid:item.CHNLDOCID,siteid:status.siteid,metadataid:item.METADATAID,platform:4,typeid:item.DOCTYPEID})" target="_blank">{{item.TITLE}}</a></td>
+                <!--标题-->
+                <td ng-bind="item.DOCTYPE"></td>
+                <!--类型-->
+                <td ng-bind="item.CHNLNAME"></td>
+                <!--栏目-->
+                <td ng-bind="item.CHNLDESC"></td>
+                <!--原位置-->
+                <td ng-bind="item.OPERNAME"></td>
+                <!--删除人-->
+                <td ng-bind="item.OPERTIME" class="pointer" ng-click="showVersionTime(item)"></td>
+                <!--删除时间-->
+                <!--状态-->
+                <td class="hidden-operate">
+                    <!--操作-->
+                    <a title="还原" href="javascript:void(0)" ng-click="restore(item.RECID)" ng-if="status.btnRights['website.recyclemgr.delete']"><img src="./editingCenter/app/images/fg-r.png" ng-if="status.btnRights['website.recyclemgr.delete']"></a>
+                    <!--<img src="./editingCenter/app/images/fg-r.png" ng-if="status.btnRights['website.recyclemgr.delete']"> <a href="javascript:void(0)" ng-click="restore(item.RECID)" ng-if="status.btnRights['website.recyclemgr.delete']">还原</a>
+                    <img src="./editingCenter/app/images/fg-r2.png" ng-if="status.btnRights['website.recyclemgr.delete']"> <a href="javascript:void(0)" ng-click="deleteItem(item.RECID)" ng-if="status.btnRights['website.recyclemgr.delete']">
+                        删除
+                    </a>-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="status.copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

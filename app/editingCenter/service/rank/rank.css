@@ -1,0 +1,67 @@
+.signed-rank-window .modal-content {
+    width: 300px;
+    background: #DDD;
+    top: 205px;
+    margin: 0px auto;
+}
+
+.signed-rank-container {
+    width: 294px;
+    background: #FFF;
+    margin: 2px 2px;
+    border-radius: 6px;
+}
+
+.signed-rank-body {
+    overflow: hidden;
+    background: #f1f2f4;
+    height: 78px;
+    line-height: 78px;
+}
+
+.signed-rank-body p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+.signed-rank-body p input{
+    width:40px !important;
+    height: 22px !important;
+    line-height: 22px;
+    margin:0 4px;
+    font-weight: normal;
+    font-size: 12px;
+    display:inline-table !important;
+}
+.signed-rank-body p span{
+    position: absolute;
+}
+.signed-rank-footer{
+	background: #f1f2f4;
+	padding-bottom: 26px;
+}
+.signed-rank-footer .new-role-btn {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.signed-rank-footer .ml140 {
+    margin-left:140px;
+}
+
+
+.signed-rank-container .invalidate-input-box span{
+    top: -1px;
+    left: 120px;
+}

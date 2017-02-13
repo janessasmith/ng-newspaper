@@ -1,0 +1,32 @@
+<div class="col-sm-5 pl35">
+    <img src="./yarbImages/logo.png" class="img-responsive" style="height:72px; float:left;">
+    <!-- <span style="float: left;display: block;margin-top: 25px;font-size: 19px;font-weight: bold;color: #666;font-family:'Microsoft Yahei';">融媒体一体化采编发平台</span> -->
+</div> 
+<div class="col-sm-7 manage-head-tab">
+    <div class="manage-head-tabdiv">
+        <ul class="manage-head-tabUl">
+            <li ng-if="configureAccess.auth!=undefined&&configureAccess.auth.user!=undefined" ng-class="{'manage-head-tabSelected':status.headTab['groupmanage']}" ui-sref-opts="{reload :'manageconfig.groupmanage'}" ata-ng-class="'manage-head-tabSelected':status.headTab['groupmanage']" class="w130" ui-sref="manageconfig.groupmanage">
+                <img src="./manageConfig/images/gt1.png" class="ml0" /> 组织用户管理
+            </li>
+            <li ng-if="configureAccess.auth!=undefined&&configureAccess.auth.role!=undefined" ui-sref="manageconfig.rolemanage" ui-sref-active="manage-head-tabSelected" ui-sref-opts="{reload :true}" data-ng-class="{'manage-head-tabSelected':status.headTab['rolemanage']}">
+                <img src="./manageConfig/images/gt2.png" />角色管理
+            </li>
+            <li ng-if="configureAccess.product!=undefined" ui-sref="manageconfig.productmanage.newspaper({site:0})" data-ng-class="{'manage-head-tabSelected':status.headTab['productmanage']}" ui-sref-opts="{reload :true}">
+                <img src="./manageConfig/images/gt3.png" /> 产品管理
+            </li>
+            <li ng-if="configureAccess.system!=undefined" ui-sref="manageconfig.sysmanage" ui-sref-active="manage-head-tabSelected" data-ng-class="{'manage-head-tabSelected':status.headTab['sysmanage']}">
+                <img src="./manageConfig/images/gt4.png" /> 系统管理
+            </li>
+            <!-- <li ui-sref-active="manage-head-tabSelected">
+                <img src="./manageConfig/images/gt5.png" /> 接口管理
+            </li> -->
+            <li ng-if="configureAccess.log!=undefined" ui-sref="manageconfig.logmanage" ui-sref-active="manage-head-tabSelected" data-ng-class="{'manage-head-tabSelected':status.headTab['logmanage']}">
+                <img src="./manageConfig/images/gt6.png" /> 日志管理
+            </li>
+            <!-- <li ui-sref-active="manage-head-tabSelected">
+                <img src="./manageConfig/images/gt7.png" /> 界面配置
+            </li> -->
+            <!---->
+        </ul>
+    </div>
+</div>

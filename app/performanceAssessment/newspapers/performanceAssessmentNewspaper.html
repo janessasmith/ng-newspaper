@@ -1,0 +1,100 @@
+<!-- 按钮群 -->
+<div trs-scroll-fix class="row edit_right_head">
+	<div class="col-md-8 col-lg-9">
+		<!-- 批量保存按钮 -->
+		<div class="btn-group">
+			<button class="btn btn-default btn-peOpt opacity100" ng-click="batchSave()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='batchSave'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" ng-disabled="data.selectedArray.length<0">
+				<span class="s_icon">
+					<img ng-src="./performanceAssessment/images/{{status.batchOperateBtn['hoverStatus']=='batchSave'?'b1-1.png':'b1.png'}}"></span>
+				批量保存
+			</button>
+		</div>
+		<!-- 查看统计报表按钮 -->
+		<div class="btn-group">
+			<button class="btn btn-default btn-peOpt" ng-click="statisReport()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='statisReport'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+				<span class="s_icon">
+					<img ng-src="./performanceAssessment/images/{{status.batchOperateBtn['hoverStatus']=='statisReport'?'b2-1.png':'b2.png'}}"></span>
+				查看统计报表
+			</button>
+		</div>
+		<!-- 刷新按钮 -->
+		<div class="btn-group">
+			<button class="btn btn-default btn-peOpt" ng-click="refresh()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='refresh'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+				<span class="s_icon">
+					<img ng-src="./performanceAssessment/images/{{status.batchOperateBtn['hoverStatus']=='refresh'?'b3-1.png':'b3.png'}}"></span>
+				刷新
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- 下拉框 -->
+<div class="row edit_right_mid">
+	<div class="col-md-9">
+		<!-- 按稿件类型排序 -->
+		<trs-single-select selected-option="performDocStatusSelected" options="performDocStatusName" callback="queryByDropdown('DocType', performDocStatusSelected.value)"></trs-single-select>
+		<!-- 按稿件时间排序 -->
+		<trs-time-select selected-option="performTimeStatusSelected" options="performTimeStatus" callback="queryByDropdown('PubTime', performTimeStatusSelected.value)"></trs-time-select>
+	</div>
+	<div class="col-md-3 text-align-right">
+		<p class="text-danger">初评/终评数额应为0~100正整数</p>
+	</div>
+</div>
+<!-- 列表 -->
+<div class="edit_table">
+	<table class="table table-striped data-table black-box">
+		<thead>
+			<tr>
+				<th class="td-check w50 txt_l">
+					<trs-checkbox ischecked="data.items.length>
+						0&&data.selectedArray.length==data.items.length" callback="checkAll()">
+					</trs-checkbox>
+				</th>
+				<th class="perform-num">序号</th>
+				<th class="perform-author">作者姓名</th>
+				<th>文章标题</th>
+				<th class="perform-cpscore">初评数额</th>
+				<th class="perform-zpscore">终评数额</th>
+				<th class="perform-remarks">备注</th>
+				<th class="perform-opt">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- 加载 -->
+			<div cg-busy="loadingPromise"></div>
+			<tr ng-repeat="item in data.items">
+				<td class="td-check">
+					<trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="checkSingle(item)"></trs-checkbox>
+				</td>
+				<!-- 序号 -->
+				<td>{{(page.CURRPAGE-1)*page.PAGESIZE+$index+1}}</td>
+				<!-- 作者姓名 -->
+				<td>{{item.TRUEAUTHOR}}</td>
+				<!-- 文字标题 -->
+				<td class="text-align-left">{{item.TITLE}}</td>
+				<!-- 初评数额 -->
+				<td ng-class="{'has-error':item.invalidCP}">
+					<input class="form-control pe_score_input" type="text" ng-model="item.CPSCORE" ng-disabled="data.disableCP" ng-change="validCP(item,item.CPSCORE)"></td>
+				<!-- 终评数额 -->
+				<td ng-class="{'has-error':item.invalidZP}">
+					<input class="form-control pe_score_input" type="text" ng-model="item.ZPSCORE" ng-disabled="data.disableZP" ng-change="validZP(item,item.ZPSCORE)"></td>
+				<!-- 备注 -->
+				<td>
+					<input class="form-control pe_score_input" type="text" ng-model="item.REMARKS"></td>
+				<!-- 操作 -->
+				<td>
+					<button class="btn btn-default btn_edit_search" type="button" ng-click="save(item)">保存</button>
+				</td>
+			</tr>
+			<!-- 无数据情况 -->
+			<tr ng-if="data.items.length==0">
+				<td colspan="8">暂无数据</td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- 分页 -->
+	<div class="page">
+		<pagination class="pagination-sm page_left" num-pages="page.PAGECOUNT" total-items="page.ITEMCOUNT" ng-model="page.CURRPAGE" items-per-page="page.PAGESIZE" ng-change="pageChanged()" boundary-links="true" rotate="false" max-size="maxSize" boundary-link-numbers="true" first-text="首页" last-text="末页" previous-text="上一页" next-text="下一页"></pagination>
+		<trs-pagenation-right callback="jumpToPage()" currpage="status.jumpCurrPage" page="page"></trs-pagenation-right>
+	</div>
+</div>

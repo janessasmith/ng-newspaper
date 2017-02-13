@@ -1,0 +1,62 @@
+/**
+稿件列表
+**/
+
+.toBeCompiled-darft-list {
+    min-height: 226px;
+    background: #F0F2F5
+}
+
+.toBeCompiled-darft-list p {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    margin: 0px;
+    margin-left: 20px
+}
+
+.toBeCompiled-darft-list ul li.active {
+    background: #4496D2;
+    color: white;
+    border: 1px solid #D2D1D2;
+}
+
+.toBeCompiled-darft-list ul {
+    padding: 0px;
+    margin-left: 17px;
+    width: 600px;
+    height: 165px;
+    overflow-y: auto;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #D2D1D2;
+}
+
+.toBeCompiled-darft-list ul li {
+    cursor: pointer;
+    padding-left: 20px;
+    line-height: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: #666666;
+    font-size: 12px
+}
+
+.toBeCompiled-list-container {
+    width: 633px;
+    background: #DDD;
+    top: 205px;
+    margin: 0px auto;
+}
+
+.toBeCompiled-directSign-footer .ml460 {
+    margin-left: 460px!important;
+}
+
+.toBeCompiled-directSign-footer .new-role-btn.toBeCompiled-directSign-confirm-modify {
+    margin: 0 30px 0 70px;
+}
+
+.toBeCompiled-directSign-footer .button-cancel {
+    background: #ccc !important;
+}

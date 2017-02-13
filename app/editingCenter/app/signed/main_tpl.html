@@ -1,0 +1,134 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-7">
+        <!-- <button ng-click="pushBar()" class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-if="!isTopbar" ng-mouseenter="status.batchOperateBtn['hoverStatus']='pushBar'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='pushBar'?'b5-1.png':'b5.png'}}" /></span> 推头条
+        </button> -->
+        <button class="btn btn-default btn-commen web_signed_btn_pixel100 opacity100" ng-click="retraction()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='retraction'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/newspaper/images/{{status.batchOperateBtn['hoverStatus']=='retraction'?'zm31-1.png':'zm31.png'}}"/></span> 取消签发
+        </button>
+        <!-- <button ng-click="batchShare()" class="btn btn-default btn-commen hidden-operate" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='batchShare'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='batchShare'?'b6-1.png':'b6.png'}}" /></span> 共享
+        </button> -->
+        <!-- <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="move()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='move'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='move'?'b2-1.png':'b2.png'}}" /></span> 移动
+        </button> -->
+        <button class="btn btn-default btn-commen opacity100" ng-disabled="data.selectedArray.length==0" ng-click="collect()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='collect'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='collect'?'zm12-1.png':'zm12.png'}}" /></span> 收藏
+        </button>
+        <button class="btn btn-default btn-commen opacity100 " ng-disabled="data.selectedArray.length==0" ng-click="exportDraft()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='exportDraft'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='exportDraft'?'i17-1.png':'i17.png'}}" /></span> 导出
+        </button>
+        <button class="btn btn-default btn-commen opacity100 web_signed_btn_pixel100" ng-disabled="data.selectedArray.length==0" ng-click="outSending()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='outSending'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='outSending'?'i20-1.png':'i20.png'}}" /></span> 邮件外发
+        </button>
+        <!-- 雅安日报新增 -->
+        <button class="btn btn-default btn-commen opacity100 web_signed_btn_pixel100" ng-disabled="data.selectedArray.length==0" ng-click="push()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='push'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='push'?'i20-1.png':'i20.png'}}" /></span> 推送
+        </button>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle btn-commen opacity100" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='more'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+                <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='more'?'b8-1.png':'b8.png'}}" /></span> 更多
+                <span class="pulldown_icon"></span>
+            </button>
+            <ul class="dropdown-menu edit_dropdown_menu">
+                <li><a ng-click="printBtn()">打印</a></li>
+                <li><a ng-click="hide()" ng-if="status.hasNoHide">隐藏</a></li>
+                <li><a ng-click="cancelHidden()" ng-if="status.hasHide">取消隐藏</a></li>
+                <li><a ng-click="fixed()" ng-if="status.hasNoFixed">固定位置</a></li>
+                <li><a ng-click="cancelFixed()" ng-if="status.hasFixed">取消定位</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <trs-nav-location is-all-route="isAllRoute"></trs-nav-location>
+        </ol>
+    </div>
+</div>
+<div class="row edit_right_mid app-selectedTimeType">
+    <div class="col-md-5 app-selected">
+        <span class="s_onlyme">只看我的</span>
+        <trs-radio ckstatus="status.onlyMine" ckcallback="isOnlyMine()"></trs-radio>
+        <!-- <button class="btn btn-default btn-commen pull-left" style="margin-right:16px" ui-sref=".focus">管理焦点</button> -->
+        <trs-single-select selected-option="data.selectedDocType" callback="queryDropDown('DocType',data.selectedDocType.value)" options="data.docTypeJsons"></trs-single-select>
+        <trs-time-select selected-option="data.selectedTimeType" options="data.timeTypeJsons" callback="queryDropDown('timeType',data.selectedTimeType.value)" fromdate="data.fromdate" untildate="data.untildate"></trs-time-select>
+    </div>
+    <div class="col-md-7">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键词检索" ng-model="keywords" ng-keypress="fullTextSearch($event)">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+        </div>
+        <trs-single-select class="pull-right" callback="" selected-option="data.selectedClassify" options="data.classifyJsons"></trs-single-select>
+        <trs-single-select class="pull-right" ng-show="status.isESSearch" selected-option="data.sortType" callback="queryDropDown('', data.sortType.value)" options="data.sortTypeJsons"></trs-single-select>
+    </div>
+</div>
+<div class="edit_table">
+    <table class="table table-striped data-table black-box">
+        <thead>
+            <tr>
+                <th class="td-check w90 txt_l">
+                    <trs-checkbox ischecked="data.items.length>0&&data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox>
+                </th>
+                <th class="xcol-newspaper-id">稿件ID</th>
+                <th>标题</th>
+                <th class="xcol-newspaper-type">类型</th>
+                <th class="xcol-newspaper-releaseBuild">创建人</th>
+                <th class="xcol-newspaper-type">状态</th>
+                <th class="xcol-newspaper-date">流程版本时间</th>
+                <th class="xcol-newspaper-operation">操作</th>
+                <th class="xcol-newspaper-picture">图示</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container dnd-list="data.items" dnd-allowed-types="['data.itemsType']" dnd-external-sources="false" dnd-dragover="true" dnd-drop="dropCallback(event, index, item, external, type, 'data.itemsType')">
+            <tr ng-mousedown="getIndex($index)" ng-repeat="item in data.items" dnd-draggable="item" dnd-type="'data.itemsType{{item.GDORDER}}'" dnd-effect-allowed="move" dnd-moved="data.items.splice($index, 1)">
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                    {{(page.CURRPAGE-1)*(page.PAGESIZE)+$index+1}}
+                    <img src="./editingCenter/app/images/nail.png" ng-if="item.GDORDER? true:false" class="edict_fixed_position" />
+                </td>
+                <td class="xcol-newspaper-id">
+                    {{item.METADATAID}}
+                </td>
+                <!-- 稿件ID -->
+                <td class="ta-l"><a ui-sref="appPreview({channelid:status.channelId,chnldocid:item.CHNLDOCID,siteid:status.siteId,metadataid:item.METADATAID,platform:2,doctype:(item.DOCTYPEID-1)})" target="_blank">{{item.TITLE}}</a></td>
+                <!--标题-->
+                <td ng-bind="item.DOCTYPE"></td>
+                <!--类型-->
+                <td ng-bind="item.TRUENAME"></td>
+                <!--创建人-->
+                <td>
+                    {{item.WEBSTATUSNAME}}
+                    <i class="signed-hide-tit" ng-show="item.HIDDEN == '1'?true:false">(隐藏)</i>
+                </td>
+                <!--状态-->
+                <td ng-bind="item.OPERTIME" class="pointer" ng-click="showVersionTime(item)">
+                </td>
+                <!--流程版本时间-->
+                <td>
+                    <a ui-sref="{{data.editPath[item.DOCTYPEID]}}({channelid:status.channelId,chnldocid:item.CHNLDOCID,siteid:status.siteId,metadataid:item.METADATAID,platform:2,doctype:(item.DOCTYPEID-1)})" target="_blank" title="编辑" ng-if="status.btnRights['app.yiqianfa.bianji']">
+                        <img src="./editingCenter/app/images/r1.png">
+                    </a>
+                    <!-- <span ng-bind="item.ISPUSHTOPCHNL!=0?'已推头条':'推头条'" class="inblock" ng-if="!isTopbar"></span>
+                    <trs-radio ckstatus="item.ISPUSHTOPCHNL!=0?true:false" ckstyle="signedradio" ckcallback="singlePushBar(item)" ng-if="!isTopbar"></trs-radio>
+                    <span class="pos-top-neg4">
+                        <button type="button" class="editing-bth" data-placement="bottom"  data-template-url="./editingCenter/app/signed/alertViews/linkChoose/linkChoose.html"  data-animation="am-flip-x"  data-auto-close="1" bs-popover ></button>
+                    </span> -->
+                </td>
+                <td class="edit-icon-td">
+                    <trs-thumb item="item" transform="editingCenterAllThumb"></trs-thumb>
+                </td>
+            </tr>
+            <tr class="dndPlaceholder">
+                <td colspan="9"><i>选定位置后松开鼠标</i></td>
+            </tr>
+        </tbody>
+    </table>
+    <div cg-busy="loadingPromise"></div>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <trs-pagenation-right callback="jumpToPage()" currpage="data.copyCurrPage" page="page"></trs-pagenation-right>
+    </div>
+</div>

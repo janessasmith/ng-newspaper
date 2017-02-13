@@ -1,0 +1,10 @@
+{
+	"result": [{	
+		"wxType": "服务号",
+		"typeId":1
+		
+	}, {
+		"wxType": "订阅号",
+		"typeId":2
+	}]
+}

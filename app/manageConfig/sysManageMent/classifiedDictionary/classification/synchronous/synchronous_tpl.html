@@ -1,0 +1,11 @@
+<div class="sys_classified_cl_synch">
+    <div class="sys_classified_cl_synch_head">同步分类至CKM服务器：</div>
+    <div class="sys_classified_cl_synch_content col-sm-12">
+        <div class="synch_content_line col-sm-6" ng-repeat="item in datas">
+            <input type="checkbox" value="192.168.0.1" class="synch_content_input"ng-click="synchronousSelected(item)" ng-model="item.selected">{{item.host}}</div>
+    </div>
+    <div class="sys_classified_cl_synch_bot text-right">
+        <button class="btn btn-primary synch_bot_upload btn_confirm" ng-click="confirm()">同步</button>
+        <button class="btn btn-primary synch_bot_cancel btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

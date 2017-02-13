@@ -1,0 +1,13 @@
+<div class="container-fluid ">
+    <div ui-view="header"></div>
+    <div class="row editing ovfl-hdn">
+        <div class="col-md-2 editing-left-fixed editing-height-fixed navsidebar">
+            <div ui-view="left"></div>
+        </div>
+        <div class="col-md-10 logmanage-content">
+            <div ui-view="main" class="main">
+            </div>
+            <div ui-view="footer" class="copyright"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="cue-monitor-type-custom-first">
+    <div class="cue-monitor-type-custom-first-wrap">
+        <b>内容领域:</b>
+        <div>
+            <p>全部</p>
+            <ul>
+            	<li ng-repeat="firstItem in firstItems">
+            		<span ng-bind="firstItem.dictName" ng-click="chooseFirstField(firstItem)" ng-class="{'cur':firstItem==firstCurItem}"></span>
+            	</li>
+            </ul>
+        </div>
+    </div>
+    <div class="cue-monitor-type-custom-first-wrap">
+        <b>二级领域:</b>
+        <div>
+            <p>全部</p>
+            <ul>
+            	<li ng-repeat="secondItem in secondItems">
+            		<span ng-bind="secondItem.dictName" ng-click="chooseSecondField(secondItem)" ng-class="{'cur':secondItem==secondCurItem}"></span>
+            	</li>
+            </ul>
+        </div>
+    </div>
+    <div class="cue-monitor-type-custom-first-footer">
+        <button class="new-role-btn btn_confirm" ng-click="next()">下一步</button> 
+        <button class="new-role-btn btn_confirm" ng-click="pre()">上一步</button>
+        <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+    </div>
+</div>

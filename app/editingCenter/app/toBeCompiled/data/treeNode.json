@@ -1,0 +1,78 @@
+{
+"CRUSER" : "admin",
+"OBJID" : "1",
+"GROUPID" : "1",
+"GROUPORDER" : "1",
+"OBJNAME" : "浙报集团",
+"ISVIRTUALORG" : "0",
+"ISUNIT" : "0",
+"OBJTYPE" : "201",
+"CRTIME" : "2015-09-21 10:37:02",
+"GNAME" : "浙报集团",
+"GDESC" : "",
+"HASRIGHT" : "true",
+"PARENTID" : "0",
+"RIGHTVALUE" : "9",
+"HASCHILDREN":"true",
+"CHILDREN":[
+         {
+         "CRUSER" : "admin",
+         "OBJID" : "2",
+         "GROUPID" : "2",
+         "GROUPORDER" : "1",
+         "OBJNAME" : "集团所属媒体",
+         "ISVIRTUALORG" : "0",
+         "ISUNIT" : "0",
+         "OBJTYPE" : "201",
+         "CRTIME" : "2015-09-21 10:38:25",
+         "GNAME" : "集团所属媒体",
+         "GDESC" : "",
+         "HASRIGHT" : "true",
+         "PARENTID" : "1",
+         "RIGHTVALUE" : "9",
+         "HASCHILDREN":"true",
+         "CHILDREN":[
+                  {
+                  "CRUSER" : "admin",
+                  "OBJID" : "3",
+                  "GROUPID" : "3",
+                  "GROUPORDER" : "1",
+                  "OBJNAME" : "浙江日报",
+                  "ISVIRTUALORG" : "0",
+                  "ISUNIT" : "1",
+                  "OBJTYPE" : "201",
+                  "CRTIME" : "2015-09-21 10:38:53",
+                  "GNAME" : "浙江日报",
+                  "GDESC" : "",
+                  "HASRIGHT" : "true",
+                  "PARENTID" : "2",
+                  "RIGHTVALUE" : "9",
+                  "HASCHILDREN":"true",
+                  "CHILDREN":[
+
+                        ]
+                  },
+                  {
+                  "CRUSER" : "admin",
+                  "OBJID" : "8",
+                  "GROUPID" : "8",
+                  "GROUPORDER" : "2",
+                  "OBJNAME" : "图片中心",
+                  "ISVIRTUALORG" : "0",
+                  "ISUNIT" : "1",
+                  "OBJTYPE" : "201",
+                  "CRTIME" : "2015-10-10 18:56:02",
+                  "GNAME" : "图片中心",
+                  "GDESC" : "",
+                  "HASRIGHT" : "true",
+                  "PARENTID" : "2",
+                  "RIGHTVALUE" : "9",
+                  "HASCHILDREN":"true",
+                  "CHILDREN":[
+
+                        ]
+                  }
+               ]
+         }
+      ]
+}

@@ -1,0 +1,21 @@
+<div class="multi-reports-alert-container">
+    <div class="multi-reports-alert-head">
+        <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()">
+    </div>
+    <div class="multi-reports-alert-left">
+        <img ng-src="./components/service/sweetalert/images/{{status.issuccess=='false'?'fb2.png':'fb1.png'}}">
+        <p ng-bind="status.title"></p>
+    </div>
+    <div class="multi-reports-alert-right">
+        <!-- <h6>引用文档</h6> -->
+        <ol>
+            <li ng-repeat="successReport in reports.success track by $index" class="multi-reports-succ-lists">
+                <span ng-bind="successReport"></span>
+            </li>
+            <li ng-repeat="failReport in reports.fail track by $index" class="multi-reports-fail-lists">
+                <span ng-bind="failReport"></span>
+            </li>
+        </ol>
+        <button class="btn btn-default multi-reports-alert-btn" ng-click="cancel()">确定</button>
+    </div>
+</div>

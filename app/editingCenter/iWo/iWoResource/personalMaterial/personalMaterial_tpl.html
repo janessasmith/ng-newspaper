@@ -1,0 +1,55 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <button class="btn btn-default btn-commen opacity100" ng-click="deleteItems()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon"><img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['clickStatus']==='delete'||status.batchOperateBtn['hoverStatus']==='delete'&&data.selectedArray.length>0?'fg2-1.png':'fg2.png'}}" /></span> 删除
+        </button>
+    </div>
+    <div class="col-md-4 col-lg-3">
+        <ol class="breadcrumb pull-right edit_breadcrumb">
+            <li>
+                <span>常用资源</span>
+                <span>个人素材</span>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="eidt_iwo_personalMaterial" ng-mouseleave="clearDeleteBtn()">
+    <div class="personalMaterial_creation_title">
+        <div>
+            <trs-checkbox ischecked="data.itemsLen!=0&&data.selectedArray.length == data.itemsLen" callback="selectAll()"></trs-checkbox>全选
+            <span></span>
+        </div>
+    </div>
+    <div class="website_m_box_2_minHeight">
+        <div class="website_newTab_modular_createY_all website_height_fixex">
+            <trs-timeline class="content_timeline content_timelineText">
+                <timegroup tick="item.day" ng-repeat=" item in data.creationAxisItems">
+                    <timeitem tick="n.value.CRTIME" ng-repeat="n in item.times" ng-mouseenter="status.showDeleteId=n.value.CREATIONID" ng-mouseleave="status.showDeleteId=''">
+                        <!-- <img src="n.IMGURL" alt="" ng-if="n.value.CREATIONTYPE==3"> -->
+                        <div class="personalMaterial_single_select">
+                            <trs-checkbox ischecked="data.selectedArray.indexOf(n)<0?false:true" callback="selectDoc(n)"></trs-checkbox>
+                        </div>
+                        <!-- <div ng-if="n.value.CREATIONTYPE=='2'">
+                            <custom-title tit="n.value.METATITLE" content="n.value.ABSTRACT" ng-click="creationOpen(n)" ></custom-title>
+                        </div> -->
+                        <a ng-if="n.value.CREATIONTYPE=='1'" data-ng-bind-html="n.value.METATITLE||n.value.CONTENT" ng-click="creationOpen(n)" href="javascript:;" class="w60"></a>
+                        <a ng-if="n.value.CREATIONTYPE=='2'" title="{{n.value.CONTENT}}" data-ng-bind-html="n.value.CONTENT" href="javascript:;" class="w60"></a>
+                        <a ng-if="n.value.CREATIONTYPE=='3'" data-ng-bind-html="n.value.CONTENT" title="{{n.value.CONTENT}}" ng-click="creationOpen(n)" href="javascript:;" class="w60"></a>
+                        <div ng-if="n.value.CREATIONTYPE=='3'" style="margin-left:20px;clear:both;">
+                            <img ng-src="{{n.value.IMGURL}}" style="width:250px;">
+                        </div>
+                        <p class="delete_single_creation" ng-show="n.value.CREATIONID==status.showDeleteId" ng-click="deleteItems(n)">
+                            <img src="./editingCenter/app/images/fg-r2.png"> 删除
+                        </p>
+                    </timeitem>
+                </timegroup>
+            </trs-timeline>
+        </div>
+        <div class="websist_normal" data-ng-if="status.message.creationAxisHasNoMore">没有更多了...</div>
+        <div data-ng-if="!status.message.creationAxisHasNoMore" cg-busy="loadingPromise" class="iwo_personalMaterial_loadMore" data-ng-click="getMoreCreationAxis()">
+            <img src="./editingCenter/website/images/images/newTab_2.png" /> 点击展开更多
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div cg-busy="loadingPromise"></div>
+</div>

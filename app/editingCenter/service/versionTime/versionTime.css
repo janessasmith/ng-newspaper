@@ -1,0 +1,195 @@
+    .editCompiledobjTime .modal-dialog {
+        width: 690px;
+        border: 1px solid #d9d6d1;
+        position: relative;
+        top: 125px;
+        background: #fff;
+        overflow: hidden;
+    }
+    
+    .editCompiledobjTime .modal-content {
+        width: 688px;
+        border: 0;
+        overflow: hidden;
+    }
+    
+    .editCompiledobjTime img.closeModal {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 0px;
+        top: -29px;
+        right: 10px;
+        cursor: pointer;
+    }
+    
+    .editCompiledobjTime .nav-tabs {
+        height: 42px;
+        background: #f1f3f5;
+    }
+    
+    .editCompiledobjTime .nav-tabs li {
+        width: 130px;
+        color: #666;
+        border-right: 1px solid #ccc;
+    }
+    
+    .editCompiledobjTime .nav-tabs li a {
+        padding: 0px;
+        width: 128px;
+        color: #666;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 42px;
+    }
+    
+    .editCompiledobjTime .nav-tabs > li > a {
+        border: none;
+    }
+    
+    .editCompiledobjTime .nav-tabs > li > a:hover {
+        border-color: none;
+    }
+    
+    .editCompiledobjTime .nav > li > a:hover,
+    .nav > li > a:focus {
+        background: none;
+        border-color: none;
+    }
+    
+    .editCompiledobjTime .nav-tabs > li.active > a,
+    .editCompiledobjTime .nav-tabs .nav-tabs > li.active {
+        background: #fff;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    .editCompiledobjTime .m_timeline .time_tick {
+        width: 24%;
+    }
+    
+    .editCompiledobjTime .m_timeline:before {
+        position: absolute;
+        display: block;
+        content: "";
+        top: 28px;
+        bottom: 0;
+        left: 24%;
+        border-right: 1px solid #1aba9f;
+    }
+    
+    .editCompiledobjTime .m_timeline .time_item_cnt {
+        display: inline-block;
+        padding-right: 10px;
+        margin-left: 24%;
+    }
+    
+    .editCompiledobjTime .m_box_2 {
+        border: 0;
+        padding: 0;
+        height: 420px;
+        overflow-y: auto;
+        width: 100%;
+    }
+    
+    .editCompiledobjTime .m_timeline .time_item_cnt a.exttype {
+        cursor: pointer;
+        color: #0097ce;
+        line-height: 30px;
+        margin-left: 8px;
+    }
+    
+    .editCompiledobjTime .m_timeline .time_item_cnt a.exttype:hover {
+        text-decoration: none;
+    }
+    
+    .editCompiledobjTime .nav-tabs > li.active > a,
+    .editCompiledobjTime .nav-tabs > li.active > a:hover,
+    .editCompiledobjTime .nav-tabs > li.active > a:focus {
+        border: none;
+        background: none;
+        line-height: 42px;
+        background: #fff;
+    }
+    
+    .m_box_2 p.logTitle {
+        position: absolute;
+        left: 195px;
+        margin: 0px;
+        top: 8px;
+        font-size: 14px;
+        color: #000;
+    }
+    
+    .m_nav h3.operateLog {
+        background: url("./editingCenter/iWo/images/operate.png") no-repeat;
+        width: 100px;
+        height: 32px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-indent: 26px;
+        line-height: 26px;
+        margin-left: 86px;
+    }
+    
+    .m_nav h3 {
+        background: url("./editingCenter/iWo/images/operate-1.png") no-repeat;
+        width: 100px;
+        height: 32px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-indent: 26px;
+        line-height: 26px;
+        margin-left: 150px;
+    }
+    
+    .m_nav_3 h3.operateLog {
+        background: url("./editingCenter/iWo/images/operate.png") no-repeat;
+        width: 100px;
+        height: 32px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-indent: 26px;
+        line-height: 26px;
+        margin-left: 62px;
+    }
+    
+    .m_nav_3 h3 {
+        background: url("./editingCenter/iWo/images/operate-1.png") no-repeat;
+        width: 100px;
+        height: 32px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-indent: 26px;
+        line-height: 26px;
+        margin-left: 121px;
+    }
+    
+    .editCompiledobjTime .versionTime_comment audio {
+        /*width: 45px;*/
+        position: relative;
+        top: 3px;
+        left: 10px;
+        opacity: .7;
+    }
+    
+    .editCompiledobjTime .versionTime_comment .comment_duration {
+        position: relative;
+        top: -5px;
+        left: 20px;
+    }
+    
+    .editCompiledobjTime .versionTime_comment .comment_name {
+        max-width: 100px;
+        word-break: break-all;
+    }
+    
+    .editCompiledobjTime .versionTime_comment .comment_content {
+        max-width: 320px;
+        word-break: break-all;
+    }

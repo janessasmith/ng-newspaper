@@ -1,0 +1,164 @@
+.echarts_init {
+    width: 1050px;
+    height: 300px
+}
+
+.editing-list-zjxw .editing_list_zjxw_img {
+    margin-right: 15px;
+    width: 15px;
+    vertical-align: -3px;
+}
+
+.row .breadcrumb > li + li:before {
+    padding: 0px;
+    color: #ccc;
+    content: "";
+}
+
+.content-error {
+    border-radius: 4px;
+    border: 1px solid #a94442;
+    overflow: hidden;
+    position: relative;
+}
+
+.website-content-valid-error .invalidate-input-box span.ng-scope {
+    left: 700px !important;
+    cursor: pointer;
+}
+
+.timeline .websist_normal {
+    width: 100%;
+    background: none;
+}
+
+.timeline .newsnewsmore {
+    width: 100%;
+    background: none;
+}
+
+.websist_normal {
+    z-index: 999;
+    text-align: center;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    background-color: #fafafa;
+    color: #23527c;
+    bottom: 1px;
+    position: absolute;
+    width: 99%;
+    margin-left: -10px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.website_detail_icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.website_height_fixex {
+    height: 508px
+}
+
+.edit_table .markPush {
+    font-size: 12px;
+    color: orange;
+    margin-left: 5px;
+}
+
+.edit_table .ta-l .markHidden {
+    font-size: 12px;
+    color: #46C529;
+    margin-left: 5px;
+}
+
+div.websiteSigned span.previewDraft {
+    font-size: 12px;
+    color: rgba(111, 142, 53, 0.66);
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+div.websiteSigned .dndDraggingSource {
+    /*opacity: 0.4*/
+    display: none;
+}
+
+;
+.website_left .website_active .panel-open .panel-heading {
+    color: #37b7fe;
+}
+
+.website_left .website_left_active .panel-heading {
+    background-color: #1c83d2;
+}
+
+.web_signed_btn_pixel100,
+.web_signed_btn_pixel100:hover,
+.web_signed_btn_pixel100:focus {
+    width: 100px;
+}
+
+.chexiaodingshi_width120,
+.chexiaodingshi_width120:hover,
+.chexiaodingshi_width120:focus {
+    width: 115px;
+}
+
+.more_sign li {
+    cursor: context-menu!important;
+}
+
+.ml0 {
+    margin-left: 0px;
+}
+
+.mr15 {
+    margin-right: 15px;
+}
+
+.m_box .col-sm-11 .suggestion input.draftSource {
+    float: left;
+    width: 400px;
+    margin-right: 20px;
+}
+
+.m_box .suggestion ul {
+    height: 220px;
+    width: 352px;
+    overflow-y: auto;
+    background: #fff;
+}
+
+
+/*网站列表标题图片*/
+
+.website_table_draftPublish {
+    text-align: left;
+}
+
+
+/*排序方式等下拉框 在ES检索下宽度变小*/
+
+@media screen and (max-width: 1366px) {
+    .edit_website_width .dropdown .bth-fix {
+        width: 109px!important;
+    }
+    .edit_website_width .dropdown .dropdown-menu {
+        min-width: 109px!important;
+    }
+}
+
+.website_timeSign_pd table tbody tr td {
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+}
+
+.website-title-picIcon {
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
+    color: #D55774;
+}

@@ -1,0 +1,61 @@
+<form name="createChlForm" novalidate>
+    <div class="man_produ_modify">
+        <div class="man_produ_modify_head">
+            <p ng-bind="column.title"></p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_modify_inner">
+            <div class="man_produ_column_modify">
+                <div class="invalidate-input-box {{createChlForm.createChlForm.$invalid?'has-error':''}}">
+                    <p class="exchangeSpan">唯一标识：</p>
+                    <input type="text " class="form-control man_produ_sensitive_text" name="singleMark" ng-model="channel.CHNLNAME" maxlength-error-message="长度不能超过50个字符!" validator="maxlength=50,required" ng-mouseenter="isShowTipsSiteNameA=true" ng-mouseleave="isShowTipsSiteNameA=false" is-show-tips="isShowTipsSiteNameA" /> &nbsp;&nbsp; 所在频道或栏目内引用名不能重复
+                </div>
+                <div class="invalidate-input-box {{createChlForm.channelName.$invalid?'has-error':''}}">
+                    <p class="exchangeSpan" ng-show="!column.isColumn">频道名称：</p>
+                    <p class="exchangeSpan" ng-show="column.isColumn">栏目名称：</p>
+                    <input type="text " class="form-control man_produ_sensitive_text" name="channelName" ng-model="channel.CHNLDESC" maxlength-error-message="长度不能超过50个字符!" validator="maxlength=50,required" ng-mouseenter="isShowTipsSiteNameB=true" ng-mouseleave="isShowTipsSiteNameB=false" is-show-tips="isShowTipsSiteNameB" />
+                </div>
+                <div class="invalidate-input-box h55 {{createChlForm.position.$invalid?'has-error':''}}">
+                    <p class="exchangeSpan">存放位置：</p>
+                    <input type="text " class="form-control man_produ_sensitive_text" name="position" ng-model="channel.DATAPATH" maxlength-error-message="长度不能超过50个字符!" validator="maxlength=50,englishAndNum,required" ng-mouseenter="isShowTipsSiteNameC=true" ng-mouseleave="isShowTipsSiteNameC=false" ng-change="examinePos()" is-show-tips="isShowTipsSiteNameC" /> &nbsp;&nbsp; （英文）请不要以符号“/”开头
+                    <p class="exchangeSpan wordError" ng-show='savePos=="false"'>存放位置已存在,请重新填写存放位置</p>
+                </div>
+                <div class="invalidate-input-box {{createChlForm.binding.$invalid?'has-error':''}}">
+                    <p class="exchangeSpan" ng-if="!column.isColumn">频道域名：</p>
+                    <p class="exchangeSpan" ng-if="column.isColumn">栏目域名：</p>
+                    <input type="text" name="binding" class="form-control man_produ_sensitive_text " ng-model="channel.ROOTDOMAIN" maxlength-error-message="长度不能超过200个字符!" validator="maxlength=200,haschinese" ng-mouseenter="isShowTipsSiteNameD=true" ng-mouseleave="isShowTipsSiteNameD=false" is-show-tips="isShowTipsSiteNameD" /> &nbsp;&nbsp; 推荐使用：http://www.pub.zjol.com.cn/所属目录
+                </div>
+                <div>
+                    <p class="exchangeSpan" ng-show="!column.isColumn">频道模板：</p>
+                    <p class="exchangeSpan" ng-show="column.isColumn">栏目模板：</p>
+                    <img src="./manageConfig/productManageMent/images/gl04.png " ng-click="chnlTemplate()" /> &nbsp;&nbsp;
+                    <i ng-bind="tempName.channelTempName||channel.OTHERTEMP[0].TEMPNAME"></i>
+                </div>
+                <div>
+                    <p class="exchangeSpan" ng-show="!column.isColumn">频道其他模板：</p>
+                    <p class="exchangeSpan" ng-show="column.isColumn">栏目其他模板：</p>
+                    <img src="./manageConfig/productManageMent/images/gl04.png " ng-click="chnlOtherTemplate() " /> &nbsp;&nbsp;
+                    <i ng-bind="tempName.otherTempName||channel.GAILANTEMP[0].TEMPNAME"></i>
+                </div>
+                <div>
+                    <p class="exchangeSpan">默认文章模板：</p>
+                    <img src="./manageConfig/productManageMent/images/gl04.png " ng-click="defaultArticleTemplate() " /> &nbsp;&nbsp;
+                    <i ng-bind="tempName.articleTempName||channel.DOCTEMP[0].TEMPNAME"></i>
+                </div>
+                <div class="singleSlected" ng-show="column.isColumn">
+                    <p class="exchangeSpan">栏目类型：</p>
+                    <trs-checkbox ischecked="channel.ISCLUSTER=='1'" label="选中为聚合栏目" callback="selectChlType()"></trs-checkbox>
+                </div>
+                <div class="singleSlected">
+                    <p class="exchangeSpan" ng-show="column.isColumn">前一栏目：</p>
+                    <p class="exchangeSpan" ng-show="!column.isColumn">前一频道：</p>
+                    <trs-single-select selected-option="selectedWebChannel " callback="querySelectChl() " options="websiteChannelsJson"></trs-single-select>
+                </div>
+            </div>
+            <div class="man_produ_modify_footer ">
+                <button class="news-role-btn btn_confirm" ng-click="confirm()">确定</button>
+                <button class="news-role-btn man_produ_modify_footer_cancel btn_cancel" ng-click="cancel() ">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

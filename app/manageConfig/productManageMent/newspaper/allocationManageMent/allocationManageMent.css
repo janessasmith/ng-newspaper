@@ -1,0 +1,266 @@
+.newspaper_fontsize {
+    font-size: 24px;
+    line-height: 54px;
+    height: 78px;
+    margin-left: 20px;
+    font-weight: 700;
+}
+
+.newspaper_management {
+    margin: 0px 8px;
+    border: 4px solid #ddd;
+    overflow: hidden;
+}
+
+.newspaper_management_tl {
+    height: 47px;
+    margin-bottom: 15px;
+    line-height: 47px;
+    padding-left: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #F1F3F5
+}
+
+.newspaper_management .m_box_item {
+    margin-bottom: 20px;
+}
+
+.newspaper_management .m_box_item div:first-child {
+    height: 34px;
+    line-height: 34px;
+    font-size: 15px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.newspaper_management .txt_l_fix {
+    text-align: left;
+    margin-left: 0px;
+    line-height: 34px;
+}
+
+.newspaper_management .md_lng {
+    width: 400px;
+    display: inline-block;
+}
+
+.newspaper_management_bd {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 35px 0px 35px 15px
+}
+
+.newspaper_management_dt .newspaper_management_bd_top_1px{
+    border-top: 1px solid #ddd;
+}
+
+.newspaper_management_dt .pt35{
+    padding-top:35px;
+}
+.newspaper_management_dt .mb35{
+    margin-bottom:30px;
+}
+
+.newspaper_management_bd-top {
+    border-top: 1px solid #ddd;
+    padding: 35px 0px 0px 15px
+}
+.newspaper_management .mgr39{margin-right: 23px}
+.newspaper_management_checkbox {
+    float: left;
+    margin-right: 28px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    padding-left: 0;
+}
+
+.newspaper_management_checkbox input {
+    position: relative;
+    top: 2px;
+}
+
+.newspaper_management_checkbox input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.newspaper_management_checkbox [type="radio"] {
+    margin-right: 8px
+}
+.newspaper_management .allocation-select .dropdown .bth-fix{width: 401px}
+.newspaper_management .allocation-select .dropdown .dropdown-menu {    min-width: 401px;}
+
+.newspaper_management .management_edit {}
+
+.newspaper_management .management_edit_tl {
+    cursor: pointer;
+    margin-bottom: 13px;
+    background: #3495FC;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    line-height: 30px
+}
+
+.newspaper_management_dt {
+    font-family: "微软雅黑";
+}
+
+.newspaper_management_dt .col-md-2 {
+    width: 13.666667%;
+}
+
+.newspaper_management_dt .mb32 {
+    margin-bottom: 32px
+}
+
+.newspaper_management .management_edit_detail {
+    border: 1px solid #ddd;
+}
+
+.newspaper_management .management_edit_detail ul {
+    margin: 0px;
+    padding: 0px
+}
+
+.newspaper_management .management_edit_detail ul li {
+    padding-right: 30px;
+    padding-left: 10px;
+    line-height: 40px;
+    height: 40px;
+    position: relative;
+    list-style: none;
+}
+
+.newspaper_management .management_edit_detail ul li:nth-child(2n) {
+    background: #f7f9fb
+}
+
+.newspaper_management .management_edit_detail ul li i {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+.newspaper_management .mb20 {
+    margin-bottom: 20px;
+    padding-left: 0px;
+}
+
+.newspaper_management .management_fix_padding {
+    padding-left: 0px;
+    padding-right: 0px
+}
+
+.management_fix_checkbox {
+    margin-left: 8px!important;
+    position: relative;
+    top: 2px
+}
+
+.newspaper_management .management_fix_height {
+    line-height: 32px;
+    height: 32px;
+}
+
+.management_edit_button {
+    width: 100%;
+    text-align: right;
+    margin-bottom: 40px
+}
+
+.management_edit_button button {
+    border: 0px;
+    background: #3495FC;
+    margin-top: 25px;
+    width: 110px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    margin-right: 22px
+}
+
+.management_edit_button button:last-child {
+    margin-right: 60px
+}
+
+.checkbox_style .regular-checkbox + label {
+    background: url("./manageConfig/images/bk1-1.png") no-repeat;
+    border: 0;
+}
+
+.checkbox_style .regular-checkbox:checked + label:after {
+    background: url("./manageConfig/images/bk1.png") no-repeat;
+    border: 0;
+    width: 14px;
+    height: 14px;
+    top: 0px;
+    left: 0px;
+}
+
+.radio_style .regular-checkbox + label {
+    background: url("./manageConfig/images/bk2-1.png") no-repeat;
+    border: 0;
+}
+
+.radio_style .regular-checkbox:checked + label:after {
+    background: url("./manageConfig/images/bk2.png") no-repeat;
+    border: 0;
+    width: 14px;
+    height: 14px;
+    top: 0px;
+    left: 0px;
+}
+
+.newspaper_management_checkbox trs-single-radio {
+    margin-right: 28px
+}
+
+.newspaper_management_checkbox trs-single-radio span {
+    font-size: 14px;
+    padding-top: 0px;
+    position: relative;
+    top: -1px;
+    display: grid;
+}
+
+/*川报修改*/
+.cb-authorized-wrap .panel-group .panel{
+    position: relative;
+}
+
+.cb-authorized-wrap .panel-heading{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #555;
+    margin-top: -1px;
+}
+
+.cb-authorized-wrap .panel-title{
+    padding-left: 10px;
+}
+
+.cb-authorized-wrap .panel-default > .panel-heading + .panel-collapse > .panel-body div{
+    line-height: 40px;
+    overflow:hidden;
+    padding-left: 20px;
+    color: #555;
+}
+
+.cb-authorized-wrap .panel-default > .panel-heading + .panel-collapse > .panel-body div:nth-child(even){
+    background: #fff;
+}
+
+.cb-authorized-wrap .panel-default > .panel-heading + .panel-collapse > .panel-body div:nth-child(odd){
+    background: #f7f9fb;
+}
+
+.cb-authorized-wrap .panel-default > .panel-heading + .panel-collapse > .panel-body div i{
+    float: right;
+    margin-right: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,34 @@
+.plan-detail-header{
+	height: 60px;
+    margin-bottom: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.plan-detail-header .tit{
+    font-size: 33px;
+    color: #333;
+    text-align: center;
+    margin: 0 100px;
+    font-family: "Microsoft Yahei";
+    word-break: break-word;
+        margin-top:20px;
+}
+
+.plan-detail-header .time{
+    text-align: center;
+    color: #575757;
+    font-family: "微软雅黑";
+}
+
+.plan-detail-body{
+	min-height: 300px;
+    border-bottom: 1px solid #ccc;
+}
+
+.plan-detail-body .content{
+	color: #444;
+    line-height: 36px;
+    margin: 25px 100px;
+    font-family: "Microsoft Yahei";
+    font-size: 18px;
+}

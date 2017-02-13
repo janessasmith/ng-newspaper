@@ -1,0 +1,54 @@
+.pmm-website-channel-modify-channl-other .modal-dialog{
+    width: 520px;
+}
+.pmm-website-channel-modify-channl-other .template-view-top-search{
+    float: right;
+    margin: 6px 20px 0 0;
+    width: 120px;
+    height: 30px;
+    background: url("./editingCenter/app/images/sch.jpg") no-repeat 90px center;
+}
+.pmm-website-channel-modify-channl-other .man_produ_column_modify_template{
+    background: #F0F2F5;
+    padding-top: 20px;
+}
+.pmm-website-channel-modify-channl-other .man_produ_column_modify_template label{
+    font-weight: normal;
+    font-size: 12px;
+}
+.pmm-website-channel-modify-channl-other .man_produ_column_modify_template input{
+    width: 18px;
+    height: 18px;
+    vertical-align: -5px;
+    margin-right: 5px;
+}
+.pmm-website-channel-modify-channl-other .man_produ_column_modify_template .template_chose_group > div,
+.pmm-website-channel-modify-channl-other .man_produ_column_modify_template .template_chose_footer{
+    padding-left: 20px;
+}
+.pmm-website-channel-modify-channl-other .man_produ_column_modify_template .template_chose_footer{
+    margin-top: 20px;
+}
+.pmm-website-channel-modify-channl-other .man_produ_column_modify_template .template_chose_group > div{
+    width: 40%;
+    display: inline-block;
+    color: #aaaaaa;
+}
+.pmm-website-channel-modify-channl-other .man_produ_delete_footer{
+    padding: 40px 10px 20px 130px;
+}
+.pmm-website-channel-modify-channl-other .man_produ_delete_footer .modify_template_footer_confirm{
+    margin-left: 76px;
+    background: #1aba9f;
+}
+.pmm-website-channel-modify-channl-other .man_produ_delete_footer button{
+    width: 80px;
+    height: 30px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}

@@ -1,0 +1,21 @@
+<div class="area_wrap" ng-show="subitem==curSubitem">
+     <ul>
+        <li ng-repeat="item in area.first track by $index" ng-bind="item.dictName" ng-mouseover="loadLeafArea(item,$event,'second')" ng-click="getDraft(item,$event)"></li>
+    </ul>
+    <ul>
+        <li ng-repeat="item in area.second track by $index" ng-bind="item.dictName" ng-mouseover="loadLeafArea(item,$event,'third')" ng-click="getDraft(item,$event)"></li>
+    </ul>
+    <ul>
+        <li ng-repeat="item in area.third track by $index" ng-bind="item.dictName" ng-click="getDraft(item,$event)"></li>
+    </ul>
+</div>
+
+
+<div class="subLevelMenu {{seclevchnl.show}}"  ng-show="subitem==curSubitem">
+    <div class="menuContent">
+        <div class="children" ng-repeat="item in area.first track by $index">
+            <a ng-click="getDraft(item,$event)" ng-bind="item.dictName"   href="javascript:void(0)"></a>
+            <!-- <i ng-click="getNextLevel(menu,'chnl2',seclevchnl)" ng-show="menu.HASCHILDREN=='true'" ng-class="{'selectedchnlHasChl':menu.CHANNELID==status.website.websiteSelectChl.chnl2.CHANNELID}"></i> -->
+        </div>
+    </div>
+</div>

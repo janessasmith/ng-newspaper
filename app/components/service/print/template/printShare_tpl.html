@@ -1,0 +1,52 @@
+<!-- 共享稿库打印模板的 -->
+<printcontainer>
+    <div ng-repeat="item in resultArray" class="trs-print-share" id="printPage{{$index}}" trs-finish-repeat>
+        <span class="print_Date_seconed">打印时间：{{date}}</span>
+        <div class="print-share-title">
+            <div class="printTit" ng-bind="item.TITLE"></div>
+            <div class="printDesc">
+                <ul>
+                    <li>
+                        <p>见报：</p>
+                        <p>第<span>&nbsp;&nbsp;&nbsp;</span>版</p>
+                        <p>版面：</p>
+                        <p>序号：{{item.METADATAID}}</p>
+                    </li>
+                    <li>
+                        <p>正文：<span ng-bind="item.XIAOYANGFILE" ng-if="item.XIAOYANGFILE"></span></p>
+                        <p>字数：{{item.DOCWORDSCOUNT}}</p>
+                        <p>行数：{{item.HANGCOUNT}}</p>
+                    </li>
+                    <li>
+                        <p>图片：<span ng-bind="item.XIAOYANGGRAYIMGFILE" ng-if="item.XIAOYANGGRAYIMGFILE"></span></p>
+                    </li>
+                    <li>
+                        <p>流程：<span ng-repeat="version in item.VERSION">[{{version.CRTIME}}]{{version.ATTRIBUTE}}-{{version.OPERUSERNAME}}({{version.OPERATION}})</span></p>
+                    </li>
+                    <li>
+                        <p>备注：<span>{{item.REMARKS}}</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="printContent mt10">
+            <span class="win_print_shoulder" ng-if="item.LEADTITLE" ng-bind="item.LEADTITLE"></span>
+            <div class="printTit" ng-bind="item.TITLE"></div>
+            <span class="win_print_yinti" ng-if="item.SUBTITLE" ng-bind="item.SUBTITLE"></span>
+            <span class="printAuthor" ng-bind="item.SIGNATUREAUTHOR"></span>
+        </div>
+        <div class="print-share-main">
+            <div class="print-share-pic-main" ng-repeat="pic in item.DOC_PICTURELIST">
+                <img src="{{pic.PERPICURL|trsSceUrl}}" alt="">
+                <p class="print_pic_desc" ng-bind-html="pic.APPDESC|trsWrap"></p>
+            </div>
+            <p class="print_pic_all_desc" ng-if="item.DOCTYPEID=='2'">
+                <br>
+                <br> 图集说明：
+            </p>
+            <div class="print-share-news-main" ng-bind-html="item.HTMLCONTENT|trsSce">
+            </div>
+        </div>
+        <div style="page-break-before:always;"></div>
+    </div>
+</printcontainer>

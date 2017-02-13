@@ -1,0 +1,113 @@
+.batchMoveNews-bottom {
+    width: 100%;
+    position: relative;
+}
+
+.batchMoveNews {
+    width: 98%;
+    height: 600px;
+    border: 1px solid #E0DDDB;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.batchMoveNews .busy {
+    top: -400px;
+}
+
+.batchMoveNews .main {
+    width: 100%;
+    height: 480px;
+    border-bottom: 1px solid #E0DDDB;
+}
+
+.batchMoveNews .main .left {
+    width: 50%;
+    height: 480px;
+    border-right: 1px solid #E0DDDB;
+}
+
+.batchMoveNews .main .head {
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.batchMoveNews .main .body {
+    height: 395px;
+    border: 1px solid #E0DDDB;
+    width: 90%;
+    margin-left: 25px;
+    overflow-y: auto;
+}
+
+.batchMoveNews .main .body .bodyhead {
+    width: 100%;
+    height: 35px;
+    background-color: #0095CE;
+    padding-left: 10px;
+    color: white;
+    font-size: 12px;
+    line-height: 35px;
+}
+
+.batchMoveNews .main .body .bodyhead img {
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+.batchMoveNews .main .body .bodyhead img.open {
+    margin-right: 6px;
+}
+
+.batchMoveNews .main .right {
+    width: 50%;
+    height: 480px;
+}
+
+.batchMoveNews .recuMove {
+    font-size: 12px;
+    width: 100%;
+    border-bottom: 1px solid #E0DDDB;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+
+.batchMoveNews .recuMove span {
+    margin-right: 10px;
+}
+
+.batchMoveNews .recuMove label {
+    cursor: pointer;
+}
+
+.batchMoveNews-bottom button {
+    position: absolute;
+    left: 450px;
+    top: 12px;
+    width: 83px;
+    height: 33px;
+    font-size: 12px;
+    background-color: #0095CE;
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+}
+
+.batchMoveNews treecontrol.tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.batchMoveNews treecontrol.tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat;
+    vertical-align: -4px;
+}
+
+.myManuSubmit .busy {
+    top: -310px;
+}

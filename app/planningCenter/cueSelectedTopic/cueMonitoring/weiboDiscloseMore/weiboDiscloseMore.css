@@ -1,0 +1,36 @@
+.weibo-disclose-more-table{
+	table-layout: fixed;
+}
+
+.weibo-disclose-more-table thead tr th:nth-child(1){
+	width: 80px;
+}
+
+.weibo-disclose-more-table thead tr th:nth-child(3){
+	width: 150px;
+}
+
+.weibo-disclose-more-table thead tr th:nth-child(4){
+	width: 150px;
+}
+
+.weibo-disclose-more-table thead tr th:nth-child(5){
+	width: 120px;
+}
+
+.cue-monitor-more-container .weibo-disclose-more-table tbody tr td a{
+	width: auto;
+}
+
+.cue-monitor-more-container{
+	position: relative;
+}
+
+.weibodisclose  .edit_table {
+    margin-top: 10px;
+    min-height: 90px;
+}
+
+.weibodisclose .edit_table .page {
+    bottom: 0px;
+}

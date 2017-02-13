@@ -1,0 +1,35 @@
+<!-- nav_tpl -->
+<div class="row">
+	<tabset class="head_nav resourceCenter_head_sub_nav">
+		<!-- 川报修改(为了展示图片库模块)：暂时去掉权限控制"status.resourceCenterAccesses[item.MODALDESC]" -->
+	    <!-- <tab ng-if="$index<=10&&item.MODALDESC!='weibo'&&item.MODALDESC!='video'&&item.MODALDESC!='picture'&&status.resourceCenterAccesses[item.MODALDESC]&&item.MODALDESC!='digital'&&item.MODALDESC!='website'&&item.MODALDESC!='wechat'&&item.MODALDESC!='app'&&item.MODALDESC!='iwo'&&item.MODALDESC!='stock'" heading="{{item.MODALNAME}}" ng-repeat="item in items" class="nav_icon {{item.MODALDESC}}_ico cursor" ng-click="goTo(item)" active="item.isActive"> -->
+	    <!-- 川报修改 -->
+	    <tab ng-if="item.MODALDESC!='weibo'&&item.MODALDESC!='digital'&&item.MODALDESC!='website'&&item.MODALDESC!='wechat'&&item.MODALDESC!='app'&&item.MODALDESC!='iwo'&&item.MODALDESC!='stock'&&item.MODALDESC!='recyle'&&item.MODALDESC!='robot'&&item.MODALDESC!='add'&&item.MODALDESC!='liveshow'" heading="" ng-repeat="item in items" class="nav_icon {{item.MODALDESC}}_ico cursor" ng-click="goTo(item)" active="item.isActive" ng-dblclick="edit(item)">
+	    	<tab-heading>
+	    		<i ng-class="{'custom_icon':data.fixedArr.indexOf(item.MODALDESC)<0}"></i>
+	    		{{item.MODALNAME}}
+	    	</tab-heading>
+	    	<tabset class="head_sub_nav">
+	    		<!-- 川报修改 -->
+	    		<tab ng-repeat="n in item.childrenModule" heading="{{n.MODALNAME}}" ng-click="changeType(n,item.router,item.MODALDESC=='iwo')" active="n.focused" ng-hide="item.MODALDESC == 'xinhua'"></tab>
+	    		<tab ng-repeat="n in item.childrenModule" heading="{{n.MODALNAME}}" ng-click="cbXlfl()" ng-if="n.MODALNAME=='线路分类'" class="active" ng-show="item.MODALDESC == 'xinhua'"></tab>
+	    		<tab heading="新增订阅" ui-sref="retrieval.subscribe({type:true})" ng-if="item.MODALDESC=='iwo'"></tab>
+	        </tabset>
+	    </tab>
+	    <li class="nav_btn cursor" ng-mouseenter="moreMouseenter()" ng-mouseleave="moreMouseleave()" style="display: none;">
+	    	<img src="./resourceCenter/images/z12.png" alt="">
+	    	更多
+	    	<img src="./resourceCenter/images/z22.png" alt="">
+	    	<div class="rt-more-btn-list" ng-show="isShowMoreList" ng-mouseenter="moreMouseenter()" ng-mouseleave="moreMouseleave()">
+	    		<b href="">机器人稿</b>
+	    		<b href="">回收站</b>
+	    	</div>
+	    </li>
+	    <!-- <li class="nav_btn search_btn" ui-sref="retrieval.allsearch">
+            <button class="btn btn-default allsearch-btn" type="button">
+            	<img class="allsearch-pic" src="./resourceCenter/images/z13.png">
+            	<span class="allsearch-text">传媒数据库搜索</span>
+            </button>
+	    </li> -->
+	</tabset>
+</div>

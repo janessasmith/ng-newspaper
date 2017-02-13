@@ -1,0 +1,19 @@
+.man_produ_NewOrder .modal-content {
+    margin: 0 auto;
+    width: 479px;
+    border: 4px solid #dddddd;
+    top: 150px;
+}
+.man_produ_newpress_con_form .newOrder-content-title{
+	text-align:left;
+	line-height: 28px;
+}
+.man_produ_newpress_con_form div.invalidate-input-box{
+    display: inline-block;
+}
+.man_produ_newpress_con_form .newOrder-content-title{
+	width:50%;
+}
+.newpres-padding-left-style{
+	margin-left:70px;
+}

@@ -1,0 +1,225 @@
+/*老版窗口开始*/
+
+.editor_window_class .modal-dialog {
+    width: 640px;
+    background-color: #E1DFDA;
+    border-radius: 4px;
+}
+
+.editor_window {
+    width: 640px;
+    height: 506px;
+    padding-top: 3px;
+    background-color: #E1DFDA;
+    border-radius: 4px;
+}
+
+.editor_window .main {
+    width: 634px;
+    height: 500px;
+    margin-left: 3px;
+    background-color: white;
+}
+
+.editor_window .main .head {
+    height: 44px;
+    line-height: 44px;
+    font-weight: bold;
+    padding-left: 20px;
+    position: relative;
+}
+
+.editor_window .main .head img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.editor_window .main .editflow {
+    width: 600px;
+    height: 450px;
+    margin-left: 17px;
+    border: 1px solid #D7D3CE;
+    overflow: auto;
+}
+
+.editor_window .main .editflow ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.editor_window .main .editflow ul li {
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #666460;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.editor_window .main .editflow ul .selected {
+    background-color: #0095CE;
+    color: white;
+}
+
+.editor_window .main .buttom {
+    padding-top: 25px;
+    padding-left: 450px;
+}
+
+.editor_window .main .other {
+    margin-top: 390px;
+}
+
+.editor_window .main .buttom button {
+    width: 80px;
+    height: 28px;
+    font-size: 12px;
+    color: white;
+    border-radius: 4px;
+    border: 0px;
+    background-color: #0095CE;
+}
+
+.editor_window .main .search {
+    height: 66px;
+    line-height: 66px;
+    background-color: #F0F2F4;
+    font-size: 12px;
+    padding-left: 20px;
+}
+
+.editor_window .main .search span {
+    float: left;
+}
+
+.editor_window .main .search div {
+    padding-top: 18px;
+}
+
+.editor_window .main .search input {
+    width: 209px;
+    height: 33px;
+}
+
+.editor_window .main .body {
+    margin-top: 10px;
+}
+
+.editor_window .main .body .head {
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    background-color: #0095CE;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-left: 0px;
+}
+
+.editor_window .main .body .suggestion ul {
+    height: 200px;
+    overflow-y: auto;
+}
+
+.editor_window .main .body .left {
+    height: 374px;
+    width: 207px;
+    border: 1px solid #D7D3CE;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: auto;
+}
+
+.editor_window .main .body .left .tree-light li.tree-expanded i.tree-branch-head {
+    background: url("./editingCenter/app/images/m2-l.png") no-repeat 0 center;
+}
+
+.editor_window .main .body .left .tree-light li.tree-collapsed i.tree-branch-head {
+    background: url("./editingCenter/app/images/m1-l.png") no-repeat 0 center !important;
+}
+
+.editor_window .main .body .middle {
+    float: left;
+    height: 374px;
+    width: 172px;
+    border: 1px solid #D7D3CE;
+    overflow-y: auto;
+}
+
+.editor_window .main .body .middle input {
+    margin: 10px;
+    width: 143px;
+    height: 25px;
+}
+
+.editor_window .main .body .middle ul {
+    list-style: none;
+    padding-left: 0px;
+    font-size: 12px;
+    color: #666460;
+    padding-top: 5px;
+}
+
+.editor_window .main .body .middle ul .selected {
+    background-color: #0095CE;
+    color: white;
+}
+
+.editor_window .main .body .middle ul li {
+    height: 22px;
+    line-height: 22px;
+    cursor: pointer;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #666460;
+}
+
+.editor_window .main .body .middle_right {
+    width: 50px;
+    float: left;
+    height: 374px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.editor_window .main .body .right {
+    height: 374px;
+    width: 172px;
+    border: 1px solid #D7D3CE;
+    margin-right: 10px;
+    overflow: auto;
+}
+
+.editor_window .main .body .right input {
+    margin: 10px;
+    width: 150px;
+    height: 25px;
+}
+
+.editor_window .main .body .right ul {
+    list-style: none;
+    padding-left: 0px;
+    font-size: 12px;
+    color: #666460;
+    padding-top: 5px;
+}
+
+.editor_window .main .body .right ul .selected {
+    background-color: #0095CE;
+    color: white;
+}
+
+.editor_window .main .body .right ul li {
+    height: 22px;
+    line-height: 22px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.editor_window .main .body .middle_right div {
+    margin-top: 10px;
+    cursor: pointer;
+}

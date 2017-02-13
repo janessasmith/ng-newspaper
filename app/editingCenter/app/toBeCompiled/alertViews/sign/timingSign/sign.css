@@ -1,0 +1,232 @@
+.timing-sign .modal-dialog {
+    width: 630px;
+	margin-top:180px;
+}
+
+.timing-signed {
+    border: 3px solid #DCDEDB;
+    /*    font-family: "微软雅黑";*/
+    font-size: 14px;
+    color: #383838
+}
+
+.timing-tl i{
+    cursor: pointer;
+}
+
+.timing-sign .modal-content {
+   /* min-height: 320px;*/
+    border: none;
+}
+
+.timing-sign .timing-tl {
+    height: 41px;
+    line-height: 41px;
+    padding-left: 18px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.timing-sign .timing-tl p {
+    float: left;
+}
+
+.timing-sign .timing-tl i {
+    margin-right: 11px;
+    float: right;
+}
+
+.timing-sign .timing-row {
+    height: 116px;
+    border-bottom: 1px solid #fdfdfd;
+}
+
+.timing-sign .timing-choose {
+    margin: 0px 0px 0px 35px;
+    position: relative;
+}
+
+.timing-sign .timing-calendar {
+    overflow: hidden;
+    height: 35px;
+}
+
+.timing-sign .timing-calendar p {
+    font-size: 12px;
+    float: left;
+    color: #5E5F63;
+}
+
+.timing-sign .timing-calendar p input {
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #CACCCB;
+    width: 92px
+}
+
+.timing-sign .timing-check,
+.timing-sign .timing-detail {
+    height: 41px;
+    line-height: 41px;
+    overflow: hidden;
+}
+
+.timing-sign .timing-check p {
+    float: left;
+    margin-bottom: 0px;
+    margin-right: 5px;
+}
+
+.timing-sign .timing-check p input {
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+
+.timing-sign .timing-detail {
+    font-size: 12px
+}
+
+.timing-sign .timing-selected {
+    overflow: hidden;
+    /*min-height: 263px*/
+}
+
+.timing-sign .timing-selected-tl {
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+}
+
+.timing-sign .timing-bd {
+    height: 13px;
+    border-bottom: 1px solid #D0D1D5;
+}
+
+.timing-sign .timing-bd-tl {
+    position: absolute;
+    width: 142px;
+    font-size: 12px;
+    line-height: 25px;
+    color: #666867;
+    top: 0px;
+    text-align: center;
+    left: 44px;
+    background: white;
+}
+
+.timing-sign .timing-td {
+    width: 594px;
+    margin: 0 auto;
+    border: 1px solid #D0D1D5;
+}
+
+.timing-sign .timing-td-tl {
+    background: #F1F2F6;
+    height: 38px;
+    color: #252628;
+    font-family: "微软雅黑";
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid #D0D1D5;
+    overflow: hidden;
+}
+
+.timing-sign .timing-td-tl p {
+    float: left;
+    font-size: 12px;
+    line-height: 38px;
+}
+
+.timing-sign .timing-td-tl p.timing-td-tl-xl,
+.timing-sign .timing-td-detail p.timing-td-tl-xl {
+    width: 54px;
+    border-right: 1px solid #D0D2D1;
+    text-align: center;
+}
+
+.timing-sign .timing-td-tl p.timing-td-tl-detail,
+.timing-sign .timing-td-detail p.timing-td-tl-detail {
+    width: 468px;
+    border-right: 1px solid #D0D2D1
+}
+
+.timing-sign .timing-td-tl p.timing-td-tl-status,
+.timing-sign .timing-td-detail p.timing-td-tl-status {
+    width: 70px;
+}
+
+p.timing-td-tl-status img {
+    width: 20px;
+    height: 21px;
+    border: 0;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.timing-sign .timing-td-detail {
+    overflow: hidden;
+    height: 37px;
+    line-height: 37px;
+    border-bottom: 1px solid #D0D2D1
+}
+
+.timing-sign .timing-td-detail:last-child {
+    border-bottom: none
+}
+
+.timing-sign .timing-td-detail p {
+    float: left;
+    font-size: 12px;
+    color: #606261;
+}
+
+.timing-sign .timing-td-detail p.timing-td-tl-detail {
+    padding-left: 20px
+}
+
+.timing-sign .timing-td-button {
+    height: 50px;
+    text-align: right;
+    padding-right: 18px;
+    padding-top: 10px;
+    background: #F1F2F6
+}
+
+.timing-sign .timing-td-button button {
+    font-size: 12px;
+    border: none;
+    width: 82px;
+    line-height: 28px;
+    text-align: center;
+    color: white;
+    border-radius: 4px
+}
+
+.timing-sign .timing-td-button button.send {
+    background: #1ABA9E;
+    padding: 0px;
+}
+
+.timing-sign .timing-td-button button.cancel {
+    background: #4496D2
+}
+.timing-calendar .timeGroup{float: left; width: 130px;}
+.timing-calendar .timeGroup img.imgOne{width: 15px; height: 15px; border:0; position: absolute; top:50px; left: 106px;}
+.timing-calendar .timeGroup img.imgTwo{width: 15px; height: 15px; border: 0; position: absolute; top:51px; left:252px;}
+.timing-calendar .timeGroup input{width: 128px; height: 33px;border: 1px solid #cecece; border-radius: 3px 3px; padding: 0px; text-indent: 10px;}
+button.identify{cursor: not-allowed}
+/*新增*/
+.timing-sign .btn-default[disabled]
+{
+    background: none;
+}
+.timing-sign .btn-default[disabled]:hover {
+    background: none;
+}
+.timing-sign .btn-primary{color: #000;}
+
+.timing-calendar .timeGroup input.form-control[readonly]{
+    background: #fff;
+}

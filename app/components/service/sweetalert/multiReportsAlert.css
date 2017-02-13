@@ -1,0 +1,107 @@
+.multi-reports-alert-window .modal-dialog{
+	width: 640px;
+    height: 288px;
+    /*background-color: #ddd;*/
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 190px;
+}
+
+.multi-reports-alert-window .modal-dialog .modal-content{
+	width: 632px;
+	height: 280px;
+	background: #fff;
+	margin: 4px auto;
+}
+
+.multi-reports-alert-container{
+	height: 220px;
+}
+
+.multi-reports-alert-container .multi-reports-alert-head{
+	height: 40px;
+    line-height: 40px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+}
+
+.multi-reports-alert-container .multi-reports-alert-head img{
+	float: right;
+    margin: 12px 10px 0 0;
+    cursor: pointer;
+}
+
+.multi-reports-alert-container .multi-reports-alert-left{
+	width: 155px;
+    float: left;
+    border-right: 1px solid #e2e1e1;
+    height: 220px;
+    text-align: center;
+}
+
+.multi-reports-alert-container .multi-reports-alert-left img{
+	margin-top: 36px;
+}
+
+.multi-reports-alert-container .multi-reports-alert-left p{
+	font-size: 20px;
+    color: #444;
+    font-family: "微软雅黑";
+    margin-top: 10px;
+}
+
+.multi-reports-alert-container .multi-reports-alert-right{
+	float: left;
+    width: 455px;
+    height: 220px;
+    margin-left: 20px;
+}
+
+.multi-reports-alert-container .multi-reports-alert-right h6{
+	font-size: 14px;
+	font-weight: bold;
+	color: #3e3e3e;
+	margin-top: 2px;
+}
+
+.multi-reports-alert-container .multi-reports-alert-right ol{
+	overflow-y: auto;
+	height:176px;
+	margin-bottom:15px;
+}
+
+.multi-reports-alert-container .multi-reports-alert-right ol li{
+	line-height: 38px;
+	font-weight: bold;
+}
+
+.multi-reports-alert-container .multi-reports-alert-right ol li.multi-reports-succ-lists{
+	background: url("./components/service/sweetalert/images/fb3.png") no-repeat left 12px;
+}
+
+.multi-reports-alert-container .multi-reports-alert-right ol li span{
+	font-size: 14px;
+    color: #3e3e3e;
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+.multi-reports-alert-container .multi-reports-alert-right ol li.multi-reports-fail-lists{
+	background: url("./components/service/sweetalert/images/fb4.png") no-repeat left 12px;
+	margin-right:30px;
+}
+
+.multi-reports-alert-container .multi-reports-alert-right .multi-reports-alert-btn{
+	background: #4496d2;
+    color: white;
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-border-radius: 4px;
+    border-radius: 5px;
+    padding: 6px 30px;
+    cursor: pointer;
+    margin: 0 170px;
+}

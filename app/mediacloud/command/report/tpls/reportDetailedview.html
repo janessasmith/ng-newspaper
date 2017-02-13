@@ -1,0 +1,55 @@
+<div class="dp-rt-main no-pd" ng-controller="reportDetailedviewCtrl">
+    <ul class="dp-rt-tit rw-fl-lf">
+        <li ui-sref-active="tit-cur" class="tit-cur" ui-sref="command.reportDetailedview.reportViewMain(
+            {corpsId:corpsId})" ><a href="javascript:;" class="lh-main" >主界面</a></li>
+        <li ui-sref-active="tit-cur" ui-sref="command.reportDetailedview.reportViewExplanation( 
+            {corpsId:corpsId})"><a href="javascript:;" class="lh-sm" >任务说明</a></li>
+        <li ui-sref-active="tit-cur" ui-sref="command.reportDetailedview.reportViewManagement.list(
+            {corpsId:corpsId,orderType:'upcoming'})"><a href="javascript:;" class="lh-gl">任务管理</a></li>
+    </ul>
+    <div class="lh-main-opt">
+        <div class="opt-deal-bk lf" ui-sref="command.pubTask({corpsId:corpsId})">
+            <a href="javascript:void(0);" class="deal-bk-lk opt-fb-rw"><span></span>发布任务</a>
+        </div>
+        <div class="opt-deal-bk lf">
+            <a href="javascript:void(0);" class="deal-bk-lk opt-rd-bj"><span></span>热点背景<b></b></a>
+            <!--弹框-->
+            <div class="rd-bj-box" style="display: none;">
+                <div class="bj-box-table">
+                    <table cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <th>人名</th>
+                            <td><span class="name-cur">习近平</span><span>李克强</span><span>刘云山</span></td>
+                        </tr>
+                        <tr>
+                            <th>地名</th>
+                            <td><span class="name-cur">中国</span><span>北京</span></td>
+                        </tr>
+                        <tr>
+                            <th>机构名</th>
+                            <td><span class="name-cur">中共中央政治局常委</span><span>深化改革领导小组</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bj-box-ath">
+                    <a href="#" class="box-ath-deal">
+                        <h3>习近平心中的绿水青山是什么样子</h3>
+                        <p>1月20日，习近平来到大理白族自治州大理市湾桥
+                            镇古生村，仔细察看洱海边的生态保护湿地</p>
+                    </a>
+                    <div class="box-ath-ft">
+                        <p class="lf">来源：<span>时政新闻</span></p>
+                        <p class="rt"><span>2015年12月28日</span><span>15:00</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="opt-deal-bk lf no-mr">
+            <a href="javascript:void(0);" class="deal-bk-lk opt-cb-xg"><span></span>传播效果</a>
+        </div>
+    </div>
+    <div class="bd-hd-deal" ui-view>   
+    </div>
+</div>

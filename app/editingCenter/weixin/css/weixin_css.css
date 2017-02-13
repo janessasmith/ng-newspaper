@@ -1,0 +1,166 @@
+/* 左边列表样式 */
+.weixin-editing-list .editing-Sites_fa{
+    overflow-y: auto;
+    height: 500px;
+}
+.weixin_accordion .panel-default > .panel-heading {
+    background: #466385;
+    /* height: 40px; */
+    line-height: 40px;
+    border-bottom: 1px solid #30455A;
+    ;
+}
+.weixin_accordion .panel-default > .panel-heading:hover{
+    background-color: #4f6f95;
+}
+
+.weixin_accordion .panel-group {
+    min-height: 701px
+}
+
+.website_accordion .panel-group {
+    min-height: 544px;
+}
+
+.weixin_accordion .panel-default > .panel-heading .panel-title {
+    font-size: 15px;
+    font-family: "Microsoft Yahei";
+    padding-left: 10px;
+}
+
+.weixin_accordion .panel-default > .panel-heading .panel-title a {
+    color: #fff;
+    display: block;
+    margin-left: 6px;
+    width: 98%;
+}
+
+.weixin_accordion .panel-default > .panel-heading .panel-title a:hover,
+.weixin_accordion .panel-default > .panel-heading .panel-title a:focus,
+.weixin_accordion .panel-default > .panel-heading .panel-title a.active {
+    text-decoration: none;
+}
+
+.weixin_accordion .panel-default > .panel-heading .panel-title a img {
+    vertical-align: -7px;
+}
+
+.weixin_accordion .panel-default > .panel-heading .panel-title a img.fixed_align {
+    vertical-align: -2px;
+}
+
+.weixin_accordion .panel-default > .panel-heading .active {
+    /* background: url("./editingCenter/app/images/l12.png") no-repeat 100% center; */
+}
+
+.weixin_accordion .panel-body ul {
+    background: #3f5974;
+    height: auto;
+    margin-bottom: 0px;
+    margin-left: -40px;
+}
+
+.weixin_accordion .panel-body ul li {
+    height: 40px;
+    line-height: 40px;
+    list-style: none;
+    color: #fff;
+    width: 100%;
+    border-bottom: 1px solid #25395a;
+    position: relative;
+    padding-left: 17.85%;
+    cursor: pointer;
+    font-family: "Microsoft Yahei";
+}
+
+.weixin_accordion .panel-body ul li i {
+    float: left;
+    height: 40px;
+    /*width: 16%;*/
+    width: 24%;
+    text-align: right;
+}
+
+.weixin_accordion .panel-body ul li a {
+    display: inline-block;
+    padding: 0 0;
+    /*width: 81%;
+    text-align: left;*/
+    width: 74%;
+    text-align: left;
+    float: right;
+}
+
+.weixin_accordion .panel-body ul li a:focus,
+.weixin_accordion .panel-body ul li a:hover {
+    text-decoration: none;
+}
+
+.weixin_accordion .panel-body ul li span {
+    height: 22px;
+    line-height: 22px;
+    min-width: 32px;
+    background: #fff;
+    border-radius: 11px;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    font-size: 10px;
+    color: #211b1f;
+    text-align: center;
+}
+
+.weixin_accordion .panel-default > .panel-heading .panel-title a.ml0 {
+    margin-left: 0px;
+    font-size: 15px !important;
+}
+
+.weixin_accordion .panel-default > .panel-heading .panel-title a i {
+    display: block;
+    float: left;
+    width: 13%;
+}
+
+.weixin_accordion_new .weixin-left-div:hover {
+    background-color: #4f6f95;
+    cursor: pointer;
+}
+
+.weixin-left-div {
+    background: #466385;
+    line-height: 40px;
+    border-bottom: 1px solid #30455A;
+    color: #fff;
+    padding-left: 10px;
+    height: 40px;
+}
+
+.weixin-left-div i {
+    display: block;
+    float: left;
+    width: 16%;
+    padding-left: 6px;
+}
+
+.weixin-left-div a {
+    float: left;
+    width: 81%;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Microsoft Yahei";
+}
+
+.weixin-left-div a:hover,
+.weixin-left-div a:focus {
+    text-decoration: none;
+}
+
+.weixin-left-accordion-active {
+    background-color: #1c83d2 !important;
+}
+
+.editing_pd .table tbody tr td{
+    padding-top: 4px;
+    padding-bottom: 4px;
+}

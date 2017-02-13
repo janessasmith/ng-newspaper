@@ -1,0 +1,108 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-12 col-lg-12 mb10">
+        <button class="btn btn-default btn-commen opacity100" ng-click="publishLive()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='publishLive'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon" style="padding-right:0px;margin-left:0px;">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='publishLive'?'b1-1.png':'b1.png'}}"/>
+            </span> 发布直播
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="hoster()" ng-mouseenter="status.batchOperateBtn['hoverStatus']='hoster'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''" style="width:100px;">
+            <span class="s_icon" style="padding-right:2px;margin-left:0px">
+                <img ng-src="./manageConfig/groupUserManageMent/images/{{status.batchOperateBtn['hoverStatus']=='hoster'?'addUser-1.png':'addUser.png'}}"/>
+            </span> 管理主持人
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="deleteLives()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='delete'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon" style="padding-right:0px;margin-left:0px;">
+                <img ng-src="./editingCenter/app/images/{{status.batchOperateBtn['hoverStatus']=='delete'?'fg2-1.png':'fg2.png'}}" />
+            </span> 批量删除
+        </button>
+        <button class="btn btn-default btn-commen opacity100" ng-click="sortLive()" ng-disabled="data.selectedArray.length==0" ng-mouseenter="status.batchOperateBtn['hoverStatus']='sort'" ng-mouseleave="status.batchOperateBtn['hoverStatus']=''">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/{{status.batchOperateBtn['hoverStatus']=='sort'?'i41-1.png':'i41.png'}}" />
+            </span> 排序
+        </button>
+    </div>
+</div>
+<div class="row edit_right_mid">
+    <div class="col-md-12">
+        <div class="input-group edit_input_group mr15">
+            <input type="text" class="form-control edit_form_control" placeholder="请输入关键字搜索" ng-model="data.filterLive" ng-keypress="filterLive($event)">
+            <span class="input-group-btn">
+                <button class="btn btn-default btn_edit_search" type="button" ng-click="filterLive()">搜索</button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="edit_table border_radius_5">
+    <table class="table table-striped data-table">
+        <thead>
+            <tr>
+                <th class="td-check w90 txt_l">
+                    <trs-checkbox ischecked="data.items.length != 0 && data.selectedArray.length==data.items.length" callback="selectAll()"></trs-checkbox>
+                </th>
+                <th class="td-number">编号</th>
+                <th>直播名称</th>
+                <!--  <th class="xcol-newspaper-type">推送频道</th> -->
+                <th class="xcol-newspaper-date">添加时间</th>
+                <th class="xcol-newspaper-releaseBuild">显示操作</th>
+                <th class="xcol-newspaper-releaseBuild">结束操作</th>
+                <th class="xcol-newspaper-words">点击量</th>
+                <th class="w169">修改</th>
+                <th class="w76">删除</th>
+            </tr>
+        </thead>
+        <tbody trs-thumb-container>
+            <tr ng-repeat="item in data.items" style="height:30px;">
+                <!--单选框-->
+                <td class="td-check">
+                    <trs-checkbox ischecked="data.selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                </td>
+                <!--编号-->
+                <td class="xcol-newspaper-id" ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1">
+                </td>
+                <!-- 标题 -->
+                <td class="website_table_draftPublish">
+                    <a href="javascript:void(0)" title="{{item.TITLE}}" ng-bind="item.TITLE|truncate:20:'...'"></a>
+                </td>
+                <!--添加时间-->
+                <td ng-bind="item.INSERTTIME"></td>
+                <!--是否显示-->
+                <td>
+                    <span ng-if="item.ISSHOW==1" ng-click="showLive(item)" class="ng-scope"><img src="./manageConfig/productManageMent/images/n5_1.png">
+                        <a target="_blank">隐藏</a>
+                    </span>
+                    <span ng-if="item.ISSHOW=='0'" ng-click="showLive(item)" class="ng-scope"><img src="./manageConfig/productManageMent/images/n5.png">
+                        <a target="_blank">显示</a>
+                    </span>
+                </td>
+                <!--是否停用-->
+                <td>
+                    <span ng-if="item.ISCLOSE==0" ng-click="closeLive(item)" class="ng-scope"><img src="./manageConfig/productManageMent/images/n5_1.png">
+                        <a target="_blank">结束</a>
+                    </span>
+                    <span ng-if="item.ISCLOSE==1" ng-click="closeLive(item)" class="ng-scope"><img src="./manageConfig/productManageMent/images/n5.png">
+                        <a target="_blank">重启</a>
+                    </span>
+                </td>
+                <!--点击量-->
+                <td ng-bind="item.CLICKNUMBER"></td>
+                <!--修改-->
+                <td>
+                    <a class="operate" target="_blank" ng-click="editLive(item)"><img src="./resourceCenter/images/edit.png">编辑</a>
+                    <a target="_blank" ng-click="replyList(item)"><img src="./resourceCenter/images/list.png">列表</a>
+                    <a target="_blank" ng-click="replyLive(item)"><img src="./resourceCenter/images/reply.png">回复</a>
+                </td>
+                <!--删除-->
+                <td>
+                    <a class="operate" ng-click="deleteLives(item)"><img src="./editingCenter/app/images/fg-r2.png">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="page">
+        <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+        <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+        <!-- <pagination total-items="page.ITEMCOUT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination> -->
+        <trs-pagenation-right callback="jumpToPage()" page="page" currpage="data.copyCurrPage"></trs-pagenation-right>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

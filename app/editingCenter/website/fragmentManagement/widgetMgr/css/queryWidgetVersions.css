@@ -1,0 +1,50 @@
+.queryWidgetVersions-modal{
+    height:515px;
+    background-color: #F0F2F4;
+    border: 4px solid #dddddd;
+    border-radius: 4px;
+}
+.queryWidgetVersions-modal-header{
+    background-color: white;
+    color:black;
+    height:43px;
+    line-height: 43px;
+}
+.queryWidgetVersions-modal-title{
+    margin-left: 20px;
+}
+.queryWidgetVersions-modal-close{
+    margin-right: 10px;
+    float: right;
+    background-image: url("website/fragmentManagement/images/cls.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 40px;
+    cursor:pointer;
+}
+.queryWidgetVersions-modal-body{
+    height: 400px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right:10px;
+}
+.queryWidgetVersions-modal-inner-body{
+    background-color: white;
+    padding-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 450px;
+}
+.queryWidgetVersions-modal-table th{
+    text-align: center;
+}
+.queryWidgetVersions-modal-table td{
+    text-align: center;
+}
+.queryWidgetVersions-modal-pageuiHistory{
+    margin:0px;
+}
+.queryWidgetVersion-modal-button{
+    cursor:pointer;
+}

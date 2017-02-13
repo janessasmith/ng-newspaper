@@ -1,0 +1,68 @@
+<form name="cloudFileUpload" novalidate>
+    <div class="file-upload">
+        <div class="file-upload_detail">
+            <div class="detail_title" ng-bind="status.templateOnly?'模板上传':'文件上传'"></div>
+            <div class="detail_row">
+                <div class="file_upload_button" ngf-select ng-model="status.files" ngf-multiple="true" ngf-keep="'distinct'" ngf-change="selectFiles($files, $file, $newFiles)" multiple ng-bind="status.templateOnly?'点击上传新模板':'点击上传新文件'"> 点击上传新文件</div>
+                <table class="table table-striped table-bordered file-uploader-table" ng-if="status.showFiles.length>0 || list.ATTACHFILE.length>0">
+                    <thead>
+                        <tr>
+                            <th width="30%">附件名称</th>
+                            <th width="30%">附件描述</th>
+                            <th width="20%">操作</th>
+                            <th width="20%">状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 附件上传和待上传的列表 -->
+                        <tr ng-repeat="file in status.showFiles">
+                            <td>
+                                <div class="invalidate-input-box" ng-if="status.templateOnly">
+                                    <input type="text" ng-model="file.SRCFILE" name="filename" class="form-control" maxlength-error-message="长度不能超过200个字数！" validator="maxlength=200,required,spechar" ng-mouseenter="$index=true" ng-mouseleave="$index=false" is-show-tips="$index">
+                                </div>
+                                <div class="invalidate-input-box" ng-if="!status.templateOnly">
+                                    <input type="text" ng-model="file.SRCFILE" name="filename" class="form-control" maxlength-error-message="长度不能超过200个字数！" validator="maxlength=200,required,spechar,haschinese" ng-mouseenter="$index=true" ng-mouseleave="$index=false" is-show-tips="$index">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="invalidate-input-box" ng-if="status.templateOnly">
+                                    <input type="text" ng-model="file.APPDESC" name="filedesc" class="form-control" maxlength-error-message="长度不能超过200个字数！" validator="maxlength=200,required,spechar" ng-mouseenter="$index=true" ng-mouseleave="$index=false" is-show-tips="$index">
+                                </div>
+                                <div class="invalidate-input-box" ng-if="!status.templateOnly">
+                                    <input type="text" ng-model="file.APPDESC" name="filedesc" class="form-control" maxlength-error-message="长度不能超过200个字数！" validator="maxlength=200,required,spechar,haschinese" ng-mouseenter="$index=true" ng-mouseleave="$index=false" is-show-tips="$index">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="removeCurFile(file,$index)">
+                                    <span class="glyphicon glyphicon-trash"></span> 移除
+                                </button>
+                            </td>
+                            <td class="multiImgsUploader">
+                                <img ng-if="file.FILEINFO=='上传成功'" src="./manageConfig/productManageMent/images/n5.png" />
+                                <img ng-if="file.FILEINFO!=='上传成功'&&file.FILEINFO!=='等待上传'&&file.FILEINFO!=='上传中'" src="./planningCenter/images/gl50.png" />
+                                <img ng-if="file.FILEINFO=='等待上传'" src="./editingCenter/website/images/wait.png" />
+                                <img ng-if="file.FILEINFO=='上传中'" src="./editingCenter/newspaper/images/loading2.gif" />
+                                <span ng-bind="file.FILEINFO" class="text"></span>
+                                <!-- <div class="progress file-progress" ng-show="!file.PERPICURL">
+                                                <span class="percentage" ng-style="{'width':file.progressPercentage}"></span>
+                                            </div> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <button type="submit" class="btn btn-success btn-xs website-upload-btn" ng-click="fileSubmit()" ng-disabled="status.isUploaderFile==false">
+                                    <span class="glyphicon glyphicon-upload"></span> 上传
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="detail_confrim man_produ_modify_footer">
+                <button class="news-role-btn right btn_cancel" style="background: #1aba9e !important;" ng-click="cancel()">取消</button>
+                <button class="news-role-btn right btn_confirm btn" ng-click="confirm()" ng-disabled="status.successUpload==0||status.successUpload!=status.showFiles.length"> 确定</button>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

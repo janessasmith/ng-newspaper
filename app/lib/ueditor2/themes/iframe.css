@@ -1,0 +1,12 @@
+/*可以在这里添加你自己的css*/
+
+img {
+    margin-bottom: -3px;
+}
+
+trs_page_separator {
+    display: block;
+    height: 10px;
+    background-color: grey;
+    margin-bottom: 10px;
+}

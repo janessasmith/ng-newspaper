@@ -1,0 +1,29 @@
+<div class="weibo-league-table rt" ng-controller="influenceCtrl">
+    <div class="weibo-tit wb-zb-yx"><span>账号影响力榜单</span>
+<!--         <div class="sel-dt-box rt wb-ab-sel">
+            <div class="navChange">
+                <select ng-change="queryFluence();" class="sel" ng-model="upNav" ng-options="subNav.name as subNav.name for subNav in subNavs">
+                </select>
+            </div> 
+        </div> -->
+    </div>
+    <div class="wb-league-deal">
+        <div class="wb-zb-lg">
+            <span style="width:49px;">排名</span>
+            <span style="width:78px;margin-right: 32px;">账号名称</span>
+            <span style="width:66px;">综合评分</span>
+            <span style="width:65px;">集团排名</span>
+        </div>
+        <div class="league-deal-list" style="height: 401px;">
+            <a href="#" class="wb-add-btn"></a>
+            <ul class="zb-ph-ul">
+                <li ng-repeat="content in contents">
+                    <span class="zb-ph-red lf {{$index+1<=3?'red-bac':''}}">{{$index+1}}</span>
+                    <span class="zb-ph-name">{{content.name}}</span>
+                    <span class="rk-ct" style="width:66px;">{{content.score}}</span>
+                    <span class="rk-ct" style="width:66px;">{{content.num}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

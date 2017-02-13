@@ -1,0 +1,1 @@
+var setupDir = angular.module('setup.dir', []);

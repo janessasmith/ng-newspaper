@@ -1,0 +1,29 @@
+<div class="new-role-container">
+    <form novalidate name="roleForm" class="role-form">
+        <div class="new-role-head">
+            <p>新建角色</p>
+        </div>
+        <div class="new-role-body">
+            <p class="new_role_body_p">
+                <span>所属分组:</span>
+                <span class="c-666" ng-bind="groupName"></span>
+            </p>
+            <div class="new-role-div invalidate-input-box {{roleForm.rolename.$invalid?'has-error':''}}">
+                <b>角色名称:</b>
+                <!-- <input type="text" ng-model="roleName" placeholder="请输入角色名称" ng-change="nameChange()" /> -->
+                <input type="text" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,required" ng-model="roleName" placeholder="请输入角色名称" name="rolename" class="form-control" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                <!-- <p ng-show="passover" class='passover'>您输入的角色名重复，请重新输入</p>
+                <p ng-show="specialName" class='passover'>角色名中只能包含数字、字母、汉字、下划线与点</p>
+                <p ng-show="roleForm.rolename.$invalid">角色名长度为2~60个字符</p>
+                <p ng-show="roleNameLength">角色名长度为2~60个字符</p> -->
+            </div>
+            <!-- <p ng-show="passover" class='passover'>您输入的角色名重复，请重新输入</p>
+        <p ng-show="specialName" class='passover'>角色名中只能包含数字、字母、汉字、下划线与点</p>
+        <p ng-show="roleNameLength" class='passover'>角色名长度为2~60个字符</p> -->
+        </div>
+        <div class="new-role-footer">
+            <button class="new-role-btn ml156 btn_confirm" validation-submit="roleForm" ng-click="confirm()">确定</button>
+            <button class="new-role-btn btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,222 @@
+<div class="container-fluit res-ctr-detail">
+    <div class="operate-btns">
+        <button class="btn btn-primary" ng-click="openTakeDraftModal()">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/z56-1.png" />
+            </span>取稿
+        </button>
+        <!-- <button class="btn btn-primary">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/iWo/images/c11.png" />
+            </span>选择
+        </button> -->
+        <button class="btn btn-primary" ng-click="creationAxis()">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/z14-1.png" />
+            </span>创作轴
+        </button>
+        <!-- <button class="btn btn-primary">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/z15-1.png" />
+            </span>预留
+        </button> -->
+        <button class="btn btn-primary" ng-click="collect()">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/z16-1.png" />
+            </span>收藏
+        </button>
+        <button class="btn btn-primary" ng-click="printBtn()">
+            <span class="s_icon">
+                     <img ng-src="./editingCenter/app/images/zm15-1.png" /> 
+                </span> 打印
+        </button>
+        <button class="btn btn-primary" ng-click="close()">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/newspaper/images/c161.png" />
+            </span>关闭
+        </button>
+        <!-- <button class="btn btn-primary" ng-show="isDeleteBtnShow">
+            <span class="s_icon">
+                <img ng-src="./resourceCenter/images/z18-1.png" />
+            </span>删除
+        </button> -->
+    </div>
+    <div class="res-ctr-detail-wrap">
+        <!-- <div class="res-ctr-con-tit-rel ">
+            <ul>
+                <li ng-repeat="item in items">
+                    <span ng-bind="item.FIELDCNNAME+':'" ng-hide="detailInfos[item.FIELDENNAME] == null || item.FIELDENNAME =='IR_ABSTRACT'"></span>
+                    <span ng-bind="detailInfos[item.FIELDENNAME]" ng-hide="detailInfos[item.FIELDENNAME] == null || item.FIELDENNAME =='IR_ABSTRACT'"></span>
+                </li>
+            </ul>
+            <p>
+                <span>摘要:</span>
+                <span ng-bind="detailInfos.IR_ABSTRACT" ng-class="{'text-overflow-elps':status.initBtn}"></span>
+            </p>
+        </div>
+        <div class="res-ctr-detail-wrap-icon" ng-hide="detailInfos.IR_ABSTRACT==null">
+            <img src="./editingCenter/website/images/cablet1-1.jpg" ng-click="status.initBtn=!status.initBtn" ng-class="{'website_img_rota':status.initBtn==true}">
+        </div> -->
+        <div class="res-ctr-con-tit-rel ">
+            <ul>
+                <li>
+                    <span ng-if="!status.isReprintShow">来源：</span>
+                    <span ng-if="status.isEnterWebsite">网站：</span>
+                    <span ng-if="status.isEnterApp">客户端：</span>
+                    <span ng-bind="detailInfos.PRODUCTTYPE" ng-show="status.isProducttype"></span>
+                    <!-- 川报修改 -->
+                    <span ng-bind="detailInfos.ZB_SOURCE_SITE || detailInfos.SRCNAME" ng-show="!status.isProducttype || detailInfos.SRCNAME"></span>
+                </li>
+                <li>
+                    <span>作者：</span>
+                    <!-- 川报修改 -->
+                    <span ng-bind="detailInfos.DOCAUTHOR || detailInfos.AUTHOR"></span>
+                </li>
+                <li>
+                    <span>关键字：</span>
+                    <!-- 川报修改 -->
+                    <span title="{{detailInfos.ZB_KEYWORDS5_CHAR | trsSemicolonToBlank}}" ng-bind="detailInfos.KEYWORDS||detailInfos.ZB_KEYWORDS5_CHAR | trsSemicolonToBlank"></span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <span>发布时间：</span>
+                    <span ng-bind="detailInfos.DOCPUBTIME"></span>
+                </li>
+                <li ng-class="{'areali':!status.isExtraFieldsShow}">
+                    <span>地域：</span>
+                    <!-- 川报修改 -->
+                    <span class="area" ng-bind-html="detailInfos.ZB_AREA_LIST_CN || detailInfos.AREA"></span>
+                </li>
+                <li ng-if="status.isExtraFieldsShow">
+                    <span>栏目：</span>
+                    <span ng-bind="detailInfos.DOCCHANNEL"></span>
+                </li>
+            </ul>
+            <ul>
+                <li class="urlli" ng-if="status.isExtraFieldsShow">
+                    <span>源地址：</span>
+                    <span ng-bind="detailInfos.PUBURL"></span>
+                </li>
+                <li class="reprintLi" ng-if="status.isReprintShow">
+                    <span>来源：</span>
+                    <span ng-bind="detailInfos.IR_SRCNAME"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="res-ctr-con">
+            <!-- 上一页 -->
+            <!-- <a href="" ng-click="pageUp()">
+                <img ng-src="./editingCenter/newspaper/images/11_03.gif" width="30" title="上一页">
+            </a> -->
+            <p class="res-ctr-con-sub-tit" ng-bind="detailInfos.IR_URLTOPIC" ng-show="detailInfos.IR_URLTOPIC"></p>
+            <!-- 川报修改 -->
+            <p class="res-ctr-con-tit" ng-bind="detailInfos.DOCTITLE || detailInfos.TITLE " ng-show="detailInfos.DOCTITLE || detailInfos.TITLE"></p>
+            <p class="res-ctr-con-sub-tit" ng-bind="detailInfos.FB" ng-show="detailInfos.FB"></p>
+            <!-- <div class="res-ctr-con-tit-rel-wrap">
+                <p>
+                    <span ng-bind="detailInfos.DOCAUTHOR" ng-show="detailInfos.DOCAUTHOR"></span>
+                </p>
+                <p><span ng-bind="detailInfos.DOCPUBTIME" ng-show="detailInfos.DOCPUBTIME"></span></p>
+            </div> -->
+            <!-- 川报修改 -->
+            <div trs-add-to-create>
+                <p class="res-ctr-con-det" ng-bind-html="detailInfos.CONTENT" ng-if="!isGxgkContent"></p>
+                <p class="res-ctr-con-det" ng-bind-html="detailInfos.HTMLCONTENT" ng-if="isGxgkContent"></p>
+                <div ng-if="detailInfos.DOC_PICTURELIST[0].PERPICURL">
+                    <img ng-src="{{detailInfos.DOC_PICTURELIST[0].PERPICURL}}" alt="" style="display:block; max-width:600px; margin:0 auto;" trs-download-original-pic origin-pic="detailInfos.DOC_PICTURELIST[0]">
+                </div>
+            </div>
+            <p class="res-ctr-con-det txt_c" ng-repeat="imgurl in detailInfos.ImgsUrl">
+                <img ng-src="{{imgurl}}">
+            </p>
+            <!-- 下一页 -->
+            <!-- <a href="" ng-click="pageDown()">
+                <img ng-src="./editingCenter/newspaper/images/11_05.png" width="28" title="下一页">
+            </a> -->
+            <!-- 川报修改:音视频 -->
+            
+        </div>
+        <tabset justified="true" class="res-ctr-tabset" ng-hide="relatedManuscripts.result == 'fail' || status.isAllManuShow == false">
+            <!-- <p class="tit">相关稿件<i class="glyphicon glyphicon-arrow-right"></i></p> -->
+            <tab ng-repeat="relatedManuscript in relatedManuscripts" ng-show="relatedManuscript.resultSize!==0" ng-click="showRelatedManuscript(relatedManuscript.key)" ng-class="{active: active, disabled: disabled}">
+                <tab-heading>
+                    <i>{{relatedManuscript.resultSize | trsDataCountsShorten:99}}</i> {{relatedManuscript.keyCN}}
+                </tab-heading>
+                <ul class="res-ctr-rel-manu">
+                    <li ng-repeat="relatedManuList in relatedManuLists">
+                        <a ui-sref="resourcedetail({indexname:indexname,guid:relatedManuList.ZB_GUID})" ng-bind="relatedManuList.DOCTITLE" target="_blank"></a>
+                    </li>
+                </ul>
+                <!-- <a href="" style="float: right;margin-right: 20px;line-height: 40px;">更多>></a> -->
+            </tab>
+        </tabset>
+        <div class="res-detail-process-view">
+            <p class="res-detail-process-view-tit">流程查看</p>
+            <div class="res-detail-process-view-con">
+                <p class="res-detail-process-view-sub-tit">取、签、见、撤信息</p>
+                <div class="res-detail-process-view-head">
+                    <div>取稿人</div>
+                    <div>取稿媒体</div>
+                    <div>版面栏目</div>
+                    <div>时间</div>
+                    <div>操作</div>
+                </div>
+                <p ng-if="qqjccInfos.QU.length == 0" class="no-result-tit">暂无相关信息</p>
+                <div class="res-detail-process-view-body" ng-repeat="info in qqjccInfos.QU">
+                    <span ng-bind="info.OPERUSER"></span>
+                    <span ng-bind="info.MEDIANAME"></span>
+                    <span ng-bind="info.CHNLNAME"></span>
+                    <span ng-bind="info.OPERTIME"></span>
+                    <span ng-bind="info.OPERNAME"></span>
+                </div>
+                <div class="res-detail-process-view-head">
+                    <div>签发人</div>
+                    <div>签发媒体</div>
+                    <div>版面栏目</div>
+                    <div>时间</div>
+                    <div>操作</div>
+                </div>
+                <p ng-if="qqjccInfos.QIAN.length == 0" class="no-result-tit">暂无相关信息</p>
+                <div class="res-detail-process-view-body" ng-repeat="info in qqjccInfos.QIAN">
+                    <span ng-bind="info.OPERUSER"></span>
+                    <span ng-bind="info.MEDIANAME"></span>
+                    <span ng-bind="info.CHNLNAME"></span>
+                    <span ng-bind="info.OPERTIME"></span>
+                    <span ng-bind="info.OPERNAME"></span>
+                </div>
+                <div class="res-detail-process-view-head">
+                    <div>组版人</div>
+                    <div>见报媒体</div>
+                    <div>版面栏目</div>
+                    <div>时间</div>
+                    <div>操作</div>
+                </div>
+                <p ng-if="qqjccInfos.JIAN.length == 0" class="no-result-tit">暂无相关信息</p>
+                <div class="res-detail-process-view-body" ng-repeat="info in qqjccInfos.JIAN">
+                    <span ng-bind="info.OPERUSER"></span>
+                    <span ng-bind="info.MEDIANAME"></span>
+                    <span ng-bind="info.CHNLNAME"></span>
+                    <span ng-bind="info.OPERTIME"></span>
+                    <span ng-bind="info.OPERNAME"></span>
+                </div>
+                <div class="res-detail-process-view-head">
+                    <div>撤稿人</div>
+                    <div>撤稿媒体</div>
+                    <div>版面栏目</div>
+                    <div>时间</div>
+                    <div>操作</div>
+                </div>
+                <p ng-if="qqjccInfos.CHE.length == 0" class="no-result-tit">暂无相关信息</p>
+                <div class="res-detail-process-view-body" ng-repeat="info in qqjccInfos.CHE">
+                    <span ng-bind="info.OPERUSER"></span>
+                    <span ng-bind="info.MEDIANAME"></span>
+                    <span ng-bind="info.CHNLNAME"></span>
+                    <span ng-bind="info.OPERTIME"></span>
+                    <span ng-bind="info.OPERNAME"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</div>

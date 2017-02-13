@@ -1,0 +1,30 @@
+<div class="btn-group" dropdown>
+    <button ng-class='{"w158":selectedOption.name=="自定义"}' ng-click="status.isCustom=false" type="button" class="btn btn-default bth-fix" dropdown-toggle keyboard-nav>
+        <span class="btn-fix-title" value="{{selectedOption.value}}" ng-if="selectedOption.name=='自定义'">{{customTime}}
+        </span>
+        <span class="btn-fix-title" value="{{selectedOption.value}}" ng-if="selectedOption.name!='自定义'">{{label||selectedOption.name}}
+        </span>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" ng-class='{"w158":selectedOption.name=="自定义"}' role="menu" aria-labelledby="simple-btn-keyboard-nav" ng-if="!status.isCustom">
+        <li role="menuitem" ng-repeat="option in options track by $index" ng-click="setSelected(option)">
+            <a class="dropdown-menu-item" href="" title="{{option.name}}" ng-bind="option.name" value="{{option.value}}"></a>
+        </li>
+        <li role="menuitem" ng-click="">
+            <a href="" class="dropdown-menu-item" title="自定义" ng-click="status.isCustom=true">
+                自定义
+            </a>
+        </li>
+    </ul>
+    <div class="customarea" ng-if="status.isCustom">
+        <label>开始时间:</label>
+        <p class="customdatepicker">
+            <input type="text" class="form-control" readonly="true" ng-model="data.fromDate" placeholder="" data-autoclose="1" bs-datepicker>
+        </p>
+        <label>结束时间:</label>
+        <p class="customdatepicker">
+            <input type="text" class="form-control" readonly="true" ng-model="data.untilDate" placeholder="" data-autoclose="1" bs-datepicker>
+        </p>
+        <button type="button" class="btn-sm btn btn-info pull-right mt10" ng-click="setCustomOption()">确定</button>
+    </div>
+</div>

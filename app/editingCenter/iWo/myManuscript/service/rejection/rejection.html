@@ -1,0 +1,67 @@
+<form name="rejectionForm" novalidate>
+    <div class="myManuscript">
+        <div class="rejection">
+            <div class="head">
+                <p>退稿</p>
+                <img ng-click="cancel()" src="./editingCenter/app/toBeCompiled/images/cls.jpg">
+            </div>
+            <div class="middleFirst">
+                <!-- <div class="pack">
+                    <p class="title">标题:</p>
+                    <div class="selectedList">
+                        <a ng-repeat="title in titleList" title="{{title}}">
+                            <span class="lotTitle" ng-bind="title | trsLimitTo:13"></span>
+                        </a>
+                    </div>
+                    <img src="./editingCenter/app/images/lt2.png" ng-click="moreDrafts()" ng-if="medias.length>0" ng-class="{'active': hideNewsList}">
+                    <ul class="moreList" ng-show="hideNewsList">
+                        <li ng-repeat="media in medias" ng-bind="media | trsLimitTo:20"></li>
+                    </ul>
+                </div> -->
+                <div class="pack">
+                    <p class="number">共选择了{{chooseArray.length}}篇稿件</p>
+                </div>
+                <div class="radio">
+                    <ul>
+                        <li ng-repeat="radio in radioJson">
+                            <trs-single-radio label="{{radio.describe}}" group="'partterns'" ischecked="type==radio.type" callback="switch(radio.type)">
+                            </trs-single-radio>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main">
+                <div class="brokerage" ng-show="type=='1'">
+                    <div class="title">
+                        <span>所有经手人</span>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li ng-click="selectUser(user)" class="{{selectedUser==user?'selected':''}}" ng-repeat="user in users" ng-bind="user.GROUPPATH"></li>
+                        </ul>
+                    </div>
+                    <div class="wastetitle">
+                        <span>退稿原因</span>
+                    </div>
+                    <div class="invalidate-input-box {{rejectionForm.broReason.$invalid?'has-error':''}}">
+                        <textarea ng-model="broReason" class="form-control reason" name="broreason" maxlength-error-message="长度不能超过300个字符！" validator="maxlength=300" ng-style="{color:list.TITLECOLOR}" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips"></textarea>
+                    </div>
+                </div>
+                <div class="wasteDraft" ng-show="type!='1'">
+                    <div class="title">
+                        <span>退稿原因</span>
+                    </div>
+                    <div class="invalidate-input-box {{rejectionForm.reason.$invalid?'has-error':''}}">
+                        <textarea ng-model="reason" name="reason" class="form-control reason" maxlength-error-message="长度不能超过300个字符！" validator="maxlength=300" ng-style="{color:list.TITLECOLOR}" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div ng-click="switch('3')" ng-show="otherUsername" ng-bind="otherUsername"></div>
+                <button class="btn_confirm" ng-click="confirm()">确定</button>
+                <button class="btn_cancel" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

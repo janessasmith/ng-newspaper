@@ -1,0 +1,57 @@
+<div class="container-fluid editing-list">
+    <div ng-click="status.newspaper.isdownPicShow=!status.newspaper.isdownPicShow" class="editing-pos">
+        <div class="editing-news-list-zjxw site_btn"><img src="editingCenter/app/images/w33.png" class="editing_list_zjxw_img" /><span ng-bind="status.newspaper.selectedSite.SITEDESC | trsLimitTo:8" title="{{status.newspaper.selectedSite.SITEDESC}}"></span></div>
+        <div ng-if="status.newspaper.sites.length>1"><img src="./editingCenter/app/images/l5-1.png" class='edit_mark' ng-show="!status.newspaper.isdownPicShow">
+            <img src="./editingCenter/app/images/l5-2.png" class='edit_mark' ng-show="status.newspaper.isdownPicShow"></div>
+        <div ng-show="status.newspaper.isdownPicShow" class="editing-Sites_fa">
+            <div class="editing-Sites" ng-repeat="site in status.newspaper.sites" ng-click="setPaperSiteSelected(site)">{{site.SITEDESC| trsLimitTo:8}}
+                <img src="./editingCenter/app/images/l8.png" ng-show="site == status.newspaper.selectedSite">
+            </div>
+        </div>
+    </div>
+    <accordion class="iwo_accordion newspaper_active" close-others="false">
+        <accordion-group ng-if="status.paperAccessAuthority['DAIYONG']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'standbyDraft'==status.selectedChannl}">
+            <accordion-heading>
+                <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'standbyDraft'==status.selectedChannl?'nl01-1.png':'nl01.png'}}" class="editctr_newspaper_title_image"/></i>
+                <a class="ml0" ng-click="setCurrChannel('standbyDraft')">待用稿</a>
+            </accordion-heading>
+        </accordion-group>
+        <!-- <accordion-group ng-if="status.paperAccessAuthority['JINRI']=='true'&&status.newspaper.multiShenHe=='1'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'todaysDraft'==status.selectedChannl}"> -->
+        <accordion-group ng-if="status.paperAccessAuthority['JINRI']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'todaysDraft'==status.selectedChannl}">
+            <accordion-heading>
+                <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'todaysDraft'==status.selectedChannl?'nl02-1.png':'nl02.png'}}" class="editctr_newspaper_title_image"/></i>
+                <a class="ml0" ng-click="setCurrChannel('todaysDraft')">今日稿</a>
+            </accordion-heading>
+        </accordion-group>
+        <accordion-group ng-if="status.paperAccessAuthority['SHANGBAN']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'pageDraft'==status.selectedChannl}">
+            <accordion-heading>
+                <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'pageDraft'==status.selectedChannl?'nl03-1.png':'nl03.png'}}" class="editctr_newspaper_title_image"/></i>
+                <a class="ml0" ng-click="setCurrChannel('pageDraft')">上版稿</a>
+            </accordion-heading>
+        </accordion-group>
+        <accordion-group ng-if="status.paperAccessAuthority['YIQIAN']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'signedDraft'==status.selectedChannl}">
+            <accordion-heading>
+                <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'signedDraft'==status.selectedChannl?'nl04-1.png':'nl04.png'}}" class="editctr_newspaper_title_image"/></i>
+                <a class="ml0" ng-click="setCurrChannel('signedDraft')">已签稿</a>
+            </accordion-heading>
+        </accordion-group>
+        <accordion-group is-disabled="true" ng-class="{'iWo-left-accordion-active':'archiveDraft'==status.selectedChannl}" ng-if="status.paperAccessAuthority['GUIDANG']=='true'">
+            <accordion-heading>
+                <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'archiveDraft'==status.selectedChannl?'nl05-1.png':'nl05.png'}}" class="editctr_newspaper_title_image"/></i>
+                <a class="ml0" ng-click="setCurrChannel('archiveDraft')">归档稿</a>
+            </accordion-heading>
+        </accordion-group>
+        <accordion-group ng-if="status.paperAccessAuthority['DAYANGSHENYUE']=='true'" is-disabled="true" ng-class="{'iWo-left-accordion-active':'sampleReview'==status.selectedChannl}">
+            <accordion-heading>
+                <i><img ng-src="./editingCenter/newspaper/images/left_images/{{'sampleReview'==status.selectedChannl?'nl06-1.png':'nl06.png'}}" class="editctr_newspaper_title_image"/></i>
+                <a class="ml0" ng-click="setCurrChannel('sampleReview')">大样审阅</a>
+            </accordion-heading>
+        </accordion-group>
+       <!--  <accordion-group ng-if="status.paperAccessAuthority['DIGITAL']=='true'">
+            <accordion-heading>
+                <i><img src="./editingCenter/newspaper/images/dn-1.png" class="editctr_newspaper_title_image"/></i>
+                <a ng-click="digitalNewspapercheck()" target="_blank" class="ml0">数字报检查</a>
+            </accordion-heading>
+        </accordion-group> -->
+    </accordion>
+</div>

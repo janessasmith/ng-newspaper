@@ -1,0 +1,20 @@
+<form name="textDesignationForm" novalidate>
+    <div class="man_produ_modify" ng-class="{'active':isManusCorrShow}">
+        <div class="man_produ_modify_head">
+            <p>评审意见</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_modify_inner">
+            <div class="man_produ_column_modify">
+                <p>请在此输入版面的评签意见：</p>
+                <div class="invalidate-input-box">
+                    <textarea class="form-control" ng-model="content" name="content" maxlength-error-message="长度不能超过500个字符！" validator="maxlength=500,required" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" name="senword" is-show-tips="isShowTipsA"></textarea>
+                </div>
+            </div>
+            <div class="man_produ_modify_footer">
+                <button class="news-role-btn right btn_cancel" ng-click="cancel()">取消</button>
+                 <button class="news-role-btn right btn_confirm" ng-click="confirm()">确定</button>
+            </div>
+        </div>
+    </div>
+</form>

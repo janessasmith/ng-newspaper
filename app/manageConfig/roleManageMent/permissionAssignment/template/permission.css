@@ -1,0 +1,8 @@
+.permission .regular-checkbox + label {
+    padding: 6px!important;
+}
+
+.permission .regular-checkbox:checked + label:after {
+    top: 0px!important;
+    left: 0px!important;
+}

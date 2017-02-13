@@ -1,0 +1,7 @@
+<div class="dropDown">
+	<ul>
+		<li ng-mouseenter="icon=true" ng-mouseleave="icon=false" ng-class="record.selected" ng-repeat="record in records" ng-click="chooseUser(record)" ng-show="$index>5">
+			<img ng-src="./editingCenter/iWo/images/{{icon==true||record.selected=='selected'?'jt-lx.png':'limark.jpg'}}">&nbsp;<span ng-bind="record.OPERUSER"></span>
+		</li>
+	</ul>
+</div>

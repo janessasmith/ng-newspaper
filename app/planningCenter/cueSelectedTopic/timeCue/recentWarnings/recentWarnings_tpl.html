@@ -1,0 +1,82 @@
+<div class="warnings">
+    <div class="warnings_button">
+        <button class="button_disaster">自然灾害</button>
+        <div class="input-group monitor_input_group">
+            <input type="text" placeholder="请输入关键字搜索" ng-model="data.keywords" ng-keypress="queryListBySearchWord($event)" class="form-control monitor_form_control">
+            <span class="input_group_btn">
+                <button class="btn btn-default btn_monitor_search" type="button" ng-click="queryListBySearchWord()">检索</button>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-8 warnings_disaster_left">
+        <div class="warnings_disaster" ng-repeat="item in data.items">
+            <span class="warnings_icon">
+                <!--图标-->
+                <img ng-if="item.RATE!='其它'" ng-src="./planningCenter/cueSelectedTopic/timeCue/images/{{showImg(item)}}">
+                <div ng-if="item.GROUPNAME=='地震'" class="earthquakeLevel" ng-bind="item.RATE+'级'"></div>
+            </span>
+            <ul class="warnings_main {{item.RelieveEntity.URLTITLE?' warnings_main_relieve':'warnings_main_color'}}" ng-class="item.RATE=='其它'?'warnings_main_noIcon':''">
+                <li class="blue" ng-bind-html="item.URLTITLE | trsSce"></li>
+                <li><span class="green" ng-bind="item.SITENAME"></span><span ng-bind="timeStamp(item)" class="green pl10"></span></li>
+                <li ng-bind-html="item.ABSTRACTCONTENT | trsSce"></li>
+                <li ng-init="getRelieveEntity(item)" ng-show="item.RelieveEntity.URLTITLE">
+                    <div ng-mouseenter="showTitle(item,$event,500)" ng-mouseleave="item.isShowTitle=false" class="title">
+                        <span ng-bind-html="item.RelieveEntity.URLTITLE | trsSce"></span>
+                        <span ng-bind="item.RelieveEntity.SITENAME"></span>
+                        <span ng-bind="item.RelieveEntity.URLTIME"></span>
+                        <div class="custom-wrap" ng-show="!!item.isShowTitle" ng-style="item.panelpostion">
+                            <h6 ng-bind-html="item.RelieveEntity.ABSTRACTCONTENT | trsSce"></h6>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class="gray_line"></p>
+        </div>
+    </div>
+    <div class="col-md-4 warnings_disaster_right">
+        <!-- <div><img src="./planningCenter/cueSelectedTopic/timeCue/images/t-4.gif"></div> -->
+        <div class="minHeight500">
+            <div class="warnings_disaster_right_head" ng-click="status.showDisasterTypes=!status.showDisasterTypes">
+                <img ng-src="./planningCenter/cueSelectedTopic/timeCue/images/{{status.showDisasterTypes?'ti-6.jpg':'ti-6-1.jpg'}}" alt="">
+                <span>灾害类型</span>
+            </div>
+            <ul class="disasterTypes" ng-if="status.showDisasterTypes">
+                <!--地震预警 start-->
+                <li>
+                    <div class="disasterType_list_tit">
+                        <trs-checkbox ischecked="data.selectedEarth.length>0" callback="selectAllEarth()"></trs-checkbox><span ng-click="status.showEarthquake=!status.showEarthquake" ng-bind="data.rightDisasterTypes[0].DESC"></span></div>
+                    <ul ng-if="status.showEarthquake" class="disasterTypeItem_list">
+                        <li ng-repeat="childEarth in data.AllEarths">
+                            <trs-checkbox ischecked="data.selectedEarth.indexOf(childEarth.VALUE)>-1" callback="selectedDisasterTypes(childEarth.VALUE,'earth')"></trs-checkbox><span class="earth" ng-bind="childEarth.DESC"></span></li>
+                    </ul>
+                </li>
+                <!--地震预警 end-->
+                <!--台风预警 start-->
+                <li>
+                    <div class="disasterType_list_tit">
+                        <trs-checkbox ischecked="data.typhoon!=''" callback="selectTyphoon(data.rightDisasterTypes[2].VALUE)"></trs-checkbox><span ng-bind="data.rightDisasterTypes[2].DESC"></span></div>
+                </li>
+                <!--台风预警 end-->
+                <!--天气预警 start-->
+                <li>
+                    <div class="disasterType_list_tit">
+                        <trs-checkbox ischecked="data.selectedWeather.length>0" callback="selectAllWeather()"></trs-checkbox><span ng-click="status.showWeather=!status.showWeather" ng-bind="data.rightDisasterTypes[1].DESC"></span></div>
+                    <ul ng-if="status.showWeather" class="disasterTypeItem_list">
+                        <li ng-repeat="childWeather in data.AllWeathers">
+                            <trs-checkbox ischecked="data.selectedWeather.indexOf(childWeather.VALUE)>-1" callback="selectedDisasterTypes(childWeather.VALUE,'weather')"></trs-checkbox><span class="{{childWeather.CLASS}}"></span><span ng-bind="childWeather.DESC"></span></li>
+                    </ul>
+                </li>
+                <!--天气预警 end-->
+            </ul>
+        </div>
+        <div class="warnings_disaster_right_save">
+            <button class="btn btn-info" type="button" ng-click="saveAndWatch()">保存并查看</button>
+        </div>
+    </div>
+</div>
+<div class="page timeCue_page">
+    <trs-pagenation-left total-num="page.ITEMCOUNT" page-count="page" pagesize="page.PAGESIZE" is-select-pagecount="false"></trs-pagenation-left>
+    <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="false" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+    <!-- <trs-pagenation-right callback="jumpToPage()" currpage="status.jumpToPageNum" page="page"></trs-pagenation-right> -->
+</div>
+<div cg-busy="loadingPromise"></div>

@@ -1,0 +1,83 @@
+<div class="dp-rt-main no-pd" style="margin-top: 0;" ng-controller="PubTaskCtrl">
+    <div class="cg-ls-top">
+        <div class="cg-deal-tit rw-zl-tit lf">新建任务</div>
+    </div>
+    <form class="w5c-form" method="post" id="iconForm" name="iconForm" 
+          enctype="multipart/form-data" w5c-form-validate="vm.validateOptions" 
+          novalidate>
+    <div class="cg-xq-main">
+        <div class="cg-xq-deal">
+            <div class="cg-xq-bk">
+                <label>指令标题：</label>
+                <div class="xq-bk-rt">
+                    <input type="text" class="form-control" name="heading" required ng-model="params.title"/>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>指令内容：</label>
+                <div class="xq-bk-rt no-pd">
+                    <div id="editor" style="margin-bottom:1.25rem" config="config" class="ueditor"
+                         ng-model="params.content" ></div>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <div class="add-file">
+                    <a href="javascript:void(0);" class="load-btn" uplode-directive > <span></span>上传附件</a>
+                    <input  name="wxHeadImg-browser-btn" name="upload" 
+                            type="file" id="t_file" style="display:none"/>   
+                    <input type="hidden" id="f_file" class="f_file" disabled="true" >
+                    <div class="fileList"  deletefile>
+                    </div>                                    
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>接收人：</label>
+                <div class="xq-bk-rt rw-js-pe">
+                    <input name="userIds" type="text" class="form-control" ng-model="names" required readonly/>
+                    <a href="javascript:void(0);" class="add-per-btn rt" ng-click="open_cp('1000',$event);"></a>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>指令类型：</label>
+                <div class="add-file">
+                    <div>
+                       <select ng-model="dirType" class="form-control" ng-options="dirType.name for dirType in dirTypes">
+                           
+                       </select>
+                    </div>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>期望完成时间：</label>
+                <div class="add-file">
+                    <div class="zl-xq-bk clearfix">
+                    <input type="text" uib-datepicker-popup="{{format}}" ng-model="params.overTime" 
+                           min-date="minStartTime" is-open="status.opened" show-weeks="false" 
+                           show-button-bar="false" on-open-focus="false" readonly="readonly"/>                                 
+                    <span class="dt-sel-btn" ng-click="open($event)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="cg-xq-bk">
+                <label>密级指令：</label>
+                <div class="add-file">
+                    <div class="cg-check-box lf" id="addFile">
+                        <input type="checkbox" ng-model="params.isSecret"
+                               ng-true-value="1" ng-false-value="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cg-xq-btn" >
+        <div class="xq-btn-deal rw-btn-dl">
+            <button href="javascript:void();" class="btn-re-pb" 
+                    w5c-form-submit="sendDir();">发送</button>
+        </div>
+    </div>
+    </form>
+    <div ng-show="bgShow">
+        <div class="bg-sj-zdc"></div>
+        <div class="bg-zdc-msg">创建中…………</div>
+    </div>
+</div>

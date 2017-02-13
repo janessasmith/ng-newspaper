@@ -1,0 +1,32 @@
+<div class="search" ng-show="$isVisible()">
+    <!--合并成一个循环时点击事件失效了，源码不支持二维数组-->
+    <!-- <div class="search_Friends">
+    <div ng-repeat="(key, value) in $matches[0].value">
+        <p>{{key}}</p>
+        <div class="search_Friends_con" ng-repeat="item in $matches[0].value[key]">
+            <div class="friend_img">
+                <img ng-src="{{item.FRIENDHEAD||item.USERHEAD?('/wcm/app/system/read_image.jsp?FileName='+(item.FRIENDHEAD||item.USERHEAD)):'./components/util/IM/images/2016.jpg'}}">
+            </div>
+            <span ng-bind="item.TRUENAME" ng-click="$select($index, $event)"></span>
+        </div>
+    </div>
+ -->
+    <div class="search_Friends">
+        <p>好友</p>
+        <div class="search_Friends_con" ng-repeat="match in $matches" ng-if="match.value.ISFRIEND=='true'">
+            <div class="friend_img">
+                <img ng-src="{{match.value.FRIENDHEAD||match.value.USERHEAD?('/wcm/app/system/read_image.jsp?FileName='+(match.value.FRIENDHEAD||match.value.USERHEAD)):'./components/util/IM/images/2016.jpg'}}">
+            </div>
+            <span ng-bind="match.label" ng-click="$select($index, $event)"></span>
+        </div>
+    </div>
+    <div class="search_Friends">
+        <p>通讯录</p>
+        <div class="search_Friends_con" ng-repeat="match in $matches" ng-if="match.value.ISFRIEND=='false'">
+            <div class="friend_img">
+                <img ng-src="{{match.value.FRIENDHEAD||match.value.USERHEAD?('/wcm/app/system/read_image.jsp?FileName='+(match.value.FRIENDHEAD||match.value.USERHEAD)):'./components/util/IM/images/2016.jpg'}}">
+            </div>
+            <span ng-bind="match.label" ng-click="$select($index, $event)"></span>
+        </div>
+    </div>
+</div>

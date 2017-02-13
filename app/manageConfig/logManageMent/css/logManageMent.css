@@ -1,0 +1,127 @@
+.manage-fixed {
+    padding-right: 0px;
+    padding-left: 0px
+}
+
+.manage-log-left {}
+
+.manage-log-left .log-list {
+    font-family: "微软雅黑";
+    cursor: pointer;
+}
+
+.manage-log-left .log-title {
+    line-height: 40px;
+    padding-left: 40px;
+    color: #fefefe;
+    font-size: 16px;
+    background-color: #374760;
+    border-bottom: 1px solid #475771;
+}
+
+.manage-log-left .log-title-list a {
+    display: block;
+    height: 49px;
+    line-height: 42px;
+    padding-left: 56px;
+    font-size: 12px;
+    line-height: 49px;
+    color: #ddeaf5;
+    background-color: #0B2242;
+    border-bottom: 1px solid #475771;
+}
+
+.manage-log-left .log-title-list a:focus {
+    list-style: none;
+    background: url('./editingCenter/app/images/l12.png') 101% center #0b2242 no-repeat;
+    ;
+}
+
+.manage-left .tree-light li.tree-expanded i.tree-branch-head {
+    background: url(./manageConfig/images/m-1.png) no-repeat 0 center;
+}
+
+.manage-left .tree-light li.tree-collapsed i.tree-branch-head {
+    background: url(./manageConfig/images/m-2.png) no-repeat 0 center;
+}
+
+.manage-left treecontrol li {
+    position: relative;
+    padding: 0 0 0 20px;
+    line-height: 24px;
+}
+
+.manage-left .tree-label {
+    font-family: "微软雅黑";
+    color: #add2f0
+}
+
+.log_accordion .panel-body ul li a {
+    display: inline-block;
+    padding: 0 0;
+    width: 86%;
+    text-align: left;
+    float: right;
+}
+
+.manageCon-logMgr-left .iwo_accordion .panel-body ul li.selectedCurr,
+.manageCon-logMgr-left .selectedCurr h4.panel-title {
+    background: #1c83d2;
+}
+
+
+/*用户*/
+
+.lcol-user {
+    width: 80px;
+}
+
+
+/*产品*/
+
+.lcol-products {
+    width: 10%;
+}
+
+
+/*类型 参数 */
+
+.lcol-type,
+.lcol-parameter {
+    width: 100px;
+}
+
+
+/*时间 操作*/
+
+.lcol-time,
+.lcol-operate {
+    width: 140px;
+}
+
+
+/*IP 接口 示例值*/
+
+.lcol-ip,
+.lcol-interface,
+.lcol-example {
+    width: 120px;
+}
+
+
+/* 借口说明 */
+
+.lcol-interfaceDescription {
+    width: 10%;
+}
+
+
+/*耗时*/
+
+.lcol-consume {
+    width: 100px;
+}
+
+.log_page {
+    bottom: 0px;
+}

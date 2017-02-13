@@ -1,0 +1,18 @@
+<div class="news-tooltip-wrap">
+    <div class="news-tooltip-header">
+        <ul>
+            <li class="w134">姓名</li>
+            <li class="w226">部门/联系地址</li>
+            <li class="w148">报刊/邮编</li>
+        </ul>
+    </div>
+    <div class="news-tooltip-body">
+        <ul>
+            <li ng-repeat="user in users" ng-click="userList.selectUser(user)">
+                <b class="w124" ng-bind="user.USERNAME"></b>
+                <b class="w224" ng-bind="user.COMPANY"></b>
+                <b class="w148" ng-bind="user.DEPT"></b>
+            </li>
+        </ul>
+    </div>
+</div>

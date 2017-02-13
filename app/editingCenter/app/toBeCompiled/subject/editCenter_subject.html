@@ -1,0 +1,218 @@
+<form class="website-linkDoc" name="subjectForm" novalidate>
+    <button style="display:none"></button>
+    <div class="row_doc_link row_news plr20">
+        <ul class="subject-tab">
+            <li>
+                <a du-smooth-scroll du-scrollspy offset="20" duration="2000" href="#section-1" class="active">列表信息</a>
+            </li>
+            <li>
+                <a du-smooth-scroll du-scrollspy offset="60" duration="2000" href="#section-2">稿件信息</a>
+            </li>
+            <li>
+                <a du-smooth-scroll du-scrollspy offset="60" duration="2000" href="#section-3">属性信息</a>
+            </li>
+        </ul>
+        <div class="subject-row mb40" id="section-1">
+            <div class="ht43"></div>
+            <div class="subject-detail">
+                <div class="subject-title">列表信息</div>
+                <!-- 列表样式 -->
+                <div class="subject-list-style row">
+                    <div class="subject-item" style="overflow:visible">
+                        <div class="col-md-1 padfixed">
+                            <div class="txt-style">列表样式：</div>
+                        </div>
+                        <div class="col-md-11 pl0">
+                            <div class="list-style-radio">
+                                <div class="style-radio" ng-repeat="listStyle in data.listStyle">
+                                    <trs-single-radio label="{{listStyle.desc}}" group="'listStyle'" ischecked="listStyle.value==list.LISTSTYLE" callback="list.LISTSTYLE = listStyle.value"></trs-single-radio>
+                                </div>
+                            </div>
+                            <div class="clear mb10"></div>
+                            <div class="news_input_check invalidate-input-box   {{subjectForm.ListTitle.$invalid?'has-error':''}}">
+                                <input class="form-control list-text fz12" type="text" name="ListTitle" ng-model="list.LISTTITLE" placeholder="请输入标题" maxlength-error-message="长度不能超过100个字符" validator="required,maxlength=100" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA">
+                            </div>
+                            <span class="star-red">*</span>
+                            <div class="list-style-img h140">
+                                <div class="fa_upload invalidate-input-box {{subjectForm.listStyleOne.$invalid?'has-error':''}}" ng-if="list.LISTSTYLE==0||list.LISTSTYLE==1">
+                                    <trs-upload-full file-name="list.LISTPICS[0].APPFILE" file-desc="list.LISTPICS[0].APPDESC" return-file="list.LISTPICS[0].PERPICURL" callback="deleteUploaderImg('LISTPICS',0)"></trs-upload-full>
+                                    <input type="text" class="ueditorReplace" validator="required" name="listStyleOne" ng-model="list.LISTPICS[0].APPFILE" />
+                                </div>
+                                <div class="fa_upload invalidate-input-box {{subjectForm.listStyleTwo.$invalid? 'has-error': ''}}" ng-if="list.LISTSTYLE==1">
+                                    <trs-upload-full file-name="list.LISTPICS[1].APPFILE " file-desc="list.LISTPICS[1].APPDESC " return-file="list.LISTPICS[1].PERPICURL " callback="deleteUploaderImg('LISTPICS',1) "></trs-upload-full>
+                                    <input type="text" class="ueditorReplace" validator="required" name="listStyleTwo" ng-model="list.LISTPICS[1].APPFILE" />
+                                </div>
+                                <div class="fa_upload invalidate-input-box {{subjectForm.listStyleThree.$invalid? 'has-error': ''}} " ng-if="list.LISTSTYLE==1">
+                                    <trs-upload-full file-name="list.LISTPICS[2].APPFILE" file-desc="list.LISTPICS[2].APPDESC" return-file="list.LISTPICS[2].PERPICURL " callback="deleteUploaderImg('LISTPICS',2) "></trs-upload-full>
+                                    <input type="text" class="ueditorReplace" validator="required" name="listStyleThree" ng-model="list.LISTPICS[2].APPFILE" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                    <div class="subject-item">
+                        <div class="col-md-1">
+                            <div class="txt-style">标签：</div>
+                        </div>
+                        <div class="col-md-11 pl0">
+                            <div class="list-style-tab" ng-model="list.LABEL" bs-radio-group>
+                                <label ng-repeat="tabName in data.label" ng-click="list.LABEL= tabName.value" class="btn btn-default" ng-class="{ 'selected':list.LABEL==tabName.value} ">{{tabName.value}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-item">
+                        <div class="col-md-1 padfixed">
+                            <div class="txt-style">显示设置：</div>
+                        </div>
+                        <div class="col-md-11 pl0 displaySet">
+                            <div class="list-style-radio">
+                                <div class="style-radio" ng-repeat="displayset in data.displaySet">
+                                    <trs-single-radio label="{{displayset.desc}}" group="'displayset'" ischecked="displayset.value==list.DISPLAYSET" callback="list.DISPLAYSET = displayset.value"></trs-single-radio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subject-item">
+                        <div class="col-md-1 padfixed">
+                            <div class="txt-style">焦点图：</div>
+                        </div>
+                        <div class="col-md-11 pl0">
+                            <div class="list-style-check">
+                                <trs-checkbox ischecked="list.ISFOCUSIMAGE==0 " callback="updateCKSelection('ISFOCUSIMAGE') "></trs-checkbox>栏目焦点图
+                            </div>
+                        </div>
+                        <div ng-if="list.ISFOCUSIMAGE==0" class="focusDiv">
+                            <div class="list-style-img row">
+                                <div class="left fa_div mt13 invalidate-input-box">
+                                    <div class="news_input_check invalidate-input-box">
+                                        <input trs-spe-char class="form-control list-text fz12" type="text" name="FocusImage" ng-model="list.FOCUSIMGTITLE" placeholder="请输入标题" maxlength-error-message="长度不能超过100个字符" validator="maxlength=100,required" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" is-show-tips="isShowTipsB">
+                                    </div>
+                                    <span class="star-red">*</span>
+                                </div>
+                                <div class="fa_upload invalidate-input-box {{subjectForm.isFoucesImage.$invalid? 'has-error': ''}}">
+                                    <trs-upload-full file-name="list.FOCUSIMAGE[0].APPFILE" return-file="list.FOCUSIMAGE[0].PERPICURL" file-desc="list.FOCUSIMAGE[0].APPDESC" callback="deleteUploaderImg('FOCUSIMAGE',0)"></trs-upload-full>
+                                    <input type="text" class="ueditorReplace" validator="required" name="isFoucesImage" ng-model="list.FOCUSIMAGE[0].APPFILE" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subject-detail mb16" id="section-2">
+                <div class="subject-title">稿件信息</div>
+                <div class="subject-list-style row bd pb15">
+                    <div class="subject-fix mgt15">
+                        <div class="col-md-1">
+                            <div class="txt-style"><span class="red">*</span>标题：</div>
+                        </div>
+                        <div class="col-md-11 pl0">
+                            <div class=" height33 list-style-input invalidate-input-box {{subjectForm.Title.$invalid?'has-error':''}}">
+                                <input type="text" name="Title" ng-model="list.TITLE" placeholder="请输入标题" class="form-control input-title" maxlength-error-message="长度不能超过100个字符！" validator="required,maxlength=100" ng-mouseenter="isShowTipsB=true" ng-mouseleave="isShowTipsB=false" is-show-tips="isShowTipsB">
+                                <p>已输入</p>
+                                <trs-word-num num-obj="{{list.TITLE}}"></trs-word-num>
+                                <p>字数</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="subject-fix">
+                        <div class="col-md-1 col-lg-1 padfixed">
+                            <div class="txt-style">分组新闻：</div>
+                        </div>
+                        <div class="col-md-5 col-lg-4 pl0">
+                            <div class="list-style-input invalidate-input-box {{subjectForm.packetNews.$invalid?'has-error':''}}">
+                                <input name="packetNews" type="text" class="form-control input-concont" placeholder="请输入分组名，按回车完成添加" ng-model="data.groupName" ng-keypress="newGroup($event)" validator="maxlength=50" maxlength-error-message="长度不能超过50个字符！" ng-mouseenter="isShowTips=true" ng-mouseleave="isShowTips=false" is-show-tips="isShowTips">
+                            </div>
+                            <ul class="list-style-textarea">
+                                <li ng-repeat="group in data.groups" ng-class="{'active':group.SPECIALGROUPID==data.selectedGroup.SPECIALGROUPID}">
+                                    <span ng-click="selectGroup(group)" ng-bind="group.SPECIALGROUPNAME" title="{{group.SPECIALGROUPNAME}}"></span>
+                                </li>
+                            </ul>
+                            <div class="list-style-icon" ng-show="data.selectedGroup">
+                                <span class="delete" ng-click="groupDelect()">删除</span>
+                                <span class="icon_up" ng-click="groupUpRecord()">上移</span>
+                                <span class="icon_down" ng-click="groupDownRecord()">下移</span>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-lg-7 pl0" id="section-3">
+                            <div class="list-style-input">
+                                <div>
+                                    <button class="btn groupSlected" ng-disabled="!data.selectedGroup" ng-click="chooseDraftWindow()">选择</button>
+                                </div>
+                            </div>
+                            <ul class="list-style-textarea">
+                                <li ng-repeat="news in data.groupNews" ng-class="{'active':news==data.selectedNews}">
+                                    <span ng-click="data.selectedNews=news" ng-bind="news.DOCTITLE"></span>
+                                </li>
+                            </ul>
+                            <div class="list-style-icon" ng-show="data.selectedNews">
+                                <span class="delete" ng-click="newsDelete()">删除</span>
+                                <span class="icon_up" ng-click="newsUpRecord()">上移</span>
+                                <span class="icon_down" ng-click="newsDownRecord()">下移</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subject-detail mb16">
+                <div class="subject-title">属性信息</div>
+                <div class="subject-list-style row bd">
+                    <div class="subject-item-fix mt20">
+                        <div class="col-sm-1 txt_r">
+                            关键词：
+                        </div>
+                        <div class="col-sm-10">
+                            <span class="errorTips" ng-show="isShowKeywordTips"><p class="validation-invalid">{{keywordsTips}}</p><i></i></span>
+                            <div class="edit-news-attribute-text pull-left iwo-keywords-input-lengthen">
+                                <tags-input ng-model="data.KEYWORDS" ng-blur="leave()" text="KEYWORDTEXT" add-on-space="true" add-on-enter="false" add-on-blur="true" ng-mouseenter="enter()" ng-mouseleave="leave()" add-on-comma="false" add-on-paste="true" paste-split-pattern="[;]" replace-spaces-with-dashes="false" enable-editing-last-tag="true" spellcheck="false" display-property="name" template="tag-template" min-length="1" max-length="20" placeholder="请输入关键词，以空格完成输入" allowed-tags-pattern="" on-invalid-tag="invalidTag($tag)" on-tag-adding="checkTag($tag)">
+                                </tags-input>
+                            </div>
+                            <script type="text/ng-template" id="tag-template">
+                                <div style="float: left; padding-left: 2px">
+                                    <span>{{$getDisplayText()}}</span>
+                                    <a class="remove-button" ng-click="$removeTag()">&times;</a>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="subject-item-fix mt20">
+                        <div class="col-sm-1 txt_r"><span class="red">*</span>摘要：</div>
+                        <div class="col-md-10">
+                            <div class="list-style-input invalidate-input-box {{subjectForm.ConAbstract.$invalid?'has-error':''}}">
+                                <textarea value="默认分组" trs-spe-char name="ConAbstract" ng-model="list.CONABSTRACT" class="form-control input-detail" maxlength-error-message="长度不能超过500个字符！" validator="required,maxlength=500" ng-mouseenter="isShowTipsC=true" ng-mouseleave="isShowTipsC=false" is-show-tips="isShowTipsC"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="subject-list-style">
+                        <div class="m_box_item">
+                            <div class="col-sm-1 txt_r">
+                                <div class="txt-style">题图：</div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="checkbox">
+                                    <trs-checkbox ischecked="list.ISSELECTFIGURE==1" callback="updateCKSelection('ISSELECTFIGURE')"></trs-checkbox>题图
+                                </div>
+                            </div>
+                            <div class="list-style-img" ng-if="list.ISSELECTFIGURE==1">
+                                <div class="fa_upload form-control {{subjectForm.isselectfigure.$invalid? 'has-error': ''}}">
+                                    <trs-upload-full file-name="list.FIGURE[0].APPFILE" file-desc="list.FIGURE[0].APPDESC" return-file="list.FIGURE[0].PERPICURL" callback="deleteUploaderImg('FIGURE',0)"></trs-upload-full>
+                                </div>
+                                <input type="text" class="ueditorReplace" validator="required" name="isselectfigure" ng-model="list.FIGURE[0].APPFILE" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Iw-box-fix box-fix-bt">
+                <div class="txt_r">
+                    <button class="btn btn-primary" ng-repeat="btn in data.arrayBtn track by $index" ng-click="handleBtnClick(btn.OPERFUN)" ng-disabled="!status.openBtn">
+                        <span class="s_icon">
+                    <img ng-src="./editingCenter/website/images/b{{btn.RIGHTINDEX}}.png"></span> {{btn.OPERDESC}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

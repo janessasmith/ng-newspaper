@@ -1,0 +1,52 @@
+<form name="newTemplateForm" novalidate>
+    <div class="website_fra_new">
+        <div class="website_fra_new_head">
+            <img src="./manageConfig/productManageMent/images/gl07.png" alt="">
+            <span class="website_fra_new_head_span">新建/修改模板</span>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" ng-click="cancel()" class="website_fra_new_cancel">
+        </div>
+        <div class="website_fra_new_content">
+            <div class="website_fra_new_content_newTemplate_box">
+                <div class="website_fra_new_content_newTemplate_lable invalidate-input-box">
+                    <b>模板名称：</b>
+                    <input ng-model="item.TEMPNAME" type="text" maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,required" ng-mouseenter="isShowTipsA=true" ng-mouseleave="isShowTipsA=false" is-show-tips="isShowTipsA" name="TEMPNAME" class="input-xlarge form-control">
+                </div>
+                <div>
+                    <b>模板类型：</b>
+                    <trs-single-select selected-option="tempType" callback="selectedTempType()" options="tempTypeJsons"></trs-single-select>
+                </div>
+            </div>
+            <div class="website_fra_new_content_newTemplate_input">
+                <div class="newTemplate_inputs  invalidate-input-box">
+                    <b>模板描述：</b>
+                    <input ng-model="item.TEMPDESC" type="text"  maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,required" ng-mouseenter="isShowTipsC=true" ng-mouseleave="isShowTipsC=false" is-show-tips="isShowTipsC" name="TEMPDESC" class="form-control">
+                </div>
+                <div class="newTemplate_inputs  invalidate-input-box">
+                    <b> 发布文件名：</b>
+                    <input ng-model="item.OUTPUTFILENAME" type="text" maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20" ng-mouseenter="isShowTipsE=true" ng-mouseleave="isShowTipsE=false" is-show-tips="isShowTipsE" name="OUTPUTFILENAME" class="form-control">
+                </div>
+                <div class="newTemplate_inputs  invalidate-input-box">
+                    <b> 文件扩展名：</b>
+                    <input ng-model="item.TEMPEXT" type="text"  maxlength-error-message="长度不能超过20个字符！" validator="maxlength=20" ng-mouseenter="isShowTipsT=true" ng-mouseleave="isShowTipsT=false" is-show-tips="isShowTipsT" name="TEMPEXT" class="form-control">
+                </div>
+            </div>
+            <div class="website_fra_new_content_newTemplate_button">
+                <button class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="insertFragment()">
+                    <span class="s_icon"><img src="./manageConfig/productManageMent/images/t1.png" /></span> 插入碎片
+                </button>
+                <button validation-submit="newTemplateForm" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="templateCheck()">
+                    <span class="s_icon"><img src="./manageConfig/productManageMent/images/t2.png" /></span> 模板校验
+                </button>
+            </div>
+            <div class="textarea invalidate-input-box  fragmentForm.widgetcontent.$invalid?'has-error':''">
+                <textarea name="TEMPTEXT" ng-model="item.TEMPTEXT" class="form-control" validator="required" ng-mouseenter="isShowTipsG=true" ng-mouseleave="isShowTipsG=false" is-show-tips="isShowTipsG" value="代码区">
+                </textarea>
+            </div>
+        </div>
+        <div class="website_fra_new_footer">
+            <button validation-submit="newTemplateForm" class="news-role-btn btn_confirm" ng-click="save()">保存</button>
+            <button class="news-role-btn-success man_produ_modify_footer_cancel btn_cancel" ng-click="cancel()">取消</button>
+        </div>
+    </div>
+    <div cg-busy="loadingPromise"></div>
+</form>

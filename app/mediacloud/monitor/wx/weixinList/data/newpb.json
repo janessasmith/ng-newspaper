@@ -1,0 +1,28 @@
+{
+    "result": [
+        {
+            "title": "重庆到成都",
+            "content": "高铁",
+            "crtime": "10月19日 9：30",
+            "userImg":"",
+            "likesNum": "999",
+            "readNum":"2000"
+        },
+        {
+            "title": "百度地图",
+            "content": "重庆到成都",
+            "crtime": "10月19日 9：30",
+            "userImg":"",
+            "likesNum": "333",
+            "readNum":"999"
+        },
+        {
+            "title": "地平线", 
+            "content": "看日出",
+            "crtime": "10月19日 9：30",
+            "userImg":"",
+            "likesNum": "444",
+            "readNum":"666"
+        }
+    ]
+}

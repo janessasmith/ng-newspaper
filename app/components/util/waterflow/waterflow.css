@@ -1,0 +1,23 @@
+.waterflow{
+    width: 100%;
+}
+.waterflow:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.waterflow ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.waterflow li{
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.waterflow img{
+    border:none;
+    height: 100%;
+}

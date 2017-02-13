@@ -1,0 +1,25 @@
+<div class="container-fluit res-ctr-detail">
+    <div class="operate-btns">
+        <button class="btn btn-primary" ng-click="close()">
+            <span class="s_icon">
+                <img ng-src="./editingCenter/newspaper/images/cclose.png" />
+            </span>关闭
+        </button>
+    </div>
+    <div class="res-ctr-con bianji_height">
+        <p class="res-ctr-con-sub-tit" ng-bind="detailInfos.IR_URLTOPIC" ng-show="detailInfos.IR_URLTOPIC"></p>
+        <p class="res-ctr-con-tit" ng-bind="detailInfos.DOCTITLE" ng-show="detailInfos.DOCTITLE!='null'"></p>
+        <p class="res-ctr-con-sub-tit" ng-bind="detailInfos.FB" ng-show="detailInfos.FB"></p>
+        <div class="res-ctr-con-tit-rel-wrap">
+            <p>
+                <span ng-bind="detailInfos.DOCAUTHOR" ng-show="detailInfos.DOCAUTHOR"></span>
+            </p>
+            <p><span ng-bind="detailInfos.DOCPUBTIME" ng-show="detailInfos.DOCPUBTIME"></span></p>
+        </div>
+        <p class="res-ctr-con-det" ng-bind-html="detailInfos.CONTENT" ></p>
+        <p class="res-ctr-con-det" ng-bind-html="detailInfos.HTMLCONTENT" ng-show="isGxgkContent"></p>
+        <p class="res-ctr-con-det txt_c" ng-repeat="imgurl in detailInfos.ImgsUrl">
+            <img ng-src="{{imgurl}}">
+        </p>
+    </div>
+</div>

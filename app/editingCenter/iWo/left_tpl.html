@@ -1,0 +1,65 @@
+<div class="container-fluid editing-list">
+    <accordion class="iwo_accordion iwo_accordion_new" close-others="false">
+        <accordion-group is-open="status.isMyManuscriptShow">
+            <accordion-heading>
+                <i><img ng-src="./editingCenter/iWo/images/{{status.isMyManuscriptShow?'i1-1.png':'i1.png'}}" class="fixed_align" /></i>
+                <a class="ml0" ng-class="{'font_color':status.isMyManuscriptShow}">我的稿件</a>
+            </accordion-heading>
+            <ul>
+                <li ng-if="status.authority.PERSONALMANUSCRIPT==='true'" ng-class="{'iWo-left-li-active':'personalManuscript'==status.selectedItem}" ng-click="setIWoSelectedChnl('personalManuscript')">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'personalManuscript'==status.selectedItem?'i2-1.png':'i2.png'}}" /></i>
+                    <a ui-sref="editctr.iWo.personalManuscript" ui-sref-opts="{reload :'editctr.iWo.personalManuscript'}">个人稿库</a>
+                </li>
+                <li ng-if="status.authority.RECEIVEDMANUSCRIPT==='true'" ng-class="{'iWo-left-li-active':'receivedManuscript'==status.selectedItem}" ng-click="setIWoSelectedChnl('receivedManuscript')">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'receivedManuscript'==status.selectedItem?'i3-1.png':'i3.png'}}" /></i>
+                    <a ui-sref="editctr.iWo.receivedManuscript" ui-sref-opts="{reload :'editctr.iWo.receivedManuscript'}">已收稿库</a>
+                    <i class="unread-icon pos-abs rcv-manu-unread-icon-pos" ng-if="isUnreadIconShow"></i>
+                </li>
+                <li ng-if="status.authority.MANUSCRIPTARCHIVES==='true'" ng-class="{'iWo-left-li-active':'manuscriptArchives'==status.selectedItem}" ng-click="setIWoSelectedChnl('manuscriptArchives')">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'manuscriptArchives'==status.selectedItem?'i4-1.png':'i4.png'}}" /></i>
+                    <a ui-sref="editctr.iWo.manuscriptArchives" ui-sref-opts="{reload :'editctr.iWo.manuscriptArchives'}">稿件档案</a>
+                </li>
+            </ul>
+        </accordion-group>
+        <div ng-if="status.authority.FUSIONPENDING==='true'" class="iWo-left-div" ng-class="{'iWo-left-accordion-active':'fusionPending'==status.selectedItem}">
+            <i><img ng-src="./editingCenter/iWo/images/{{'fusionPending'==status.selectedItem?'i5-1.png':'i5.png'}}" /></i>
+            <a class="ml0" ui-sref="editctr.iWo.fusionPending" ng-click="setIWoSelectedChnl('fusionPending')" ui-sref-opts="{reload :'editctr.iWo.fusionPending'}">融合待编</a>
+        </div>
+        <div ng-if="status.authority.FUSIONSIGN==='true'" class="iWo-left-div" ng-class="{'iWo-left-accordion-active':'fusionSign'==status.selectedItem}">
+            <i><img ng-src="./editingCenter/iWo/images/{{'fusionSign'==status.selectedItem?'i6-1.png':'i6.png'}}" /></i>
+            <a class="ml0" ui-sref="editctr.iWo.fusionSign" ng-click="setIWoSelectedChnl('fusionSign')" ui-sref-opts="{reload :'editctr.iWo.fusionSign'}">融合审签</a>
+        </div>
+        <div ng-if="status.authority.PRIVILEGEDRAFT==='true'" class="iWo-left-div" ng-class="{'iWo-left-accordion-active':'privilegeDraft'==status.selectedItem}" ng-show="status.authority.PRIVILEGEDRAFT === 'true'">
+            <i><img ng-src="./editingCenter/iWo/images/{{'privilegeDraft'==status.selectedItem?'i7-1.png':'i7.png'}}" /></i>
+            <a class="ml0" ui-sref="editctr.iWo.privilegeDraft" ng-click="setIWoSelectedChnl('privilegeDraft')" ui-sref-opts="{reload :'editctr.iWo.privilegeDraft'}">特权取稿</a>
+        </div>
+        <accordion-group is-open="status.isUsualOpened">
+            <accordion-heading>
+                <i><img ng-src="./editingCenter/iWo/images/{{status.isUsualOpened?'i8-1.png':'i8.png'}}" class="fixed_align"/></i>
+                <a class="ml0">常用资源</a>
+            </accordion-heading>
+            <ul>
+                <li ng-repeat="item in status.customItems" ng-click="setIWoSelectedChnl(item)" ng-class="{'iWo-left-li-active':item.CUSTOMID==status.selectedItem.CUSTOMID}">
+                    <i>
+                                <img ng-src="./editingCenter/app/images/{{item.CUSTOMID==status.selectedItem.CUSTOMID?'l11-1.png':'l11.png'}}" ng-show="item.ISSPECIAL=='0'"/>
+                                <img ng-src="./editingCenter/app/images/{{item.CUSTOMID==status.selectedItem.CUSTOMID?'ad-c1.png':'ad-c.png'}}" ng-show="item.ISSPECIAL=='1'"/>
+                            </i>
+                    <a ng-click="iwoCustomRouter(item)" ng-bind="item.CUSTOM"></a>
+                    <!-- <a ui-sref="editctr.iWo.emaildraft({customid:iteH.CUSTOMID,customtype:item.CUSTOMTYPE,path:item.PATH,mycustomid:item.MYCUSTOMID})" ui-sref-opts="{reload:'editctr.iWo.emaildraft'}" ng-bind="item.CUSTOM"></a> -->
+                </li>
+                <li ng-click="setIWoSelectedChnl('personalmaterial')" ng-class="{'iWo-left-li-active':'personalmaterial'==status.selectedItem}">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'personalmaterial'==status.selectedItem?'i12-1.png':'i12.png'}}" /></i>
+                    <a ui-sref="editctr.iWo.personalmaterial" ui-sref-opts="{reload :'editctr.iWo.personalmaterial'}">个人素材</a>
+                </li>
+                <li ng-if="status.authority.MANUSCRIPTCOLLECTION==='true'" ng-click="setIWoSelectedChnl('manuscriptCollection')" ng-class="{'iWo-left-li-active':'manuscriptCollection'==status.selectedItem}">
+                    <i><img ng-src="./editingCenter/iWo/images/{{'manuscriptCollection'==status.selectedItem?'i13-1.png':'i13.png'}}" /></i>
+                    <a ui-sref="editctr.iWo.manuscriptCollection" ui-sref-opts="{reload :'editctr.iWo.manuscriptCollection'}">稿件收藏</a>
+                </li>
+            </ul>
+        </accordion-group>
+        <div ng-if="status.authority.DRAFTBOX==='true'" class="iWo-left-div" ng-class="{'iWo-left-accordion-active':'draftBox'==status.selectedItem}">
+            <i><img ng-src="./editingCenter/iWo/images/{{'draftBox'==status.selectedItem?'i14-1.png':'i14.png'}}" /></i>
+            <a class="ml0" ui-sref="editctr.iWo.draftBox" ng-click="setIWoSelectedChnl('draftBox')" ui-sref-opts="{reload :'editctr.iWo.draftBox'}">废稿箱</a>
+        </div>
+    </accordion>
+</div>

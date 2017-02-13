@@ -1,0 +1,8 @@
+/*.page-container{
+	background: url("./yarbImages/login-bg.jpg") no-repeat !important;
+	background-size:cover;
+}*/
+
+.page-form{
+	height:360px !important;
+}

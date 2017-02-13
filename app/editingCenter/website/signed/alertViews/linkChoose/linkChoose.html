@@ -1,0 +1,14 @@
+<div class="editing-operate-lst">
+    <ul>
+        <a ng-click="preview(item)" target="_blank" ng-if="status.btnRights['web.yiqianfa.yulan']">预览</a>
+        <a ui-sref="{{data.editPath[item.DOCTYPEID]}}({channelid:item.CHNLID,chnldocid:item.CHNLDOCID,metadataid:item.METADATAID,siteid:status.siteid,status:2})" target="_blank" ng-if="status.btnRights['web.yiqianfa.bianji']" >编辑</a>
+        <a href="javascript:void(0)" ng-click='pushBar(item)' ng-if="status.btnRights['web.yiqianfa.tuishouye']">推首页</a>
+        <a href="javascript:void(0)" ng-click="revoke(item)" ng-if="status.btnRights['web.yiqianfa.chegao']">撤搞</a>
+        <a href="javascript:void(0)" ng-click="share(item)" ng-if="status.btnRights['web.yiqianfa.gongxiang']">共享</a>
+        <a ng-click="moveDraft(item)" href="javascript:void(0)" ng-if="status.btnRights['web.yiqianfa.yidong']">移动</a>
+        <a ng-click="sign(item)" href="javascript:void(0)" ng-if="status.btnRights['web.yiqianfa.duoqian']">多签</a>
+        <a ng-click="copyDraft(item)" href="javascript:void(0)" ng-if="status.btnRights['web.yiqianfa.fuzhi']">复制</a>
+        <a href="javascript:void(0)" ng-click="outSending(item)" ng-if="status.btnRights['web.yiqianfa.waifa']">外发</a>
+        <a href="javascript:void(0)" ng-click="collect(item)" ng-if="status.btnRights['web.yiqianfa.shoucang']">收藏</a>
+    </ul>
+</div>

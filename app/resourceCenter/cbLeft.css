@@ -1,0 +1,17 @@
+.cb-left-div {
+    height: 40px;
+    line-height: 40px;
+    background-color: #3f5974;
+    color: #fff;
+    padding-left: 20px;
+    border-bottom: 1px solid rgb(35, 58, 90);
+    cursor: pointer;
+}
+
+.cb-left-div span{
+	font-family: "Microsoft Yahei";
+}
+
+.cb-left-div:hover,.cb-left-div-active{
+	background-color: #1c83d2;
+}

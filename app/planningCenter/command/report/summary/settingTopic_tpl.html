@@ -1,0 +1,21 @@
+<div class="row edit_right_mid summary summary_top">
+    <div class="col-md-6">
+        <button class="btn btn-default btn-commen" ui-sref="plan.reportsummary">
+            <span class="s_icon"><i class="fa fa-chevron-left"></i></span> 返回
+        </button>
+    </div>
+</div>
+<div class="reportsummary">
+    <div class="pasttopic">
+        <div class="row mc-margin-0">
+            <div class="col-md-4">标题</div>
+            <div class="col-md-4">持续时间</div>
+            <div class="col-md-4">可见人员</div>
+        </div>
+        <div class="row mc-margin-0" ng-repeat="topic in  vm.pasttopics">
+            <div class="col-md-4 clickable" ng-click="settingTopic(topic)">{{topic.CONTENT}}</div>
+            <div class="col-md-4">{{topic.STARTTIME| limitTo:10}}至{{topic.ENDTIME| limitTo:10}}</div>
+            <div class="col-md-4" title="{{topic.USERNAME}}">{{topic.USERNAME}}</div>
+        </div>
+    </div>
+</div>

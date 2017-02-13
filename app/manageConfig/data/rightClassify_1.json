@@ -1,0 +1,93 @@
+{
+    "MEDIATYPE": "1",
+    "MEDIANAME": "APP",
+    "CHILDREN": [
+        {
+            "STATUS": "待编",
+            "CHILDREN": [
+                {
+                    "RIGHTINDEX": 1,
+                    "RIGHTNAME": "新建"
+                },
+                {
+                    "RIGHTINDEX": 2,
+                    "RIGHTNAME": "送审"
+                },
+                {
+                    "RIGHTINDEX": 3,
+                    "RIGHTNAME": "签发"
+                },
+                {
+                    "RIGHTINDEX": 4,
+                    "RIGHTNAME": "共享"
+                },
+                {
+                    "RIGHTINDEX": 5,
+                    "RIGHTNAME": "移动"
+                },
+                {
+                    "RIGHTINDEX": 6,
+                    "RIGHTNAME": "复制"
+                }
+            ]
+        },
+        {
+            "STATUS": "待审",
+            "CHILDREN": [
+                {
+                    "RIGHTINDEX": 7,
+                    "RIGHTNAME": "新建"
+                },
+                {
+                    "RIGHTINDEX": 8,
+                    "RIGHTNAME": "送审"
+                },
+                {
+                    "RIGHTINDEX": 9,
+                    "RIGHTNAME": "签发"
+                },
+                {
+                    "RIGHTINDEX": 10,
+                    "RIGHTNAME": "共享"
+                },
+                {
+                    "RIGHTINDEX": 11,
+                    "RIGHTNAME": "移动"
+                },
+                {
+                    "RIGHTINDEX": 12,
+                    "RIGHTNAME": "复制"
+                }
+            ]
+        },
+        {
+            "STATUS": "已签发",
+            "CHILDREN": [
+                {
+                    "RIGHTINDEX": 13,
+                    "RIGHTNAME": "新建"
+                },
+                {
+                    "RIGHTINDEX": 14,
+                    "RIGHTNAME": "送审"
+                },
+                {
+                    "RIGHTINDEX": 15,
+                    "RIGHTNAME": "签发"
+                },
+                {
+                    "RIGHTINDEX": 16,
+                    "RIGHTNAME": "共享"
+                },
+                {
+                    "RIGHTINDEX": 17,
+                    "RIGHTNAME": "移动"
+                },
+                {
+                    "RIGHTINDEX": 18,
+                    "RIGHTNAME": "复制"
+                }
+            ]
+        }
+    ]
+}

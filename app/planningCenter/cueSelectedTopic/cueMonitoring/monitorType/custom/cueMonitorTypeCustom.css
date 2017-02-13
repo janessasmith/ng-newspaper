@@ -1,0 +1,126 @@
+.cue-monitor-type-custom-window .modal-dialog{
+	width:566px;
+	background: #ddd;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.cue-monitor-type-custom-window .modal-dialog .modal-content{
+	width: 558px;
+	background: #f0f2f5;
+	margin:4px auto;
+	overflow: hidden;
+}
+
+.cue-monitor-type-custom-container{
+	
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body{
+	width: 538px;
+	border:1px solid #ccc;
+	background: #fff;
+	overflow: hidden;
+	margin:8px auto;
+	padding-bottom: 16px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .bor-btm{
+	border-bottom: 1px dotted #ccc;
+	width: 520px;
+	margin: 15px auto 0;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap{
+	overflow: hidden;
+	margin-top: 15px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >p{
+	float: left;
+	width: 80px;
+	text-align: right;
+	margin-right: 10px;
+	line-height: 32px;
+	color:#444;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div{
+	width: 392px;
+	float: right;
+	overflow: hidden;
+	margin-right: 54px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div input.w392{
+	width: 392px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div p{
+	width: 170px;
+	text-align: left;
+	color:#666;
+	float: left;
+	line-height: 32px;
+	margin-bottom: 0px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div input{
+	width: 190px;
+	float: left;
+	
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div img{
+	cursor: pointer;
+	float: left;
+	margin:5px 0 0 8px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div ul{
+	clear: both;
+	margin:15px 0;
+	overflow: hidden;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div ul li{
+	min-width:78px;
+	height: 24px;
+	line-height: 22px;
+	background: #fafafa;
+	border:1px solid #ccc;
+	float: left;
+	margin-right: 12px;
+	margin-top: 12px;
+	list-style: none;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div ul li span{
+	color:#444;
+	margin-left: 5px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-body .cue-monitor-type-custom-wrap >div ul li img{
+	float: right;
+	margin:4px 4px 0 4px;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-footer{
+	overflow: hidden;
+	margin:12px 10px 12px 0;
+}
+
+.cue-monitor-type-custom-container .cue-monitor-type-custom-footer .new-role-btn{
+	width: 80px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	float: right;
+	background: #4496d2;
+	margin-left: 12px;
+	border:none;
+	border-radius: 4px;
+	color:#fff;
+	font-family: "Microsoft Yahei";
+}

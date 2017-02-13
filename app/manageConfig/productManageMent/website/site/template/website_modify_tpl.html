@@ -1,0 +1,60 @@
+<form name="addAndModForm" novalidate>
+    <div class="man_produ_modify">
+        <div class="man_produ_modify_head">
+            <p>{{title}}</p>
+            <img src="./editingCenter/app/toBeCompiled/images/cls.jpg" class="edit_revoke_thead_images1" ng-click="cancel()" />
+        </div>
+        <div class="man_produ_modify_inner">
+            <div class="man_produ_column_modify man_produ_column_modify_ulAndLabel">
+                <div class="input invalidate-input-box {{addAndModForm.siteName.$invalid?'has-error':''}}">
+                    <b>站点名称：</b>
+                    <input maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,required" type="text" class="form-control man_produ_sensitive_text" name="siteDesc" ng-model="newsite.SiteDesc" ng-mouseenter="isShowTips_sitedesc=true" ng-mouseleave="isShowTips_sitedesc=false" is-show-tips="isShowTips_sitedesc" placeholder="请输入站点名称" />
+                </div>
+                <div class="input invalidate-input-box {{addAndModForm.datapath.$invalid?'has-error':''}}">
+                    <b>存放位置：</b>
+                    <input maxlength-error-message="长度不能超过50个字符！" validator="maxlength=50,required,englishAndNum" type="text" class="form-control man_produ_sensitive_text" name="datapath" ng-model="newsite.DataPath" ng-mouseenter="isShowTips_datapath=true" ng-mouseleave="isShowTips_datapath=false" is-show-tips="isShowTips_datapath" placeholder="请输入英文名称" ng-change="examineEngName()" />
+                    <p ng-show="examEng=='false'" class="wordError">存放位置重复，请重新填写</p>
+                </div>
+                <div class="input invalidate-input-box {{addAndModForm.domain.$invalid?'has-error':''}}">
+                    <b>绑定域名：</b>
+                    <input maxlength-error-message="长度不能超过200个字符！" validator="maxlength=200,required,url" ng-model="newsite.RootDoMain" type="text" name="domain" class="form-control man_produ_sensitive_text" ng-mouseenter="isShowTips_domain=true" ng-mouseleave="isShowTips_domain=false" is-show-tips="isShowTips_domain" placeholder="http://" />
+                </div>
+                <div>
+                    <b>站点首页模板：</b>
+                    <img src="./manageConfig/productManageMent/images/gl04.png" ng-click="channlViews()" ng-if="newsite.ObjectId" /> &nbsp;&nbsp;
+                    <i ng-bind="temp.TEMPNAME"></i>
+                    <i ng-if="!newsite.ObjectId">无</i>
+                </div>
+                <div>
+                    <b>其他首页模板：</b>
+                    <img src="./manageConfig/productManageMent/images/gl04.png" ng-click="channlOtherViews()" ng-if="newsite.ObjectId"/> &nbsp;&nbsp;
+                    <i ng-bind="otherTemp.TEMPNAME"></i>
+                    <i ng-if="!newsite.ObjectId">无</i>
+                </div>
+                <div>
+                    <b>默认文章模板：</b>
+                    <img src="./manageConfig/productManageMent/images/gl04.png" ng-click="defaultArticleViews()" ng-if="newsite.ObjectId" /> &nbsp;&nbsp;
+                    <i ng-bind="xilanTemp.TEMPNAME"></i>
+                    <i ng-if="!newsite.ObjectId">无</i>
+                </div>
+                <div>
+                    <b>排序：</b>
+                    <trs-single-select selected-option="allSitesSelected" callback="queryByDocType()" options="allSites"></trs-single-select>
+                </div>
+                <div class="input invalidate-input-box {{addAndModForm.siteName.$invalid?'has-error':''}}">
+                    <b>禁止重复取稿：</b>
+                    <input validator="number" type="text" class="form-control man_produ_sensitive_text repeatTake" name="draftTime" ng-model="newsite.repeatUseTime" ng-mouseenter="isShowTips_draftTime=true" ng-mouseleave="isShowTips_draftTime=false" is-show-tips="isShowTips_draftTime" placeholder="请输入天数" /><span class="repeatTake">天</span>
+                </div>
+                <div>
+                    <b>是否检查稿件属性：</b>
+                    <trs-checkbox ischecked="newsite.CheckFgdAttribute==1" callback="checkAttr()"></trs-checkbox>
+                    &nbsp;&nbsp; 检查稿件属性
+                </div>
+            </div>
+            <div class="man_produ_modify_footer">
+                <button validation-submit="addAndModForm" class="news-role-btn man_produ_modify_footer_cancel btn_confirm" ng-click="confirm()">确定</button>
+                <button class="news-role-btn btn_cancel" ng-click="cancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

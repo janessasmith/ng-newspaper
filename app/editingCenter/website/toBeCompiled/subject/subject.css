@@ -1,0 +1,156 @@
+textarea.h600 {
+    height: 600px;
+}
+
+.website_subjectForm .website_subject_left,
+.website_subjectForm .website_subject_right {
+    height: 270px;
+    float: left;
+}
+
+.website_subjectForm .website_subject_left {
+    max-width: 375px;
+}
+
+.website_subjectForm .website_subject_right {
+    /*width: 100%;*/
+}
+
+.website_subjectForm .website_subject_left div:first-child input.form-control {
+    width: 100%;
+    height: 30px;
+}
+
+.website_subjectForm .website_subject_left>div:first-child,
+.website_subjectForm .website_subject_right>div:first-child {
+    height: 40px;
+}
+
+.website_subjectForm .website_subject_left ul,
+.website_subjectForm .website_subject_right ul {
+    font-size: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 190px;
+    border: 1px solid #ddd;
+    overflow: auto;
+}
+
+.website_subjectForm .website_subject_left ul {
+    background: #fff;
+}
+
+.website_subjectForm .website_subject_left ul li {
+    color: #666;
+    cursor: pointer;
+}
+
+.website_subjectForm .website_subject_left ul li,
+.website_subjectForm .website_subject_right ul li {
+    width: 100%;
+    padding: 3px;
+}
+
+.website_subjectForm .website_subject_left ul li.active {
+    background: #4496D2;
+    color: #fff;
+    cursor: pointer;
+}
+
+.website_subjectForm .website_subject_left ul li b,
+.website_subjectForm .website_subject_left ul li span,
+.website_subjectForm .website_subject_left ul li img,
+.website_subjectForm .website_subject_right ul li b,
+.website_subjectForm .website_subject_right ul li i,
+.website_subjectForm .website_subject_right ul li span,
+.website_subjectForm .website_subject_right ul li img {
+    display: inline-block;
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+.website_subjectForm .website_subject_left ul li span {
+    padding-left: 5px;
+    max-width: 255px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.website_subjectForm .website_subject_right ul li i {
+    font-style: normal;
+    width: 10%;
+}
+
+.website_subjectForm .website_subject_right ul li input {
+    width: 67%;
+    height: 20px;
+    font-size: 12px;
+    display: inline-block;
+    background: transparent;
+    border: 1px solid transparent;
+    padding-left: 5px;
+    box-shadow: none;
+}
+
+.website_subjectForm .website_subject_right ul li input.active {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+}
+
+.website_subjectForm .website_subject_left i {
+    font-style: normal;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+}
+
+.website_subjectForm .website_subject_left b,
+.website_subjectForm .website_subject_right b {
+    font-weight: normal;
+    width: 10%;
+}
+
+.website_subjectForm .website_subject_right div:first-child button {
+    color: #fff;
+    background: #4496D2;
+    outline: none;
+    border: none;
+    width: 65px;
+    height: 30px;
+    font-size: 12px;
+    float: right;
+    border-radius: 5px;
+}
+
+.website_subjectForm .website_subject_right ul li span {
+    text-align: center;
+    display: inline-block;
+    word-break: break-all;
+    width: 5%;
+    cursor: move;
+}
+
+.website_subjectForm .website_subject_right ul li b,
+.website_subjectForm .website_subject_right ul li i {
+    cursor: move;
+}
+
+.website_subjectForm .website_subject_right ul li img.deleteItem,
+.website_subjectForm .website_subject_left ul li img.deleteItem {
+    display: inline-block;
+    vertical-align: -1px;
+    float: right;
+    margin: 3px 1px 0 0;
+}
+
+.website_subjectForm .website_subject_right ul li.drag_place_list {
+    height: 25px;
+    text-align: center;
+    color: #fff;
+    background: #4496D2;
+    font-style: italic;
+    line-height: 20px;
+}

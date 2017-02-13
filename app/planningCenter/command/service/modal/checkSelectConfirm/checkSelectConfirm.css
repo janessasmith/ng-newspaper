@@ -1,0 +1,11 @@
+.common-modal .reportdetail{
+	padding: 15px 10px;
+
+}
+.common-modal .reportdetail:nth-child(odd) {
+    background-color: #fff;
+}
+
+.common-modal .reportdetail:nth-child(even) {
+    background-color: #f4f5f9;
+}

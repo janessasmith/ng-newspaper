@@ -1,0 +1,61 @@
+<div trs-scroll-fix class="row edit_right_head">
+    <div class="col-md-8 col-lg-9">
+        <button ng-if="status.right.publishdistribution.add" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-click="addItem()">
+            <span class="s_icon"><img src="./editingCenter/app/images/b1.png" /></span> 添加
+        </button>
+        <button ng-if="status.right.publishdistribution.delete" class="btn btn-default btn-commen edit_right_head_btn_commen" ng-disabled="selectedArray.length<1" ng-click="multDelete()">
+            <span class="s_icon"><img src="./editingCenter/app/images/fg2.png" /></span> 删除
+        </button>
+    </div>
+    <!-- <div class="col-md-4 col-lg-3">
+        <div class="input-group edit_input_group">
+            <input type="text" class="form-control edit_form_control mr10" placeholder="查询类型" ng-model="searchChlName">
+            <span class="input-group-btn">
+            <button class="btn btn-default btn_edit_search" type="button" ng-click="fullTextSearch()">搜索</button>
+          </span>
+        </div>
+    </div> -->
+</div>
+<div class="row col-md-12 templateMge-content-table">
+    <div class="edit_table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="td-check" width="8%">
+                        <trs-checkbox ischecked="selectedArray.length==items.length && selectedArray.length!=0" callback="selectAll()"></trs-checkbox>全选
+                    </th>
+                    <th>类型</th>
+                    <th>存放路径</th>
+                    <th>添加人</th>
+                    <th>用户名</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items">
+                    <td class="td-check" style="padding-left: 22px;">
+                        <trs-checkbox ischecked="selectedArray.indexOf(item)<0?false:true" callback="selectDoc(item)"></trs-checkbox>
+                        <span ng-bind="(page.CURRPAGE-1)*page.PAGESIZE+$index+1" class="td-number"></span>
+                    </td>
+                    <td ng-bind="item.TARGETTYPENAME"></td>
+                    <td ng-bind="item.DATAPATH" class="ta-l"></td>
+                    <td ng-bind="item.TRUENAME"></td>
+                    <td ng-bind="item.LOGINUSER" class="pointer"></td>
+                    <td class="iwo_operate">
+                        <a ng-if="status.right.publishdistribution.edit" target="_blank" ng-click="modified(item)"> <img src="./manageConfig/productManageMent/images/gl23.png"><span>修改</span></a>
+                        <a ng-if="status.right.publishdistribution.delete" href="" ng-click="delete(item)">
+                            <img src="./manageConfig/productManageMent/images/gl27.png">
+                            <span target="_blank">删除</span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div cg-busy="loadingPromise"></div>
+        <div class="page">
+            <trs-pagenation-left page-count="page" callback="selectPageNum()" is-select-pagecount="true"></trs-pagenation-left>
+            <pagination total-items="page.ITEMCOUNT" ng-change="pageChanged()" ng-model="page.CURRPAGE" max-size="6" class="pagination-sm page_left" boundary-links="true" items-per-page="page.PAGESIZE" rotate="false" num-pages="page.PAGECOUNT" first-text="首页" previous-text="上一页" next-text="下一页" last-text="末页"></pagination>
+            <trs-pagenation-right callback="jumpToPage()" currpage="copyCurrPage" page="page"></trs-pagenation-right>
+        </div>
+    </div>
+</div>

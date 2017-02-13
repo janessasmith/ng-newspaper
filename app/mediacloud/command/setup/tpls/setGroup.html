@@ -1,0 +1,23 @@
+<div class="dp-rt-main no-pd" ng-controller="setGroupCtrl">
+    <ul class="dp-rt-tit rw-fl-rt">
+       <li>
+            <a href="javascript:;" class="cg-all" >自定义分组</a>
+        </li>
+    </ul>
+    <div class="cg-ls-top">
+	    <div class="all-check-box lf">
+	        <a href="javascript:;" class="fz-xz" ng-click="open_cp('1000',$event);">新增分组</a>
+	    </div>
+	</div>
+	<div class="cg-main-ls cg-main-srocll" scroll>
+	    <ul>
+	        <li ng-repeat="groupCont in groupConts" ng-class="{'blue-bac':($index+1)%2==0}">
+	            <a ui-sref="command.setGroup_details({groupId:groupCont.groupid})" class="cg-ls-tit lf">{{groupCont.groupname}}</a>
+	            <a href class="cg-ls-del rt"  ng-click="delGroup(groupCont.groupid);">删除</a>
+	            <a href class="cg-ls-edt rt"  ui-sref="command.setGroup_details({groupId:groupCont.groupid})">编辑</a>
+	            <a href class="cg-ls-down rt" ng-show="$index!=groupNum" title="下移" ng-click="downGroup(groupCont.groupid);">下移</a>
+	            <a href class="cg-ls-up rt" ng-class="{'m-lf':$index==groupNum}"  ng-show="$index!=0" title="上移" ng-click="upGroup(groupCont.groupid);">上移</a>
+	        </li>
+	    </ul>
+	</div>
+</div>

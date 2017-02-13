@@ -1,0 +1,35 @@
+.man_produ_templateCheck .modal-content {
+    width: 408px;
+    height: 308px;
+    top: 120px;
+}
+
+.man_produ_website_templateCheck {
+    height: 226px;
+    margin: 0px auto;
+    padding: 10px;
+    background: #E8E9ED;
+}
+
+.man_produ_website_templateCheck textarea {
+    resize: none;
+}
+
+.man_produ_templateCheck_footer {
+    height: 40px;
+    background: #E8E9ED;
+}
+
+.templateCheck_btn {
+    float: right;
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}

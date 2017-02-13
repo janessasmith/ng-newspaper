@@ -1,0 +1,174 @@
+.manageNews .modal-dialog {
+    width: 475px;
+    min-height: 338px;
+    margin-top: 30px;
+}
+
+.manageNews .modal-content {
+    position: relative;
+    background: #f0f2f4;
+}
+
+.manageNews .news {
+    width: 473px;
+    border: 4px solid #dddddd;
+}
+
+.manageNews .news .header {
+    height: 42px;
+    background: #fff;
+}
+
+.manageNews .news .header p {
+    font-size: 14px;
+    color: #343535;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    line-height: 42px;
+    text-indent: 14px;
+    float: left;
+}
+
+.manageNews .news .header img {
+    float: right;
+    margin-right: 10px;
+    margin-top: 12px;
+    width: 18px;
+    height: 18px;
+    border: 0;
+    cursor: pointer;
+}
+
+.manageNews .news .main {
+    min-height: 298px;
+}
+
+.manageNews .news .main .children {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.manageNews .news .main .children p {
+    float: left;
+    font-size: 12px;
+    color: #666460;
+    margin: 0px;
+    text-indent: 38px;
+}
+
+.manageNews .news .main .children p.lineH20 {
+    line-height: 28px;
+}
+
+.manageNews .news .main .children p.textIndent {
+    text-indent: 14px;
+}
+
+.manageNews .news .main .children input[type="text"] {
+    width: 287px;
+    height: 28px;
+    /* border: 1px solid #d0cdc7;*/
+    text-indent: 10px;
+    font-size: 12px;
+    color: #666460;
+    line-height: 28px;
+    margin-left: 30px;
+    padding: 0px;
+    float: left;
+}
+
+.manageNews .news .main .children input[type="text"].w128 {
+    width: 128px;
+    margin-left: 5px;
+}
+
+.manageNews .news .main .children input[type="radio"] {
+    float: left;
+    margin-left: 30px;
+    margin-top: 8px;
+}
+
+.manageNews .news .main .children p.nearRadio {
+    float: left;
+    margin-left: 5px;
+    color: #666460;
+    text-indent: 0px;
+    line-height: 26px;
+    min-width: 50px;
+}
+
+.manageNews .news .main .children p.mt2 {
+    margin-top: 2px;
+}
+
+.manageNews trs-single-radio {
+    margin-left: 20px;
+}
+
+.manageNews trs-single-radio label {
+    margin-top: 3px;
+}
+
+.manageNews trs-single-radio span {
+    min-width: 50px;
+    padding-top: 1px;
+}
+
+.manageNews .footer {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.manageNews .footer button {
+    width: 80px;
+    height: 28px;
+    padding: 0px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    color: #fff;
+    border: none;
+}
+
+.manageNews .footer button.confirm {
+    background: #00bd9b;
+    margin-left: 275px;
+}
+
+.manageNews .footer button.cancel {
+    background: #0095ce;
+    margin-left: 10px;
+}
+
+.manageNews .invalidate-input-box span {
+    margin-left: 135px;
+}
+
+.manageNews input.form-control {
+    display: inline-block;
+}
+
+.manageNews .news .main .children p.validation-invalid {
+    text-indent: 0;
+}
+
+.children .regular-checkbox + label {
+    padding: 0px;
+    width: 16px;
+    height: 16px;
+}
+
+.children trs-checkbox span {
+    font-size: 12px;
+}
+
+.children trs-checkbox .regular-checkbox:checked + label:after {
+    top: -1px;
+    left: 0px;
+}
+.manageNews .news .main .children input[type="text"].ml30{
+    margin-top: 5px;
+    margin-left: 30px;
+}

@@ -1,0 +1,194 @@
+.man_produ_createNewTemplate .modal-dialog {
+    width: 1024px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+}
+
+.man_produ_createNewTemplate > .modal-dialog > .modal-content > form {
+    background: #f0f2f5;
+    padding-bottom: 10px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_head {
+    height: 43px;
+    line-height: 43px;
+    background: #fff;
+}
+
+.man_produ_createNewTemplate .website_fra_new_head img {
+    padding-left: 10px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_head .website_fra_new_head_span {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #000;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content {
+    width: 98%;
+    margin: 1% 1% 0 1%;
+    background: #fff;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_box {
+    height: 50px;
+    margin-top: 5px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_box > div {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_box > div:first-child {
+    width: 78%;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_box > div:last-child {
+    width: 22%;
+    text-align: right;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_button {
+    height: 40px;
+    margin-top: 5px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_button .s_icon {
+    margin: 0 6px 0 -10px;
+    padding-right: 6px;
+    border-right: 1px solid #e9e9e9;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_button button {
+    margin-right: 12px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_button b {
+    float: left;
+    font-weight: normal;
+    line-height: 50px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_box b {
+    display: inline-block;
+    font-weight: normal;
+    line-height: 50px;
+}
+
+.man_produ_createNewTemplate .edit_right_head_btn_special {
+    width: 110px!important;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_lable {
+    display: inline-block;
+    height: 50px;
+    float: left;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_lable > input {
+    width: 660px;
+    display: inline-block;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_lable input,
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_input input {
+    height: 30px;
+    margin-top: 8px;
+    text-indent: 10px;
+    color: #666;
+    font-size: 12px;
+    border-radius: 4px;
+    box-shadow: none!important;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content .textarea {
+    position: relative;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content .textarea textarea {
+    height: 280px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content textarea {
+    resize: none;
+}
+
+.man_produ_createNewTemplate .website_fra_new_footer {
+    margin: 0 auto;
+    width: 98%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    height: 50px;
+    line-height: 40px;
+    padding: 0 10px;
+    text-align: right;
+}
+
+.man_produ_createNewTemplate .website_fra_new_footer button {
+    width: 64px;
+    height: 24px;
+    line-height: 24px;
+    background: #4496d2;
+    color: #fff;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 0;
+}
+
+.man_produ_createNewTemplate .website_fra_new_footer button:nth-child(2) {
+    margin-right: 10px;
+}
+
+.man_produ_createNewTemplate .man_produ_modify_footer_cancel {
+    margin-right: 60px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_lable .btn-group {
+    margin-top: 10px;
+}
+
+.man_produ_createNewTemplate .importTemplate_button .website-file-upload-input {
+    width: 100px;
+    margin-top: -35px;
+}
+
+.man_produ_createNewTemplate .man_web_temp_padding {
+    padding: 0;
+}
+
+.man_produ_createNewTemplate .website_fra_new_cancel {
+    float: right;
+    margin-top: 12px;
+    padding-right: 10px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_input {
+    margin-bottom: 15px;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_input .newTemplate_inputs {
+    display: inline-block;
+    width: 33%!important;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_input .newTemplate_inputs .form-control {
+    display: inline-block;
+    width: 70%;
+}
+
+.man_produ_createNewTemplate .website_fra_new_content_newTemplate_input .newTemplate_inputs b {
+    font-weight: normal;
+}

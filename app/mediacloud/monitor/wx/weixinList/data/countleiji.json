@@ -1,0 +1,14 @@
+{
+	"result":
+	{
+		"actionNum":88,
+		"actionName":"净增关注人数",
+		"day":"10%",
+		"dayimg":"app/monitor/common/images/wx-ls-icon04.png",
+		"week":"20%",
+		"weekimg":"app/monitor/common/images/wx-ls-icon03.png",
+		"month":"30%",
+		"monthimg":"app/monitor/common/images/wx-ls-icon03.png"
+	}
+	
+}

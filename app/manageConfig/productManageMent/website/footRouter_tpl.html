@@ -1,0 +1,14 @@
+ <div class="manage_pmm_bottom_list">
+     <ul>
+        <li ng-repeat="item in data.items">
+             <a ui-sref="manageconfig.productmanage.website.{{item.flag}}({selectTab:selectThisNav,channel:status.isColumn,parentchnl:status.parentchnl})"
+                ng-click="selectThisNav = item.flag"
+                ng-class="{'websitelist-active':selectThisNav == item.flag}">
+                 {{item.desc}}
+             </a>
+         </li>
+     </ul>
+     <div class="manage_pmm_bottom_list_arrow">
+         <img src="./manageConfig/productManageMent/images/gl26.png"/>
+     </div>
+</div>

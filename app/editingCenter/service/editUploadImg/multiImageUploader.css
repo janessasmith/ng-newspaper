@@ -1,0 +1,316 @@
+/*新增批量上传*/
+
+.multiImgsUploader .modal-dialog {
+    width: 664px;
+}
+
+.multiImgsUploader .modal-content {
+    width: 717px;
+    top: 132px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.multiImgsUploader-container {
+    width: 715px;
+    background: #fff;
+    margin: 2px 3px;
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.multiImgsUploader-head {
+    height: 50px;
+}
+
+.multiImgsUploader-head p {
+    float: left;
+    padding: 0;
+    line-height: 50px;
+    font-size: 14px;
+    margin: 0px 0px 0px 40px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.multiImgsUploader-head img {
+    float: right;
+    margin-right: 20px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.multiImgsUploader-head div {
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.multiImgsUploader-head div.webuploader-pick {
+    margin: 0;
+    padding: 0px;
+    background: #00bd98;
+}
+
+.multiImgsUploader-body {
+    overflow: hidden;
+    background: #f0f2f5;
+}
+
+.multiImgsUploader-footer {
+    height: 54px;
+    background: #fff;
+}
+
+.mt120 {
+    margin-top: 120px;
+}
+
+.multiImgsUploader-footer button {
+    float: right;
+    margin-right: 10px;
+    text-align: center;
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.multiImgsUploader-footer button.blue {
+    background: #0081B2;
+}
+
+.multiImgsUploader-footer button.gray {
+    background: #9a9691;
+}
+
+.list-style-upload .webuploader-pick {
+    padding: 0px;
+    line-height: 51px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.multiImgsUploader-body .uploadCon {
+    overflow: hidden;
+}
+
+.multiImgsUploader-body .uploadBtn {
+    width: 154px;
+    height: 113px;
+    border: 1px solid #ccc;
+    background: url(./editingCenter/app/toBeCompiled/images/plus.png) 24px 35% #eeeeee no-repeat;
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.multiImgsUploader-body .uploadBtn:hover {
+    background: url(./editingCenter/app/toBeCompiled/images/plus.png) 24px 35% #1aba9f no-repeat;
+}
+
+.multiImgsUploader-body .oneImage {
+    float: left;
+    border: 0;
+    padding: 0;
+    background: #f0f2f5;
+    margin-top: 20px;
+}
+
+.multiImgsUploader-body .uploadBtn .webuploader-pick {
+    width: 154px;
+    height: 113px;
+    background: none;
+    padding: 0;
+}
+
+.multiImgsUploader-body .upload_div {
+    overflow: hidden;
+    float: left;
+    width: 154px;
+    /* height: 113px;*/
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.multiImgsUploader-body .upload_div img {
+    width: 154px;
+    height: 113px;
+    float: left;
+    border: 1px solid #ccc;
+}
+
+
+/*处理批量上传后图片提示的问题*/
+
+.atals .new_tplb .invalidate-input-box span {
+    top: -12px;
+}
+
+.atals .new_tplb trs-thumb .img_switcher {
+    top: -160px!important;
+    left: 276px!important;
+    right: 0px!important;
+}
+
+
+/*处理图集中存在的内联样式*/
+
+.atals .new_tplb .con tr.h190 {
+    cursor: pointer;
+}
+
+.new_tplb tr.dndPlaceholder td {
+    color: #fff;
+    height: 30px;
+    background: #0081b1;
+    border: none;
+}
+
+.new_tplb dnd-nodrag {
+    display: block;
+    overflow: hidden;
+}
+
+.new_tplb .dndDraggingSource {
+    /*display: none;*/
+}
+
+.atals .new_tplb .con tr.dndDragging {
+    opacity: 1;
+    height: 197px;
+    border: 3px dashed gray;
+}
+
+.atals .new_tplb .con tr.imgConsel {
+    background: #fbefe6;
+}
+
+.atals .new_tplb .con td.lh180 {
+    line-height: 180px;
+}
+
+.atals .new_tplb .dndPlaceholder td {
+    /* background: #0081b1;
+    height: 30px;
+    line-height: 197px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.8;*/
+}
+
+.atals .new_tplb .con td .imgCon {
+    width: 210px;
+    height: 142px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.atals .new_tplb .con td div.ml25 {
+    margin-left: 25px;
+}
+
+.atals .new_tplb td div.imgCon img.fa {
+    width: 208px!important;
+    height: 140px!important;
+    border: 0;
+    margin: 0px !important;
+}
+.atals .new_tplb .con td div.imgCon img{
+    margin:0 auto;
+}
+.subject-list-style .list-style-img .fa_upload .form-control {
+    width: 154px;
+    height: 113px;
+    padding: 0px;
+}
+
+.m_box_item .list-style-img .form-control {
+    padding: 0px;
+    width: 152px;
+    height: 113px;
+}
+
+.multiImgsUploader .progress {
+    border: 1px solid #1483d8;
+    width: 100%;
+    background: #fff;
+    height: 18px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    color: #6dbfff;
+    position: relative;
+    margin: 8px 0px 0px 0px;
+}
+
+.multiImgsUploader .file-progress {
+    border-radius: 5px;
+    height: 10px;
+}
+
+.multiImgsUploader .progress span.text {
+    position: relative;
+    z-index: 10;
+}
+
+.multiImgsUploader .progress span.percentage {
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #1483d8;
+    position: absolute;
+    width: 0%;
+}
+
+.multiImgsUploader-footer button.blue:hover {
+    color: #fff;
+    background-color: #0081B2;
+    border-color: #adadad;
+}
+
+.multiImgsUploader-footer button.gray:hover {
+    color: #fff;
+    background-color: #9a9691;
+    border-color: #adadad;
+}
+
+.multiImgsUploader .file-item .delete {
+    position: absolute;
+    width: 154px;
+    background: #333;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    height: 30px;
+}
+
+.multiImgsUploader .file-item .delete img {
+    width: 16px;
+    height: 16px;
+    border: none;
+    float: right;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+}
