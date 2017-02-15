@@ -1,5 +1,8 @@
 "use strict";
-
+/**
+ * Created by zhenglu in 17-2-7
+ * Modify  by cc in 17-02-14
+ */
 angular.module('performanceAssessmentLeftModule', []).controller('performanceAssessmentLeftCtrl', ['$scope', '$q', '$location', '$state', '$filter', 'trsHttpService',
     function($scope, $q, $location, $state, $filter, trsHttpService) {
         initStatus();
